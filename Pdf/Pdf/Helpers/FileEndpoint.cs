@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Pdf
 {
-    public static class FileUploadHelper
+    public class FileEndpoint
     {
         //TODO - Gerer fichiers de mm nom
-        public static async void UploadFile(FileData fileData1, FileData fileData2)
+        public async Task<string> UploadFile(FileData fileData1, FileData fileData2)
         {
             var content = new MultipartFormDataContent();
 
@@ -22,9 +23,9 @@ namespace Pdf
 
             var httpResponseMessage = await httpClient.PostAsync(uploadServiceBaseAdress, content);
 
-            var status = await httpResponseMessage.Content.ReadAsStringAsync();
+            string fileName = await httpResponseMessage.Content.ReadAsStringAsync();
 
-            Console.WriteLine(status);
+            return fileName;
         }
     } 
 }

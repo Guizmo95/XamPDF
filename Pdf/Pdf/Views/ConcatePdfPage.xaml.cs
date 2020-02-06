@@ -3,6 +3,7 @@ using Plugin.FilePicker.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,15 +37,24 @@ namespace Pdf
                 {
                     return;
                 }
-                string fileName = fileData2.FileName;
-                string contents = System.Text.Encoding.UTF8.GetString(fileData2.DataArray);
-
-                FileUploadHelper.UploadFile(fileData1, fileData2);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
             }
+            
+            string fileName = FileEndpoint fileEndpoint = new FileEndpoint.UploadFile(fileData1, fileData2);
         }
+
+            //var httpClient = new HttpClient();
+
+            //var uploadServiceBaseAdress = "http://10.0.2.2:51549/api/Files/Upload";
+
+            //var httpResponseMessage = await httpClient.GetAsync(uploadServiceBaseAdress);
+
+            //var status = await httpResponseMessage.Content.ReadAsStringAsync();
+
+            //Console.WriteLine(status);
+        
     }
 }
