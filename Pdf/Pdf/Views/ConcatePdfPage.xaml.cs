@@ -1,4 +1,5 @@
-﻿using Plugin.FilePicker;
+﻿using Pdf.Views;
+using Plugin.FilePicker;
 using Plugin.FilePicker.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,10 @@ namespace Pdf
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConcatePdfPage : ContentPage
     {
-        public ConcatePdfPage()
-        {
-            InitializeComponent();
-        }
 
         private FileData fileData1;
         private FileData fileData2;
+        FileEndpoint fileEndpoint = new FileEndpoint();
         public ConcatePdfPage(FileData fileData1)
         {
             InitializeComponent();
@@ -42,8 +40,10 @@ namespace Pdf
             {
                 throw new Exception(ex.Message);
             }
-            
-            string fileName = FileEndpoint fileEndpoint = new FileEndpoint.UploadFile(fileData1, fileData2);
+
+            string fileName = await fileEndpoint.UploadFile(fileData1, fileData2);
+
+            await Navigation.PushAsync(new GetDownload());
         }
 
             //var httpClient = new HttpClient();

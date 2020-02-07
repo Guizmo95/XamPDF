@@ -6,6 +6,8 @@ public class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"Pdf.dll",
 		"Plugin.FilePicker.dll",
+		"Xam.Plugin.DownloadManager.Abstractions.dll",
+		"Xam.Plugin.DownloadManager.Droid.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
