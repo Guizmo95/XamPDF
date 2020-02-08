@@ -17,41 +17,51 @@ namespace PdfClient.Controllers
     {
 
         [HttpPost]
-        public async Task<string> Post()
+        public  HttpResponseMessage Post()
         {
+            var response = new HttpResponseMessage(HttpStatusCode.BadRequest);
             try
             {
                 var httpRequest = HttpContext.Current.Request;
-
+                
                 if (httpRequest.Files.Count > 0)
                 {
                     foreach (string file in httpRequest.Files)
                     {
                         var postedFile = httpRequest.Files[file];
-                        var fileName = postedFile.FileName.Split('\\').LastOrDefault().Split('/').LastOrDefault();
-                        var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName + DateTime.Now );
-                        postedFile.SaveAs(filePath);
 
+                        var fileName = postedFile.FileName.Split('\\').LastOrDefault().Split('/').LastOrDefault().Replace(" ", "");
+                        string date = DateTime.Now.ToString();
+                        date = ConvertFileTools.CleanDate(date);
+                        fileName = date + fileName;
+
+                        var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName);
+                        postedFile.SaveAs(filePath);
                     }
 
-                    var fileName1 = httpRequest.Files[0].FileName;
-                    var fileName2 = httpRequest.Files[1].FileName;
+                    var fileName1 = httpRequest.Files[0].FileName.Split('\\').LastOrDefault().Split('/').LastOrDefault().Replace(" ", "");
+                    var fileName2 = httpRequest.Files[1].FileName.Split('\\').LastOrDefault().Split('/').LastOrDefault().Replace(" ", "");
 
                     string outputName = ConvertFileTools.ConcateFiles(fileName1, fileName2);
-                    return outputName;
+
+                    response = new HttpResponseMessage(HttpStatusCode.OK);
+                    response.Content = new StringContent(outputName);
+                    response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
+                    return response;
                 }
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return response;
             }
 
-            return "nofiles";
-
+            return response;
         }
 
         [HttpGet]
-        public HttpResponseMessage GetFilesConverted(string fileName)
+
+        //TODO - FIX CONTROLLER ERROR
+        public HttpResponseMessage GetFileConverted(string fileName)
         {
             if (String.IsNullOrEmpty(fileName))
                 return Request.CreateResponse(HttpStatusCode.BadRequest);

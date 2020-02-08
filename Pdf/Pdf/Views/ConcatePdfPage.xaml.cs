@@ -27,7 +27,7 @@ namespace Pdf
         }
 
         private async void PickFileButton(object sender, EventArgs e)
-        {
+       {
             try
             {
                 fileData2 = await CrossFilePicker.Current.PickFile(new string[] { "application/pdf" });
@@ -43,7 +43,7 @@ namespace Pdf
 
             string fileName = await fileEndpoint.UploadFile(fileData1, fileData2);
 
-            await Navigation.PushAsync(new GetDownload());
+            await Navigation.PushAsync(new GetDownload(fileName));
         }
 
             //var httpClient = new HttpClient();

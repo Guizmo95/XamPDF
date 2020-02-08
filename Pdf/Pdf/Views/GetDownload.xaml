@@ -7,7 +7,7 @@
              x:Class="Pdf.Views.GetDownload">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Click here to get the files"/>
+            <Button Text="Get the concated files" Clicked="Download"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

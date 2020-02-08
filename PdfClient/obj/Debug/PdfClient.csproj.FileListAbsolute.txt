@@ -88,7 +88,6 @@ C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\fr\System.Web.Razor.resour
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\fr\System.Web.WebPages.Razor.resources.dll
-C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.csprojAssemblyReference.cache
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.csproj.CopyComplete
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.pdb
