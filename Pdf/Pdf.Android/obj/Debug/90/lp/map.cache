@@ -41,3 +41,10 @@ Xamarin.Android.Support.ViewPager
 Xamarin.Essentials
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
+Syncfusion.Core.XForms.Android
+Syncfusion.SfBusyIndicator.Android
+Syncfusion.SfBusyIndicator.XForms.Android
+Syncfusion.SfPdfViewer.XForms.Android
+Syncfusion.SfProgressBar.XForms.Android
+Syncfusion.SfRangeSlider.Android
+Syncfusion.SfRangeSlider.XForms.Android

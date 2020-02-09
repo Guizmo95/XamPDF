@@ -102,6 +102,10 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Syncfusion.Xamarin.SfPdfViewer": {
+              "target": "Package",
+              "version": "[17.4.0.47, )"
+            },
             "Xam.Plugin.DownloadManager": {
               "target": "Package",
               "version": "[1.0.0.1, )"

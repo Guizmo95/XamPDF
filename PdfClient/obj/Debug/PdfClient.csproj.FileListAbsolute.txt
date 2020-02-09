@@ -91,3 +91,4 @@ C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\fr\System.Web.WebPages.Raz
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.csproj.CopyComplete
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.pdb
+C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.csprojAssemblyReference.cache

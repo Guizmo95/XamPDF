@@ -4,7 +4,7 @@ namespace Pdf.Droid
 {
     public interface IAndroidWritter
     {
-            string SaveFile(string filename, Stream fileStream);
+            void SaveFile(string filename, byte[] file);
             byte[] ReadFully(Stream input);
     }
 }

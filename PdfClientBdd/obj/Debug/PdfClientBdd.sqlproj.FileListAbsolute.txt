@@ -1,6 +1,7 @@
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\bin\Debug\PdfClientBdd.dacpac
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\bin\Debug\PdfClientBdd.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\bin\Debug\PdfClientBdd.pdb
+C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.sqlprojAssemblyReference.cache
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\obj\Debug\Model.xml
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\obj\Debug\refactor.xml
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\obj\Debug\postdeploy.sql

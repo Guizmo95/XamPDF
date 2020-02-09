@@ -24,31 +24,40 @@ namespace Pdf
 
             var httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:51549/api/Files/Upload";
+            var uploadServiceBaseAdress = "http://10.0.2.2:51549/PostFiles";
 
-            var httpResponseMessage = await httpClient.PostAsync(uploadServiceBaseAdress, content);
-
-            string fileName = await httpResponseMessage.Content.ReadAsStringAsync();
-
-            return fileName;
+            using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string fileName = await response.Content.ReadAsStringAsync();
+                    return fileName;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
         }
 
-        public async Task<Stream> GetFileConcated(string fileName)
+        //TODO -- CREATE WEB API CLIENT
+        public async Task<byte[]> GetFileConcated(string fileName)
         {
             HttpClient httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:51549/api/Files/Upload";
+            var uploadServiceBaseAdress = "http://10.0.2.2:51549/GetFile/";
+            byte[] result;
 
             using (HttpResponseMessage response = await httpClient.GetAsync(uploadServiceBaseAdress + fileName))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadAsStreamAsync();
+                    result = await response.Content.ReadAsByteArrayAsync();
                     return result;
                 }
                 else
                 {
-                    throw new Exception();
+                    throw new Exception(response.ReasonPhrase);
                 }
             }
         }

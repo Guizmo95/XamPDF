@@ -18,16 +18,13 @@ namespace Pdf.Droid
 {
     public class AndroidWritter:IAndroidWritter 
     {
-        public string SaveFile(string filename, Stream fileStream)
+        public void SaveFile(string filename, byte[] file)
         {
             string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
 
-            var path = Path.Combine(directoryDownload);
-            var file = ReadFully(fileStream);
+            var path = Path.Combine(directoryDownload, filename);
 
             File.WriteAllBytes(path, file);
-
-            return path;
         }
 
         public byte[] ReadFully(Stream input)
