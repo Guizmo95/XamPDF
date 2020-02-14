@@ -125,18 +125,6 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xam.Plugin.DownloadManager/1.0.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "1.4.0"
-        },
-        "compile": {
-          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
@@ -289,7 +277,6 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.47",
-          "Xam.Plugin.DownloadManager": "1.0.0.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.3.0.908675",
           "Xamarin.Plugin.FilePicker": "2.1.34"
@@ -426,18 +413,6 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xam.Plugin.DownloadManager/1.0.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "1.4.0"
-        },
-        "compile": {
-          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
@@ -590,7 +565,6 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.47",
-          "Xam.Plugin.DownloadManager": "1.0.0.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.3.0.908675",
           "Xamarin.Plugin.FilePicker": "2.1.34"
@@ -727,18 +701,6 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xam.Plugin.DownloadManager/1.0.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "1.4.0"
-        },
-        "compile": {
-          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
@@ -891,7 +853,6 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.47",
-          "Xam.Plugin.DownloadManager": "1.0.0.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.3.0.908675",
           "Xamarin.Plugin.FilePicker": "2.1.34"
@@ -1028,18 +989,6 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "Xam.Plugin.DownloadManager/1.0.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "1.4.0"
-        },
-        "compile": {
-          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
@@ -1192,7 +1141,6 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.47",
-          "Xam.Plugin.DownloadManager": "1.0.0.1",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.3.0.908675",
           "Xamarin.Plugin.FilePicker": "2.1.34"
@@ -1467,37 +1415,6 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "Xam.Plugin.DownloadManager/1.0.0.1": {
-      "sha512": "GpqIYZh85H2QQxexi/qa9wBoxc7mIxpO+nN8r+FzdGDEvS9rrPgkTtj6aPoYs+IZEB28caqmHiROrxUmEsLoJQ==",
-      "type": "package",
-      "path": "xam.plugin.downloadmanager/1.0.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Xam.Plugin.DownloadManager.Abstractions.dll",
-        "lib/MonoAndroid10/Xam.Plugin.DownloadManager.Abstractions.pdb",
-        "lib/MonoAndroid10/Xam.Plugin.DownloadManager.Abstractions.xml",
-        "lib/MonoAndroid10/Xam.Plugin.DownloadManager.Droid.dll",
-        "lib/MonoAndroid10/Xam.Plugin.DownloadManager.Droid.pdb/Xam.Plugin.DownloadManager.Droid.xml",
-        "lib/MonoAndroid10/Xam.Plugin.DownloadManager.Droid.xml",
-        "lib/MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll",
-        "lib/MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.pdb",
-        "lib/MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.xml",
-        "lib/MonoTouch10/Xam.Plugin.DownloadManager.iOS.dll",
-        "lib/MonoTouch10/Xam.Plugin.DownloadManager.iOS.xml",
-        "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.dll",
-        "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.pdb",
-        "lib/portable-net45+wp8+win8+MonoAndroid10+MonoTouch10/Xam.Plugin.DownloadManager.Abstractions.xml",
-        "lib/wp8/Xam.Plugin.DownloadManager.Abstractions.dll",
-        "lib/wp8/Xam.Plugin.DownloadManager.Abstractions.pdb/Xam.Plugin.DownloadManager.Abstractions.XML",
-        "lib/wp8/Xam.Plugin.DownloadManager.Abstractions.xml",
-        "lib/wp8/Xam.Plugin.DownloadManager.WinPhone.dll",
-        "lib/wp8/Xam.Plugin.DownloadManager.WinPhone.pdb/Xam.Plugin.DownloadManager.WinPhone.xml",
-        "lib/wp8/Xam.Plugin.DownloadManager.WinPhone.xml",
-        "xam.plugin.downloadmanager.1.0.0.1.nupkg.sha512",
-        "xam.plugin.downloadmanager.nuspec"
       ]
     },
     "Xamarin.Essentials/1.3.1": {
@@ -1849,7 +1766,8 @@
     "Xamarin.iOS,Version=v1.0": [
       "Pdf >= 1.0.0",
       "Xamarin.Essentials >= 1.3.1",
-      "Xamarin.Forms >= 4.3.0.908675"
+      "Xamarin.Forms >= 4.3.0.908675",
+      "Xamarin.Plugin.FilePicker >= 2.1.34"
     ]
   },
   "packageFolders": {
@@ -1901,6 +1819,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[4.3.0.908675, )"
+          },
+          "Xamarin.Plugin.FilePicker": {
+            "target": "Package",
+            "version": "[2.1.34, )"
           }
         }
       }

@@ -42,6 +42,12 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
+            "Microsoft.Net.Compilers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"
@@ -105,10 +111,6 @@
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
               "version": "[17.4.0.47, )"
-            },
-            "Xam.Plugin.DownloadManager": {
-              "target": "Package",
-              "version": "[1.0.0.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

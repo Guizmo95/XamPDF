@@ -54,6 +54,7 @@ C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\Antlr3.Runtime.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\Newtonsoft.Json.dll
+C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\Plugin.FilePicker.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\System.Net.Http.Formatting.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\System.Web.Helpers.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\System.Web.Http.dll
@@ -65,6 +66,8 @@ C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\System.Web.WebPages.Deploy
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\System.Web.WebPages.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\System.Web.WebPages.Razor.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\WebGrease.dll
+C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\Plugin.FilePicker.pdb
+C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\Plugin.FilePicker.xml
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\Newtonsoft.Json.xml
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\System.Net.Http.Formatting.xml
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\System.Web.Helpers.xml
@@ -91,4 +94,3 @@ C:\Users\Rayhane\source\repos\PdfClient\PdfClient\bin\fr\System.Web.WebPages.Raz
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.csproj.CopyComplete
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.pdb
-C:\Users\Rayhane\source\repos\PdfClient\PdfClient\obj\Debug\PdfClient.csprojAssemblyReference.cache

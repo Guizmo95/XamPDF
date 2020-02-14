@@ -21,8 +21,6 @@ public class MonoPackageManager_Resources {
 		"Syncfusion.SfRangeSlider.Android.dll",
 		"Syncfusion.SfRangeSlider.XForms.Android.dll",
 		"Syncfusion.SfRangeSlider.XForms.dll",
-		"Xam.Plugin.DownloadManager.Abstractions.dll",
-		"Xam.Plugin.DownloadManager.Droid.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pdf.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace Pdf
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new SampleFilePicker();
         }
 
         protected override void OnStart()
