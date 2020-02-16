@@ -663,3 +663,4 @@ C:\Users\Rayhane\source\repos\PdfClient\Pdf\Pdf.Android\obj\Debug\90\stamp\_Gene
 C:\Users\Rayhane\source\repos\PdfClient\Pdf\Pdf.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Rayhane\source\repos\PdfClient\Pdf\Pdf.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Rayhane\source\repos\PdfClient\Pdf\Pdf.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
+C:\Users\Rayhane\source\repos\PdfClient\Pdf\Pdf.Android\obj\Debug\90\res\drawable\menu.svg

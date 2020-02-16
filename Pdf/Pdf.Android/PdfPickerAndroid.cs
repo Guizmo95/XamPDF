@@ -20,12 +20,12 @@ namespace Pdf.Droid
     
     public class PdfPickerAndroid:IPdfPickerAndroid 
     {
-        public void GetPdfFilesInDocuments()
+        public List<FileInfo> GetPdfFilesInDocuments()
         {
             string path = Android.OS.Environment.ExternalStorageDirectory.Path;
 
-            List<string> files = (List<string>)System.IO.Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
-                .Where(s => s.EndsWith(".pdf"));
+            List<string> files = System.IO.Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
+                .Where(s => s.EndsWith(".pdf")).ToList();
 
             List<FileInfo> filesInfos = new List<FileInfo>();
 
@@ -34,13 +34,7 @@ namespace Pdf.Droid
                 filesInfos.Add(new FileInfo(file));
             });
 
-            //return fileInfos
-
-
-
-            Console.WriteLine(files);
-
-            //return files;
+            return filesInfos;
         }
 
     }

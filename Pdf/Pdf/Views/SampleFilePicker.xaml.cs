@@ -1,6 +1,7 @@
 ﻿using Pdf.Droid;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,9 @@ namespace Pdf.Views
             InitializeComponent();
 
             IPdfPickerAndroid pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
-            pdfPickerAndroid.GetPdfFilesInDocuments();
-            //Console.WriteLine(files);
             
+            FilesList.ItemsSource = pdfPickerAndroid.GetPdfFilesInDocuments();
+
         }
 
         private void FilesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)

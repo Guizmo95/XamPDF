@@ -11,7 +11,7 @@ namespace Pdf
         {
             InitializeComponent();
 
-            MainPage = new SampleFilePicker();
+            MainPage = new NavigationPage(new SampleFilePicker());
         }
 
         protected override void OnStart()

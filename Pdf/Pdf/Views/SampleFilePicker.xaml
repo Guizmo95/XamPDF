@@ -5,6 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Pdf.Views.SampleFilePicker">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="menu.svg" HorizontalOptions="Start" HeightRequest="40" WidthRequest="40"/>
+            <Label Text="Pdf Edit"/>
+        </StackLayout>
+        
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="FilesList" SelectionMode="Single" ItemSelected="FilesList_ItemSelected">
@@ -12,7 +19,10 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding CreationTime.Date, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
