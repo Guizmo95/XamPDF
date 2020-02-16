@@ -938,11 +938,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rayhane\\source\\repos\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
+      "projectUniqueName": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
       "projectName": "Pdf",
-      "projectPath": "C:\\Users\\Rayhane\\source\\repos\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
+      "projectPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
       "packagesPath": "C:\\Users\\Rayhane\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rayhane\\source\\repos\\PdfClient\\Pdf\\Pdf\\obj\\",
+      "outputPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

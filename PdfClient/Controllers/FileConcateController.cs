@@ -42,10 +42,9 @@ namespace PdfClient.Controllers
                         postedFile.SaveAs(filePath);
                     }
 
-                    string fileName1 = filesNames[0];
-                    string fileName2 = filesNames[1];
+                    
 
-                    string outputName = ConvertFileTools.ConcateFiles(fileName1, fileName2);
+                    string outputName = ConvertFileTools.ConcateFiles(filesNames);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
                     response.Content = new StringContent(outputName);

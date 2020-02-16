@@ -5,12 +5,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Pdf.ConcatePdfPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Insert the other PDF"/>
-            <Button Text="Pick File" Clicked="PickFileButton"  HorizontalOptions="Center"  
-               VerticalOptions="Center" />
-
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Pdf Edit"/>
         </StackLayout>
-    </ContentPage.Content>
+
+    </NavigationPage.TitleView>
+    <StackLayout>
+        <CollectionView x:Name="FilesList" SelectionMode="Multiple">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding CreationTime.Date, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Go" Clicked="StartTheConvertion"/>
+    </StackLayout>
 </ContentPage>

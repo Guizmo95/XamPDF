@@ -15,27 +15,37 @@ namespace Pdf
     public class FileEndpoint
     {
         //TODO - Gerer fichiers de mm nom
-        public async Task<string> UploadFile(FileData fileData1, FileData fileData2)
+        public async Task UploadFiles(List<FileInfo> filesInfo)
         {
             var content = new MultipartFormDataContent();
 
-            content.Add(new StreamContent(fileData1.GetStream()), "\"file\"", $"\"{fileData1.FilePath}\"");
-            content.Add(new StreamContent(fileData1.GetStream()), "\"file\"", $"\"{fileData2.FilePath}\"");
+            filesInfo.ForEach(delegate (FileInfo fileInfo)
+            {
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    using (FileStream fileStream = new FileStream(fileInfo.FullName, FileMode.Create))
+                    {
+                        fileStream.CopyTo(memoryStream);
+                        content.Add(new StreamContent(memoryStream));
+                    }
+                }
+            });
 
             var httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:51549/PostFiles";
+            var uploadServiceBaseAdress = "http://10.0.2.2:52934/PostFiles";
 
             using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
             {
                 if (response.IsSuccessStatusCode)
                 {
                     string fileName = await response.Content.ReadAsStringAsync();
-                    return fileName;
+                    //return fileName;
                 }
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    Console.WriteLine(response.ReasonPhrase);
+                    //throw new Exception(response.ReasonPhrase);
                 }
             }
         }
