@@ -69,7 +69,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AndroidWritter.cs" />
+    <Compile Include="AndroidFileHelper.cs" />
     <Compile Include="PdfPickerAndroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

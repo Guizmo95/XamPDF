@@ -13,10 +13,10 @@ using Android.Views;
 using Android.Widget;
 using Pdf.Droid;
 
-[assembly: Xamarin.Forms.Dependency(typeof(AndroidWritter))]
+[assembly: Xamarin.Forms.Dependency(typeof(AndroidFileHelper))]
 namespace Pdf.Droid
 {
-    public class AndroidWritter:IAndroidWritter 
+    public class AndroidFileHelper : IAndroidFileHelper
     {
         public void SaveFile(string filename, byte[] file)
         {
@@ -39,6 +39,13 @@ namespace Pdf.Droid
                 }
                 return ms.ToArray();
             }
+        }
+
+        public byte[] LoadLocalFile(string filePath)
+        {
+            string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
+            if (File.Exists(filePath)) return File.ReadAllBytes(filePath);
+            return null;
         }
     }
 

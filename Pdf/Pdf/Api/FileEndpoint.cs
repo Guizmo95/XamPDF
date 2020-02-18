@@ -15,37 +15,37 @@ namespace Pdf
     public class FileEndpoint
     {
         //TODO - Gerer fichiers de mm nom
-        public async Task UploadFiles(List<FileInfo> filesInfo)
+        public async Task<string> UploadFiles(List<FileInfo> filesInfo)
         {
-            var content = new MultipartFormDataContent();
+            IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
 
-            filesInfo.ForEach(delegate (FileInfo fileInfo)
-            {
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    using (FileStream fileStream = new FileStream(fileInfo.FullName, FileMode.Create))
-                    {
-                        fileStream.CopyTo(memoryStream);
-                        content.Add(new StreamContent(memoryStream));
-                    }
-                }
-            });
+            var content = new MultipartFormDataContent();
+            //FIX
+            //filesInfo.ForEach(delegate (FileInfo fileInfo)
+            //{
+            //    var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+
+            //    using (ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile))
+            //    {
+            //        byteArrayContent.
+            //        content.Add(byteArrayContent, "\"file\"", $"\"{fileInfo.FullName}\"");
+            //    }
+            //});
 
             var httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:52934/PostFiles";
+            var uploadServiceBaseAdress = "http://10.0.2.2:50547/PostFiles";
 
             using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
             {
                 if (response.IsSuccessStatusCode)
                 {
                     string fileName = await response.Content.ReadAsStringAsync();
-                    //return fileName;
+                    return fileName;
                 }
                 else
                 {
-                    Console.WriteLine(response.ReasonPhrase);
-                    //throw new Exception(response.ReasonPhrase);
+                    throw new Exception(response.ReasonPhrase);
                 }
             }
         }
@@ -55,7 +55,7 @@ namespace Pdf
         {
             HttpClient httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:51549/GetFile/";
+            var uploadServiceBaseAdress = "http://10.0.2.2:50547/GetFile/";
             byte[] result;
 
             using (HttpResponseMessage response = await httpClient.GetAsync(uploadServiceBaseAdress + fileName))
