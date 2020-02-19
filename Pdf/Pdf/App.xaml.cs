@@ -11,7 +11,7 @@ namespace Pdf
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainMenu());
+            MainPage = new NavigationPage(new ConcatePageThumbnails());
         }
 
         protected override void OnStart()

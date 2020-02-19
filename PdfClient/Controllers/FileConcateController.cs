@@ -32,7 +32,7 @@ namespace PdfClient.Controllers
                     {
                         var postedFile = httpRequest.Files[file];
 
-                        var fileName = postedFile.FileName.Split('\\').LastOrDefault().Split('/').LastOrDefault().Replace(" ", "");
+                        var fileName = postedFile.FileName;
                         string date = DateTime.Now.ToString();
                         date = ConvertFileTools.CleanDate(date);
                         fileName = date + fileName;

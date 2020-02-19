@@ -20,17 +20,15 @@ namespace Pdf
             IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
 
             var content = new MultipartFormDataContent();
-            //FIX
-            //filesInfo.ForEach(delegate (FileInfo fileInfo)
-            //{
-            //    var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
 
-            //    using (ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile))
-            //    {
-            //        byteArrayContent.
-            //        content.Add(byteArrayContent, "\"file\"", $"\"{fileInfo.FullName}\"");
-            //    }
-            //});
+            filesInfo.ForEach(delegate (FileInfo fileInfo)
+            {
+                var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+
+                ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
+
+                content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+            });
 
             var httpClient = new HttpClient();
 

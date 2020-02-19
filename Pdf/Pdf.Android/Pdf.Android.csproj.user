@@ -4,7 +4,7 @@
     <DefaultDevice>nexus_4_pie_9_0_-_api_28</DefaultDevice>
     <SelectedDevice>nexus_4_pie_9_0_-_api_28</SelectedDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
-    <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
   </PropertyGroup>
   <PropertyGroup>
     <ReferencePath>

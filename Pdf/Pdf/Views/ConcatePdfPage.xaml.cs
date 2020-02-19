@@ -43,17 +43,5 @@ namespace Pdf
             
         }
 
-
-
-        //var httpClient = new HttpClient();
-
-        //var uploadServiceBaseAdress = "http://10.0.2.2:51549/api/Files/Upload";
-
-        //var httpResponseMessage = await httpClient.GetAsync(uploadServiceBaseAdress);
-
-        //var status = await httpResponseMessage.Content.ReadAsStringAsync();
-
-        //Console.WriteLine(status);
-
     }
 }
