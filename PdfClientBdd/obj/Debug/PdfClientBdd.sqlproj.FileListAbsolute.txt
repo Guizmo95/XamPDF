@@ -4,3 +4,9 @@ C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\bin\Debug\PdfClientBdd.pdb
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.dll
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.pdb
 C:\Users\Rayhane\source\repos\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.sqlprojAssemblyReference.cache
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\bin\Debug\PdfClientBdd.dacpac
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\bin\Debug\PdfClientBdd.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\bin\Debug\PdfClientBdd.pdb
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.pdb
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.sqlprojAssemblyReference.cache

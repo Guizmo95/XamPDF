@@ -32,7 +32,7 @@ namespace PdfClient.Controllers
                     {
                         var postedFile = httpRequest.Files[file];
 
-                        var fileName = postedFile.FileName.Split('\\').LastOrDefault().Split('/').LastOrDefault().Replace(" ", "");
+                        var fileName = postedFile.FileName;
                         string date = DateTime.Now.ToString();
                         date = ConvertFileTools.CleanDate(date);
                         fileName = date + fileName;
@@ -42,10 +42,9 @@ namespace PdfClient.Controllers
                         postedFile.SaveAs(filePath);
                     }
 
-                    string fileName1 = filesNames[0];
-                    string fileName2 = filesNames[1];
+                    
 
-                    string outputName = ConvertFileTools.ConcateFiles(fileName1, fileName2);
+                    string outputName = ConvertFileTools.ConcateFiles(filesNames);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
                     response.Content = new StringContent(outputName);

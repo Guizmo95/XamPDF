@@ -10,7 +10,7 @@ namespace PdfClient.Helpers
 {
     public static class ConvertFileTools
     {
-        public static string ConcateFiles(string fileName1, string fileName2) {
+        public static string ConcateFiles(List<string> filesName) {
 
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -20,7 +20,14 @@ namespace PdfClient.Helpers
             startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads");
 
             string outputName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".pdf";
-            startInfo.Arguments = "/C pdftk " + fileName1 + " " + fileName2 + " " + "cat output " + outputName;
+
+            string argFilesName =  "";
+
+            filesName.ForEach(delegate (string fileName)
+            {
+                argFilesName += string.Format(fileName + " ");
+            });
+            startInfo.Arguments = "/C pdftk " + argFilesName + "cat output " + outputName;
 
             process.StartInfo = startInfo;
             process.Start();

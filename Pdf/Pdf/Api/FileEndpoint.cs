@@ -15,16 +15,24 @@ namespace Pdf
     public class FileEndpoint
     {
         //TODO - Gerer fichiers de mm nom
-        public async Task<string> UploadFile(FileData fileData1, FileData fileData2)
+        public async Task<string> UploadFiles(List<FileInfo> filesInfo)
         {
+            IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
+
             var content = new MultipartFormDataContent();
 
-            content.Add(new StreamContent(fileData1.GetStream()), "\"file\"", $"\"{fileData1.FilePath}\"");
-            content.Add(new StreamContent(fileData1.GetStream()), "\"file\"", $"\"{fileData2.FilePath}\"");
+            filesInfo.ForEach(delegate (FileInfo fileInfo)
+            {
+                var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+
+                ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
+
+                content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+            });
 
             var httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:51549/PostFiles";
+            var uploadServiceBaseAdress = "http://10.0.2.2:50547/PostFiles";
 
             using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
             {
@@ -45,7 +53,7 @@ namespace Pdf
         {
             HttpClient httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:51549/GetFile/";
+            var uploadServiceBaseAdress = "http://10.0.2.2:50547/GetFile/";
             byte[] result;
 
             using (HttpResponseMessage response = await httpClient.GetAsync(uploadServiceBaseAdress + fileName))

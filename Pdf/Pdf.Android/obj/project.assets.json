@@ -2450,11 +2450,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rayhane\\source\\repos\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
+      "projectUniqueName": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
       "projectName": "Pdf.Android",
-      "projectPath": "C:\\Users\\Rayhane\\source\\repos\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
+      "projectPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
       "packagesPath": "C:\\Users\\Rayhane\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rayhane\\source\\repos\\PdfClient\\Pdf\\Pdf.Android\\obj\\",
+      "outputPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2475,8 +2475,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Rayhane\\source\\repos\\PdfClient\\Pdf\\Pdf\\Pdf.csproj": {
-              "projectPath": "C:\\Users\\Rayhane\\source\\repos\\PdfClient\\Pdf\\Pdf\\Pdf.csproj"
+            "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj": {
+              "projectPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj"
             }
           }
         }

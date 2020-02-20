@@ -15,7 +15,7 @@ namespace Pdf.Views
     {
         private FileEndpoint fileEndpoint = new FileEndpoint();
 
-        IAndroidWritter androidWritter =  DependencyService.Get<IAndroidWritter>();
+        IAndroidFileHelper androidWritter =  DependencyService.Get<IAndroidFileHelper>();
 
         private string fileName;
 

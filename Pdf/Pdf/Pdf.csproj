@@ -18,22 +18,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\MenuPage.xaml">
       <DependentUpon>MenuPage.xaml.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ToolsList.xaml.cs">
+      <DependentUpon>ToolsList.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\ConcatePageThumbnails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ConcatePdfPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\GetDownload.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MenuPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\SampleFilePicker.xaml">
+    <EmbeddedResource Update="Views\ToolsList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
