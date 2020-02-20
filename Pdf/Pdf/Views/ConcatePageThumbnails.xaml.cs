@@ -26,6 +26,6 @@ namespace Pdf.Views
             CollectionViewThumbnails.ItemsSource = thumbnails;
         }
 
-
+        
     }
 }

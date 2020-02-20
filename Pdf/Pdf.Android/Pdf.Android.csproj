@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidFileHelper.cs" />
+    <Compile Include="GetThumbnails.cs" />
     <Compile Include="PdfPickerAndroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

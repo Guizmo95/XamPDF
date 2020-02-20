@@ -7,14 +7,14 @@
              x:Class="Pdf.Views.ConcatePageThumbnails">
     <ContentPage.Content>
         <StackLayout>
-            <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple">
+            <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple" ">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="2"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Image Source="{Binding ImageUrl}"  Aspect="AspectFit" HeightRequest="450" WidthRequest="550"/>
+                    <DataTemplate x:Name="data">
+                        <StackLayout Padding="15">
+                            <Image Source="{Binding ImageUrl}"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
