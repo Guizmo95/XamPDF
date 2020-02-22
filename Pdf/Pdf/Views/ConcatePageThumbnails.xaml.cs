@@ -1,6 +1,8 @@
-﻿using Pdf.Models;
+﻿using Pdf.Droid;
+using Pdf.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,19 +15,22 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConcatePageThumbnails : ContentPage
     {
-        public ConcatePageThumbnails()
+        private readonly FileInfo fileInfo;
+
+        //TODO -- Gerer le retour 
+        public ConcatePageThumbnails(FileInfo fileInfo)
         {
             InitializeComponent();
 
-            List<Thumbnail> thumbnails = new List<Thumbnail>();
-            thumbnails.Add(new Thumbnail { ImageUrl = "at.jpg" });
-            thumbnails.Add(new Thumbnail { ImageUrl = "at.jpg" });
-            thumbnails.Add(new Thumbnail { ImageUrl = "at.jpg" });
-            thumbnails.Add(new Thumbnail { ImageUrl = "at.jpg" });
+            this.fileInfo = fileInfo;
 
-            CollectionViewThumbnails.ItemsSource = thumbnails;
+            IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
+
+            string directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName);
+            
+            CollectionViewThumbnails.ItemsSource = Directory.GetFiles(directoryPath);
         }
 
-        
+
     }
 }

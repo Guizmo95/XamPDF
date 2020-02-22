@@ -14,47 +14,59 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Java.IO;
+using Pdf.Droid;
 using static Android.Graphics.Pdf.PdfRenderer;
 
+[assembly:Xamarin.Forms.Dependency(typeof(GetThumbnails))]
 namespace Pdf.Droid
 {
-    public class GetThumbnails
+    public class GetThumbnails : IGetThumbnails
     {
-        public void GetBitmaps(string filePath) {
+        public string GetBitmaps(string filePath) {
 
             PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
 
-            int pageCount = pdfRenderer.PageCount;
+            var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
+            string directoryPath = System.IO.Path.Combine(appDirectory, "thumbnailsTemp", System.IO.Path.GetFileNameWithoutExtension(fileName));
 
-            for (int i = 0; i<pageCount; i++)
+            if (!Directory.Exists(directoryPath))
             {
-                Page page = pdfRenderer.OpenPage(i);
-                Android.Graphics.Bitmap bmp = Android.Graphics.Bitmap.CreateBitmap(page.Width, page.Height, Android.Graphics.Bitmap.Config.Argb8888);
-                page.Render(bmp, null, null, PdfRenderMode.ForDisplay);
+                Directory.CreateDirectory(directoryPath);
 
-                string fileName = System.IO.Path.GetFileName(filePath);
+                int pageCount = pdfRenderer.PageCount;
 
-                var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
-                Directory.CreateDirectory(fileName);
-
-                try
+                for (int i = 0; i < pageCount; i++)
                 {
-                    using (FileStream output = new FileStream(appDirectory + "/" + fileName + "Thumbnails" + i, FileMode.OpenOrCreate))
+                    Page page = pdfRenderer.OpenPage(i);
+                    Android.Graphics.Bitmap bmp = Android.Graphics.Bitmap.CreateBitmap(page.Width, page.Height, Android.Graphics.Bitmap.Config.Argb8888);
+                    page.Render(bmp, null, null, PdfRenderMode.ForDisplay);
+
+                    try
                     {
-                        bmp.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 100, output);
+                        using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png"), FileMode.Create))
+                        {
+                            bmp.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 100, output);
+                        }
+
+                        page.Close();
                     }
-
-                    page.Close();
-                }
-                catch (Exception ex)
-                {
-                    //TODO -- GERER CETTE EXPEXPTION
-                    throw new Exception();
+                    catch (Exception ex)
+                    {
+                        //TODO -- GERER CETTE EXPEXPTION
+                        throw new Exception();
+                    }
                 }
 
-                
-                
+                return directoryPath;
             }
+
+            else
+            {
+                return directoryPath;
+            }
+            
+            
         }
 
         private ParcelFileDescriptor GetSeekableFileDescriptor(string filePath)
@@ -72,6 +84,11 @@ namespace Pdf.Droid
             }
 
             return fileDescriptor;
+        }
+
+        ParcelFileDescriptor IGetThumbnails.GetSeekableFileDescriptor(string filePath)
+        {
+            throw new NotImplementedException();
         }
     }
 }

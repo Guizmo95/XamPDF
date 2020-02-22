@@ -22,10 +22,15 @@ namespace Pdf.Droid
     {
         public List<FileInfo> GetPdfFilesInDocuments()
         {
-            string path = Android.OS.Environment.ExternalStorageDirectory.Path;
+            //TODO -- A REFAIRE TEST SUR REELE APPAREIL
+            string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
+            //TODO -- A TESTER
+            string path2 = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments).AbsolutePath;
 
             List<string> files = System.IO.Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
-                .Where(s => s.EndsWith(".pdf")).ToList();
+                .Where(s => s.EndsWith(".pdf"))
+                .ToList();
+            files.Sort();
 
             List<FileInfo> filesInfos = new List<FileInfo>();
 

@@ -1,4 +1,5 @@
 ﻿using Pdf.Models;
+using Pdf.Views;
 using Plugin.FilePicker.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -28,8 +29,9 @@ namespace Pdf
 
             Items = new List<ItemChoiceCustom>();
             Items.Add(new ItemChoiceCustom() { Id = 0, Libelle = "Concaténer de document PDF", Detail = "Permet de Fusionner de fichiers PDF en un fichier PDF" });
-            MyListView.ItemsSource = Items;
+            Items.Add(new ItemChoiceCustom() { Id = 1, Libelle = "Concaténer des pages du PDF", Detail = "Permet de concaténer des pages du PDF choisi" });
 
+            MyListView.ItemsSource = Items;
         }
 
         private void SelectedItem(object sender, SelectedItemChangedEventArgs e)
@@ -37,8 +39,6 @@ namespace Pdf
             var item = (ItemChoiceCustom)e.SelectedItem;
             this.selectedItemId = item.Id;
         }
-
-
 
         private async void StartProcessButton(object sender, EventArgs e)
         {
@@ -52,6 +52,9 @@ namespace Pdf
             {
                 case 0:
                     await Navigation.PushAsync(new ConcatePdfPage(fileInfo));
+                    break;
+                case 1:
+                    await Navigation.PushAsync(new ConcatePageThumbnails(fileInfo));
                     break;
                 default:
                     break;

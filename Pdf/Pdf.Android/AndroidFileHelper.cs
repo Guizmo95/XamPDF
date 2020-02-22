@@ -47,7 +47,11 @@ namespace Pdf.Droid
             if (File.Exists(filePath)) return File.ReadAllBytes(filePath);
             return null;
         }
-    }
 
+        public bool IsDirectoryEmpty(string directoryPath)
+        {
+            return !Directory.EnumerateFiles(directoryPath).Any();
+        }
+    }
     
 }

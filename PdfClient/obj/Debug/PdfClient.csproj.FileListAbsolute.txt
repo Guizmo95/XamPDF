@@ -192,7 +192,7 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.WebPages.resources.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.WebPages.Deployment.resources.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.WebPages.Razor.resources.dll
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.csprojAssemblyReference.cache
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.csproj.CopyComplete
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.pdb
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.csprojAssemblyReference.cache
