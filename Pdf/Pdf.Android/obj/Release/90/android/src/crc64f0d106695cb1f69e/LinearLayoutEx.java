@@ -41,6 +41,14 @@ public class LinearLayoutEx
 	}
 
 
+	public LinearLayoutEx (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3)
+	{
+		super (p0, p1, p2, p3);
+		if (getClass () == LinearLayoutEx.class)
+			mono.android.TypeManager.Activate ("Syncfusion.SfPdfViewer.XForms.Droid.LinearLayoutEx, Syncfusion.SfPdfViewer.XForms.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
+	}
+
+
 	public void onDetachedFromWindow ()
 	{
 		n_onDetachedFromWindow ();

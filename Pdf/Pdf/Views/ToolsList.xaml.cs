@@ -1,6 +1,5 @@
 ﻿using Pdf.Models;
 using Pdf.Views;
-using Plugin.FilePicker.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.IO;

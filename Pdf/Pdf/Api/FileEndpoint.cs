@@ -1,5 +1,4 @@
 ﻿using Pdf.Droid;
-using Plugin.FilePicker.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.IO;

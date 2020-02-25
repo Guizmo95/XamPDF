@@ -4,10 +4,9 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using Android.Graphics;
 using Android.Graphics.Pdf;
 using Android.OS;
 using Android.Runtime;
@@ -23,6 +22,30 @@ namespace Pdf.Droid
     public class GetThumbnails : IGetThumbnails
     {
         public string GetBitmaps(string filePath) {
+
+            //PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
+            //int count = pdfRenderer.PageCount;
+
+            //for (int i = 0; i < count; i++)
+            //{
+
+            //    var stream = new MemoryStream();
+
+            //    using (Stream pdfStream = new FileStream(filePath, FileMode.Open))
+            //    {
+            //        pdfStream.CopyTo(stream);
+            //    }
+
+
+
+
+            //    await Task.Run(() =>
+            //    {
+            //        bytes = p
+            //    });
+
+            //    Android.Graphics.Bitmap bmp = Android.Graphics.BitmapFactory.DecodeByteArray(bytes, 0, bytes.Length);
+            //}
 
             PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
 
@@ -44,7 +67,7 @@ namespace Pdf.Droid
 
                     try
                     {
-                        using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png"), FileMode.Create))
+                        using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + "png"), FileMode.Create))
                         {
                             bmp.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 100, output);
                         }
@@ -65,8 +88,8 @@ namespace Pdf.Droid
             {
                 return directoryPath;
             }
-            
-            
+
+
         }
 
         private ParcelFileDescriptor GetSeekableFileDescriptor(string filePath)

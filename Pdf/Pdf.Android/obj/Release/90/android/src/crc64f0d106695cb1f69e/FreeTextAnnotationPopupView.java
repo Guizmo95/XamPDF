@@ -38,6 +38,14 @@ public class FreeTextAnnotationPopupView
 			mono.android.TypeManager.Activate ("Syncfusion.SfPdfViewer.XForms.Droid.FreeTextAnnotationPopupView, Syncfusion.SfPdfViewer.XForms.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
 	}
 
+
+	public FreeTextAnnotationPopupView (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3)
+	{
+		super (p0, p1, p2, p3);
+		if (getClass () == FreeTextAnnotationPopupView.class)
+			mono.android.TypeManager.Activate ("Syncfusion.SfPdfViewer.XForms.Droid.FreeTextAnnotationPopupView, Syncfusion.SfPdfViewer.XForms.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
+	}
+
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{

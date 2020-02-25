@@ -150,7 +150,6 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Antlr3.Run
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Microsoft.Web.Infrastructure.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Newtonsoft.Json.dll
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Plugin.FilePicker.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Net.Http.Formatting.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Numerics.Vectors.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.Helpers.dll
@@ -164,8 +163,6 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.WebPages.Razor.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\WebGrease.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Xamarin.Essentials.dll
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Plugin.FilePicker.pdb
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Plugin.FilePicker.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Numerics.Vectors.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Newtonsoft.Json.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Net.Http.Formatting.xml
@@ -192,7 +189,7 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.WebPages.resources.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.WebPages.Deployment.resources.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.csprojAssemblyReference.cache
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.csproj.CopyComplete
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.pdb
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.csprojAssemblyReference.cache

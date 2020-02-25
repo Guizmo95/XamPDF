@@ -263,23 +263,13 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
-        "type": "package",
-        "compile": {
-          "lib/xamarinios10/Plugin.FilePicker.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/Plugin.FilePicker.dll": {}
-        }
-      },
       "Pdf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.47",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.908675",
-          "Xamarin.Plugin.FilePicker": "2.1.34"
+          "Xamarin.Forms": "4.3.0.908675"
         },
         "compile": {
           "bin/placeholder/Pdf.dll": {}
@@ -551,23 +541,13 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
-        "type": "package",
-        "compile": {
-          "lib/xamarinios10/Plugin.FilePicker.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/Plugin.FilePicker.dll": {}
-        }
-      },
       "Pdf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.47",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.908675",
-          "Xamarin.Plugin.FilePicker": "2.1.34"
+          "Xamarin.Forms": "4.3.0.908675"
         },
         "compile": {
           "bin/placeholder/Pdf.dll": {}
@@ -839,23 +819,13 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
-        "type": "package",
-        "compile": {
-          "lib/xamarinios10/Plugin.FilePicker.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/Plugin.FilePicker.dll": {}
-        }
-      },
       "Pdf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.47",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.908675",
-          "Xamarin.Plugin.FilePicker": "2.1.34"
+          "Xamarin.Forms": "4.3.0.908675"
         },
         "compile": {
           "bin/placeholder/Pdf.dll": {}
@@ -1127,23 +1097,13 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Plugin.FilePicker/2.1.34": {
-        "type": "package",
-        "compile": {
-          "lib/xamarinios10/Plugin.FilePicker.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/Plugin.FilePicker.dll": {}
-        }
-      },
       "Pdf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.47",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.908675",
-          "Xamarin.Plugin.FilePicker": "2.1.34"
+          "Xamarin.Forms": "4.3.0.908675"
         },
         "compile": {
           "bin/placeholder/Pdf.dll": {}
@@ -1717,45 +1677,6 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "Xamarin.Plugin.FilePicker/2.1.34": {
-      "sha512": "y1SL60eEECBYqRmJ0E94B9W6+Jl4sZeLlGn4WtTrcKRJv9CGHPH459L1EZXrTlhq5muCNIInfst6FdXLiRqb2A==",
-      "type": "package",
-      "path": "xamarin.plugin.filepicker/2.1.34",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/monoandroid80/Plugin.FilePicker.dll",
-        "lib/monoandroid80/Plugin.FilePicker.pdb",
-        "lib/monoandroid80/Plugin.FilePicker.xml",
-        "lib/monoandroid81/Plugin.FilePicker.dll",
-        "lib/monoandroid81/Plugin.FilePicker.pdb",
-        "lib/monoandroid81/Plugin.FilePicker.xml",
-        "lib/monoandroid90/Plugin.FilePicker.dll",
-        "lib/monoandroid90/Plugin.FilePicker.pdb",
-        "lib/monoandroid90/Plugin.FilePicker.xml",
-        "lib/net45/Plugin.FilePicker.dll",
-        "lib/net45/Plugin.FilePicker.pdb",
-        "lib/net45/Plugin.FilePicker.xml",
-        "lib/netstandard1.0/Plugin.FilePicker.dll",
-        "lib/netstandard1.0/Plugin.FilePicker.pdb",
-        "lib/netstandard1.0/Plugin.FilePicker.xml",
-        "lib/netstandard2.0/Plugin.FilePicker.dll",
-        "lib/netstandard2.0/Plugin.FilePicker.pdb",
-        "lib/netstandard2.0/Plugin.FilePicker.xml",
-        "lib/uap10.0.16299/Plugin.FilePicker.dll",
-        "lib/uap10.0.16299/Plugin.FilePicker.pdb",
-        "lib/uap10.0.16299/Plugin.FilePicker.pri",
-        "lib/uap10.0.16299/Plugin.FilePicker.xml",
-        "lib/xamarinios10/Plugin.FilePicker.dll",
-        "lib/xamarinios10/Plugin.FilePicker.pdb",
-        "lib/xamarinios10/Plugin.FilePicker.xml",
-        "lib/xamarinmac20/Plugin.FilePicker.dll",
-        "lib/xamarinmac20/Plugin.FilePicker.pdb",
-        "lib/xamarinmac20/Plugin.FilePicker.xml",
-        "xamarin.plugin.filepicker.2.1.34.nupkg.sha512",
-        "xamarin.plugin.filepicker.nuspec"
-      ]
-    },
     "Pdf/1.0.0": {
       "type": "project",
       "path": "../Pdf/Pdf.csproj",
@@ -1766,8 +1687,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "Pdf >= 1.0.0",
       "Xamarin.Essentials >= 1.3.1",
-      "Xamarin.Forms >= 4.3.0.908675",
-      "Xamarin.Plugin.FilePicker >= 2.1.34"
+      "Xamarin.Forms >= 4.3.0.908675"
     ]
   },
   "packageFolders": {
@@ -1819,10 +1739,6 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[4.3.0.908675, )"
-          },
-          "Xamarin.Plugin.FilePicker": {
-            "target": "Package",
-            "version": "[2.1.34, )"
           }
         }
       }

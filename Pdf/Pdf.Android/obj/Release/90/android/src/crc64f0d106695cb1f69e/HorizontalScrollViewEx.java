@@ -41,6 +41,14 @@ public class HorizontalScrollViewEx
 	}
 
 
+	public HorizontalScrollViewEx (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3)
+	{
+		super (p0, p1, p2, p3);
+		if (getClass () == HorizontalScrollViewEx.class)
+			mono.android.TypeManager.Activate ("Syncfusion.SfPdfViewer.XForms.Droid.HorizontalScrollViewEx, Syncfusion.SfPdfViewer.XForms.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
+	}
+
+
 	public void onScrollChanged (int p0, int p1, int p2, int p3)
 	{
 		n_onScrollChanged (p0, p1, p2, p3);

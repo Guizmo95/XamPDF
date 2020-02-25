@@ -5,7 +5,6 @@ public class MonoPackageManager_Resources {
 		"Pdf.Android.dll",
 		"FormsViewGroup.dll",
 		"Pdf.dll",
-		"Plugin.FilePicker.dll",
 		"Syncfusion.Compression.Portable.dll",
 		"Syncfusion.Core.XForms.Android.dll",
 		"Syncfusion.Core.XForms.dll",

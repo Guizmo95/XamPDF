@@ -1,6 +1,4 @@
 FormsViewGroup
-Pdf
-Plugin.FilePicker
 Syncfusion.Core.XForms.Android
 Syncfusion.SfBusyIndicator.Android
 Syncfusion.SfBusyIndicator.XForms.Android
@@ -48,3 +46,4 @@ Xamarin.Android.Support.ViewPager
 Xamarin.Essentials
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
+Pdf

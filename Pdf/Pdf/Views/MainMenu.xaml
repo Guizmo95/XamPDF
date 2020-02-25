@@ -1,34 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Pdf.MainMenu" >
 
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Pdf Edit"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
     
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="FilesList" SelectionMode="Single" ItemSelected="FilesList_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding Name}"/>
-                                    <Label Text="{Binding CreationTime.Date, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+    <ShellItem>
+        <ShellContent>
+        <ContentPage>
+            <ContentPage.Content>
+                <ListView x:Name="FilesList" SelectionMode="Single" ItemSelected="FilesList_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Name}"/>
+                                        <Label Text="{Binding CreationTime.Date, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ContentPage.Content>
+        </ContentPage>
+        </ShellContent>
+    </ShellItem>
 
-</ContentPage>
+    <FlyoutItem Title="Menu" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="My documents"/>
+        <ShellContent Title="Help"/>
+        <ShellContent Title="Feedback"/>
+    </FlyoutItem>
+    
+    <ShellContent Title="About"/>
+        
+    </FlyoutItem>
+    
+    
+</Shell>

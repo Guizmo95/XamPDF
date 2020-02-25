@@ -1,9 +1,6 @@
 Pdf.Droid.MainActivity, Pdf.Android;crc64ce4755fc17c5ee4b.MainActivity
 Pdf.Droid.MainActivity;crc64ce4755fc17c5ee4b.MainActivity
 pdf.droid.MainActivity;crc64ce4755fc17c5ee4b.MainActivity
-Plugin.FilePicker.FilePickerActivity, Plugin.FilePicker;crc64424a8adc5a1fbe28.FilePickerActivity
-Plugin.FilePicker.FilePickerActivity;crc64424a8adc5a1fbe28.FilePickerActivity
-plugin.filepicker.FilePickerActivity;crc64424a8adc5a1fbe28.FilePickerActivity
 Syncfusion.XForms.Android.Graphics.SfGradientViewRenderer, Syncfusion.Core.XForms.Android;crc640879981a986d658b.SfGradientViewRenderer
 Syncfusion.XForms.Android.Graphics.SfGradientViewRenderer;crc640879981a986d658b.SfGradientViewRenderer
 syncfusion.xforms.android.graphics.SfGradientViewRenderer;crc640879981a986d658b.SfGradientViewRenderer

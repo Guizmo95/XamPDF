@@ -9,4 +9,3 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\bin\Debug\P
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\bin\Debug\PdfClientBdd.pdb
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.pdb
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Debug\PdfClientBdd.sqlprojAssemblyReference.cache

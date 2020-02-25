@@ -40,6 +40,14 @@ public class GearBoxRight
 	}
 
 
+	public GearBoxRight (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3)
+	{
+		super (p0, p1, p2, p3);
+		if (getClass () == GearBoxRight.class)
+			mono.android.TypeManager.Activate ("Com.Syncfusion.Sfbusyindicator.GearBoxRight, Syncfusion.SfBusyIndicator.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
+	}
+
+
 	public void onDraw (android.graphics.Canvas p0)
 	{
 		n_onDraw (p0);

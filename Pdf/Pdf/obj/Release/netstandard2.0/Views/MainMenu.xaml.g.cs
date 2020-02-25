@@ -14,7 +14,7 @@ namespace Pdf {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\MainMenu.xaml")]
-    public partial class MainMenu : global::Xamarin.Forms.ContentPage {
+    public partial class MainMenu : global::Xamarin.Forms.Shell {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ListView FilesList;
