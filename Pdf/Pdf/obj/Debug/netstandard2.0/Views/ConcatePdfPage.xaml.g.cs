@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Views.ConcatePdfPage.xaml", "Views/ConcatePdfPage.xaml", typeof(global::Pdf.ConcatePdfPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Views.ConcatePdfPage.xaml", "Views/ConcatePdfPage.xaml", typeof(global::Pdf.Views.ConcatePdfPage))]
 
-namespace Pdf {
+namespace Pdf.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ConcatePdfPage.xaml")]

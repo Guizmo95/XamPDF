@@ -1,4 +1,4 @@
-﻿using Pdf.Droid;
+﻿using Pdf.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;

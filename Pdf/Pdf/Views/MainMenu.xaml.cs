@@ -1,4 +1,4 @@
-﻿using Pdf.Droid;
+﻿using Pdf.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Pdf
+namespace Pdf.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(true)]
-    public partial class MainMenu : Shell
+    public partial class MainMenu : ContentPage
     {
         public MainMenu()
         {

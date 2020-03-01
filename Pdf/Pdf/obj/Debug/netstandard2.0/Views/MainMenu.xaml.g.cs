@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Views.MainMenu.xaml", "Views/MainMenu.xaml", typeof(global::Pdf.MainMenu))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Views.MainMenu.xaml", "Views/MainMenu.xaml", typeof(global::Pdf.Views.MainMenu))]
 
-namespace Pdf {
+namespace Pdf.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\MainMenu.xaml")]
-    public partial class MainMenu : global::Xamarin.Forms.Shell {
+    public partial class MainMenu : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ListView FilesList;

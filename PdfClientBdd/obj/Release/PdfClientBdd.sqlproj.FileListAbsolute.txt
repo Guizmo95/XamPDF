@@ -1,9 +1,5 @@
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\bin\Release\PdfClientBdd.dacpac
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\bin\Release\PdfClientBdd.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\bin\Release\PdfClientBdd.pdb
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Release\Model.xml
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Release\refactor.xml
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Release\postdeploy.sql
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Release\predeploy.sql
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Release\PdfClientBdd.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClientBdd\obj\Release\PdfClientBdd.pdb

@@ -1,4 +1,4 @@
-﻿using Pdf.Droid;
+﻿using Pdf.Interfaces;
 using Pdf.Views;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Pdf
+namespace Pdf.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConcatePdfPage : ContentPage
