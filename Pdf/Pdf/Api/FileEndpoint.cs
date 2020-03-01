@@ -1,4 +1,5 @@
-﻿using Pdf.Interfaces;
+﻿using Pdf.Enumerations;
+using Pdf.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +15,7 @@ namespace Pdf
     public class FileEndpoint
     {
         //TODO - Gerer fichiers de mm nom
-        public async Task<string> UploadFiles(List<FileInfo> filesInfo)
+        public async Task<string> UploadFiles(List<FileInfo> filesInfo, ProcessNames processNames)
         {
             IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
 
@@ -31,7 +32,7 @@ namespace Pdf
 
             var httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:50547/PostFiles";
+            var uploadServiceBaseAdress = "http://10.0.2.2:63805/PostFiles/" + processNames;
 
             using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
             {
@@ -47,12 +48,47 @@ namespace Pdf
             }
         }
 
+        //TODO -- METHOD FOR GET FILSTREAM 
+
+        //public async Task<string> UploadFiles(List<>, ProcessNames processNames)
+        //{
+        //    IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
+
+        //    var content = new MultipartFormDataContent();
+
+        //    filesInfo.ForEach(delegate (FileInfo fileInfo)
+        //    {
+        //        var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+
+        //        ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
+
+        //        content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+        //    });
+
+        //    var httpClient = new HttpClient();
+
+        //    var uploadServiceBaseAdress = "http://10.0.2.2:63805/PostFiles/" + processNames;
+
+        //    using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
+        //    {
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            string fileName = await response.Content.ReadAsStringAsync();
+        //            return fileName;
+        //        }
+        //        else
+        //        {
+        //            throw new Exception(response.ReasonPhrase);
+        //        }
+        //    }
+        //}
+
         //TODO -- CREATE WEB API CLIENT
         public async Task<byte[]> GetFileConcated(string fileName)
         {
             HttpClient httpClient = new HttpClient();
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:50547/GetFile/";
+            var uploadServiceBaseAdress = "http://10.0.2.2:63805/GetFile/";
             byte[] result;
 
             using (HttpResponseMessage response = await httpClient.GetAsync(uploadServiceBaseAdress + fileName))

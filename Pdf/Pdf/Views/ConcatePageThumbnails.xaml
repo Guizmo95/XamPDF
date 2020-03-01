@@ -9,6 +9,8 @@
     <NavigationPage.TitleView>
         <Label Text="Choose the pages to concatenate"/>
     </NavigationPage.TitleView>
+    
+
 
     <ContentPage.Resources>
         <Style TargetType="Frame">
@@ -28,6 +30,8 @@
         </Style>
     </ContentPage.Resources>
 
+
+
     <ContentPage.Content>
         <StackLayout BackgroundColor="#b4b4b4">
             <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple" Margin="13">
@@ -44,7 +48,9 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <StackLayout>
+                <Button Text="Go" Clicked="StartProcessConcatePages"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
-    
 </ContentPage>

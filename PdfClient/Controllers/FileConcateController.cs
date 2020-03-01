@@ -1,4 +1,5 @@
-﻿using PdfClient.Helpers;
+﻿using Pdf.Enumerations;
+using PdfClient.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,9 +17,8 @@ namespace PdfClient.Controllers
     public class FileConcateController : ApiController
     {
 
-        [HttpPost]
         [Route("PostFiles")]
-        public  HttpResponseMessage Post()
+        public  HttpResponseMessage Post(ProcessNames processNames)
         {
             var response = new HttpResponseMessage(HttpStatusCode.BadRequest);
             try
@@ -42,9 +42,9 @@ namespace PdfClient.Controllers
                         postedFile.SaveAs(filePath);
                     }
 
-                    
+                    //TODO -- Switch for Enum
 
-                    string outputName = ConvertFileTools.ConcateFiles(filesNames);
+                    //string outputName = ConvertFileTools.ConcateFiles(filesNames);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
                     response.Content = new StringContent(outputName);
