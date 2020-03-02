@@ -18,14 +18,14 @@ namespace PdfClient.Controllers
     {
 
         [Route("PostFiles")]
-        public  HttpResponseMessage Post(ProcessNames processNames)
+        public HttpResponseMessage Post()
         {
             var response = new HttpResponseMessage(HttpStatusCode.BadRequest);
             try
             {
                 var httpRequest = HttpContext.Current.Request;
                 List<string> filesNames = new List<string>();
-                
+
                 if (httpRequest.Files.Count > 0)
                 {
                     foreach (string file in httpRequest.Files)
@@ -34,7 +34,7 @@ namespace PdfClient.Controllers
 
                         var fileName = postedFile.FileName;
                         string date = DateTime.Now.ToString();
-                        date = ConvertFileTools.CleanDate(date);
+                        date = ConcateTools.CleanDate(date);
                         fileName = date + fileName;
                         filesNames.Add(fileName);
 
@@ -42,9 +42,43 @@ namespace PdfClient.Controllers
                         postedFile.SaveAs(filePath);
                     }
 
-                    //TODO -- Switch for Enum
+                    string outputName = ConcateTools.ConcateFiles(filesNames);
 
-                    //string outputName = ConvertFileTools.ConcateFiles(filesNames);
+                    response = new HttpResponseMessage(HttpStatusCode.OK);
+                    response.Content = new StringContent(outputName);
+                    response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return response;
+        }
+
+        [Route("PostFiles")]
+        public HttpResponseMessage Post([FromUri]List<int> pages)
+        {
+            var response = new HttpResponseMessage(HttpStatusCode.BadRequest);
+            try
+            {
+                var httpRequest = HttpContext.Current.Request;
+
+                if (httpRequest.Files.Count != 0)
+                {
+                    var postedFile = httpRequest.Files[0];
+
+                    var fileName = postedFile.FileName;
+                    string date = DateTime.Now.ToString();
+                    date = ConcateTools.CleanDate(date);
+                    fileName = date + fileName;
+
+                    var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName);
+                    postedFile.SaveAs(filePath);
+
+                    string outputName = ConcateTools.ConcatePages(fileName, pages);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
                     response.Content = new StringContent(outputName);
@@ -61,8 +95,6 @@ namespace PdfClient.Controllers
         }
 
 
-
-        [HttpGet]
         [Route("GetFile/{fileName}")]
         public HttpResponseMessage GetFileConverted(string fileName)
         {

@@ -29,34 +29,36 @@ namespace Pdf.Views
 
             IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
 
-            //TODO -- CREATE BITMAP MODEL
-
             string directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName);
-            
-            CollectionViewThumbnails.ItemsSource = Directory.GetFiles(directoryPath);
+
+            List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
+
+            int i = 1;
+            Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement) {
+                thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
+                i++;
+            });
+
+            CollectionViewThumbnails.ItemsSource = thumbnailsModels;
         }
 
-        private void StartProcessConcatePages(object sender, EventArgs e)
+        private async void StartProcessConcatePages(object sender, EventArgs e)
         {
-            List<string> items = CollectionViewThumbnails.SelectedItems.Cast<string>().ToList();
+            List<ThumbnailsModel> items = CollectionViewThumbnails.SelectedItems.Cast<ThumbnailsModel>().ToList();
 
             if (items == null)
             {
                 return;
             }
 
-            List<FileInfo> fileInfos = new List<FileInfo>();
-
-            //TODO -- TRANSFORM PDF PAGES TO STREAM
-
-            items.ForEach(delegate (string item) {
-                fileInfos.Add(new FileInfo(item));
+            List<int> pagesNumbers = new List<int>();
+            
+            items.ForEach(delegate (ThumbnailsModel thumbnailsModel)
+            {
+                pagesNumbers.Add(thumbnailsModel.PageNumber);
             });
 
-            PdfRenderer.Page page = 
-
-            //fileEndpoint.UploadFiles(fileInfos, ProcessNames.ConcatePages);
-             
+            await fileEndpoint.UploadFiles(fileInfo, pagesNumbers);
         }
     }
 }

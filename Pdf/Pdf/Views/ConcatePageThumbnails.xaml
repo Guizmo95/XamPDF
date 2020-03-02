@@ -42,7 +42,7 @@
                     <DataTemplate x:Name="data">
                         <Frame CornerRadius="3">
                             <StackLayout>
-                                <Image Source="{Binding .}" Aspect="AspectFill"/>
+                                <Image Source="{Binding EmplacementThumbnails}" Aspect="AspectFill"/>
                             </StackLayout>
                         </Frame>
                     </DataTemplate>

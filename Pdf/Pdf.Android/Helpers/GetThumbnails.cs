@@ -59,63 +59,10 @@ namespace Pdf.Droid.Helpers
                         throw new Exception();
                     }
                 }
-
                 
             }
 
             return directoryPath;
-
-            //    await Task.Run(() =>
-            //    {
-            //        bytes = p
-            //    });
-
-            //    Android.Graphics.Bitmap bmp = Android.Graphics.BitmapFactory.DecodeByteArray(bytes, 0, bytes.Length);
-            //}
-
-            //PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
-
-            //var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-            //string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
-            //string directoryPath = System.IO.Path.Combine(appDirectory, "thumbnailsTemp", System.IO.Path.GetFileNameWithoutExtension(fileName));
-
-            //if (!Directory.Exists(directoryPath))
-            //{
-            //    Directory.CreateDirectory(directoryPath);
-
-            //    int pageCount = pdfRenderer.PageCount;
-
-            //    for (int i = 0; i < pageCount; i++)
-            //    {
-            //        Page page = pdfRenderer.OpenPage(i);
-            //        Android.Graphics.Bitmap bmp = Android.Graphics.Bitmap.CreateBitmap(page.Width, page.Height, Android.Graphics.Bitmap.Config.Argb8888);
-            //        page.Render(bmp, null, null, PdfRenderMode.ForDisplay);
-
-            //        try
-            //        {
-            //            using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + "png"), FileMode.Create))
-            //            {
-            //                bmp.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 100, output);
-            //            }
-
-            //            page.Close();
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            //TODO -- GERER CETTE EXPEXPTION
-            //            throw new Exception();
-            //        }
-            //    }
-
-            //    return directoryPath;
-            //}
-
-            //else
-            //{
-            //    return directoryPath;
-            //}
-
-
         }
 
         private ParcelFileDescriptor GetSeekableFileDescriptor(string filePath)

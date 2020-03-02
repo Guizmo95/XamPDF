@@ -36,9 +36,7 @@ namespace Pdf.Views
             var filesInfo = FilesList.SelectedItems.Cast<FileInfo>().ToList();
             filesInfo.Insert(0, fileInfo1);
 
-            await fileEndpoint.UploadFiles(filesInfo, Enumerations.ProcessNames.ConcateDocuments);
-           
-            
+            await fileEndpoint.UploadFiles(filesInfo);
         }
 
     }
