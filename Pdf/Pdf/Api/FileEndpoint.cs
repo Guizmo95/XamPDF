@@ -95,7 +95,7 @@ namespace Pdf
         }
 
 
-        public async Task<List<string>> UploadFilesForDeoncate(FileInfo fileInfo, List<int> pagesNumbers)
+        public async Task<List<string>> UploadFilesForDeconcate(FileInfo fileInfo, List<int> pagesNumbers)
         {
             IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
 
@@ -161,8 +161,6 @@ namespace Pdf
                 }
             }
         }
-
-        //TODO CODE ENDPOIT FOR GET LIST OF FILES
     }
 }
 

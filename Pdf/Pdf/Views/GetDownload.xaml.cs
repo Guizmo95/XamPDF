@@ -17,8 +17,14 @@ namespace Pdf.Views
 
         IAndroidFileHelper androidWritter =  DependencyService.Get<IAndroidFileHelper>();
 
-        private string fileName;
-        private List<string> filesNames;
+        private readonly string fileName;
+        private readonly List<string> filesNames;
+
+        public GetDownload(string fileName)
+        {
+            InitializeComponent();
+            this.fileName = fileName;
+        }
 
         public GetDownload(List<string> filesNames)
         {
@@ -30,14 +36,18 @@ namespace Pdf.Views
         {
             try {
                 //TODO DOWNLOAD FOR LIST
-                if(filesNames is null)
+                if(filesNames.Count == 0)
                 {
                     var file = await fileEndpoint.GetFileConcated(fileName);
                     androidWritter.SaveFile(fileName, file);
                 }
                 else
                 {
-                    //CODE THIS FOR LIST DOWNLOAD
+                    filesNames.ForEach(async delegate (string fileName)
+                    {
+                        var file = await fileEndpoint.GetFileConcated(fileName);
+                        androidWritter.SaveFile(fileName, file);
+                    });
                 }
                 
             }

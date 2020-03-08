@@ -76,7 +76,7 @@ namespace PdfClient.Helpers
             {
                 string outputName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".pdf";
 
-                startInfo.Arguments = "/C pdftk " + fileName + " cat " + pageNumber + "output " + outputName;
+                startInfo.Arguments = "/C pdftk " + fileName + " cat " + pageNumber + " output " + outputName;
                 process.StartInfo = startInfo;
                 process.Start();
 

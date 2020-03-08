@@ -56,7 +56,7 @@ namespace Pdf.Views
                 pagesNumbers.Add(thumbnailsModel.PageNumber);
             });
 
-            List<string> filesNamesGenerated = await fileEndpoint.UploadFilesForDeoncate(fileInfo, pagesNumbers);
+            List<string> filesNamesGenerated = await fileEndpoint.UploadFilesForDeconcate(fileInfo, pagesNumbers);
 
             await Navigation.PushAsync(new GetDownload(filesNamesGenerated));
         }

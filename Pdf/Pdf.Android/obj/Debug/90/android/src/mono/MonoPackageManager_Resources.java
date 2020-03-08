@@ -4,9 +4,12 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Pdf.Android.dll" comes first in this list. */
 		"Pdf.Android.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.Bson.dll",
+		"Newtonsoft.Json.dll",
 		"Pdf.dll",
 		"SkiaSharp.dll",
 		"System.Configuration.ConfigurationManager.dll",
+		"System.Net.Http.Formatting.dll",
 		"System.Security.AccessControl.dll",
 		"System.Security.Permissions.dll",
 		"System.Security.Principal.Windows.dll",
