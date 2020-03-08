@@ -1,0 +1,8 @@
+[
+uuid(fcc6c737-6971-44e5-a5d4-f651419338d1),
+version(1.0)
+]
+interface INTERFACENAME
+{
+
+}

@@ -35,7 +35,8 @@ namespace Pdf.Views
 
             var fileInfo = (FileInfo)e.SelectedItem;
 
-
+            //WAIT UNTIL ITS FIX
+            //Application.Current.MainPage = new NavigationPage(new ToolsList(fileInfo));
             await Navigation.PushAsync(new ToolsList(fileInfo));
 
         }

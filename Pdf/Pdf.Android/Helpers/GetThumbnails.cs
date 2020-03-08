@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using Android.Graphics.Pdf;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -16,14 +15,58 @@ using Java.IO;
 using Pdf.Droid;
 using Pdf.Droid.Helpers;
 using Pdf.Interfaces;
-using static Android.Graphics.Pdf.PdfRenderer;
+using Xamarin.Forms;
+using Android.Graphics;
+using Android.Content.Res;
+using System.Reflection;
+using System.Drawing.Drawing2D;
+using Android.Graphics.Pdf;
+using Microsoft.Win32;
 
-[assembly:Xamarin.Forms.Dependency(typeof(GetThumbnails))]
+[assembly: Xamarin.Forms.Dependency(typeof(GetThumbnails))]
 namespace Pdf.Droid.Helpers
 {
     public class GetThumbnails : IGetThumbnails
     {
-        public string GetBitmaps(string filePath) {
+
+        //public async Task<string> GetBitmaps(string filePath)
+        //{
+
+        //    //TODO -- WORK ON THIS
+        //    PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
+
+        //    var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+        //    string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
+        //    string directoryPath = System.IO.Path.Combine(appDirectory, "thumbnailsTemp", System.IO.Path.GetFileNameWithoutExtension(fileName));
+
+        //    var stream = new MemoryStream();
+
+        //    using (Stream resourceStream = new FileStream(filePath, FileMode.Open))
+        //    {
+        //        resourceStream.CopyTo(stream);
+        //    }
+
+        //    for (int i = 0; i < pdfRenderer.PageCount; i++)
+        //    {
+        //        TallComponents.PDF.Rasterizer.Page page = new TallComponents.PDF.Rasterizer.Page(stream, i);
+
+        //        byte[] bytes = null;
+        //        await Task.Run(() =>
+        //        {
+        //            bytes = page.AsPNG(72);
+        //        });
+
+        //        using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png"), FileMode.Create, FileAccess.Write))
+        //        {
+        //            output.Write(bytes, 0, bytes.Length);
+        //        }
+        //    }
+
+        //    return directoryPath;
+
+        //}
+        public string GetBitmaps(string filePath)
+        {
 
 
             PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
@@ -40,7 +83,7 @@ namespace Pdf.Droid.Helpers
 
                 for (int i = 0; i < pageCount; i++)
                 {
-                    Page page = pdfRenderer.OpenPage(i);
+                    PdfRenderer.Page page = pdfRenderer.OpenPage(i);
                     Android.Graphics.Bitmap bmp = Android.Graphics.Bitmap.CreateBitmap(page.Width, page.Height, Android.Graphics.Bitmap.Config.Argb8888);
                     page.Render(bmp, null, null, PdfRenderMode.ForDisplay);
 
@@ -59,13 +102,13 @@ namespace Pdf.Droid.Helpers
                         throw new Exception();
                     }
                 }
-                
+
             }
 
             return directoryPath;
         }
 
-        private ParcelFileDescriptor GetSeekableFileDescriptor(string filePath)
+        public ParcelFileDescriptor GetSeekableFileDescriptor(string filePath)
         {
             ParcelFileDescriptor fileDescriptor = null;
 
@@ -80,11 +123,6 @@ namespace Pdf.Droid.Helpers
             }
 
             return fileDescriptor;
-        }
-
-        ParcelFileDescriptor IGetThumbnails.GetSeekableFileDescriptor(string filePath)
-        {
-            throw new NotImplementedException();
         }
     }
 }

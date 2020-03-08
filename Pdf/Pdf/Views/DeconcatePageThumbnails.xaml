@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pdf.Views.DeconcatePageThumbnails">
+
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="#e6e6e6" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <!--<NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Choose the pages to deconcatenate or select all"/>
+            <Button Text="Select all" Clicked="SelectAllItems"/>
+        </StackLayout>
+    </NavigationPage.TitleView>-->
+
+    <StackLayout BackgroundColor="#b4b4b4">
+        <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple" Margin="13" ItemSizingStrategy="MeasureAllItems">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="13" HorizontalItemSpacing="13"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.Header>
+                <Button Text="select all" Clicked="SelectAllItems"/>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:Name="data">
+                    <Frame >
+                        <StackLayout>
+                            <Image Source="{Binding EmplacementThumbnails}" Aspect="AspectFill"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <StackLayout>
+            <Button Text="Go" Clicked="StartProcessDeconcatePages"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

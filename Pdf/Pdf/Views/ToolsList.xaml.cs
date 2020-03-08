@@ -29,6 +29,7 @@ namespace Pdf
             Items = new List<ItemChoiceCustom>();
             Items.Add(new ItemChoiceCustom() { Id = 0, Libelle = "Concaténer de document PDF", Detail = "Permet de Fusionner de fichiers PDF en un fichier PDF" });
             Items.Add(new ItemChoiceCustom() { Id = 1, Libelle = "Concaténer des pages du PDF", Detail = "Permet de concaténer des pages du PDF choisi" });
+            Items.Add(new ItemChoiceCustom() { Id = 2, Libelle = "Déconcatener des pages du PDF", Detail = "Permet de déconcatener toutes les pages du PDF choisi" });
 
             MyListView.ItemsSource = Items;
         }
@@ -50,10 +51,13 @@ namespace Pdf
             switch (this.selectedItemId)
             {
                 case 0:
-                    await Navigation.PushAsync(new ConcatePdfPage(fileInfo));
+                    await Navigation.PushAsync(new ConcatePdfDocs(fileInfo));
                     break;
                 case 1:
                     await Navigation.PushAsync(new ConcatePageThumbnails(fileInfo));
+                    break;
+                case 2:
+                    await Navigation.PushAsync(new DeconcatePageThumbnails(fileInfo));
                     break;
                 default:
                     break;

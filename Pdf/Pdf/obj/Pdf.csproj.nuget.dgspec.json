@@ -42,19 +42,19 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
-            "Syncfusion.Xamarin.SfPdfViewer": {
+            "TallComponents.PDFRasterizer4": {
               "target": "Package",
-              "version": "[17.4.0.47, )"
-            },
-            "Xamarin.Essentials": {
-              "target": "Package",
-              "version": "[1.5.0, )"
+              "version": "[4.0.14, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

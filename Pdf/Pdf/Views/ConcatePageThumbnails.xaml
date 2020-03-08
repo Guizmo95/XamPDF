@@ -4,13 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.ConcatePageThumbnails">
+             x:Class="Pdf.Views.ConcatePageThumbnails" Title="test">
 
-    <NavigationPage.TitleView>
+    <!--<NavigationPage.TitleView>
         <Label Text="Choose the pages to concatenate"/>
-    </NavigationPage.TitleView>
-    
+    </NavigationPage.TitleView>-->
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Choice"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
         <Style TargetType="Frame">
@@ -30,8 +32,6 @@
         </Style>
     </ContentPage.Resources>
 
-
-
     <ContentPage.Content>
         <StackLayout BackgroundColor="#b4b4b4">
             <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple" Margin="13">
@@ -40,7 +40,7 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:Name="data">
-                        <Frame CornerRadius="3">
+                        <Frame >
                             <StackLayout>
                                 <Image Source="{Binding EmplacementThumbnails}" Aspect="AspectFill"/>
                             </StackLayout>

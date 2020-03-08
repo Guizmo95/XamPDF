@@ -17,7 +17,7 @@ namespace PdfClient.Controllers
     public class FileConcateController : ApiController
     {
 
-        [Route("PostFiles")]
+        [Route("PostFilesForConcateDocs")]
         public HttpResponseMessage Post()
         {
             var response = new HttpResponseMessage(HttpStatusCode.BadRequest);
@@ -34,7 +34,7 @@ namespace PdfClient.Controllers
 
                         var fileName = postedFile.FileName;
                         string date = DateTime.Now.ToString();
-                        date = ConcateTools.CleanDate(date);
+                        date = PdftkTools.CleanDate(date);
                         fileName = date + fileName;
                         filesNames.Add(fileName);
 
@@ -42,7 +42,7 @@ namespace PdfClient.Controllers
                         postedFile.SaveAs(filePath);
                     }
 
-                    string outputName = ConcateTools.ConcateFiles(filesNames);
+                    string outputName = PdftkTools.ConcateFiles(filesNames);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
                     response.Content = new StringContent(outputName);
@@ -58,7 +58,7 @@ namespace PdfClient.Controllers
             return response;
         }
 
-        [Route("PostFiles")]
+        [Route("PostFilesForConcatePages")]
         public HttpResponseMessage Post([FromUri]List<int> pages)
         {
             var response = new HttpResponseMessage(HttpStatusCode.BadRequest);
@@ -72,13 +72,13 @@ namespace PdfClient.Controllers
 
                     var fileName = postedFile.FileName;
                     string date = DateTime.Now.ToString();
-                    date = ConcateTools.CleanDate(date);
+                    date = PdftkTools.CleanDate(date);
                     fileName = date + fileName;
 
                     var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName);
                     postedFile.SaveAs(filePath);
 
-                    string outputName = ConcateTools.ConcatePages(fileName, pages);
+                    string outputName = PdftkTools.ConcatePages(fileName, pages);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
                     response.Content = new StringContent(outputName);

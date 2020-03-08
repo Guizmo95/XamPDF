@@ -34,7 +34,8 @@ namespace Pdf.Views
             List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
 
             int i = 1;
-            Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement) {
+            Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
+            {
                 thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
                 i++;
             });
@@ -58,7 +59,9 @@ namespace Pdf.Views
                 pagesNumbers.Add(thumbnailsModel.PageNumber);
             });
 
-            await fileEndpoint.UploadFiles(fileInfo, pagesNumbers);
+            string fileNameGenerated = await fileEndpoint.UploadFilesForConcate(fileInfo, pagesNumbers);
+
+            await Navigation.PushAsync(new GetDownload(fileNameGenerated));
         }
     }
 }

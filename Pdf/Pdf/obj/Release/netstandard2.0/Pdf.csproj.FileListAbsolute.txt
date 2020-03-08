@@ -1,7 +1,6 @@
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Pdf.csprojAssemblyReference.cache
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\App.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\ConcatePageThumbnails.xaml.g.cs
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\ConcatePdfPage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\GetDownload.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\MainMenu.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\ShellMenu.xaml.g.cs
@@ -22,3 +21,4 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\nets
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Pdf.csproj.CopyComplete
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\HeaderShellPage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\Page1.xaml.g.cs
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\ConcatePdfDocs.xaml.g.cs

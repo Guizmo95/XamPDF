@@ -4,7 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Pdf.ToolsList">
+             x:Class="Pdf.ToolsList" Title="test">
+
+    <!--<NavigationPage.TitleView>
+        <Label Text="tedtsdfg"/>
+    </NavigationPage.TitleView>-->
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Choice"/>
+    </ContentPage.ToolbarItems>-->
+
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="MyListView"
