@@ -5,12 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Pdf.Views.ConcatePdfDocs">
-    <NavigationPage.TitleView>
+    <!--<NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Label Text="Pdf Edit"/>
         </StackLayout>
-
-    </NavigationPage.TitleView>
+    </NavigationPage.TitleView>-->
+    
     <StackLayout>
         <CollectionView x:Name="FilesList" SelectionMode="Multiple">
             <CollectionView.ItemTemplate>

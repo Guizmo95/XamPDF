@@ -50,7 +50,7 @@
             },
             "TallComponents.PDFRasterizer4": {
               "target": "Package",
-              "version": "[4.0.14, )"
+              "version": "[4.0.0.17, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
@@ -110,7 +110,7 @@
             },
             "TallComponents.PDFRasterizer4": {
               "target": "Package",
-              "version": "[4.0.14, )"
+              "version": "[4.0.0.17, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

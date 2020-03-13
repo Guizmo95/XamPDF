@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
-    <PackageReference Include="TallComponents.PDFRasterizer4" Version="4.0.14" />
+    <PackageReference Include="TallComponents.PDFRasterizer4" Version="4.0.0.17" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
   </ItemGroup>
 
@@ -41,6 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\AddWatermark.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ConcatePageThumbnails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -32,8 +32,8 @@ namespace Pdf.Droid.Helpers
         //public async Task<string> GetBitmaps(string filePath)
         //{
 
-        //    //TODO -- WORK ON THIS
-        //    PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
+        //    //TODO-- WORK ON THIS
+        //   PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
 
         //    var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
         //    string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
@@ -48,7 +48,7 @@ namespace Pdf.Droid.Helpers
 
         //    for (int i = 0; i < pdfRenderer.PageCount; i++)
         //    {
-        //        TallComponents.PDF.Rasterizer.Page page = new TallComponents.PDF.Rasterizer.Page(stream, i);
+        //        TallComponents.PDF.Rasterizer.Page page = new TallComponents.PDF.Rasterizer.Page(stream, 0);
 
         //        byte[] bytes = null;
         //        await Task.Run(() =>

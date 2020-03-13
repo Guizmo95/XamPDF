@@ -18,7 +18,7 @@ namespace Pdf.Views
         IAndroidFileHelper androidWritter =  DependencyService.Get<IAndroidFileHelper>();
 
         private readonly string fileName;
-        private readonly List<string> filesNames;
+        private readonly List<string> filesNames = new List<string>();
 
         public GetDownload(string fileName)
         {

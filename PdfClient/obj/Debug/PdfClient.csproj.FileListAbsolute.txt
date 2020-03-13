@@ -189,3 +189,6 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfC
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.csproj.CopyComplete
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.pdb
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\TallComponents.PDF.Rasterizer.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\TallComponents.PDF.Rasterizer.xml
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Net.Http.Formatting.resources.dll

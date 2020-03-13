@@ -30,6 +30,7 @@ namespace Pdf
             Items.Add(new ItemChoiceCustom() { Id = 0, Libelle = "Concaténer de document PDF", Detail = "Permet de Fusionner de fichiers PDF en un fichier PDF" });
             Items.Add(new ItemChoiceCustom() { Id = 1, Libelle = "Concaténer des pages du PDF", Detail = "Permet de concaténer des pages du PDF choisi" });
             Items.Add(new ItemChoiceCustom() { Id = 2, Libelle = "Déconcatener des pages du PDF", Detail = "Permet de déconcatener toutes les pages du PDF choisi" });
+            Items.Add(new ItemChoiceCustom() { Id = 3, Libelle = "Add a Watermark", Detail = "Add a watermark for a documents" });
 
             MyListView.ItemsSource = Items;
         }
@@ -58,6 +59,9 @@ namespace Pdf
                     break;
                 case 2:
                     await Navigation.PushAsync(new DeconcatePageThumbnails(fileInfo));
+                    break;
+                case 3:
+                    await Navigation.PushAsync(new AddWatermark(fileInfo));
                     break;
                 default:
                     break;

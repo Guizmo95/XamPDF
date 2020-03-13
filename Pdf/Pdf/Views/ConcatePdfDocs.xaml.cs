@@ -17,12 +17,12 @@ namespace Pdf.Views
     public partial class ConcatePdfDocs : ContentPage
     {
 
-        private FileInfo fileInfo1;
+        private FileInfo fileInfo;
         private FileEndpoint fileEndpoint = new FileEndpoint();
         public ConcatePdfDocs(FileInfo fileInfo)
         {
             InitializeComponent();
-            this.fileInfo1 = fileInfo;
+            this.fileInfo = fileInfo;
 
             IPdfPickerAndroid pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
 
@@ -34,7 +34,7 @@ namespace Pdf.Views
         private async void StartTheConvertion(object sender, EventArgs e)
         {
             var filesInfo = FilesList.SelectedItems.Cast<FileInfo>().ToList();
-            filesInfo.Insert(0, fileInfo1);
+            filesInfo.Insert(0, fileInfo);
 
             string fileNameGenerated = await fileEndpoint.UploadFilesForConcate(filesInfo);
 
