@@ -129,6 +129,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.1.0.440</Version>
+    </PackageReference>
     <PackageReference Include="TallComponents.PDFRasterizer4">
       <Version>4.0.0.17</Version>
     </PackageReference>

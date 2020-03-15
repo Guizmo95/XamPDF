@@ -63,6 +63,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.1.0.440</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Net.Compilers">
       <Version>3.4.0</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

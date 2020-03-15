@@ -104,6 +104,52 @@ namespace PdfClient.Helpers
             return outputName;
         }
 
+        public static string AddStump(List<string> filesNames)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads");
+
+            string outputName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".pdf";
+
+            startInfo.Arguments = "/C pdftk " + filesNames[0] + " stamp " + filesNames[1] + " output " + outputName;
+
+            process.StartInfo = startInfo;
+            process.Start();
+
+            return outputName;
+        }
+
+        public static string RemovePages(string fileName, List<int> pagesNumbers)
+        {
+
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads");
+
+            string outputName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".pdf";
+
+            string argPagesNumbers = "";
+
+            pagesNumbers.ForEach(delegate (int pageNumber)
+            {
+                argPagesNumbers += string.Format(pageNumber + " ");
+            });
+            startInfo.Arguments = "/C pdftk " + fileName + " cat " + argPagesNumbers + "output " + outputName;
+
+            process.StartInfo = startInfo;
+            process.Start();
+
+            return outputName;
+        }
+
+
         public static string CleanDate(string date) {
             StringBuilder sb = new StringBuilder(date);
 

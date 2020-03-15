@@ -161,10 +161,11 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.WebPages.Deployment.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.WebPages.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.WebPages.Razor.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\TallComponents.PDF.Rasterizer.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\WebGrease.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Net.Http.Formatting.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Numerics.Vectors.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Newtonsoft.Json.xml
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Net.Http.Formatting.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.Helpers.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.Http.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.Http.WebHost.xml
@@ -174,8 +175,10 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.WebPages.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.WebPages.Deployment.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\System.Web.WebPages.Razor.xml
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\TallComponents.PDF.Rasterizer.xml
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Antlr3.Runtime.pdb
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Net.Http.Formatting.resources.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.Helpers.resources.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.Http.resources.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Web.Http.WebHost.resources.dll
@@ -189,6 +192,3 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfC
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.csproj.CopyComplete
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\obj\Debug\PdfClient.pdb
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\TallComponents.PDF.Rasterizer.dll
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\TallComponents.PDF.Rasterizer.xml
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\fr\System.Net.Http.Formatting.resources.dll

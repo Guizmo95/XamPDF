@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Pdf.ToolsList" Title="test">
+             x:Class="Pdf.Views.ToolsList" Title="test">
 
     <!--<NavigationPage.TitleView>
         <Label Text="tedtsdfg"/>
@@ -13,6 +13,10 @@
     <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Choice"/>
     </ContentPage.ToolbarItems>-->
+
+    <Shell.TitleView>
+        <Label Text="Welcome" FontFamily="GothamBold.ttf#GothamBold" HeightRequest="30" VerticalTextAlignment="Center" FontSize="19" TextColor="White"/>
+    </Shell.TitleView>
 
     <ContentPage.Content>
         <StackLayout>

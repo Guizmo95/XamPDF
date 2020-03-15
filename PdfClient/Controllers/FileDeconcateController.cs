@@ -42,6 +42,5 @@ namespace PdfClient.Controllers
 
             return response;
         }
-
     }
 }

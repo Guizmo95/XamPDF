@@ -121,9 +121,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="TallComponents.PDF.Rasterizer, Version=4.0.0.17, Culture=neutral, PublicKeyToken=76bf2dedaa68ccb5, processorArchitecture=MSIL">
-      <HintPath>..\packages\TallComponents.PDFRasterizer4.4.0.0.17\lib\net40\TallComponents.PDF.Rasterizer.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -175,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\FileConcateController.cs" />
     <Compile Include="Controllers\OverlayController.cs" />
+    <Compile Include="Controllers\RemovePagesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Enumerations\ProcessNames.cs" />
     <Compile Include="Global.asax.cs">

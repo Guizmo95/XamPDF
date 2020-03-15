@@ -3,8 +3,13 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Pdf.Android.dll" comes first in this list. */
 		"Pdf.Android.dll",
+		"Acr.UserDialogs.dll",
+		"AndHUD.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.Bson.dll",
+		"Newtonsoft.Json.dll",
 		"Pdf.dll",
+		"System.Net.Http.Formatting.dll",
 		"TallComponents.PDF.Rasterizer.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",

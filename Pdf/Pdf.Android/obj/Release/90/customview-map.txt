@@ -1,55 +1,75 @@
-@string/appbar_scrolling_view_behavior;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\flyoutcontent.xml
-@string/appbar_scrolling_view_behavior;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\rootlayout.xml
+@string/appbar_scrolling_view_behavior;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\flyoutcontent.xml
+@string/appbar_scrolling_view_behavior;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
 adaptive-icon;obj\Release\90\res\mipmap-anydpi-v26\icon.xml
 adaptive-icon;obj\Release\90\res\mipmap-anydpi-v26\icon_round.xml
-alpha;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\enterfromleft.xml
-alpha;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\exittoleft.xml
-android.support.design.widget.AppBarLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\flyoutcontent.xml
-android.support.design.widget.AppBarLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\rootlayout.xml
-android.support.design.widget.AppBarLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\shellcontent.xml
-android.support.design.widget.BottomNavigationView;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\bottomtablayout.xml
-android.support.design.widget.CoordinatorLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\flyoutcontent.xml
-android.support.design.widget.CoordinatorLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\rootlayout.xml
-android.support.design.widget.CoordinatorLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\shellcontent.xml
-android.support.design.widget.TabLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\rootlayout.xml
+alpha;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\enterfromleft.xml
+alpha;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\exittoleft.xml
+android.support.design.widget.AppBarLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\flyoutcontent.xml
+android.support.design.widget.AppBarLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
+android.support.design.widget.AppBarLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\shellcontent.xml
+android.support.design.widget.BottomNavigationView;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\bottomtablayout.xml
+android.support.design.widget.CoordinatorLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\flyoutcontent.xml
+android.support.design.widget.CoordinatorLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
+android.support.design.widget.CoordinatorLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\shellcontent.xml
+android.support.design.widget.TabLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
 android.support.design.widget.TabLayout;obj\Release\90\res\layout\tabbar.xml
-android.support.v7.widget.RecyclerView;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\flyoutcontent.xml
-android.support.v7.widget.Toolbar;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\rootlayout.xml
-android.support.v7.widget.Toolbar;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\shellcontent.xml
+android.support.v7.widget.RecyclerView;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\flyoutcontent.xml
+android.support.v7.widget.Toolbar;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
+android.support.v7.widget.Toolbar;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\shellcontent.xml
 android.support.v7.widget.Toolbar;obj\Release\90\res\layout\toolbar.xml
+androidhud.ProgressWheel;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loadingprogress.xml
+attr;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\values\attrs.xml
 background;obj\Release\90\res\mipmap-anydpi-v26\icon.xml
 background;obj\Release\90\res\mipmap-anydpi-v26\icon_round.xml
 color;obj\Release\90\res\values\colors.xml
+corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\drawable\roundedbg.xml
+corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\drawable\roundedbgdark.xml
+declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\values\attrs.xml
 domain;obj\Release\90\res\xml\network_security_config.xml
 domain-config;obj\Release\90\res\xml\network_security_config.xml
 foreground;obj\Release\90\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Release\90\res\mipmap-anydpi-v26\icon_round.xml
-FrameLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\bottomtablayout.xml
-item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\values\styles.xml
+FrameLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\bottomtablayout.xml
+gradient;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\drawable\roundedbg.xml
+gradient;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\drawable\roundedbgdark.xml
+ImageView;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loadingimage.xml
+item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\values\styles.xml
 item;obj\Release\90\res\values\styles.xml
-LinearLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\bottomtablayout.xml
+LinearLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\bottomtablayout.xml
 network-security-config;obj\Release\90\res\xml\network_security_config.xml
 path;obj\Release\90\res\drawable\baseline_description_24.xml
 path;obj\Release\90\res\drawable\baseline_feedback_24.xml
 path;obj\Release\90\res\drawable\baseline_help_24.xml
 path;obj\Release\90\res\drawable\baseline_picture_as_pdf_24.xml
 path;obj\Release\90\res\drawable\baseline_supervised_user_circle_24.xml
-resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\values\styles.xml
+ProgressBar;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loading.xml
+RelativeLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loading.xml
+RelativeLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loadingimage.xml
+RelativeLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loadingprogress.xml
+resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\values\attrs.xml
+resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\values\strings.xml
+resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\values\styles.xml
 resources;obj\Release\90\res\values\colors.xml
 resources;obj\Release\90\res\values\styles.xml
-set;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\enterfromleft.xml
-set;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\enterfromright.xml
-set;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\exittoleft.xml
-set;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\exittoright.xml
-style;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\values\styles.xml
+set;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\enterfromleft.xml
+set;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\enterfromright.xml
+set;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\exittoleft.xml
+set;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\exittoright.xml
+shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\drawable\roundedbg.xml
+shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\drawable\roundedbgdark.xml
+string;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\values\strings.xml
+style;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\values\styles.xml
 style;obj\Release\90\res\values\styles.xml
-translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\enterfromleft.xml
-translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\enterfromright.xml
-translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\exittoleft.xml
-translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\anim\exittoright.xml
+TextView;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loading.xml
+TextView;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loadingimage.xml
+TextView;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\1\jl\res\layout\loadingprogress.xml
+translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\enterfromleft.xml
+translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\enterfromright.xml
+translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\exittoleft.xml
+translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\anim\exittoright.xml
 vector;obj\Release\90\res\drawable\baseline_description_24.xml
 vector;obj\Release\90\res\drawable\baseline_feedback_24.xml
 vector;obj\Release\90\res\drawable\baseline_help_24.xml
 vector;obj\Release\90\res\drawable\baseline_picture_as_pdf_24.xml
 vector;obj\Release\90\res\drawable\baseline_supervised_user_circle_24.xml
-xamarin.forms.platform.android.appcompat.FormsViewPager;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\40\jl\res\layout\rootlayout.xml
+xamarin.forms.platform.android.appcompat.FormsViewPager;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml

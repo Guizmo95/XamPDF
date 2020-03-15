@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-       xmlns:pages="clr-namespace:Pdf.Views"
-       mc:Ignorable="d"
-             x:Class="Pdf.Views.ShellMenu" Title="FlyoutMenu" BackgroundColor="#004B85" Shell.TabBarIsVisible="False" FlyoutBackgroundColor="#e6e6e6">
+             xmlns:pages="clr-namespace:Pdf.Views"
+             mc:Ignorable="d"
+             x:Class="Pdf.Views.ShellMenu" Title="FlyoutMenu" BackgroundColor="#004B85" Shell.TabBarIsVisible="True" FlyoutBackgroundColor="#e6e6e6">
 
 
     <Shell.FlyoutHeaderTemplate>
@@ -32,14 +32,27 @@
         </DataTemplate>
     </Shell.ItemTemplate>
 
-
+    
     <FlyoutItem Title="FlyoutItem" FlyoutDisplayOptions="AsMultipleItems" >
+        <Tab Title="Documents">
+            <ShellContent Title="My documents" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}"/>
+        </Tab>
+        <Tab Title="Tools list">
+            <ShellContent Title="Tools list" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:ToolsList}"/>
+        </Tab>
+    </FlyoutItem>
+    <ShellContent Title="Help"  Icon="baseline_help_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
+        <ShellContent Title="Feedback"  Icon="baseline_feedback_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
+    
+
+    <!--<FlyoutItem Title="FlyoutItem" FlyoutDisplayOptions="AsMultipleItems" >
         <ShellContent Title="My documents" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}"/>
+        <ShellContent Title="Tools list" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}"/>
         <ShellContent Title="Help"  Icon="baseline_help_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}" />
         <ShellContent Title="Feedback"  Icon="baseline_feedback_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}" />
-    </FlyoutItem>
+    </FlyoutItem>-->
 
-    <ShellContent Title="About"  Icon="baseline_supervised_user_circle_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}" />
+    <ShellContent Title="About"  Icon="baseline_supervised_user_circle_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
 
 
 

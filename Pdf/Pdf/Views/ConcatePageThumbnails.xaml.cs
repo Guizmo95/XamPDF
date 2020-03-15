@@ -1,4 +1,5 @@
-﻿using Android.Graphics.Pdf;
+﻿using Acr.UserDialogs;
+using Android.Graphics.Pdf;
 using Pdf.Enumerations;
 using Pdf.Interfaces;
 using Pdf.Models;
@@ -20,27 +21,59 @@ namespace Pdf.Views
         private readonly FileInfo fileInfo;
         FileEndpoint fileEndpoint = new FileEndpoint();
 
-        //TODO -- Gerer le retour 
-        public ConcatePageThumbnails(FileInfo fileInfo)
+        protected async override void OnAppearing()
+        {
+            IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
+            string directoryPath = "";
+
+            Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black));
+
+            await Task.Run (() =>
+            {
+                directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName).Result;
+                
+            }).ContinueWith(result => Device.BeginInvokeOnMainThread(() =>
+            {
+                List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
+
+                int i = 1;
+                Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
+                {
+                    thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
+                    i++;
+                });
+                CollectionViewThumbnails.ItemsSource = thumbnailsModels;
+                UserDialogs.Instance.HideLoading();
+            }
+        )
+        );
+        }
+
+    //TODO -- Gerer le retour 
+    public ConcatePageThumbnails(FileInfo fileInfo)
         {
             InitializeComponent();
 
             this.fileInfo = fileInfo;
 
-            IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
+            
 
-            string directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName);
+            //IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
 
-            List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
+            //Task.Run(() => await getThumbnails.GetBitmaps(fileInfo.FullName).Result);
 
-            int i = 1;
-            Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
-            {
-                thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
-                i++;
-            });
+            //string directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName).Result;
 
-            CollectionViewThumbnails.ItemsSource = thumbnailsModels;
+            //List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
+
+            //int i = 1;
+            //Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
+            //{
+            //    thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
+            //    i++;
+            //});
+
+            //CollectionViewThumbnails.ItemsSource = thumbnailsModels;
         }
 
         private async void StartProcessConcatePages(object sender, EventArgs e)

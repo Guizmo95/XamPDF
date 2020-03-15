@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.440" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="TallComponents.PDFRasterizer4" Version="4.0.0.17" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
@@ -29,8 +30,8 @@
     <Compile Update="Views\HeaderShellPage.xaml.cs">
       <DependentUpon>HeaderShellPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\MainMenu.xaml.cs">
-      <DependentUpon>MainMenu.xaml</DependentUpon>
+    <Compile Update="Views\DocumentsList.xaml.cs">
+      <DependentUpon>DocumentsList.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\MenuPage.xaml">
       <DependentUpon>MenuPage.xaml.cs</DependentUpon>
@@ -41,6 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\AddStamp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\AddWatermark.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -53,10 +57,16 @@
     <EmbeddedResource Update="Views\DeconcatePageThumbnails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\FilesListForConvert.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\GetDownload.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\HeaderShellPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RemovePages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ShellMenu.xaml">

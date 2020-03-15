@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Views.ToolsList.xaml", "Views/ToolsList.xaml", typeof(global::Pdf.ToolsList))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Views.ToolsList.xaml", "Views/ToolsList.xaml", typeof(global::Pdf.Views.ToolsList))]
 
-namespace Pdf {
+namespace Pdf.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ToolsList.xaml")]

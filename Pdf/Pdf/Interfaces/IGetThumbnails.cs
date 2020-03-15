@@ -9,7 +9,7 @@ namespace Pdf.Interfaces
 {
     public interface IGetThumbnails
     {
-        string GetBitmaps(string filePath);
+        Task<string> GetBitmaps(string filePath);
 
         ParcelFileDescriptor GetSeekableFileDescriptor(string filePath);
     }

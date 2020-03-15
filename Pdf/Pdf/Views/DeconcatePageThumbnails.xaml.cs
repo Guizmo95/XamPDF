@@ -1,4 +1,5 @@
-﻿using Pdf.Interfaces;
+﻿using Acr.UserDialogs;
+using Pdf.Interfaces;
 using Pdf.Models;
 using System;
 using System.Collections.Generic;
@@ -18,26 +19,55 @@ namespace Pdf.Views
         //TODO - REDIMENSIONNEMENT DYNAMIQUE
         private readonly FileInfo fileInfo;
         FileEndpoint fileEndpoint = new FileEndpoint();
+
+        protected async override void OnAppearing()
+        {
+            IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
+            string directoryPath = "";
+
+            Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black));
+
+            await Task.Run(() =>
+            {
+                directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName).Result;
+
+            }).ContinueWith(result => Device.BeginInvokeOnMainThread(() =>
+            {
+                List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
+
+                int i = 1;
+                Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
+                {
+                    thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
+                    i++;
+                });
+                CollectionViewThumbnails.ItemsSource = thumbnailsModels;
+                UserDialogs.Instance.HideLoading();
+            }
+        )
+        );
+        }
+
         public DeconcatePageThumbnails(FileInfo fileInfo)
         {
             InitializeComponent();
 
             this.fileInfo = fileInfo;
 
-            IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
+            //IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
 
-            string directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName);
+            //string directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName).Result;
 
-            List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
+            //List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
 
-            int i = 1;
-            Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
-            {
-                thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
-                i++;
-            });
+            //int i = 1;
+            //Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
+            //{
+            //    thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
+            //    i++;
+            //});
 
-            CollectionViewThumbnails.ItemsSource = thumbnailsModels;
+            //CollectionViewThumbnails.ItemsSource = thumbnailsModels;
         }
 
         private async void StartProcessDeconcatePages(object sender, EventArgs e)

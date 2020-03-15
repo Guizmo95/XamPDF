@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Support.V4.Content;
 using Android;
 using Android.Support.V4.App;
+using Acr.UserDialogs;
 
 namespace Pdf.Droid
 {
@@ -31,6 +32,8 @@ namespace Pdf.Droid
             {
                 ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.ReadExternalStorage }, 0);
             }
+
+            UserDialogs.Init(this);
 
             global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);

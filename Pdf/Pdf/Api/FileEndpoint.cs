@@ -173,6 +173,84 @@ namespace Pdf
             }
         }
 
+        public async Task<string> UploadFilesForStump(List<FileInfo> filesInfo)
+        {
+            IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
+
+            var content = new MultipartFormDataContent();
+
+            filesInfo.ForEach(delegate (FileInfo fileInfo)
+            {
+                var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+
+                ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
+
+                content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+            });
+
+            var httpClient = new HttpClient();
+
+            var uploadServiceBaseAdress = "http://10.0.2.2:44560/PostFilesForStump/";
+
+            using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string fileName = await response.Content.ReadAsStringAsync();
+                    return fileName;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        public async Task<string> UploadFilesForRemovePages(FileInfo fileInfo, List<int> pagesNumbers)
+        {
+            IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
+
+            var content = new MultipartFormDataContent();
+
+            var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+
+            ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
+
+            content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+
+            var httpClient = new HttpClient();
+
+            string pagesNumbersArg = "";
+
+            int i = 0;
+            pagesNumbers.ForEach(delegate (int number)
+            {
+                if (pagesNumbers.Last() != number)
+                    pagesNumbersArg += "pages[" + i + "]=" + number + "&";
+                else
+                {
+                    pagesNumbersArg += "pages[" + i + "]=" + number;
+                }
+                i++;
+            });
+
+            var uploadServiceBaseAdress = "http://10.0.2.2:44560/RemovePages?" + pagesNumbersArg;
+
+            using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string fileName = await response.Content.ReadAsAsync<string>();
+
+                    return fileName;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
         //TODO -- CREATE WEB API CLIENT
         public async Task<byte[]> GetFileConcated(string fileName)
         {
