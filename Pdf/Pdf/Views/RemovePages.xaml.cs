@@ -18,33 +18,33 @@ namespace Pdf.Views
         private readonly FileInfo fileInfo;
         FileEndpoint fileEndpoint = new FileEndpoint();
 
-        protected async override void OnAppearing()
-        {
-            IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
-            string directoryPath = "";
+        //protected async override void OnAppearing()
+        //{
+        //    IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
+        //    string directoryPath = "";
 
-            Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black));
+        //    Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black));
 
-            await Task.Run(() =>
-            {
-                directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName).Result;
+        //    await Task.Run(() =>
+        //    {
+        //        directoryPath = getThumbnails.GetBitmaps(fileInfo.FullName).Result;
 
-            }).ContinueWith(result => Device.BeginInvokeOnMainThread(() =>
-            {
-                List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
+        //    }).ContinueWith(result => Device.BeginInvokeOnMainThread(() =>
+        //    {
+        //        List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
 
-                int i = 1;
-                Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
-                {
-                    thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
-                    i++;
-                });
-                CollectionViewThumbnails.ItemsSource = thumbnailsModels;
-                UserDialogs.Instance.HideLoading();
-            }
-        )
-        );
-        }
+        //        int i = 1;
+        //        Directory.GetFiles(directoryPath).ToList<string>().ForEach(delegate (string thumbnailsEmplacement)
+        //        {
+        //            thumbnailsModels.Add(new ThumbnailsModel(i, thumbnailsEmplacement));
+        //            i++;
+        //        });
+        //        CollectionViewThumbnails.ItemsSource = thumbnailsModels;
+        //        UserDialogs.Instance.HideLoading();
+        //    }
+        //)
+        //);
+        //}
         public RemovePages(FileInfo fileInfo)
         {
             InitializeComponent();

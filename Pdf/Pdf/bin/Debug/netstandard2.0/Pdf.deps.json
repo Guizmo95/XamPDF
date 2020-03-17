@@ -14,7 +14,8 @@
           "NETStandard.Library": "2.0.3",
           "TallComponents.PDFRasterizer4": "4.0.0.17",
           "Xamarin.Forms": "4.5.0.356",
-          "Mono.Android": "0.0.0.0"
+          "Mono.Android": "0.0.0.0",
+          "Xamarin.Android.Arch.Lifecycle.ViewModel": "1.0.0.0"
         },
         "runtime": {
           "Pdf.dll": {}
@@ -673,6 +674,14 @@
             "fileVersion": "0.0.0.0"
           }
         }
+      },
+      "Xamarin.Android.Arch.Lifecycle.ViewModel/1.0.0.0": {
+        "runtime": {
+          "Xamarin.Android.Arch.Lifecycle.ViewModel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1040,6 +1049,11 @@
       "hashPath": "xamarin.forms.4.5.0.356.nupkg.sha512"
     },
     "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Xamarin.Android.Arch.Lifecycle.ViewModel/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

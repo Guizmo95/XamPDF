@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 using TallComponents.PDF.Rasterizer;
 using static Android.Graphics.Bitmap;
 using Xamarin.Forms;
+using Pdf.Models;
+using System.Linq;
+using Xamarin.Forms.Internals;
 
 [assembly: Xamarin.Forms.Dependency(typeof(GetThumbnails))]
 namespace Pdf.Droid.Helpers
@@ -66,7 +69,7 @@ namespace Pdf.Droid.Helpers
         //        await Task.Run(() =>
         //        {
         //            bytes = page.AsPNG(72);
-                    
+
         //        });
         //        var path = Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png");
         //        File.WriteAllBytes(path, bytes);
@@ -79,48 +82,128 @@ namespace Pdf.Droid.Helpers
 
         //    return directoryPath;
         //}
-        public Task<string> GetBitmaps(string filePath)
+
+        List<ThumbnailsModel> items = new List<ThumbnailsModel>();
+        bool inProccess = false;
+
+        public bool InProccess
+        {
+            get
+            {
+                return inProccess;
+            }
+
+            set
+            {
+                inProccess = value;
+            }
+        }
+
+        public List<ThumbnailsModel> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
+
+        public async Task<List<ThumbnailsModel>> GetBitmaps(string filePath, int lastIndex = 0, int numberOfItemsPerPage = 10)
         {
             var sw = new Stopwatch();
             sw.Start();
+
             PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
 
             var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
             string directoryPath = System.IO.Path.Combine(appDirectory, "thumbnailsTemp", System.IO.Path.GetFileNameWithoutExtension(fileName));
+            //List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
 
-            //if (!Directory.Exists(directoryPath))
-            //{
+            if (InProccess == false)
+            {
                 Directory.CreateDirectory(directoryPath);
+                InProccess = true;
+            }
 
-                int pageCount = pdfRenderer.PageCount;
+            //int pageCount = pdfRenderer.PageCount;
+            for (int i = lastIndex; i < lastIndex + numberOfItemsPerPage; i++)
+            {
+                PdfRenderer.Page page = pdfRenderer.OpenPage(i);
+                Android.Graphics.Bitmap bmp = Android.Graphics.Bitmap.CreateBitmap(page.Width, page.Height, Android.Graphics.Bitmap.Config.Argb4444);
+                page.Render(bmp, null, null, PdfRenderMode.ForDisplay);
 
-                for (int i = 0; i < pageCount; i++)
+                try
                 {
-                    PdfRenderer.Page page = pdfRenderer.OpenPage(i);
-                    Android.Graphics.Bitmap bmp = Android.Graphics.Bitmap.CreateBitmap(page.Width, page.Height, Android.Graphics.Bitmap.Config.Argb4444);
-                    page.Render(bmp, null, null, PdfRenderMode.ForDisplay);
-
-                    try
+                    using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png"), FileMode.Create))
                     {
-                        using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png"), FileMode.Create))
-                        {
-                            bmp.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 0, output);
-                        }
+                        bmp.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 0, output);
+                    }
 
-                        page.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        //TODO -- GERER CETTE EXPEXPTION
-                        throw new Exception();
-                    }
+                    page.Close();
                 }
-                sw.Stop();
+                catch (Exception ex)
+                {
+                    //TODO -- GERER CETTE EXPEXPTION
+                    throw new Exception();
+                }
+            }
 
-            //}
 
-            return Task.FromResult(directoryPath);
+            int y = lastIndex + 1;
+            Directory.GetFiles(directoryPath).ToList<string>().Skip(lastIndex).Take(numberOfItemsPerPage).ForEach(delegate (string thumbnailsEmplacement)
+            {
+                Items.Add(new ThumbnailsModel(y, thumbnailsEmplacement));
+                y++;
+            });
+
+            sw.Stop();
+
+            return await Task.FromResult(Items);
+        }
+
+        public async Task<IEnumerable<ThumbnailsModel>> GetItemsAsync(string filePath, bool forceRefresh = false, int lastIndex = 0)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(0.01));
+
+            Dictionary<bool, int> keyValuePairs = IsUnder15Pages(filePath);
+
+            if (keyValuePairs.ContainsKey(true))
+            {
+                await GetBitmaps(filePath, lastIndex, keyValuePairs[true]);
+                return await Task.FromResult(Items);
+            }
+            else
+            {
+                int numberOfItemsPerPage = 10;
+                await GetBitmaps(filePath, lastIndex, numberOfItemsPerPage);
+                return await Task.FromResult(Items.Skip(lastIndex).Take(numberOfItemsPerPage));
+            }
+
+
+        }
+
+        public Dictionary<bool, int> IsUnder15Pages(string filePath)
+        {
+            Dictionary<bool, int> keyValuePairs = new Dictionary<bool, int>();
+            bool response = false;
+
+            PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
+
+            if (pdfRenderer.PageCount < 10)
+            {
+                response = true;
+            }
+            else
+            {
+                response = false;
+            }
+
+            keyValuePairs.Add(response, pdfRenderer.PageCount);
+            return keyValuePairs;
         }
 
         public ParcelFileDescriptor GetSeekableFileDescriptor(string filePath)
