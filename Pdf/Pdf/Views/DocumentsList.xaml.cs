@@ -32,8 +32,13 @@ namespace Pdf.Views
                 return;
             }
 
-
+            
             var fileInfo = (FileInfo)e.SelectedItem;
+
+            using (Stream stream = File.OpenRead(fileInfo.FullName))
+            {
+                await Navigation.PushAsync(new PdfViewer(stream));
+            }
 
             //WAIT UNTIL ITS FIX
             //Application.Current.MainPage = new NavigationPage(new ToolsList(fileInfo));

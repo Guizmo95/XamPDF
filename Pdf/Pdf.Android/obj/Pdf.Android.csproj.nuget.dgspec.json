@@ -52,10 +52,6 @@
               "target": "Package",
               "version": "[3.4.0, )"
             },
-            "TallComponents.PDFRasterizer4": {
-              "target": "Package",
-              "version": "[4.0.0.17, )"
-            },
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.5.0.356, )"
@@ -116,9 +112,9 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
-            "TallComponents.PDFRasterizer4": {
+            "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
-              "version": "[4.0.0.17, )"
+              "version": "[17.4.0.55, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

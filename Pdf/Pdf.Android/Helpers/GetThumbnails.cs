@@ -9,7 +9,6 @@ using Pdf.Interfaces;
 using Android.Graphics.Pdf;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using TallComponents.PDF.Rasterizer;
 using static Android.Graphics.Bitmap;
 using Xamarin.Forms;
 using Pdf.Models;
@@ -110,6 +109,8 @@ namespace Pdf.Droid.Helpers
                 items = value;
             }
         }
+
+        //TODO -- DELETE REPOSITORY AFTER PROCCESS                               
 
         public async Task<List<ThumbnailsModel>> GetBitmaps(string filePath, int lastIndex = 0, int numberOfItemsPerPage = 10)
         {

@@ -30,6 +30,7 @@ namespace Pdf.Views
             Items.Add(new ItemChoiceCustom() { Id = 3, Libelle = "Remove Pages from Pdf files", Detail = "Permet de supprimer des pages d'un PDF" });
             Items.Add(new ItemChoiceCustom() { Id = 4, Libelle = "Add a Watermark", Detail = "Add a watermark for a documents" });
             Items.Add(new ItemChoiceCustom() { Id = 5, Libelle = "Add stamp", Detail = "Add a stamp for a documents" });
+            Items.Add(new ItemChoiceCustom() { Id = 6, Libelle = "Add summary", Detail = "Add a summary to your pdf doc" });
 
             MyListView.ItemsSource = Items;
         }
@@ -82,6 +83,9 @@ namespace Pdf.Views
                     break;
                 case 5:
                     await Navigation.PushAsync(new FilesListForConvert(ProcessNames.AddStamp));
+                    break;
+                case 6:
+                    await Navigation.PushAsync(new FilesListForConvert(ProcessNames.AddSummary));
                     break;
                 default:
                     break;

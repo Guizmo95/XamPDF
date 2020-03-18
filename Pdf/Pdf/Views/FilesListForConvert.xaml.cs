@@ -54,6 +54,9 @@ namespace Pdf.Views
                 case ProcessNames.RemovePages:
                     await Navigation.PushAsync(new RemovePages(fileInfo));
                     break;
+                case ProcessNames.AddSummary:
+                    await Navigation.PushAsync(new AddSummary(fileInfo));
+                    break;
             }
 
             

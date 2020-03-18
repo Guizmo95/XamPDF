@@ -24,29 +24,32 @@ namespace Pdf.Views
         FileInfo fileInfo;
         ItemsViewModel viewModel;
 
+        //TODO -- DELETE SELECTION
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
 
-           // Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black));
+            //Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black));
 
-           // await Task.Run(() =>
-           //{
-               
+            //await Task.Run(() =>
+            //{    
+            //   if (viewModel.Items.Count == 0)
+            //       viewModel.LoadItemsCommand.Execute(null);
 
-           //}).ContinueWith(result => Device.BeginInvokeOnMainThread(() =>
-           //{
-               
-           //    UserDialogs.Instance.HideLoading();
-           //})
-           // );
-            
+            //}).ContinueWith(result => Device.BeginInvokeOnMainThread(() =>
+            //{
+
+            //   UserDialogs.Instance.HideLoading();
+            //})
+            //);
+
 
             MessagingCenter.Subscribe<object, ThumbnailsModel>(this, ItemsViewModel.ScrollToPreviousLastItem, (sender, item) =>
             {
-                CollectionViewThumbnails.ScrollTo(item, ScrollToPosition.End);
+                CollectionViewThumbnails.ScrollTo(item, ScrollToPosition.Start);
             });
         }
 

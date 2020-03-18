@@ -11,6 +11,11 @@ namespace Pdf
         {
             InitializeComponent();
 
+            Device.SetFlags(new[] {
+                "CarouselView_Experimental",
+                "IndicatorView_Experimental"
+            });
+
             MainPage = /*new NavigationPage(new MainMenu());*/
                 new ShellMenu();
         }

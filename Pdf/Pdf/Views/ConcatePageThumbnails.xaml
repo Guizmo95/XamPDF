@@ -37,9 +37,10 @@
             <RefreshView Command="{Binding RefreshItemsCommand}" IsRefreshing="{Binding IsRefreshing}" >
                 <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple" Margin="13" ItemsSource="{Binding Items}" 
                                     RemainingItemsThresholdReachedCommand="{Binding ItemTresholdReachedCommand}"
-                            RemainingItemsThreshold="{Binding ItemTreshold}">
+                            RemainingItemsThreshold="{Binding ItemTreshold}" VerticalScrollBarVisibility="Always">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="13" HorizontalItemSpacing="13"/>
+                        <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="13" HorizontalItemSpacing="13" SnapPointsType="MandatorySingle"
+                           SnapPointsAlignment="Start"/>
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:Name="data">

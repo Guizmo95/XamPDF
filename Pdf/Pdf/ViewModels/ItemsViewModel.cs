@@ -72,9 +72,10 @@ namespace Pdf.ViewModels
                     Items.Add(item);
                 }
 
-
-
                 Debug.WriteLine($"{items.Count()} {Items.Count} ");
+
+                var previousLastItem = Items.Last();
+
                 if (items.Count() == 0)
                 {
                     ItemTreshold = 1;
@@ -82,11 +83,9 @@ namespace Pdf.ViewModels
                     LoadItemsCommand.Execute(null);
 
                     //Items.Clear;
-
-                    //var previousLastItem = Items[0];
-                    // MessagingCenter.Send<object, Item>(this, ScrollToPreviousLastItem, previousLastItem);
                     return;
                 }
+                MessagingCenter.Send<object, ThumbnailsModel>(this, ScrollToPreviousLastItem, previousLastItem);
 
             }
             catch (Exception ex)
@@ -105,30 +104,32 @@ namespace Pdf.ViewModels
 
             //await Task.Run(async () =>
             //{
-                IsBusy = true;
+            using (UserDialogs.Instance.Loading("Loading...")) { 
+            IsBusy = true;
 
-                try
-                {
-                    ItemTreshold = 1;
-                    Items.Clear();
-                    getThumbnails.InProccess = false;
-                    getThumbnails.Items.Clear();
-                    var items = await getThumbnails.GetItemsAsync(fileInfo.FullName, true);
+            try
+            {
+                ItemTreshold = 1;
+                Items.Clear();
+                getThumbnails.InProccess = false;
+                getThumbnails.Items.Clear();
 
-                    foreach (var item in items)
-                    {
-                        Items.Add(item);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex);
-                }
-                finally
-                {
-                    IsBusy = false;
-                }
+                var items = await getThumbnails.GetItemsAsync(fileInfo.FullName, true);
 
+                foreach (var item in items)
+                {
+                    Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
             //}).ContinueWith(result => Device.BeginInvokeOnMainThread(() =>
             //{
 
