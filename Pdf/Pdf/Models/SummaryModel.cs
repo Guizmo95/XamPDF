@@ -8,6 +8,7 @@ namespace Pdf.Models
     {
         private string title;
         private int pageNumber;
+        private int titleLvl;
 
         public int PageNumber
         {
@@ -35,10 +36,24 @@ namespace Pdf.Models
             }
         }
 
-        public SummaryModel(string title, int pageNumber)
+        public int TitleLvl
+        {
+            get
+            {
+                return titleLvl;
+            }
+
+            set
+            {
+                titleLvl = value;
+            }
+        }
+
+        public SummaryModel(string title, int pageNumber, int titleLvl)
         {
             this.title = title;
             this.pageNumber = pageNumber;
+            this.titleLvl = titleLvl;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PdfClient.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -149,8 +150,69 @@ namespace PdfClient.Helpers
             return outputName;
         }
 
+        public static string AddSummary(string fileName, List<SummaryModel> summaries)
+        {
+            string outputName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".pdf";
 
-        public static string CleanDate(string date) {
+            string dumpDataName = DumpData(fileName);
+            AddSummaryInBookmark(dumpDataName, summaries, fileName, outputName);
+
+            return outputName;
+        }
+
+        public static string DumpData(string fileName)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/BookMarkData");
+
+            string dumpDataName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".txt";
+
+            startInfo.Arguments = "/C pdftk " + fileName + " dump_data " + "output " + dumpDataName;
+
+            process.StartInfo = startInfo;
+            process.Start();
+
+            return dumpDataName;
+        }
+
+        public static void AddSummaryInBookmark(string fileNameBookmarkData, List<SummaryModel> summaries, string fileName, string outputName)
+        {
+            string filePathBookmarkData = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/BookMarkData"), fileNameBookmarkData);
+            string filePath = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads"), fileName);
+
+            if (!File.Exists(filePathBookmarkData))
+            {
+                using (StreamWriter sw = File.AppendText(filePathBookmarkData))
+                {
+                    summaries.ForEach(delegate (SummaryModel summary)
+                    {
+                        sw.WriteLine("BookmarkBegin");
+                        sw.WriteLine(string.Format("BookmarkTitle: {0}", summary.Title));
+                        sw.WriteLine("BookmarkLevel: 1");
+                        sw.WriteLine(string.Format("BookmarkPageNumber: {0}", summary.PageNumber));
+                    });
+                }
+            }
+
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads");
+
+            startInfo.Arguments = "/C pdftk " + filePath + " update_info " +"output " + outputName;
+
+            process.StartInfo = startInfo;
+            process.Start();
+        }
+
+        public static string CleanDate(string date)
+        {
             StringBuilder sb = new StringBuilder(date);
 
             sb.Replace(" ", "");
@@ -159,5 +221,6 @@ namespace PdfClient.Helpers
 
             return sb.ToString();
         }
+
     }
 }

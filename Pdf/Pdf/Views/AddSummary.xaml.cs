@@ -1,4 +1,6 @@
 ﻿using Android.Arch.Lifecycle;
+using Android.Widget;
+using Pdf.Interfaces;
 using Pdf.Models;
 using Pdf.ViewModels;
 using System;
@@ -50,22 +52,37 @@ namespace Pdf.Views
             {
                 ThumbnailsModel item = (ThumbnailsModel)CollectionViewThumbnails.SelectedItem;
 
-                string title = await DisplayPromptAsync("Title", "Select a title for this page", initialValue: string.Empty);
-                int pageNumber = item.PageNumber;
+                await Navigation.PushModalAsync(new AddSummaryModal(summaries, item));
 
-                if (string.IsNullOrEmpty(title) == false)
-                {
-                    summaries.Add(new SummaryModel(title, pageNumber));
+                //string title = await DisplayPromptAsync("Title", "Select a title for this page", initialValue: string.Empty);
+                //int pageNumber = item.PageNumber;
 
-                }
+                //if (string.IsNullOrEmpty(title) == false)
+                //{
+                //    summaries.Add(new SummaryModel(title, pageNumber));
 
-                CollectionViewThumbnails.SelectedItem = null;
+                //}
+
+                //CollectionViewThumbnails.SelectedItem = null;
             }
-
-
-
-
-
         }
+
+        //private async void StartProccessAddSummary(object sender, EventArgs e)
+        //{ 
+        //    if(summaries.Count == 0)
+        //    {
+        //        DependencyService.Get<IToast>().ShortAlert("No summary added");
+        //    }
+        //    else
+        //    {
+
+        //    }
+
+        //    string fileNameGenerated = await fileEndpoint.UploadFilesForConcate(fileInfo, pagesNumbers);
+
+        //    await Navigation.PushAsync(new GetDownload(fileNameGenerated));
+        //}
+
+
     }
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pdf.Views.AddSummaryModal">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="Title Name" x:Name="title"/>
+            <Picker x:Name="picker"
+        Title="Select title level"
+        TitleColor="Black">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>1</x:Int32>
+                        <x:Int32>2</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="AddSummary" Clicked="AddSummaryButton"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
