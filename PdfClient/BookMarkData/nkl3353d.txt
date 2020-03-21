@@ -1,0 +1,35 @@
+InfoBegin
+InfoKey: Creator
+InfoValue: Open Print - Copyright (c) 1997-2011 Sefas Innovation. All Rights Reserved
+InfoBegin
+InfoKey: Title
+InfoValue: vy.0641-199029501806809-JEBBARI-RAYHANE-951-lun___23_d&#233;c__2019_16_44_58_506.pdf
+InfoBegin
+InfoKey: Author
+InfoValue: Open Print
+InfoBegin
+InfoKey: Producer
+InfoValue: Open Print Backstage VERSION 7.0.3.34
+InfoBegin
+InfoKey: Keywords
+InfoValue: Open Print Driver PDF
+InfoBegin
+InfoKey: Subject
+InfoValue: Driver PDF
+InfoBegin
+InfoKey: ModDate
+InfoValue: D:20191223154459Z
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20191223154459Z
+NumberOfPages: 2
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.28 841.89
+PageMediaDimensions: 595.28 841.89
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.28 841.89
+PageMediaDimensions: 595.28 841.89

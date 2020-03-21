@@ -6,6 +6,6 @@ namespace Pdf.Enumerations
 {
     public enum ProcessNames
     {
-        ConcateDocuments, ConcatePages, DeconcatePages, AddWatermark, AddStamp, RemovePages, AddSummary
+        ConcateDocuments, ConcatePages, DeconcatePages, AddWatermark, AddStamp, RemovePages, AddSummary, Uncompress, SetPassword
     }
 }

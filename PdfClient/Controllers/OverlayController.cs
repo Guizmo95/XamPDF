@@ -41,7 +41,6 @@ namespace PdfClient.Controllers
                     response = new HttpResponseMessage(HttpStatusCode.OK);
                     response.Content = new StringContent(outputName);
                     response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
-                    return response;
                 }
             }
             catch (Exception ex)

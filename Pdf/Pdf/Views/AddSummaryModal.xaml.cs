@@ -26,12 +26,12 @@ namespace Pdf.Views
 
         private void AddSummaryButton(object sender, EventArgs e)
         {
-            int itemPosition = thumbnailsModel.PageNumber - 1;
+            //int itemPosition = thumbnailsModel.PageNumber - 1;
             int selectedPickerValue = (int)picker.SelectedItem;
 
-            if (selectedPickerValue == 2 && CanAddTitleLvl2(summaries, itemPosition) == true)
+            SummaryModel summaryModelIsValid = new SummaryModel(title.Text, thumbnailsModel.PageNumber, selectedPickerValue);
+            if (selectedPickerValue == 2 && CanAddTitleLvl2(summaries, summaryModelIsValid) == true)
             {
-                summaries.Add(new SummaryModel(title.Text, thumbnailsModel.PageNumber, selectedPickerValue));
                 Navigation.PopModalAsync();
             }
             else
@@ -52,21 +52,23 @@ namespace Pdf.Views
         private bool CanAddTitleLvl2(List<SummaryModel> summaries, SummaryModel summaryModel)
         {
             bool canAddTile = false;
-            summaries.Add(summaryModel);
-            summaries.Sort((x, y) => x.PageNumber.CompareTo(y.PageNumber));
+            
             if(summaries.Count == 0)
             {
                 canAddTile = false;
             }
             else
             {
-                if(summaries.GetRange(0, itemPosition).Exists(x => x.TitleLvl == 1) == true)
+                summaries.Add(summaryModel);
+                summaries.Sort((x, y) => x.PageNumber.CompareTo(y.PageNumber));
+                if (summaries.GetRange(0, summaries.IndexOf(summaryModel)).Exists(x => x.TitleLvl == 1) == true)
                 {
                     canAddTile = true;
                 }
                 else
                 {
                     canAddTile = false;
+                    summaries.Remove(summaryModel);
                 }
             }
             return canAddTile;

@@ -31,26 +31,35 @@
         </StackLayout>
     </NavigationPage.TitleView>-->
 
-    <StackLayout BackgroundColor="#b4b4b4">
-        <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple" Margin="13" ItemSizingStrategy="MeasureAllItems">
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="13" HorizontalItemSpacing="13"/>
-            </CollectionView.ItemsLayout>
-            <CollectionView.Header>
-                <Button Text="select all" Clicked="SelectAllItems"/>
-            </CollectionView.Header>
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:Name="data">
-                    <Frame >
-                        <StackLayout>
-                            <Image Source="{Binding EmplacementThumbnails}" Aspect="AspectFill"/>
-                        </StackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <StackLayout>
-            <Button Text="Go" Clicked="StartProcessDeconcatePages"/>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#b4b4b4">
+            <RefreshView Command="{Binding RefreshItemsCommand}" IsRefreshing="{Binding IsRefreshing}" >
+                <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple" Margin="13" ItemsSource="{Binding Items}" 
+                                    RemainingItemsThresholdReachedCommand="{Binding ItemTresholdReachedCommand}"
+                            RemainingItemsThreshold="{Binding ItemTreshold}" VerticalScrollBarVisibility="Always">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="13" HorizontalItemSpacing="13" SnapPointsType="MandatorySingle"
+                           SnapPointsAlignment="Start"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:Name="data">
+                            <Frame >
+                                <StackLayout>
+                                    <Image Source="{Binding EmplacementThumbnails}" Aspect="AspectFill"/>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           HeightRequest="30"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           WidthRequest="30"/>
+            <StackLayout>
+                <Button Text="go" Clicked="StartProcessDeconcatePages"/>
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

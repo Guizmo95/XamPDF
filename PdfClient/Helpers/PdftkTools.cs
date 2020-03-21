@@ -1,4 +1,4 @@
-﻿using PdfClient.Models;
+﻿using Pdf.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,8 @@ namespace PdfClient.Helpers
 {
     public static class PdftkTools
     {
-        public static string ConcateFiles(List<string> filesName) {
+        public static string ConcateFiles(List<string> filesName)
+        {
 
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -22,7 +23,7 @@ namespace PdfClient.Helpers
 
             string outputName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".pdf";
 
-            string argFilesName =  "";
+            string argFilesName = "";
 
             filesName.ForEach(delegate (string fileName)
             {
@@ -52,7 +53,7 @@ namespace PdfClient.Helpers
 
             pagesNumbers.ForEach(delegate (int pageNumber)
             {
-               argPagesNumbers += string.Format(pageNumber + " ");
+                argPagesNumbers += string.Format(pageNumber + " ");
             });
             startInfo.Arguments = "/C pdftk " + fileName + " cat " + argPagesNumbers + "output " + outputName;
 
@@ -167,11 +168,11 @@ namespace PdfClient.Helpers
 
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/BookMarkData");
+            startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads");
 
             string dumpDataName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".txt";
 
-            startInfo.Arguments = "/C pdftk " + fileName + " dump_data " + "output " + dumpDataName;
+            startInfo.Arguments = "/C pdftk " + fileName + " dump_data " + "output " + "..\\BookMarkData\\" + dumpDataName;
 
             process.StartInfo = startInfo;
             process.Start();
@@ -182,20 +183,27 @@ namespace PdfClient.Helpers
         public static void AddSummaryInBookmark(string fileNameBookmarkData, List<SummaryModel> summaries, string fileName, string outputName)
         {
             string filePathBookmarkData = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/BookMarkData"), fileNameBookmarkData);
-            string filePath = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads"), fileName);
 
-            if (!File.Exists(filePathBookmarkData))
+            using (StreamWriter sw = File.AppendText(filePathBookmarkData))
             {
-                using (StreamWriter sw = File.AppendText(filePathBookmarkData))
+                summaries.Sort((x, y) => x.PageNumber.CompareTo(y.PageNumber));
+                summaries.ForEach(delegate (SummaryModel summary)
                 {
-                    summaries.ForEach(delegate (SummaryModel summary)
+                    if (summary.TitleLvl == 1)
                     {
                         sw.WriteLine("BookmarkBegin");
                         sw.WriteLine(string.Format("BookmarkTitle: {0}", summary.Title));
                         sw.WriteLine("BookmarkLevel: 1");
                         sw.WriteLine(string.Format("BookmarkPageNumber: {0}", summary.PageNumber));
-                    });
-                }
+                    }
+                    else
+                    {
+                        sw.WriteLine("BookmarkBegin");
+                        sw.WriteLine(string.Format("BookmarkTitle: {0}", summary.Title));
+                        sw.WriteLine("BookmarkLevel: 2");
+                        sw.WriteLine(string.Format("BookmarkPageNumber: {0}", summary.PageNumber));
+                    }
+                });
             }
 
             System.Diagnostics.Process process = new System.Diagnostics.Process();
@@ -205,10 +213,48 @@ namespace PdfClient.Helpers
             startInfo.FileName = "cmd.exe";
             startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads");
 
-            startInfo.Arguments = "/C pdftk " + filePath + " update_info " +"output " + outputName;
+            startInfo.Arguments = "/C pdftk " + fileName + " update_info ..\\BookMarkData\\" + fileNameBookmarkData + " output " + outputName;
 
             process.StartInfo = startInfo;
             process.Start();
+        }
+
+        public static string UncompressFile(string fileName)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads");
+
+            string outputName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".pdf";
+
+            startInfo.Arguments = "/C pdftk " + fileName + " output " + outputName + " uncompress";
+
+            process.StartInfo = startInfo;
+            process.Start();
+
+            return outputName;
+        }
+
+        public static string SetPassword(string fileName, string password)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.WorkingDirectory = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads");
+
+            string outputName = Path.GetFileNameWithoutExtension(System.IO.Path.GetRandomFileName()) + ".pdf";
+
+            startInfo.Arguments = "/C pdftk " + fileName + " output " + outputName + " user_pw " + password;
+
+            process.StartInfo = startInfo;
+            process.Start();
+
+            return outputName;
         }
 
         public static string CleanDate(string date)

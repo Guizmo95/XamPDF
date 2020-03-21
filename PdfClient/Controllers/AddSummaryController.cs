@@ -1,26 +1,31 @@
-﻿using PdfClient.Helpers;
-using PdfClient.Models;
+﻿using Newtonsoft.Json;
+using Pdf.Models;
+using PdfClient.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
 namespace PdfClient.Controllers
 {
-    [Route("api/[controller]")]
+
     public class AddSummaryController : ApiController
     {
         [Route("PostFilesForSummary")]
-        public HttpResponseMessage Post([FromUri]List<SummaryModel> summaries)
+        public HttpResponseMessage Post()
         {
             var response = new HttpResponseMessage(HttpStatusCode.BadRequest);
             try
             {
                 var httpRequest = HttpContext.Current.Request;
+
+                var jsonContent = httpRequest.Form["list"];
+                List<SummaryModel> summaries = JsonConvert.DeserializeObject<List<SummaryModel>>(jsonContent);
 
                 if (httpRequest.Files.Count != 0)
                 {

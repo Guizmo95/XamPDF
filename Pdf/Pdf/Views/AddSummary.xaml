@@ -32,9 +32,9 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            WidthRequest="30"/>
-            <!--<StackLayout>
+            <StackLayout>
                 <Button Text="go" Clicked="StartProccessAddSummary"/>
-            </StackLayout>-->
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

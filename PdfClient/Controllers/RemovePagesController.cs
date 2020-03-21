@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Http;
 
@@ -32,7 +33,10 @@ namespace PdfClient.Controllers
                     postedFile.SaveAs(filePath);
 
                     string outputName = PdftkTools.RemovePages(fileName, pages);
-                    response = Request.CreateResponse(HttpStatusCode.OK, outputName);
+
+                    response = new HttpResponseMessage(HttpStatusCode.OK);
+                    response.Content = new StringContent(outputName);
+                    response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
                 }
             }
             catch (Exception ex)

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Text;
 
-namespace PdfClient.Models
+namespace Pdf.Models
 {
     public class SummaryModel
     {
         private string title;
         private int pageNumber;
+        private int titleLvl;
 
         public int PageNumber
         {
@@ -36,10 +36,24 @@ namespace PdfClient.Models
             }
         }
 
-        public SummaryModel(string title, int pageNumber)
+        public int TitleLvl
+        {
+            get
+            {
+                return titleLvl;
+            }
+
+            set
+            {
+                titleLvl = value;
+            }
+        }
+
+        public SummaryModel(string title, int pageNumber, int titleLvl)
         {
             this.title = title;
             this.pageNumber = pageNumber;
+            this.titleLvl = titleLvl;
         }
     }
 }

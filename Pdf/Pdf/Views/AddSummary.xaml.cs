@@ -19,6 +19,7 @@ namespace Pdf.Views
     public partial class AddSummary : ContentPage
     {
         List<SummaryModel> summaries = new List<SummaryModel>();
+        FileEndpoint fileEndpoint = new FileEndpoint();
         readonly FileInfo fileInfo;
         ItemsViewModel viewModel;
         protected override void OnAppearing()
@@ -54,34 +55,21 @@ namespace Pdf.Views
 
                 await Navigation.PushModalAsync(new AddSummaryModal(summaries, item));
 
-                //string title = await DisplayPromptAsync("Title", "Select a title for this page", initialValue: string.Empty);
-                //int pageNumber = item.PageNumber;
-
-                //if (string.IsNullOrEmpty(title) == false)
-                //{
-                //    summaries.Add(new SummaryModel(title, pageNumber));
-
-                //}
-
-                //CollectionViewThumbnails.SelectedItem = null;
             }
         }
 
-        //private async void StartProccessAddSummary(object sender, EventArgs e)
-        //{ 
-        //    if(summaries.Count == 0)
-        //    {
-        //        DependencyService.Get<IToast>().ShortAlert("No summary added");
-        //    }
-        //    else
-        //    {
+        private async void StartProccessAddSummary(object sender, EventArgs e)
+        {
+            
+            if (summaries.Count == 0)
+            {
+                DependencyService.Get<IToastMessage>().ShortAlert("No summary added");
+            }
 
-        //    }
+            string fileNameGenerated = await fileEndpoint.UploadFilesForSummary(fileInfo, summaries);
 
-        //    string fileNameGenerated = await fileEndpoint.UploadFilesForConcate(fileInfo, pagesNumbers);
-
-        //    await Navigation.PushAsync(new GetDownload(fileNameGenerated));
-        //}
+            await Navigation.PushAsync(new GetDownload(fileNameGenerated));
+        }
 
 
     }
