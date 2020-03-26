@@ -21,67 +21,6 @@ namespace Pdf.Droid.Helpers
     public class GetThumbnails : IGetThumbnails
     {
 
-        //public async Task<string> GetBitmaps(string filePath)
-        //{
-
-        //    //TODO-- WORK ON THIS
-        //    PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
-
-        //    var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-        //    string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
-        //    string directoryPath = System.IO.Path.Combine(appDirectory, "thumbnailsTemp", System.IO.Path.GetFileNameWithoutExtension(fileName));
-
-        //    //var stream = new MemoryStream();
-
-        //    //using (Stream resourceStream = new FileStream(filePath, FileMode.Open))
-        //    //{
-        //    //    resourceStream.CopyTo(stream);
-        //    //}
-
-        //    //Document document = new Document(stream);
-        //    //int count = document.Pages.Count;
-
-        //    //for(int i = 0; i< count; i++) {
-        //    //    TallComponents.PDF.Rasterizer.Page page = document.Pages[i];
-
-        //    //    using (var outputStream = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png"), FileMode.Create, FileAccess.Write))
-        //    //    {
-        //    //        await Task.Run(() =>
-        //    //        {
-        //    //            page.SaveAsBitmap(outputStream, CompressFormat.Png, 50);
-        //    //        });
-        //    //    }
-        //    //}
-
-        //    var stream = new MemoryStream();
-
-        //    using (Stream resourceStream = new FileStream(filePath, FileMode.Open))
-        //    {
-        //        resourceStream.CopyTo(stream);
-        //    }
-
-        //    for (int i = 0; i < pdfRenderer.PageCount; i++)
-        //    {
-        //        TallComponents.PDF.Rasterizer.Page page = new TallComponents.PDF.Rasterizer.Page(stream, i);
-
-        //        byte[] bytes = null;
-        //        await Task.Run(() =>
-        //        {
-        //            bytes = page.AsPNG(72);
-
-        //        });
-        //        var path = Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png");
-        //        File.WriteAllBytes(path, bytes);
-
-        //        //using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png"), FileMode.Create, FileAccess.Write))
-        //        //{
-        //        //    output.Write(bytes, 0, bytes.Length);
-        //        //}
-        //    }
-
-        //    return directoryPath;
-        //}
-
         List<ThumbnailsModel> items = new List<ThumbnailsModel>();
         bool inProccess = false;
 
@@ -119,6 +58,7 @@ namespace Pdf.Droid.Helpers
 
             PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
 
+            //CHECK PATH LATER
             var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
             string directoryPath = System.IO.Path.Combine(appDirectory, "thumbnailsTemp", System.IO.Path.GetFileNameWithoutExtension(fileName));
@@ -134,7 +74,8 @@ namespace Pdf.Droid.Helpers
             for (int i = lastIndex; i < lastIndex + numberOfItemsPerPage; i++)
             {
                 PdfRenderer.Page page = pdfRenderer.OpenPage(i);
-                Android.Graphics.Bitmap bmp = Android.Graphics.Bitmap.CreateBitmap(page.Width, page.Height, Android.Graphics.Bitmap.Config.Argb4444);
+
+                Android.Graphics.Bitmap bmp = Android.Graphics.Bitmap.CreateBitmap(page.Width, page.Height, Android.Graphics.Bitmap.Config.Argb8888);
                 page.Render(bmp, null, null, PdfRenderMode.ForDisplay);
 
                 try

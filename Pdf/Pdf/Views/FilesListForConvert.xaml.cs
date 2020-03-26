@@ -55,10 +55,9 @@ namespace Pdf.Views
                     await Navigation.PushAsync(new RemovePages(fileInfo));
                     break;
                 case ProcessNames.AddSummary:
-                    //Add Progress bar for this and refont of the download pages etc.etc
                     await Navigation.PushAsync(new AddSummary(fileInfo));
+                    break;
                 case ProcessNames.SetPassword:
-
                     break;
             }
 

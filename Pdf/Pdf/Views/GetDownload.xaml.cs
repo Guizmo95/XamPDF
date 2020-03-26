@@ -39,14 +39,14 @@ namespace Pdf.Views
                 if(filesNames.Count == 0)
                 {
                     var file = await fileEndpoint.GetFileConcated(fileName);
-                    androidWritter.SaveFile(fileName, file);
+                    androidWritter.SaveFileInDownloads(fileName, file);
                 }
                 else
                 {
                     filesNames.ForEach(async delegate (string fileName)
                     {
                         var file = await fileEndpoint.GetFileConcated(fileName);
-                        androidWritter.SaveFile(fileName, file);
+                        androidWritter.SaveFileInDownloads(fileName, file);
                     });
                 }
                 

@@ -13,9 +13,12 @@ using System.Net.Http.Formatting;
 using Pdf.Models;
 using System.Web;
 using Newtonsoft.Json;
+using Pdf.Helpers;
+using System.Net;
 
 namespace Pdf
 {
+    //TODO -- REWORK FOR UPLOAD BAR
     public class FileEndpoint
     {
         //TODO - Gerer fichiers de mm nom
@@ -80,7 +83,7 @@ namespace Pdf
                 i++;
             });
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:44560/PostFilesForConcatePages?"+ pagesNumbersArg;
+            var uploadServiceBaseAdress = "http://10.0.2.2:44560/PostFilesForConcatePages?" + pagesNumbersArg;
 
             using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
             {
@@ -142,50 +145,102 @@ namespace Pdf
             }
         }
 
-        public async Task<string> UploadFilesForRemovePages(FileInfo fileInfo, List<int> pagesNumbers)
+        public async Task<string> UploadFilesForRemovePages(FileInfo fileInfo, List<int> pagesNumbers, IProgress<UploadBytesProgress> progessReporter)
         {
+            string res = null;
             IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
 
-            var content = new MultipartFormDataContent();
-
-            var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
-
-            ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
-
-            content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
-
-            var httpClient = new HttpClient();
-
-            string pagesNumbersArg = "";
-
-            int i = 0;
-            pagesNumbers.ForEach(delegate (int number)
+            using (var client = new HttpClient())
             {
-                if (pagesNumbers.Last() != number)
-                    pagesNumbersArg += "pages[" + i + "]=" + number + "&";
-                else
+                using (var multiForm = new MultipartFormDataContent())
                 {
-                    pagesNumbersArg += "pages[" + i + "]=" + number;
-                }
-                i++;
-            });
+                    var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+                    ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
 
-            var uploadServiceBaseAdress = "http://10.0.2.2:44560/RemovePages?" + pagesNumbersArg;
+                    multiForm.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
 
-            using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    string fileName = await response.Content.ReadAsStringAsync();
+                    var progressContent = new ProgressableStreamContent(multiForm, 4096, (sent, total) =>
+                    {
+                        UploadBytesProgress args = new UploadBytesProgress("http://10.0.2.2:44560/RemovePages?", (int)sent, (int)total);
+                        progessReporter.Report(args);
+                    });
 
-                    return fileName;
-                }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
+                    string pagesNumbersArg = "";
+
+                    int i = 0;
+                    pagesNumbers.ForEach(delegate (int number)
+                    {
+                        if (pagesNumbers.Last() != number)
+                            pagesNumbersArg += "pages[" + i + "]=" + number + "&";
+                        else
+                        {
+                            pagesNumbersArg += "pages[" + i + "]=" + number;
+                        }
+                        i++;
+                    });
+
+                    var uploadServiceBaseAdress = "http://10.0.2.2:44560/RemovePages?" + pagesNumbersArg;
+
+                    using (HttpResponseMessage response = await client.PostAsync(uploadServiceBaseAdress, progressContent))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            res = await response.Content.ReadAsStringAsync();
+                        }
+                        else
+                        {
+                            throw new Exception(response.ReasonPhrase);
+                        }
+                    }
+                    return res;
                 }
             }
         }
+
+        //public async Task<string> UploadFilesForRemovePages(FileInfo fileInfo, List<int> pagesNumbers)
+        //{
+        //    IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
+
+        //    var content = new MultipartFormDataContent();
+
+        //    var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+
+        //    ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
+
+        //    content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+
+        //    var httpClient = new HttpClient();
+
+        //    string pagesNumbersArg = "";
+
+        //    int i = 0;
+        //    pagesNumbers.ForEach(delegate (int number)
+        //    {
+        //        if (pagesNumbers.Last() != number)
+        //            pagesNumbersArg += "pages[" + i + "]=" + number + "&";
+        //        else
+        //        {
+        //            pagesNumbersArg += "pages[" + i + "]=" + number;
+        //        }
+        //        i++;
+        //    });
+
+        //    var uploadServiceBaseAdress = "http://10.0.2.2:44560/RemovePages?" + pagesNumbersArg;
+
+        //    using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
+        //    {
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            string fileName = await response.Content.ReadAsStringAsync();
+
+        //            return fileName;
+        //        }
+        //        else
+        //        {
+        //            throw new Exception(response.ReasonPhrase);
+        //        }
+        //    }
+        //}
 
         public async Task<string> UploadFilesForWatermark(List<FileInfo> filesInfo)
         {
@@ -253,7 +308,7 @@ namespace Pdf
             }
         }
 
-        
+
 
         public async Task<string> UploadFilesForSummary(FileInfo fileInfo, List<SummaryModel> summaries)
         {
@@ -288,35 +343,86 @@ namespace Pdf
             }
         }
 
-        public async Task<List<string>> UploadFilesForUncompress(List<FileInfo> filesInfo)
+        public async Task<string> UploadFilesForUncompress(FileInfo fileInfo, IProgress<UploadBytesProgress> progessReporter)
         {
+            string res = null;
             IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
 
-            var content = new MultipartFormDataContent();
-
-            filesInfo.ForEach(delegate (FileInfo fileInfo)
+            using (var client = new HttpClient())
             {
-                var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
-
-                ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
-
-                content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
-            });
-
-            var httpClient = new HttpClient();
-
-            var uploadServiceBaseAdress = "http://10.0.2.2:44560/PostFilesForUncompressDocs/";
-
-            using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
-            {
-                if (response.IsSuccessStatusCode)
+                using (var multiForm = new MultipartFormDataContent())
                 {
-                    List<string> filesNames = await response.Content.ReadAsAsync<List<string>>();
-                    return filesNames;
+                    var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+                    ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
+
+                    multiForm.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+
+                    var progressContent = new ProgressableStreamContent(multiForm, 4096, (sent, total) =>
+                    {
+                        UploadBytesProgress args = new UploadBytesProgress("http://10.0.2.2:44560/PostFilesForUncompressDocs/", (int)sent, (int)total);
+                        progessReporter.Report(args);
+                    });
+
+
+                    var uploadServiceBaseAdress = "http://10.0.2.2:44560/PostFilesForUncompressDocs/";
+
+                    var response = await client.PostAsync(uploadServiceBaseAdress, progressContent);
+                    Console.WriteLine(response.StatusCode);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        res = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine(res);
+
+                    }
+                    else
+                    {
+                        throw new Exception(response.ReasonPhrase);
+                    }
+
+                    return res;
                 }
-                else
+            }
+        }
+
+        public async Task<string> UploadFiles(FileInfo fileInfo, IProgress<UploadBytesProgress> progessReporter)
+        {
+            string res = null;
+            IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
+
+            using (var client = new HttpClient())
+            {
+                using (var multiForm = new MultipartFormDataContent())
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+                    ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
+
+                    multiForm.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+
+                    var progressContent = new ProgressableStreamContent(multiForm, 4096, (sent, total) =>
+                    {
+                        UploadBytesProgress args = new UploadBytesProgress("SERVEUR URL FOR UPLOAD", (int)sent, (int)total);
+                        progessReporter.Report(args);
+                    });
+
+
+                    var uploadServiceBaseAdress = "SERVEUR URL FOR UPLOAD";
+
+                    var response = await client.PostAsync(uploadServiceBaseAdress, progressContent);
+                    Console.WriteLine(response.StatusCode);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        res = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine(res);
+
+                    }
+                    else
+                    {
+                        throw new Exception(response.ReasonPhrase);
+                    }
+
+                    return res;
                 }
             }
         }
@@ -337,7 +443,17 @@ namespace Pdf
 
             var uploadServiceBaseAdress = "http://10.0.2.2:44560/PostFilesForPassword?password" + password;
 
-            using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
+            var request = new HttpRequestMessage(HttpMethod.Post, uploadServiceBaseAdress);
+
+            var progressContent = new ProgressableStreamContent(content, 4096,
+            (sent, total) =>
+            {
+                Console.WriteLine("Uploading {0}/{1}", sent, total);
+            });
+
+            request.Content = progressContent;
+
+            using (HttpResponseMessage response = await httpClient.SendAsync(request))
             {
                 if (response.IsSuccessStatusCode)
                 {

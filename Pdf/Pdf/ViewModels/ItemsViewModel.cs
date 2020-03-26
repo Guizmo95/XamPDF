@@ -16,8 +16,9 @@ using Xamarin.Forms;
 
 namespace Pdf.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class ItemsViewModel : BaseItemViewModel
     {
+        //CHECK IF WE CAN DELETE THE DUBBLON
         IGetThumbnails getThumbnails = DependencyService.Get<IGetThumbnails>();
         FileInfo fileInfo;
         public ObservableCollection<ThumbnailsModel> Items { get; set; }
@@ -100,10 +101,7 @@ namespace Pdf.ViewModels
 
         async Task ExecuteLoadItemsCommand()
         {
-            //Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black));
 
-            //await Task.Run(async () =>
-            //{
             using (UserDialogs.Instance.Loading("Loading...")) { 
             IsBusy = true;
 
@@ -130,12 +128,6 @@ namespace Pdf.ViewModels
                 IsBusy = false;
             }
         }
-            //}).ContinueWith(result => Device.BeginInvokeOnMainThread(() =>
-            //{
-
-            //    UserDialogs.Instance.HideLoading();
-            //})
-            //);
 
         }
 

@@ -1,12 +1,15 @@
 ﻿using Pdf.Views;
 using System;
+using System.ComponentModel;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace Pdf
 {
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();
@@ -15,6 +18,7 @@ namespace Pdf
                 "CarouselView_Experimental",
                 "IndicatorView_Experimental"
             });
+
 
             MainPage = /*new NavigationPage(new MainMenu());*/
                 new ShellMenu();

@@ -1,4 +1,5 @@
-﻿using Pdf.Interfaces;
+﻿using Pdf.Helpers;
+using Pdf.Interfaces;
 using Pdf.Models;
 using Pdf.ViewModels;
 using System;
@@ -32,6 +33,7 @@ namespace Pdf.Views
             });
         }
 
+        //TODO -- HANDLE IF SELECT ALL PAGES
         public RemovePages(FileInfo fileInfo)
         {
             InitializeComponent();
@@ -62,9 +64,37 @@ namespace Pdf.Views
                 }
             });
 
-            string fileName= await fileEndpoint.UploadFilesForRemovePages(fileInfo, pagesNumbers);
+            stkl.Children.Clear();
 
-            await Navigation.PushAsync(new GetDownload(fileName));
+            ProgressBar progressBar = new ProgressBar();
+            stkl.Children.Add(progressBar);
+
+            Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
+            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(100 * args.PercentComplete) / 200, progressBar);
+
+            Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
+            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((progressBar.Progress) + ((double)(100 * args.PercentComplete) / 200), progressBar);
+
+            await Task.Run(async () =>
+            {
+                string fileName = await fileEndpoint.UploadFilesForRemovePages(fileInfo, pagesNumbers, progressReporterForUpload);
+
+                await Download(fileName, progressReporterForDownload);
+            });
+            
+
+            //await Navigation.PushAsync(new GetDownload(fileName));
+        }
+
+        void UpdateProgress(double obj, ProgressBar progressBar)
+        {
+            progressBar.Progress = obj;
+        }
+
+        private async Task Download(string fileName, Progress<DownloadBytesProgress> progressReporter)
+        {
+            byte[] buffer = await DownloadHelper.CreateDownloadTask("http://10.0.2.2:44560/GetFile/" + fileName, progressReporter);
+            DependencyService.Get<IAndroidFileHelper>().SaveFileInDownloads(fileName, buffer);
         }
     }
 }

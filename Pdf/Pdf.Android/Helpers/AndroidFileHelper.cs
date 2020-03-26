@@ -20,11 +20,20 @@ namespace Pdf.Droid.Helpers
 {
     public class AndroidFileHelper : IAndroidFileHelper
     {
-        public void SaveFile(string filename, byte[] file)
+        public void SaveFileInDownloads(string filename, byte[] file)
         {
             string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
 
             var path = Path.Combine(directoryDownload, filename);
+
+            File.WriteAllBytes(path, file);
+        }
+
+        public void SaveFileInDocFolder(string fileName, byte[] file)
+        {
+            string appFolder = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments);
+
+            var path = Path.Combine(appFolder, fileName);
 
             File.WriteAllBytes(path, file);
         }

@@ -19,31 +19,25 @@ namespace PdfClient.Controllers
             try
             {
                 var httpRequest = HttpContext.Current.Request;
-                List<string> filesNames = new List<string>();
 
                 if (httpRequest.Files.Count > 0)
                 {
-                    foreach (string file in httpRequest.Files)
-                    {
-                        var postedFile = httpRequest.Files[file];
 
-                        var fileName = postedFile.FileName;
-                        string date = DateTime.Now.ToString();
-                        date = PdftkTools.CleanDate(date);
-                        fileName = date + fileName;
-                        filesNames.Add(fileName);
+                    var postedFile = httpRequest.Files[0];
 
-                        var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName);
-                        postedFile.SaveAs(filePath);
-                    }
+                    var fileName = postedFile.FileName;
+                    string date = DateTime.Now.ToString();
+                    date = PdftkTools.CleanDate(date);
+                    fileName = date + fileName;
 
-                    List<string> outputFilesNames = new List<string>();
-                    filesNames.ForEach(delegate (string fileName)
-                    {
-                        outputFilesNames.Add(PdftkTools.UncompressFile(fileName));
-                    });
+                    var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName);
+                    postedFile.SaveAs(filePath);
 
-                    response = Request.CreateResponse(HttpStatusCode.OK, outputFilesNames);
+                    string outputName = PdftkTools.UncompressFile(fileName);
+
+                    response = Request.CreateResponse(HttpStatusCode.OK, outputName);
+                    response.Content = new StringContent(outputName);
+                    response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
 
                 }
             }

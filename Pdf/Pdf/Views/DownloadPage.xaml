@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pdf.Views.DownloadPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="DownloadList" ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <ProgressBar x:Name="styledProgressBar"
+                                        WidthRequest="500"
+                                        ProgressColor="Orange"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="Fill" Progress="{Binding ProgressPercentage}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

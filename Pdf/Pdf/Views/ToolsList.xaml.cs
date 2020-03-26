@@ -32,7 +32,8 @@ namespace Pdf.Views
             Items.Add(new ItemChoiceCustom() { Id = 5, Libelle = "Add stamp", Detail = "Add a stamp for a documents" });
             Items.Add(new ItemChoiceCustom() { Id = 6, Libelle = "Add summary", Detail = "Add a summary to your pdf doc" });
             Items.Add(new ItemChoiceCustom() { Id = 7, Libelle = "Uncompress", Detail = "Uncompress your pdf doc" });
-            Items.Add(new ItemChoiceCustom() { Id = 8, Libelle = "Waiting", Detail = "waiting" });
+            //TODO -- NOT REALIZE YET 
+            Items.Add(new ItemChoiceCustom() { Id = 8, Libelle = "Compress", Detail = "compress" });
             Items.Add(new ItemChoiceCustom() { Id = 9, Libelle = "Set a password", Detail = "Set a password to your doc" });
 
             MyListView.ItemsSource = Items;

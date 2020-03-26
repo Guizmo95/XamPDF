@@ -5,9 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Pdf.Views.UncompressDocs">
-    <StackLayout>
-        <CollectionView x:Name="FilesList" SelectionMode="Multiple">
-            <CollectionView.ItemTemplate>
+    <StackLayout x:Name="stkl">
+        <CollectionView x:Name="FilesList" SelectionMode="Single" HeightRequest="100">
+            <CollectionView.ItemTemplate >
                 <DataTemplate>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout Orientation="Vertical">
@@ -18,6 +18,16 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Text="Go" Clicked="StartTheConvertion"/>
+        <ProgressBar x:Name="styledProgressBar"
+                     WidthRequest="500"
+                     ProgressColor="Orange"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="Fill" />
+        <ProgressBar x:Name="styledProgressBar2"
+                     WidthRequest="500"
+                     ProgressColor="Orange"
+                     VerticalOptions="End"
+                     HorizontalOptions="Fill" />
+        <Button Text="Go" Clicked="StartUploadHandler"/>
     </StackLayout>
 </ContentPage>

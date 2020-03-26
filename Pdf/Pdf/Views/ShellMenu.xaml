@@ -40,6 +40,9 @@
         <Tab Title="Tools list">
             <ShellContent Title="Tools list" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:ToolsList}"/>
         </Tab>
+        <Tab Title="Download">
+            <ShellContent Title="Download" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:DownloadPage}"/>
+        </Tab>
     </FlyoutItem>
     <ShellContent Title="Help"  Icon="baseline_help_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
         <ShellContent Title="Feedback"  Icon="baseline_feedback_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
