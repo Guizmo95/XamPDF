@@ -32,7 +32,7 @@
     </NavigationPage.TitleView>-->
 
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#b4b4b4">
+        <StackLayout BackgroundColor="#b4b4b4" x:Name="stkl">
             <RefreshView Command="{Binding RefreshItemsCommand}" IsRefreshing="{Binding IsRefreshing}" >
                 <CollectionView x:Name="CollectionViewThumbnails" SelectionMode="Multiple" Margin="13" ItemsSource="{Binding Items}" 
                                     RemainingItemsThresholdReachedCommand="{Binding ItemTresholdReachedCommand}"

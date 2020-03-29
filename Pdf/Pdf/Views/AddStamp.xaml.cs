@@ -1,11 +1,12 @@
-﻿using Pdf.Interfaces;
+﻿using Pdf.Api;
+using Pdf.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,12 +16,13 @@ namespace Pdf.Views
     public partial class AddStamp : ContentPage
     {
         private readonly FileInfo fileInfo;
-        FileEndpoint fileEndpoint = new FileEndpoint();
+        private readonly IOverlayEndpoint overlayEndpoint;
         public AddStamp(FileInfo fileInfo)
         {
             InitializeComponent();
 
             this.fileInfo = fileInfo;
+            this.overlayEndpoint = App.Container.Resolve<IOverlayEndpoint>();
 
             IPdfPickerAndroid pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
 
@@ -34,7 +36,7 @@ namespace Pdf.Views
             filesInfoWatermark.Add((FileInfo)FilesList.SelectedItem);
             filesInfoWatermark.Insert(0, fileInfo);
 
-            string fileNameGenerated = await fileEndpoint.UploadFilesForStump(filesInfoWatermark);
+            string fileNameGenerated = await overlayEndpoint.UploadFilesForStump(filesInfoWatermark);
 
             await Navigation.PushAsync(new GetDownload(fileNameGenerated));
         }

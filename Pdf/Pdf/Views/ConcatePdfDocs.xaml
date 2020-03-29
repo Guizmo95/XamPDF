@@ -10,8 +10,8 @@
             <Label Text="Pdf Edit"/>
         </StackLayout>
     </NavigationPage.TitleView>-->
-    
-    <StackLayout>
+
+    <StackLayout  x:Name="stkl">
         <CollectionView x:Name="FilesList" SelectionMode="Multiple">
             <CollectionView.ItemTemplate>
                 <DataTemplate>

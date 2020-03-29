@@ -1,7 +1,9 @@
 ﻿using Acr.UserDialogs;
 using Android.Arch.Lifecycle;
 using Android.Graphics.Pdf;
+using Pdf.Api;
 using Pdf.Enumerations;
+using Pdf.Helpers;
 using Pdf.Interfaces;
 using Pdf.Models;
 using Pdf.ViewModels;
@@ -11,7 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,9 +22,9 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConcatePageThumbnails : ContentPage
     {
-        FileEndpoint fileEndpoint = new FileEndpoint();
-        FileInfo fileInfo;
-        ItemsViewModel viewModel;
+        private readonly IConcateEndpoint concateEndpoint;
+        private readonly FileInfo fileInfo;
+        private ItemsViewModel viewModel;
 
         //TODO -- DELETE SELECTION
 
@@ -46,6 +48,8 @@ namespace Pdf.Views
             InitializeComponent();
 
             this.fileInfo = fileInfo;
+            this.concateEndpoint = App.Container.Resolve<IConcateEndpoint>();
+
             BindingContext = viewModel = new ItemsViewModel(fileInfo);
         }
         
@@ -65,9 +69,45 @@ namespace Pdf.Views
                 pagesNumbers.Add(thumbnailsModel.PageNumber);
             });
 
-            string fileNameGenerated = await fileEndpoint.UploadFilesForConcate(fileInfo, pagesNumbers);
+            stkl.Children.Clear();
 
-            await Navigation.PushAsync(new GetDownload(fileNameGenerated));
+            ProgressBar progressBar = new ProgressBar();
+            stkl.Children.Add(progressBar);
+
+            Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
+            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+
+            Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
+            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+
+            await Task.Run(async () =>
+            {
+                string fileNameGenerated = await concateEndpoint.UploadFilesForConcate(fileInfo, pagesNumbers, progressReporterForUpload);
+
+                await Download(fileNameGenerated, progressReporterForDownload);
+            });
+
+            DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
+        }
+
+        void UpdateProgress(double obj, ProgressBar progressBar)
+        {
+            if (progressBar.Progress < 0.5)
+            {
+                progressBar.Progress = obj;
+            }
+            else
+            {
+                if (progressBar.Progress >= 0.5)
+                {
+                    progressBar.Progress += obj;
+                }
+            }
+        }
+
+        private async Task Download(string fileName, Progress<DownloadBytesProgress> progressReporter)
+        {
+            await DownloadHelper.CreateDownloadTask("http://10.0.2.2:44560/GetFile/", fileName, progressReporter);
         }
     }
 }

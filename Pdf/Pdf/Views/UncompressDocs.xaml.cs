@@ -1,4 +1,5 @@
-﻿using Pdf.Helpers;
+﻿using Pdf.Api;
+using Pdf.Helpers;
 using Pdf.Interfaces;
 using Pdf.Models;
 using Pdf.ViewModels;
@@ -11,7 +12,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,11 +21,13 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UncompressDocs : ContentPage
     {
-        private FileEndpoint fileEndpoint = new FileEndpoint();
+        private readonly IUncompressEndpoint uncompressEndpoint;
 
         public UncompressDocs()
         {
             InitializeComponent();
+
+            this.uncompressEndpoint = App.Container.Resolve<IUncompressEndpoint>();
 
             IPdfPickerAndroid pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
             FilesList.ItemsSource = pdfPickerAndroid.GetPdfFilesInDocuments();
@@ -36,31 +39,39 @@ namespace Pdf.Views
             var fileInfo = (FileInfo)FilesList.SelectedItem;
 
             Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
-            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(100 * args.PercentComplete)/200);
+            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete));
 
             Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
-            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((styledProgressBar.Progress) + ((double)(100 * args.PercentComplete)/200));
+            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete));
 
             await Task.Run(async () =>
             { 
-                string fileName = await fileEndpoint.UploadFilesForUncompress(fileInfo, progressReporterForUpload);
+                string fileName = await uncompressEndpoint.UploadFilesForUncompress(fileInfo, progressReporterForUpload);
 
                 await Download(fileName, progressReporterForDownload);
             });
-
             
-            DependencyService.Get<IToastMessage>().ShortAlert("Download start");
+           
         }
 
         void UpdateProgress(double obj)
         {
-            styledProgressBar.Progress = obj;
+            if (progressBar.Progress < 0.5)
+            {
+                progressBar.Progress = obj;
+            }
+            else
+            {
+                if (progressBar.Progress >= 0.5)
+                {
+                    progressBar.Progress += obj;
+                }
+            }
         }
 
         private async Task Download(string fileName, Progress<DownloadBytesProgress> progressReporter)
         {
-            byte[] buffer = await DownloadHelper.CreateDownloadTask("http://10.0.2.2:44560/GetFile/" + fileName, progressReporter);
-            DependencyService.Get<IAndroidFileHelper>().SaveFileInDownloads(fileName, buffer);
+            await DownloadHelper.CreateDownloadTask("http://10.0.2.2:44560/GetFile/", fileName, progressReporter);
         }
 
 

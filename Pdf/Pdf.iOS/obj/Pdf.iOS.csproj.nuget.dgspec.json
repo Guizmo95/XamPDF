@@ -121,9 +121,17 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "SharpZipLib": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
               "version": "[17.4.0.55, )"
+            },
+            "Unity": {
+              "target": "Package",
+              "version": "[5.11.4, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

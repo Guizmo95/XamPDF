@@ -17,7 +17,7 @@ namespace Pdf.Helpers
 
 		public int BytesSended { get; private set; }
 
-		public float PercentComplete { get { return (float)BytesSended / TotalBytes; } }
+		public float PercentComplete { get { return ((float)BytesSended / TotalBytes)/2; } }
 
 		public string Filename { get; private set; }
 

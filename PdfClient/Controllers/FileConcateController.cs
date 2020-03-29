@@ -1,4 +1,5 @@
-﻿using Pdf.Enumerations;
+﻿using Newtonsoft.Json;
+using Pdf.Enumerations;
 using PdfClient.Helpers;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
@@ -42,11 +44,18 @@ namespace PdfClient.Controllers
                         postedFile.SaveAs(filePath);
                     }
 
+                    var lastFileInRequest = filesNames.Last();
+                    while (!File.Exists(HttpContext.Current.Server.MapPath("~/Uploads/" + lastFileInRequest)))
+                    {
+                        Thread.Sleep(1000);
+                    }
+
                     string outputName = PdftkTools.ConcateFiles(filesNames);
 
-                    response = new HttpResponseMessage(HttpStatusCode.OK);
+                    response = Request.CreateResponse(HttpStatusCode.OK, outputName);
                     response.Content = new StringContent(outputName);
                     response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
+
                     return response;
                 }
             }
@@ -78,6 +87,11 @@ namespace PdfClient.Controllers
                     var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName);
                     postedFile.SaveAs(filePath);
 
+                    while (!File.Exists(filePath))
+                    {
+                        Thread.Sleep(1000);
+                    }
+
                     string outputName = PdftkTools.ConcatePages(fileName, pages);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
@@ -96,24 +110,42 @@ namespace PdfClient.Controllers
 
 
         //TODO - MOVE THIS TO OTHER CLASS
+        //[Route("GetFile/{fileName}")]
+        //public HttpResponseMessage GetFileConverted(string fileName)
+        //{
+        //    HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.BadRequest);
+
+        //    if (String.IsNullOrEmpty(fileName))
+        //        return Request.CreateResponse(HttpStatusCode.BadRequest);
+
+        //    string filePath = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads/" + fileName);
+        //    byte[] pdf = File.ReadAllBytes(filePath);
+
+        //    response.Content = new ByteArrayContent(pdf);
+        //    response.Content.Headers.ContentLength = pdf.Length;
+        //    response.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
+        //    response.Content.Headers.ContentDisposition.FileName = fileName;
+        //    response.StatusCode = HttpStatusCode.OK;
+        //    response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
+
+        //    return response;
+        //}
+
         [Route("GetFile/{fileName}")]
-        public HttpResponseMessage GetFileConverted(string fileName)
+        public HttpResponseMessage Get(string fileName)
         {
-            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.BadRequest);
-
-            if (String.IsNullOrEmpty(fileName))
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-
-            string filePath = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads/" + fileName);
-            byte[] pdf = File.ReadAllBytes(filePath);
-
-            response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new ByteArrayContent(pdf);
-            response.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
-            response.Content.Headers.ContentDisposition.FileName = fileName;
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
-
-            return response;
+            var path = System.Web.Hosting.HostingEnvironment.MapPath("~/Uploads/" + fileName);
+            var result = new HttpResponseMessage(HttpStatusCode.OK);
+            var stream = new FileStream(path, FileMode.Open);
+            result.Content = new StreamContent(stream);
+            result.Content.Headers.ContentType =
+                new MediaTypeHeaderValue("application/octet-stream");
+            result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+            {
+                FileName = fileName
+            };
+            return result;
         }
+
     }
 }

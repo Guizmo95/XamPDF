@@ -14,7 +14,9 @@
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.440" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="SharpZipLib" Version="1.2.0" />
     <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="17.4.0.55" />
+    <PackageReference Include="Unity" Version="5.11.4" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
   </ItemGroup>
 

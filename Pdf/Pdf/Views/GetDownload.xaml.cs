@@ -13,7 +13,7 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GetDownload : ContentPage
     {
-        private FileEndpoint fileEndpoint = new FileEndpoint();
+        //private FileEndpoint fileEndpoint = new FileEndpoint();
 
         IAndroidFileHelper androidWritter =  DependencyService.Get<IAndroidFileHelper>();
 
@@ -36,19 +36,19 @@ namespace Pdf.Views
         {
             try {
                 //TODO DOWNLOAD FOR LIST
-                if(filesNames.Count == 0)
-                {
-                    var file = await fileEndpoint.GetFileConcated(fileName);
-                    androidWritter.SaveFileInDownloads(fileName, file);
-                }
-                else
-                {
-                    filesNames.ForEach(async delegate (string fileName)
-                    {
-                        var file = await fileEndpoint.GetFileConcated(fileName);
-                        androidWritter.SaveFileInDownloads(fileName, file);
-                    });
-                }
+                //if(filesNames.Count == 0)
+                //{
+                //    var file = await fileEndpoint.GetFileConcated(fileName);
+                //    androidWritter.SaveFileInDownloads(fileName, file);
+                //}
+                //else
+                //{
+                //    filesNames.ForEach(async delegate (string fileName)
+                //    {
+                //        var file = await fileEndpoint.GetFileConcated(fileName);
+                //        androidWritter.SaveFileInDownloads(fileName, file);
+                //    });
+                //}
                 
             }
             catch (Exception ex)

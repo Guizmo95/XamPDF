@@ -1,6 +1,8 @@
-﻿using Pdf.Views;
+﻿using Pdf.Api;
+using Pdf.Views;
 using System;
 using System.ComponentModel;
+using Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -9,6 +11,7 @@ namespace Pdf
 {
     public partial class App : Application
     {
+        public static UnityContainer Container { get; set; }
 
         public App()
         {
@@ -19,6 +22,15 @@ namespace Pdf
                 "IndicatorView_Experimental"
             });
 
+            Container = new UnityContainer();
+            Container.RegisterType<IConcateEndpoint, ConcateEndpoint>();
+            Container.RegisterType<IDeconcateEndpoint, DeconcateEndpoint>();
+            Container.RegisterType<IGetFilesEndpoint, GetFilesEndpoint>();
+            Container.RegisterType<IOverlayEndpoint, OverlayEndpoint>();
+            Container.RegisterType<IPasswordEndpoint, PasswordEndpoint>();
+            Container.RegisterType<IRemovePagesEndpoint, RemovePagesEndpoint>();
+            Container.RegisterType<ISummaryEndpoint, SummaryEndpoint>();
+            Container.RegisterType<IUncompressEndpoint, UncompressEndpoint>();
 
             MainPage = /*new NavigationPage(new MainMenu());*/
                 new ShellMenu();

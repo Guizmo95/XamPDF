@@ -1,4 +1,5 @@
-﻿using Pdf.Helpers;
+﻿using Pdf.Api;
+using Pdf.Helpers;
 using Pdf.Interfaces;
 using Pdf.Models;
 using Pdf.ViewModels;
@@ -8,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,8 +19,8 @@ namespace Pdf.Views
     public partial class RemovePages : ContentPage
     {
         private readonly FileInfo fileInfo;
-        FileEndpoint fileEndpoint = new FileEndpoint();
-        ItemsViewModel viewModel;
+        private readonly IRemovePagesEndpoint removePagesEndpoint;
+        private ItemsViewModel viewModel;
 
         protected override void OnAppearing()
         {
@@ -39,6 +40,7 @@ namespace Pdf.Views
             InitializeComponent();
 
             this.fileInfo = fileInfo;
+            this.removePagesEndpoint = App.Container.Resolve<IRemovePagesEndpoint>();
             BindingContext = viewModel = new ItemsViewModel(fileInfo);
 
         }
@@ -70,31 +72,39 @@ namespace Pdf.Views
             stkl.Children.Add(progressBar);
 
             Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
-            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(100 * args.PercentComplete) / 200, progressBar);
+            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
 
             Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
-            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((progressBar.Progress) + ((double)(100 * args.PercentComplete) / 200), progressBar);
+            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
 
             await Task.Run(async () =>
             {
-                string fileName = await fileEndpoint.UploadFilesForRemovePages(fileInfo, pagesNumbers, progressReporterForUpload);
+                string fileName = await removePagesEndpoint.UploadFilesForRemovePages(fileInfo, pagesNumbers, progressReporterForUpload);
 
                 await Download(fileName, progressReporterForDownload);
             });
-            
 
-            //await Navigation.PushAsync(new GetDownload(fileName));
+            DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
         }
 
         void UpdateProgress(double obj, ProgressBar progressBar)
         {
-            progressBar.Progress = obj;
+            if (progressBar.Progress < 0.5)
+            {
+                progressBar.Progress = obj;
+            }
+            else
+            {
+                if (progressBar.Progress >= 0.5)
+                {
+                    progressBar.Progress += obj;
+                }
+            }
         }
 
         private async Task Download(string fileName, Progress<DownloadBytesProgress> progressReporter)
         {
-            byte[] buffer = await DownloadHelper.CreateDownloadTask("http://10.0.2.2:44560/GetFile/" + fileName, progressReporter);
-            DependencyService.Get<IAndroidFileHelper>().SaveFileInDownloads(fileName, buffer);
+            await DownloadHelper.CreateDownloadTask("http://10.0.2.2:44560/GetFile/", fileName, progressReporter);
         }
     }
 }

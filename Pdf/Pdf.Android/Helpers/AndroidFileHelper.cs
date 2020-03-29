@@ -4,13 +4,15 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using ICSharpCode.SharpZipLib.Zip;
+using Java.IO;
 using Pdf.Droid;
 using Pdf.Droid.Helpers;
 using Pdf.Interfaces;
@@ -26,7 +28,53 @@ namespace Pdf.Droid.Helpers
 
             var path = Path.Combine(directoryDownload, filename);
 
-            File.WriteAllBytes(path, file);
+            System.IO.File.WriteAllBytes(path, file);
+        }
+
+        public async Task<List<string>> UnzipFileInDownload(string fileName)
+        {
+            string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
+
+            var zipPath = Path.Combine(directoryDownload, fileName);
+
+            List<string> filesNames = new List<string>();
+
+            try
+            {
+                var entry = new ZipEntry(Path.GetFileNameWithoutExtension(fileName));
+                var fileStreamIn = new FileStream(zipPath, FileMode.Open, FileAccess.Read);
+                var zipInStream = new ZipInputStream(fileStreamIn);
+                entry = zipInStream.GetNextEntry();
+                while (entry != null && entry.CanDecompress)
+                {
+                    var outputFile = Path.Combine(directoryDownload, entry.Name);
+                    var outputDirectory = Path.GetDirectoryName(outputFile);
+
+                    if (entry.IsFile)
+                    {
+                        var fileStreamOut = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
+                        int size;
+                        byte[] buffer = new byte[4096];
+                        do
+                        {
+                            size = await zipInStream.ReadAsync(buffer, 0, buffer.Length);
+                            await fileStreamOut.WriteAsync(buffer, 0, size);
+                        } while (size > 0);
+                        fileStreamOut.Close();
+                    }
+                    filesNames.Add(entry.Name);
+                    entry = zipInStream.GetNextEntry();
+                }
+                zipInStream.Close();
+                fileStreamIn.Close();
+
+                System.IO.File.Delete(zipPath);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return filesNames;
         }
 
         public void SaveFileInDocFolder(string fileName, byte[] file)
@@ -35,7 +83,7 @@ namespace Pdf.Droid.Helpers
 
             var path = Path.Combine(appFolder, fileName);
 
-            File.WriteAllBytes(path, file);
+            System.IO.File.WriteAllBytes(path, file);
         }
 
         public byte[] ReadFully(Stream input)
@@ -55,7 +103,7 @@ namespace Pdf.Droid.Helpers
         public byte[] LoadLocalFile(string filePath)
         {
             string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
-            if (File.Exists(filePath)) return File.ReadAllBytes(filePath);
+            if (System.IO.File.Exists(filePath)) return System.IO.File.ReadAllBytes(filePath);
             return null;
         }
 

@@ -131,6 +131,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "SharpZipLib/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
       "Syncfusion.Licensing/17.4.0.55": {
         "type": "package",
         "compile": {
@@ -362,6 +371,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
       "System.Runtime.Extensions/4.3.0": {
         "type": "package",
         "compile": {
@@ -468,6 +486,20 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
+        }
+      },
+      "Unity/5.11.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
       "Xamarin.Forms/4.5.0.356": {
@@ -600,7 +632,9 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
+          "SharpZipLib": "1.2.0",
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.55",
+          "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356"
         },
         "compile": {
@@ -741,6 +775,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "SharpZipLib/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
       "Syncfusion.Licensing/17.4.0.55": {
         "type": "package",
         "compile": {
@@ -972,6 +1015,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
       "System.Runtime.Extensions/4.3.0": {
         "type": "package",
         "compile": {
@@ -1078,6 +1130,20 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
+        }
+      },
+      "Unity/5.11.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
       "Xamarin.Forms/4.5.0.356": {
@@ -1210,7 +1276,9 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
+          "SharpZipLib": "1.2.0",
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.55",
+          "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356"
         },
         "compile": {
@@ -1351,6 +1419,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "SharpZipLib/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
       "Syncfusion.Licensing/17.4.0.55": {
         "type": "package",
         "compile": {
@@ -1582,6 +1659,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
       "System.Runtime.Extensions/4.3.0": {
         "type": "package",
         "compile": {
@@ -1688,6 +1774,20 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
+        }
+      },
+      "Unity/5.11.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
       "Xamarin.Forms/4.5.0.356": {
@@ -1820,7 +1920,9 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
+          "SharpZipLib": "1.2.0",
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.55",
+          "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356"
         },
         "compile": {
@@ -1961,6 +2063,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "SharpZipLib/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
       "Syncfusion.Licensing/17.4.0.55": {
         "type": "package",
         "compile": {
@@ -2192,6 +2303,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
       "System.Runtime.Extensions/4.3.0": {
         "type": "package",
         "compile": {
@@ -2298,6 +2418,20 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
+        }
+      },
+      "Unity/5.11.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
       "Xamarin.Forms/4.5.0.356": {
@@ -2430,7 +2564,9 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
+          "SharpZipLib": "1.2.0",
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.55",
+          "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356"
         },
         "compile": {
@@ -2798,6 +2934,23 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "SharpZipLib/1.2.0": {
+      "sha512": "zvWa/L02JHNatdtjya6Swpudb2YEHaOLHL1eRrqpjm71iGRNUNONO5adUF/9CHbSJbzhELW1UoH4NGy7n7+3bQ==",
+      "type": "package",
+      "path": "sharpziplib/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/ICSharpCode.SharpZipLib.dll",
+        "lib/net45/ICSharpCode.SharpZipLib.pdb",
+        "lib/net45/ICSharpCode.SharpZipLib.xml",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.pdb",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
+        "sharpziplib.1.2.0.nupkg.sha512",
+        "sharpziplib.nuspec"
       ]
     },
     "Syncfusion.Licensing/17.4.0.55": {
@@ -3937,6 +4090,31 @@
         "system.runtime.nuspec"
       ]
     },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Runtime.Extensions/4.3.0": {
       "sha512": "guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
       "type": "package",
@@ -4715,6 +4893,49 @@
         "ref/xamarinwatchos10/_._",
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
+      ]
+    },
+    "Unity/5.11.4": {
+      "sha512": "92605bIUMalRwCqyGX5uno6MEyyiVIt5P5zPxJYFs9iMe8Ktn9liSGXHNeN60x1iuyNdx/RlqwCuFHL7a6M+ZA==",
+      "type": "package",
+      "path": "unity/5.11.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Unity.Abstractions.dll",
+        "lib/net40/Unity.Abstractions.pdb",
+        "lib/net40/Unity.Container.dll",
+        "lib/net40/Unity.Container.pdb",
+        "lib/net45/Unity.Abstractions.dll",
+        "lib/net45/Unity.Abstractions.pdb",
+        "lib/net45/Unity.Container.dll",
+        "lib/net45/Unity.Container.pdb",
+        "lib/net46/Unity.Abstractions.dll",
+        "lib/net46/Unity.Abstractions.pdb",
+        "lib/net46/Unity.Container.dll",
+        "lib/net46/Unity.Container.pdb",
+        "lib/net47/Unity.Abstractions.dll",
+        "lib/net47/Unity.Abstractions.pdb",
+        "lib/net47/Unity.Container.dll",
+        "lib/net47/Unity.Container.pdb",
+        "lib/netcoreapp1.0/Unity.Abstractions.dll",
+        "lib/netcoreapp1.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp1.0/Unity.Container.dll",
+        "lib/netcoreapp1.0/Unity.Container.pdb",
+        "lib/netcoreapp2.0/Unity.Abstractions.dll",
+        "lib/netcoreapp2.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp2.0/Unity.Container.dll",
+        "lib/netcoreapp2.0/Unity.Container.pdb",
+        "lib/netstandard1.0/Unity.Abstractions.dll",
+        "lib/netstandard1.0/Unity.Abstractions.pdb",
+        "lib/netstandard1.0/Unity.Container.dll",
+        "lib/netstandard1.0/Unity.Container.pdb",
+        "lib/netstandard2.0/Unity.Abstractions.dll",
+        "lib/netstandard2.0/Unity.Abstractions.pdb",
+        "lib/netstandard2.0/Unity.Container.dll",
+        "lib/netstandard2.0/Unity.Container.pdb",
+        "unity.5.11.4.nupkg.sha512",
+        "unity.nuspec"
       ]
     },
     "Xamarin.Forms/4.5.0.356": {
