@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Pdf.Helpers;
 using Pdf.Interfaces;
 using Pdf.Models;
 using System;
@@ -13,35 +14,42 @@ namespace Pdf.Api
 {
     public class SummaryEndpoint:ISummaryEndpoint 
     {
-        public async Task<string> UploadFilesForSummary(FileInfo fileInfo, List<SummaryModel> summaries)
+        public async Task<string> UploadFilesForSummary(FileInfo fileInfo, List<SummaryModel> summaries, IProgress<UploadBytesProgress> progessReporter)
         {
+            string res = null;
             IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();
 
-            var content = new MultipartFormDataContent();
-
-            var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
-            var json = JsonConvert.SerializeObject(summaries, Formatting.Indented);
-
-            ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
-
-            content.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
-            content.Add(new StringContent(json, Encoding.UTF8, "application/json"), "list");
-
-            var httpClient = new HttpClient();
-
-            var uploadServiceBaseAdress = "http://10.0.2.2:44560/PostFilesForSummary/";
-
-            using (HttpResponseMessage response = await httpClient.PostAsync(uploadServiceBaseAdress, content))
+            using (var client = new HttpClient())
             {
-                if (response.IsSuccessStatusCode)
+                using (var multiForm = new MultipartFormDataContent())
                 {
-                    string fileName = await response.Content.ReadAsStringAsync();
+                    var bytesFile = androidFileHelper.LoadLocalFile(fileInfo.FullName);
+                    var json = JsonConvert.SerializeObject(summaries, Formatting.Indented);
+                    ByteArrayContent byteArrayContent = new ByteArrayContent(bytesFile);
 
-                    return fileName;
-                }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
+                    multiForm.Add(byteArrayContent, fileInfo.Name, fileInfo.Name);
+                    multiForm.Add(new StringContent(json, Encoding.UTF8, "application/json"), "list");
+
+                    var progressContent = new ProgressableStreamContent(multiForm, 4096, (sent, total) =>
+                    {
+                        UploadBytesProgress args = new UploadBytesProgress("http://10.0.2.2:44560/PostFilesForSummary?", (int)sent, (int)total);
+                        progessReporter.Report(args);
+                    });
+
+                    var uploadServiceBaseAdress = "http://10.0.2.2:44560/PostFilesForSummary/";
+
+                    using (HttpResponseMessage response = await client.PostAsync(uploadServiceBaseAdress, progressContent))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            res = await response.Content.ReadAsStringAsync();
+                        }
+                        else
+                        {
+                            throw new Exception(response.ReasonPhrase);
+                        }
+                    }
+                    return res;
                 }
             }
         }

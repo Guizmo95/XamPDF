@@ -1,4 +1,5 @@
-﻿using Pdf.Interfaces;
+﻿using Pdf.Data;
+using Pdf.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,9 +24,10 @@ namespace Pdf.Views
         {
             InitializeComponent();
 
-            IPdfPickerAndroid pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
+            var documents = App.Container.Resolve<IDocumentsData>();
+            documents.Documents = DependencyService.Get<IPdfPickerAndroid>().GetPdfFilesInDocuments();
 
-            FilesList.ItemsSource = pdfPickerAndroid.GetPdfFilesInDocuments();
+            FilesList.ItemsSource = documents.Documents;
         }
 
         private async void FilesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)

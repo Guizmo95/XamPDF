@@ -35,23 +35,27 @@ namespace Pdf.Views
 
         async void StartUploadHandler(object sender, System.EventArgs e)
         {
+            if(FilesList.SelectedItem == null)
+                DependencyService.Get<IToastMessage>().LongAlert("Please select a document");
+            else
+            {
+                var fileInfo = (FileInfo)FilesList.SelectedItem;
 
-            var fileInfo = (FileInfo)FilesList.SelectedItem;
+                Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
+                progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete));
 
-            Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
-            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete));
+                Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
+                progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete));
 
-            Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
-            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete));
+                await Task.Run(async () =>
+                {
+                    string fileName = await uncompressEndpoint.UploadFilesForUncompress(fileInfo, progressReporterForUpload);
 
-            await Task.Run(async () =>
-            { 
-                string fileName = await uncompressEndpoint.UploadFilesForUncompress(fileInfo, progressReporterForUpload);
+                    await Download(fileName, progressReporterForDownload);
+                });
 
-                await Download(fileName, progressReporterForDownload);
-            });
-            
-           
+                DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
+            }
         }
 
         void UpdateProgress(double obj)

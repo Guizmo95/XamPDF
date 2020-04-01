@@ -47,6 +47,7 @@ FrameLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Andr
 FrameLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\layout\signaturepadlayout.xml
 gradient;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\1\jl\res\drawable\roundedbg.xml
 gradient;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\1\jl\res\drawable\roundedbgdark.xml
+gradient;obj\Debug\90\res\drawable\actionbar_shadow.xml
 GridLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\layout\dialoglistviewrow.xml
 GridLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\layout\listviewrow.xml
 GridLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\layout\signaturepadlayout.xml
@@ -71,11 +72,14 @@ layer-list;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Andro
 layer-list;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\8\jl\res\drawable\sfprogressbar_indeterminate_linear.xml
 LinearLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\48\jl\res\layout\bottomtablayout.xml
 LinearLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\layout\signaturepadlayout.xml
+LinearLayout;obj\Debug\90\res\drawable\actionbar_shadow.xml
 network-security-config;obj\Debug\90\res\xml\network_security_config.xml
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\formfieldcheckbox_checked.xml
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\formfieldcheckbox_unchecked.xml
+path;obj\Debug\90\res\drawable\baseline_build_24.xml
 path;obj\Debug\90\res\drawable\baseline_description_24.xml
 path;obj\Debug\90\res\drawable\baseline_feedback_24.xml
+path;obj\Debug\90\res\drawable\baseline_get_app_24.xml
 path;obj\Debug\90\res\drawable\baseline_help_24.xml
 path;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24.xml
 path;obj\Debug\90\res\drawable\baseline_supervised_user_circle_24.xml
@@ -117,10 +121,12 @@ shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\ob
 shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\8\jl\res\drawable\sfprogressbar_determinate_linear.xml
 shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\8\jl\res\drawable\sfprogressbar_indeterminate_circular.xml
 shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\8\jl\res\drawable\sfprogressbar_indeterminate_linear.xml
+shape;obj\Debug\90\res\drawable\actionbar_shadow.xml
 size;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\formfieldradiobuttonstyle.xml
 size;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\formfieldtextboxcursorcolor.xml
 size;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\8\jl\res\drawable\sfprogressbar_determinate_linear.xml
 size;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\8\jl\res\drawable\sfprogressbar_indeterminate_linear.xml
+size;obj\Debug\90\res\drawable\actionbar_shadow.xml
 solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\alertviewdialogbottomline.xml
 solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\edittextpagecount.xml
 solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\formfieldradiobuttonstyle.xml
@@ -155,8 +161,10 @@ translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Androi
 translate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\48\jl\res\anim\exittoright.xml
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\formfieldcheckbox_checked.xml
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\7\jl\res\drawable\formfieldcheckbox_unchecked.xml
+vector;obj\Debug\90\res\drawable\baseline_build_24.xml
 vector;obj\Debug\90\res\drawable\baseline_description_24.xml
 vector;obj\Debug\90\res\drawable\baseline_feedback_24.xml
+vector;obj\Debug\90\res\drawable\baseline_get_app_24.xml
 vector;obj\Debug\90\res\drawable\baseline_help_24.xml
 vector;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24.xml
 vector;obj\Debug\90\res\drawable\baseline_supervised_user_circle_24.xml

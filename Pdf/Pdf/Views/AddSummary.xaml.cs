@@ -1,6 +1,6 @@
 ﻿using Android.Arch.Lifecycle;
-using Android.Widget;
 using Pdf.Api;
+using Pdf.Helpers;
 using Pdf.Interfaces;
 using Pdf.Models;
 using Pdf.ViewModels;
@@ -33,6 +33,16 @@ namespace Pdf.Views
             {
                 CollectionViewThumbnails.ScrollTo(item, ScrollToPosition.Start);
             });
+        }
+
+        protected override void OnDisappearing()
+        {
+            Task.Run(() =>
+            {
+                DependencyService.Get<IGetThumbnails>().DeleteThumbnailsRepository(fileInfo.FullName);
+            });
+
+            base.OnDisappearing();
         }
         public AddSummary(FileInfo fileInfo)
         {
@@ -69,9 +79,50 @@ namespace Pdf.Views
                 DependencyService.Get<IToastMessage>().ShortAlert("No summary added");
             }
 
-            string fileNameGenerated = await summaryEndpoint.UploadFilesForSummary(fileInfo, summaries);
+            stkl.Children.Clear();
 
-            await Navigation.PushAsync(new GetDownload(fileNameGenerated));
+            ProgressBar progressBar = new ProgressBar();
+            stkl.Children.Add(progressBar);
+
+            Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
+            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+
+            Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
+            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+
+            await Task.Run(async () =>
+            {
+                string fileNameGenerated = await summaryEndpoint.UploadFilesForSummary(fileInfo, summaries, progressReporterForUpload);
+
+                await Download(fileNameGenerated, progressReporterForDownload);
+            });
+
+            DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
+
+            await Task.Run(() =>
+            {
+                DependencyService.Get<IGetThumbnails>().DeleteThumbnailsRepository(fileInfo.FullName);
+            });
+        }
+
+        void UpdateProgress(double obj, ProgressBar progressBar)
+        {
+            if (progressBar.Progress < 0.5)
+            {
+                progressBar.Progress = obj;
+            }
+            else
+            {
+                if (progressBar.Progress >= 0.5)
+                {
+                    progressBar.Progress += obj;
+                }
+            }
+        }
+
+        private async Task Download(string fileName, Progress<DownloadBytesProgress> progressReporter)
+        {
+            await DownloadHelper.CreateDownloadTask("http://10.0.2.2:44560/GetFile/", fileName, progressReporter);
         }
 
 

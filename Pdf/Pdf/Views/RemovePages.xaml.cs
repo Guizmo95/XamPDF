@@ -34,6 +34,16 @@ namespace Pdf.Views
             });
         }
 
+        protected override void OnDisappearing()
+        {
+            Task.Run(() =>
+            {
+                DependencyService.Get<IGetThumbnails>().DeleteThumbnailsRepository(fileInfo.FullName);
+            });
+            
+            base.OnDisappearing();
+        }
+
         //TODO -- HANDLE IF SELECT ALL PAGES
         public RemovePages(FileInfo fileInfo)
         {
@@ -47,44 +57,53 @@ namespace Pdf.Views
 
         private async void StartProcessRemovePages(object sender, EventArgs e)
         {
-            List<ThumbnailsModel> itemsSelected = CollectionViewThumbnails.SelectedItems.Cast<ThumbnailsModel>().ToList();
-            List<ThumbnailsModel> allItems = CollectionViewThumbnails.ItemsSource.Cast<ThumbnailsModel>().ToList();
-
-            if (itemsSelected == null)
+            if(CollectionViewThumbnails.SelectedItems.Count == 0)
+                DependencyService.Get<IToastMessage>().LongAlert("Please select a page");
+            else
             {
-                return;
-            }
+                List<ThumbnailsModel> itemsSelected = CollectionViewThumbnails.SelectedItems.Cast<ThumbnailsModel>().ToList();
 
-            List<int> pagesNumbers = new List<int>();
+                int pages = DependencyService.Get<IGetThumbnails>().GetAllPages(fileInfo.FullName);
+                List<int> NumberOfPagesNotRemoved = new List<int>();
 
-
-            allItems.ForEach(delegate (ThumbnailsModel thumbnailsModel)
-            {
-                if(itemsSelected.Contains(thumbnailsModel) == false)
+                for (int i = 1; i <= pages; i++)
                 {
-                    pagesNumbers.Add(thumbnailsModel.PageNumber);
+                    if (itemsSelected.Any(p => p.PageNumber == i))
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        NumberOfPagesNotRemoved.Add(i);
+                    }
+
                 }
-            });
 
-            stkl.Children.Clear();
+                stkl.Children.Clear();
 
-            ProgressBar progressBar = new ProgressBar();
-            stkl.Children.Add(progressBar);
+                ProgressBar progressBar = new ProgressBar();
+                stkl.Children.Add(progressBar);
 
-            Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
-            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+                Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
+                progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
 
-            Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
-            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+                Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
+                progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
 
-            await Task.Run(async () =>
-            {
-                string fileName = await removePagesEndpoint.UploadFilesForRemovePages(fileInfo, pagesNumbers, progressReporterForUpload);
+                await Task.Run(async () =>
+                {
+                    string fileName = await removePagesEndpoint.UploadFilesForRemovePages(fileInfo, NumberOfPagesNotRemoved, progressReporterForUpload);
 
-                await Download(fileName, progressReporterForDownload);
-            });
+                    await Download(fileName, progressReporterForDownload);
+                });
 
-            DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
+                DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
+
+                await Task.Run(() =>
+                {
+                    DependencyService.Get<IGetThumbnails>().DeleteThumbnailsRepository(fileInfo.FullName);
+                });
+            }
         }
 
         void UpdateProgress(double obj, ProgressBar progressBar)

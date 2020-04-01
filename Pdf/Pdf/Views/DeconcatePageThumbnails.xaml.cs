@@ -39,6 +39,16 @@ namespace Pdf.Views
             });
         }
 
+        protected override void OnDisappearing()
+        {
+            Task.Run(() =>
+            {
+                DependencyService.Get<IGetThumbnails>().DeleteThumbnailsRepository(fileInfo.FullName);
+            });
+
+            base.OnDisappearing();
+        }
+
         public DeconcatePageThumbnails(FileInfo fileInfo)
         {
             InitializeComponent();
@@ -51,40 +61,45 @@ namespace Pdf.Views
 
         private async void StartProcessDeconcatePages(object sender, EventArgs e)
         {
-            List<ThumbnailsModel> items = CollectionViewThumbnails.SelectedItems.Cast<ThumbnailsModel>().ToList();
-
-            if (items == null)
+            if(CollectionViewThumbnails.SelectedItems.Count == 0)
+                    DependencyService.Get<IToastMessage>().LongAlert("Please select a page");
+            else
             {
-                return;
+                List<ThumbnailsModel> items = CollectionViewThumbnails.SelectedItems.Cast<ThumbnailsModel>().ToList();
+
+                List<int> pagesNumbers = new List<int>();
+
+                items.ForEach(delegate (ThumbnailsModel thumbnailsModel)
+                {
+                    pagesNumbers.Add(thumbnailsModel.PageNumber);
+                });
+
+                stkl.Children.Clear();
+
+                ProgressBar progressBar = new ProgressBar();
+                stkl.Children.Add(progressBar);
+
+                Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
+                progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+
+                Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
+                progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+
+                await Task.Run(async () =>
+                {
+                    var HttpResponse = await deconcateEndpoint.UploadFilesForDeconcate(fileInfo, pagesNumbers, progressReporterForUpload);
+                    string fileName = HttpResponse;
+
+                    await Download(fileName, progressReporterForDownload);
+                });
+
+                DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
+
+                await Task.Run(() =>
+                {
+                    DependencyService.Get<IGetThumbnails>().DeleteThumbnailsRepository(fileInfo.FullName);
+                });
             }
-
-            List<int> pagesNumbers = new List<int>();
-
-            items.ForEach(delegate (ThumbnailsModel thumbnailsModel)
-            {
-                pagesNumbers.Add(thumbnailsModel.PageNumber);
-            });
-
-            stkl.Children.Clear();
-
-            ProgressBar progressBar = new ProgressBar();
-            stkl.Children.Add(progressBar);
-
-            Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
-            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
-
-            Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
-            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
-
-            await Task.Run(async () =>
-            {
-                var HttpResponse = await deconcateEndpoint.UploadFilesForDeconcate(fileInfo, pagesNumbers, progressReporterForUpload);
-                string fileName = HttpResponse;
-
-                await Download(fileName, progressReporterForDownload);
-            });
-
-            DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
         }
 
         private void SelectAllItems(object sender, EventArgs e)

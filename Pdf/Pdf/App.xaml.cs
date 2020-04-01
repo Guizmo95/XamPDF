@@ -1,8 +1,11 @@
 ﻿using Pdf.Api;
+using Pdf.Data;
 using Pdf.Views;
 using System;
 using System.ComponentModel;
 using Unity;
+using Unity.Injection;
+using Unity.Lifetime;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -31,6 +34,9 @@ namespace Pdf
             Container.RegisterType<IRemovePagesEndpoint, RemovePagesEndpoint>();
             Container.RegisterType<ISummaryEndpoint, SummaryEndpoint>();
             Container.RegisterType<IUncompressEndpoint, UncompressEndpoint>();
+
+            Container.RegisterType<IDocumentsData, DocumentsData>(new ContainerControlledLifetimeManager());
+            //Container.RegisterType<IDocumentsData, DocumentsData>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new object[] { new DocumentsData()}));
 
             MainPage = /*new NavigationPage(new MainMenu());*/
                 new ShellMenu();

@@ -5,7 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pages="clr-namespace:Pdf.Views"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.ShellMenu" Title="FlyoutMenu" BackgroundColor="#004B85" Shell.TabBarIsVisible="True" FlyoutBackgroundColor="#e6e6e6">
+             x:Class="Pdf.Views.ShellMenu" Title="FlyoutMenu" BackgroundColor="#004B85" Shell.TabBarIsVisible="True" FlyoutBackgroundColor="White" Shell.PresentationMode="Animated"  Shell.TabBarBackgroundColor="#F5F5F5" 
+       Shell.TabBarTitleColor="#4e4e4e" Shell.TabBarUnselectedColor="#b4b4b4" Shell.NavBarHasShadow="True" HeightRequest="100">
+
+    <!--<Shell.Resources>
+        <Style TargetType="Shell">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="" 
+                                        Value="#e6e6e6" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </Shell.Resources>-->
 
 
     <Shell.FlyoutHeaderTemplate>
@@ -20,41 +39,33 @@
         <DataTemplate>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.2*" />
-                    <ColumnDefinition Width="0.8*" />
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.8*"/>
                 </Grid.ColumnDefinitions>
                 <Image Source="{Binding Icon}"
-                       HeightRequest="30" Margin="9.5"/>
+                       HeightRequest="28" Margin="10"/>
                 <Label Grid.Column="1"
                        Text="{Binding Title}"
-                       VerticalTextAlignment="Center" FontFamily="GothamMedium.ttf#GothamMedium" TextColor="Black" FontSize="15"/>
+                       VerticalTextAlignment="Center" FontFamily="GothamBold.ttf#GothamBold" TextColor="#4e4e4e" FontSize="16.5" HeightRequest="30"/>
             </Grid>
         </DataTemplate>
     </Shell.ItemTemplate>
 
     
-    <FlyoutItem Title="FlyoutItem" FlyoutDisplayOptions="AsMultipleItems" >
-        <Tab Title="Documents">
-            <ShellContent Title="My documents" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}"/>
+    <FlyoutItem Title="FlyoutItem" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="My Documents" Icon="baseline_picture_as_pdf_24.xml">
+            <ShellContent  ContentTemplate="{DataTemplate pages:DocumentsList}"/>
         </Tab>
-        <Tab Title="Tools list">
-            <ShellContent Title="Tools list" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:ToolsList}"/>
+        <Tab Title="Tools" Icon="baseline_build_24.xml">
+            <ShellContent ContentTemplate="{DataTemplate pages:ToolsList}"/>
         </Tab>
-        <Tab Title="Download">
-            <ShellContent Title="Download" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:DownloadPage}"/>
+        <Tab Title="File converted" Icon="baseline_get_app_24.xml">
+            <ShellContent ContentTemplate="{DataTemplate pages:DownloadPage}"/>
         </Tab>
     </FlyoutItem>
-    <ShellContent Title="Help"  Icon="baseline_help_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
-        <ShellContent Title="Feedback"  Icon="baseline_feedback_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
     
-
-    <!--<FlyoutItem Title="FlyoutItem" FlyoutDisplayOptions="AsMultipleItems" >
-        <ShellContent Title="My documents" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}"/>
-        <ShellContent Title="Tools list" Icon="baseline_picture_as_pdf_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}"/>
-        <ShellContent Title="Help"  Icon="baseline_help_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}" />
-        <ShellContent Title="Feedback"  Icon="baseline_feedback_24.xml" ContentTemplate="{DataTemplate pages:MainMenu}" />
-    </FlyoutItem>-->
-
+    <ShellContent Title="Help"  Icon="baseline_help_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
+    <ShellContent Title="Feedback"  Icon="baseline_feedback_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
     <ShellContent Title="About"  Icon="baseline_supervised_user_circle_24.xml" ContentTemplate="{DataTemplate pages:DocumentsList}" />
 
 

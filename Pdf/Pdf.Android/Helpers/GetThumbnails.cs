@@ -59,7 +59,7 @@ namespace Pdf.Droid.Helpers
             PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
 
             //CHECK PATH LATER
-            var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
             string directoryPath = System.IO.Path.Combine(appDirectory, "thumbnailsTemp", System.IO.Path.GetFileNameWithoutExtension(fileName));
             //List<ThumbnailsModel> thumbnailsModels = new List<ThumbnailsModel>();
@@ -82,7 +82,7 @@ namespace Pdf.Droid.Helpers
                 {
                     using (FileStream output = new FileStream(System.IO.Path.Combine(directoryPath, fileName + "Thumbnails" + i + ".png"), FileMode.Create))
                     {
-                        bmp.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 0, output);
+                        bmp.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 100, output);
                     }
 
                     page.Close();
@@ -163,6 +163,25 @@ namespace Pdf.Droid.Helpers
             }
 
             return fileDescriptor;
+        }
+
+        public int GetAllPages(string filePath)
+        { 
+            PdfRenderer pdfRenderer = new PdfRenderer(GetSeekableFileDescriptor(filePath));
+
+            int pagesCount = pdfRenderer.PageCount;
+
+            return pagesCount;
+        }
+
+        public void DeleteThumbnailsRepository(string filePath)
+        {
+            var appDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
+
+            string directoryPath = System.IO.Path.Combine(appDirectory, "thumbnailsTemp", System.IO.Path.GetFileNameWithoutExtension(fileName));
+
+            File.Delete(directoryPath);
         }
     }
 }

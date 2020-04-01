@@ -16,5 +16,7 @@ namespace Pdf.Interfaces
         Task<IEnumerable<ThumbnailsModel>> GetItemsAsync(string filePath, bool forceRefresh = false, int lastIndex = 0);
         Dictionary<bool, int> IsUnder15Pages(string filePath);
         ParcelFileDescriptor GetSeekableFileDescriptor(string filePath);
+        int GetAllPages(string filePath);
+        void DeleteThumbnailsRepository(string filePath);
     }
 }

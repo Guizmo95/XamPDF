@@ -3,23 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Controls="clr-namespace:Pdf.Controls"
              mc:Ignorable="d"
              x:Class="Pdf.Views.DocumentsList">
 
 
     <Shell.TitleView>
-        <Label Text="Welcome" FontFamily="GothamBold.ttf#GothamBold" HeightRequest="30" VerticalTextAlignment="Center" FontSize="19" TextColor="White"/>
+        <Label Text="Welcome" FontFamily="GothamBold.ttf#GothamBold" HeightRequest="30" VerticalTextAlignment="Center" FontSize="17.8" TextColor="White"/>
     </Shell.TitleView>
     
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Order="Secondary" Text="Sort Name"/>
+        <ToolbarItem Priority="1" Order="Secondary" Text="Sort Date"/>
+        <ToolbarItem Priority="2" Order="Secondary" Text="Sort Size"/>
+    </ContentPage.ToolbarItems>
+
+    <Shell.SearchHandler>
+        <Controls:DocumentSearchHandler Placeholder="Search a file"
+                                      ShowsResults="true"
+                                      DisplayMemberName="Name" SearchBoxVisibility="Collapsible" HorizontalTextAlignment="Center"/>
+    </Shell.SearchHandler>
+
     <ContentPage.Content> 
-        <ListView x:Name="FilesList" SelectionMode="Single" ItemSelected="FilesList_ItemSelected" RowHeight="65" SeparatorVisibility="Default">
+        <ListView x:Name="FilesList" SelectionMode="Single" ItemSelected="FilesList_ItemSelected" RowHeight="65" SeparatorVisibility="Default" BackgroundColor="White">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="13">
-                            <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding Name}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="18"/>
-                                <Label Text="{Binding CreationTime.Date, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="12" />
+                        <StackLayout Orientation="Horizontal" Padding="13" HeightRequest="60" VerticalOptions="CenterAndExpand" Margin="2">
+                            <Image Source="baseline_description_24.xml" HeightRequest="35" WidthRequest="30" Margin="2,0,0,1" VerticalOptions="CenterAndExpand" Aspect="AspectFill" />
+                            <StackLayout Orientation="Vertical" HeightRequest="60" Spacing="1.7" Margin="2,0,0,1" VerticalOptions="Center" Padding="1">
+                                <Label Text="{Binding Name}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="17.4" TextColor="#4e4e4e" HorizontalOptions="EndAndExpand"/>
+                                <Label Text="{Binding CreationTime.Date, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="13.5" TextColor="#4e4e4e"/>
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>

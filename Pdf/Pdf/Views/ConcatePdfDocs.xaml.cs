@@ -34,27 +34,32 @@ namespace Pdf.Views
         //TODO -- ADD COUNTER FOR FILES CHOICE
         private async void StartTheConvertion(object sender, EventArgs e)
         {
-            var filesInfo = FilesList.SelectedItems.Cast<FileInfo>().ToList();
-
-            stkl.Children.Clear();
-
-            ProgressBar progressBar = new ProgressBar();
-            stkl.Children.Add(progressBar);
-
-            Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
-            progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
-
-            Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
-            progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
-
-            await Task.Run(async () =>
+            if(FilesList.SelectedItem == null)
+                DependencyService.Get<IToastMessage>().LongAlert("Please select a document");
+            else
             {
-                string fileNameGenerated = await concateEndpoint.UploadFilesForConcateDocs(filesInfo, progressReporterForUpload);
+                var filesInfo = FilesList.SelectedItems.Cast<FileInfo>().ToList();
 
-                await Download(fileNameGenerated, progressReporterForDownload);
-            });
+                stkl.Children.Clear();
 
-            DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
+                ProgressBar progressBar = new ProgressBar();
+                stkl.Children.Add(progressBar);
+
+                Progress<UploadBytesProgress> progressReporterForUpload = new Progress<UploadBytesProgress>();
+                progressReporterForUpload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+
+                Progress<DownloadBytesProgress> progressReporterForDownload = new Progress<DownloadBytesProgress>();
+                progressReporterForDownload.ProgressChanged += (s, args) => UpdateProgress((double)(args.PercentComplete), progressBar);
+
+                await Task.Run(async () =>
+                {
+                    string fileNameGenerated = await concateEndpoint.UploadFilesForConcateDocs(filesInfo, progressReporterForUpload);
+
+                    await Download(fileNameGenerated, progressReporterForDownload);
+                });
+
+                DependencyService.Get<IToastMessage>().ShortAlert("File downloaded");
+            }
         }
 
         void UpdateProgress(double obj, ProgressBar progressBar)

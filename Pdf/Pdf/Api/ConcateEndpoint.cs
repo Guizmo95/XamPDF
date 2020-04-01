@@ -54,7 +54,7 @@ namespace Pdf.Api
             }
         }
 
-        public async Task<string> UploadFilesForConcate(FileInfo fileInfo, List<int> pagesNumbers, IProgress<UploadBytesProgress> progessReporter)
+        public async Task<string> UploadFilesForConcatePages(FileInfo fileInfo, List<int> pagesNumbers, IProgress<UploadBytesProgress> progessReporter)
         {
             string res = null;
             IAndroidFileHelper androidFileHelper = DependencyService.Get<IAndroidFileHelper>();

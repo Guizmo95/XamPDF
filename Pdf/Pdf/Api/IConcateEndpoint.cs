@@ -10,6 +10,6 @@ namespace Pdf.Api
     {
         Task<string> UploadFilesForConcateDocs(List<FileInfo> filesInfo, IProgress<UploadBytesProgress> progessReporter);
 
-        Task<string> UploadFilesForConcate(FileInfo fileInfo, List<int> pagesNumbers, IProgress<UploadBytesProgress> progessReporter);
+        Task<string> UploadFilesForConcatePages(FileInfo fileInfo, List<int> pagesNumbers, IProgress<UploadBytesProgress> progessReporter);
     }
 }

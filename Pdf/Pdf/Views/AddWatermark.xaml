@@ -14,7 +14,7 @@
         </NavigationPage.TitleView>-->
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="stkl">
             <CollectionView x:Name="FilesList" SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

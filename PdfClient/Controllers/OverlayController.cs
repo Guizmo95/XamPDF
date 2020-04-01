@@ -1,10 +1,12 @@
 ﻿using PdfClient.Helpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Web;
 using System.Web.Http;
 
@@ -36,6 +38,12 @@ namespace PdfClient.Controllers
                         var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName);
                         postedFile.SaveAs(filePath);
                     }
+
+                    while (!File.Exists(HttpContext.Current.Server.MapPath("~/Uploads/" + filesNames.Last())))
+                    {
+                        Thread.Sleep(1000);
+                    }
+
                     string outputName = PdftkTools.AddWatermark(filesNames);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
@@ -74,6 +82,12 @@ namespace PdfClient.Controllers
                         var filePath = HttpContext.Current.Server.MapPath("~/Uploads/" + fileName);
                         postedFile.SaveAs(filePath);
                     }
+
+                    while (!File.Exists(HttpContext.Current.Server.MapPath("~/Uploads/" + filesNames.Last())))
+                    {
+                        Thread.Sleep(1000);
+                    }
+
                     string outputName = PdftkTools.AddStump(filesNames);
 
                     response = new HttpResponseMessage(HttpStatusCode.OK);
