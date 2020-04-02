@@ -147,6 +147,7 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\roslyn\vbc
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\roslyn\VBCSCompiler.exe
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\roslyn\VBCSCompiler.exe.config
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Antlr3.Runtime.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\IronPdf.Assets.Rendering.Windows.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\PdfClient\bin\Microsoft.Web.Infrastructure.dll

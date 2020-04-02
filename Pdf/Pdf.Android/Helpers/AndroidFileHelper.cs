@@ -16,12 +16,48 @@ using Java.IO;
 using Pdf.Droid;
 using Pdf.Droid.Helpers;
 using Pdf.Interfaces;
+using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroidFileHelper))]
 namespace Pdf.Droid.Helpers
 {
     public class AndroidFileHelper : IAndroidFileHelper
     {
+
+        public async Task SaveAndView(string fileName, String contentType, MemoryStream stream)
+        {
+            string directoryDownload = null;
+            //Get the root path in android device.
+
+            directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
+
+            //Create directory and file 
+            Java.IO.File myDir = new Java.IO.File(directoryDownload);
+            myDir.Mkdir();
+
+            Java.IO.File file = new Java.IO.File(myDir, fileName);
+
+            //Remove if the file exists
+            if (file.Exists()) file.Delete();
+
+            //Write the stream into the file
+            FileOutputStream outs = new FileOutputStream(file);
+            outs.Write(stream.ToArray());
+
+            outs.Flush();
+            outs.Close();
+
+            //Invoke the created file for viewing
+            //if (file.Exists())
+            //{
+            //    Android.Net.Uri path = Android.Net.Uri.FromFile(file);
+            //    string extension = Android.Webkit.MimeTypeMap.GetFileExtensionFromUrl(Android.Net.Uri.FromFile(file).ToString());
+            //    string mimeType = Android.Webkit.MimeTypeMap.Singleton.GetMimeTypeFromExtension(extension);
+            //    Intent intent = new Intent(Intent.ActionView);
+            //    intent.SetDataAndType(path, mimeType);
+            //    Forms.Context.StartActivity(Intent.CreateChooser(intent, "Choose App"));
+            //}
+        }
         public void SaveFileInDownloads(string filename, byte[] file)
         {
             string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
@@ -29,6 +65,13 @@ namespace Pdf.Droid.Helpers
             var path = Path.Combine(directoryDownload, filename);
 
             System.IO.File.WriteAllBytes(path, file);
+        }
+
+        public string Convert()
+        {
+            string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
+
+            return directoryDownload;
         }
 
         public async Task<List<string>> UnzipFileInDownload(string fileName)
@@ -111,6 +154,8 @@ namespace Pdf.Droid.Helpers
         {
             return !Directory.EnumerateFiles(directoryPath).Any();
         }
+
+        
     }
     
 }

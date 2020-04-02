@@ -1,5 +1,7 @@
 ﻿using Pdf.Data;
 using Pdf.Interfaces;
+using Syncfusion.Drawing;
+using Syncfusion.Pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
