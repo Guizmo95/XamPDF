@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             mc:Ignorable="d"
+             x:Class="Pdf.Views.DocumentsListView">
+    <syncfusion:SfListView x:Name="DocumentListView" ItemsSource="{Binding Documents}" BackgroundColor="White" SelectionMode="Single" SelectedItem="DocumentListView_ItemSelected" SelectionChanging="DocumentListView_SelectionChanging" ItemSize="65">
+        <syncfusion:SfListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="13" HeightRequest="60" VerticalOptions="CenterAndExpand" Margin="2">
+                        <Image Source="baseline_description_24.xml" HeightRequest="35" WidthRequest="30" Margin="2,0,0,1" VerticalOptions="CenterAndExpand" Aspect="AspectFill" />
+                        <StackLayout Orientation="Vertical" HeightRequest="60" Spacing="1.7" Margin="2,0,0,1" VerticalOptions="Center" Padding="1">
+                            <Label Text="{Binding Name}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="17.4" TextColor="#4e4e4e" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="{Binding CreationTime.Date, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="13.5" TextColor="#4e4e4e"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </syncfusion:SfListView.ItemTemplate>
+    </syncfusion:SfListView>
+</ContentPage>
