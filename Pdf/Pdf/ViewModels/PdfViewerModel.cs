@@ -25,5 +25,6 @@ namespace Pdf.ViewModels
         {
             m_pdfDocumentStream = stream;
         }
+
     }
 }

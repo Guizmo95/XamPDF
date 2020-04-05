@@ -42,7 +42,7 @@ namespace Pdf.Helpers
 
                 string outputFileName = System.IO.Path.GetRandomFileName() + ".pdf";
 
-                await Xamarin.Forms.DependencyService.Get<IAndroidFileHelper>().SaveAndView(outputFileName, "application/pdf", stream);
+                //await Xamarin.Forms.DependencyService.Get<IAndroidFileHelper>().SaveAndView(outputFileName, "application/pdf", stream);
             }
         }
     }

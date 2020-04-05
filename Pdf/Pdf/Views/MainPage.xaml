@@ -70,7 +70,7 @@
                     </tabView:SfTabItem>
                     <tabView:SfTabItem Title="Tools">
                         <tabView:SfTabItem.Content>
-                            <syncfusion:SfListView x:Name="ToolsListView" ItemsSource="{Binding ToolsItems}" Orientation="Horizontal" SelectedItem="ToolsListView_ItemSelected" SelectionChanging="ToolsListView_SelectionChanging">
+                            <syncfusion:SfListView x:Name="ToolsListView" ItemsSource="{Binding ToolsItems}" Orientation="Horizontal" SelectedItem="ToolsListView_ItemSelected">
                                 <syncfusion:SfListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
@@ -113,8 +113,7 @@
             </Grid>
         </navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
         <navigationdrawer:SfNavigationDrawer.DrawerContentView>
-            <ListView x:Name="listView" 
-                      ItemSelected="listView_ItemSelected" BackgroundColor="White">
+            <ListView x:Name="listView" BackgroundColor="White">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

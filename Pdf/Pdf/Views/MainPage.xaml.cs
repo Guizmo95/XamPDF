@@ -16,16 +16,12 @@ namespace Pdf.Views
     public partial class MainPage : ContentPage
     {
         private readonly DocumentViewModel documentViewModel;
-        private readonly ToolsViewModel toolsViewModel;
         public MainPage()
         {
             InitializeComponent();
 
             this.documentViewModel = new DocumentViewModel();
             DocumentListView.ItemsSource = documentViewModel.Documents;
-
-            this.toolsViewModel = new ToolsViewModel();
-            ToolsListView.ItemsSource = toolsViewModel.ToolsItems;
 
             List<string> list = new List<string>();
             list.Add("My documents");
@@ -39,12 +35,6 @@ namespace Pdf.Views
 
         void hamburgerButton_Clicked(object sender, EventArgs e)
         {
-            navigationDrawer.ToggleDrawer();
-        }
-
-        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            // Your codes here
             navigationDrawer.ToggleDrawer();
         }
 
@@ -62,27 +52,6 @@ namespace Pdf.Views
                 await Navigation.PushAsync(new PdfViewer(stream));
             }
         }
-
-        private async void ToolsListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
-        {
-            if (e.AddedItems == null)
-                return;
-            else
-            {
-                ToolsCustomItem selectedItem = (ToolsCustomItem) e.AddedItems[0];
-                var selectedItemId = selectedItem.Id;
-
-                switch (selectedItemId)
-                {
-                    case 0:
-                        await Navigation.PushAsync(new DocumentsListView(Enumerations.ProcessNames.WorkingWithPages));
-                        break;
-                    case 1:
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
+        
     }
 }

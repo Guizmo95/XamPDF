@@ -140,7 +140,7 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
-      "Syncfusion.Licensing/17.4.0.55": {
+      "Syncfusion.Licensing/18.1.0.42": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -158,10 +158,10 @@
           "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/17.4.0.55": {
+      "Syncfusion.Xamarin.Core/18.1.0.42": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "17.4.0.55",
+          "Syncfusion.Licensing": "18.1.0.42",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -171,6 +171,24 @@
         "runtime": {
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.DataSource/18.1.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/18.1.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
       "Syncfusion.Xamarin.Pdf/17.4.0.55": {
@@ -201,6 +219,40 @@
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.XForms.iOS.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Syncfusion.Xamarin.DataSource": "18.1.0.42",
+          "Syncfusion.Xamarin.GridCommon": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNavigationDrawer/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll": {}
         }
       },
       "Syncfusion.Xamarin.SfPdfViewer/17.4.0.55": {
@@ -252,6 +304,21 @@
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.XForms.iOS.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -633,7 +700,10 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
+          "Syncfusion.Xamarin.SfListView": "18.1.0.42",
+          "Syncfusion.Xamarin.SfNavigationDrawer": "18.1.0.42",
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.55",
+          "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356"
         },
@@ -784,7 +854,7 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
-      "Syncfusion.Licensing/17.4.0.55": {
+      "Syncfusion.Licensing/18.1.0.42": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -802,10 +872,10 @@
           "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/17.4.0.55": {
+      "Syncfusion.Xamarin.Core/18.1.0.42": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "17.4.0.55",
+          "Syncfusion.Licensing": "18.1.0.42",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -815,6 +885,24 @@
         "runtime": {
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.DataSource/18.1.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/18.1.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
       "Syncfusion.Xamarin.Pdf/17.4.0.55": {
@@ -845,6 +933,40 @@
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.XForms.iOS.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Syncfusion.Xamarin.DataSource": "18.1.0.42",
+          "Syncfusion.Xamarin.GridCommon": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNavigationDrawer/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll": {}
         }
       },
       "Syncfusion.Xamarin.SfPdfViewer/17.4.0.55": {
@@ -896,6 +1018,21 @@
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.XForms.iOS.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -1277,7 +1414,10 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
+          "Syncfusion.Xamarin.SfListView": "18.1.0.42",
+          "Syncfusion.Xamarin.SfNavigationDrawer": "18.1.0.42",
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.55",
+          "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356"
         },
@@ -1428,7 +1568,7 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
-      "Syncfusion.Licensing/17.4.0.55": {
+      "Syncfusion.Licensing/18.1.0.42": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -1446,10 +1586,10 @@
           "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/17.4.0.55": {
+      "Syncfusion.Xamarin.Core/18.1.0.42": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "17.4.0.55",
+          "Syncfusion.Licensing": "18.1.0.42",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -1459,6 +1599,24 @@
         "runtime": {
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.DataSource/18.1.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/18.1.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
       "Syncfusion.Xamarin.Pdf/17.4.0.55": {
@@ -1489,6 +1647,40 @@
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.XForms.iOS.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Syncfusion.Xamarin.DataSource": "18.1.0.42",
+          "Syncfusion.Xamarin.GridCommon": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNavigationDrawer/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll": {}
         }
       },
       "Syncfusion.Xamarin.SfPdfViewer/17.4.0.55": {
@@ -1540,6 +1732,21 @@
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.XForms.iOS.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -1921,7 +2128,10 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
+          "Syncfusion.Xamarin.SfListView": "18.1.0.42",
+          "Syncfusion.Xamarin.SfNavigationDrawer": "18.1.0.42",
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.55",
+          "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356"
         },
@@ -2072,7 +2282,7 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
-      "Syncfusion.Licensing/17.4.0.55": {
+      "Syncfusion.Licensing/18.1.0.42": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -2090,10 +2300,10 @@
           "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/17.4.0.55": {
+      "Syncfusion.Xamarin.Core/18.1.0.42": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "17.4.0.55",
+          "Syncfusion.Licensing": "18.1.0.42",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -2103,6 +2313,24 @@
         "runtime": {
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.DataSource/18.1.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/18.1.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
       "Syncfusion.Xamarin.Pdf/17.4.0.55": {
@@ -2133,6 +2361,40 @@
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.XForms.iOS.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfBusyIndicator.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Syncfusion.Xamarin.DataSource": "18.1.0.42",
+          "Syncfusion.Xamarin.GridCommon": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNavigationDrawer/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll": {}
         }
       },
       "Syncfusion.Xamarin.SfPdfViewer/17.4.0.55": {
@@ -2184,6 +2446,21 @@
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.XForms.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.XForms.iOS.dll": {},
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.iOS.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.42",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -2565,7 +2842,10 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
+          "Syncfusion.Xamarin.SfListView": "18.1.0.42",
+          "Syncfusion.Xamarin.SfNavigationDrawer": "18.1.0.42",
           "Syncfusion.Xamarin.SfPdfViewer": "17.4.0.55",
+          "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356"
         },
@@ -2953,10 +3233,10 @@
         "sharpziplib.nuspec"
       ]
     },
-    "Syncfusion.Licensing/17.4.0.55": {
-      "sha512": "OiadVAyHgL8hqsnrl4cyrhcu6pUngz/IOQqzuHe6AfF6B0CyZRGoyij+B/EsIAeQ036jgkiZ+GXxBCSdxsLgEg==",
+    "Syncfusion.Licensing/18.1.0.42": {
+      "sha512": "9gKWFeJaL+0lt0Yvf3Nj+xCZd0DKNdLLJFviWL4LBwtDvRzHKXNs5TkDx4TYFXtlzCjGHmmj3Y3GTGLLB3Y6BQ==",
       "type": "package",
-      "path": "syncfusion.licensing/17.4.0.55",
+      "path": "syncfusion.licensing/18.1.0.42",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2976,7 +3256,7 @@
         "lib/netstandard2.0/Syncfusion.Licensing.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
         "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.17.4.0.55.nupkg.sha512",
+        "syncfusion.licensing.18.1.0.42.nupkg.sha512",
         "syncfusion.licensing.nuspec"
       ]
     },
@@ -2997,10 +3277,10 @@
         "syncfusion.xamarin.compression.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Core/17.4.0.55": {
-      "sha512": "V+5G/WjG2Kh94mz6Z0DXLkdZXad0cgPAHfI+GivPVdtJge5QaXFSv2ing3Y8h5BbjfoaJPJQrE2evaNGqKq2ZA==",
+    "Syncfusion.Xamarin.Core/18.1.0.42": {
+      "sha512": "oSJCGMXWc14aN3dkNkiFN+CvuD+t4U5kGmgF77eyg2kJyk2tDVoHkc0oVGW6IAlQZ5BKhhUgh37AemaPewsSNA==",
       "type": "package",
-      "path": "syncfusion.xamarin.core/17.4.0.55",
+      "path": "syncfusion.xamarin.core/18.1.0.42",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3024,8 +3304,52 @@
         "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ToggleVisibleIcon.xaml",
         "lib/uap10.0/Syncfusion.Core.XForms.dll",
         "lib/uap10.0/Syncfusion.Core.XForms.xml",
-        "syncfusion.xamarin.core.17.4.0.55.nupkg.sha512",
+        "syncfusion.xamarin.core.18.1.0.42.nupkg.sha512",
         "syncfusion.xamarin.core.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.DataSource/18.1.0.42": {
+      "sha512": "of21MYAyWX6fla1n/vKce8/0/oyXqBKZdwXGNl+qlvjCLlkYwiJg0glUwjuPsiwpYpkSgfH3mwWT890/18qI6w==",
+      "type": "package",
+      "path": "syncfusion.xamarin.datasource/18.1.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll",
+        "lib/netstandard2.0/Syncfusion.DataSource.Portable.XML",
+        "lib/netstandard2.0/Syncfusion.DataSource.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.dll",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.XML",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.dll",
+        "syncfusion.xamarin.datasource.18.1.0.42.nupkg.sha512",
+        "syncfusion.xamarin.datasource.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.GridCommon/18.1.0.42": {
+      "sha512": "FUNddXrEcbw8+4ABLMI087tqLPCILadPVv0a9Lsx1t1+ttH0K0wO/g24cvm5XJ4HBxlNSlxrCWm7tNf3lnJegQ==",
+      "type": "package",
+      "path": "syncfusion.xamarin.gridcommon/18.1.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll",
+        "lib/netstandard2.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/netstandard2.0/Syncfusion.GridCommon.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
+        "syncfusion.xamarin.gridcommon.18.1.0.42.nupkg.sha512",
+        "syncfusion.xamarin.gridcommon.nuspec"
       ]
     },
     "Syncfusion.Xamarin.Pdf/17.4.0.55": {
@@ -3072,6 +3396,62 @@
         "lib/uap10.0/Syncfusion.SfBusyIndicator.XForms.xml",
         "syncfusion.xamarin.sfbusyindicator.17.4.0.55.nupkg.sha512",
         "syncfusion.xamarin.sfbusyindicator.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfListView/18.1.0.42": {
+      "sha512": "+o2KMBfe9GAHWkq9YWQDxnt13TpO4sj8cBBtdo9Yqofp5y9eW7ezObQjAN1uRFV/63Pwa3Rg6uQuoh/0/UqiWg==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sflistview/18.1.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.SfListView.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.xml",
+        "lib/netstandard2.0/Syncfusion.SfListView.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.SfListView.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.xml",
+        "syncfusion.xamarin.sflistview.18.1.0.42.nupkg.sha512",
+        "syncfusion.xamarin.sflistview.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfNavigationDrawer/18.1.0.42": {
+      "sha512": "BCZO3u3w4Bu2lOvmIkxKIooV8B8Q9DHiNmrbX7DAg8U187ouHOnAYpgJKq47HK/k2TZrUfdi2BZhbb23FBtS/g==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfnavigationdrawer/18.1.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.Android.xml",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.xml",
+        "lib/netstandard2.0/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfNavigationDrawer.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfNavigationDrawer.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "syncfusion.xamarin.sfnavigationdrawer.18.1.0.42.nupkg.sha512",
+        "syncfusion.xamarin.sfnavigationdrawer.nuspec"
       ]
     },
     "Syncfusion.Xamarin.SfPdfViewer/17.4.0.55": {
@@ -3166,6 +3546,35 @@
         "lib/uap10.0/Syncfusion.SfRangeSlider.XForms.xml",
         "syncfusion.xamarin.sfrangeslider.17.4.0.55.nupkg.sha512",
         "syncfusion.xamarin.sfrangeslider.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
+      "sha512": "wt3DH5e3jj8oV0v7zxJi0xqwXD+Rhv4ShgPlSs0jlVpVXaLKBo2Y/7Itoe3XqVLVZFLFhFxSLVwJ4jio+fGJdg==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sftabview/18.1.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfTabView.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfTabView.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfTabView.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfTabView.XForms.xml",
+        "lib/netstandard2.0/Syncfusion.SfTabView.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.SfTabView.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfTabView.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfTabView.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfTabView.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfTabView.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfTabView.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfTabView.XForms.UWP/Properties/Syncfusion.SfTabView.XForms.UWP.rd.xml",
+        "lib/uap10.0/Syncfusion.SfTabView.XForms.UWP/Syncfusion.SfTabView.XForms.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.SfTabView.XForms.UWP/Themes/Generic.xaml",
+        "lib/uap10.0/Syncfusion.SfTabView.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfTabView.XForms.xml",
+        "syncfusion.xamarin.sftabview.18.1.0.42.nupkg.sha512",
+        "syncfusion.xamarin.sftabview.nuspec"
       ]
     },
     "System.Collections/4.3.0": {

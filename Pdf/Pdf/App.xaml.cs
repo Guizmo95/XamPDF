@@ -1,5 +1,4 @@
-﻿using Pdf.Api;
-using Pdf.Data;
+﻿
 using Pdf.Views;
 using System;
 using System.ComponentModel;
@@ -20,26 +19,10 @@ namespace Pdf
         {
             InitializeComponent();
 
-            Device.SetFlags(new[] {
-                "CarouselView_Experimental",
-                "IndicatorView_Experimental"
-            });
-
             Container = new UnityContainer();
-            Container.RegisterType<IConcateEndpoint, ConcateEndpoint>();
-            Container.RegisterType<IDeconcateEndpoint, DeconcateEndpoint>();
-            Container.RegisterType<IGetFilesEndpoint, GetFilesEndpoint>();
-            Container.RegisterType<IOverlayEndpoint, OverlayEndpoint>();
-            Container.RegisterType<IPasswordEndpoint, PasswordEndpoint>();
-            Container.RegisterType<IRemovePagesEndpoint, RemovePagesEndpoint>();
-            Container.RegisterType<ISummaryEndpoint, SummaryEndpoint>();
-            Container.RegisterType<IUncompressEndpoint, UncompressEndpoint>();
-
-            Container.RegisterType<IDocumentsData, DocumentsData>(new ContainerControlledLifetimeManager());
-            //Container.RegisterType<IDocumentsData, DocumentsData>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new object[] { new DocumentsData()}));
 
             MainPage = /*new NavigationPage(new MainMenu());*/
-                new ShellMenu();
+                new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

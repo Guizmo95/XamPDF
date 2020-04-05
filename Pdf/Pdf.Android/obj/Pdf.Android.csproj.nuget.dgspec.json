@@ -120,9 +120,21 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "Syncfusion.Xamarin.SfListView": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfNavigationDrawer": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
               "version": "[17.4.0.55, )"
+            },
+            "Syncfusion.Xamarin.SfTabView": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
             },
             "Unity": {
               "target": "Package",

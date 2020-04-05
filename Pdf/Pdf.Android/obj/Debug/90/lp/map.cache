@@ -1,14 +1,17 @@
 Acr.UserDialogs
 AndHUD
 FormsViewGroup
-Pdf
 Syncfusion.Core.XForms.Android
 Syncfusion.SfBusyIndicator.Android
 Syncfusion.SfBusyIndicator.XForms.Android
+Syncfusion.SfListView.XForms.Android
+Syncfusion.SfNavigationDrawer.Android
+Syncfusion.SfNavigationDrawer.XForms.Android
 Syncfusion.SfPdfViewer.XForms.Android
 Syncfusion.SfProgressBar.XForms.Android
 Syncfusion.SfRangeSlider.Android
 Syncfusion.SfRangeSlider.XForms.Android
+Syncfusion.SfTabView.XForms.Android
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common
@@ -48,3 +51,4 @@ Xamarin.Android.Support.VersionedParcelable
 Xamarin.Android.Support.ViewPager
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
+Pdf

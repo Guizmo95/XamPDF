@@ -5,9 +5,59 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Pdf.Views.PdfViewer"
-             xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms">
-        
-    <Grid x:Name="pdfViewGrid">
-        <syncfusion:SfPdfViewer x:Name="pdfViewerControl" />
-    </Grid>
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms" NavigationPage.HasNavigationBar="False">
+
+    <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer" Position="Bottom" DrawerHeight="200">
+        <navigationdrawer:SfNavigationDrawer.ContentView>
+            <Grid x:Name="mainGrid" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" x:Name="firstTopGridRow"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" x:Name="thirdBottomGridRow"/>
+                </Grid.RowDefinitions>
+                <AbsoluteLayout x:Name="topAbsoluteLayout" Grid.Row="0" BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Grid x:Name="topToolbar" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="0.4*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Entry Keyboard="Numeric" FontSize="18" x:Name="pageNumberEntry" HorizontalTextAlignment="Center" Grid.Column="0" VerticalOptions="Center" Text="{Binding PageNumber, Source={x:Reference Name=pdfViewerControl}}"/>
+                        <Label Text="/" Grid.Column="1" FontSize="18" x:Name="slashLabel"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Label x:Name="pageCountLabel" Grid.Column="2" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding PageCount, Source={x:Reference Name=pdfViewerControl}}"/>
+                    </Grid>
+                </AbsoluteLayout>
+                <Grid x:Name="pdfViewGrid" Grid.Row="1">
+                    <syncfusion:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfDocumentStream}"/>
+                </Grid>
+                <AbsoluteLayout x:Name="bottomAbsoluteLayout" Grid.Row="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#E9E9E9" >
+                    <Grid x:Name="bottomToolbar" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="0.4*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="wait" Grid.Column="5"/>
+                        <ImageButton Source="drawing.png" Grid.Column="6" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ShowToolsMenu" Aspect="AspectFit"/>
+                    </Grid>
+                </AbsoluteLayout>
+            </Grid>
+        </navigationdrawer:SfNavigationDrawer.ContentView>
+    </navigationdrawer:SfNavigationDrawer>
+
+
+
+
+    
 </ContentPage>

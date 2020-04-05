@@ -15,7 +15,10 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="SharpZipLib" Version="1.2.0" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.42" />
     <PackageReference Include="Unity" Version="5.11.4" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
   </ItemGroup>
@@ -30,70 +33,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\ConcatePdfDocs.xaml.cs">
-      <DependentUpon>ConcatePdfDocs.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\HeaderShellPage.xaml.cs">
-      <DependentUpon>HeaderShellPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\DocumentsList.xaml.cs">
-      <DependentUpon>DocumentsList.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\MenuPage.xaml">
       <DependentUpon>MenuPage.xaml.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Views\ToolsList.xaml.cs">
-      <DependentUpon>ToolsList.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\AddStamp.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddSummary.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddSummaryModal.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddWatermark.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\ConcatePageThumbnails.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\ConcatePdfDocs.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\DeconcatePageThumbnails.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\DownloadPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\FilesListForConvert.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\GetDownload.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\HeaderShellPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\PdfViewer.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\RemovePages.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\ShellMenu.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\ToolsList.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\UncompressDocs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
