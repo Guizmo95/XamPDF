@@ -1,3 +1,6 @@
+Pdf.Droid.MyFrameRender, Pdf.Android;crc64ce4755fc17c5ee4b.MyFrameRender
+Pdf.Droid.MyFrameRender;crc64ce4755fc17c5ee4b.MyFrameRender
+pdf.droid.MyFrameRender;crc64ce4755fc17c5ee4b.MyFrameRender
 Pdf.Droid.MainActivity, Pdf.Android;crc64ce4755fc17c5ee4b.MainActivity
 Pdf.Droid.MainActivity;crc64ce4755fc17c5ee4b.MainActivity
 pdf.droid.MainActivity;crc64ce4755fc17c5ee4b.MainActivity
@@ -760,6 +763,15 @@ mono.android.support.v4.view.ViewPager_OnAdapterChangeListenerImplementor;mono.a
 Android.Support.V4.View.ViewPager+IOnPageChangeListenerImplementor, Xamarin.Android.Support.ViewPager;mono.android.support.v4.view.ViewPager_OnPageChangeListenerImplementor
 Android.Support.V4.View.ViewPager.IOnPageChangeListenerImplementor;mono.android.support.v4.view.ViewPager_OnPageChangeListenerImplementor
 mono.android.support.v4.view.ViewPager_OnPageChangeListenerImplementor;mono.android.support.v4.view.ViewPager_OnPageChangeListenerImplementor
+Xamarin.Forms.PancakeView.Droid.PancakeDrawable, Xamarin.Forms.PancakeView;crc64f8908e42fa42e603.PancakeDrawable
+Xamarin.Forms.PancakeView.Droid.PancakeDrawable;crc64f8908e42fa42e603.PancakeDrawable
+xamarin.forms.pancakeview.droid.PancakeDrawable;crc64f8908e42fa42e603.PancakeDrawable
+Xamarin.Forms.PancakeView.Droid.PancakeViewRenderer, Xamarin.Forms.PancakeView;crc64f8908e42fa42e603.PancakeViewRenderer
+Xamarin.Forms.PancakeView.Droid.PancakeViewRenderer;crc64f8908e42fa42e603.PancakeViewRenderer
+xamarin.forms.pancakeview.droid.PancakeViewRenderer;crc64f8908e42fa42e603.PancakeViewRenderer
+Xamarin.Forms.PancakeView.Droid.RoundedCornerOutlineProvider, Xamarin.Forms.PancakeView;crc64f8908e42fa42e603.RoundedCornerOutlineProvider
+Xamarin.Forms.PancakeView.Droid.RoundedCornerOutlineProvider;crc64f8908e42fa42e603.RoundedCornerOutlineProvider
+xamarin.forms.pancakeview.droid.RoundedCornerOutlineProvider;crc64f8908e42fa42e603.RoundedCornerOutlineProvider
 Xamarin.Forms.Platform.Android.AndroidActivity, Xamarin.Forms.Platform.Android;crc643f46942d9dd1fff9.AndroidActivity
 Xamarin.Forms.Platform.Android.AndroidActivity;crc643f46942d9dd1fff9.AndroidActivity
 xamarin.forms.platform.android.AndroidActivity;crc643f46942d9dd1fff9.AndroidActivity

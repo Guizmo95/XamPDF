@@ -76,6 +76,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyFrameRenderer.cs" />
     <Compile Include="Helpers\AndroidFileHelper.cs" />
     <Compile Include="Helpers\AndroidDownloadManager.cs" />
     <Compile Include="Helpers\GetThumbnails.cs" />
@@ -127,9 +128,17 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Gotham.xml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\drawing.png" />
+    <AndroidResource Include="Resources\drawable\FrameRenderValue.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sketchbook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\licensing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\fountain.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

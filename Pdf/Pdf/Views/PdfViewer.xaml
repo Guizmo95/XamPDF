@@ -6,58 +6,33 @@
              mc:Ignorable="d"
              x:Class="Pdf.Views.PdfViewer"
              xmlns:navigationdrawer="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
-             xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms" NavigationPage.HasNavigationBar="False">
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms"
+             xmlns:controls="clr-namespace:Pdf.controls"
+             xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" NavigationPage.HasNavigationBar="False">
 
     <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer" Position="Bottom" DrawerHeight="200">
         <navigationdrawer:SfNavigationDrawer.ContentView>
-            <Grid x:Name="mainGrid" RowSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" x:Name="firstTopGridRow"/>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="50" x:Name="thirdBottomGridRow"/>
-                </Grid.RowDefinitions>
-                <AbsoluteLayout x:Name="topAbsoluteLayout" Grid.Row="0" BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill">
-                    <Grid x:Name="topToolbar" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="0.4*" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="2*" />
-                        </Grid.ColumnDefinitions>
-                        <Entry Keyboard="Numeric" FontSize="18" x:Name="pageNumberEntry" HorizontalTextAlignment="Center" Grid.Column="0" VerticalOptions="Center" Text="{Binding PageNumber, Source={x:Reference Name=pdfViewerControl}}"/>
-                        <Label Text="/" Grid.Column="1" FontSize="18" x:Name="slashLabel"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                        <Label x:Name="pageCountLabel" Grid.Column="2" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding PageCount, Source={x:Reference Name=pdfViewerControl}}"/>
-                    </Grid>
-                </AbsoluteLayout>
-                <Grid x:Name="pdfViewGrid" Grid.Row="1">
+            <StackLayout Spacing="1">
+                <controls1:PancakeView BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true">
+                    <StackLayout x:Name="topAbsoluteLayout" BackgroundColor="#f5f5f5" HeightRequest="50" Orientation="Horizontal" VerticalOptions="Start">
+                        <StackLayout Orientation="Horizontal" WidthRequest="50">
+                            <Entry Keyboard="Numeric" FontSize="18" x:Name="pageNumberEntry"  VerticalOptions="Center" Text="{Binding PageNumber, Source={x:Reference Name=pdfViewerControl}}" MaxLength="20"/>
+                            <Label Text="/" FontSize="18" x:Name="slashLabel"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" WidthRequest="20"/>
+                            <Label x:Name="pageCountLabel" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  VerticalOptions="Center" Text="{Binding PageCount, Source={x:Reference Name=pdfViewerControl}}" WidthRequest="20"/>
+                        </StackLayout>
+                    </StackLayout>
+                </controls1:PancakeView>
+                <StackLayout VerticalOptions="CenterAndExpand">
                     <syncfusion:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfDocumentStream}"/>
-                </Grid>
-                <AbsoluteLayout x:Name="bottomAbsoluteLayout" Grid.Row="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#E9E9E9" >
-                    <Grid x:Name="bottomToolbar" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="0.4*" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="2*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Text="wait" Grid.Column="5"/>
-                        <ImageButton Source="drawing.png" Grid.Column="6" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ShowToolsMenu" Aspect="AspectFit"/>
-                    </Grid>
-                </AbsoluteLayout>
-            </Grid>
+                </StackLayout>
+                <controls1:PancakeView BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" CornerRadius="20,20,0,0" HasShadow="true">
+                    <StackLayout x:Name="bottomAbsoluteLayout" VerticalOptions="Center" BackgroundColor="#f5f5f5" HeightRequest="47" Orientation="Horizontal" >
+                        <controls1:PancakeView CornerRadius="3,10,3,3" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand">
+                            <ImageButton Source="sketchbook.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Clicked="ShowToolsMenu" Aspect="AspectFit" BackgroundColor="Transparent" Margin="0,0,12,0" HeightRequest="43"/>
+                        </controls1:PancakeView>
+                    </StackLayout>
+                </controls1:PancakeView>
+            </StackLayout>
         </navigationdrawer:SfNavigationDrawer.ContentView>
     </navigationdrawer:SfNavigationDrawer>
-
-
-
-
-    
 </ContentPage>

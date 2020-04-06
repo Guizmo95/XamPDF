@@ -20,6 +20,7 @@
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356",
+          "Xamarin.Forms.PancakeView": "1.3.7",
           "Mono.Android": "0.0.0.0",
           "Xamarin.Android.Arch.Lifecycle.ViewModel": "1.0.0.0"
         },
@@ -864,6 +865,17 @@
           }
         }
       },
+      "Xamarin.Forms.PancakeView/1.3.7": {
+        "dependencies": {
+          "Xamarin.Forms": "4.5.0.356"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.PancakeView.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
       "Mono.Android/0.0.0.0": {
         "runtime": {
           "Mono.Android.dll": {
@@ -1370,6 +1382,13 @@
       "sha512": "sha512-aOg3sUA2xuLhyhtLuihrDVFZ5ZCa71pgojyz/HdjEH7eW5HxEws+IIgvKTYUZbFOIGD7eK/f3x1lYj6HI/o+jg==",
       "path": "xamarin.forms/4.5.0.356",
       "hashPath": "xamarin.forms.4.5.0.356.nupkg.sha512"
+    },
+    "Xamarin.Forms.PancakeView/1.3.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b6g3lVHV764yU4BRPzb1bvHT4G9xSQAXIPGtWQvryzLgU2qoqvnboiL5caJfLLFYXPtDy5ptoRD/TzC5i3VF3w==",
+      "path": "xamarin.forms.pancakeview/1.3.7",
+      "hashPath": "xamarin.forms.pancakeview.1.3.7.nupkg.sha512"
     },
     "Mono.Android/0.0.0.0": {
       "type": "reference",
