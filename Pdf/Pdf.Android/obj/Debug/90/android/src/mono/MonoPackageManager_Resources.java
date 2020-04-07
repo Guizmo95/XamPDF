@@ -10,6 +10,8 @@ public class MonoPackageManager_Resources {
 		"Newtonsoft.Json.Bson.dll",
 		"Newtonsoft.Json.dll",
 		"Pdf.dll",
+		"SignaturePad.dll",
+		"SignaturePad.Forms.dll",
 		"Syncfusion.Compression.Portable.dll",
 		"Syncfusion.Core.XForms.Android.dll",
 		"Syncfusion.Core.XForms.dll",

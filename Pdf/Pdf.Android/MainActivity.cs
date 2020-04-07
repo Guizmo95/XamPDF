@@ -12,6 +12,7 @@ using Android.Support.V4.App;
 using Acr.UserDialogs;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Pdf.Views;
 
 namespace Pdf.Droid
 {
@@ -46,6 +47,18 @@ namespace Pdf.Droid
                 ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.ReadExternalStorage }, 0);
             }
 
+            //allowing the device to change the screen orientation based on the rotation 
+            MessagingCenter.Subscribe<SignaturePage>(this, "AllowLandscape", sender =>
+            {
+                RequestedOrientation = ScreenOrientation.Landscape;
+            });
+
+            //during page close setting back to portrait
+            MessagingCenter.Subscribe<SignaturePage>(this, "PreventLandscape", sender =>
+            {
+                RequestedOrientation = ScreenOrientation.Portrait;
+            });
+
             UserDialogs.Init(this);
 
             global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
@@ -60,5 +73,11 @@ namespace Pdf.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+        
+
+
+
+
     }
 }

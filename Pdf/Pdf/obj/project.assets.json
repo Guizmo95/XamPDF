@@ -981,6 +981,18 @@
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
+      "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.280555"
+        },
+        "compile": {
+          "lib/netstandard1.0/SignaturePad.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/SignaturePad.Forms.dll": {}
+        }
+      },
       "Xamarin.Forms/4.5.0.356": {
         "type": "package",
         "compile": {
@@ -4380,6 +4392,26 @@
         "unity.nuspec"
       ]
     },
+    "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
+      "sha512": "LGw5vKuHsx/pQLD4GNEO/zrQVTFXsXnh6gzKCIMk/bMQTtfwfk6fGKgMeVwcR6/5DpOyVDzZg2B39MVYblAvdA==",
+      "type": "package",
+      "path": "xamarin.controls.signaturepad.forms/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/SignaturePad.Forms.dll",
+        "lib/MonoAndroid/SignaturePad.Forms.xml",
+        "lib/Xamarin.iOS/SignaturePad.Forms.dll",
+        "lib/Xamarin.iOS/SignaturePad.Forms.xml",
+        "lib/netstandard1.0/SignaturePad.Forms.dll",
+        "lib/netstandard1.0/SignaturePad.Forms.xml",
+        "lib/uap10.0/SignaturePad.Forms.dll",
+        "lib/uap10.0/SignaturePad.Forms.pri",
+        "lib/uap10.0/SignaturePad.Forms.xml",
+        "xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512",
+        "xamarin.controls.signaturepad.forms.nuspec"
+      ]
+    },
     "Xamarin.Forms/4.5.0.356": {
       "sha512": "aOg3sUA2xuLhyhtLuihrDVFZ5ZCa71pgojyz/HdjEH7eW5HxEws+IIgvKTYUZbFOIGD7eK/f3x1lYj6HI/o+jg==",
       "type": "package",
@@ -4693,6 +4725,7 @@
       "Syncfusion.Xamarin.SfPdfViewer >= 17.4.0.55",
       "Syncfusion.Xamarin.SfTabView >= 18.1.0.42",
       "Unity >= 5.11.4",
+      "Xamarin.Controls.SignaturePad.Forms >= 3.0.0",
       "Xamarin.Forms >= 4.5.0.356",
       "Xamarin.Forms.PancakeView >= 1.3.7"
     ]
@@ -4780,6 +4813,10 @@
           "Unity": {
             "target": "Package",
             "version": "[5.11.4, )"
+          },
+          "Xamarin.Controls.SignaturePad.Forms": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

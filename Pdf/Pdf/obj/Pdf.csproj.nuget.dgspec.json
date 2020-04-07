@@ -84,6 +84,10 @@
               "target": "Package",
               "version": "[5.11.4, )"
             },
+            "Xamarin.Controls.SignaturePad.Forms": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.5.0.356, )"
