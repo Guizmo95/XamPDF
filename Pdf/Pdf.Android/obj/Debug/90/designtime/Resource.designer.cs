@@ -11245,7 +11245,7 @@ namespace Pdf.Droid
 			public const int formfieldtextboxcursorcolor = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int fountain_pen_(1) = 2131165323;
+			public const int fountain = 2131165323;
 			
 			// aapt resource value: 0x7F070025
 			public const int FrameRenderValue = 2131165221;

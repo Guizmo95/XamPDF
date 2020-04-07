@@ -76,6 +76,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IconViewRenderer.cs" />
     <Compile Include="MyFrameRenderer.cs" />
     <Compile Include="Helpers\AndroidFileHelper.cs" />
     <Compile Include="Helpers\AndroidDownloadManager.cs" />

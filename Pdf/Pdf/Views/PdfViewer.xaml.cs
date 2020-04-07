@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PancakeView;
 using Xamarin.Forms.Xaml;
 
 namespace Pdf.Views
@@ -25,6 +26,17 @@ namespace Pdf.Views
             BindingContext = pdfViewerModel = new PdfViewerModel(fileStream);
 
             pdfViewerControl.Toolbar.Enabled = false;
+
+            ToolsButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async() =>
+                {
+                    ToolsButton.Foreground = Color.FromHex("#c2c2c2");
+                    ShowToolsMenu();
+                    await Task.Delay(100);
+                    ToolsButton.Foreground = Color.FromHex("4e4e4e");
+                })
+            });
         }
 
         //Set the toolbar when leaving the signature pad
@@ -32,86 +44,134 @@ namespace Pdf.Views
         {
             if(Height > Width)
             {
-                //firstTopGridRow.Height = 50;
-                //thirdBottomGridRow.Height = 50;
+                //Add the toolbar
+                topToolbar.IsVisible = true;
+                bottomToolbar.IsVisible = true;
             }
         }
 
+        //TODO -- Align stack layout
         //Show the tools menu with the navigation drawer
-        private void ShowToolsMenu(object sender, EventArgs e)
+        private void ShowToolsMenu()
         {
             StackLayout DrawerContentView = new StackLayout();
             StackLayout firstChildDrawerContentView = new StackLayout();
             DrawerContentView.BackgroundColor = Color.FromHex("#f5f5f5");
             firstChildDrawerContentView.Orientation = StackOrientation.Horizontal;
+            firstChildDrawerContentView.VerticalOptions = LayoutOptions.Center;
             firstChildDrawerContentView.HeightRequest = 45;
-            firstChildDrawerContentView.Spacing = 15;
-            firstChildDrawerContentView.Padding = 15;
+            firstChildDrawerContentView.Spacing = 20;
+            firstChildDrawerContentView.Padding = new Thickness(22, 17.5, 22, 14);
+
+            StackLayout secondChildDrawerContentView = new StackLayout();
+            secondChildDrawerContentView.Orientation = StackOrientation.Horizontal;
+            secondChildDrawerContentView.HeightRequest = 11;
+            secondChildDrawerContentView.BackgroundColor = Color.FromHex("#eeeeee");
 
             DrawerContentView.Children.Add(firstChildDrawerContentView);
+            DrawerContentView.Children.Add(secondChildDrawerContentView);
 
+            //Signature button
             StackLayout signaturePadButton = new StackLayout();
             signaturePadButton.Orientation = StackOrientation.Vertical;
-            signaturePadButton.HeightRequest = 4;
-            signaturePadButton.WidthRequest = 36;
+            signaturePadButton.VerticalOptions = LayoutOptions.Center;
+            signaturePadButton.HorizontalOptions = LayoutOptions.Center;
+            signaturePadButton.HeightRequest = 45;
+            signaturePadButton.WidthRequest = 50;
+            signaturePadButton.Spacing = 3;
 
             Image signatureImage = new Image();
             signatureImage.Source = "fountain.png";
             signatureImage.Aspect = Aspect.AspectFit;
             signatureImage.VerticalOptions = LayoutOptions.Center;
             signatureImage.HorizontalOptions = LayoutOptions.Center;
+            signatureImage.HeightRequest = 30;
+            signatureImage.WidthRequest = 50;
             Label singatureLabel = new Label();
             singatureLabel.Text = "Signature";
             singatureLabel.VerticalOptions = LayoutOptions.Center;
             singatureLabel.HorizontalOptions = LayoutOptions.Center;
-            singatureLabel.FontSize = 7;
+            singatureLabel.FontSize = 8;
             singatureLabel.VerticalTextAlignment = TextAlignment.Center;
             singatureLabel.HorizontalTextAlignment = TextAlignment.Center;
 
             signaturePadButton.Children.Add(signatureImage);
             signaturePadButton.Children.Add(singatureLabel);
 
+            //Frame signature button
+            PancakeView pancakeViewSignatureButton = new PancakeView();
+            pancakeViewSignatureButton.CornerRadius = 5;
+            pancakeViewSignatureButton.HorizontalOptions = LayoutOptions.Center;
+            pancakeViewSignatureButton.VerticalOptions = LayoutOptions.Center;
+            pancakeViewSignatureButton.Padding = 0;
+            pancakeViewSignatureButton.HeightRequest = 45;
+            pancakeViewSignatureButton.WidthRequest = 50;
+            pancakeViewSignatureButton.Content = signaturePadButton;
+
             signaturePadButton.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() => 
+                Command = new Command(async () =>
                 {
-                    signaturePadButton.BackgroundColor = Color.FromHex("#bcbcbc");
-                    SignaturePadButton_Clicked();
+                    signaturePadButton.BackgroundColor = Color.FromHex("#c2c2c2");
+                    //SignaturePadButton_Clicked();
+                    await Task.Delay(100);
+                    signaturePadButton.BackgroundColor = Color.Transparent;
                 })
             });
 
+            //Stamp button
             StackLayout stampButton = new StackLayout();
             stampButton.Orientation = StackOrientation.Vertical;
-            stampButton.HeightRequest = 4;
-            stampButton.WidthRequest = 36;
+            stampButton.VerticalOptions = LayoutOptions.Center;
+            stampButton.HorizontalOptions = LayoutOptions.Center;
+            stampButton.HeightRequest = 45;
+            stampButton.WidthRequest = 50;
+            stampButton.Spacing = 3;
 
+            //Stamp button content
             Image stampImage = new Image();
             stampImage.Source = "licensing.png";
             stampImage.Aspect = Aspect.AspectFit;
             stampImage.VerticalOptions = LayoutOptions.Center;
             stampImage.HorizontalOptions = LayoutOptions.Center;
+            stampImage.HeightRequest = 30;
+            stampImage.WidthRequest = 50;
             Label stampLabel = new Label();
             stampLabel.Text = "Stamp";
             stampLabel.VerticalOptions = LayoutOptions.Center;
             stampLabel.HorizontalOptions = LayoutOptions.Center;
-            stampLabel.FontSize = 7;
+            stampLabel.FontSize = 8;
             stampLabel.VerticalTextAlignment = TextAlignment.Center;
             stampLabel.HorizontalTextAlignment = TextAlignment.Center;
-
-            stampButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(() => 
-                {
-                    stampButton.BackgroundColor = Color.FromHex("#bcbcbc");
-                    StampButton_Clicked();
-                })
-            });
 
             stampButton.Children.Add(stampImage);
             stampButton.Children.Add(stampLabel);
 
-            firstChildDrawerContentView.Children.Add(signaturePadButton);
-            firstChildDrawerContentView.Children.Add(stampButton);
+            //Frame stamp button
+            PancakeView pancakeViewStampButton = new PancakeView();
+            pancakeViewStampButton.CornerRadius = 5;
+            pancakeViewStampButton.HorizontalOptions = LayoutOptions.Center;
+            pancakeViewStampButton.VerticalOptions = LayoutOptions.Center;
+            pancakeViewStampButton.Padding = 0;
+            pancakeViewStampButton.HeightRequest = 45;
+            pancakeViewStampButton.WidthRequest = 50;
+            pancakeViewStampButton.Content = stampButton;
+
+            stampButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async() => 
+                {
+                    stampButton.BackgroundColor = Color.FromHex("#c2c2c2");
+                    //StampButton_Clicked();
+                    await Task.Delay(100);
+                    stampButton.BackgroundColor = Color.Transparent;
+                })
+            });
+
+           
+
+            firstChildDrawerContentView.Children.Add(pancakeViewSignatureButton);
+            firstChildDrawerContentView.Children.Add(pancakeViewStampButton);
             firstChildDrawerContentView.BackgroundColor = Color.FromHex("#f5f5f5");
 
             StackLayout navigationDrawerHeader = new StackLayout();
@@ -145,8 +205,11 @@ namespace Pdf.Views
         private void SignaturePadButton_Clicked()
         {
             //Remove the toolbar
-            //firstTopGridRow.Height = 0;
-            //thirdBottomGridRow.Height = 0;
+            //topToolbar.IsVisible = false;
+            //bottomToolbar.IsVisible = false;
+
+            //Toggle the bottom navigation drawer
+            navigationDrawer.ToggleDrawer();
 
             pdfViewerControl.AnnotationMode = AnnotationMode.HandwrittenSignature;
         }

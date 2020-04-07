@@ -1440,3 +1440,4 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debu
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\res\drawable\sketchbook.png
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\res\drawable\licensing.png
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\src\crc64ce4755fc17c5ee4b\IconViewRenderer.java
