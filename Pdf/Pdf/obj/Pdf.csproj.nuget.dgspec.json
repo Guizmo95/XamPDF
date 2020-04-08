@@ -64,6 +64,18 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "Syncfusion.Xamarin.Buttons": {
+              "target": "Package",
+              "version": "[18.1.0.43, )"
+            },
+            "Syncfusion.Xamarin.Expander": {
+              "target": "Package",
+              "version": "[18.1.0.43, )"
+            },
+            "Syncfusion.Xamarin.SfImageEditor": {
+              "target": "Package",
+              "version": "[18.1.0.43, )"
+            },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
               "version": "[18.1.0.42, )"
@@ -76,6 +88,18 @@
               "target": "Package",
               "version": "[17.4.0.55, )"
             },
+            "Syncfusion.Xamarin.SfPopupLayout": {
+              "target": "Package",
+              "version": "[18.1.0.43, )"
+            },
+            "Syncfusion.Xamarin.SfRadialMenu": {
+              "target": "Package",
+              "version": "[18.1.0.43, )"
+            },
+            "Syncfusion.Xamarin.SfRangeSlider": {
+              "target": "Package",
+              "version": "[18.1.0.43, )"
+            },
             "Syncfusion.Xamarin.SfTabView": {
               "target": "Package",
               "version": "[18.1.0.42, )"
@@ -83,10 +107,6 @@
             "Unity": {
               "target": "Package",
               "version": "[5.11.4, )"
-            },
-            "Xamarin.Controls.SignaturePad.Forms": {
-              "target": "Package",
-              "version": "[3.0.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

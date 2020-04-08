@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sfsegmentedcontrol="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:local="clr-namespace:Pdf.Views"
+             mc:Ignorable="d"
+             x:Class="Pdf.Views.ColorPicker">
+    <ContentView.Content>
+        <sfsegmentedcontrol:SfSegmentedControl x:Name="segctrl" CornerRadius="0" 
+                                               HeightRequest="50"
+                                               BackgroundColor="{Binding SelectedColor}"
+                                               SegmentHeight="40" 
+                                               SegmentWidth="40"  
+                                               ItemsSource="{Binding ViewCollection}"
+                                               SegmentBorderThickness="0" 
+                                               SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
+                                              SegmentPadding="5"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               SelectionAnimationDuration="0">
+            <sfsegmentedcontrol:SfSegmentedControl.SelectionIndicatorSettings>
+                <sfsegmentedcontrol:SelectionIndicatorSettings Color="#FFFFFF" 
+                                                               Position="Border" 
+                                                               CornerRadius="20"/>
+            </sfsegmentedcontrol:SfSegmentedControl.SelectionIndicatorSettings>
+        </sfsegmentedcontrol:SfSegmentedControl>
+    </ContentView.Content>
+</ContentView>

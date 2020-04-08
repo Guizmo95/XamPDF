@@ -3,14 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             xmlns:imageeditor="clr-namespace:Syncfusion.SfImageEditor.XForms;assembly=Syncfusion.SfImageEditor.XForms"
+             xmlns:controls="clr-namespace:Pdf.controls"
+             xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:sfradialmenu="clr-namespace:Syncfusion.SfRadialMenu.XForms;assembly=Syncfusion.SfRadialMenu.XForms"
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.SignaturePage">
-    <forms:SignaturePadView StrokeColor="Black" BackgroundColor="White" StrokeWidth="3"
-                            WidthRequest="500"
-                            HeightRequest="500"
-                            
-                            />
+             x:Class="Pdf.Views.SignaturePage" NavigationPage.HasNavigationBar="False" x:Name="MySignaturePage">
+    <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer" Position="Bottom" WidthRequest="50" BackgroundColor="Transparent">
+        <navigationdrawer:SfNavigationDrawer.ContentView>
+            <StackLayout>
+                <controls1:PancakeView BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar">
+                    <AbsoluteLayout x:Name="topAbsoluteLayout" BackgroundColor="#f5f5f5" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                        <controls:IconView  x:Name="cross" Source="close.png" AbsoluteLayout.LayoutBounds="0, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Foreground="#4e4e4e" HeightRequest="35" VerticalOptions="CenterAndExpand"/>
+                        <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Horizontal">
+                            <controls:IconView  x:Name="undo" Source="next.png" Foreground="#4e4e4e" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="35"/>
+                            <controls:IconView  x:Name="redo" Source="arrow.png" Foreground="#4e4e4e" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="35"/>
+                        </StackLayout>
+                        <controls:IconView  x:Name="save" Source="tick.png" AbsoluteLayout.LayoutBounds="1, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Foreground="#4e4e4e" HeightRequest="35"/>
+                    </AbsoluteLayout>
+                </controls1:PancakeView>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
+                    <imageeditor:SfImageEditor x:Name="editor" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ImageSaving="editor_ImageSaving" ImageSaved="editor_ImageSaved">
+                    </imageeditor:SfImageEditor>
+                </StackLayout>
+                <controls1:PancakeView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="bottomToolbar">
+                    <AbsoluteLayout x:Name="bottomAbsoluteLayout" VerticalOptions="End" BackgroundColor="#f5f5f5" HeightRequest="47" HorizontalOptions="FillAndExpand">
+                        <controls1:PancakeView CornerRadius="8" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" VerticalOptions="Center">
+                            <Button  HorizontalOptions="End" BackgroundColor="{Binding SelectedColor}" BindingContext="{x:Reference Name=MySignaturePage}" HeightRequest="27" WidthRequest="27" VerticalOptions="Center" Clicked="colorButtonClicked"/>
+                        </controls1:PancakeView>
+                        <!--<Button WidthRequest="50" Image="Reset.png"  BackgroundColor="Transparent" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center"/>-->
+                    </AbsoluteLayout>
+                </controls1:PancakeView>
+            </StackLayout>
+        </navigationdrawer:SfNavigationDrawer.ContentView>
+    </navigationdrawer:SfNavigationDrawer>
+    
+    
+    
 
 </ContentPage>
