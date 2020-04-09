@@ -4,6 +4,7 @@ using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -19,8 +20,11 @@ namespace Pdf.Views
     public partial class SignaturePage : ContentPage, INotifyPropertyChanged
     {
         private Color selectedColor;
-        private ColorPicker colorPicker;
+        RotatorPage rotatorPage;
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public delegate void HandlePopDelegate(string parameter);
+        public event HandlePopDelegate DidFinishPoping;
 
         public Color SelectedColor
         {
@@ -52,8 +56,7 @@ namespace Pdf.Views
         {
             InitializeComponent();
             this.editor.ToolbarSettings.IsVisible = false;
-
-            colorPicker = new ColorPicker();
+            rotatorPage = new RotatorPage(Enumerations.RotatorMode.ColorPicker);
 
             Device.StartTimer(TimeSpan.FromMilliseconds(1000), () =>
             {
@@ -124,7 +127,7 @@ namespace Pdf.Views
 
         public void Save_Clicked()
         {
-            editor.Save(".png");
+            editor.Save(".png", new Size(913, 764)) ;
         }
 
         public void Eraser_Clicked(object sender, System.EventArgs e)
@@ -137,57 +140,35 @@ namespace Pdf.Views
             
         }
 
-        private void editor_ImageSaved(object sender, Syncfusion.SfImageEditor.XForms.ImageSavedEventArgs args)
+        private async void editor_ImageSaved(object sender, Syncfusion.SfImageEditor.XForms.ImageSavedEventArgs args)
         {
-            string savedLocation = args.Location; // You can get the saved image location with the help of this argument
+            // You can get the saved image location with the help of this argument
+            string savedLocation = args.Location;
+
+            await Navigation.PopAsync();
+            DidFinishPoping(savedLocation);
         }
 
         private async void colorButtonClicked(object sender, EventArgs e)
         {
-            SfPopupLayout popupLayout = new SfPopupLayout();
-            popupLayout.PopupView.ShowHeader = false;
-            popupLayout.PopupView.ShowFooter = false;
+            rotatorPage.HeightRequest = 65;
+            mainStackLayout.Children.Insert(3, rotatorPage);
 
-            DataTemplate dataTemplate = new DataTemplate(() =>
-            {
-                StackLayout stackLayout1 = new StackLayout();
-                stackLayout1.HorizontalOptions = LayoutOptions.Center;
-                stackLayout1.VerticalOptions = LayoutOptions.Center;
-                stackLayout1.BackgroundColor = Color.Red;
-                stackLayout1.Orientation = StackOrientation.Horizontal;
+            // get reference to the layout to animate
+            //var layout = rotatorPage;
 
-                StackLayout stackLayout2 = new StackLayout();
-                stackLayout2.HorizontalOptions = LayoutOptions.FillAndExpand;
-                stackLayout2.VerticalOptions = LayoutOptions.FillAndExpand;
-                stackLayout2.BackgroundColor = Color.White;
-                stackLayout2.Orientation = StackOrientation.Vertical;
+            ////setup information for animation
+            //Action<double> callback = input => { layout.HeightRequest = input; }; // update the height of the layout with this callback
+            //double startingHeight = layout.Height; // the layout's height when we begin animation
+            //double endingHeight = 150; // final desired height of the layout
+            //uint rate = 16; // pace at which aniation proceeds
+            //uint length = 250; // one second animation
+            //Easing easing = Easing.CubicOut; // There are a couple easing types, just tried this one for effect
 
-                SfRangeSlider rangeSlider = new SfRangeSlider();
-                rangeSlider.VerticalOptions = LayoutOptions.Center;
-                rangeSlider.Minimum = 0;
-                rangeSlider.Maximum = 12;
-                rangeSlider.RangeStart = 0;
-                rangeSlider.TickPlacement = TickPlacement.Inline;
-                rangeSlider.StepFrequency = 1;
-                rangeSlider.ShowRange = true;
-                rangeSlider.Orientation = Orientation.Horizontal;
-                rangeSlider.ToolTipPrecision = 1;
-                this.Content = rangeSlider;
+            //// now start animation with all the setup information
+            //layout.Animate("visibl", callback, startingHeight, endingHeight, rate, length, easing);
 
-                colorPicker.HeightRequest = 55;
-                colorPicker.VerticalOptions = LayoutOptions.Center;
-
-                stackLayout2.Children.Add(rangeSlider);
-                stackLayout2.Children.Add(colorPicker);
-                stackLayout1.Children.Add(stackLayout2);
-                return stackLayout1;
-            });
-
-            popupLayout.PopupView.HeightRequest = 350;
-            popupLayout.PopupView.WidthRequest = 400;
-            popupLayout.PopupView.ContentTemplate = dataTemplate;
-
-            popupLayout.Show();
+            //bottomToolbar.HasShadow = true;
         }
 
         #region On Property Changed

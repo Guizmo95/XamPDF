@@ -156,6 +156,10 @@
               "target": "Package",
               "version": "[18.1.0.43, )"
             },
+            "Syncfusion.Xamarin.SfRotator": {
+              "target": "Package",
+              "version": "[18.1.0.43, )"
+            },
             "Syncfusion.Xamarin.SfTabView": {
               "target": "Package",
               "version": "[18.1.0.42, )"

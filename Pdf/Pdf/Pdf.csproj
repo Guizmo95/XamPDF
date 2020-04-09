@@ -24,6 +24,7 @@
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.1.0.43" />
     <PackageReference Include="Syncfusion.Xamarin.SfRadialMenu" Version="18.1.0.43" />
     <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="18.1.0.43" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="18.1.0.43" />
     <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.42" />
     <PackageReference Include="Unity" Version="5.11.4" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
@@ -49,7 +50,13 @@
     <EmbeddedResource Update="Views\ColorPicker.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\FontSizeSlider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\PdfViewer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RotatorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SignaturePage.xaml">

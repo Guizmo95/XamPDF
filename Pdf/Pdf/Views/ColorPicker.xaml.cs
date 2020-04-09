@@ -40,6 +40,7 @@ namespace Pdf.Views
                 selectedIndex = value;
                 OnPropertyChanged("SelectedIndex");
                 OnPropertyChanged("SelectedColor");
+                MessagingCenter.Send<ColorPicker, Color>(this, "selectedColor", primaryColors[selectedIndex]);
             }
         }
 

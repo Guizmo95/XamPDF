@@ -23,6 +23,7 @@
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
           "Syncfusion.Xamarin.SfRadialMenu": "18.1.0.43",
           "Syncfusion.Xamarin.SfRangeSlider": "18.1.0.43",
+          "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356",
@@ -354,6 +355,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfRangeSlider.XForms.dll": {
+            "assemblyVersion": "18.1451.0.43",
+            "fileVersion": "18.1451.0.43"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.SfRotator/18.1.0.43": {
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Xamarin.Forms": "4.5.0.356"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.SfRotator.XForms.dll": {
             "assemblyVersion": "18.1451.0.43",
             "fileVersion": "18.1451.0.43"
           }
@@ -1168,6 +1181,13 @@
       "sha512": "sha512-y8g7atseyivRcy7z2di8kIpusLtiqui+SYWKjMv+ZiyLaVXJtI/tZiQXm+UmTrEDL0tl9yhdB13qIFHrSWP4eQ==",
       "path": "syncfusion.xamarin.sfrangeslider/18.1.0.43",
       "hashPath": "syncfusion.xamarin.sfrangeslider.18.1.0.43.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.SfRotator/18.1.0.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YLNtT+npsx0UvllMP1wPSzvHE9dkiYnl+t3pgOmt2NPL1kKMUpd/r15EVfFylZgFImtMlfRVE/0ubpyMPVrRCw==",
+      "path": "syncfusion.xamarin.sfrotator/18.1.0.43",
+      "hashPath": "syncfusion.xamarin.sfrotator.18.1.0.43.nupkg.sha512"
     },
     "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
       "type": "package",

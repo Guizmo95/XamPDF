@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
+             mc:Ignorable="d"
+             x:Class="Pdf.Views.RotatorPage" HeightRequest="78"  >
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="RotatorTemplate">
+                <ContentPresenter Content="{Binding ItemTemplate}" BackgroundColor="Transparent"  />
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <syncfusion:SfRotator x:Name="rotator"
+                              NavigationDelay="2000"
+                              ItemsSource="{Binding TestCollection}"
+                              ItemTemplate="{StaticResource RotatorTemplate}"
+                              NavigationDirection="Horizontal"
+                              NavigationStripMode="Dots"
+                              BackgroundColor="Transparent"
+                              NavigationStripPosition="Bottom"
+                              WidthRequest="200"
+                              HeightRequest="78">
+        </syncfusion:SfRotator>
+    </ContentView.Content>
+</ContentView>

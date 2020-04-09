@@ -5,12 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sfsegmentedcontrol="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:local="clr-namespace:Pdf.Views"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.ColorPicker">
+             x:Class="Pdf.Views.ColorPicker" HeightRequest="50">
     <ContentView.Content>
         <sfsegmentedcontrol:SfSegmentedControl x:Name="segctrl" CornerRadius="0" 
                                                HeightRequest="50"
-                                               BackgroundColor="{Binding SelectedColor}"
+                                               BackgroundColor="White"
                                                SegmentHeight="40" 
                                                SegmentWidth="40"  
                                                ItemsSource="{Binding ViewCollection}"
@@ -19,11 +20,11 @@
                                               SegmentPadding="5"
                                                HorizontalOptions="Center"
                                                VerticalOptions="Center"
-                                               SelectionAnimationDuration="0">
+                                               SelectionAnimationDuration="0" BorderColor="Transparent">
             <sfsegmentedcontrol:SfSegmentedControl.SelectionIndicatorSettings>
-                <sfsegmentedcontrol:SelectionIndicatorSettings Color="#FFFFFF" 
+                <sfsegmentedcontrol:SelectionIndicatorSettings Color="#4e4e4e" 
                                                                Position="Border" 
-                                                               CornerRadius="20"/>
+                                                               CornerRadius="20" />
             </sfsegmentedcontrol:SfSegmentedControl.SelectionIndicatorSettings>
         </sfsegmentedcontrol:SfSegmentedControl>
     </ContentView.Content>

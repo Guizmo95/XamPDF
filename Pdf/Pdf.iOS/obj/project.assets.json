@@ -383,6 +383,23 @@
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.iOS.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfRotator/18.1.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
         "type": "package",
         "dependencies": {
@@ -798,6 +815,7 @@
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
           "Syncfusion.Xamarin.SfRadialMenu": "18.1.0.43",
           "Syncfusion.Xamarin.SfRangeSlider": "18.1.0.43",
+          "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356",
@@ -1193,6 +1211,23 @@
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.iOS.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfRotator/18.1.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
         "type": "package",
         "dependencies": {
@@ -1608,6 +1643,7 @@
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
           "Syncfusion.Xamarin.SfRadialMenu": "18.1.0.43",
           "Syncfusion.Xamarin.SfRangeSlider": "18.1.0.43",
+          "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356",
@@ -2003,6 +2039,23 @@
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.iOS.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfRotator/18.1.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
         "type": "package",
         "dependencies": {
@@ -2418,6 +2471,7 @@
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
           "Syncfusion.Xamarin.SfRadialMenu": "18.1.0.43",
           "Syncfusion.Xamarin.SfRangeSlider": "18.1.0.43",
+          "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356",
@@ -2813,6 +2867,23 @@
           "lib/Xamarin.iOS10/Syncfusion.SfRangeSlider.iOS.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfRotator/18.1.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll": {},
+          "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
         "type": "package",
         "dependencies": {
@@ -3228,6 +3299,7 @@
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
           "Syncfusion.Xamarin.SfRadialMenu": "18.1.0.43",
           "Syncfusion.Xamarin.SfRangeSlider": "18.1.0.43",
+          "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
           "Xamarin.Forms": "4.5.0.356",
@@ -4079,6 +4151,35 @@
         "lib/uap10.0/Syncfusion.SfRangeSlider.XForms.xml",
         "syncfusion.xamarin.sfrangeslider.18.1.0.43.nupkg.sha512",
         "syncfusion.xamarin.sfrangeslider.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfRotator/18.1.0.43": {
+      "sha512": "YLNtT+npsx0UvllMP1wPSzvHE9dkiYnl+t3pgOmt2NPL1kKMUpd/r15EVfFylZgFImtMlfRVE/0ubpyMPVrRCw==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfrotator/18.1.0.43",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfRotator.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfRotator.Android.xml",
+        "lib/MonoAndroid10/Syncfusion.SfRotator.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfRotator.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfRotator.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfRotator.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfRotator.iOS.xml",
+        "lib/netstandard2.0/Syncfusion.SfRotator.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.SfRotator.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfRotator.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfRotator.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfRotator.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfRotator.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfRotator.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfRotator.XForms.xml",
+        "syncfusion.xamarin.sfrotator.18.1.0.43.nupkg.sha512",
+        "syncfusion.xamarin.sfrotator.nuspec"
       ]
     },
     "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
