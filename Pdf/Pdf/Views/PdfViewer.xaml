@@ -10,7 +10,7 @@
              xmlns:controls="clr-namespace:Pdf.controls"
              xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" NavigationPage.HasNavigationBar="False" x:Name="pdfViewer">
 
-    <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer" Position="Bottom" DrawerHeight="300" Transition="Push">
+    <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer" Position="Bottom" DrawerHeight="300" Transition="Push" Duration="280">
         <navigationdrawer:SfNavigationDrawer.ContentView>
             <StackLayout Spacing="1" x:Name="mainStackLayout">
                 <controls1:PancakeView BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar">

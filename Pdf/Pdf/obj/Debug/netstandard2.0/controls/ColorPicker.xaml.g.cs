@@ -8,21 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Views.FontSizeSlider.xaml", "Views/FontSizeSlider.xaml", typeof(global::Pdf.Views.FontSizeSlider))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.ColorPicker.xaml", "controls/ColorPicker.xaml", typeof(global::Pdf.Views.ColorPicker))]
 
 namespace Pdf.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\FontSizeSlider.xaml")]
-    public partial class FontSizeSlider : global::Xamarin.Forms.ContentView {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\ColorPicker.xaml")]
+    public partial class ColorPicker : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Syncfusion.SfRangeSlider.XForms.SfRangeSlider rangeslider;
+        private global::Syncfusion.XForms.Buttons.SfSegmentedControl segctrl;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(FontSizeSlider));
-            rangeslider = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfRangeSlider.XForms.SfRangeSlider>(this, "rangeslider");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ColorPicker));
+            segctrl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.Buttons.SfSegmentedControl>(this, "segctrl");
         }
     }
 }

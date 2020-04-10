@@ -23,8 +23,8 @@
                         <controls:IconView  x:Name="save" Source="tick.png" AbsoluteLayout.LayoutBounds="1, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Foreground="#4e4e4e" HeightRequest="35"/>
                     </AbsoluteLayout>
                 </controls1:PancakeView>
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <imageeditor:SfImageEditor x:Name="editor" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ImageSaving="editor_ImageSaving" ImageSaved="editor_ImageSaved">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Opacity="0.5">
+                    <imageeditor:SfImageEditor x:Name="editor" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ImageSaving="editor_ImageSaving" ImageSaved="editor_ImageSaved" Opacity="0.5" BackgroundColor="Transparent">
                     </imageeditor:SfImageEditor>
                 </StackLayout>
                 <controls1:PancakeView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="bottomToolbar">
