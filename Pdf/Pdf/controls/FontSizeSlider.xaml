@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="Pdf.Views.FontSizeSlider" HeightRequest="78">
   <ContentView.Content>
-        <range:SfRangeSlider x:Name="rangeslider" Minimum="0" Maximum="12" SnapsTo="StepValues" ShowRange="False" StepFrequency="0.5" TickFrequency="1" Orientation="Horizontal" TickColor="#4e4e4e"
-                             ToolTipPrecision="2" Value="{Binding FontSize}"/>
+        <range:SfRangeSlider x:Name="rangeslider" Minimum="0" Maximum="12" SnapsTo="StepValues" ShowRange="False" StepFrequency="1" TickFrequency="1" Orientation="Horizontal" TickColor="#4e4e4e"
+                             ToolTipPrecision="1" Value="{Binding FontSize}"/>
     </ContentView.Content>
 </ContentView>

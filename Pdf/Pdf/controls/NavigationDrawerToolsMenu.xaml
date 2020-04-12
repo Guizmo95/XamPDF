@@ -38,6 +38,10 @@
                 <controls:IconView x:Name="textImage" Source="font.png" HorizontalOptions="Center" HeightRequest="30" WidthRequest="50" Foreground="#4e4e4e"/>
                 <Label x:Name="textLabel" Text="Text" VerticalOptions="Center" HorizontalOptions="Center" FontSize="8" HorizontalTextAlignment="Center" TextColor="Black"/>
             </StackLayout>
+            <StackLayout Grid.Column="1" x:Name="penButton" Orientation="Vertical" VerticalOptions="Center" HeightRequest="45" WidthRequest="50" Spacing="3">
+                <controls:IconView x:Name="penButtonImage" Source="pencil.png" HorizontalOptions="Center" HeightRequest="30" WidthRequest="50" Foreground="#4e4e4e"/>
+                <Label x:Name="penLabel" Text="Pencil" VerticalOptions="Center" HorizontalOptions="Center" FontSize="8" HorizontalTextAlignment="Center" TextColor="Black"/>
+            </StackLayout>
         </Grid>
     </Grid>
 </ContentView>

@@ -21,6 +21,9 @@ namespace Pdf.controls
         public delegate void textButtonClickedDelegate();
         public textButtonClickedDelegate TextButtonClicked { get; set; }
 
+        public delegate void penButtonClickedDelegate();
+        public penButtonClickedDelegate PenButtonClicked { get; set; }
+
         public NavigationDrawerToolsMenu()
         {
             InitializeComponent();
@@ -44,7 +47,7 @@ namespace Pdf.controls
                 {
                     stampImage.Foreground = Color.FromHex("#b4b4b4");
                     stampLabel.TextColor = Color.FromHex("#b4b4b4");
-                    stampButton_Clicked();
+                    StampButton_Clicked();
                     await Task.Delay(100);
                     stampImage.Foreground = Color.FromHex("#4e4e4e");
                     stampLabel.TextColor = Color.Black;
@@ -57,10 +60,23 @@ namespace Pdf.controls
                 {
                     textImage.Foreground = Color.FromHex("#b4b4b4");
                     textLabel.TextColor = Color.FromHex("#b4b4b4");
-                    textButton_Clicked();
+                    TextButton_Clicked();
                     await Task.Delay(100);
                     textImage.Foreground = Color.FromHex("#4e4e4e");
                     textLabel.TextColor = Color.Black;
+                })
+            });
+
+            penButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    penButtonImage.Foreground = Color.FromHex("#b4b4b4");
+                    penLabel.TextColor = Color.FromHex("#b4b4b4");
+                    PenButton_Clicked();
+                    await Task.Delay(100);
+                    penButtonImage.Foreground = Color.FromHex("#4e4e4e");
+                    penLabel.TextColor = Color.Black;
                 })
             });
         }
@@ -69,14 +85,19 @@ namespace Pdf.controls
             SignaturePadButton?.Invoke();
         }
 
-        private void stampButton_Clicked()
+        private void StampButton_Clicked()
         {
             StampButtonClicked?.Invoke();
         }
 
-        private void textButton_Clicked()
+        private void TextButton_Clicked()
         {
             TextButtonClicked?.Invoke();
+        }
+
+        private void PenButton_Clicked()
+        {
+            PenButtonClicked?.Invoke();
         }
 
 
