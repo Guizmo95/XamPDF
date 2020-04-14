@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.TextButtonClickedBottomBar.xaml", "controls/TextButtonClickedBottomBar.xaml", typeof(global::Pdf.controls.TextButtonClickedBottomBar))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.FreeTextButtonClickedBottomBar.xaml", "controls/FreeTextButtonClickedBottomBar.xaml", typeof(global::Pdf.controls.FreeTextButtonClickedBottomBar))]
 
 namespace Pdf.controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\TextButtonClickedBottomBar.xaml")]
-    public partial class TextButtonClickedBottomBar : global::Xamarin.Forms.ContentView {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\FreeTextButtonClickedBottomBar.xaml")]
+    public partial class FreeTextButtonClickedBottomBar : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ContentView bottomToolbarContentView;
@@ -36,7 +36,7 @@ namespace Pdf.controls {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TextButtonClickedBottomBar));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(FreeTextButtonClickedBottomBar));
             bottomToolbarContentView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentView>(this, "bottomToolbarContentView");
             colorButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "colorButton");
             fontSizeButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "fontSizeButton");

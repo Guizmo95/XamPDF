@@ -20,17 +20,24 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PdfViewer : ContentPage, INotifyPropertyChanged
     {
+        #region Content view / View
         private readonly Stream fileStream;
         private readonly PdfViewerModel pdfViewerModel;
         private readonly RotatorPage rotatorPage;
         private readonly NavigationDrawerToolsMenu navigationDrawerToolsMenu;
-        private readonly TextButtonClickedBottomBar textButtonClickedBottomBar;
+        private readonly FreeTextButtonClickedBottomBar freeTextButtonClickedBottomBar;
         private readonly FontSizeSlider fontSizeSlider;
         private readonly EditFreeTextBar editFreeTextBar;
-        private PenBottomBar penBottomBar;
-        private FreeTextAnnotation selectedFreeTextAnnotation;
-        
+        private readonly InkBottomBar inkBottomBar;
+        private readonly ThicknessBar thicknessBar;
+        private readonly EditInkBar editInkBar;
+        #endregion
 
+        private FreeTextAnnotation selectedFreeTextAnnotation;
+        private InkAnnotation selectedInkAnnotation;
+       
+
+        #region Property
         private Color selectedColor = Color.Black;
         private int fontSize = 6;
         private Color statusColor = Color.FromHex("b4b4b4");
@@ -48,7 +55,6 @@ namespace Pdf.Views
 
             set
             {
-                
                 selectedColor = value;
 
                 if(selectedFreeTextAnnotation != null)
@@ -56,6 +62,9 @@ namespace Pdf.Views
 
                 if(pdfViewerControl.AnnotationMode == AnnotationMode.FreeText)
                     pdfViewerControl.AnnotationSettings.FreeText.TextColor = value;
+
+                if (selectedInkAnnotation != null)
+                    selectedInkAnnotation.Settings.Color = value;
 
                 if (pdfViewerControl.AnnotationMode == AnnotationMode.Ink)
                     pdfViewerControl.AnnotationSettings.Ink.Color = value;
@@ -117,11 +126,17 @@ namespace Pdf.Views
                 canUndoInk = value;
 
                 if (value == true)
+                {
                     UndoButton.Foreground = Color.Black;
+                    ValidInkButton.Foreground = Color.Black;
+                }
                 else
                 {
                     if (value == false)
+                    {
                         UndoButton.Foreground = Color.White;
+                        ValidInkButton.Foreground = Color.White;
+                    }
                 }
 
                 OnPropertyChanged();
@@ -150,6 +165,7 @@ namespace Pdf.Views
                 OnPropertyChanged();
             }
         }
+        #endregion
 
         public PdfViewer(Stream fileStream)
         {
@@ -162,8 +178,8 @@ namespace Pdf.Views
 
             this.rotatorPage = new RotatorPage(RotatorMode.ColorPicker);
 
-            this.textButtonClickedBottomBar = new TextButtonClickedBottomBar();
-            this.textButtonClickedBottomBar.BindingContext = this;
+            this.freeTextButtonClickedBottomBar = new FreeTextButtonClickedBottomBar();
+            this.freeTextButtonClickedBottomBar.BindingContext = this;
 
             this.fontSizeSlider = new FontSizeSlider();
             this.fontSizeSlider.BindingContext = this;
@@ -171,36 +187,20 @@ namespace Pdf.Views
             this.editFreeTextBar = new EditFreeTextBar();
             this.editFreeTextBar.BindingContext = this;
 
-            this.penBottomBar = new PenBottomBar();
-            this.penBottomBar.BindingContext = this;
+            this.inkBottomBar = new InkBottomBar();
+            this.inkBottomBar.BindingContext = this;
+
+            this.thicknessBar = new ThicknessBar();
+
+            this.editInkBar = new EditInkBar();
+            this.editInkBar.BindingContext = this;
             #endregion
 
-            #region Pen bottom bar events 
-            penBottomBar.ColorButtonClicked += ColorPenButton_Clicked;
-            penBottomBar.BackButtonClicked += BackPenButton_Clicked;
-            penBottomBar.PenSizeButtonClicked += PenSizeButton_Clicked;
-            penBottomBar.PenStatusButtonClicked += PenStatusButton_Clicked;
-            #endregion
+           
 
-            #region Free Text button events 
-            //TextButtonClickedBottomBar events
-            textButtonClickedBottomBar.ColorButtonClicked += ColorTextButton_Clicked;
-            textButtonClickedBottomBar.FontSizeButtonClicked += FontSizeButton_Clicked;
-            textButtonClickedBottomBar.BackButtonClicked += BackTextButton_Clicked;
-            textButtonClickedBottomBar.FreeTextButtonClicked += FreeTextButton_Clicked;
 
-            //EditFreeTextBar events
-            editFreeTextBar.TrashCanButtonClicked += TrashCanButton_Clicked;
-            editFreeTextBar.FontSizeButtonClicked += FontSizeButton_Clicked;
-            editFreeTextBar.ColorButtonClicked += ColorTextButton_Clicked;
-            editFreeTextBar.BackButtonClicked += BackButtonInFreeTextEditor_Clicked;
-            editFreeTextBar.ChangeTextInFreeTextSelectedButtonClicked += ChangeFreeTextSelected;
 
-            MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
-            {
-                this.SelectedColor = helper;
-            });
-            #endregion
+            
 
             #region Custom navigation drawer tool bar events
             navigationDrawerToolsMenu.SignaturePadButton += async () => await SignaturePadButton_Clicked();
@@ -213,21 +213,93 @@ namespace Pdf.Views
             pdfViewerControl.FreeTextAnnotationAdded += PdfViewerControl_FreeTextAnnotationAdded;
             pdfViewerControl.FreeTextPopupDisappeared += PdfViewerControl_FreeTextPopupDisappeared;
             pdfViewerControl.FreeTextAnnotationSelected += PdfViewerControl_FreeTextAnnotationSelected;
+            pdfViewerControl.FreeTextAnnotationDeselected += PdfViewerControl_FreeTextAnnotationDeselected;
             pdfViewerControl.CanRedoInkModified += PdfViewerControl_CanRedoInkModified;
             pdfViewerControl.CanUndoInkModified += PdfViewerControl_CanUndoInkModified;
+
+            pdfViewerControl.InkSelected += PdfViewerControl_InkSelected;
+            pdfViewerControl.InkDeselected += PdfViewerControl_InkDeselected;
+
+            RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    if(CanRedoInk == true)
+                    {
+                        RedoButton.Foreground = Color.FromHex("#b4b4b4");
+                        Redo();
+                        await Task.Delay(100);
+                        if (CanRedoInk == true)
+                            RedoButton.Foreground = Color.Black;
+                        else
+                        {
+                            RedoButton.Foreground = Color.White;
+                        }
+                    }
+                })
+            });
+
+            UndoButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    if(CanUndoInk == true)
+                    {
+                        UndoButton.Foreground = Color.FromHex("#b4b4b4");
+                        Undo();
+                        await Task.Delay(100);
+
+                        if (CanUndoInk == true)
+                            UndoButton.Foreground = Color.Black;
+                        else
+                        {
+                            UndoButton.Foreground = Color.White;
+                        }
+                    }
+                })
+            });
+
+            ValidInkButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    if (CanUndoInk == true)
+                    {
+                        ValidInkButton.Foreground = Color.FromHex("#b4b4b4");
+                        SaveInk();
+                        await Task.Delay(100);
+
+                        CanRedoInk = false;
+                        CanUndoInk = false;
+                        StatusColor = Color.Transparent;
+                    }
+                })
+            });
             #endregion
 
-            #region Add content view but set unvisible 
+            #region ThicknessBarEvent
+            thicknessBar.FirstBoxViewButtonClicked += FirstBoxView_Clicked;
+            thicknessBar.SecondBoxViewButtonClicked += SecondBoxView_Clicked;
+            thicknessBar.ThirdBoxViewButtonClicked += ThirdBoxView_Clicked;
+            thicknessBar.FourthBoxViewButtonClicked += FourthBoxView_Clicked;
+            thicknessBar.FifthBoxViewButtonClicked += FifthBoxView_Clicked;
+            #endregion
+
+            #region Add content view but set them invisible 
             rotatorPage.IsVisible = false;
             mainStackLayout.Children.Add(rotatorPage);
             fontSizeSlider.IsVisible = false;
             mainStackLayout.Children.Insert(3, fontSizeSlider);
-            textButtonClickedBottomBar.IsVisible = false;
-            mainStackLayout.Children.Insert(2, textButtonClickedBottomBar);
+            freeTextButtonClickedBottomBar.IsVisible = false;
+            mainStackLayout.Children.Insert(2, freeTextButtonClickedBottomBar);
             editFreeTextBar.IsVisible = false;
             mainStackLayout.Children.Insert(2, editFreeTextBar);
-            penBottomBar.IsVisible = false;
-            mainStackLayout.Children.Insert(2, penBottomBar);
+            inkBottomBar.IsVisible = false;
+            mainStackLayout.Children.Insert(2, inkBottomBar);
+            thicknessBar.IsVisible = false;
+            mainStackLayout.Children.Insert(2, thicknessBar);
+            editInkBar.IsVisible = false;
+            mainStackLayout.Children.Insert(2, editInkBar);
 
             ValidInkButton.IsVisible = false;
             UndoButton.IsVisible = false;
@@ -249,6 +321,11 @@ namespace Pdf.Views
                 })
             });
         }
+
+
+
+
+
 
 
         //TODO -- Align stack layout
@@ -281,10 +358,23 @@ namespace Pdf.Views
         }
 
         #region Pdf viewer events methods
+
+
+        private void PdfViewerControl_FreeTextAnnotationDeselected(object sender, FreeTextAnnotationDeselectedEventArgs args)
+        {
+            if (editFreeTextBar.IsVisible == true)
+                editFreeTextBar.IsVisible = false;
+
+            if (rotatorPage.IsVisible == true)
+                rotatorPage.IsVisible = false;
+
+            freeTextButtonClickedBottomBar.IsVisible = true;
+        }
+
         private void PdfViewerControl_FreeTextAnnotationSelected(object sender, FreeTextAnnotationSelectedEventArgs args)
         {
-            if(textButtonClickedBottomBar.IsVisible == true)
-                textButtonClickedBottomBar.IsVisible = false;
+            if(freeTextButtonClickedBottomBar.IsVisible == true)
+                freeTextButtonClickedBottomBar.IsVisible = false;
             
             if(bottomToolbar.IsVisible == true)
                 bottomToolbar.IsVisible = false;
@@ -297,11 +387,7 @@ namespace Pdf.Views
 
         private void PdfViewerControl_FreeTextPopupDisappeared(object sender, FreeTextPopupDisappearedEventArgs args)
         {
-            if (args.PopupResult == FreeTextPopupResult.Cancel)
-            {
-                //Bug - can't re-enabled the annotation free text then we disabled because we dont have the choice 
-                FreeTextButton_Clicked();
-            }
+
         }
 
         private void PdfViewerControl_FreeTextAnnotationAdded(object sender, FreeTextAnnotationAddedEventArgs args)
@@ -319,6 +405,40 @@ namespace Pdf.Views
         private void PdfViewerControl_CanRedoInkModified(object sender, CanRedoInkModifiedEventArgs args)
         {
             CanRedoInk = args.CanRedoInk;
+        }
+
+        private void Undo()
+        {
+            if (CanUndoInk == true)
+                pdfViewerControl.UndoInk();
+
+        }
+
+        private void Redo()
+        {
+            if (CanRedoInk == true)
+                pdfViewerControl.RedoInk();
+        }
+
+        private void SaveInk()
+        {
+            pdfViewerControl.EndInkSession(true);
+        }
+
+        private void PdfViewerControl_InkSelected(object sender, InkSelectedEventArgs args)
+        {
+            //Casts the sender object as Ink annotation.
+            selectedInkAnnotation = sender as InkAnnotation;
+
+            if (inkBottomBar.IsVisible == true)
+                inkBottomBar.IsVisible = false;
+
+            editInkBar.IsVisible = true;
+        }
+
+        private void PdfViewerControl_InkDeselected(object sender, InkDeselectedEventArgs args)
+        {
+            BackButton_Clicked();
         }
         #endregion
 
@@ -355,8 +475,27 @@ namespace Pdf.Views
 
         private void BackTextButton_Clicked()
         {
-            if(textButtonClickedBottomBar.IsVisible == true)
-                textButtonClickedBottomBar.IsVisible = false;
+            #region Free Text button events 
+            //TextButtonClickedBottomBar events
+            freeTextButtonClickedBottomBar.ColorButtonClicked -= ColorTextButton_Clicked;
+            freeTextButtonClickedBottomBar.FontSizeButtonClicked -= FontSizeButton_Clicked;
+            freeTextButtonClickedBottomBar.BackButtonClicked -= BackTextButton_Clicked;
+            freeTextButtonClickedBottomBar.FreeTextButtonClicked -= FreeTextButton_Clicked;
+            #endregion
+
+            #region Free Text edit button events
+            //EditFreeTextBar events
+            editFreeTextBar.TrashCanButtonClicked -= TrashCanButton_Clicked;
+            editFreeTextBar.FontSizeButtonClicked -= FontSizeButton_Clicked;
+            editFreeTextBar.ColorButtonClicked -= ColorTextButton_Clicked;
+            editFreeTextBar.BackButtonClicked -= BackButtonInFreeTextEditor_Clicked;
+            editFreeTextBar.ChangeTextInFreeTextSelectedButtonClicked -= ChangeFreeTextSelected;
+
+            MessagingCenter.Unsubscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor");
+            #endregion
+
+            if (freeTextButtonClickedBottomBar.IsVisible == true)
+                freeTextButtonClickedBottomBar.IsVisible = false;
 
             if(fontSizeSlider.IsVisible == true)
                 fontSizeSlider.IsVisible = false;
@@ -395,7 +534,7 @@ namespace Pdf.Views
 
                 editFreeTextBar.IsVisible = false;
 
-                textButtonClickedBottomBar.IsVisible = true;
+                freeTextButtonClickedBottomBar.IsVisible = true;
             }
         }
 
@@ -404,16 +543,14 @@ namespace Pdf.Views
             if(editFreeTextBar.IsVisible == true)
                 editFreeTextBar.IsVisible = false;
 
-            if(bottomToolbar.IsVisible == false)
-                bottomToolbar.IsVisible = true;
-
             if (rotatorPage.IsVisible == true)
                 rotatorPage.IsVisible = false;
+
+            freeTextButtonClickedBottomBar.IsVisible = true;
 
             //Trick for deselect free text
             pdfViewerControl.AnnotationMode = AnnotationMode.FreeText;
             pdfViewerControl.AnnotationMode = AnnotationMode.None;
-
         }
 
         //TODO -- LOOK FOR CHANGE TEXT OF FREE TEXT SELECTED
@@ -428,11 +565,25 @@ namespace Pdf.Views
 
         private void PenButton_Clicked()
         {
+            #region Ink bottom bar events 
+            inkBottomBar.ColorButtonClicked += ColorInkButton_Clicked;
+            inkBottomBar.BackButtonClicked += BackPenButton_Clicked;
+            inkBottomBar.PenSizeButtonClicked += InkThicknessButton_Clicked;
+            inkBottomBar.PenStatusButtonClicked += PenStatusButton_Clicked;
+            #endregion
+
+            #region Ink bottom bar edit events 
+            editInkBar.ColorButtonClicked += ColorInkButton_Clicked;
+            editInkBar.TrashButtonClicked += TrashButton_Clicked;
+            editInkBar.InkSizeButtonClicked += InkThicknessButton_Clicked;
+            editInkBar.BackButtonClicked += BackButton_Clicked;
+            #endregion
+
             if (bottomToolbar.IsVisible == true)
                 bottomToolbar.IsVisible = false;
 
-            if (penBottomBar.IsVisible == false)
-                penBottomBar.IsVisible = true;
+            if (inkBottomBar.IsVisible == false)
+                inkBottomBar.IsVisible = true;
 
             navigationDrawer.ToggleDrawer();
 
@@ -440,16 +591,42 @@ namespace Pdf.Views
             UndoButton.IsVisible = true;
             RedoButton.IsVisible = true;
 
+            this.StatusColor = Color.FromHex("b4b4b4");
+
             pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
         }
 
         private void TextButton_Clicked()
         {
+            #region Free Text button events 
+            //TextButtonClickedBottomBar events
+            freeTextButtonClickedBottomBar.ColorButtonClicked += ColorTextButton_Clicked;
+            freeTextButtonClickedBottomBar.FontSizeButtonClicked += FontSizeButton_Clicked;
+            freeTextButtonClickedBottomBar.BackButtonClicked += BackTextButton_Clicked;
+            freeTextButtonClickedBottomBar.FreeTextButtonClicked += FreeTextButton_Clicked;
+            #endregion
+
+            #region Free Text edit button events
+            //EditFreeTextBar events
+            editFreeTextBar.TrashCanButtonClicked += TrashCanButton_Clicked;
+            editFreeTextBar.FontSizeButtonClicked += FontSizeButton_Clicked;
+            editFreeTextBar.ColorButtonClicked += ColorTextButton_Clicked;
+            editFreeTextBar.BackButtonClicked += BackButtonInFreeTextEditor_Clicked;
+            editFreeTextBar.ChangeTextInFreeTextSelectedButtonClicked += ChangeFreeTextSelected;
+
+            MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
+            {
+                this.SelectedColor = helper;
+            });
+            #endregion
+
             if (bottomToolbar.IsVisible == true)
                 bottomToolbar.IsVisible = false;
 
-            if (textButtonClickedBottomBar.IsVisible == false)
-                textButtonClickedBottomBar.IsVisible = true;
+            if (freeTextButtonClickedBottomBar.IsVisible == false)
+                freeTextButtonClickedBottomBar.IsVisible = true;
+
+            this.StatusColor = Color.FromHex("b4b4b4");
 
             navigationDrawer.ToggleDrawer();
 
@@ -490,8 +667,8 @@ namespace Pdf.Views
         }
         #endregion
 
-        #region Pen bottom bar events methods
-        private void ColorPenButton_Clicked()
+        #region Ink bottom bar events methods
+        private void ColorInkButton_Clicked()
         {
             if (rotatorPage.IsVisible == true)
             {
@@ -499,20 +676,44 @@ namespace Pdf.Views
             }
             else
             {
+                if (thicknessBar.IsVisible == true)
+                    thicknessBar.IsVisible = false;
+
                 rotatorPage.IsVisible = true;
             }
         }
 
         private void BackPenButton_Clicked()
         {
+            #region Ink bottom bar events 
+            inkBottomBar.ColorButtonClicked -= ColorInkButton_Clicked;
+            inkBottomBar.BackButtonClicked -= BackPenButton_Clicked;
+            inkBottomBar.PenSizeButtonClicked -= InkThicknessButton_Clicked;
+            inkBottomBar.PenStatusButtonClicked -= PenStatusButton_Clicked;
+            #endregion
+
+            #region Ink bottom bar edit events 
+            editInkBar.ColorButtonClicked -= ColorInkButton_Clicked;
+            editInkBar.TrashButtonClicked -= TrashButton_Clicked;
+            editInkBar.InkSizeButtonClicked -= InkThicknessButton_Clicked;
+            editInkBar.BackButtonClicked -= BackButton_Clicked;
+            #endregion
+
             if (rotatorPage.IsVisible == true)
                 rotatorPage.IsVisible = false;
 
-            if (penBottomBar.IsVisible == true)
-                penBottomBar.IsVisible = false;
+            if (inkBottomBar.IsVisible == true)
+                inkBottomBar.IsVisible = false;
+
+            if (thicknessBar.IsVisible == true)
+                thicknessBar.IsVisible = false;
 
             if (bottomToolbar.IsVisible == false)
                 bottomToolbar.IsVisible = true;
+
+            ValidInkButton.IsVisible = false;
+            UndoButton.IsVisible = false;
+            RedoButton.IsVisible = false;
 
             //Trick for deselect ink annotation 
             pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
@@ -533,27 +734,99 @@ namespace Pdf.Views
             }
         }
 
-        private void PenSizeButton_Clicked()
+        private void InkThicknessButton_Clicked()
         {
+            if (thicknessBar.IsVisible == false)
+            {
+                if (rotatorPage.IsVisible == true)
+                    rotatorPage.IsVisible = false;
 
+                thicknessBar.IsVisible = true;
+            }
+                
+            else
+                if (thicknessBar.IsVisible == true)
+                thicknessBar.IsVisible = false;
         }
 
         #endregion
 
-        #region Fire events manually 
-        public static void FireEvent(object onMe, string invokeMe, params object[] eventParams)
+        #region Ink edit bottom bar
+
+        private void TrashButton_Clicked()
         {
-            MulticastDelegate eventDelagate =
-                  (MulticastDelegate)onMe.GetType().GetField(invokeMe,
-                   System.Reflection.BindingFlags.Instance |
-                   System.Reflection.BindingFlags.NonPublic).GetValue(onMe);
+            if (selectedInkAnnotation != null)
+                //Removes the selected annotation from the PDF viewer.
+                pdfViewerControl.RemoveAnnotation(selectedInkAnnotation);
 
-            Delegate[] delegates = eventDelagate.GetInvocationList();
+            editInkBar.IsVisible = false;
 
-            foreach (Delegate dlg in delegates)
-            {
-                dlg.Method.Invoke(dlg.Target, eventParams);
-            }
+            inkBottomBar.IsVisible = true;
+        }
+
+        private void BackButton_Clicked()
+        {
+            editInkBar.IsVisible = false;
+
+            if (rotatorPage.IsVisible == true)
+                rotatorPage.IsVisible = false;
+
+            if (thicknessBar.IsVisible == true)
+                thicknessBar.IsVisible = false;
+
+            if(selectedInkAnnotation != null)
+                //Trick for deselect and re-select ink annotation 
+                pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
+
+            this.StatusColor = Color.FromHex("b4b4b4");
+
+            inkBottomBar.IsVisible = true;
+        }
+        #endregion
+
+        #region ThicknessBarEvents
+        private void FirstBoxView_Clicked()
+        {
+            if (pdfViewerControl.AnnotationMode == AnnotationMode.Ink)
+                pdfViewerControl.AnnotationSettings.Ink.Thickness = 1;
+
+            if (selectedInkAnnotation != null)
+                selectedInkAnnotation.Settings.Thickness = 1;
+        }
+        private void SecondBoxView_Clicked()
+        {
+            if (pdfViewerControl.AnnotationMode == AnnotationMode.Ink)
+                pdfViewerControl.AnnotationSettings.Ink.Thickness = 3;
+
+            if (selectedInkAnnotation != null)
+                selectedInkAnnotation.Settings.Thickness = 3;
+        }
+
+        private void ThirdBoxView_Clicked()
+        {
+            if (pdfViewerControl.AnnotationMode == AnnotationMode.Ink)
+                pdfViewerControl.AnnotationSettings.Ink.Thickness = 5;
+
+            if (selectedInkAnnotation != null)
+                selectedInkAnnotation.Settings.Thickness = 5;
+        }
+
+        private void FourthBoxView_Clicked()
+        {
+            if (pdfViewerControl.AnnotationMode == AnnotationMode.Ink)
+                pdfViewerControl.AnnotationSettings.Ink.Thickness = 7;
+
+            if (selectedInkAnnotation != null)
+                selectedInkAnnotation.Settings.Thickness = 7;
+        }
+
+        private void FifthBoxView_Clicked()
+        {
+            if (pdfViewerControl.AnnotationMode == AnnotationMode.Ink)
+                pdfViewerControl.AnnotationSettings.Ink.Thickness = 9;
+
+            if (selectedInkAnnotation != null)
+                selectedInkAnnotation.Settings.Thickness = 9;
         }
 
         #endregion

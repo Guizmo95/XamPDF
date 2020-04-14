@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Pdf.controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TextButtonClickedBottomBar : ContentView
+    public partial class FreeTextButtonClickedBottomBar : ContentView
     {
         public delegate void fontSizeButtonClickedDelegate();
         public fontSizeButtonClickedDelegate FontSizeButtonClicked { get; set; }
@@ -25,7 +25,7 @@ namespace Pdf.controls
         public freeTextButtonClicked FreeTextButtonClicked { get; set; }
 
 
-        public TextButtonClickedBottomBar()
+        public FreeTextButtonClickedBottomBar()
         {
             InitializeComponent();
 

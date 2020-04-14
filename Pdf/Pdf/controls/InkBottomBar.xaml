@@ -5,15 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:controls="clr-namespace:Pdf.controls"
-             xmlns:views="clr-namespace:Pdf.Views"
              mc:Ignorable="d"
-             x:Class="Pdf.controls.TextButtonClickedBottomBar" x:Name="bottomToolbarContentView">
+             x:Class="Pdf.controls.InkBottomBar">
     <pancakeview:PancakeView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HasShadow="True">
         <AbsoluteLayout BackgroundColor="#f5f5f5" HeightRequest="47" HorizontalOptions="FillAndExpand">
             <Button x:Name="colorButton" CornerRadius="20" BorderWidth="2" HeightRequest="30" WidthRequest="30" BackgroundColor="{Binding SelectedColor}" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-            <controls:IconView x:Name="fontSizeButton" Source="text.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.85, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-            <pancakeview:PancakeView x:Name="freeTextButtonSatus" CornerRadius="20" BackgroundColor="{Binding StatusColor}"  AbsoluteLayout.LayoutBounds="0.175, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
-                <controls:IconView  Source="font.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" VerticalOptions="CenterAndExpand"/>
+            <controls:IconView x:Name="penSizeButton" Source="lineSize.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.75, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <pancakeview:PancakeView x:Name="penButtonStatus" CornerRadius="20" BackgroundColor="{Binding StatusColor}"  AbsoluteLayout.LayoutBounds="0.175, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                <controls:IconView  Source="pencil.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" VerticalOptions="CenterAndExpand"/>
             </pancakeview:PancakeView>
             <StackLayout x:Name="backButton" AbsoluteLayout.LayoutBounds="0.05, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Horizontal">
                 <controls:IconView x:Name="backButtonImage" Source="back.png" WidthRequest="20" HeightRequest="20" Foreground="#4e4e4e"/>

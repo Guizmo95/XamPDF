@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.PenBottomBar.xaml", "controls/PenBottomBar.xaml", typeof(global::Pdf.controls.PenBottomBar))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.InkBottomBar.xaml", "controls/InkBottomBar.xaml", typeof(global::Pdf.controls.InkBottomBar))]
 
 namespace Pdf.controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\PenBottomBar.xaml")]
-    public partial class PenBottomBar : global::Xamarin.Forms.ContentView {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\InkBottomBar.xaml")]
+    public partial class InkBottomBar : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button colorButton;
@@ -33,7 +33,7 @@ namespace Pdf.controls {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PenBottomBar));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(InkBottomBar));
             colorButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "colorButton");
             penSizeButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "penSizeButton");
             penButtonStatus = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "penButtonStatus");

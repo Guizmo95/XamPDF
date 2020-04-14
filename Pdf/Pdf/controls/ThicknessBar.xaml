@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="Pdf.controls.ThicknessBar">
+    <Grid HorizontalOptions="Center" HeightRequest="100" ColumnSpacing="14">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <pancakeview:PancakeView x:Name="firstBoxView" Grid.Column="0" HeightRequest="20" VerticalOptions="Center">
+            <BoxView  HeightRequest="1" WidthRequest="50" BackgroundColor="Black"  VerticalOptions="Center"/>
+        </pancakeview:PancakeView>
+        <pancakeview:PancakeView x:Name="secondBoxView" Grid.Column="1" VerticalOptions="Center" HeightRequest="20">
+            <BoxView  HeightRequest="3" WidthRequest="50" BackgroundColor="Black"  VerticalOptions="Center"/>
+        </pancakeview:PancakeView>
+        <pancakeview:PancakeView x:Name="thirdBoxView" Grid.Column="2" VerticalOptions="Center" HeightRequest="20">
+            <BoxView  HeightRequest="5" WidthRequest="50" BackgroundColor="Black"  VerticalOptions="Center"/>
+        </pancakeview:PancakeView>
+        <pancakeview:PancakeView x:Name="fourthBoxView" Grid.Column="3" VerticalOptions="Center" HeightRequest="20">
+            <BoxView  HeightRequest="7" WidthRequest="50" BackgroundColor="Black"  VerticalOptions="Center"/>
+        </pancakeview:PancakeView>
+        <pancakeview:PancakeView  x:Name="fifthBoxView" Grid.Column="4" VerticalOptions="Center" HeightRequest="20">
+            <BoxView HeightRequest="9" WidthRequest="50" BackgroundColor="Black"  VerticalOptions="Center"/>
+        </pancakeview:PancakeView>
+    </Grid>
+</ContentView>

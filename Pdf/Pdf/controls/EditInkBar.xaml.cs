@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Pdf.controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PenBottomBar : ContentView
+    public partial class EditInkBar : ContentView
     {
         public delegate void colorButtonClickedDelegate();
         public colorButtonClickedDelegate ColorButtonClicked { get; set; }
@@ -18,12 +18,12 @@ namespace Pdf.controls
         public delegate void backButtonClickedDelegate();
         public backButtonClickedDelegate BackButtonClicked { get; set; }
 
-        public delegate void penSizeButtonClickedDelegate();
-        public penSizeButtonClickedDelegate PenSizeButtonClicked { get; set; }
+        public delegate void inkSizeButtonClickedDelegate();
+        public inkSizeButtonClickedDelegate InkSizeButtonClicked { get; set; }
 
-        public delegate void penStatusButtonClickedDelegate();
-        public penStatusButtonClickedDelegate PenStatusButtonClicked { get; set; }
-        public PenBottomBar()
+        public delegate void trashButtonClickedDelegate();
+        public trashButtonClickedDelegate TrashButtonClicked { get; set; }
+        public EditInkBar()
         {
             InitializeComponent();
 
@@ -45,22 +45,24 @@ namespace Pdf.controls
                 Command = new Command(async () =>
                 {
                     penSizeButton.Foreground = Color.FromHex("#b4b4b4");
-                    PenSizeButton_Clicked();
+                    InkSizeButton_Clicked();
                     await Task.Delay(100);
                     penSizeButton.Foreground = Color.FromHex("#4e4e4e");
                 })
             });
 
-            penButtonStatus.GestureRecognizers.Add(new TapGestureRecognizer()
+            trashCanButton.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command( () =>
+                Command = new Command(async () =>
                 {
-                    PenStatusButton_Clicked();
+                    trashCanButton.Foreground = Color.FromHex("#b4b4b4");
+                    TrashButton_Clicked();
+                    await Task.Delay(100);
+                    trashCanButton.Foreground = Color.FromHex("#4e4e4e");
                 })
             });
         }
 
-        //Set parameter because needed by visual studio - They are useless
         private void ColorButton_Clicked(object sender, EventArgs args)
         {
             ColorButtonClicked?.Invoke();
@@ -71,14 +73,14 @@ namespace Pdf.controls
             BackButtonClicked?.Invoke();
         }
 
-        private void PenSizeButton_Clicked()
+        private void InkSizeButton_Clicked()
         {
-            PenSizeButtonClicked?.Invoke();
+            InkSizeButtonClicked?.Invoke();
         }
 
-        private void PenStatusButton_Clicked()
+        private void TrashButton_Clicked()
         {
-            PenStatusButtonClicked?.Invoke();
+            TrashButtonClicked?.Invoke();
         }
     }
 }
