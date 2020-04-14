@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
+             mc:Ignorable="d"
+             x:Class="Pdf.controls.OpacitySlider">
+  <ContentView.Content>
+        <range:SfRangeSlider x:Name="rangeslider" Minimum="0" Maximum="100" SnapsTo="StepValues" ShowRange="False" StepFrequency="1" TickFrequency="1" Orientation="Horizontal" TickColor="#4e4e4e"
+                             ToolTipPrecision="1" Value="{Binding Opacity}"/>
+    </ContentView.Content>
+</ContentView>

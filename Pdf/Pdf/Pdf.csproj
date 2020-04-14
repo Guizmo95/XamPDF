@@ -44,8 +44,8 @@
     <Compile Update="controls\InkBottomBar.xaml.cs">
       <DependentUpon>InkBottomBar.xaml</DependentUpon>
     </Compile>
-    <Compile Update="controls\FreeTextButtonClickedBottomBar.xaml.cs">
-      <DependentUpon>FreeTextButtonClickedBottomBar.xaml</DependentUpon>
+    <Compile Update="controls\FreeTextBottomBar.xaml.cs">
+      <DependentUpon>FreeTextBottomBar.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\MenuPage.xaml">
       <DependentUpon>MenuPage.xaml.cs</DependentUpon>
@@ -53,6 +53,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="controls\AnnotationToolbar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="controls\EditFreeTextBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -65,13 +68,19 @@
     <EmbeddedResource Update="controls\InkBottomBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\FreeTextButtonClickedBottomBar.xaml">
+    <EmbeddedResource Update="controls\FreeTextBottomBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\ColorPicker.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\FontSizeSlider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="controls\OpacitySlider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="controls\ShapeBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\ThicknessBar.xaml">

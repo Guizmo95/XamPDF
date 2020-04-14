@@ -93,6 +93,7 @@ namespace Pdf.Views
                 {
                     cross.Foreground = Color.FromHex("#b4b4b4");
                     await Navigation.PopAsync();
+                    DidFinishPoping(null);
                     await Task.Delay(100);
                     cross.Foreground = Color.FromHex("4e4e4e");
                 })
