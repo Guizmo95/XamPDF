@@ -95,8 +95,6 @@ namespace Pdf.Views
             primaryColors.Add(Color.Blue);
             primaryColors.Add(Color.Green);
             primaryColors.Add(Color.Yellow);
-            primaryColors.Add(Color.Orange);
-            primaryColors.Add(Color.Red);
 
             foreach (Color color in primaryColors)
             {

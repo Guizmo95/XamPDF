@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PancakeView;
 using Xamarin.Forms.Xaml;
 
 namespace Pdf.controls
@@ -12,9 +13,6 @@ namespace Pdf.controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FreeTextBottomBar : ContentView
     {
-        public delegate void fontSizeButtonClickedDelegate();
-        public fontSizeButtonClickedDelegate FontSizeButtonClicked { get; set; }
-
         public delegate void colorButtonClickedDelegate();
         public colorButtonClickedDelegate ColorButtonClicked { get; set; }
 
@@ -24,20 +22,29 @@ namespace Pdf.controls
         public delegate void freeTextButtonClicked();
         public freeTextButtonClicked FreeTextButtonClicked { get; set; }
 
+
+
+        public Button ColorButton
+        {
+            get
+            {
+                return colorButton;
+            }
+        }
+
+
+        public PancakeView FreeTextButtonSatus
+        {
+            get
+            {
+                return freeTextButtonSatus;
+            }
+        }
+
         public FreeTextBottomBar()
         {
             InitializeComponent();
 
-            fontSizeButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    fontSizeButton.Foreground = Color.FromHex("#b4b4b4");
-                    FontSizeButton_Clicked();
-                    await Task.Delay(100);
-                    fontSizeButton.Foreground = Color.FromHex("#4e4e4e");
-                })
-            });
 
             colorButton.Clicked += ColorButton_Clicked;
 
@@ -59,11 +66,7 @@ namespace Pdf.controls
                     FreeTextButton_Clicked();
                 })
             });
-        }
 
-        private void FontSizeButton_Clicked()
-        {
-            FontSizeButtonClicked?.Invoke();
         }
 
         private void ColorButton_Clicked(object sender, EventArgs args)
@@ -80,5 +83,6 @@ namespace Pdf.controls
         {
             FreeTextButtonClicked?.Invoke();
         }
+
     }
 }

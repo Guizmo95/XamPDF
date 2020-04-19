@@ -14,10 +14,10 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RotatorPage : ContentView
     {
-        public RotatorPage(RotatorMode rotatorMode)
+        public RotatorPage()
         {
             InitializeComponent();
-            rotator.BindingContext = new RotatorViewModel(rotatorMode);
+            rotator.BindingContext = new RotatorViewModel();
         }
     }
 }

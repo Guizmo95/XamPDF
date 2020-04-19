@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.RotatorPage" HeightRequest="78"  >
+             x:Class="Pdf.Views.RotatorPage" HeightRequest="90"  >
 
     <ContentView.Resources>
         <ResourceDictionary>
@@ -24,8 +24,8 @@
                               NavigationStripMode="Dots"
                               BackgroundColor="Transparent"
                               NavigationStripPosition="Bottom"
-                              WidthRequest="200"
-                              HeightRequest="78">
+                              WidthRequest="80"
+                              HeightRequest="90">
         </syncfusion:SfRotator>
     </ContentView.Content>
 </ContentView>

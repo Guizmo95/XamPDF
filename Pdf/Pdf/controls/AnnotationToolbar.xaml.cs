@@ -26,6 +26,9 @@ namespace Pdf.controls
 
         public delegate void shapeButtonClickedDelegate();
         public shapeButtonClickedDelegate ShapeButtonClicked { get; set; }
+
+        public delegate void textMarlupButtonClickedDelegate();
+        public textMarlupButtonClickedDelegate TextMarkupButtonClicked { get; set; }
         public AnnotationToolbar()
         {
             InitializeComponent();
@@ -74,6 +77,17 @@ namespace Pdf.controls
                 })
             });
 
+            textMarkupButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    textMarkupButton.Foreground = Color.FromHex("#b4b4b4");
+                    TextMarkupButton_Clicked();
+                    await Task.Delay(100);
+                    textMarkupButton.Foreground = Color.FromHex("#4e4e4e");
+                })
+            });
+
             backButton.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(async () =>
@@ -103,6 +117,11 @@ namespace Pdf.controls
         private void ShapeButton_Clicked()
         {
             ShapeButtonClicked?.Invoke();
+        }
+
+        private void TextMarkupButton_Clicked()
+        {
+            TextMarkupButtonClicked?.Invoke();
         }
 
         private void BackButton_Clicked()

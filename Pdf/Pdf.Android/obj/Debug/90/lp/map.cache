@@ -1,6 +1,7 @@
 Acr.UserDialogs
 AndHUD
 FormsViewGroup
+Pdf
 Syncfusion.Buttons.XForms.Android
 Syncfusion.Core.XForms.Android
 Syncfusion.Expander.XForms.Android
@@ -60,4 +61,3 @@ Xamarin.Android.Support.ViewPager
 Xamarin.Forms.PancakeView
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
-Pdf

@@ -47,6 +47,9 @@
     <Compile Update="controls\FreeTextBottomBar.xaml.cs">
       <DependentUpon>FreeTextBottomBar.xaml</DependentUpon>
     </Compile>
+    <Compile Update="controls\PopupAnnotation.xaml.cs">
+      <DependentUpon>PopupAnnotation.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\MenuPage.xaml">
       <DependentUpon>MenuPage.xaml.cs</DependentUpon>
     </Compile>
@@ -56,10 +59,7 @@
     <EmbeddedResource Update="controls\AnnotationToolbar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\EditFreeTextBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\EditInkBar.xaml">
+    <EmbeddedResource Update="controls\EditPopupMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\NavigationDrawerToolsMenu.xaml">
@@ -80,7 +80,22 @@
     <EmbeddedResource Update="controls\OpacitySlider.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="controls\PopupAnnotation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="controls\SelectTextMarkupBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="controls\ShapeBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="controls\ShapeCustomBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="controls\StylePopupContent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="controls\TextMarkupBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\ThicknessBar.xaml">

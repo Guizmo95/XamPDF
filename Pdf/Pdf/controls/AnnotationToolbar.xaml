@@ -13,6 +13,7 @@
             <controls:IconView x:Name="freeTextButton" Source="font.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.85, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
             <controls:IconView x:Name="inkButton" Source="pencil.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.75, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
             <controls:IconView x:Name="shapeButton" Source="rectangle.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.65, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <controls:IconView x:Name="textMarkupButton" Source="marker.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.55, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
             <StackLayout x:Name="backButton" AbsoluteLayout.LayoutBounds="0.05, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Horizontal">
                 <controls:IconView x:Name="backButtonImage" Source="back.png" WidthRequest="20" HeightRequest="20" Foreground="#4e4e4e"/>
                 <BoxView WidthRequest="1" BackgroundColor="Black" HeightRequest="30"/>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PancakeView;
 using Xamarin.Forms.Xaml;
 
 namespace Pdf.controls
@@ -23,6 +24,37 @@ namespace Pdf.controls
 
         public delegate void penStatusButtonClickedDelegate();
         public penStatusButtonClickedDelegate PenStatusButtonClicked { get; set; }
+
+        public delegate void trashButtonClickedDelegate();
+        public trashButtonClickedDelegate TrashButtonClicked { get; set; }
+
+
+
+        public Button ColorButton
+        {
+            get
+            {
+                return colorButton;
+            }
+        }
+
+        public IconView PenSizeButton
+        {
+            get
+            {
+                return penSizeButton;
+            }
+        }
+
+        public PancakeView PenButtonStatus
+        {
+            get
+            {
+                return penButtonStatus;
+            }
+        }
+
+
         public InkBottomBar()
         {
             InitializeComponent();
@@ -40,17 +72,6 @@ namespace Pdf.controls
                 })
             });
 
-            penSizeButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    penSizeButton.Foreground = Color.FromHex("#b4b4b4");
-                    PenSizeButton_Clicked();
-                    await Task.Delay(100);
-                    penSizeButton.Foreground = Color.FromHex("#4e4e4e");
-                })
-            });
-
             penButtonStatus.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command( () =>
@@ -58,6 +79,7 @@ namespace Pdf.controls
                     PenStatusButton_Clicked();
                 })
             });
+
         }
 
         //Set parameter because needed by visual studio - They are useless
@@ -71,14 +93,10 @@ namespace Pdf.controls
             BackButtonClicked?.Invoke();
         }
 
-        private void PenSizeButton_Clicked()
-        {
-            PenSizeButtonClicked?.Invoke();
-        }
-
         private void PenStatusButton_Clicked()
         {
             PenStatusButtonClicked?.Invoke();
         }
+
     }
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Pdf.controls"
+             xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="Pdf.controls.TextMarkupBar">
+    <pancakeview:PancakeView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HasShadow="True">
+        <AbsoluteLayout BackgroundColor="#f5f5f5" HeightRequest="47" HorizontalOptions="FillAndExpand">
+            <controls:IconView x:Name="trashCanButton" IsVisible="False" Source="trash.png" HeightRequest="30" WidthRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Button x:Name="colorButton" CornerRadius="20" BorderWidth="2" HeightRequest="30" WidthRequest="30" BackgroundColor="{Binding SelectedColor}" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <pancakeview:PancakeView x:Name="textMarkupButtonSatus" CornerRadius="20" BackgroundColor="{Binding StatusColor}"  AbsoluteLayout.LayoutBounds="0.175, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                <controls:IconView x:Name="textMarkupButtonSatusIcon" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" VerticalOptions="CenterAndExpand"/>
+            </pancakeview:PancakeView>
+            <controls:IconView x:Name="textMarkupIcon" WidthRequest="50" HeightRequest="30" IsVisible="False" Foreground="#4e4e4e" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0.175, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <StackLayout x:Name="backButton" AbsoluteLayout.LayoutBounds="0.05, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Horizontal">
+                <controls:IconView x:Name="backButtonImage" Source="back.png" WidthRequest="20" HeightRequest="20" Foreground="#4e4e4e"/>
+                <BoxView WidthRequest="1" BackgroundColor="Black" HeightRequest="30"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </pancakeview:PancakeView>
+</ContentView>

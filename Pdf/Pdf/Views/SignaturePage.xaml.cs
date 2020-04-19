@@ -56,7 +56,7 @@ namespace Pdf.Views
         {
             InitializeComponent();
             this.editor.ToolbarSettings.IsVisible = false;
-            rotatorPage = new RotatorPage(Enumerations.RotatorMode.ColorPicker);
+            rotatorPage = new RotatorPage();
 
             Device.StartTimer(TimeSpan.FromMilliseconds(1000), () =>
             {
