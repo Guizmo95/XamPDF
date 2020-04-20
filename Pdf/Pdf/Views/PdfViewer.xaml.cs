@@ -36,7 +36,8 @@ namespace Pdf.Views
         private readonly DataTemplate editMenuTemplateView;
         private readonly DataTemplate styleMenuTemplateView;
         private readonly EditPopupMenu editPopupMenu;
-        private readonly StylePopupContent stylePopupContent;
+        private readonly StyleContent stylePopupContent;
+        private readonly StyleContent styleDrawerContent;
         #endregion
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
@@ -44,7 +45,7 @@ namespace Pdf.Views
         private ShapeAnnotation selectedShapeAnnotation;
         private TextMarkupAnnotation selectedTextMarkupAnnotation;
 
-        private AnnotationMode annotationType;
+        private AnnotationType annotationType;
         
 
         #region Property
@@ -54,8 +55,6 @@ namespace Pdf.Views
         private float opacity = 100;
         private bool canUndoInk = false;
         private bool canRedoInk = false;
-        private bool canUndo = false;
-        private bool canRedo = false;
         private int shapesNumbers = 0;
         private int textMarkupNumbers = 0;
         private Rectangle lastRectangleBounds;
@@ -75,6 +74,9 @@ namespace Pdf.Views
                 selectedColor = value;
                 // Call OnPropertyChanged whenever the property is updated
                 OnPropertyChanged();
+
+                if (navigationDrawer.IsOpen == true)
+                    navigationDrawer.ToggleDrawer();
 
                 if (selectedFreeTextAnnotation != null)
                     selectedFreeTextAnnotation.Settings.TextColor = value;
@@ -267,55 +269,7 @@ namespace Pdf.Views
                     ValidButton.Foreground = Color.Black;
             }
         }
-
-        public bool CanUndo
-        {
-            get
-            {
-                return canUndo;
-            }
-
-            set
-            {
-                canUndo = value;
-                OnPropertyChanged();
-                if (value == true)
-                {
-                    UndoButton.Foreground = Color.Black;
-                    ValidButton.Foreground = Color.Black;
-                }
-                else
-                {
-                    if (value == false)
-                    {
-                        UndoButton.Foreground = Color.White;
-                        ValidButton.Foreground = Color.White;
-                    }
-                }
-            }
-        }
-
-        public bool CanRedo
-        {
-            get
-            {
-                return canRedo;
-            }
-
-            set
-            {
-                canRedo = value;
-                OnPropertyChanged();
-
-                if (value == true)
-                    RedoButton.Foreground = Color.Black;
-                else
-                {
-                    if (value == false)
-                        RedoButton.Foreground = Color.White;
-                }
-            }
-        }
+        
         #endregion
 
         public PdfViewer(Stream fileStream)
@@ -347,7 +301,10 @@ namespace Pdf.Views
             this.stylePopup = new PopupAnnotation();
 
             this.editPopupMenu = new EditPopupMenu();
-            this.stylePopupContent = new StylePopupContent();
+            this.stylePopupContent = new StyleContent();
+            this.stylePopupContent.BindingContext = this;
+
+            this.styleDrawerContent = new StyleContent();
             this.stylePopupContent.BindingContext = this;
 
             editMenuTemplateView = new DataTemplate(() =>
@@ -377,6 +334,11 @@ namespace Pdf.Views
             stylePopup.SfPopupLayout.PopupView.WidthRequest = 200;
             #endregion
 
+            #region Navigation drawer
+            navigationDrawer.DrawerContentView = styleDrawerContent;
+
+            #endregion
+
             #region Pdf viewer events
             pdfViewerControl.FreeTextAnnotationAdded += PdfViewerControl_FreeTextAnnotationAdded;
             pdfViewerControl.FreeTextAnnotationSelected += PdfViewerControl_FreeTextAnnotationSelected;
@@ -395,8 +357,6 @@ namespace Pdf.Views
             pdfViewerControl.TextMarkupSelected += PdfViewerControl_TextMarkupSelected;
             pdfViewerControl.TextMarkupDeselected += PdfViewerControl_TextMarkupDeselected;
             pdfViewerControl.TextMarkupAdded += PdfViewerControl_TextMarkupAdded;
-            pdfViewerControl.CanRedoModified += PdfViewerControl_CanRedoModified;
-            pdfViewerControl.CanUndoModified += PdfViewerControl_CanUndoModified;
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
             {
@@ -408,19 +368,6 @@ namespace Pdf.Views
                         RedoInk();
                         await Task.Delay(100);
                         if (CanRedoInk == true)
-                            RedoButton.Foreground = Color.Black;
-                        else
-                        {
-                            RedoButton.Foreground = Color.White;
-                        }
-                    }
-
-                    if(CanRedo == true)
-                    {
-                        RedoButton.Foreground = Color.FromHex("#b4b4b4");
-                        Redo();
-                        await Task.Delay(100);
-                        if (CanRedo == true)
                             RedoButton.Foreground = Color.Black;
                         else
                         {
@@ -447,20 +394,6 @@ namespace Pdf.Views
                             UndoButton.Foreground = Color.White;
                         }
                     }
-
-                    if(CanUndo == true)
-                    {
-                        UndoButton.Foreground = Color.FromHex("#b4b4b4");
-                        Undo();
-                        await Task.Delay(100);
-
-                        if (CanUndo == true)
-                            UndoButton.Foreground = Color.Black;
-                        else
-                        {
-                            UndoButton.Foreground = Color.White;
-                        }
-                    }
                 })
             });
 
@@ -470,7 +403,9 @@ namespace Pdf.Views
                 {
                     if (CanUndoInk == true)
                     {
-                        ValidButton.Foreground = Color.FromHex("#b4b4b4");
+                        ValidButton.Foreground = Color.White;
+                        RedoButton.Foreground = Color.White;
+                        UndoButton.Foreground = Color.White;
 
                         if(pdfViewerControl.AnnotationMode == AnnotationMode.Ink)
                             SaveInk();
@@ -481,28 +416,6 @@ namespace Pdf.Views
 
                         CanRedoInk = false;
                         CanUndoInk = false;
-                        StatusColor = Color.Transparent;
-                    }
-
-                    if (CanUndo == true)
-                    {
-                        ValidButton.Foreground = Color.FromHex("#b4b4b4");
-
-                        await Task.Delay(100);
-
-
-                        if (pdfViewerControl.AnnotationMode != AnnotationMode.Ink)
-                        {
-
-                            textMarkupBar.IsVisible = false;
-
-                            annotationToolbar.IsVisible = true;
-
-                            pdfViewerControl.AnnotationMode = AnnotationMode.None;
-                        }
-
-                        //CanRedo = false;
-                        //CanUndo = false;
                         StatusColor = Color.Transparent;
                     }
 
@@ -540,6 +453,12 @@ namespace Pdf.Views
             #region Popup menu events 
             editPopupMenu.RemoveButtonClicked += RemvoveButton_Clicked;
             editPopupMenu.StyleButtonClicked += StyleButton_Clicked;
+
+            stylePopupContent.ThicknessBar.FirstBoxViewButtonClicked += FirstBoxView_Clicked;
+            stylePopupContent.ThicknessBar.SecondBoxViewButtonClicked += SecondBoxView_Clicked;
+            stylePopupContent.ThicknessBar.ThirdBoxViewButtonClicked += ThirdBoxView_Clicked;
+            stylePopupContent.ThicknessBar.FourthBoxViewButtonClicked += FourthBoxView_Clicked;
+            stylePopupContent.ThicknessBar.FifthBoxViewButtonClicked += FifthBoxView_Clicked;
             #endregion
 
             #region Free Text button events 
@@ -552,22 +471,18 @@ namespace Pdf.Views
             #region Ink bottom bar events 
             inkBottomBar.ColorButtonClicked += ColorButton_Clicked;
             inkBottomBar.BackButtonClicked += BackPenButton_Clicked;
-            inkBottomBar.PenSizeButtonClicked += ThicknessButton_Clicked;
             inkBottomBar.PenStatusButtonClicked += InkStatusButton_Clicked;
             #endregion
 
 
             #region Custom shape bar events
             shapeCustomBar.BackButtonClicked += BackShapeCustomButton_Clicked;
-            shapeCustomBar.ShapeSizeButtonClicked += ThicknessButton_Clicked;
             shapeCustomBar.ColorButtonClicked += ColorButton_Clicked;
-            shapeCustomBar.TrashButtonClicked += TrashShapeButton_Clicked;
             #endregion
 
             #region Text markup events
             textMarkupBar.ColorButtonClicked += ColorButton_Clicked;
             textMarkupBar.BackButtonClicked += BackTextMarkupButton_Clicked;
-            textMarkupBar.TrashCanButtonClicked += TrashTextMarkupButton_Clicked;
             textMarkupBar.TextMarkupStatusButtonClicked += TextMarkupStatusButton_Clicked;
             #endregion
 
@@ -579,8 +494,6 @@ namespace Pdf.Views
                 this.SelectedColor = helper;
             });
             #endregion
-
-
 
             #region Add content view but set them invisible 
             annotationToolbar.IsVisible = false;
@@ -634,33 +547,11 @@ namespace Pdf.Views
                     annotationToolbarButton.Foreground = Color.FromHex("4e4e4e");
                 })
             });
-
         }
 
 
         #region Pdf viewer events methods
 
-        private void Undo()
-        {
-            if (CanUndo == true)
-                pdfViewerControl.PerformUndo();
-        }
-
-        private void Redo()
-        {
-            if (CanRedo == true)
-                pdfViewerControl.PerformRedo();
-        }
-
-        private void PdfViewerControl_CanRedoModified(object sender, CanRedoModifiedEventArgs args)
-        {
-            CanRedo = args.CanRedo;
-        }
-
-        private void PdfViewerControl_CanUndoModified(object sender, CanUndoModifiedEventArgs args)
-        {
-            CanUndo = args.CanUndo;
-        }
 
         private void PdfViewerControl_TextMarkupAdded(object sender, TextMarkupAddedEventArgs args)
         {
@@ -668,115 +559,70 @@ namespace Pdf.Views
         }
 
         private void PdfViewerControl_TextMarkupDeselected(object sender, TextMarkupDeselectedEventArgs args)
-        { 
-
-            if (bottomToolbar.IsVisible == true)
-                bottomToolbar.IsVisible = false;
-
-            #region Remove edit Text markup bar
-            textMarkupBar.TrashCanButton.IsVisible = false;
-            textMarkupBar.TextMarkupIcon.IsVisible = false;
-            textMarkupBar.TextMarkupButtonStatus.IsVisible = true;
-
-            AbsoluteLayout.SetLayoutBounds(textMarkupBar.ColorButton, new Rectangle(0.95, 0.5, -1, -1));
-
-            textMarkupBar.IsVisible = false;
-            #endregion
-
-            annotationToolbar.IsVisible = true;
+        {
+            if (popupAnnotationTools.SfPopupLayout.IsOpen == true)
+            {
+                popupAnnotationTools.SfPopupLayout.StaysOpen = false;
+                popupAnnotationTools.SfPopupLayout.IsOpen = false;
+            }
+            else
+            {
+                if (stylePopup.SfPopupLayout.IsOpen == true)
+                {
+                    stylePopup.SfPopupLayout.StaysOpen = false;
+                    stylePopup.SfPopupLayout.IsOpen = false;
+                }
+            }
         }
 
         private void PdfViewerControl_TextMarkupSelected(object sender, TextMarkupSelectedEventArgs args)
         {
-            if (freeTextBottomBar.IsVisible == true)
-                freeTextBottomBar.IsVisible = false;
+            //Get the bounds
+            Rectangle bounds = args.Bounds;
+            lastRectangleBounds = args.Bounds;
 
-            if (annotationToolbar.IsVisible == true)
-                annotationToolbar.IsVisible = false;
+            popupAnnotationTools.SfPopupLayout.PopupView.HeightRequest = 30;
+            popupAnnotationTools.SfPopupLayout.PopupView.WidthRequest = 140;
 
-            if (inkBottomBar.IsVisible == true)
-                inkBottomBar.IsVisible = false;
+            popupAnnotationTools.SfPopupLayout.StaysOpen = true;
+            popupAnnotationTools.SfPopupLayout.Show(bounds.Left / 2 - (150 / 2), bounds.Top / 2 + 40);
 
-            if (bottomToolbar.IsVisible == true)
-                bottomToolbar.IsVisible = false;
-
-            if (shapeBar.IsVisible == true)
-                shapeBar.IsVisible = false;
-
-            if (shapeCustomBar.IsVisible == true)
-                shapeCustomBar.IsVisible = false;
-
-            if (selectTextMarkupBar.IsVisible == true)
-                selectTextMarkupBar.IsVisible = false;
+            this.annotationType = AnnotationType.TextMarkup;
 
             selectedTextMarkupAnnotation = sender as TextMarkupAnnotation;
-
-            if(args.TextMarkupAnnotationType == TextMarkupAnnotationType.Highlight)
-            {
-                textMarkupBar.TextMarkupIcon.Source = "draw.png";
-            }
-            else
-            {
-                if(args.TextMarkupAnnotationType == TextMarkupAnnotationType.Strikethrough)
-                {
-                    textMarkupBar.TextMarkupIcon.Source = "strikethrough.png";
-                }
-                else
-                {
-                    if(args.TextMarkupAnnotationType == TextMarkupAnnotationType.Underline)
-                    {
-                        textMarkupBar.TextMarkupIcon.Source = "underline.png";
-                    }
-                }
-            }
-
-            #region Set edit text markup bar
-            textMarkupBar.TrashCanButton.IsVisible = true;
-            textMarkupBar.TextMarkupIcon.IsVisible = true;
-            textMarkupBar.TextMarkupButtonStatus.IsVisible = false;
-
-            AbsoluteLayout.SetLayoutBounds(textMarkupBar.ColorButton, new Rectangle(0.85, 0.5, -1, -1));
-            #endregion
-
-            textMarkupBar.IsVisible = true;
         }
 
         private void PdfViewerControl_ShapeAnnotationDeselected(object sender, ShapeAnnotationDeselectedEventArgs args)
         {
-            if (shapeBar.IsVisible == true)
-                shapeBar.IsVisible = false;
-
-            if (bottomToolbar.IsVisible == true)
-                bottomToolbar.IsVisible = false;
-
-            shapeCustomBar.IsVisible = false;
-
-            annotationToolbar.IsVisible = true;
+            if (popupAnnotationTools.SfPopupLayout.IsOpen == true)
+            {
+                popupAnnotationTools.SfPopupLayout.StaysOpen = false;
+                popupAnnotationTools.SfPopupLayout.IsOpen = false;
+            }
+            else
+            {
+                if (stylePopup.SfPopupLayout.IsOpen == true)
+                {
+                    stylePopup.SfPopupLayout.StaysOpen = false;
+                    stylePopup.SfPopupLayout.IsOpen = false;
+                }
+            }
         }
 
         //TODO -- FOUND A WAY TO DESELECT OR HANDLE THE BOTTOM BAR BUG
         private void PdfViewerControl_ShapeAnnotationSelected(object sender, ShapeAnnotationSelectedEventArgs args)
         {
-            if (freeTextBottomBar.IsVisible == true)
-                freeTextBottomBar.IsVisible = false;
+            //Get the bounds
+            Rectangle bounds = args.Bounds;
+            lastRectangleBounds = args.Bounds;
 
+            popupAnnotationTools.SfPopupLayout.PopupView.HeightRequest = 30;
+            popupAnnotationTools.SfPopupLayout.PopupView.WidthRequest = 140;
 
-            if (annotationToolbar.IsVisible == true)
-                annotationToolbar.IsVisible = false;
+            popupAnnotationTools.SfPopupLayout.StaysOpen = true;
+            popupAnnotationTools.SfPopupLayout.Show(bounds.Left / 2 - (150 / 2), bounds.Top / 2 + 40);
 
-            if (inkBottomBar.IsVisible == true)
-                inkBottomBar.IsVisible = false;
-
-            if (bottomToolbar.IsVisible == true)
-                bottomToolbar.IsVisible = false;
-
-            if (shapeBar.IsVisible == true)
-                shapeBar.IsVisible = false;
-
-            if(shapeCustomBar.IsVisible == false)
-                shapeCustomBar.IsVisible = true;
-
-            ValidButton.IsVisible = false;
+            this.annotationType = AnnotationType.Shape;
 
             //Cast the sender object as shape annotation.
             this.selectedShapeAnnotation = sender as ShapeAnnotation;
@@ -883,7 +729,7 @@ namespace Pdf.Views
             popupAnnotationTools.SfPopupLayout.StaysOpen = true;
             popupAnnotationTools.SfPopupLayout.Show(bounds.Left / 2 - (150 / 2), bounds.Top / 2 + 40);
 
-            this.annotationType = AnnotationMode.FreeText;
+            this.annotationType = AnnotationType.FreeText;
 
             //Cast the sender object to FreeTextAnnotation
             this.selectedFreeTextAnnotation = sender as FreeTextAnnotation;
@@ -891,8 +737,9 @@ namespace Pdf.Views
 
         private void PdfViewerControl_FreeTextAnnotationAdded(object sender, FreeTextAnnotationAddedEventArgs args)
         {
-            //Disable the free text button 
-            this.StatusColor = Color.Transparent;
+            freeTextBottomBar.IsVisible = false;
+
+            annotationToolbar.IsVisible = true;
         }
 
         private void PdfViewerControl_CanUndoInkModified(object sender, CanUndoInkModifiedEventArgs args)
@@ -932,11 +779,16 @@ namespace Pdf.Views
             //Get the bounds
             Rectangle bounds = args.Bounds;
             lastRectangleBounds = args.Bounds;
-
+            Debug.WriteLine(lastRectangleBounds.Center.X);
+            Debug.WriteLine(lastRectangleBounds.Center.Y);
+            Debug.WriteLine(lastRectangleBounds.X);
+            Debug.WriteLine(lastRectangleBounds.Left);
+            Debug.WriteLine(lastRectangleBounds.Width);
+            Debug.WriteLine(lastRectangleBounds.Height);
             popupAnnotationTools.SfPopupLayout.StaysOpen = true;
-            popupAnnotationTools.SfPopupLayout.Show(bounds.Left / 2 + 60, bounds.Top / 2 + 40);
+            popupAnnotationTools.SfPopupLayout.Show((lastRectangleBounds.Center.X/3)-70, (lastRectangleBounds.Y/2) + 30);
 
-            this.annotationType = AnnotationMode.Ink;
+            this.annotationType = AnnotationType.Ink;
             //Casts the sender object as Ink annotation.
             selectedInkAnnotation = sender as InkAnnotation;
         }
@@ -964,9 +816,10 @@ namespace Pdf.Views
         private void BackTextButton_Clicked()
         {
             freeTextBottomBar.IsVisible = false;
-            #endregion
 
             annotationToolbar.IsVisible = true;
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.None;
         }
 
         private void FreeTextButtonBottomBar_Clicked()
@@ -982,11 +835,14 @@ namespace Pdf.Views
                 pdfViewerControl.AnnotationMode = AnnotationMode.FreeText;
             }
         }
-
+        #endregion
         #region Annotation toolbar events 
 
         private void TextMarkupButton_Clicked()
         {
+            stylePopupContent.ThicknessBar.IsVisible = false;
+            stylePopupContent.FontSizeSlider.IsVisible = false;
+
             if (annotationToolbar.IsVisible == true)
                 annotationToolbar.IsVisible = false;
 
@@ -996,6 +852,9 @@ namespace Pdf.Views
 
         private void ShapeButton_Clicked()
         {
+            stylePopupContent.ThicknessBar.IsVisible = true;
+            stylePopupContent.FontSizeSlider.IsVisible = false;
+
             if (annotationToolbar.IsVisible == true)
                 annotationToolbar.IsVisible = false;
 
@@ -1009,39 +868,14 @@ namespace Pdf.Views
 
             bottomToolbar.IsVisible = true;
 
-            ////Remove events
-            //annotationToolbar.StampButtonClicked -= StampButton_Clicked;
-            //annotationToolbar.FreeTextButtonClicked -= FreeTextButton_Clicked;
-            //annotationToolbar.InkButtonClicked -= InkButton_Clicked;
-            //annotationToolbar.ShapeButtonClicked -= ShapeButton_Clicked;
-            //annotationToolbar.BackButtonClicked -= BackAnnotationToolbarButton_Clicked;
-
-            //#region Shape bottom bar events
-            //shapeBar.ArrowButtonClicked -= ArrowButton_Clicked;
-            //shapeBar.LineButtonClicked -= LineButton_Clicked;
-            //shapeBar.EllipseButtonClicked -= EllipseButton_Clicked;
-            //shapeBar.RectangleButtonClicked -= RectangleButton_Clicked;
-            //shapeBar.BackButtonClicked -= BackShapeButton_Clicked;
-            //#endregion
-
-            //#region Ink bottom bar events 
-            //inkBottomBar.ColorButtonClicked -= ColorButton_Clicked;
-            //inkBottomBar.BackButtonClicked -= BackPenButton_Clicked;
-            //inkBottomBar.PenSizeButtonClicked -= ThicknessButton_Clicked;
-            //inkBottomBar.PenStatusButtonClicked -= InkStatusButton_Clicked;
-            //#endregion
-
-            //#region Free Text button events 
-            ////TextButtonClickedBottomBar events
-            //freeTextBottomBar.ColorButtonClicked -= ColorButton_Clicked;
-            //freeTextBottomBar.FontSizeButtonClicked -= FontSizeButton_Clicked;
-            //freeTextBottomBar.BackButtonClicked -= BackTextButton_Clicked;
-            //freeTextBottomBar.FreeTextButtonClicked -= FreeTextButtonBottomBar_Clicked;
-            //#endregion
+            pdfViewerControl.AnnotationMode = AnnotationMode.None;
         }
 
         private void InkButton_Clicked()
         {
+            stylePopupContent.ThicknessBar.IsVisible = true;
+            stylePopupContent.FontSizeSlider.IsVisible = false;
+
             if (annotationToolbar.IsVisible == true)
                 annotationToolbar.IsVisible = false;
 
@@ -1062,6 +896,9 @@ namespace Pdf.Views
 
         private void FreeTextButton_Clicked()
         {
+            stylePopupContent.ThicknessBar.IsVisible = false;
+            stylePopupContent.FontSizeSlider.IsVisible = true;
+
             if (annotationToolbar.IsVisible == true)
                 annotationToolbar.IsVisible = false;
 
@@ -1084,17 +921,11 @@ namespace Pdf.Views
         #region Ink bottom bar events methods
         private void BackPenButton_Clicked()
         {
-
-
-
             ValidButton.IsVisible = false;
             UndoButton.IsVisible = false;
             RedoButton.IsVisible = false;
 
-            #region Remove edit free text bar
-
             inkBottomBar.IsVisible = false;
-            #endregion
 
             annotationToolbar.IsVisible = true;
 
@@ -1116,8 +947,6 @@ namespace Pdf.Views
                 pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
             }
         }
-
-
         #endregion
 
         #region Shape events methods
@@ -1182,32 +1011,17 @@ namespace Pdf.Views
         {
             shapeBar.IsVisible = false;
 
+            annotationToolbar.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.None;
-
-            annotationToolbar.IsVisible = true;
         }
 
         #endregion
 
         #region Shape custom bar event method
-
-        private void TrashShapeButton_Clicked()
-        {
-            if(selectedShapeAnnotation != null)
-                pdfViewerControl.RemoveAnnotation(selectedShapeAnnotation);
-
-
-
-            shapeCustomBar.IsVisible = false;
-
-            annotationToolbar.IsVisible = true;
-        }
         
         private void BackShapeCustomButton_Clicked()
         {
-
-
             ValidButton.IsVisible = false;
 
             shapeCustomBar.IsVisible = false;
@@ -1233,8 +1047,6 @@ namespace Pdf.Views
             selectTextMarkupBar.IsVisible = false;
 
             ValidButton.IsVisible = true;
-            UndoButton.IsVisible = true;
-            RedoButton.IsVisible = true;
 
             textMarkupBar.IsVisible = true;
         }
@@ -1252,8 +1064,6 @@ namespace Pdf.Views
             selectTextMarkupBar.IsVisible = false;
 
             ValidButton.IsVisible = true;
-            UndoButton.IsVisible = true;
-            RedoButton.IsVisible = true;
 
             textMarkupBar.IsVisible = true;
         }
@@ -1269,8 +1079,6 @@ namespace Pdf.Views
             this.SelectedColor = Color.Black;
 
             ValidButton.IsVisible = true;
-            UndoButton.IsVisible = true;
-            RedoButton.IsVisible = true;
 
             selectTextMarkupBar.IsVisible = false;
 
@@ -1288,44 +1096,12 @@ namespace Pdf.Views
         #region Text markup event methods 
 
         private void BackTextMarkupButton_Clicked()
-        {
-            #region Remove edit Text markup bar
-            if(textMarkupBar.TrashCanButton.IsVisible == true)
-                textMarkupBar.TrashCanButton.IsVisible = false;
-
-            if(textMarkupBar.TextMarkupIcon.IsVisible == true)
-                textMarkupBar.TextMarkupIcon.IsVisible = false;
-
-            if(textMarkupBar.TextMarkupButtonStatus.IsVisible == false)
-                textMarkupBar.TextMarkupButtonStatus.IsVisible = true;
-
-            AbsoluteLayout.SetLayoutBounds(textMarkupBar.ColorButton, new Rectangle(0.95, 0.5, -1, -1));
-
+        { 
             textMarkupBar.IsVisible = false;
-            #endregion
 
             annotationToolbar.IsVisible = true;
-        }
 
-        private void TrashTextMarkupButton_Clicked()
-        {
-            if(selectedTextMarkupAnnotation != null)
-            {
-                pdfViewerControl.RemoveAnnotation(selectedTextMarkupAnnotation);
-
-
-                #region Remove edit Text markup bar
-                textMarkupBar.TrashCanButton.IsVisible = false;
-                textMarkupBar.TextMarkupIcon.IsVisible = false;
-                textMarkupBar.TextMarkupButtonStatus.IsVisible = true;
-
-                AbsoluteLayout.SetLayoutBounds(textMarkupBar.ColorButton, new Rectangle(0.95, 0.5, -1, -1));
-
-                textMarkupBar.IsVisible = false;
-                #endregion
-
-                annotationToolbar.IsVisible = true;
-            }
+            pdfViewerControl.AnnotationMode = AnnotationMode.None;
         }
 
         private void TextMarkupStatusButton_Clicked()
@@ -1353,7 +1129,7 @@ namespace Pdf.Views
 
         private void ColorButton_Clicked()
         {
-
+            navigationDrawer.ToggleDrawer();
         }
         #endregion
 
@@ -1361,7 +1137,7 @@ namespace Pdf.Views
 
         private void StyleButton_Clicked()
         {
-            if(annotationType == AnnotationMode.FreeText)
+            if(annotationType == AnnotationType.FreeText)
             {
                 popupAnnotationTools.SfPopupLayout.IsOpen = false;
 
@@ -1372,7 +1148,7 @@ namespace Pdf.Views
 
             else
             {
-                if(annotationType == AnnotationMode.Ink)
+                if(annotationType == AnnotationType.Ink)
                 {
                     stylePopupContent.ThicknessBar.IsVisible = true;
                     stylePopupContent.FontSizeSlider.IsVisible = false;
@@ -1381,7 +1157,37 @@ namespace Pdf.Views
 
                     stylePopup.SfPopupLayout.StaysOpen = true;
 
-                    stylePopup.SfPopupLayout.Show(lastRectangleBounds.Left / 2 - 60, lastRectangleBounds.Top / 2 );
+                    
+
+                    stylePopup.SfPopupLayout.Show((lastRectangleBounds.X / 1.6987) - 100, (lastRectangleBounds.Y/2) - 20);
+                }
+                else
+                {
+                    if(annotationType == AnnotationType.Shape)
+                    {
+                        stylePopupContent.ThicknessBar.IsVisible = true;
+                        stylePopupContent.FontSizeSlider.IsVisible = false;
+
+                        popupAnnotationTools.SfPopupLayout.IsOpen = false;
+
+                        stylePopup.SfPopupLayout.StaysOpen = true;
+
+                        stylePopup.SfPopupLayout.Show((lastRectangleBounds.Center.X / 4) - 62.5, (lastRectangleBounds.Y / 2) - 20);
+                    }
+                    else
+                    {
+                        if(annotationType == AnnotationType.TextMarkup)
+                        {
+                            stylePopupContent.ThicknessBar.IsVisible = false;
+                            stylePopupContent.FontSizeSlider.IsVisible = false;
+
+                            popupAnnotationTools.SfPopupLayout.IsOpen = false;
+
+                            stylePopup.SfPopupLayout.StaysOpen = true;
+
+                            stylePopup.SfPopupLayout.Show((lastRectangleBounds.Center.X / 4) - 62.5, (lastRectangleBounds.Y / 2) - 20);
+                        }
+                    }
                 }
             }
             
@@ -1410,6 +1216,12 @@ namespace Pdf.Views
                         if(selectedTextMarkupAnnotation != null)
                         {
                             pdfViewerControl.RemoveAnnotation(selectedTextMarkupAnnotation);
+
+                            if (popupAnnotationTools.SfPopupLayout.IsOpen == true)
+                            {
+                                popupAnnotationTools.SfPopupLayout.StaysOpen = false;
+                                popupAnnotationTools.SfPopupLayout.IsOpen = false;
+                            }
                         }
                     }
                 }

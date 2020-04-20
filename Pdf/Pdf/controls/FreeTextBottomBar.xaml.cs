@@ -22,8 +22,6 @@ namespace Pdf.controls
         public delegate void freeTextButtonClicked();
         public freeTextButtonClicked FreeTextButtonClicked { get; set; }
 
-
-
         public Button ColorButton
         {
             get

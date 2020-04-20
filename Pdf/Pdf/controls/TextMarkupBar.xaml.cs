@@ -19,27 +19,8 @@ namespace Pdf.controls
         public delegate void backButtonClickedDelegate();
         public backButtonClickedDelegate BackButtonClicked { get; set; }
 
-        public delegate void trashCanButtonClickedDelegate();
-        public trashCanButtonClickedDelegate TrashCanButtonClicked { get; set; }
-
         public delegate void textMarkupStatusButtonClicked();
         public textMarkupStatusButtonClicked TextMarkupStatusButtonClicked { get; set; }
-
-        public IconView TrashCanButton
-        {
-            get
-            {
-                return trashCanButton;
-            }
-        }
-
-        public IconView TextMarkupIcon
-        {
-            get
-            {
-                return textMarkupIcon;
-            }
-        }
 
         public IconView TextMarkupButtonSatusIcon
         {
@@ -48,8 +29,6 @@ namespace Pdf.controls
                 return textMarkupButtonSatusIcon;
             }
         }
-
-
         public PancakeView TextMarkupButtonStatus
         {
             get
@@ -83,16 +62,6 @@ namespace Pdf.controls
                 })
             });
 
-            trashCanButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    trashCanButton.Foreground = Color.FromHex("#b4b4b4");
-                    TrashCanButton_Clicked();
-                    await Task.Delay(100);
-                    trashCanButton.Foreground = Color.FromHex("#4e4e4e");
-                })
-            });
 
             textMarkupButtonSatus.GestureRecognizers.Add(new TapGestureRecognizer()
             {
@@ -116,11 +85,6 @@ namespace Pdf.controls
         private void TextMarkupStatusButton_Clicked()
         {
             TextMarkupStatusButtonClicked?.Invoke();
-        }
-
-        private void TrashCanButton_Clicked()
-        {
-            TrashCanButtonClicked?.Invoke();
         }
     }
 }

@@ -26,7 +26,7 @@
           "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
-          "Xamarin.Forms": "4.5.0.356",
+          "Xamarin.Forms": "4.5.0.617",
           "Xamarin.Forms.PancakeView": "1.3.7",
           "Mono.Android": "0.0.0.0",
           "Xamarin.Android.Arch.Lifecycle.ViewModel": "1.0.0.0"
@@ -177,7 +177,7 @@
       "Syncfusion.Xamarin.Buttons/18.1.0.43": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Buttons.XForms.dll": {
@@ -197,7 +197,7 @@
       "Syncfusion.Xamarin.Core/18.1.0.43": {
         "dependencies": {
           "Syncfusion.Licensing": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Core.XForms.dll": {
@@ -217,7 +217,7 @@
       "Syncfusion.Xamarin.Expander/18.1.0.43": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Expander.XForms.dll": {
@@ -249,7 +249,7 @@
       "Syncfusion.Xamarin.SfBusyIndicator/17.4.0.55": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfBusyIndicator.XForms.dll": {
@@ -261,7 +261,7 @@
       "Syncfusion.Xamarin.SfImageEditor/18.1.0.43": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfImageEditor.XForms.dll": {
@@ -275,7 +275,7 @@
           "Syncfusion.Xamarin.Core": "18.1.0.43",
           "Syncfusion.Xamarin.DataSource": "18.1.0.42",
           "Syncfusion.Xamarin.GridCommon": "18.1.0.42",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfListView.XForms.dll": {
@@ -287,7 +287,7 @@
       "Syncfusion.Xamarin.SfNavigationDrawer/18.1.0.42": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfNavigationDrawer.XForms.dll": {
@@ -303,7 +303,7 @@
           "Syncfusion.Xamarin.SfBusyIndicator": "17.4.0.55",
           "Syncfusion.Xamarin.SfProgressBar": "17.4.0.55",
           "Syncfusion.Xamarin.SfRangeSlider": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfPdfViewer.XForms.dll": {
@@ -315,7 +315,7 @@
       "Syncfusion.Xamarin.SfPopupLayout/18.1.0.43": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfPopupLayout.XForms.dll": {
@@ -327,7 +327,7 @@
       "Syncfusion.Xamarin.SfProgressBar/17.4.0.55": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfProgressBar.XForms.dll": {
@@ -339,7 +339,7 @@
       "Syncfusion.Xamarin.SfRadialMenu/18.1.0.43": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfRadialMenu.XForms.dll": {
@@ -351,7 +351,7 @@
       "Syncfusion.Xamarin.SfRangeSlider/18.1.0.43": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfRangeSlider.XForms.dll": {
@@ -363,7 +363,7 @@
       "Syncfusion.Xamarin.SfRotator/18.1.0.43": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfRotator.XForms.dll": {
@@ -375,7 +375,7 @@
       "Syncfusion.Xamarin.SfTabView/18.1.0.42": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "18.1.0.43",
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfTabView.XForms.dll": {
@@ -928,25 +928,25 @@
           }
         }
       },
-      "Xamarin.Forms/4.5.0.356": {
+      "Xamarin.Forms/4.5.0.617": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.5.0.143"
+            "fileVersion": "4.5.0.216"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.5.0.143"
+            "fileVersion": "4.5.0.216"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.5.0.143"
+            "fileVersion": "4.5.0.216"
           }
         }
       },
       "Xamarin.Forms.PancakeView/1.3.7": {
         "dependencies": {
-          "Xamarin.Forms": "4.5.0.356"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.PancakeView.dll": {
@@ -1497,12 +1497,12 @@
       "path": "unity/5.11.4",
       "hashPath": "unity.5.11.4.nupkg.sha512"
     },
-    "Xamarin.Forms/4.5.0.356": {
+    "Xamarin.Forms/4.5.0.617": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aOg3sUA2xuLhyhtLuihrDVFZ5ZCa71pgojyz/HdjEH7eW5HxEws+IIgvKTYUZbFOIGD7eK/f3x1lYj6HI/o+jg==",
-      "path": "xamarin.forms/4.5.0.356",
-      "hashPath": "xamarin.forms.4.5.0.356.nupkg.sha512"
+      "sha512": "sha512-tB/h7bHEylOgNT+521SRnbmO+LCe5R3lPboD/icCMpa+FdjmxhZQ7+fIIPFDbhY2dqYetGRnAeJWXVx4NLbmAw==",
+      "path": "xamarin.forms/4.5.0.617",
+      "hashPath": "xamarin.forms.4.5.0.617.nupkg.sha512"
     },
     "Xamarin.Forms.PancakeView/1.3.7": {
       "type": "package",

@@ -12,6 +12,8 @@
              xmlns:views="clr-namespace:Pdf.Views" NavigationPage.HasNavigationBar="False" x:Name="pdfViewer">
 
 
+    <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer" Position="Bottom" DrawerHeight="100" DrawerHeaderHeight="0" EnableSwipeGesture="False" Duration="250">
+        <navigationdrawer:SfNavigationDrawer.ContentView>
             <StackLayout Spacing="1" x:Name="mainStackLayout">
                 <controls1:PancakeView BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar">
                     <AbsoluteLayout x:Name="topAbsoluteLayout" BackgroundColor="#f5f5f5" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
@@ -35,4 +37,10 @@
                     </AbsoluteLayout>
                 </controls1:PancakeView>
             </StackLayout>
+        </navigationdrawer:SfNavigationDrawer.ContentView>
+    </navigationdrawer:SfNavigationDrawer>
+
+
+
+
 </ContentPage>

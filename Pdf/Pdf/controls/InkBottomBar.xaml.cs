@@ -19,9 +19,6 @@ namespace Pdf.controls
         public delegate void backButtonClickedDelegate();
         public backButtonClickedDelegate BackButtonClicked { get; set; }
 
-        public delegate void penSizeButtonClickedDelegate();
-        public penSizeButtonClickedDelegate PenSizeButtonClicked { get; set; }
-
         public delegate void penStatusButtonClickedDelegate();
         public penStatusButtonClickedDelegate PenStatusButtonClicked { get; set; }
 
@@ -35,14 +32,6 @@ namespace Pdf.controls
             get
             {
                 return colorButton;
-            }
-        }
-
-        public IconView PenSizeButton
-        {
-            get
-            {
-                return penSizeButton;
             }
         }
 
