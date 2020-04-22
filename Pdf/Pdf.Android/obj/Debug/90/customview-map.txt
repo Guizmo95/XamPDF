@@ -163,6 +163,16 @@ path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_checked.xml
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_indeterminate.xml
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_unchecked.xml
+path;obj\Debug\90\res\drawable\baseline_account_circle_24.xml
+path;obj\Debug\90\res\drawable\baseline_description_24.xml
+path;obj\Debug\90\res\drawable\baseline_feedback_24.xml
+path;obj\Debug\90\res\drawable\baseline_menu_24.xml
+path;obj\Debug\90\res\drawable\baseline_more_horiz_24.xml
+path;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24.xml
+path;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
+path;obj\Debug\90\res\drawable\baseline_sort_24.xml
+path;obj\Debug\90\res\drawable\baseline_stars_24.xml
+path;obj\Debug\90\res\drawable\baseline_visibility_24.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\interpolator\btn_checkbox_checked_animation_interpolator_0.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\interpolator\btn_checkbox_checked_animation_interpolator_1.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\interpolator\btn_checkbox_indeterminate_animation_interpolator_1.xml
@@ -326,4 +336,14 @@ vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\o
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_checked.xml
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_indeterminate.xml
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_unchecked.xml
+vector;obj\Debug\90\res\drawable\baseline_account_circle_24.xml
+vector;obj\Debug\90\res\drawable\baseline_description_24.xml
+vector;obj\Debug\90\res\drawable\baseline_feedback_24.xml
+vector;obj\Debug\90\res\drawable\baseline_menu_24.xml
+vector;obj\Debug\90\res\drawable\baseline_more_horiz_24.xml
+vector;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24.xml
+vector;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
+vector;obj\Debug\90\res\drawable\baseline_sort_24.xml
+vector;obj\Debug\90\res\drawable\baseline_stars_24.xml
+vector;obj\Debug\90\res\drawable\baseline_visibility_24.xml
 xamarin.forms.platform.android.appcompat.FormsViewPager;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\61\jl\res\layout\rootlayout.xml

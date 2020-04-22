@@ -20,6 +20,7 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netsta
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\SelectTextMarkupBar.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\ShapeBar.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\ShapeCustomBar.xaml.g.cs
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\StyleContent.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\TextMarkupBar.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\ThicknessBar.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
@@ -34,4 +35,3 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netsta
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\ref\Pdf.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.pdb
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\StyleContent.xaml.g.cs

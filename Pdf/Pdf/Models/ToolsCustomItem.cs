@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Pdf.Models
 {
-    public class ToolsCustomItem
+    public class ToolsCustomItem: INotifyPropertyChanged
     {
         private int id;
         private string libelle;
         private string detail;
         private string image;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public int Id
         {
@@ -21,6 +25,7 @@ namespace Pdf.Models
             set
             {
                 id = value;
+                OnPropertyChanged();
             }
         }
 
@@ -33,6 +38,7 @@ namespace Pdf.Models
             set
             {
                 libelle = value;
+                OnPropertyChanged();
             }
         }
 
@@ -46,6 +52,7 @@ namespace Pdf.Models
             set
             {
                 detail = value;
+                OnPropertyChanged();
             }
         }
 
@@ -59,6 +66,7 @@ namespace Pdf.Models
             set
             {
                 image = value;
+                OnPropertyChanged();
             }
         }
 
@@ -68,6 +76,10 @@ namespace Pdf.Models
             this.libelle = libelle;
             this.image = image;
             this.detail = detail;
+        }
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

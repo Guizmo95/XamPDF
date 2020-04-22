@@ -779,14 +779,11 @@ namespace Pdf.Views
             //Get the bounds
             Rectangle bounds = args.Bounds;
             lastRectangleBounds = args.Bounds;
-            Debug.WriteLine(lastRectangleBounds.Center.X);
-            Debug.WriteLine(lastRectangleBounds.Center.Y);
-            Debug.WriteLine(lastRectangleBounds.X);
-            Debug.WriteLine(lastRectangleBounds.Left);
-            Debug.WriteLine(lastRectangleBounds.Width);
-            Debug.WriteLine(lastRectangleBounds.Height);
+            var x = (lastRectangleBounds.Center.X * 300) / 971;
+
             popupAnnotationTools.SfPopupLayout.StaysOpen = true;
-            popupAnnotationTools.SfPopupLayout.Show((lastRectangleBounds.Center.X/3)-70, (lastRectangleBounds.Y/2) + 30);
+
+            popupAnnotationTools.SfPopupLayout.Show(x - 70, (lastRectangleBounds.Center.Y/3));
 
             this.annotationType = AnnotationType.Ink;
             //Casts the sender object as Ink annotation.
@@ -1157,9 +1154,9 @@ namespace Pdf.Views
 
                     stylePopup.SfPopupLayout.StaysOpen = true;
 
-                    
+                    var x = (lastRectangleBounds.Center.X * 300) / 1000;
 
-                    stylePopup.SfPopupLayout.Show((lastRectangleBounds.X / 1.6987) - 100, (lastRectangleBounds.Y/2) - 20);
+                    stylePopup.SfPopupLayout.Show(x - 100, (lastRectangleBounds.Y/2) - 20);
                 }
                 else
                 {
