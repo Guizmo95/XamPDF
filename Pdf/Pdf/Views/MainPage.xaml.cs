@@ -1,6 +1,7 @@
 ﻿using Pdf.Helpers;
 using Pdf.Models;
 using Pdf.ViewModels;
+using Syncfusion.DataSource;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
@@ -29,61 +30,56 @@ namespace Pdf.Views
 
             SfBehavior = new SfBehavior();
             popupLayout = new SfPopupLayout();
-            popupLayout.PopupView.HeightRequest = 200;
-            popupLayout.PopupView.WidthRequest = 150;
-            popupLayout.PopupView.AcceptButtonText = "Sort";
-
-            DataTemplate headerTemplateView = new DataTemplate(() =>
-            {
-                Label headerContent;
-
-                headerContent = new Label();
-                headerContent.Text = "Sort files";
-                headerContent.TextColor = Color.FromHex("#e6e6e6");
-                headerContent.FontFamily = "GothamBold.ttf#GothamBold";
-                headerContent.FontSize = 14;
-                headerContent.HorizontalTextAlignment = TextAlignment.Center;
-                headerContent.VerticalTextAlignment = TextAlignment.Center;
-                return headerContent;
-            });
+            popupLayout.PopupView.HeightRequest = 62;
+            popupLayout.PopupView.WidthRequest = 80;
+            popupLayout.PopupView.ShowHeader = false;
+            popupLayout.PopupView.ShowFooter = false;
+            popupLayout.PopupView.ShowCloseButton = false;
+            popupLayout.PopupView.AnimationMode = AnimationMode.SlideOnRight;
+            popupLayout.PopupView.AnimationEasing = AnimationEasing.SinOut;
+            popupLayout.PopupView.AnimationDuration = 150;
 
             DataTemplate templateView = new DataTemplate(() =>
             {
                 StackLayout stackLayout = new StackLayout();
                 stackLayout.Orientation = StackOrientation.Vertical;
+                stackLayout.VerticalOptions = LayoutOptions.Center;
+                stackLayout.Spacing = 0;
 
-
-                Label sortName;
-                sortName = new Label();
+                Button sortName;
+                sortName = new Button();
+                sortName.HeightRequest = 30;
+                sortName.WidthRequest = 80;
                 sortName.Text = "Sort name";
-                sortName.VerticalTextAlignment = TextAlignment.Center;
+                sortName.BackgroundColor = Color.White;
+                sortName.FontSize = 8;
+                sortName.Clicked += SortName_Clicked;
 
-                Label sortDate;
-                sortDate = new Label();
-                sortDate.Text = "Sort name";
-                sortDate.VerticalTextAlignment = TextAlignment.Center;
-                
-                
+                Button sortDate;
+                sortDate = new Button();
+                sortDate.HeightRequest = 30;
+                sortDate.WidthRequest = 80;
+                sortDate.Text = "Sort date";
+                sortDate.BackgroundColor = Color.White;
+                sortDate.FontSize = 8;
+                sortDate.Clicked += SortDate_Clicked;
 
+                stackLayout.Children.Add(sortName);
+                stackLayout.Children.Add(sortDate);
 
-
-
-
-
-
-
-
+                return stackLayout;
             });
 
-            popupLayout.PopupView.ShowCloseButton = false;
-            popupLayout.PopupView.HeaderTemplate = headerTemplateView;
+            popupLayout.PopupView.ContentTemplate = templateView;
 
             Main.BindingContext = this;
+            behavior.BindingContext = SfBehavior;
+
 
             IList<ToolsCustomItem> list = new List<ToolsCustomItem>();
             list.Add(new ToolsCustomItem(0, "baseline_picture_as_pdf_24_drawerMenu.xml", "My documents"));
             list.Add(new ToolsCustomItem(1, "baseline_stars_24.xml", "Rate my App"));
-            list.Add(new ToolsCustomItem(2, "baseline_visibility_24.xml", "Recent"));
+            list.Add(new ToolsCustomItem(2, "baseline_visibility_24.xml", "Favorites"));
             list.Add(new ToolsCustomItem(3, "baseline_feedback_24.xml", "Feedback"));
             list.Add(new ToolsCustomItem(4, "baseline_account_circle_24.xml", "About"));
             ToolsListView.ItemsSource = list;
@@ -91,11 +87,32 @@ namespace Pdf.Views
             sortButton.RotateTo(180);
         }
 
+        private void SortDate_Clicked(object sender, EventArgs e)
+        {
+            DocumentListView.DataSource.SortDescriptors.Clear();
+            DocumentListView.DataSource.SortDescriptors.Add(new SortDescriptor()
+            {
+                PropertyName = "CreationTime",
+                Direction = ListSortDirection.Ascending,
+            });
+            DocumentListView.RefreshView();
+        }
+
+        private void SortName_Clicked(object sender, EventArgs e)
+        {
+            DocumentListView.DataSource.SortDescriptors.Clear();
+            DocumentListView.DataSource.SortDescriptors.Add(new SortDescriptor()
+            {
+                PropertyName = "FileName",
+                Direction = ListSortDirection.Ascending,
+            });
+            DocumentListView.RefreshView();
+        }
+
         void HamburgerButton_Clicked(object sender, EventArgs e)
         {
             navigationDrawer.ToggleDrawer();
         }
-
 
         private async void DocumentListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
         {

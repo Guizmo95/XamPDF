@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Pdf.Models
 {
-    public class FileModel
+    public class FileModel: INotifyPropertyChanged
     {
         private int id;
         private string fileName;
         private DateTime creationTime;
         private long size;
         private string filePath;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public string FileName
         {
@@ -36,6 +40,7 @@ namespace Pdf.Models
             set
             {
                 creationTime = value;
+                OnPropertyChanged();
             }
         }
 
@@ -49,6 +54,7 @@ namespace Pdf.Models
             set
             {
                 size = value;
+                OnPropertyChanged();
             }
         }
 
@@ -62,6 +68,7 @@ namespace Pdf.Models
             set
             {
                 filePath = value;
+                OnPropertyChanged();
             }
         }
 
@@ -75,6 +82,7 @@ namespace Pdf.Models
             set
             {
                 id = value;
+                OnPropertyChanged();
             }
         }
 
@@ -85,6 +93,11 @@ namespace Pdf.Models
             this.CreationTime = creation;
             this.Size = size;
             this.FilePath = filePath;
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

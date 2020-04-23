@@ -20,6 +20,9 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.ContentPage Main;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Pdf.Helpers.SfBehavior behavior;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Syncfusion.SfNavigationDrawer.XForms.SfNavigationDrawer navigationDrawer;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -47,6 +50,7 @@ namespace Pdf.Views {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainPage));
             Main = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "Main");
+            behavior = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Helpers.SfBehavior>(this, "behavior");
             navigationDrawer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfNavigationDrawer.XForms.SfNavigationDrawer>(this, "navigationDrawer");
             mainContentView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "mainContentView");
             hamburgerButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "hamburgerButton");

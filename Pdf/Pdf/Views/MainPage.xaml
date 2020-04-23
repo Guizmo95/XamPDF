@@ -13,7 +13,7 @@
              x:Class="Pdf.Views.MainPage" NavigationPage.HasNavigationBar="False" x:Name="Main">
 
     <ContentPage.Behaviors >
-        <local:SfBehavior/>
+        <local:SfBehavior x:Name="behavior"/>
     </ContentPage.Behaviors>
 
     <ContentPage.Content>
@@ -27,7 +27,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <StackLayout BackgroundColor="#004B85" 
+                    <StackLayout BackgroundColor="#c62828" 
                              Orientation="Horizontal" Grid.Row="0">
                         <ImageButton x:Name="hamburgerButton" 
                             HeightRequest="25" 
@@ -63,7 +63,7 @@
                             Source="baseline_sort_24.xml"
                             Margin="0,0,13,0" BackgroundColor="Transparent" Clicked="SortButton_Clicked"/>
                     </StackLayout>
-                    <tabView:SfTabView BackgroundColor="#004B85" Grid.Row="1" VisibleHeaderCount="2" EnableSwiping="False" DisplayMode="Text" TabHeaderPosition="Bottom">
+                    <tabView:SfTabView BackgroundColor="#b71c1c" Grid.Row="1" VisibleHeaderCount="2" EnableSwiping="False" DisplayMode="Text" TabHeaderPosition="Bottom">
                         <tabView:SfTabView.SelectionIndicatorSettings>
                             <tabView:SelectionIndicatorSettings
                     Color="White" 
@@ -75,17 +75,20 @@
                                 <syncfusion:SfListView  AllowSwiping="True" x:Name="DocumentListView" ItemsSource="{Binding Documents}" BackgroundColor="White" SelectionMode="Single" SelectedItem="DocumentListView_ItemSelected" SelectionChanging="DocumentListView_SelectionChanging" ItemSize="63" HorizontalOptions="FillAndExpand">
                                     <syncfusion:SfListView.RightSwipeTemplate>
                                         <DataTemplate x:Name="RightSwipeTemplate">
-                                            <Grid BackgroundColor="#d3d3d3" HorizontalOptions="Fill" VerticalOptions="Fill">
-                                                <Grid BackgroundColor="#009EDA" HorizontalOptions="End" VerticalOptions="Fill">
+                                            <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="61"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid BackgroundColor="#009EDA" HorizontalOptions="End" VerticalOptions="Fill" Grid.Row="0" ColumnSpacing="0">
                                                     <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="60" />
+                                                        <ColumnDefinition Width="60"/>
                                                         <ColumnDefinition Width="60" />
                                                     </Grid.ColumnDefinitions>
-                                                    <Grid BackgroundColor="#009EDA" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
-                                                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
-                                                            <Image Grid.Column="0" Grid.Row="0" BackgroundColor="Transparent"
-                                   WidthRequest="35" HorizontalOptions="Center" VerticalOptions="Center"
-                                   Source="Favorites.png">
+                                                    <Grid  HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                                        <Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                                            <Image BackgroundColor="Transparent"
+                                   WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"
+                                   Source="baseline_favorite_border_24.xml" Aspect="AspectFit">
                                                                 <Image.GestureRecognizers>
                                                                     <TapGestureRecognizer Command="{Binding FavoritesImageCommand}" CommandParameter="{Binding .}"/>
                                                                 </Image.GestureRecognizers>
@@ -94,10 +97,10 @@
                                                     </Grid>
                                                     <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="1">
                                                         <Grid VerticalOptions="Center" HorizontalOptions="Center">
-                                                            <Image Grid.Column="0" Grid.Row="0"
-                                   WidthRequest="35" HorizontalOptions="Center" VerticalOptions="Center"
+                                                            <Image Grid.Column="0"
+                                   WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"
                                    BackgroundColor="Transparent"
-                                   Source="Delete.png">
+                                   Source="baseline_delete_sweep_24.xml">
                                                                 <Image.GestureRecognizers>
                                                                     <TapGestureRecognizer Command="{Binding DeleteImageCommand}" CommandParameter="{Binding .}" />
                                                                 </Image.GestureRecognizers>
@@ -128,7 +131,7 @@
                                                     </StackLayout>
                                                     <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="35" Grid.Column="2" Margin="0,0,10,0" Grid.Row="0">
                                                         <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding SfBehavior.SwipeButtonCommand, Source={x:Reference Main}}" CommandParameter="{Binding Id}"/>
+                                                            <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding Id}"/>
                                                         </Image.GestureRecognizers>
                                                     </Image>
                                                     <BoxView Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="#828282" Margin="0,2,0,0"/>
@@ -156,7 +159,7 @@
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
             <navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
-                <Grid BackgroundColor="#004B85">
+                <Grid BackgroundColor="#c62828">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
                         <RowDefinition Height="40"/>

@@ -605,12 +605,14 @@ public final class R {
      */
     public static final int backgroundStacked=0x7f03003f;
     /**
+     * Tint to apply to the background.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int backgroundTint=0x7f030040;
     /**
+     * Blending mode used to apply the background tint.
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -1228,6 +1230,7 @@ public final class R {
      */
     public static final int chipStyle=0x7f03008c;
     /**
+     * Close button icon
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -1331,12 +1334,15 @@ public final class R {
      */
     public static final int color=0x7f030099;
     /**
+     * Bright complement to the primary branding color. By default, this is the color applied
+     * to framework controls (via colorControlActivated).
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int colorAccent=0x7f03009a;
     /**
+     * Default color of background imagery for floating components, ex. dialogs, popups, and cards.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
@@ -1383,12 +1389,16 @@ public final class R {
      */
     public static final int colorError=0x7f0300a0;
     /**
+     * The primary branding color for the app. By default, this is the color applied to the
+     * action bar background.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int colorPrimary=0x7f0300a1;
     /**
+     * Dark variant of the primary branding color. By default, this is the color applied to
+     * the status bar (via statusBarColor) and navigation bar (via navigationBarColor).
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
@@ -1727,6 +1737,7 @@ public final class R {
      */
     public static final int editTextColor=0x7f0300ca;
     /**
+     * Default EditText style.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -1734,6 +1745,7 @@ public final class R {
      */
     public static final int editTextStyle=0x7f0300cb;
     /**
+     * Elevation for the action bar itself
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -2207,6 +2219,7 @@ public final class R {
      */
     public static final int hoveredFocusedTranslationZ=0x7f030102;
     /**
+     * Specifies the drawable used for the application icon.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
@@ -2258,12 +2271,14 @@ public final class R {
      */
     public static final int iconStartPadding=0x7f030108;
     /**
+     * Tint to apply to the icon.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int iconTint=0x7f030109;
     /**
+     * Blending mode used to apply the icon tint.
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -5329,114 +5344,116 @@ public final class R {
     public static final int avd_show_password=0x7f07007d;
     public static final int back=0x7f07007e;
     public static final int baseline_account_circle_24=0x7f07007f;
-    public static final int baseline_description_24=0x7f070080;
-    public static final int baseline_feedback_24=0x7f070081;
-    public static final int baseline_menu_24=0x7f070082;
-    public static final int baseline_more_horiz_24=0x7f070083;
-    public static final int baseline_picture_as_pdf_24=0x7f070084;
-    public static final int baseline_picture_as_pdf_24_drawermenu=0x7f070085;
-    public static final int baseline_sort_24=0x7f070086;
-    public static final int baseline_stars_24=0x7f070087;
-    public static final int baseline_visibility_24=0x7f070088;
-    public static final int bookmark=0x7f070089;
-    public static final int border_layout=0x7f07008a;
-    public static final int btn_checkbox=0x7f07008b;
-    public static final int btn_checkbox_checked=0x7f07008c;
-    public static final int btn_checkbox_checked_to_indeterminate_animation=0x7f07008d;
-    public static final int btn_checkbox_checked_to_unchecked_animation=0x7f07008e;
-    public static final int btn_checkbox_indeterminate=0x7f07008f;
-    public static final int btn_checkbox_indeterminate_to_checked_animation=0x7f070090;
-    public static final int btn_checkbox_indeterminate_to_unchecked_animation=0x7f070091;
-    public static final int btn_checkbox_unchecked=0x7f070092;
-    public static final int btn_checkbox_unchecked_to_checked_animation=0x7f070093;
-    public static final int btn_checkbox_unchecked_to_indeterminate_animation=0x7f070094;
-    public static final int checkablematerialcolor=0x7f070095;
-    public static final int close=0x7f070096;
-    public static final int custom_thumb=0x7f070097;
-    public static final int dashed_border=0x7f070098;
-    public static final int design_bottom_navigation_item_background=0x7f070099;
-    public static final int design_fab_background=0x7f07009a;
-    public static final int design_ic_visibility=0x7f07009b;
-    public static final int design_ic_visibility_off=0x7f07009c;
-    public static final int design_password_eye=0x7f07009d;
-    public static final int design_snackbar_background=0x7f07009e;
-    public static final int draw=0x7f07009f;
-    public static final int edittextbackground=0x7f0700a0;
-    public static final int edittextpagecount=0x7f0700a1;
-    public static final int font=0x7f0700a2;
-    public static final int formfieldcheckbox=0x7f0700a3;
-    public static final int formfieldcheckbox_checked=0x7f0700a4;
-    public static final int formfieldcheckbox_unchecked=0x7f0700a5;
-    public static final int formfieldradiobuttonstyle=0x7f0700a6;
-    public static final int formfieldtextboxcursorcolor=0x7f0700a7;
-    public static final int fountain=0x7f0700a8;
-    public static final int framerendervalue=0x7f0700a9;
-    public static final int ic_errorstatus=0x7f0700aa;
-    public static final int ic_mtrl_chip_checked_black=0x7f0700ab;
-    public static final int ic_mtrl_chip_checked_circle=0x7f0700ac;
-    public static final int ic_mtrl_chip_close_circle=0x7f0700ad;
-    public static final int ic_successstatus=0x7f0700ae;
-    public static final int input_layout_drop_down_icon=0x7f0700af;
-    public static final int inputlayout_togglecollapseicon=0x7f0700b0;
-    public static final int inputlayout_togglevisibleicon=0x7f0700b1;
-    public static final int layoutborder=0x7f0700b2;
-    public static final int licensing=0x7f0700b3;
-    public static final int linesize=0x7f0700b4;
-    public static final int marker=0x7f0700b5;
-    public static final int minus=0x7f0700b6;
-    public static final int more=0x7f0700b7;
-    public static final int mtrl_snackbar_background=0x7f0700b8;
-    public static final int mtrl_tabs_default_indicator=0x7f0700b9;
-    public static final int navigation_empty_icon=0x7f0700ba;
-    public static final int next=0x7f0700bb;
-    public static final int notification_action_background=0x7f0700bc;
-    public static final int notification_bg=0x7f0700bd;
-    public static final int notification_bg_low=0x7f0700be;
-    public static final int notification_bg_low_normal=0x7f0700bf;
-    public static final int notification_bg_low_pressed=0x7f0700c0;
-    public static final int notification_bg_normal=0x7f0700c1;
-    public static final int notification_bg_normal_pressed=0x7f0700c2;
-    public static final int notification_icon_background=0x7f0700c3;
-    public static final int notification_template_icon_bg=0x7f0700c4;
-    public static final int notification_template_icon_low_bg=0x7f0700c5;
-    public static final int notification_tile_bg=0x7f0700c6;
-    public static final int notify_panel_notification_icon_bg=0x7f0700c7;
-    public static final int oval=0x7f0700c8;
-    public static final int pencil=0x7f0700c9;
-    public static final int popup_forms_android_close_icon=0x7f0700ca;
-    public static final int popup_forms_android_shadow=0x7f0700cb;
-    public static final int popup_forms_dark_theme_close_icon=0x7f0700cc;
-    public static final int popup_forms_light_theme_close_icon=0x7f0700cd;
-    public static final int rectangle=0x7f0700ce;
-    public static final int rectangleshape=0x7f0700cf;
-    public static final int report=0x7f0700d0;
-    public static final int roundcornerbutton=0x7f0700d1;
-    public static final int roundedbg=0x7f0700d2;
-    public static final int roundedbgdark=0x7f0700d3;
-    public static final int savebutton=0x7f0700d4;
-    public static final int search=0x7f0700d5;
-    public static final int separator=0x7f0700d6;
-    public static final int sfprogressbar_determinate_linear=0x7f0700d7;
-    public static final int sfprogressbar_indeterminate_circular=0x7f0700d8;
-    public static final int sfprogressbar_indeterminate_linear=0x7f0700d9;
-    public static final int signaturepadbottomcorner=0x7f0700da;
-    public static final int signaturepadroundedcorners=0x7f0700db;
-    public static final int signaturepadtopcorner=0x7f0700dc;
-    public static final int sketchbook=0x7f0700dd;
-    public static final int strikethrough=0x7f0700de;
-    public static final int text=0x7f0700df;
-    public static final int text_color_button=0x7f0700e0;
-    public static final int textfree=0x7f0700e1;
-    public static final int tick=0x7f0700e2;
-    public static final int toolbaritem_background=0x7f0700e3;
-    public static final int toolbaritem_pressed=0x7f0700e4;
-    public static final int tooltip_frame_dark=0x7f0700e5;
-    public static final int tooltip_frame_light=0x7f0700e6;
-    public static final int trash=0x7f0700e7;
-    public static final int underline=0x7f0700e8;
-    public static final int undo_redo_background=0x7f0700e9;
-    public static final int undobutton=0x7f0700ea;
-    public static final int viewmode=0x7f0700eb;
+    public static final int baseline_delete_sweep_24=0x7f070080;
+    public static final int baseline_description_24=0x7f070081;
+    public static final int baseline_favorite_border_24=0x7f070082;
+    public static final int baseline_feedback_24=0x7f070083;
+    public static final int baseline_menu_24=0x7f070084;
+    public static final int baseline_more_horiz_24=0x7f070085;
+    public static final int baseline_picture_as_pdf_24=0x7f070086;
+    public static final int baseline_picture_as_pdf_24_drawermenu=0x7f070087;
+    public static final int baseline_sort_24=0x7f070088;
+    public static final int baseline_stars_24=0x7f070089;
+    public static final int baseline_visibility_24=0x7f07008a;
+    public static final int bookmark=0x7f07008b;
+    public static final int border_layout=0x7f07008c;
+    public static final int btn_checkbox=0x7f07008d;
+    public static final int btn_checkbox_checked=0x7f07008e;
+    public static final int btn_checkbox_checked_to_indeterminate_animation=0x7f07008f;
+    public static final int btn_checkbox_checked_to_unchecked_animation=0x7f070090;
+    public static final int btn_checkbox_indeterminate=0x7f070091;
+    public static final int btn_checkbox_indeterminate_to_checked_animation=0x7f070092;
+    public static final int btn_checkbox_indeterminate_to_unchecked_animation=0x7f070093;
+    public static final int btn_checkbox_unchecked=0x7f070094;
+    public static final int btn_checkbox_unchecked_to_checked_animation=0x7f070095;
+    public static final int btn_checkbox_unchecked_to_indeterminate_animation=0x7f070096;
+    public static final int checkablematerialcolor=0x7f070097;
+    public static final int close=0x7f070098;
+    public static final int custom_thumb=0x7f070099;
+    public static final int dashed_border=0x7f07009a;
+    public static final int design_bottom_navigation_item_background=0x7f07009b;
+    public static final int design_fab_background=0x7f07009c;
+    public static final int design_ic_visibility=0x7f07009d;
+    public static final int design_ic_visibility_off=0x7f07009e;
+    public static final int design_password_eye=0x7f07009f;
+    public static final int design_snackbar_background=0x7f0700a0;
+    public static final int draw=0x7f0700a1;
+    public static final int edittextbackground=0x7f0700a2;
+    public static final int edittextpagecount=0x7f0700a3;
+    public static final int font=0x7f0700a4;
+    public static final int formfieldcheckbox=0x7f0700a5;
+    public static final int formfieldcheckbox_checked=0x7f0700a6;
+    public static final int formfieldcheckbox_unchecked=0x7f0700a7;
+    public static final int formfieldradiobuttonstyle=0x7f0700a8;
+    public static final int formfieldtextboxcursorcolor=0x7f0700a9;
+    public static final int fountain=0x7f0700aa;
+    public static final int framerendervalue=0x7f0700ab;
+    public static final int ic_errorstatus=0x7f0700ac;
+    public static final int ic_mtrl_chip_checked_black=0x7f0700ad;
+    public static final int ic_mtrl_chip_checked_circle=0x7f0700ae;
+    public static final int ic_mtrl_chip_close_circle=0x7f0700af;
+    public static final int ic_successstatus=0x7f0700b0;
+    public static final int input_layout_drop_down_icon=0x7f0700b1;
+    public static final int inputlayout_togglecollapseicon=0x7f0700b2;
+    public static final int inputlayout_togglevisibleicon=0x7f0700b3;
+    public static final int layoutborder=0x7f0700b4;
+    public static final int licensing=0x7f0700b5;
+    public static final int linesize=0x7f0700b6;
+    public static final int marker=0x7f0700b7;
+    public static final int minus=0x7f0700b8;
+    public static final int more=0x7f0700b9;
+    public static final int mtrl_snackbar_background=0x7f0700ba;
+    public static final int mtrl_tabs_default_indicator=0x7f0700bb;
+    public static final int navigation_empty_icon=0x7f0700bc;
+    public static final int next=0x7f0700bd;
+    public static final int notification_action_background=0x7f0700be;
+    public static final int notification_bg=0x7f0700bf;
+    public static final int notification_bg_low=0x7f0700c0;
+    public static final int notification_bg_low_normal=0x7f0700c1;
+    public static final int notification_bg_low_pressed=0x7f0700c2;
+    public static final int notification_bg_normal=0x7f0700c3;
+    public static final int notification_bg_normal_pressed=0x7f0700c4;
+    public static final int notification_icon_background=0x7f0700c5;
+    public static final int notification_template_icon_bg=0x7f0700c6;
+    public static final int notification_template_icon_low_bg=0x7f0700c7;
+    public static final int notification_tile_bg=0x7f0700c8;
+    public static final int notify_panel_notification_icon_bg=0x7f0700c9;
+    public static final int oval=0x7f0700ca;
+    public static final int pencil=0x7f0700cb;
+    public static final int popup_forms_android_close_icon=0x7f0700cc;
+    public static final int popup_forms_android_shadow=0x7f0700cd;
+    public static final int popup_forms_dark_theme_close_icon=0x7f0700ce;
+    public static final int popup_forms_light_theme_close_icon=0x7f0700cf;
+    public static final int rectangle=0x7f0700d0;
+    public static final int rectangleshape=0x7f0700d1;
+    public static final int report=0x7f0700d2;
+    public static final int roundcornerbutton=0x7f0700d3;
+    public static final int roundedbg=0x7f0700d4;
+    public static final int roundedbgdark=0x7f0700d5;
+    public static final int savebutton=0x7f0700d6;
+    public static final int search=0x7f0700d7;
+    public static final int separator=0x7f0700d8;
+    public static final int sfprogressbar_determinate_linear=0x7f0700d9;
+    public static final int sfprogressbar_indeterminate_circular=0x7f0700da;
+    public static final int sfprogressbar_indeterminate_linear=0x7f0700db;
+    public static final int signaturepadbottomcorner=0x7f0700dc;
+    public static final int signaturepadroundedcorners=0x7f0700dd;
+    public static final int signaturepadtopcorner=0x7f0700de;
+    public static final int sketchbook=0x7f0700df;
+    public static final int strikethrough=0x7f0700e0;
+    public static final int text=0x7f0700e1;
+    public static final int text_color_button=0x7f0700e2;
+    public static final int textfree=0x7f0700e3;
+    public static final int tick=0x7f0700e4;
+    public static final int toolbaritem_background=0x7f0700e5;
+    public static final int toolbaritem_pressed=0x7f0700e6;
+    public static final int tooltip_frame_dark=0x7f0700e7;
+    public static final int tooltip_frame_light=0x7f0700e8;
+    public static final int trash=0x7f0700e9;
+    public static final int underline=0x7f0700ea;
+    public static final int undo_redo_background=0x7f0700eb;
+    public static final int undobutton=0x7f0700ec;
+    public static final int viewmode=0x7f0700ed;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
@@ -5892,41 +5909,49 @@ public final class R {
     public static final int baseline_account_circle_black_24=0x7f0c0001;
     public static final int baseline_account_circle_black_36=0x7f0c0002;
     public static final int baseline_account_circle_black_48=0x7f0c0003;
-    public static final int baseline_description_black_18=0x7f0c0004;
-    public static final int baseline_description_black_24=0x7f0c0005;
-    public static final int baseline_description_black_36=0x7f0c0006;
-    public static final int baseline_description_black_48=0x7f0c0007;
-    public static final int baseline_feedback_black_18=0x7f0c0008;
-    public static final int baseline_feedback_black_24=0x7f0c0009;
-    public static final int baseline_feedback_black_36=0x7f0c000a;
-    public static final int baseline_feedback_black_48=0x7f0c000b;
-    public static final int baseline_menu_black_18=0x7f0c000c;
-    public static final int baseline_menu_black_24=0x7f0c000d;
-    public static final int baseline_menu_black_36=0x7f0c000e;
-    public static final int baseline_menu_black_48=0x7f0c000f;
-    public static final int baseline_more_horiz_black_18=0x7f0c0010;
-    public static final int baseline_more_horiz_black_24=0x7f0c0011;
-    public static final int baseline_more_horiz_black_36=0x7f0c0012;
-    public static final int baseline_more_horiz_black_48=0x7f0c0013;
-    public static final int baseline_picture_as_pdf_black_18=0x7f0c0014;
-    public static final int baseline_picture_as_pdf_black_24=0x7f0c0015;
-    public static final int baseline_picture_as_pdf_black_36=0x7f0c0016;
-    public static final int baseline_picture_as_pdf_black_48=0x7f0c0017;
-    public static final int baseline_sort_black_18=0x7f0c0018;
-    public static final int baseline_sort_black_24=0x7f0c0019;
-    public static final int baseline_sort_black_36=0x7f0c001a;
-    public static final int baseline_sort_black_48=0x7f0c001b;
-    public static final int baseline_stars_black_18=0x7f0c001c;
-    public static final int baseline_stars_black_24=0x7f0c001d;
-    public static final int baseline_stars_black_36=0x7f0c001e;
-    public static final int baseline_stars_black_48=0x7f0c001f;
-    public static final int baseline_visibility_black_18=0x7f0c0020;
-    public static final int baseline_visibility_black_24=0x7f0c0021;
-    public static final int baseline_visibility_black_36=0x7f0c0022;
-    public static final int baseline_visibility_black_48=0x7f0c0023;
-    public static final int icon=0x7f0c0024;
-    public static final int icon_round=0x7f0c0025;
-    public static final int launcher_foreground=0x7f0c0026;
+    public static final int baseline_delete_sweep_black_18=0x7f0c0004;
+    public static final int baseline_delete_sweep_black_24=0x7f0c0005;
+    public static final int baseline_delete_sweep_black_36=0x7f0c0006;
+    public static final int baseline_delete_sweep_black_48=0x7f0c0007;
+    public static final int baseline_description_black_18=0x7f0c0008;
+    public static final int baseline_description_black_24=0x7f0c0009;
+    public static final int baseline_description_black_36=0x7f0c000a;
+    public static final int baseline_description_black_48=0x7f0c000b;
+    public static final int baseline_favorite_border_black_18=0x7f0c000c;
+    public static final int baseline_favorite_border_black_24=0x7f0c000d;
+    public static final int baseline_favorite_border_black_36=0x7f0c000e;
+    public static final int baseline_favorite_border_black_48=0x7f0c000f;
+    public static final int baseline_feedback_black_18=0x7f0c0010;
+    public static final int baseline_feedback_black_24=0x7f0c0011;
+    public static final int baseline_feedback_black_36=0x7f0c0012;
+    public static final int baseline_feedback_black_48=0x7f0c0013;
+    public static final int baseline_menu_black_18=0x7f0c0014;
+    public static final int baseline_menu_black_24=0x7f0c0015;
+    public static final int baseline_menu_black_36=0x7f0c0016;
+    public static final int baseline_menu_black_48=0x7f0c0017;
+    public static final int baseline_more_horiz_black_18=0x7f0c0018;
+    public static final int baseline_more_horiz_black_24=0x7f0c0019;
+    public static final int baseline_more_horiz_black_36=0x7f0c001a;
+    public static final int baseline_more_horiz_black_48=0x7f0c001b;
+    public static final int baseline_picture_as_pdf_black_18=0x7f0c001c;
+    public static final int baseline_picture_as_pdf_black_24=0x7f0c001d;
+    public static final int baseline_picture_as_pdf_black_36=0x7f0c001e;
+    public static final int baseline_picture_as_pdf_black_48=0x7f0c001f;
+    public static final int baseline_sort_black_18=0x7f0c0020;
+    public static final int baseline_sort_black_24=0x7f0c0021;
+    public static final int baseline_sort_black_36=0x7f0c0022;
+    public static final int baseline_sort_black_48=0x7f0c0023;
+    public static final int baseline_stars_black_18=0x7f0c0024;
+    public static final int baseline_stars_black_24=0x7f0c0025;
+    public static final int baseline_stars_black_36=0x7f0c0026;
+    public static final int baseline_stars_black_48=0x7f0c0027;
+    public static final int baseline_visibility_black_18=0x7f0c0028;
+    public static final int baseline_visibility_black_24=0x7f0c0029;
+    public static final int baseline_visibility_black_36=0x7f0c002a;
+    public static final int baseline_visibility_black_48=0x7f0c002b;
+    public static final int icon=0x7f0c002c;
+    public static final int icon_round=0x7f0c002d;
+    public static final int launcher_foreground=0x7f0c002e;
   }
   public static final class string {
     public static final int ApplicationName=0x7f0d0000;
@@ -6628,12 +6653,12 @@ public final class R {
      * <tr><td><code>{@link #ActionBar_customNavigationLayout com.companyname.pdf:customNavigationLayout}</code></td><td>Specifies a layout for custom navigation.</td></tr>
      * <tr><td><code>{@link #ActionBar_displayOptions com.companyname.pdf:displayOptions}</code></td><td>Options affecting how the action bar is displayed.</td></tr>
      * <tr><td><code>{@link #ActionBar_divider com.companyname.pdf:divider}</code></td><td>Specifies the drawable used for item dividers.</td></tr>
-     * <tr><td><code>{@link #ActionBar_elevation com.companyname.pdf:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_elevation com.companyname.pdf:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #ActionBar_height com.companyname.pdf:height}</code></td><td></td></tr>
      * <tr><td><code>{@link #ActionBar_hideOnContentScroll com.companyname.pdf:hideOnContentScroll}</code></td><td>Set true to hide the action bar on a vertical nested scroll of content.</td></tr>
      * <tr><td><code>{@link #ActionBar_homeAsUpIndicator com.companyname.pdf:homeAsUpIndicator}</code></td><td>Specifies a drawable to use for the 'home as up' indicator.</td></tr>
      * <tr><td><code>{@link #ActionBar_homeLayout com.companyname.pdf:homeLayout}</code></td><td>Specifies a layout to use for the "home" section of the action bar.</td></tr>
-     * <tr><td><code>{@link #ActionBar_icon com.companyname.pdf:icon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_icon com.companyname.pdf:icon}</code></td><td>Specifies the drawable used for the application icon.</td></tr>
      * <tr><td><code>{@link #ActionBar_indeterminateProgressStyle com.companyname.pdf:indeterminateProgressStyle}</code></td><td>Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
      * <tr><td><code>{@link #ActionBar_itemPadding com.companyname.pdf:itemPadding}</code></td><td>Specifies padding that should be applied to the left and right sides of
      * system-provided items in the bar.</td></tr>
@@ -7669,7 +7694,7 @@ public final class R {
      * <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_touchscreenBlocksFocus android:touchscreenBlocksFocus}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_keyboardNavigationCluster android:keyboardNavigationCluster}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_elevation com.companyname.pdf:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_elevation com.companyname.pdf:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #AppBarLayout_expanded com.companyname.pdf:expanded}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_liftOnScroll com.companyname.pdf:liftOnScroll}</code></td><td></td></tr>
      * </table>
@@ -7720,8 +7745,9 @@ public final class R {
      */
     public static final int AppBarLayout_android_keyboardNavigationCluster=2;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#elevation}
-     * attribute's value can be found in the {@link #AppBarLayout} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8422,16 +8448,16 @@ public final class R {
      * <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall com.companyname.pdf:buttonStyleSmall}</code></td><td>Small Button style.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_checkboxStyle com.companyname.pdf:checkboxStyle}</code></td><td>Default Checkbox style.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle com.companyname.pdf:checkedTextViewStyle}</code></td><td>Default CheckedTextView style.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorAccent com.companyname.pdf:colorAccent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating com.companyname.pdf:colorBackgroundFloating}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorAccent com.companyname.pdf:colorAccent}</code></td><td>Bright complement to the primary branding color.</td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating com.companyname.pdf:colorBackgroundFloating}</code></td><td>Default color of background imagery for floating components, ex.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorButtonNormal com.companyname.pdf:colorButtonNormal}</code></td><td>The color applied to framework buttons in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlActivated com.companyname.pdf:colorControlActivated}</code></td><td>The color applied to framework controls in their activated (ex.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlHighlight com.companyname.pdf:colorControlHighlight}</code></td><td>The color applied to framework control highlights (ex.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorControlNormal com.companyname.pdf:colorControlNormal}</code></td><td>The color applied to framework controls in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorError com.companyname.pdf:colorError}</code></td><td>Color used for error states and things that need to be drawn to
      * the user's attention.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimary com.companyname.pdf:colorPrimary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark com.companyname.pdf:colorPrimaryDark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimary com.companyname.pdf:colorPrimary}</code></td><td>The primary branding color for the app.</td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark com.companyname.pdf:colorPrimaryDark}</code></td><td>Dark variant of the primary branding color.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal com.companyname.pdf:colorSwitchThumbNormal}</code></td><td>The color applied to framework switch thumbs in their normal state.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_controlBackground com.companyname.pdf:controlBackground}</code></td><td>The background used by framework controls.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_dialogCornerRadius com.companyname.pdf:dialogCornerRadius}</code></td><td>Preferred corner radius of dialogs.</td></tr>
@@ -8443,7 +8469,7 @@ public final class R {
      * <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight com.companyname.pdf:dropdownListPreferredItemHeight}</code></td><td>The preferred item height for dropdown lists.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_editTextBackground com.companyname.pdf:editTextBackground}</code></td><td>EditText background drawable.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_editTextColor com.companyname.pdf:editTextColor}</code></td><td>EditText text foreground color.</td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextStyle com.companyname.pdf:editTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextStyle com.companyname.pdf:editTextStyle}</code></td><td>Default EditText style.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator com.companyname.pdf:homeAsUpIndicator}</code></td><td>Specifies a drawable to use for the 'home as up' indicator.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_imageButtonStyle com.companyname.pdf:imageButtonStyle}</code></td><td>ImageButton background drawable.</td></tr>
      * <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator com.companyname.pdf:listChoiceBackgroundIndicator}</code></td><td>Drawable used as a background for selected list items.</td></tr>
@@ -10311,7 +10337,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomAppBar_backgroundTint com.companyname.pdf:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomAppBar_backgroundTint com.companyname.pdf:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabAlignmentMode com.companyname.pdf:fabAlignmentMode}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabCradleMargin com.companyname.pdf:fabCradleMargin}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomAppBar_fabCradleRoundedCornerRadius com.companyname.pdf:fabCradleRoundedCornerRadius}</code></td><td></td></tr>
@@ -10330,8 +10356,9 @@ public final class R {
       0x7f0300dd, 0x7f0300fc
     };
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#backgroundTint}
-     * attribute's value can be found in the {@link #BottomAppBar} array.
+     * <p>
+     * @attr description
+     * Tint to apply to the background.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -10413,7 +10440,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomNavigationView_elevation com.companyname.pdf:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_elevation com.companyname.pdf:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemBackground com.companyname.pdf:itemBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemHorizontalTranslationEnabled com.companyname.pdf:itemHorizontalTranslationEnabled}</code></td><td></td></tr>
      * <tr><td><code>{@link #BottomNavigationView_itemIconSize com.companyname.pdf:itemIconSize}</code></td><td></td></tr>
@@ -10441,8 +10468,9 @@ public final class R {
       0x7f03011f, 0x7f030143
     };
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#elevation}
-     * attribute's value can be found in the {@link #BottomNavigationView} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -10905,7 +10933,7 @@ public final class R {
      * <tr><td><code>{@link #Chip_chipStartPadding com.companyname.pdf:chipStartPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_chipStrokeColor com.companyname.pdf:chipStrokeColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_chipStrokeWidth com.companyname.pdf:chipStrokeWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIcon com.companyname.pdf:closeIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIcon com.companyname.pdf:closeIcon}</code></td><td>Close button icon</td></tr>
      * <tr><td><code>{@link #Chip_closeIconEnabled com.companyname.pdf:closeIconEnabled}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_closeIconEndPadding com.companyname.pdf:closeIconEndPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_closeIconSize com.companyname.pdf:closeIconSize}</code></td><td></td></tr>
@@ -11207,8 +11235,9 @@ public final class R {
      */
     public static final int Chip_chipStrokeWidth=19;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#closeIcon}
-     * attribute's value can be found in the {@link #Chip} array.
+     * <p>
+     * @attr description
+     * Close button icon
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -12332,10 +12361,10 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTint com.companyname.pdf:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.companyname.pdf:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTint com.companyname.pdf:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.companyname.pdf:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
      * <tr><td><code>{@link #FloatingActionButton_borderWidth com.companyname.pdf:borderWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_elevation com.companyname.pdf:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_elevation com.companyname.pdf:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #FloatingActionButton_fabCustomSize com.companyname.pdf:fabCustomSize}</code></td><td></td></tr>
      * <tr><td><code>{@link #FloatingActionButton_fabSize com.companyname.pdf:fabSize}</code></td><td></td></tr>
      * <tr><td><code>{@link #FloatingActionButton_hideMotionSpec com.companyname.pdf:hideMotionSpec}</code></td><td></td></tr>
@@ -12367,8 +12396,9 @@ public final class R {
       0x7f030234
     };
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#backgroundTint}
-     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     * <p>
+     * @attr description
+     * Tint to apply to the background.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -12378,8 +12408,9 @@ public final class R {
      */
     public static final int FloatingActionButton_backgroundTint=0;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#backgroundTintMode}
-     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     * <p>
+     * @attr description
+     * Blending mode used to apply the background tint.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -12417,8 +12448,9 @@ public final class R {
      */
     public static final int FloatingActionButton_borderWidth=2;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#elevation}
-     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -13556,15 +13588,15 @@ public final class R {
      * <tr><td><code>{@link #MaterialButton_android_insetRight android:insetRight}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_android_insetTop android:insetTop}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_android_insetBottom android:insetBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_backgroundTint com.companyname.pdf:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_backgroundTintMode com.companyname.pdf:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_backgroundTint com.companyname.pdf:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
+     * <tr><td><code>{@link #MaterialButton_backgroundTintMode com.companyname.pdf:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
      * <tr><td><code>{@link #MaterialButton_cornerRadius com.companyname.pdf:cornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_icon com.companyname.pdf:icon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_icon com.companyname.pdf:icon}</code></td><td>Specifies the drawable used for the application icon.</td></tr>
      * <tr><td><code>{@link #MaterialButton_iconGravity com.companyname.pdf:iconGravity}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_iconPadding com.companyname.pdf:iconPadding}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_iconSize com.companyname.pdf:iconSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconTint com.companyname.pdf:iconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconTintMode com.companyname.pdf:iconTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconTint com.companyname.pdf:iconTint}</code></td><td>Tint to apply to the icon.</td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconTintMode com.companyname.pdf:iconTintMode}</code></td><td>Blending mode used to apply the icon tint.</td></tr>
      * <tr><td><code>{@link #MaterialButton_rippleColor com.companyname.pdf:rippleColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_strokeColor com.companyname.pdf:strokeColor}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_strokeWidth com.companyname.pdf:strokeWidth}</code></td><td></td></tr>
@@ -13661,8 +13693,9 @@ public final class R {
      */
     public static final int MaterialButton_android_insetBottom=3;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#backgroundTint}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Tint to apply to the background.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -13672,8 +13705,9 @@ public final class R {
      */
     public static final int MaterialButton_backgroundTint=4;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#backgroundTintMode}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Blending mode used to apply the background tint.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -13711,8 +13745,9 @@ public final class R {
      */
     public static final int MaterialButton_cornerRadius=6;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#icon}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Specifies the drawable used for the application icon.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -13766,8 +13801,9 @@ public final class R {
      */
     public static final int MaterialButton_iconSize=10;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#iconTint}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Tint to apply to the icon.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -13777,8 +13813,9 @@ public final class R {
      */
     public static final int MaterialButton_iconTint=11;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#iconTintMode}
-     * attribute's value can be found in the {@link #MaterialButton} array.
+     * <p>
+     * @attr description
+     * Blending mode used to apply the icon tint.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -13889,12 +13926,12 @@ public final class R {
      * <tr><td><code>{@link #MaterialComponentsTheme_chipGroupStyle com.companyname.pdf:chipGroupStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_chipStandaloneStyle com.companyname.pdf:chipStandaloneStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_chipStyle com.companyname.pdf:chipStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorAccent com.companyname.pdf:colorAccent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorBackgroundFloating com.companyname.pdf:colorBackgroundFloating}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimary com.companyname.pdf:colorPrimary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimaryDark com.companyname.pdf:colorPrimaryDark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorAccent com.companyname.pdf:colorAccent}</code></td><td>Bright complement to the primary branding color.</td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorBackgroundFloating com.companyname.pdf:colorBackgroundFloating}</code></td><td>Default color of background imagery for floating components, ex.</td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimary com.companyname.pdf:colorPrimary}</code></td><td>The primary branding color for the app.</td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimaryDark com.companyname.pdf:colorPrimaryDark}</code></td><td>Dark variant of the primary branding color.</td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_colorSecondary com.companyname.pdf:colorSecondary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_editTextStyle com.companyname.pdf:editTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_editTextStyle com.companyname.pdf:editTextStyle}</code></td><td>Default EditText style.</td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_floatingActionButtonStyle com.companyname.pdf:floatingActionButtonStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_materialButtonStyle com.companyname.pdf:materialButtonStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialComponentsTheme_materialCardViewStyle com.companyname.pdf:materialCardViewStyle}</code></td><td></td></tr>
@@ -14021,8 +14058,10 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_chipStyle=4;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#colorAccent}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * Bright complement to the primary branding color. By default, this is the color applied
+     * to framework controls (via colorControlActivated).
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -14032,8 +14071,9 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorAccent=5;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#colorBackgroundFloating}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * Default color of background imagery for floating components, ex. dialogs, popups, and cards.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -14043,8 +14083,10 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorBackgroundFloating=6;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#colorPrimary}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * The primary branding color for the app. By default, this is the color applied to the
+     * action bar background.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -14054,8 +14096,10 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorPrimary=7;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#colorPrimaryDark}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * Dark variant of the primary branding color. By default, this is the color applied to
+     * the status bar (via statusBarColor) and navigation bar (via navigationBarColor).
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -14076,8 +14120,9 @@ public final class R {
      */
     public static final int MaterialComponentsTheme_colorSecondary=9;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#editTextStyle}
-     * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
+     * <p>
+     * @attr description
+     * Default EditText style.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -14498,8 +14543,8 @@ public final class R {
      * action view.</td></tr>
      * <tr><td><code>{@link #MenuItem_alphabeticModifiers com.companyname.pdf:alphabeticModifiers}</code></td><td>The alphabetic modifier key.</td></tr>
      * <tr><td><code>{@link #MenuItem_contentDescription com.companyname.pdf:contentDescription}</code></td><td>The content description associated with the item.</td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTint com.companyname.pdf:iconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTintMode com.companyname.pdf:iconTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTint com.companyname.pdf:iconTint}</code></td><td>Tint to apply to the icon.</td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTintMode com.companyname.pdf:iconTintMode}</code></td><td>Blending mode used to apply the icon tint.</td></tr>
      * <tr><td><code>{@link #MenuItem_numericModifiers com.companyname.pdf:numericModifiers}</code></td><td>The numeric modifier key.</td></tr>
      * <tr><td><code>{@link #MenuItem_showAsAction com.companyname.pdf:showAsAction}</code></td><td>How this item should display in the Action Bar, if present.</td></tr>
      * <tr><td><code>{@link #MenuItem_tooltipText com.companyname.pdf:tooltipText}</code></td><td>The tooltip text associated with the item.</td></tr>
@@ -15038,7 +15083,7 @@ public final class R {
      * <tr><td><code>{@link #NavigationView_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_fitsSystemWindows android:fitsSystemWindows}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_elevation com.companyname.pdf:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_elevation com.companyname.pdf:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #NavigationView_headerLayout com.companyname.pdf:headerLayout}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_itemBackground com.companyname.pdf:itemBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_itemHorizontalPadding com.companyname.pdf:itemHorizontalPadding}</code></td><td></td></tr>
@@ -15105,8 +15150,9 @@ public final class R {
      */
     public static final int NavigationView_android_maxWidth=2;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#elevation}
-     * attribute's value can be found in the {@link #NavigationView} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -15761,7 +15807,7 @@ public final class R {
      * <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_closeIcon com.companyname.pdf:closeIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_closeIcon com.companyname.pdf:closeIcon}</code></td><td>Close button icon</td></tr>
      * <tr><td><code>{@link #SearchView_commitIcon com.companyname.pdf:commitIcon}</code></td><td>Commit icon shown in the query suggestion row</td></tr>
      * <tr><td><code>{@link #SearchView_defaultQueryHint com.companyname.pdf:defaultQueryHint}</code></td><td>Default query hint used when {@code queryHint} is undefined and
      * the search view's {@code SearchableInfo} does not provide a hint.</td></tr>
@@ -17473,7 +17519,7 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #SnackbarLayout_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SnackbarLayout_elevation com.companyname.pdf:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SnackbarLayout_elevation com.companyname.pdf:elevation}</code></td><td>Elevation for the action bar itself</td></tr>
      * <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth com.companyname.pdf:maxActionInlineWidth}</code></td><td></td></tr>
      * </table>
      * @see #SnackbarLayout_android_maxWidth
@@ -17497,8 +17543,9 @@ public final class R {
      */
     public static final int SnackbarLayout_android_maxWidth=0;
     /**
-     * <p>This symbol is the offset where the {@link com.companyname.pdf.R.attr#elevation}
-     * attribute's value can be found in the {@link #SnackbarLayout} array.
+     * <p>
+     * @attr description
+     * Elevation for the action bar itself
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -19719,8 +19766,8 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ViewBackgroundHelper_android_background android:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint com.companyname.pdf:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode com.companyname.pdf:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint com.companyname.pdf:backgroundTint}</code></td><td>Tint to apply to the background.</td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode com.companyname.pdf:backgroundTintMode}</code></td><td>Blending mode used to apply the background tint.</td></tr>
      * </table>
      * @see #ViewBackgroundHelper_android_background
      * @see #ViewBackgroundHelper_backgroundTint
