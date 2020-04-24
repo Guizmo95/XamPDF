@@ -5344,7 +5344,7 @@ public final class R {
     public static final int avd_show_password=0x7f07007d;
     public static final int back=0x7f07007e;
     public static final int baseline_account_circle_24=0x7f07007f;
-    public static final int baseline_delete_sweep_24=0x7f070080;
+    public static final int baseline_delete_24=0x7f070080;
     public static final int baseline_description_24=0x7f070081;
     public static final int baseline_favorite_border_24=0x7f070082;
     public static final int baseline_feedback_24=0x7f070083;
@@ -5909,10 +5909,10 @@ public final class R {
     public static final int baseline_account_circle_black_24=0x7f0c0001;
     public static final int baseline_account_circle_black_36=0x7f0c0002;
     public static final int baseline_account_circle_black_48=0x7f0c0003;
-    public static final int baseline_delete_sweep_black_18=0x7f0c0004;
-    public static final int baseline_delete_sweep_black_24=0x7f0c0005;
-    public static final int baseline_delete_sweep_black_36=0x7f0c0006;
-    public static final int baseline_delete_sweep_black_48=0x7f0c0007;
+    public static final int baseline_delete_black_18=0x7f0c0004;
+    public static final int baseline_delete_black_24=0x7f0c0005;
+    public static final int baseline_delete_black_36=0x7f0c0006;
+    public static final int baseline_delete_black_48=0x7f0c0007;
     public static final int baseline_description_black_18=0x7f0c0008;
     public static final int baseline_description_black_24=0x7f0c0009;
     public static final int baseline_description_black_36=0x7f0c000a;

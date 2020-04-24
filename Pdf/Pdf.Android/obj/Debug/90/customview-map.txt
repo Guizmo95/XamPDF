@@ -164,6 +164,7 @@ path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_indeterminate.xml
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_unchecked.xml
 path;obj\Debug\90\res\drawable\baseline_account_circle_24.xml
+path;obj\Debug\90\res\drawable\baseline_delete_24.xml
 path;obj\Debug\90\res\drawable\baseline_delete_sweep_24.xml
 path;obj\Debug\90\res\drawable\baseline_description_24.xml
 path;obj\Debug\90\res\drawable\baseline_favorite_border_24.xml
@@ -339,6 +340,7 @@ vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\o
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_indeterminate.xml
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\4\jl\res\drawable\btn_checkbox_unchecked.xml
 vector;obj\Debug\90\res\drawable\baseline_account_circle_24.xml
+vector;obj\Debug\90\res\drawable\baseline_delete_24.xml
 vector;obj\Debug\90\res\drawable\baseline_delete_sweep_24.xml
 vector;obj\Debug\90\res\drawable\baseline_description_24.xml
 vector;obj\Debug\90\res\drawable\baseline_favorite_border_24.xml

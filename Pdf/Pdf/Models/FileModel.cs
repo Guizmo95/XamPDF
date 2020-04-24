@@ -12,8 +12,9 @@ namespace Pdf.Models
         private int id;
         private string fileName;
         private DateTime creationTime;
-        private long size;
+        private string size;
         private string filePath;
+        private long fileLenght;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -44,7 +45,7 @@ namespace Pdf.Models
             }
         }
 
-        public long Size
+        public string Size
         {
             get
             {
@@ -86,13 +87,48 @@ namespace Pdf.Models
             }
         }
 
-        public FileModel(int id, string fileName, DateTime creation, long size, string filePath)
+        public long FileLenght
+        {
+            get
+            {
+                return fileLenght;
+            }
+
+            set
+            {
+                fileLenght = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public FileModel(int id, string fileName, DateTime creation, long fileLenght, string filePath)
         {
             this.Id = id;
             this.FileName = fileName;
             this.CreationTime = creation;
-            this.Size = size;
+            this.FileLenght = fileLenght;
             this.FilePath = filePath;
+
+            GetHumanReadableFileSize();
+        }
+
+        public void GetHumanReadableFileSize()
+        {
+            if(FileLenght != 0)
+            {
+                string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+                double len = FileLenght;
+                int order = 0;
+                while (len >= 1024 && order < sizes.Length - 1)
+                {
+                    order++;
+                    len = len / 1024;
+                }
+
+                // Adjust the format string to your preferences. For example "{0:0.#}{1}" would
+                // show a single decimal place, and no space.
+                this.Size = String.Format("{0:0.##} {1}", len, sizes[order]);
+            }
         }
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)

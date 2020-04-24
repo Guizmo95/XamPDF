@@ -21,6 +21,7 @@ namespace Pdf
 
             Container = new UnityContainer();
 
+
             MainPage = /*new NavigationPage(new MainMenu());*/
                 new NavigationPage(new MainPage());
         }

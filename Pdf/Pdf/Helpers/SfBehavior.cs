@@ -1,4 +1,5 @@
 ﻿using Pdf.ViewModels;
+using Syncfusion.ListView.XForms;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,12 +23,19 @@ namespace Pdf.Helpers
             protected set { swipeButtonCommand = value; }
         }
 
+        public DocumentViewModel DocumentViewModel
+        {
+            get { return viewModel; }
+            protected set { viewModel = value; }
+        }
+
         #region Methods
         protected override void OnAttachedTo(ContentPage bindable)
         {
             ListView = bindable.FindByName<Syncfusion.ListView.XForms.SfListView>("DocumentListView");
 
             viewModel = new DocumentViewModel();
+            viewModel.sfListView = ListView;
             ListView.BindingContext = viewModel;
             ListView.ItemsSource = viewModel.Documents;
 
@@ -37,9 +45,17 @@ namespace Pdf.Helpers
             base.OnAttachedTo(bindable);
         }
 
+        protected override void OnDetachingFrom(ContentPage bindable)
+        {
+            ListView = null;
+            viewModel = null;
+            base.OnDetachingFrom(bindable);
+        }
+
         private void SwipeButton_Clicked(int id)
         {
-            ListView.SwipeItem(viewModel.Documents[id], -120);
+            ListView.SwipeItem(viewModel.Documents[id], -180);
+            viewModel.ItemIndex = id;
         }
         #endregion
     }

@@ -1125,7 +1125,7 @@ int drawable avd_hide_password 0x7f07007c
 int drawable avd_show_password 0x7f07007d
 int drawable back 0x7f07007e
 int drawable baseline_account_circle_24 0x7f07007f
-int drawable baseline_delete_sweep_24 0x7f070080
+int drawable baseline_delete_24 0x7f070080
 int drawable baseline_description_24 0x7f070081
 int drawable baseline_favorite_border_24 0x7f070082
 int drawable baseline_feedback_24 0x7f070083
@@ -1680,10 +1680,10 @@ int mipmap baseline_account_circle_black_18 0x7f0c0000
 int mipmap baseline_account_circle_black_24 0x7f0c0001
 int mipmap baseline_account_circle_black_36 0x7f0c0002
 int mipmap baseline_account_circle_black_48 0x7f0c0003
-int mipmap baseline_delete_sweep_black_18 0x7f0c0004
-int mipmap baseline_delete_sweep_black_24 0x7f0c0005
-int mipmap baseline_delete_sweep_black_36 0x7f0c0006
-int mipmap baseline_delete_sweep_black_48 0x7f0c0007
+int mipmap baseline_delete_black_18 0x7f0c0004
+int mipmap baseline_delete_black_24 0x7f0c0005
+int mipmap baseline_delete_black_36 0x7f0c0006
+int mipmap baseline_delete_black_48 0x7f0c0007
 int mipmap baseline_description_black_18 0x7f0c0008
 int mipmap baseline_description_black_24 0x7f0c0009
 int mipmap baseline_description_black_36 0x7f0c000a

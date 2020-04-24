@@ -30,7 +30,7 @@ namespace Pdf.Views
 
             SfBehavior = new SfBehavior();
             popupLayout = new SfPopupLayout();
-            popupLayout.PopupView.HeightRequest = 62;
+            popupLayout.PopupView.HeightRequest = 92;
             popupLayout.PopupView.WidthRequest = 80;
             popupLayout.PopupView.ShowHeader = false;
             popupLayout.PopupView.ShowFooter = false;
@@ -51,6 +51,7 @@ namespace Pdf.Views
                 sortName.HeightRequest = 30;
                 sortName.WidthRequest = 80;
                 sortName.Text = "Sort name";
+                sortName.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
                 sortName.BackgroundColor = Color.White;
                 sortName.FontSize = 8;
                 sortName.Clicked += SortName_Clicked;
@@ -60,21 +61,31 @@ namespace Pdf.Views
                 sortDate.HeightRequest = 30;
                 sortDate.WidthRequest = 80;
                 sortDate.Text = "Sort date";
+                sortDate.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
                 sortDate.BackgroundColor = Color.White;
                 sortDate.FontSize = 8;
                 sortDate.Clicked += SortDate_Clicked;
 
+                Button sortSize;
+                sortSize = new Button();
+                sortSize.HeightRequest = 30;
+                sortSize.WidthRequest = 80;
+                sortSize.Text = "Sort size";
+                sortSize.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+                sortSize.BackgroundColor = Color.White;
+                sortSize.FontSize = 8;
+                sortSize.Clicked += SortSize_Clicked;
+
                 stackLayout.Children.Add(sortName);
                 stackLayout.Children.Add(sortDate);
+                stackLayout.Children.Add(sortSize);
 
                 return stackLayout;
             });
 
             popupLayout.PopupView.ContentTemplate = templateView;
 
-            Main.BindingContext = this;
             behavior.BindingContext = SfBehavior;
-
 
             IList<ToolsCustomItem> list = new List<ToolsCustomItem>();
             list.Add(new ToolsCustomItem(0, "baseline_picture_as_pdf_24_drawerMenu.xml", "My documents"));
@@ -104,6 +115,17 @@ namespace Pdf.Views
             DocumentListView.DataSource.SortDescriptors.Add(new SortDescriptor()
             {
                 PropertyName = "FileName",
+                Direction = ListSortDirection.Ascending,
+            });
+            DocumentListView.RefreshView();
+        }
+
+        private void SortSize_Clicked(object sender, EventArgs e)
+        {
+            DocumentListView.DataSource.SortDescriptors.Clear();
+            DocumentListView.DataSource.SortDescriptors.Add(new SortDescriptor()
+            {
+                PropertyName = "FileLenght",
                 Direction = ListSortDirection.Ascending,
             });
             DocumentListView.RefreshView();
