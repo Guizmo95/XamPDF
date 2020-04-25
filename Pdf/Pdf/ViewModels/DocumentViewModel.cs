@@ -3,6 +3,7 @@ using Pdf.Models;
 using Syncfusion.ListView.XForms;
 using Syncfusion.XForms.PopupLayout;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -20,6 +21,8 @@ namespace Pdf.ViewModels
         private ObservableCollection<FileModel> documents;
         private string filePathToDelete;
         private int itemIndex;
+
+
 
 
         private readonly IPdfPickerAndroid pdfPickerAndroid;
@@ -59,11 +62,32 @@ namespace Pdf.ViewModels
             pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
 
             Documents = new ObservableCollection<FileModel>();
+            var favoriteFiles = App.Database.GetItemsAsync().Result;
 
             int i = 0;
             pdfPickerAndroid.GetPdfFilesInDocuments().ForEach(delegate (FileInfo fileInfo)
             {
-                Documents.Add(new FileModel(i, fileInfo.Name, fileInfo.CreationTime.Date, fileInfo.Length, fileInfo.FullName));
+                var fileModel = new FileModel()
+                {
+                    ItemIndex = i,
+                    FileName = fileInfo.Name,
+                    CreationTime = fileInfo.CreationTime.Date,
+                    FileLenght = fileInfo.Length,
+                    FilePath = fileInfo.FullName,
+                };
+
+                if ((favoriteFiles.Any(x => x.FileName == fileInfo.Name) == true)){
+                    fileModel.IsFavorite = true;                
+                }
+                else
+                {
+                    fileModel.IsFavorite = false;
+                }
+
+                fileModel.GetHumanReadableFileSize();
+
+                Documents.Add(fileModel);
+
                 i++;
             });
 
@@ -129,7 +153,7 @@ namespace Pdf.ViewModels
 
             deleteImageCommand = new Command(Delete);
             infoDocumentCommand = new Command(GetInfoDocument);
-            //favoritesImageCommand = new Command(SetFavorites);
+            favoritesImageCommand = new Command(SetFavorites);
         }
 
         private void DeclinePopupButton_Clicked(object sender, EventArgs e)
@@ -164,19 +188,31 @@ namespace Pdf.ViewModels
 
         private void GetInfoDocument()
         {
+            IList<DocumentInfoListViewModel> documentInfoListViewModels = new List<DocumentInfoListViewModel>();
 
+            //TODO -- GEt info doc method
+           
         }
 
+        private void SetFavorites()
+        {
+            if (ItemIndex >= 0)
+            {
+                var item = Documents[ItemIndex];
+                if(item.IsFavorite == true)
+                {
+                    item.IsFavorite = false;
+                    App.Database.DeleteItemAsync(item);
 
-        //private void SetFavorites()
-        //{
-        //    if (ItemIndex >= 0)
-        //    {
-        //        var item = Documents[ItemIndex];
-        //        item.IsFavorite = !item.IsFavorite;
-        //    }
-        //    sfListView.ResetSwipe();
-        //}
+                }
+                else
+                {
+                    item.IsFavorite = true;
+                    App.Database.SaveItemAsync(item);
+                }
+            }
+            sfListView.ResetSwipe();
+        }
 
 
 

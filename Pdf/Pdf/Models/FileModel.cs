@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -10,13 +11,50 @@ namespace Pdf.Models
     public class FileModel: INotifyPropertyChanged
     {
         private int id;
+        private int itemIndex;
         private string fileName;
         private DateTime creationTime;
         private string size;
         private string filePath;
         private long fileLenght;
+        private bool isFavorite;
+        private string favoriteImage;
+        private string author;
+        private string creationDate;
+        private string creator;
+        private string subject;
+        private string title;
+        private string keyWorkds;
+        private string pagesNumbers;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        [PrimaryKey, AutoIncrement]
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int ItemIndex
+        {
+            get
+            {
+                return itemIndex;
+            }
+
+            set
+            {
+                itemIndex = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string FileName
         {
@@ -28,6 +66,7 @@ namespace Pdf.Models
             set
             {
                 fileName = value;
+                OnPropertyChanged();
             }
         }
 
@@ -73,20 +112,6 @@ namespace Pdf.Models
             }
         }
 
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-                OnPropertyChanged();
-            }
-        }
-
         public long FileLenght
         {
             get
@@ -101,16 +126,136 @@ namespace Pdf.Models
             }
         }
 
-        public FileModel(int id, string fileName, DateTime creation, long fileLenght, string filePath)
+        public bool IsFavorite
         {
-            this.Id = id;
-            this.FileName = fileName;
-            this.CreationTime = creation;
-            this.FileLenght = fileLenght;
-            this.FilePath = filePath;
+            get
+            {
+                return isFavorite;
+            }
 
-            GetHumanReadableFileSize();
+            set
+            {
+                isFavorite = value;
+                OnPropertyChanged();
+
+                if(value == true)
+                {
+                    FavoriteImage = "baseline_favorite_24.xml";
+                }
+                else
+                {
+                    FavoriteImage = "baseline_favorite_border_24.xml";
+                }
+
+            }
         }
+
+        public string FavoriteImage
+        {
+            get
+            {
+                return favoriteImage;
+            }
+
+            set
+            {
+                favoriteImage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Author
+        {
+            get
+            {
+                return author;
+            }
+
+            set
+            {
+                author = value;
+            }
+        }
+
+        public string CreationDate
+        {
+            get
+            {
+                return creationDate;
+            }
+
+            set
+            {
+                creationDate = value;
+            }
+        }
+
+        public string Creator
+        {
+            get
+            {
+                return creator;
+            }
+
+            set
+            {
+                creator = value;
+            }
+        }
+
+        public string Subject
+        {
+            get
+            {
+                return subject;
+            }
+
+            set
+            {
+                subject = value;
+            }
+        }
+
+        public string Title
+        {
+            get
+            {
+                return title;
+            }
+
+            set
+            {
+                title = value;
+            }
+        }
+
+        public string KeyWorkds
+        {
+            get
+            {
+                return keyWorkds;
+            }
+
+            set
+            {
+                keyWorkds = value;
+            }
+        }
+
+        public string PagesNumbers
+        {
+            get
+            {
+                return pagesNumbers;
+            }
+
+            set
+            {
+                pagesNumbers = value;
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public void GetHumanReadableFileSize()
         {

@@ -101,9 +101,9 @@
                                                         <Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand">
                                                             <Image BackgroundColor="Transparent"
                                    WidthRequest="60" HorizontalOptions="Center" VerticalOptions="Center"
-                                   Source="baseline_favorite_border_24.xml" Aspect="AspectFit">
+                                   Source="{Binding FavoriteImage}" Aspect="AspectFit">
                                                                 <Image.GestureRecognizers>
-                                                                    <TapGestureRecognizer Command="{Binding FavoritesImageCommand, Source={x:Reference behavior}}" CommandParameter="{Binding .}"/>
+                                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.FavoritesImageCommand, Source={x:Reference DocumentListView}}" CommandParameter="{Binding .}"/>
                                                                 </Image.GestureRecognizers>
                                                             </Image>
                                                         </Grid>

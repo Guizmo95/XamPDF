@@ -1,4 +1,5 @@
 ﻿
+using Pdf.Data;
 using Pdf.Views;
 using System;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Pdf
     public partial class App : Application
     {
         public static UnityContainer Container { get; set; }
+        static FavoriteFilesDatabase database;
 
         public App()
         {
@@ -24,6 +26,18 @@ namespace Pdf
 
             MainPage = /*new NavigationPage(new MainMenu());*/
                 new NavigationPage(new MainPage());
+        }
+
+        public static FavoriteFilesDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new FavoriteFilesDatabase();
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()

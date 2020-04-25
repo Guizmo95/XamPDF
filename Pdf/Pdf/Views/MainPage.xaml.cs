@@ -2,6 +2,7 @@
 using Pdf.Models;
 using Pdf.ViewModels;
 using Syncfusion.DataSource;
+using Syncfusion.XForms.Backdrop;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,8 @@ namespace Pdf.Views
         public MainPage()
         {
             InitializeComponent();
+
+
 
             SfBehavior = new SfBehavior();
             popupLayout = new SfPopupLayout();

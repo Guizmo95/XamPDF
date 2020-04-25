@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OBs61qkcOuxyn1NOux56/4AFt1eaIoZnit3gh40tA9VcDc/KYMxCdxI1sipN7u6fVaEeOWdWz03T2l6WG3VzDg==",
+  "dgSpecHash": "jDKxu1gbedwIaj7UuptPGks21tZpbge/YsN94jNT4QTX2tweoI62zIjE+4kNuBlmBa3Ss65jUx6r3TiW0rquwA==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.iOS\\Pdf.iOS.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,10 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.provider.sqlite3.ios_unified\\1.1.13\\sqlitepclraw.provider.sqlite3.ios_unified.1.1.13.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.licensing\\18.1.0.43\\syncfusion.licensing.18.1.0.43.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.buttons\\18.1.0.43\\syncfusion.xamarin.buttons.18.1.0.43.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.compression\\17.4.0.55\\syncfusion.xamarin.compression.17.4.0.55.nupkg.sha512",
