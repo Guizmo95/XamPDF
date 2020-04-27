@@ -1,6 +1,8 @@
-﻿using Pdf.Interfaces;
+﻿using Pdf.controls;
+using Pdf.Interfaces;
 using Pdf.Models;
 using Syncfusion.ListView.XForms;
+using Syncfusion.Pdf.Parsing;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections;
@@ -14,19 +16,20 @@ namespace Pdf.ViewModels
 {
     public class DocumentViewModel : BaseViewModel
     {
-        private SfPopupLayout popupLayout;
+        private readonly SfPopupLayout deleteFilePopup;
+        private readonly SfPopupLayout getInfoFilePopup;
+        private readonly PdfPropertyPopup pdfPropertyPopup;
         private Command favoritesImageCommand;
         private Command deleteImageCommand;
         private Command infoDocumentCommand;
         private ObservableCollection<FileModel> documents;
+        internal SfListView sfListView;
+
         private string filePathToDelete;
         private int itemIndex;
 
-
-
-
         private readonly IPdfPickerAndroid pdfPickerAndroid;
-        internal SfListView sfListView;
+        
 
         public ObservableCollection<FileModel> Documents 
         {
@@ -91,15 +94,15 @@ namespace Pdf.ViewModels
                 i++;
             });
 
-            popupLayout = new SfPopupLayout();
-            popupLayout.PopupView.HeightRequest = 115;
-            popupLayout.PopupView.WidthRequest = 310;
-            popupLayout.PopupView.ShowHeader = false;
-            popupLayout.PopupView.ShowFooter = true;
-            popupLayout.PopupView.ShowCloseButton = true;
-            popupLayout.PopupView.AnimationDuration = 170;
+            deleteFilePopup = new SfPopupLayout();
+            deleteFilePopup.PopupView.HeightRequest = 115;
+            deleteFilePopup.PopupView.WidthRequest = 310;
+            deleteFilePopup.PopupView.ShowHeader = false;
+            deleteFilePopup.PopupView.ShowFooter = true;
+            deleteFilePopup.PopupView.ShowCloseButton = true;
+            deleteFilePopup.PopupView.AnimationDuration = 170;
 
-            DataTemplate templateView = new DataTemplate(() =>
+            DataTemplate templateViewDeletePopup = new DataTemplate(() =>
             {
                 Label popupContent = new Label();
                 popupContent.VerticalTextAlignment = TextAlignment.Center;
@@ -112,7 +115,7 @@ namespace Pdf.ViewModels
                 return popupContent;
             });
 
-            DataTemplate footerTemplateView = new DataTemplate(() =>
+            DataTemplate footerTemplateViewDeletePopup = new DataTemplate(() =>
             {
                 StackLayout stackLayout = new StackLayout();
                 stackLayout.Orientation = StackOrientation.Horizontal;
@@ -146,19 +149,60 @@ namespace Pdf.ViewModels
             });
 
             // Adding ContentTemplate of the SfPopupLayout
-            popupLayout.PopupView.ContentTemplate = templateView;
+            deleteFilePopup.PopupView.ContentTemplate = templateViewDeletePopup;
 
             // Adding FooterTemplate of the SfPopupLayout
-            popupLayout.PopupView.FooterTemplate = footerTemplateView;
+            deleteFilePopup.PopupView.FooterTemplate = footerTemplateViewDeletePopup;
+
+            getInfoFilePopup = new SfPopupLayout();
+            getInfoFilePopup.PopupView.IsFullScreen = true;
+            getInfoFilePopup.PopupView.AnimationDuration = 200;
+            getInfoFilePopup.PopupView.AnimationMode = AnimationMode.SlideOnBottom;
+            getInfoFilePopup.PopupView.PopupStyle.CornerRadius = 0;
+            getInfoFilePopup.PopupView.PopupStyle.BorderThickness = 2;
+            getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.White;
+            getInfoFilePopup.PopupView.ShowFooter = false;
+            getInfoFilePopup.Closing += GetInfoFilePopup_Closing;
+
+            pdfPropertyPopup = new PdfPropertyPopup();
+
+            DataTemplate templateViewGetInfoPopup = new DataTemplate(() =>
+            {
+                return pdfPropertyPopup;
+            });
+
+            DataTemplate headerTemplateViewGetInfoPopup = new DataTemplate(() =>
+            {
+                Label title = new Label();
+                title.Text = "Properties";
+                title.FontSize = 18;
+                title.FontFamily = "GothamBold.ttf#GothamBold";
+                title.VerticalTextAlignment = TextAlignment.Center;
+                title.HorizontalTextAlignment = TextAlignment.Center;
+                title.TextColor = Color.FromHex("#4e4e4e");
+
+                return title;
+            });
+
+            // Adding ContentTemplate of the SfPopupLayout
+            getInfoFilePopup.PopupView.ContentTemplate = templateViewGetInfoPopup;
+
+            // Adding HeaderTemplate of the SfPopupLayout
+            getInfoFilePopup.PopupView.HeaderTemplate = headerTemplateViewGetInfoPopup;
 
             deleteImageCommand = new Command(Delete);
-            infoDocumentCommand = new Command(GetInfoDocument);
+            infoDocumentCommand = new Command<int>((int itemIndex) => GetInfoDocument(itemIndex));
             favoritesImageCommand = new Command(SetFavorites);
+        }
+
+        private void GetInfoFilePopup_Closing(object sender, Syncfusion.XForms.Core.CancelEventArgs e)
+        {
+            sfListView.ResetSwipe();
         }
 
         private void DeclinePopupButton_Clicked(object sender, EventArgs e)
         {
-            popupLayout.IsOpen = false;
+            deleteFilePopup.IsOpen = false;
             sfListView.ResetSwipe();
         }
 
@@ -173,7 +217,7 @@ namespace Pdf.ViewModels
 
                 Documents.ToList().ForEach(c => c.Id = c.Id - 1);
 
-                popupLayout.IsOpen = false;
+                deleteFilePopup.IsOpen = false;
             }
 
             sfListView.ResetSwipe();
@@ -181,17 +225,37 @@ namespace Pdf.ViewModels
 
         private void Delete()
         {
-            popupLayout.IsOpen = true;
+            deleteFilePopup.IsOpen = true;
 
             filePathToDelete = Documents[ItemIndex].FilePath;
         }
 
-        private void GetInfoDocument()
+        private void GetInfoDocument(int itemIndex)
         {
-            IList<DocumentInfoListViewModel> documentInfoListViewModels = new List<DocumentInfoListViewModel>();
+            using (Stream docStream = new FileStream(Documents[itemIndex].FilePath, FileMode.Open))
+            {
+                using (PdfLoadedDocument document = new PdfLoadedDocument(docStream))
+                {
+                    IList<DocumentInfoListViewModel> documentInfoListViewModels = new List<DocumentInfoListViewModel>();
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Filename", Documents[itemIndex].FileName));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Pages numbers", document.PageCount.ToString()));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Author", document.DocumentInformation.Author));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Creation date", document.DocumentInformation.CreationDate.ToString()));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Creator", document.DocumentInformation.Creator));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Keywords", document.DocumentInformation.Keywords));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Subject", document.DocumentInformation.Subject));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Title", document.DocumentInformation.Title));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Last modification", document.DocumentInformation.ModificationDate.ToString()));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Creation date", Documents[ItemIndex].CreationDate));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Producer", document.DocumentInformation.Producer));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("File size", Documents[ItemIndex].Size));
+                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("File path", Documents[ItemIndex].FilePath));
 
-            //TODO -- GEt info doc method
-           
+                    pdfPropertyPopup.PdfPropertyListView.ItemsSource = documentInfoListViewModels;
+
+                    getInfoFilePopup.IsOpen = true;
+                }
+            }
         }
 
         private void SetFavorites()
@@ -212,11 +276,7 @@ namespace Pdf.ViewModels
                 }
             }
             sfListView.ResetSwipe();
+            DependencyService.Get<IToastMessage>().ShortAlert("File added to favorites");
         }
-
-
-
-
     }
-
-    }
+}

@@ -6,18 +6,44 @@
              mc:Ignorable="d"
              x:Class="Pdf.controls.PdfPropertyPopup">
     <syncfusion:SfListView x:Name="pdfPropertyListView" 
-                   ItemsSource="{Binding BookInfo}"
-                   ItemSize="100">
+                   ItemsSource="{Binding DocumentInfoListViewModels}" ItemSize="55" ItemSpacing="0">
         <syncfusion:SfListView.ItemTemplate>
             <DataTemplate>
-                <Grid Padding="10">
+                <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.4*" />
-                        <RowDefinition Height="0.6*" />
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1"/>
                     </Grid.RowDefinitions>
-                    <Label Text="{Binding BookName}" FontAttributes="Bold" TextColor="Teal" FontSize="21" />
-                    <Label Grid.Row="1" Text="{Binding BookDescription}" TextColor="Teal" FontSize="15"/>
+                    <Grid Grid.Row="0" VerticalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Label Text="{Binding Label}" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="12.5" Grid.Column="0"  VerticalTextAlignment="Center" TextColor="Black"/>
+                        <Label Text="{Binding LabelResult}" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="11.5"  Grid.Column="1" VerticalTextAlignment="Center" MaxLines="3" LineBreakMode="WordWrap" TextColor="Black"/>
+                    </Grid>
+                    <BoxView Grid.Row="1" BackgroundColor="#e0e0e0" />
                 </Grid>
+
+
+                <!--<Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2.5"/>
+                    </Grid.RowDefinitions>
+                    <Grid ColumnSpacing="0.5" Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Label}" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="12.5" Grid.Column="0"  VerticalTextAlignment="Center" TextColor="Black"/>
+                        <Label Text="{Binding LabelResult}" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="11.5"  Grid.Column="1" VerticalTextAlignment="Center" MaxLines="3" LineBreakMode="WordWrap" TextColor="Black"/>
+                    </Grid>
+                    <Frame Grid.Row="1" OutlineColor="#E4E4E4" HasShadow="True" HeightRequest="1"/>
+                </Grid>-->
             </DataTemplate>
         </syncfusion:SfListView.ItemTemplate>
     </syncfusion:SfListView>

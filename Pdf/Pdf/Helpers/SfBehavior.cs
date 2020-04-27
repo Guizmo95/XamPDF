@@ -1,4 +1,5 @@
-﻿using Pdf.ViewModels;
+﻿using Pdf.Models;
+using Pdf.ViewModels;
 using Syncfusion.ListView.XForms;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Pdf.Helpers
         private Syncfusion.ListView.XForms.SfListView ListView;
         private Command<int> swipeButtonCommand;
         private DocumentViewModel viewModel;
+        private SearchBar searchBar = null;
 
         #endregion
 
@@ -41,6 +43,8 @@ namespace Pdf.Helpers
 
             SwipeButtonCommand = new Command<int>((int id) => SwipeButton_Clicked(id));
 
+            searchBar = bindable.FindByName<SearchBar>("filterDocument");
+            searchBar.TextChanged += SearchBar_TextChanged;
 
             base.OnAttachedTo(bindable);
         }
@@ -49,6 +53,9 @@ namespace Pdf.Helpers
         {
             ListView = null;
             viewModel = null;
+
+            searchBar = null;
+            searchBar.TextChanged -= SearchBar_TextChanged;
             base.OnDetachingFrom(bindable);
         }
 
@@ -56,6 +63,26 @@ namespace Pdf.Helpers
         {
             ListView.SwipeItem(viewModel.Documents[id], -180);
             viewModel.ItemIndex = id;
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            searchBar = (sender as SearchBar);
+            if (ListView.DataSource != null)
+            {
+                ListView.DataSource.Filter = FilterDocument;
+                ListView.DataSource.RefreshFilter();
+            }
+            ListView.RefreshView();
+        }
+
+        private bool FilterDocument(object obj)
+        {
+            if (searchBar == null || searchBar.Text == null)
+                return true;
+
+            var document = obj as FileModel;
+            return (document.FileName.ToLower().Contains(searchBar.Text.ToLower()));
         }
         #endregion
     }

@@ -27,8 +27,6 @@ public class MonoPackageManager_Resources {
 		"Syncfusion.GridCommon.Portable.dll",
 		"Syncfusion.Licensing.dll",
 		"Syncfusion.Pdf.Portable.dll",
-		"Syncfusion.SfBackdrop.XForms.Android.dll",
-		"Syncfusion.SfBackdrop.XForms.dll",
 		"Syncfusion.SfBusyIndicator.Android.dll",
 		"Syncfusion.SfBusyIndicator.XForms.Android.dll",
 		"Syncfusion.SfBusyIndicator.XForms.dll",

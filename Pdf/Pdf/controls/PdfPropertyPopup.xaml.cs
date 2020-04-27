@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.ListView.XForms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,19 @@ namespace Pdf.controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PdfPropertyPopup : ContentView
     {
+        public SfListView PdfPropertyListView
+        {
+            get
+            {
+                return pdfPropertyListView;
+            }
+            protected set
+            {
+                pdfPropertyListView = value;
+            }
+        }
+
+
         public PdfPropertyPopup()
         {
             InitializeComponent();

@@ -2,7 +2,6 @@
 using Pdf.Models;
 using Pdf.ViewModels;
 using Syncfusion.DataSource;
-using Syncfusion.XForms.Backdrop;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
@@ -28,8 +27,6 @@ namespace Pdf.Views
         public MainPage()
         {
             InitializeComponent();
-
-
 
             SfBehavior = new SfBehavior();
             popupLayout = new SfPopupLayout();
@@ -98,6 +95,8 @@ namespace Pdf.Views
             list.Add(new ToolsCustomItem(4, "baseline_account_circle_24.xml", "About"));
             ToolsListView.ItemsSource = list;
 
+            SortName_Clicked(null, null);
+
             sortButton.RotateTo(180);
         }
 
@@ -146,9 +145,9 @@ namespace Pdf.Views
                 return;
             }
 
-            var fileInfo = (FileInfo)e.AddedItems[0];
+            var file = (FileModel)e.AddedItems[0];
 
-            using (Stream stream = File.OpenRead(fileInfo.FullName))
+            using (Stream stream = File.OpenRead(file.FilePath))
             {
                 await Navigation.PushAsync(new PdfViewer(stream));
             }
@@ -157,6 +156,30 @@ namespace Pdf.Views
         private void SortButton_Clicked(object sender, EventArgs e)
         {
             popupLayout.Show(sortButton.X, sortButton.Y);
+        }
+
+        private void SearchButton_Clicked(object sender, EventArgs e)
+        {
+            headerLabel.IsVisible = false;
+            hamburgerButton.IsVisible = false;
+            searchButton.IsVisible = false;
+
+            sortButton.HorizontalOptions = LayoutOptions.EndAndExpand;
+
+            filterDocument.IsVisible = true;
+            clearSearchBar.IsVisible = true;
+        }
+
+        private void ClearSearchBar_Clicked(object sender, EventArgs e)
+        {
+            headerLabel.IsVisible = true;
+            hamburgerButton.IsVisible = true;
+            searchButton.IsVisible = true;
+
+            sortButton.HorizontalOptions = LayoutOptions.End;
+
+            filterDocument.IsVisible = false;
+            clearSearchBar.IsVisible = false;
         }
     }
 }

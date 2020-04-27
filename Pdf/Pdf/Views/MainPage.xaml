@@ -24,7 +24,7 @@
                 <Grid x:Name="mainContentView" 
                   BackgroundColor="White" RowSpacing="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackLayout BackgroundColor="#c62828" 
@@ -36,16 +36,14 @@
                             Source="baseline_menu_24.xml"
                             Clicked="HamburgerButton_Clicked"
                             Margin="13,0,0,0" BackgroundColor="Transparent">
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal">
-                                        <VisualState.Setters>
-                                            <Setter Property="BackgroundColor"
-                            Value="Transparent" />
-                                        </VisualState.Setters>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
+
+                        </ImageButton>
+                        <ImageButton IsVisible="False" x:Name="clearSearchBar" 
+                            HeightRequest="25" 
+                            WidthRequest="25" 
+                            HorizontalOptions="Start" 
+                            Source="outline_arrow_back_24.xml"
+                            Margin="13,0,0,0" BackgroundColor="Transparent" Clicked="ClearSearchBar_Clicked">
                         </ImageButton>
                         <Label x:Name="headerLabel" 
                            HeightRequest="50" 
@@ -56,10 +54,18 @@
                            TextColor="White"
                            FontFamily="GothamBold.ttf#GothamBold"
                            Margin="5, 0, 0, 0"/>
-                        <ImageButton x:Name="sortButton" 
+                        <controls:SearchBarCustom x:Name="filterDocument"
+                          IsVisible="false"
+                          Placeholder="Search" HorizontalOptions="Center" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="16" WidthRequest="250"/>
+                        <ImageButton x:Name="searchButton" 
                             HeightRequest="25" 
                             WidthRequest="25" 
                             HorizontalOptions="EndAndExpand" 
+                            Source="outline_search_24.xml" BackgroundColor="Transparent" Margin="0,0,6,0" Clicked="SearchButton_Clicked"/>
+                        <ImageButton x:Name="sortButton" 
+                            HeightRequest="25" 
+                            WidthRequest="25" 
+                            HorizontalOptions="End" 
                             Source="baseline_sort_24.xml"
                             Margin="0,0,13,0" BackgroundColor="Transparent" Clicked="SortButton_Clicked"/>
                     </StackLayout>
@@ -92,7 +98,7 @@
                                    BackgroundColor="Transparent"
                                    Source="baseline_description_24.xml">
                                                                 <Image.GestureRecognizers>
-                                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteImageCommand, Source={x:Reference DocumentListView}}" CommandParameter="{Binding .}" />
+                                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.InfoDocumentCommand, Source={x:Reference DocumentListView}}" CommandParameter="{Binding Id}" />
                                                                 </Image.GestureRecognizers>
                                                             </Image>
                                                         </Grid>
@@ -149,7 +155,7 @@
                                                     </StackLayout>
                                                     <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="35" Grid.Column="2" Margin="0,0,10,0" Grid.Row="0">
                                                         <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding Id}"/>
+                                                            <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndex}"/>
                                                         </Image.GestureRecognizers>
                                                     </Image>
                                                     <BoxView Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="#828282" Margin="0,2,0,0"/>

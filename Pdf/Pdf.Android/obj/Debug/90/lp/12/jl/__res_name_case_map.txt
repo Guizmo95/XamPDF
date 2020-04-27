@@ -1,4 +1,2 @@
-drawable/backdropCloseIcon.png;drawable/backdropcloseicon.png
-drawable/backdropHamburgerIcon.png;drawable/backdrophamburgericon.png
-drawable/backdropDown.png;drawable/backdropdown.png
-drawable/backdropUp.png;drawable/backdropup.png
+values/Strings.xml;values/strings.xml
+values/attrs.xml;values/attrs.xml
