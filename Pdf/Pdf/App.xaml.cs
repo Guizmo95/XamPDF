@@ -25,7 +25,7 @@ namespace Pdf
 
 
             MainPage = /*new NavigationPage(new MainMenu());*/
-                new NavigationPage(new MainPage());
+                new ShellMainMenu();
         }
 
         public static FavoriteFilesDatabase Database

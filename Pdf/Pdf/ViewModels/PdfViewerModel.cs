@@ -1,4 +1,5 @@
-﻿using Pdf.Views;
+﻿using Pdf.Interfaces;
+using Pdf.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,28 +13,30 @@ namespace Pdf.ViewModels
 {
     public class PdfViewerModel : INotifyPropertyChanged
     {
-        private Stream m_pdfDocumentStream;
         private System.Drawing.Color selectedColor = System.Drawing.Color.Black;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Stream PdfDocumentStream
+        private MemoryStream pdfStream;
+
+        //The PDF stream to be loaded into PdfViewer
+        public MemoryStream PdfStream
         {
             get
             {
-                return m_pdfDocumentStream;
+                return pdfStream;
             }
             set
             {
-                m_pdfDocumentStream = value;
+                pdfStream = value;
+                OnPropertyChanged();
             }
         }
 
-        public PdfViewerModel(Stream stream)
-        {
-            m_pdfDocumentStream = stream;
 
-            
+        public PdfViewerModel(string filePath)
+        {
+            pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
         }
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)

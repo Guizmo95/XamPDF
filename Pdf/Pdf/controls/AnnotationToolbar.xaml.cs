@@ -21,9 +21,6 @@ namespace Pdf.controls
         public delegate void inkButtonClickedDelegate();
         public inkButtonClickedDelegate InkButtonClicked { get; set; }
 
-        public delegate void backButtonClickedDelegate();
-        public backButtonClickedDelegate BackButtonClicked { get; set; }
-
         public delegate void shapeButtonClickedDelegate();
         public shapeButtonClickedDelegate ShapeButtonClicked { get; set; }
 
@@ -88,16 +85,6 @@ namespace Pdf.controls
                 })
             });
 
-            backButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    backButtonImage.Foreground = Color.FromHex("#b4b4b4");
-                    BackButton_Clicked();
-                    await Task.Delay(100);
-                    backButtonImage.Foreground = Color.FromHex("#4e4e4e");
-                })
-            });
         }
 
         private void StampButton_Clicked()
@@ -124,9 +111,5 @@ namespace Pdf.controls
             TextMarkupButtonClicked?.Invoke();
         }
 
-        private void BackButton_Clicked()
-        {
-            BackButtonClicked?.Invoke();
-        }
     }
 }

@@ -31,6 +31,20 @@ namespace Pdf.Droid.Helpers
             System.IO.File.WriteAllBytes(path, file);
         }
 
+        public MemoryStream GetFileStream(string filePath)
+        {
+            string path = Android.OS.Environment.ExternalStorageDirectory.Path;
+
+            return new MemoryStream(System.IO.File.ReadAllBytes(filePath));
+        }
+
+        public string GetDownloadPath()
+        {
+            string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
+
+            return directoryDownload;
+        }
+
         public async Task<List<string>> UnzipFileInDownload(string fileName)
         {
             string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);

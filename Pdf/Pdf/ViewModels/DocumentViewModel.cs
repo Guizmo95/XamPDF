@@ -163,6 +163,8 @@ namespace Pdf.ViewModels
             getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.White;
             getInfoFilePopup.PopupView.ShowFooter = false;
             getInfoFilePopup.Closing += GetInfoFilePopup_Closing;
+            getInfoFilePopup.PopupView.PopupStyle.HeaderBackgroundColor = Color.FromHex("#eeeeee");
+            getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#e0e0e0");
 
             pdfPropertyPopup = new PdfPropertyPopup();
 

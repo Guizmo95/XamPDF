@@ -6,9 +6,9 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\bin\Debug\netsta
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\bin\Debug\netstandard2.0\Xamarin.Android.Arch.Lifecycle.ViewModel.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\bin\Debug\netstandard2.0\Mono.Android.pdb
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\bin\Debug\netstandard2.0\Mono.Android.xml
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.csprojAssemblyReference.cache
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\AnnotationToolbar.xaml.g.cs
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\BottomAnnotationToolbar.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\ColorPicker.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\EditPopupMenu.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\FontSizeSlider.xaml.g.cs
@@ -24,9 +24,12 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netsta
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\StyleContent.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\TextMarkupBar.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\controls\ThicknessBar.xaml.g.cs
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\DocumentsList.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\Page1.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\PdfViewer.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\RotatorPage.xaml.g.cs
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\ShellMainMenu.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\SignaturePage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\SignaturePageList.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.csproj.CoreCompileInputs.cache
@@ -37,3 +40,4 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netsta
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\ref\Pdf.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.pdb
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.csprojAssemblyReference.cache

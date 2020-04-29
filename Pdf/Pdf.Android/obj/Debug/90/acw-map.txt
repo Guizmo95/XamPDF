@@ -1,9 +1,6 @@
 Pdf.Droid.CustomSearchBarRenderer, Pdf.Android;crc64ce4755fc17c5ee4b.CustomSearchBarRenderer
 Pdf.Droid.CustomSearchBarRenderer;crc64ce4755fc17c5ee4b.CustomSearchBarRenderer
 pdf.droid.CustomSearchBarRenderer;crc64ce4755fc17c5ee4b.CustomSearchBarRenderer
-Pdf.Droid.ExtendedButtonRenderer, Pdf.Android;crc64ce4755fc17c5ee4b.ExtendedButtonRenderer
-Pdf.Droid.ExtendedButtonRenderer;crc64ce4755fc17c5ee4b.ExtendedButtonRenderer
-pdf.droid.ExtendedButtonRenderer;crc64ce4755fc17c5ee4b.ExtendedButtonRenderer
 Pdf.Droid.IconViewRenderer, Pdf.Android;crc64ce4755fc17c5ee4b.IconViewRenderer
 Pdf.Droid.IconViewRenderer;crc64ce4755fc17c5ee4b.IconViewRenderer
 pdf.droid.IconViewRenderer;crc64ce4755fc17c5ee4b.IconViewRenderer

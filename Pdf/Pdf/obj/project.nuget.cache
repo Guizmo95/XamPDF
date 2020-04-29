@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wJmZVUDs1U80N5uOd9Ui/5STmg8t8d8RuDfa/bn1rZAjd8OpT3MMbUc76x5CwMm84WBlWqxwyESUa3+FNoNROw==",
+  "dgSpecHash": "UZBwQlrk9W+88jEJysByTomE5qJAKMFmTTPmfmgigaHuGQ3hCHNV6z4IoV7Kle7mtscADp8XuWkjOgi5hzXM3A==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
   "expectedPackageFiles": [
@@ -81,7 +81,7 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\unity\\5.11.4\\unity.5.11.4.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms\\4.5.0.617\\xamarin.forms.4.5.0.617.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms\\4.5.0.657\\xamarin.forms.4.5.0.657.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms.pancakeview\\1.3.7\\xamarin.forms.pancakeview.1.3.7.nupkg.sha512"
   ],
   "logs": [

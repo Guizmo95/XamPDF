@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cs+nZLIMKaP7sJI1b9/YIsQfJMDtzByLCTQ2BZ5ukIxejFlGjzfpnZyC+FEoJqDujYJBNnYkTrXGcsDLocnOYA==",
+  "dgSpecHash": "9UYz5QMkPZDUKVxATHxDNLten1l9OVtjmF6obzdkkshUlMYX6vBlxXPBZM9gXkF4QdxnZrnmb7AaQpoxT1cyDg==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
   "expectedPackageFiles": [
@@ -103,7 +103,7 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.vector.drawable\\28.0.0.3\\xamarin.android.support.vector.drawable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms\\4.5.0.617\\xamarin.forms.4.5.0.617.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms\\4.5.0.657\\xamarin.forms.4.5.0.657.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms.pancakeview\\1.3.7\\xamarin.forms.pancakeview.1.3.7.nupkg.sha512"
   ],
   "logs": []

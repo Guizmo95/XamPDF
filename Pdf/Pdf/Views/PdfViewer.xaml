@@ -27,13 +27,15 @@
                         <controls:IconView x:Name="UndoButton" Source="next.png" BackgroundColor="Transparent" HeightRequest="33" WidthRequest="33"  Foreground="White" AbsoluteLayout.LayoutBounds="0.72, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     </AbsoluteLayout>
                 </controls1:PancakeView>
-                <StackLayout VerticalOptions="FillAndExpand">
-                    <syncfusion:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfDocumentStream}" VerticalOptions="FillAndExpand"/>
-                </StackLayout>
-                <controls1:PancakeView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="bottomToolbar">
+                <syncfusion:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfStream}" VerticalOptions="FillAndExpand"/>
+                <controls1:PancakeView HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="bottomToolbar">
                     <AbsoluteLayout x:Name="bottomAbsoluteLayout" VerticalOptions="End" BackgroundColor="#f5f5f5" HeightRequest="47" HorizontalOptions="FillAndExpand">
-                        <controls:IconView x:Name="signatureButton" Source="fountain.png" BackgroundColor="Transparent" HeightRequest="43" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <controls:IconView x:Name="annotationToolbarButton" Source="sketchbook.png" BackgroundColor="Transparent" HeightRequest="43" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.85, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <controls:IconView x:Name="signatureButton" Source="fountain.png" HeightRequest="43" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <controls:IconView x:Name="stampButton" Source="licensing.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.85, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <controls:IconView x:Name="freeTextButton" Source="font.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.75, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <controls:IconView x:Name="inkButton" Source="pencil.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.65, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <controls:IconView x:Name="shapeButton" Source="rectangle.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.55, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <controls:IconView x:Name="textMarkupButton" Source="marker.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.45, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     </AbsoluteLayout>
                 </controls1:PancakeView>
             </StackLayout>

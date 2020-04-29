@@ -13828,119 +13828,122 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F0D0035
 			public const int addText = 2131558453;
 			
-			// aapt resource value: 0x7F0D0036
-			public const int appbar_scrolling_view_behavior = 2131558454;
+			// aapt resource value: 0x7F0D0037
+			public const int appbar_scrolling_view_behavior = 2131558455;
 			
 			// aapt resource value: 0x7F0D0000
 			public const int ApplicationName = 2131558400;
 			
-			// aapt resource value: 0x7F0D0037
-			public const int blur = 2131558455;
+			// aapt resource value: 0x7F0D0036
+			public const int app_name = 2131558454;
 			
 			// aapt resource value: 0x7F0D0038
-			public const int bottom_sheet_behavior = 2131558456;
+			public const int blur = 2131558456;
 			
 			// aapt resource value: 0x7F0D0039
-			public const int brightness = 2131558457;
+			public const int bottom_sheet_behavior = 2131558457;
 			
 			// aapt resource value: 0x7F0D003A
-			public const int cancel = 2131558458;
+			public const int brightness = 2131558458;
 			
 			// aapt resource value: 0x7F0D003B
-			public const int character_counter_content_description = 2131558459;
+			public const int cancel = 2131558459;
 			
 			// aapt resource value: 0x7F0D003C
-			public const int character_counter_pattern = 2131558460;
+			public const int character_counter_content_description = 2131558460;
 			
 			// aapt resource value: 0x7F0D003D
-			public const int contrast = 2131558461;
+			public const int character_counter_pattern = 2131558461;
+			
+			// aapt resource value: 0x7F0D003E
+			public const int contrast = 2131558462;
 			
 			// aapt resource value: 0x7F0D0001
 			public const int Crop = 2131558401;
 			
-			// aapt resource value: 0x7F0D003E
-			public const int decline = 2131558462;
-			
 			// aapt resource value: 0x7F0D003F
-			public const int done = 2131558463;
+			public const int decline = 2131558463;
 			
 			// aapt resource value: 0x7F0D0040
-			public const int editText = 2131558464;
+			public const int done = 2131558464;
+			
+			// aapt resource value: 0x7F0D0041
+			public const int editText = 2131558465;
 			
 			// aapt resource value: 0x7F0D0002
 			public const int EnterText = 2131558402;
 			
-			// aapt resource value: 0x7F0D0041
-			public const int fab_transformation_scrim_behavior = 2131558465;
-			
 			// aapt resource value: 0x7F0D0042
-			public const int fab_transformation_sheet_behavior = 2131558466;
+			public const int fab_transformation_scrim_behavior = 2131558466;
 			
 			// aapt resource value: 0x7F0D0043
-			public const int fill = 2131558467;
+			public const int fab_transformation_sheet_behavior = 2131558467;
 			
 			// aapt resource value: 0x7F0D0044
-			public const int free = 2131558468;
+			public const int fill = 2131558468;
+			
+			// aapt resource value: 0x7F0D0045
+			public const int free = 2131558469;
 			
 			// aapt resource value: 0x7F0D0003
 			public const int Hello = 2131558403;
 			
-			// aapt resource value: 0x7F0D0045
-			public const int hide_bottom_view_on_scroll_behavior = 2131558469;
-			
 			// aapt resource value: 0x7F0D0046
-			public const int hue = 2131558470;
+			public const int hide_bottom_view_on_scroll_behavior = 2131558470;
 			
 			// aapt resource value: 0x7F0D0047
-			public const int library_name = 2131558471;
+			public const int hue = 2131558471;
+			
+			// aapt resource value: 0x7F0D0048
+			public const int library_name = 2131558472;
 			
 			// aapt resource value: 0x7F0D0004
 			public const int Load_More = 2131558404;
 			
-			// aapt resource value: 0x7F0D0048
-			public const int mtrl_chip_close_icon_content_description = 2131558472;
-			
 			// aapt resource value: 0x7F0D0049
-			public const int ok = 2131558473;
+			public const int mtrl_chip_close_icon_content_description = 2131558473;
 			
 			// aapt resource value: 0x7F0D004A
-			public const int original = 2131558474;
+			public const int ok = 2131558474;
 			
 			// aapt resource value: 0x7F0D004B
-			public const int outline = 2131558475;
+			public const int original = 2131558475;
 			
 			// aapt resource value: 0x7F0D004C
-			public const int password_toggle_content_description = 2131558476;
+			public const int outline = 2131558476;
 			
 			// aapt resource value: 0x7F0D004D
-			public const int path_password_eye = 2131558477;
+			public const int password_toggle_content_description = 2131558477;
 			
 			// aapt resource value: 0x7F0D004E
-			public const int path_password_eye_mask_strike_through = 2131558478;
+			public const int path_password_eye = 2131558478;
 			
 			// aapt resource value: 0x7F0D004F
-			public const int path_password_eye_mask_visible = 2131558479;
+			public const int path_password_eye_mask_strike_through = 2131558479;
 			
 			// aapt resource value: 0x7F0D0050
-			public const int path_password_strike_through = 2131558480;
+			public const int path_password_eye_mask_visible = 2131558480;
 			
 			// aapt resource value: 0x7F0D0051
-			public const int popup_message = 2131558481;
+			public const int path_password_strike_through = 2131558481;
 			
 			// aapt resource value: 0x7F0D0052
-			public const int reset = 2131558482;
+			public const int popup_message = 2131558482;
 			
 			// aapt resource value: 0x7F0D0053
-			public const int saturation = 2131558483;
+			public const int reset = 2131558483;
 			
 			// aapt resource value: 0x7F0D0054
-			public const int save = 2131558484;
+			public const int saturation = 2131558484;
 			
 			// aapt resource value: 0x7F0D0055
-			public const int saving = 2131558485;
+			public const int save = 2131558485;
 			
 			// aapt resource value: 0x7F0D0056
-			public const int search_menu_title = 2131558486;
+			public const int saving = 2131558486;
+			
+			// aapt resource value: 0x7F0D0057
+			public const int search_menu_title = 2131558487;
 			
 			// aapt resource value: 0x7F0D0005
 			public const int SfPdfViewerCancel = 2131558405;
@@ -13966,236 +13969,236 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F0D000C
 			public const int SfPdfViewerUnderline = 2131558412;
 			
-			// aapt resource value: 0x7F0D0057
-			public const int sfpdfviewer_annotationsbackbutton = 2131558487;
-			
 			// aapt resource value: 0x7F0D0058
-			public const int sfpdfviewer_annotationsbutton = 2131558488;
+			public const int sfpdfviewer_annotationsbackbutton = 2131558488;
 			
 			// aapt resource value: 0x7F0D0059
-			public const int sfpdfviewer_arrowbackbutton = 2131558489;
+			public const int sfpdfviewer_annotationsbutton = 2131558489;
 			
 			// aapt resource value: 0x7F0D005A
-			public const int sfpdfviewer_arrowbutton = 2131558490;
+			public const int sfpdfviewer_arrowbackbutton = 2131558490;
 			
 			// aapt resource value: 0x7F0D005B
-			public const int sfpdfviewer_backbutton = 2131558491;
+			public const int sfpdfviewer_arrowbutton = 2131558491;
 			
 			// aapt resource value: 0x7F0D005C
-			public const int sfpdfviewer_blackcolorbutton = 2131558492;
+			public const int sfpdfviewer_backbutton = 2131558492;
 			
 			// aapt resource value: 0x7F0D005D
-			public const int sfpdfviewer_bookmarksbackbutton = 2131558493;
+			public const int sfpdfviewer_blackcolorbutton = 2131558493;
 			
 			// aapt resource value: 0x7F0D005E
-			public const int sfpdfviewer_bookmarksbutton = 2131558494;
+			public const int sfpdfviewer_bookmarksbackbutton = 2131558494;
 			
 			// aapt resource value: 0x7F0D005F
-			public const int sfpdfviewer_bookmarksclosebutton = 2131558495;
+			public const int sfpdfviewer_bookmarksbutton = 2131558495;
 			
 			// aapt resource value: 0x7F0D0060
-			public const int sfpdfviewer_cancel = 2131558496;
+			public const int sfpdfviewer_bookmarksclosebutton = 2131558496;
 			
 			// aapt resource value: 0x7F0D0061
-			public const int sfpdfviewer_cancelsearchbutton = 2131558497;
+			public const int sfpdfviewer_cancel = 2131558497;
 			
 			// aapt resource value: 0x7F0D0062
-			public const int sfpdfviewer_clearsearchbutton = 2131558498;
+			public const int sfpdfviewer_cancelsearchbutton = 2131558498;
 			
 			// aapt resource value: 0x7F0D0063
-			public const int sfpdfviewer_colorbutton = 2131558499;
+			public const int sfpdfviewer_clearsearchbutton = 2131558499;
 			
 			// aapt resource value: 0x7F0D0064
-			public const int sfpdfviewer_continuouspagebutton = 2131558500;
+			public const int sfpdfviewer_colorbutton = 2131558500;
 			
 			// aapt resource value: 0x7F0D0065
-			public const int sfpdfviewer_cyancolorbutton = 2131558501;
+			public const int sfpdfviewer_continuouspagebutton = 2131558501;
 			
 			// aapt resource value: 0x7F0D0066
-			public const int sfpdfviewer_deletebutton = 2131558502;
+			public const int sfpdfviewer_cyancolorbutton = 2131558502;
 			
 			// aapt resource value: 0x7F0D0067
-			public const int sfpdfviewer_done = 2131558503;
+			public const int sfpdfviewer_deletebutton = 2131558503;
 			
 			// aapt resource value: 0x7F0D0068
-			public const int sfpdfviewer_ellipsebackbutton = 2131558504;
+			public const int sfpdfviewer_done = 2131558504;
 			
 			// aapt resource value: 0x7F0D0069
-			public const int sfpdfviewer_ellipsebutton = 2131558505;
+			public const int sfpdfviewer_ellipsebackbutton = 2131558505;
 			
 			// aapt resource value: 0x7F0D006A
-			public const int sfpdfviewer_fontsizebutton = 2131558506;
+			public const int sfpdfviewer_ellipsebutton = 2131558506;
 			
 			// aapt resource value: 0x7F0D006B
-			public const int sfpdfviewer_freetextbutton = 2131558507;
+			public const int sfpdfviewer_fontsizebutton = 2131558507;
 			
 			// aapt resource value: 0x7F0D006C
-			public const int sfpdfviewer_greencolorbutton = 2131558508;
+			public const int sfpdfviewer_freetextbutton = 2131558508;
 			
 			// aapt resource value: 0x7F0D006D
-			public const int sfpdfviewer_highlightbutton = 2131558509;
+			public const int sfpdfviewer_greencolorbutton = 2131558509;
 			
 			// aapt resource value: 0x7F0D006E
-			public const int sfpdfviewer_highlighttextbackbutton = 2131558510;
+			public const int sfpdfviewer_highlightbutton = 2131558510;
 			
 			// aapt resource value: 0x7F0D006F
-			public const int sfpdfviewer_hinttext = 2131558511;
+			public const int sfpdfviewer_highlighttextbackbutton = 2131558511;
 			
 			// aapt resource value: 0x7F0D0070
-			public const int sfpdfviewer_inkbackbutton = 2131558512;
+			public const int sfpdfviewer_hinttext = 2131558512;
 			
 			// aapt resource value: 0x7F0D0071
-			public const int sfpdfviewer_inkbutton = 2131558513;
+			public const int sfpdfviewer_inkbackbutton = 2131558513;
 			
 			// aapt resource value: 0x7F0D0072
-			public const int sfpdfviewer_linebackbutton = 2131558514;
+			public const int sfpdfviewer_inkbutton = 2131558514;
 			
 			// aapt resource value: 0x7F0D0073
-			public const int sfpdfviewer_linebutton = 2131558515;
+			public const int sfpdfviewer_linebackbutton = 2131558515;
 			
 			// aapt resource value: 0x7F0D0074
-			public const int sfpdfviewer_magentacolorbutton = 2131558516;
+			public const int sfpdfviewer_linebutton = 2131558516;
 			
 			// aapt resource value: 0x7F0D0075
-			public const int sfpdfviewer_moreoptionsbutton = 2131558517;
+			public const int sfpdfviewer_magentacolorbutton = 2131558517;
 			
 			// aapt resource value: 0x7F0D0076
-			public const int sfpdfviewer_nextlevelbookmarksbutton = 2131558518;
+			public const int sfpdfviewer_moreoptionsbutton = 2131558518;
 			
 			// aapt resource value: 0x7F0D0077
-			public const int sfpdfviewer_opacitybutton = 2131558519;
+			public const int sfpdfviewer_nextlevelbookmarksbutton = 2131558519;
 			
 			// aapt resource value: 0x7F0D0078
-			public const int sfpdfviewer_pagedownbutton = 2131558520;
+			public const int sfpdfviewer_opacitybutton = 2131558520;
 			
 			// aapt resource value: 0x7F0D0079
-			public const int sfpdfviewer_pageupbutton = 2131558521;
+			public const int sfpdfviewer_pagedownbutton = 2131558521;
 			
 			// aapt resource value: 0x7F0D007A
-			public const int sfpdfviewer_polygonbutton = 2131558522;
+			public const int sfpdfviewer_pageupbutton = 2131558522;
 			
 			// aapt resource value: 0x7F0D007B
-			public const int sfpdfviewer_previouslevelbookmarksbutton = 2131558523;
+			public const int sfpdfviewer_polygonbutton = 2131558523;
 			
 			// aapt resource value: 0x7F0D007C
-			public const int sfpdfviewer_printbutton = 2131558524;
+			public const int sfpdfviewer_previouslevelbookmarksbutton = 2131558524;
 			
 			// aapt resource value: 0x7F0D007D
-			public const int sfpdfviewer_rectanglebackbutton = 2131558525;
+			public const int sfpdfviewer_printbutton = 2131558525;
 			
 			// aapt resource value: 0x7F0D007E
-			public const int sfpdfviewer_rectanglebutton = 2131558526;
+			public const int sfpdfviewer_rectanglebackbutton = 2131558526;
 			
 			// aapt resource value: 0x7F0D007F
-			public const int sfpdfviewer_redcolorbutton = 2131558527;
+			public const int sfpdfviewer_rectanglebutton = 2131558527;
 			
 			// aapt resource value: 0x7F0D0080
-			public const int sfpdfviewer_redobutton = 2131558528;
+			public const int sfpdfviewer_redcolorbutton = 2131558528;
 			
 			// aapt resource value: 0x7F0D0081
-			public const int sfpdfviewer_redoinkbutton = 2131558529;
+			public const int sfpdfviewer_redobutton = 2131558529;
 			
 			// aapt resource value: 0x7F0D0082
-			public const int sfpdfviewer_savebutton = 2131558530;
+			public const int sfpdfviewer_redoinkbutton = 2131558530;
 			
 			// aapt resource value: 0x7F0D0083
-			public const int sfpdfviewer_searchbackbutton = 2131558531;
+			public const int sfpdfviewer_savebutton = 2131558531;
 			
 			// aapt resource value: 0x7F0D0084
-			public const int sfpdfviewer_searchbarplaceholdertext = 2131558532;
+			public const int sfpdfviewer_searchbackbutton = 2131558532;
 			
 			// aapt resource value: 0x7F0D0085
-			public const int sfpdfviewer_searchbutton = 2131558533;
+			public const int sfpdfviewer_searchbarplaceholdertext = 2131558533;
 			
 			// aapt resource value: 0x7F0D0086
-			public const int sfpdfviewer_searchnextbutton = 2131558534;
+			public const int sfpdfviewer_searchbutton = 2131558534;
 			
 			// aapt resource value: 0x7F0D0087
-			public const int sfpdfviewer_searchpreviousbutton = 2131558535;
+			public const int sfpdfviewer_searchnextbutton = 2131558535;
 			
 			// aapt resource value: 0x7F0D0088
-			public const int sfpdfviewer_shapesbackbutton = 2131558536;
+			public const int sfpdfviewer_searchpreviousbutton = 2131558536;
 			
 			// aapt resource value: 0x7F0D0089
-			public const int sfpdfviewer_shapesbutton = 2131558537;
+			public const int sfpdfviewer_shapesbackbutton = 2131558537;
 			
 			// aapt resource value: 0x7F0D008A
-			public const int sfpdfviewer_signaturebutton = 2131558538;
+			public const int sfpdfviewer_shapesbutton = 2131558538;
 			
 			// aapt resource value: 0x7F0D008B
-			public const int sfpdfviewer_signaturepad_cancel = 2131558539;
+			public const int sfpdfviewer_signaturebutton = 2131558539;
 			
 			// aapt resource value: 0x7F0D008C
-			public const int sfpdfviewer_signaturepad_clear = 2131558540;
+			public const int sfpdfviewer_signaturepad_cancel = 2131558540;
 			
 			// aapt resource value: 0x7F0D008D
-			public const int sfpdfviewer_signaturepad_done = 2131558541;
+			public const int sfpdfviewer_signaturepad_clear = 2131558541;
 			
 			// aapt resource value: 0x7F0D008E
-			public const int sfpdfviewer_singlepagebutton = 2131558542;
+			public const int sfpdfviewer_signaturepad_done = 2131558542;
 			
 			// aapt resource value: 0x7F0D008F
-			public const int sfpdfviewer_strikethroughbutton = 2131558543;
+			public const int sfpdfviewer_singlepagebutton = 2131558543;
 			
 			// aapt resource value: 0x7F0D0090
-			public const int sfpdfviewer_strikethroughtextbackbutton = 2131558544;
+			public const int sfpdfviewer_strikethroughbutton = 2131558544;
 			
 			// aapt resource value: 0x7F0D0091
-			public const int sfpdfviewer_textbackbutton = 2131558545;
+			public const int sfpdfviewer_strikethroughtextbackbutton = 2131558545;
 			
 			// aapt resource value: 0x7F0D0092
-			public const int sfpdfviewer_textmarkupsbackbutton = 2131558546;
+			public const int sfpdfviewer_textbackbutton = 2131558546;
 			
 			// aapt resource value: 0x7F0D0093
-			public const int sfpdfviewer_textmarkupsbutton = 2131558547;
+			public const int sfpdfviewer_textmarkupsbackbutton = 2131558547;
 			
 			// aapt resource value: 0x7F0D0094
-			public const int sfpdfviewer_thicknessbutton = 2131558548;
+			public const int sfpdfviewer_textmarkupsbutton = 2131558548;
 			
 			// aapt resource value: 0x7F0D0095
-			public const int sfpdfviewer_thicknessfivebutton = 2131558549;
+			public const int sfpdfviewer_thicknessbutton = 2131558549;
 			
 			// aapt resource value: 0x7F0D0096
-			public const int sfpdfviewer_thicknessninebutton = 2131558550;
+			public const int sfpdfviewer_thicknessfivebutton = 2131558550;
 			
 			// aapt resource value: 0x7F0D0097
-			public const int sfpdfviewer_thicknessonebutton = 2131558551;
+			public const int sfpdfviewer_thicknessninebutton = 2131558551;
 			
 			// aapt resource value: 0x7F0D0098
-			public const int sfpdfviewer_thicknesssevenbutton = 2131558552;
+			public const int sfpdfviewer_thicknessonebutton = 2131558552;
 			
 			// aapt resource value: 0x7F0D0099
-			public const int sfpdfviewer_thicknesthreebutton = 2131558553;
+			public const int sfpdfviewer_thicknesssevenbutton = 2131558553;
 			
 			// aapt resource value: 0x7F0D009A
-			public const int sfpdfviewer_underlinebutton = 2131558554;
+			public const int sfpdfviewer_thicknesthreebutton = 2131558554;
 			
 			// aapt resource value: 0x7F0D009B
-			public const int sfpdfviewer_underlinetextbackbutton = 2131558555;
+			public const int sfpdfviewer_underlinebutton = 2131558555;
 			
 			// aapt resource value: 0x7F0D009C
-			public const int sfpdfviewer_undobutton = 2131558556;
+			public const int sfpdfviewer_underlinetextbackbutton = 2131558556;
 			
 			// aapt resource value: 0x7F0D009D
-			public const int sfpdfviewer_undoinkbutton = 2131558557;
+			public const int sfpdfviewer_undobutton = 2131558557;
 			
 			// aapt resource value: 0x7F0D009E
-			public const int sfpdfviewer_viewmodebutton = 2131558558;
+			public const int sfpdfviewer_undoinkbutton = 2131558558;
 			
 			// aapt resource value: 0x7F0D009F
-			public const int sfpdfviewer_yellowcolorbutton = 2131558559;
+			public const int sfpdfviewer_viewmodebutton = 2131558559;
 			
 			// aapt resource value: 0x7F0D00A0
-			public const int sharpen = 2131558560;
+			public const int sfpdfviewer_yellowcolorbutton = 2131558560;
 			
 			// aapt resource value: 0x7F0D00A1
-			public const int square = 2131558561;
+			public const int sharpen = 2131558561;
 			
 			// aapt resource value: 0x7F0D00A2
-			public const int status_bar_notification_info_overflow = 2131558562;
+			public const int square = 2131558562;
 			
 			// aapt resource value: 0x7F0D00A3
-			public const int title = 2131558563;
+			public const int status_bar_notification_info_overflow = 2131558563;
+			
+			// aapt resource value: 0x7F0D00A4
+			public const int title = 2131558564;
 			
 			static String()
 			{

@@ -55,6 +55,9 @@
     <Reference Include="PresentationFramework">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.PdfiumBindings">
+      <HintPath>..\..\..\..\..\Telechargements\PdfiumDemo\PdfiumAndroidBindings\Syncfusion.PdfiumBindings.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,13 +74,16 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v4">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.5.0.617</Version>
+      <Version>4.5.0.657</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomPdfRenderer.cs" />
     <Compile Include="CustomSearchBarRenderer.cs" />
-    <Compile Include="ExtendedButtonRenderer.cs" />
     <Compile Include="IconViewRenderer.cs" />
     <Compile Include="MyFrameRenderer.cs" />
     <Compile Include="Helpers\AndroidFileHelper.cs" />
