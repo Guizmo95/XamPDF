@@ -11,7 +11,8 @@ namespace Pdf.Models
     public class FileModel: INotifyPropertyChanged
     {
         private int id;
-        private int itemIndex;
+        private int itemIndexInDocumentList;
+        private int itemIndexInFavoriteDocumentList;
         private string fileName;
         private DateTime creationTime;
         private string size;
@@ -19,13 +20,7 @@ namespace Pdf.Models
         private long fileLenght;
         private bool isFavorite;
         private string favoriteImage;
-        private string author;
-        private string creationDate;
-        private string creator;
-        private string subject;
-        private string title;
-        private string keyWorkds;
-        private string pagesNumbers;
+
 
         [PrimaryKey, AutoIncrement]
         public int Id
@@ -42,16 +37,30 @@ namespace Pdf.Models
             }
         }
 
-        public int ItemIndex
+        public int ItemIndexInDocumentList
         {
             get
             {
-                return itemIndex;
+                return itemIndexInDocumentList;
             }
 
             set
             {
-                itemIndex = value;
+                itemIndexInDocumentList = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int ItemIndexInFavoriteDocumentList
+        {
+            get
+            {
+                return itemIndexInFavoriteDocumentList;
+            }
+
+            set
+            {
+                itemIndexInFavoriteDocumentList = value;
                 OnPropertyChanged();
             }
         }
@@ -163,97 +172,7 @@ namespace Pdf.Models
                 OnPropertyChanged();
             }
         }
-
-        public string Author
-        {
-            get
-            {
-                return author;
-            }
-
-            set
-            {
-                author = value;
-            }
-        }
-
-        public string CreationDate
-        {
-            get
-            {
-                return creationDate;
-            }
-
-            set
-            {
-                creationDate = value;
-            }
-        }
-
-        public string Creator
-        {
-            get
-            {
-                return creator;
-            }
-
-            set
-            {
-                creator = value;
-            }
-        }
-
-        public string Subject
-        {
-            get
-            {
-                return subject;
-            }
-
-            set
-            {
-                subject = value;
-            }
-        }
-
-        public string Title
-        {
-            get
-            {
-                return title;
-            }
-
-            set
-            {
-                title = value;
-            }
-        }
-
-        public string KeyWorkds
-        {
-            get
-            {
-                return keyWorkds;
-            }
-
-            set
-            {
-                keyWorkds = value;
-            }
-        }
-
-        public string PagesNumbers
-        {
-            get
-            {
-                return pagesNumbers;
-            }
-
-            set
-            {
-                pagesNumbers = value;
-            }
-        }
+   
 
         public event PropertyChangedEventHandler PropertyChanged;
 

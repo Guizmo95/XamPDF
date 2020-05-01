@@ -6,6 +6,6 @@ namespace Pdf.Enumerations
 {
     public enum AnnotationType
     {
-        Ink, FreeText, Shape, TextMarkup
+        Ink, FreeText, Shape, TextMarkup, None
     }
 }

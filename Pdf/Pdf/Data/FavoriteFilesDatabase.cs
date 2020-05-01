@@ -40,6 +40,11 @@ namespace Pdf.Data
             return Database.Table<FileModel>().ToListAsync();
         }
 
+        public void DeleteAllItemAsync()
+        {
+            Database.DeleteAllAsync<FileModel>();
+        }
+
         public Task<FileModel> GetItemAsync(int id)
         {
             return Database.Table<FileModel>().Where(i => i.Id == id).FirstOrDefaultAsync();

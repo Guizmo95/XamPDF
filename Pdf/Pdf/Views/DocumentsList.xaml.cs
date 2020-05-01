@@ -1,8 +1,10 @@
 ﻿using Acr.UserDialogs;
+using Pdf.controls;
 using Pdf.Helpers;
 using Pdf.Models;
 using Pdf.ViewModels;
 using Syncfusion.DataSource;
+using Syncfusion.Pdf.Parsing;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,6 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DocumentsList : ContentPage, INotifyPropertyChanged
     {
-        private readonly DocumentViewModel documentViewModel;
         private SfPopupLayout popupLayout;
 
         public SfBehavior SfBehavior { get; set; }
@@ -95,6 +96,7 @@ namespace Pdf.Views
 
             sortButton.RotateTo(180);
         }
+
 
         void HamburgerButton_Clicked(object sender, EventArgs e)
         {

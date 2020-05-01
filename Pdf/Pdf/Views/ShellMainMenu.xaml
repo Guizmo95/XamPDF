@@ -55,7 +55,7 @@
             <ShellContent  ContentTemplate="{DataTemplate pages:DocumentsList}"/>
         </Tab>
         <Tab Title="Favorites" Icon="baseline_visibility_24.xml">
-            <ShellContent ContentTemplate="{DataTemplate pages:DocumentsList}"/>
+            <ShellContent ContentTemplate="{DataTemplate pages:FavoritesFilesPage}"/>
         </Tab>
     </FlyoutItem>
 

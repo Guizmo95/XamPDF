@@ -8,7 +8,6 @@
              mc:Ignorable="d"
              x:Class="Pdf.controls.StyleContent">
     <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="0">
-        <!--<views:RotatorPage HeightRequest="40"/>-->
         <views:ColorPicker HeightRequest="40" x:Name="colorPicker"/>
         <views:FontSizeSlider HeightRequest="20" x:Name="fontSizeSlider"/>
         <controls:ThicknessBar HeightRequest="20" IsVisible="False" x:Name="thicknessBar"/>

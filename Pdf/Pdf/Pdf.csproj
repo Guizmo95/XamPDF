@@ -48,9 +48,6 @@
     <Compile Update="controls\FreeTextBottomBar.xaml.cs">
       <DependentUpon>FreeTextBottomBar.xaml</DependentUpon>
     </Compile>
-    <Compile Update="controls\PopupAnnotation.xaml.cs">
-      <DependentUpon>PopupAnnotation.xaml</DependentUpon>
-    </Compile>
     <Compile Update="controls\StyleContent.xaml.cs">
       <DependentUpon>StyleContent.xaml</DependentUpon>
     </Compile>
@@ -90,9 +87,6 @@
     <EmbeddedResource Update="controls\PdfPropertyPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\PopupAnnotation.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="controls\SelectTextMarkupBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -112,6 +106,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DocumentsList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FavoritesFilesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Page1.xaml">
