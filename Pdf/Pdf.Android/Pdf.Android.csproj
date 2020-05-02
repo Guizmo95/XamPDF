@@ -84,7 +84,10 @@
   <ItemGroup>
     <Compile Include="CustomPdfRenderer.cs" />
     <Compile Include="CustomSearchBarRenderer.cs" />
+    <Compile Include="CustomShellRenderer.cs" />
+    <Compile Include="CustomTypefaceSpan.cs" />
     <Compile Include="IconViewRenderer.cs" />
+    <Compile Include="MyBottomNavigationView.cs" />
     <Compile Include="MyFrameRenderer.cs" />
     <Compile Include="Helpers\AndroidFileHelper.cs" />
     <Compile Include="Helpers\AndroidDownloadManager.cs" />

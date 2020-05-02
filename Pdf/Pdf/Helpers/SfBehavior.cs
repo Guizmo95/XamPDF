@@ -8,6 +8,7 @@ using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,8 @@ namespace Pdf.Helpers
 
         private DocumentViewModel viewModel;
         private SearchBar searchBar = null;
+
+        private bool isSwipped;
 
         private BehaviorType behaviorType;
 
@@ -61,6 +64,7 @@ namespace Pdf.Helpers
             viewModel.sfListView = ListView;
             ListView.BindingContext = viewModel;
             ListView.ItemsSource = DocumentViewModel.Documents;
+            ListView.SwipeStarted += ListView_SwipeStarted;
 
             SwipeButtonCommand = new Command<int>((int itemIndex) => SwipeButton_Clicked(itemIndex));
             InfoDocumentCommand = new Command<int>((int itemIndex) => GetInfoDocument(itemIndex));
@@ -119,9 +123,13 @@ namespace Pdf.Helpers
         {
             ListView = null;
             viewModel = null;
+            getInfoFilePopup = null;
+            pdfPropertyPopup = null;
 
             searchBar = null;
             searchBar.TextChanged -= SearchBar_TextChanged;
+            getInfoFilePopup.Closing -= GetInfoFilePopup_Closing;
+            ListView.SwipeStarted -= ListView_SwipeStarted;
             base.OnDetachingFrom(bindable);
         }
 
@@ -155,8 +163,17 @@ namespace Pdf.Helpers
 
         private void SwipeButton_Clicked(int itemIndex)
         {
-            ListView.SwipeItem(DocumentViewModel.Documents[itemIndex], -180);
-            viewModel.ItemToRemove = DocumentViewModel.Documents.ToList().First(item => item.ItemIndexInDocumentList == itemIndex);
+            if(this.isSwipped == false)
+            {
+                ListView.SwipeItem(DocumentViewModel.Documents[itemIndex], -180);
+                viewModel.ItemToRemove = DocumentViewModel.Documents.ToList().First(item => item.ItemIndexInDocumentList == itemIndex);
+                this.isSwipped = true;
+            }
+            else
+            {
+                ListView.ResetSwipe();
+                this.isSwipped = false;
+            }
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -177,6 +194,11 @@ namespace Pdf.Helpers
 
             var document = obj as FileModel;
             return (document.FileName.ToLower().Contains(searchBar.Text.ToLower()));
+        }
+
+        private void ListView_SwipeStarted(object sender, Syncfusion.ListView.XForms.SwipeStartedEventArgs e)
+        {
+            e.Cancel = true;
         }
         #endregion
     }

@@ -1203,3 +1203,4 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Rele
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\stamp\_GenerateJavaStubs.stamp
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\stamp\_GeneratePackageManagerJava.stamp
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\stamp\_ResolveLibraryProjectImports.stamp
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\android\src\crc64ce4755fc17c5ee4b\CustomTypefaceSpan.java

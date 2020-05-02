@@ -1697,6 +1697,7 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debu
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\src\crc64bed5c1b20a8faf76\SfAccordion.java
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\src\crc64ccef35903773fcaf\SfBusyIndicatorRenderer.java
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\src\crc64ce4755fc17c5ee4b\CustomSearchBarRenderer.java
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\src\crc64ce4755fc17c5ee4b\CustomTypefaceSpan.java
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\src\crc64ce4755fc17c5ee4b\IconViewRenderer.java
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\src\crc64ce4755fc17c5ee4b\MainActivity.java
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\src\crc64ce4755fc17c5ee4b\MyFrameRender.java

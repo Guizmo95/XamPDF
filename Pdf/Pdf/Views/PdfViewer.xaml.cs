@@ -24,9 +24,8 @@ namespace Pdf.Views
         //#region Content view / View
         private string filePath;
         private PdfViewerModel pdfViewerModel;
-
-        private readonly BottomAnnotationToolbar bottomAnnotationToolbar;
-        private readonly StyleContent styleDrawerContent;
+      
+        private BottomAnnotationToolbar bottomAnnotationToolbar;
         private SelectTextMarkupBar selectTextMarkupBar;
         private ShapeBar shapeBar;
 
@@ -268,11 +267,54 @@ namespace Pdf.Views
             pdfViewerControl.TextMarkupDeselected -= PdfViewerControl_TextMarkupDeselected;
             pdfViewerControl.TextMarkupAdded -= PdfViewerControl_TextMarkupAdded;
 
+            pdfViewerControl.DocumentLoaded -= PdfViewerControl_DocumentLoaded;
+
             base.OnDisappearing();
         }
 
         protected override void OnAppearing()
         {
+            pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
+            //Retrieves the current horizontal offset of the PdfViewerControl
+
+            MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
+            {
+                this.SelectedColor = helper;
+            });
+
+            base.OnAppearing();
+        }
+
+        public PdfViewer(string filepath)
+        {
+            InitializeComponent();
+
+            pdfViewerControl.Toolbar.Enabled = false;
+
+            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+            pdfViewerControl.BindingContext = pdfViewerModel = new PdfViewerModel(filepath);
+        }
+
+        private void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
+        {
+            Shell.SetNavBarIsVisible(this, false);
+            Shell.SetTabBarIsVisible(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            #region Instanciation
+            this.bottomAnnotationToolbar = new BottomAnnotationToolbar();
+            bottomAnnotationToolbar.BindingContext = this;
+            #endregion
+
+            #region Add content view but set them invisible 
+            bottomAnnotationToolbar.IsVisible = false;
+            mainStackLayout.Children.Insert(2, bottomAnnotationToolbar);
+
+            ValidButton.IsVisible = false;
+            UndoButton.IsVisible = false;
+            RedoButton.IsVisible = false;
+            #endregion
+
             #region Pdf viewer events
             pdfViewerControl.FreeTextAnnotationAdded += PdfViewerControl_FreeTextAnnotationAdded;
             pdfViewerControl.FreeTextAnnotationSelected += PdfViewerControl_FreeTextAnnotationSelected;
@@ -291,19 +333,7 @@ namespace Pdf.Views
             pdfViewerControl.TextMarkupSelected += PdfViewerControl_TextMarkupSelected;
             pdfViewerControl.TextMarkupDeselected += PdfViewerControl_TextMarkupDeselected;
             pdfViewerControl.TextMarkupAdded += PdfViewerControl_TextMarkupAdded;
-
-            MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
-            {
-                this.SelectedColor = helper;
-            });
             #endregion
-
-            base.OnAppearing();
-        }
-
-        public PdfViewer(string filepath)
-        {
-            InitializeComponent();
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
             {
@@ -457,26 +487,6 @@ namespace Pdf.Views
                     textMarkupButton.Foreground = Color.FromHex("4e4e4e");
                 })
             });
-
-
-            #region Instanciation
-            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
-            pdfViewerControl.BindingContext = pdfViewerModel = new PdfViewerModel(filepath);
-
-            this.bottomAnnotationToolbar = new BottomAnnotationToolbar();
-            bottomAnnotationToolbar.BindingContext = this;
-            #endregion
-
-            #region Add content view but set them invisible 
-            bottomAnnotationToolbar.IsVisible = false;
-            mainStackLayout.Children.Insert(2, bottomAnnotationToolbar);
-
-            ValidButton.IsVisible = false;
-            UndoButton.IsVisible = false;
-            RedoButton.IsVisible = false;
-            #endregion
-
-            pdfViewerControl.Toolbar.Enabled = false;
         }
 
         #region Pdf viewer events methods
