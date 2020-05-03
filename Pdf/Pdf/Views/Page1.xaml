@@ -4,11 +4,30 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms" xmlns:local="clr-namespace:Pdf.ViewModels"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.Page1">
+             x:Class="Pdf.Views.Page1" Shell.NavBarIsVisible="False" Shell.TabBarIsVisible="False"> 
 
-    <Grid x:Name="mainGrid">
-        <Grid x:Name="pdfViewGrid">
-            <syncfusion:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfStream}"/>
+    <Grid x:Name="mainGrid" RowSpacing="0" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand">
+                <Entry Keyboard="Numeric" FontSize="18" x:Name="pageNumberEntry" HorizontalTextAlignment="Center" Grid.Column="0" VerticalOptions="Center" Text="{Binding PageNumber, Source={x:Reference Name=pdfViewerControl}}"/>
+                <Label Text="/" Grid.Column="1" FontSize="18" x:Name="slashLabel"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                <Label x:Name="pageCountLabel" Grid.Column="2" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding PageCount, Source={x:Reference Name=pdfViewerControl}}"/>
+                <Button x:Name="goToNextButton"  Grid.Column="3" BackgroundColor="Transparent" Image="PageDown.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding GoToNextPageCommand, Source={x:Reference Name=pdfViewerControl}}"/>
+                <Button x:Name="goToPreviousButton" Grid.Column="4" BackgroundColor="Transparent" Image="PageUp.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding GoToPreviousPageCommand, Source={x:Reference Name=pdfViewerControl}}"/>
+        </StackLayout>
+        <Grid x:Name="pdfViewGrid" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <syncfusion:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfStream}" PageViewMode="PageByPage"/>
         </Grid>
+        <StackLayout Grid.Row="2" VerticalOptions="FillAndExpand">
+                <Entry Keyboard="Numeric" FontSize="18" x:Name="pageNumbesqdrEntry" HorizontalTextAlignment="Center" Grid.Column="0" VerticalOptions="Center" Text="{Binding PageNumber, Source={x:Reference Name=pdfViewerControl}}"/>
+                <Label Text="/" Grid.Column="1" FontSize="18" x:Name="slashLqsdabel"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                <Label x:Name="pageCountqsdLabel" Grid.Column="2" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding PageCount, Source={x:Reference Name=pdfViewerControl}}"/>
+                <Button x:Name="goToNextqsdButton"  Grid.Column="3" BackgroundColor="Transparent" Image="PageDown.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding GoToNextPageCommand, Source={x:Reference Name=pdfViewerControl}}"/>
+                <Button x:Name="goToPrevqsdiousButton" Grid.Column="4" BackgroundColor="Transparent" Image="PageUp.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding GoToPreviousPageCommand, Source={x:Reference Name=pdfViewerControl}}"/>
+        </StackLayout>
     </Grid>
 </ContentPage>

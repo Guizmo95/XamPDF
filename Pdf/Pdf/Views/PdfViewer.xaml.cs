@@ -274,15 +274,27 @@ namespace Pdf.Views
 
         protected override void OnAppearing()
         {
-            pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
-            //Retrieves the current horizontal offset of the PdfViewerControl
+            base.OnAppearing();
+
+            Task.Run(() =>
+            {
+                pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
+                //Retrieves the current horizontal offset of the PdfViewerControl
+                
+                var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
+                pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    pdfViewerControl.LoadDocument(pdfStream);
+                });
+            });
 
             MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
             {
                 this.SelectedColor = helper;
             });
-
-            base.OnAppearing();
         }
 
         public PdfViewer(string filepath)
@@ -291,8 +303,8 @@ namespace Pdf.Views
 
             pdfViewerControl.Toolbar.Enabled = false;
 
-            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
-            pdfViewerControl.BindingContext = pdfViewerModel = new PdfViewerModel(filepath);
+            //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+            //pdfViewerControl.BindingContext = pdfViewerModel = new PdfViewerModel(filepath);
         }
 
         private void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
@@ -418,16 +430,16 @@ namespace Pdf.Views
                 })
             });
 
-            signatureButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    signatureButton.Foreground = Color.FromHex("#b4b4b4");
-                    await SignaturePadButton_Clicked();
-                    await Task.Delay(100);
-                    signatureButton.Foreground = Color.FromHex("4e4e4e");
-                })
-            });
+            //signatureButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            //{
+            //    Command = new Command(async () =>
+            //    {
+            //        signatureButton.Foreground = Color.FromHex("#b4b4b4");
+            //        await SignaturePadButton_Clicked();
+            //        await Task.Delay(100);
+            //        signatureButton.Foreground = Color.FromHex("4e4e4e");
+            //    })
+            //});
 
             stampButton.GestureRecognizers.Add(new TapGestureRecognizer()
             {
@@ -487,43 +499,45 @@ namespace Pdf.Views
                     textMarkupButton.Foreground = Color.FromHex("4e4e4e");
                 })
             });
+
+            pdfViewerControl.ScrollToOffset(50, 50);
         }
 
         #region Pdf viewer events methods
         //Set the signature pad page
-        private async Task SignaturePadButton_Clicked()
-        {
-            topToolbar.IsVisible = false;
-            bottomToolbar.IsVisible = false;
+        //private async Task SignaturePadButton_Clicked()
+        //{
+        //    topToolbar.IsVisible = false;
+        //    bottomToolbar.IsVisible = false;
 
-            //pdfViewerControl.AnnotationMode = AnnotationMode.HandwrittenSignature;
+        //    //pdfViewerControl.AnnotationMode = AnnotationMode.HandwrittenSignature;
 
-            var page = new SignaturePage();
-            page.DidFinishPoping += (parameter) =>
-            {
-                if (parameter != null)
-                {
-                    //Set image source
-                    Image image = new Image();
-                    image.Source = ImageSource.FromFile(parameter);
-                    image.WidthRequest = 200;
-                    image.HeightRequest = 100;
+        //    var page = new SignaturePage();
+        //    page.DidFinishPoping += (parameter) =>
+        //    {
+        //        if (parameter != null)
+        //        {
+        //            //Set image source
+        //            Image image = new Image();
+        //            image.Source = ImageSource.FromFile(parameter);
+        //            image.WidthRequest = 200;
+        //            image.HeightRequest = 100;
 
-                    int numPage = pdfViewerControl.PageNumber;
-                    //Add image as custom stamp to the first page
-                    pdfViewerControl.AddStamp(image, numPage);
+        //            int numPage = pdfViewerControl.PageNumber;
+        //            //Add image as custom stamp to the first page
+        //            pdfViewerControl.AddStamp(image, numPage);
 
-                    topToolbar.IsVisible = true;
-                    bottomToolbar.IsVisible = true;
-                }
-                else
-                {
-                    topToolbar.IsVisible = true;
-                    bottomToolbar.IsVisible = true;
-                }
-            };
-            await Navigation.PushAsync(page);
-        }
+        //            topToolbar.IsVisible = true;
+        //            bottomToolbar.IsVisible = true;
+        //        }
+        //        else
+        //        {
+        //            topToolbar.IsVisible = true;
+        //            bottomToolbar.IsVisible = true;
+        //        }
+        //    };
+        //    await Navigation.PushAsync(page);
+        //}
 
         private void StampButton_Clicked()
         {

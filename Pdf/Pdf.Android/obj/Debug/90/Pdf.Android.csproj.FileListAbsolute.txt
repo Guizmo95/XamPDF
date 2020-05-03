@@ -1138,6 +1138,12 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debu
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Pdf.Android.pdb
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Pdf.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Pdf.pdb
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Prism.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Prism.dll.mdb
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Prism.Forms.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Prism.Forms.pdb
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Prism.Unity.Forms.dll
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\Prism.Unity.Forms.pdb
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\SQLite-net.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\SQLitePCLRaw.batteries_green.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\android\assets\SQLitePCLRaw.batteries_v2.dll

@@ -4,6 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Helpers" xmlns:controls="clr-namespace:Pdf.controls"
              mc:Ignorable="d"
+             Visual="Material"
+             xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             xmlns:prism="http://prismlibrary.com/"
              x:Class="Pdf.Views.DocumentsList" Shell.NavBarIsVisible="True" x:Name="DocumentsListPage" Shell.NavBarHasShadow="True" Shell.FlyoutBehavior="Flyout">
     
 
@@ -91,7 +94,7 @@
         </CollectionView.ItemTemplate>
     </CollectionView>-->
     <syncfusion:SfListView AllowSwiping="True" x:Name="DocumentListView" BackgroundColor="White" SelectionMode="Single" SelectedItem="DocumentListView_ItemSelected" 
-                                                        SelectionChanging="DocumentListView_SelectionChanging" ItemSize="67" HorizontalOptions="FillAndExpand" SelectionBackgroundColor="#eeeeee">
+                                                        SelectionChanging="DocumentListView_SelectionChanging" ItemSize="67" HorizontalOptions="FillAndExpand" SelectionBackgroundColor="Transparent">
                 <syncfusion:SfListView.RightSwipeTemplate>
                     <DataTemplate x:Name="RightSwipeTemplate">
                         <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">

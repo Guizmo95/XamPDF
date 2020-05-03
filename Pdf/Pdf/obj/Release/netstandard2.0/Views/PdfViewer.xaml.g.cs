@@ -23,10 +23,7 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.StackLayout mainStackLayout;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.PancakeView.PancakeView topToolbar;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.AbsoluteLayout topAbsoluteLayout;
+        private global::Xamarin.Forms.StackLayout topAbsoluteLayout;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Entry pageNumberEntry;
@@ -50,10 +47,7 @@ namespace Pdf.Views {
         private global::Syncfusion.SfPdfViewer.XForms.SfPdfViewer pdfViewerControl;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.PancakeView.PancakeView bottomToolbar;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.AbsoluteLayout bottomAbsoluteLayout;
+        private global::Xamarin.Forms.StackLayout bottomAbsoluteLayout;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Pdf.controls.IconView signatureButton;
@@ -78,8 +72,7 @@ namespace Pdf.Views {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PdfViewer));
             pdfViewer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "pdfViewer");
             mainStackLayout = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "mainStackLayout");
-            topToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "topToolbar");
-            topAbsoluteLayout = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.AbsoluteLayout>(this, "topAbsoluteLayout");
+            topAbsoluteLayout = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "topAbsoluteLayout");
             pageNumberEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "pageNumberEntry");
             slashLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "slashLabel");
             pageCountLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "pageCountLabel");
@@ -87,8 +80,7 @@ namespace Pdf.Views {
             RedoButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "RedoButton");
             UndoButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "UndoButton");
             pdfViewerControl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfPdfViewer.XForms.SfPdfViewer>(this, "pdfViewerControl");
-            bottomToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "bottomToolbar");
-            bottomAbsoluteLayout = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.AbsoluteLayout>(this, "bottomAbsoluteLayout");
+            bottomAbsoluteLayout = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "bottomAbsoluteLayout");
             signatureButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "signatureButton");
             stampButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "stampButton");
             freeTextButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "freeTextButton");

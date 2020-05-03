@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -142,22 +143,26 @@ namespace Pdf.Views
 
         private async void DocumentListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
         {
-            UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Black);
-            try
-            {
-                if (e.AddedItems == null)
+            await Task.Run(() => Thread.Sleep(530));
+
+            Device.BeginInvokeOnMainThread(async() => {
+                UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Gradient);
+                try
                 {
-                    return;
+                    if (e.AddedItems == null)
+                    {
+                        return;
+                    }
+
+                    var file = (FileModel)e.AddedItems[0];
+
+                    await Navigation.PushAsync(new Page1(file.FilePath));
                 }
-
-                var file = (FileModel)e.AddedItems[0];
-
-                await Navigation.PushAsync(new PdfViewer(file.FilePath));
-            }
-            finally
-            {
-                UserDialogs.Instance.HideLoading();
-            }
+                finally
+                {
+                    UserDialogs.Instance.HideLoading();
+                }
+            });
         }
 
         private void SortButton_Clicked(object sender, EventArgs e)

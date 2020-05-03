@@ -18,8 +18,30 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
-        private string filePath; 
+        private string filePath;
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            Task.Run(() =>
+            {
+                var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
+                pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    
+                    pdfViewerControl.LoadDocument(pdfStream);
+                });
+            });
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+        }
 
         public Page1(string filePath)
         {
@@ -27,7 +49,7 @@ namespace Pdf.Views
             InitializeComponent();
 
             this.filePath = filePath;
-
+            pdfViewerControl.Toolbar.Enabled = false;
 
             ////Load the PDF document
             //PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);
@@ -46,8 +68,7 @@ namespace Pdf.Views
 
             //loadedDocument.Close(true);
 
-            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
-            this.BindingContext = new PdfViewerModel(filePath);
+            
         }
 
     }

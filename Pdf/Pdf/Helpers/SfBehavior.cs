@@ -64,6 +64,7 @@ namespace Pdf.Helpers
             viewModel.sfListView = ListView;
             ListView.BindingContext = viewModel;
             ListView.ItemsSource = DocumentViewModel.Documents;
+            ListView.ItemGenerator = new ItemGeneratorExt(this.ListView);
             ListView.SwipeStarted += ListView_SwipeStarted;
 
             SwipeButtonCommand = new Command<int>((int itemIndex) => SwipeButton_Clicked(itemIndex));
@@ -202,4 +203,6 @@ namespace Pdf.Helpers
         }
         #endregion
     }
+
+    
 }

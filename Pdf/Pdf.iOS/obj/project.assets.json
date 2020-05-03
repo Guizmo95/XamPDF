@@ -131,6 +131,41 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "Prism.Core/7.2.0.1422": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {}
+        }
+      },
+      "Prism.Forms/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Core": "7.2.0.1422",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "Prism.Unity.Forms/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Forms": "7.2.0.1422",
+          "Unity.Container": "5.11.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        }
+      },
       "SharpZipLib/1.2.0": {
         "type": "package",
         "compile": {
@@ -670,6 +705,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
       "System.Xml.ReaderWriter/4.3.0": {
         "type": "package",
         "compile": {
@@ -708,6 +752,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        }
+      },
+      "Unity.Abstractions/5.11.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {}
+        }
+      },
+      "Unity.Container/5.11.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "Unity.Abstractions": "5.11.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        },
+        "runtime": {
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
@@ -1006,6 +1075,41 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "Prism.Core/7.2.0.1422": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {}
+        }
+      },
+      "Prism.Forms/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Core": "7.2.0.1422",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "Prism.Unity.Forms/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Forms": "7.2.0.1422",
+          "Unity.Container": "5.11.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        }
+      },
       "SharpZipLib/1.2.0": {
         "type": "package",
         "compile": {
@@ -1545,6 +1649,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
       "System.Xml.ReaderWriter/4.3.0": {
         "type": "package",
         "compile": {
@@ -1583,6 +1696,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        }
+      },
+      "Unity.Abstractions/5.11.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {}
+        }
+      },
+      "Unity.Container/5.11.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "Unity.Abstractions": "5.11.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        },
+        "runtime": {
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
@@ -1881,6 +2019,41 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "Prism.Core/7.2.0.1422": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {}
+        }
+      },
+      "Prism.Forms/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Core": "7.2.0.1422",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "Prism.Unity.Forms/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Forms": "7.2.0.1422",
+          "Unity.Container": "5.11.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        }
+      },
       "SharpZipLib/1.2.0": {
         "type": "package",
         "compile": {
@@ -2420,6 +2593,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
       "System.Xml.ReaderWriter/4.3.0": {
         "type": "package",
         "compile": {
@@ -2458,6 +2640,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        }
+      },
+      "Unity.Abstractions/5.11.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {}
+        }
+      },
+      "Unity.Container/5.11.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "Unity.Abstractions": "5.11.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        },
+        "runtime": {
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
@@ -2756,6 +2963,41 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "Prism.Core/7.2.0.1422": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {}
+        }
+      },
+      "Prism.Forms/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Core": "7.2.0.1422",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "Prism.Unity.Forms/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Forms": "7.2.0.1422",
+          "Unity.Container": "5.11.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        }
+      },
       "SharpZipLib/1.2.0": {
         "type": "package",
         "compile": {
@@ -3295,6 +3537,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
       "System.Xml.ReaderWriter/4.3.0": {
         "type": "package",
         "compile": {
@@ -3333,6 +3584,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Unity.Abstractions.dll": {},
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        }
+      },
+      "Unity.Abstractions/5.11.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unity.Abstractions.dll": {}
+        }
+      },
+      "Unity.Container/5.11.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "Unity.Abstractions": "5.11.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unity.Container.dll": {}
+        },
+        "runtime": {
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
@@ -3858,6 +4134,57 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "Prism.Core/7.2.0.1422": {
+      "sha512": "U6tZ4Iq+ELyK5PedRC6E20caZXXTmTYiw5evpv0M3WcfKgih9H5G5LDBlDl+65eC5Vb4lnOaUCAtckdEl2MRxA==",
+      "type": "package",
+      "path": "prism.core/7.2.0.1422",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Prism.dll",
+        "lib/net45/Prism.pdb",
+        "lib/net45/Prism.xml",
+        "lib/netcoreapp3.0/Prism.dll",
+        "lib/netcoreapp3.0/Prism.pdb",
+        "lib/netcoreapp3.0/Prism.xml",
+        "lib/netstandard2.0/Prism.dll",
+        "lib/netstandard2.0/Prism.pdb",
+        "lib/netstandard2.0/Prism.xml",
+        "prism.core.7.2.0.1422.nupkg.sha512",
+        "prism.core.nuspec"
+      ]
+    },
+    "Prism.Forms/7.2.0.1422": {
+      "sha512": "wrSjIoSp2o8W0JdHx1f5K7pM48lSA2yraQ+QRjl5PLRPs5FhzMwhOA2G1YoD0mhE1WzwzJoBBMnDfDaoFudmyQ==",
+      "type": "package",
+      "path": "prism.forms/7.2.0.1422",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid81/Prism.Forms.dll",
+        "lib/monoandroid81/Prism.Forms.pdb",
+        "lib/monoandroid81/Prism.Forms.xml",
+        "lib/netstandard2.0/Prism.Forms.dll",
+        "lib/netstandard2.0/Prism.Forms.pdb",
+        "lib/netstandard2.0/Prism.Forms.xml",
+        "prism.forms.7.2.0.1422.nupkg.sha512",
+        "prism.forms.nuspec"
+      ]
+    },
+    "Prism.Unity.Forms/7.2.0.1422": {
+      "sha512": "BZBAgGsMuq1LTfu6fAJiF5vMmcd5Vw+AefQhA53nWdp+MAU/U5NOlftSI8IbvgCvzDaKcfbEoibZcQo86JM9Pw==",
+      "type": "package",
+      "path": "prism.unity.forms/7.2.0.1422",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Prism.Unity.Forms.dll",
+        "lib/netstandard2.0/Prism.Unity.Forms.pdb",
+        "lib/netstandard2.0/Prism.Unity.Forms.xml",
+        "prism.unity.forms.7.2.0.1422.nupkg.sha512",
+        "prism.unity.forms.nuspec"
       ]
     },
     "SharpZipLib/1.2.0": {
@@ -6046,6 +6373,41 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "System.Threading.Tasks.Extensions/4.5.2": {
+      "sha512": "BG/TNxDFv0svAzx8OiMXDlsHfGw623BZ8tCXw4YLhDFDvDhNUEV58jKYMGRnkbJNm7c3JNNJDiN7JBMzxRBR2w==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Xml.ReaderWriter/4.3.0": {
       "sha512": "GrprA+Z0RUXaR4N7/eW71j1rgMnEnEVlgii49GZyAjTH7uliMnrOU3HNFBr6fEDBCJCIdlVNq9hHbaDR621XBA==",
       "type": "package",
@@ -6268,6 +6630,60 @@
         "lib/netstandard2.0/Unity.Container.pdb",
         "unity.5.11.4.nupkg.sha512",
         "unity.nuspec"
+      ]
+    },
+    "Unity.Abstractions/5.11.1": {
+      "sha512": "R5qJ8KSN2mptSqCG4SHBBs2PcRvo113uu18cNCbcx1nkezYGZnYBNadLPtDODE5KFLQBqLdW9XlaalxU275Qgg==",
+      "type": "package",
+      "path": "unity.abstractions/5.11.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Unity.Abstractions.dll",
+        "lib/net40/Unity.Abstractions.pdb",
+        "lib/net45/Unity.Abstractions.dll",
+        "lib/net45/Unity.Abstractions.pdb",
+        "lib/net46/Unity.Abstractions.dll",
+        "lib/net46/Unity.Abstractions.pdb",
+        "lib/net47/Unity.Abstractions.dll",
+        "lib/net47/Unity.Abstractions.pdb",
+        "lib/netcoreapp1.0/Unity.Abstractions.dll",
+        "lib/netcoreapp1.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp2.0/Unity.Abstractions.dll",
+        "lib/netcoreapp2.0/Unity.Abstractions.pdb",
+        "lib/netstandard1.0/Unity.Abstractions.dll",
+        "lib/netstandard1.0/Unity.Abstractions.pdb",
+        "lib/netstandard2.0/Unity.Abstractions.dll",
+        "lib/netstandard2.0/Unity.Abstractions.pdb",
+        "unity.abstractions.5.11.1.nupkg.sha512",
+        "unity.abstractions.nuspec"
+      ]
+    },
+    "Unity.Container/5.11.1": {
+      "sha512": "pxeataMa9MB/ilLNcmy5OUrcvA2OnPMuMCTsw+zGgRPWx1oxkq6ap5bI+59htjAPe9awPDIU3YVk+yH0sfcOWQ==",
+      "type": "package",
+      "path": "unity.container/5.11.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Unity.Container.dll",
+        "lib/net40/Unity.Container.pdb",
+        "lib/net45/Unity.Container.dll",
+        "lib/net45/Unity.Container.pdb",
+        "lib/net46/Unity.Container.dll",
+        "lib/net46/Unity.Container.pdb",
+        "lib/net47/Unity.Container.dll",
+        "lib/net47/Unity.Container.pdb",
+        "lib/netcoreapp1.0/Unity.Container.dll",
+        "lib/netcoreapp1.0/Unity.Container.pdb",
+        "lib/netcoreapp2.0/Unity.Container.dll",
+        "lib/netcoreapp2.0/Unity.Container.pdb",
+        "lib/netstandard1.0/Unity.Container.dll",
+        "lib/netstandard1.0/Unity.Container.pdb",
+        "lib/netstandard2.0/Unity.Container.dll",
+        "lib/netstandard2.0/Unity.Container.pdb",
+        "unity.container.5.11.1.nupkg.sha512",
+        "unity.container.nuspec"
       ]
     },
     "Xamarin.Forms/4.5.0.657": {
@@ -6610,6 +7026,9 @@
     "Xamarin.iOS,Version=v1.0": [
       "Acr.UserDialogs >= 7.1.0.440",
       "Pdf >= 1.0.0",
+      "Prism.Core >= 7.2.0.1422",
+      "Prism.Forms >= 7.2.0.1422",
+      "Prism.Unity.Forms >= 7.2.0.1422",
       "Xamarin.Forms >= 4.5.0.657"
     ]
   },
@@ -6658,6 +7077,18 @@
           "Acr.UserDialogs": {
             "target": "Package",
             "version": "[7.1.0.440, )"
+          },
+          "Prism.Core": {
+            "target": "Package",
+            "version": "[7.2.0.1422, )"
+          },
+          "Prism.Forms": {
+            "target": "Package",
+            "version": "[7.2.0.1422, )"
+          },
+          "Prism.Unity.Forms": {
+            "target": "Package",
+            "version": "[7.2.0.1422, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
