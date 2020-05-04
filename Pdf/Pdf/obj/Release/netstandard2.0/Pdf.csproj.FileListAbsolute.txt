@@ -24,6 +24,7 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\nets
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\controls\TextMarkupBar.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\controls\ThicknessBar.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\DocumentsList.xaml.g.cs
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\FavoritesFilesPage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\MainPage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\Page1.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\PdfViewer.xaml.g.cs
@@ -40,4 +41,3 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\nets
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\ref\Pdf.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Pdf.pdb
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Pdf.csprojAssemblyReference.cache
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\FavoritesFilesPage.xaml.g.cs

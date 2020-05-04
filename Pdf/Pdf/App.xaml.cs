@@ -20,6 +20,9 @@ namespace Pdf
 
         public App()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjUxNzQ0QDMxMzgyZTMxMmUzMEtndVlMY3hrWXdxOTNraGZJWTJvcGdJazRjKzhjOVFTWlU5VDlmdnhhalk9");
+
             InitializeComponent();
 
             Container = new UnityContainer();

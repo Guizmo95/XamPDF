@@ -10,34 +10,45 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms"
              xmlns:controls="clr-namespace:Pdf.controls"
              xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:views="clr-namespace:Pdf.Views" x:Name="pdfViewer" Shell.FlyoutBehavior="Disabled">
-    
+             xmlns:views="clr-namespace:Pdf.Views" xmlns:effectsView="clr-namespace:Syncfusion.XForms.PlatformConfiguration.UWPSpecific;assembly=Syncfusion.Core.XForms" x:Name="pdfViewer" Shell.FlyoutBehavior="Disabled">
 
-    
-            <StackLayout Spacing="0" x:Name="mainStackLayout" Orientation="Vertical">
-                <!--<controls1:PancakeView BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar" IsVisible="True" Margin="0">-->
-                    <StackLayout x:Name="topAbsoluteLayout" BackgroundColor="#f5f5f5" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" IsVisible="False">
-                            <Entry Keyboard="Numeric" FontSize="18" x:Name="pageNumberEntry"  VerticalOptions="Center" Text="{Binding PageNumber, Source={x:Reference Name=pdfViewerControl}}" MaxLength="20"/>
-                            <Label Text="/" FontSize="18" x:Name="slashLabel"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" WidthRequest="20"/>
-                            <Label x:Name="pageCountLabel" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  VerticalOptions="Center" Text="{Binding PageCount, Source={x:Reference Name=pdfViewerControl}}" WidthRequest="20"/>
-                        </StackLayout>
-                        <controls:IconView IsVisible="False" x:Name="ValidButton" Source="tick.png" BackgroundColor="Transparent" HeightRequest="33" WidthRequest="33" Foreground="White" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <controls:IconView IsVisible="False" x:Name="RedoButton" Source="arrow.png" BackgroundColor="Transparent" HeightRequest="33" WidthRequest="33"  Foreground="White" AbsoluteLayout.LayoutBounds="0.82, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <controls:IconView IsVisible="False" x:Name="UndoButton" Source="next.png" BackgroundColor="Transparent" HeightRequest="33" WidthRequest="33"  Foreground="White" AbsoluteLayout.LayoutBounds="0.72, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                    </StackLayout>
-                <!--</controls1:PancakeView>-->
-                <syncfusion:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfStream}" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" PageViewMode="PageByPage"/>
-                <!--<controls1:PancakeView BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="bottomToolbar" IsVisible="True" Margin="0">-->
-                    <StackLayout x:Name="bottomAbsoluteLayout" VerticalOptions="End" BackgroundColor="#f5f5f5" HeightRequest="47" HorizontalOptions="FillAndExpand">
-                        <controls:IconView IsVisible="False" x:Name="signatureButton" Source="baseline_menu_24.xml" HeightRequest="43" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <controls:IconView IsVisible="False" x:Name="stampButton" Source="licensing.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.85, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <controls:IconView IsVisible="False" x:Name="freeTextButton" Source="font.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.75, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <controls:IconView IsVisible="False" x:Name="inkButton" Source="pencil.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.65, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <controls:IconView IsVisible="False" x:Name="shapeButton" Source="rectangle.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.55, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <controls:IconView IsVisible="False" x:Name="textMarkupButton" Source="marker.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.45, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                    </StackLayout>
-                <!--</controls1:PancakeView>-->
-            </StackLayout>
+
+
+    <ContentPage.Content>
+        <Grid x:Name="mainGrid" RowSpacing="0" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="45" />
+            </Grid.RowDefinitions>
+            <controls1:PancakeView Grid.Row="0" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar" IsVisible="True">
+                <StackLayout  VerticalOptions="FillAndExpand" x:Name="topLayout">
+                    <Entry Keyboard="Numeric" FontSize="18" x:Name="pageNumberEntry" HorizontalTextAlignment="Center" Grid.Column="0" VerticalOptions="Center" Text="{Binding PageNumber, Source={x:Reference Name=pdfViewerControl}}"/>
+                    <Label Text="/" Grid.Column="1" FontSize="18" x:Name="slashLabel"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Label x:Name="pageCountLabel" Grid.Column="2" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding PageCount, Source={x:Reference Name=pdfViewerControl}}"/>
+                    <Button x:Name="goToNextButton"  Grid.Column="3" BackgroundColor="Transparent" Image="PageDown.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding GoToNextPageCommand, Source={x:Reference Name=pdfViewerControl}}"/>
+                    <Button x:Name="goToPreviousButton" Grid.Column="4" BackgroundColor="Transparent" Image="PageUp.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding GoToPreviousPageCommand, Source={x:Reference Name=pdfViewerControl}}"/>
+                    <controls:IconView IsVisible="False" x:Name="ValidButton" Source="pencil.png" BackgroundColor="Transparent" HeightRequest="33" WidthRequest="33" Foreground="White" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    <controls:IconView IsVisible="False" x:Name="RedoButton" Source="pencil.png" BackgroundColor="Transparent" HeightRequest="33" WidthRequest="33"  Foreground="White" AbsoluteLayout.LayoutBounds="0.82, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    <controls:IconView IsVisible="False" x:Name="UndoButton" Source="pencil.png" BackgroundColor="Transparent" HeightRequest="33" WidthRequest="33"  Foreground="White" AbsoluteLayout.LayoutBounds="0.72, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                </StackLayout>
+            </controls1:PancakeView>
+            <Grid x:Name="pdfViewGrid" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <syncfusion:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfStream}" PageViewMode="PageByPage"/>
+            </Grid>
+            <controls1:PancakeView  Grid.Row="2" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar2" IsVisible="True">
+                <StackLayout  VerticalOptions="FillAndExpand" x:Name="bottomLayout" Orientation="Horizontal" Spacing="9" HorizontalOptions="Center">
+                    <ImageButton Padding="2" x:Name="freeTextButton" BackgroundColor="#fafafa" Source="twotone_title_24.xml" WidthRequest="31" HeightRequest="31"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <ImageButton Padding="2" x:Name="inkButton" BackgroundColor="#fafafa" Source="twotone_gesture_24.xml" WidthRequest="31" HeightRequest="31"   HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <ImageButton Padding="2" x:Name="shapeButton" BackgroundColor="#fafafa" Source="twotone_multiline_chart_24.xml" WidthRequest="31" HeightRequest="31"   HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <ImageButton Padding="2" x:Name="textMarkupButton" BackgroundColor="#fafafa" Source="twotone_format_strikethrough_24.xml" WidthRequest="31" HeightRequest="31"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <ImageButton Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="twotone_create_24.xml" WidthRequest="31" HeightRequest="31"   HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <ImageButton Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="twotone_branding_watermark_24.xml" WidthRequest="31" HeightRequest="31" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </StackLayout>
+            </controls1:PancakeView>
+        </Grid>
+    </ContentPage.Content>
+
+   
     
 </ContentPage>

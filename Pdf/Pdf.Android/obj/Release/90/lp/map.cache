@@ -2,7 +2,6 @@ Acr.UserDialogs
 AndHUD
 FormsViewGroup
 Pdf
-Prism.Forms
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2
 SQLitePCLRaw.core
@@ -10,7 +9,6 @@ SQLitePCLRaw.lib.e_sqlite3
 SQLitePCLRaw.provider.e_sqlite3
 Syncfusion.Buttons.XForms.Android
 Syncfusion.Core.XForms.Android
-Syncfusion.Expander.XForms.Android
 Syncfusion.PdfiumBindings
 Syncfusion.SfBusyIndicator.Android
 Syncfusion.SfBusyIndicator.XForms.Android

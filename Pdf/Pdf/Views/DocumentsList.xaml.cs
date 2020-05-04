@@ -5,6 +5,7 @@ using Pdf.Models;
 using Pdf.ViewModels;
 using Syncfusion.DataSource;
 using Syncfusion.Pdf.Parsing;
+using Syncfusion.XForms.EffectsView;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
@@ -25,8 +26,21 @@ namespace Pdf.Views
     public partial class DocumentsList : ContentPage, INotifyPropertyChanged
     {
         private SfPopupLayout popupLayout;
-
+        private FileModel selectedDoc;
         public SfBehavior SfBehavior { get; set; }
+
+        public FileModel SelectedDoc
+        {
+            get
+            {
+                return selectedDoc;
+            }
+
+            set
+            {
+                selectedDoc = value;
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -96,6 +110,23 @@ namespace Pdf.Views
             SortName_Clicked(null, null);
 
             sortButton.RotateTo(180);
+
+            MessagingCenter.Subscribe<ListViewBehavior>(this, "PushAsyncPage", (sender) =>
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Clear);
+                    try
+                    {
+                        var file = (FileModel)DocumentListView.SelectedItem;
+                        await Navigation.PushAsync(new PdfViewer(file.FilePath));
+                    }
+                    finally
+                    {
+                        UserDialogs.Instance.HideLoading();
+                    }
+                });
+            });
         }
 
 
@@ -141,29 +172,38 @@ namespace Pdf.Views
         }
 
 
-        private async void DocumentListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
-        {
-            await Task.Run(() => Thread.Sleep(530));
+        //private async void DocumentListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
+        //{
+        //    if (e.AddedItems == null)
+        //    {
+        //        return;
+        //    }
 
-            Device.BeginInvokeOnMainThread(async() => {
-                UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Gradient);
-                try
-                {
-                    if (e.AddedItems == null)
-                    {
-                        return;
-                    }
+        //    var file = (FileModel)e.AddedItems[0];
 
-                    var file = (FileModel)e.AddedItems[0];
+        //    this.filePath = file.FilePath;
+        //    Thread.Sleep(500);
 
-                    await Navigation.PushAsync(new Page1(file.FilePath));
-                }
-                finally
-                {
-                    UserDialogs.Instance.HideLoading();
-                }
-            });
-        }
+        //    Device.BeginInvokeOnMainThread(async () =>
+        //    {
+        //        UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Clear);
+        //        try
+        //        {
+        //            if (e.AddedItems == null)
+        //            {
+        //                return;
+        //            }
+
+        //            var file = (FileModel)e.AddedItems[0];
+
+        //            await Navigation.PushAsync(new PdfViewer(file.FilePath));
+        //        }
+        //        finally
+        //        {
+        //            UserDialogs.Instance.HideLoading();
+        //        }
+        //    });
+        //}
 
         private void SortButton_Clicked(object sender, EventArgs e)
         {
@@ -198,5 +238,6 @@ namespace Pdf.Views
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
     }
 }

@@ -67,7 +67,7 @@ namespace Pdf.Helpers
             getInfoFilePopup = new SfPopupLayout();
             getInfoFilePopup.PopupView.IsFullScreen = true;
             getInfoFilePopup.PopupView.AnimationDuration = 200;
-            getInfoFilePopup.PopupView.AnimationMode = AnimationMode.SlideOnTop;
+            getInfoFilePopup.PopupView.AnimationMode = AnimationMode.SlideOnBottom;
             getInfoFilePopup.PopupView.PopupStyle.CornerRadius = 0;
             getInfoFilePopup.PopupView.PopupStyle.BorderThickness = 2;
             getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.White;

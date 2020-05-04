@@ -4,9 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Helpers" xmlns:controls="clr-namespace:Pdf.controls"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.FavoritesFilesPage" Visual="Material"
-             xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
-             xmlns:prism="http://prismlibrary.com/" Shell.NavBarIsVisible="True" x:Name="DocumentsListPage" Shell.NavBarHasShadow="True" Shell.FlyoutBehavior="Flyout">
+             x:Class="Pdf.Views.FavoritesFilesPage" Shell.NavBarIsVisible="True" x:Name="DocumentsListPage" Shell.NavBarHasShadow="True" Shell.FlyoutBehavior="Flyout">
 
     <Shell.TitleView>
         <StackLayout BackgroundColor="#c62828" 
@@ -56,7 +54,7 @@
     </ContentPage.Behaviors>
 
     <syncfusion:SfListView  AllowSwiping="True" x:Name="FavoriteDocumentListView" BackgroundColor="White" SelectionMode="Single" SelectedItem="DocumentListView_ItemSelected" 
-                                                        SelectionChanging="DocumentListView_SelectionChanging" ItemSize="61" HorizontalOptions="FillAndExpand" SelectionBackgroundColor="#eeeeee">
+                                                        SelectionChanging="DocumentListView_SelectionChanging" ItemSize="61" HorizontalOptions="FillAndExpand" SelectionBackgroundColor="#ff867c">
         <syncfusion:SfListView.RightSwipeTemplate>
             <DataTemplate x:Name="RightSwipeTemplate">
                 <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">

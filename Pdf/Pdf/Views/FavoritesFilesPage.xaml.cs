@@ -128,8 +128,6 @@ namespace Pdf.Views
 
         private async void DocumentListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
         {
-            await Task.Run(() => Thread.Sleep(530));
-
             Device.BeginInvokeOnMainThread(async () => {
                 UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Gradient);
                 try

@@ -31,7 +31,6 @@ namespace Pdf.Views
 
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    
                     pdfViewerControl.LoadDocument(pdfStream);
                 });
             });

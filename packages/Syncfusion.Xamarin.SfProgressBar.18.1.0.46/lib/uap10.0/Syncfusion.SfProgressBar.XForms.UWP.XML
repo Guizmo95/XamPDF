@@ -1,0 +1,1539 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.SfProgressBar.XForms.UWP</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar">
+            <summary>
+            Represents a class for circular progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.TrackOuterRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.TrackOuterRadius"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.TrackInnerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.TrackInnerRadius"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.IndicatorOuterRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.IndicatorOuterRadius"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.IndicatorInnerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.IndicatorInnerRadius"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.EndAngleProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.EndAngle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.StartAngleProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.StartAngle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ShowProgressValueProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ShowProgressValue"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ProgressContentProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ProgressContent"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.rootGrid">
+            <summary>
+            Field holds the root grid value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.progressBarContentPresenter">
+            <summary>
+            Field to hold the content of <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.availableSize">
+            <summary>
+            Field to hold available size.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.track">
+            <summary>
+            Field for primary and secondary circular paths.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.indeterminateProgressPath">
+            <summary>
+            Field for primary and secondary circular paths.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.progressPath">
+            <summary>
+            Field for primary and secondary circular paths.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.progressSegments">
+            <summary>
+            Field to hold the collection of segments.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.circularControl">
+            <summary>
+            Field to hold the Forms control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.trackInnerCoefficient">
+            <summary>
+            Field to have the InnerCoefficient and OuterCoefficient of the Track.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.trackOuterCoefficient">
+            <summary>
+            Field to have the InnerCoefficient and OuterCoefficient of the Track.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.indicatorInnerCoefficient">
+            <summary>
+            Field to have the InnerCoefficient and OuterCoefficient of the Indicator.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.indicatorOuterCoefficient">
+            <summary>
+            Field to have the InnerCoefficient and OuterCoefficient of the Indicator.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.contentPanel">
+            <summary>
+            Panel that contains the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ProgressContent"/>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.storyboard">
+            <summary>
+            Storyboard to animate the indeterminate segments.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.actualCenter">
+            <summary>
+            Field to hold the actual center of the circular control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.isTransformAdded">
+            <summary>
+            Field to indicates whether transform added or not.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ShowProgressValue">
+            <summary>
+            Gets or sets a value indicating whether to show progress value label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.TrackOuterRadius">
+            <summary>
+            Gets or sets a value that indicates the outer radius of the track.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.TrackInnerRadius">
+            <summary>
+            Gets or sets a value that indicates the inner radius of the track.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.IndicatorOuterRadius">
+            <summary>
+            Gets or sets a value that indicates the outer radius of the progress indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.IndicatorInnerRadius">
+            <summary>
+            Gets or sets a value that indicates the inner radius of the progress indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.EndAngle">
+            <summary>
+            Gets or sets the end angle of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.StartAngle">
+            <summary>
+            Gets or sets the start angle of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ProgressContent">
+            <summary>
+            Gets or sets the content for the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ActualProgressInfo">
+            <summary>
+            Gets or sets a value to hold the property info of ActualProgressValue.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.CircularControl">
+            <summary>
+            Gets or sets control from the Forms.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.Dispose">
+            <summary>
+            Method to dispose local objects - XAMARIN-33880 CircularProgressBar memory leak in UWP
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.RefreshDeterminateState(System.Boolean)">
+            <summary>
+            To refresh the control when property value changes.
+            </summary>
+            <param name="isIndeterminate">Checks whether in Indeterminate state or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.RefreshIndeterminateState">
+            <summary>
+            To refresh the control when property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ProgressVisualChanged">
+            <summary>
+            To change the visual when visual related property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.TrackVisualChanged">
+            <summary>
+            To change the visual when track visual property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ProgressPropertyChanged">
+            <summary>
+            To update the progress value to control when progress value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.OnEasingEffectChanged(Xamarin.Forms.Easing)">
+            <summary>
+            Called when the easing effect changed.
+            </summary>
+            <param name="easingEffect">Easing effect of ProgressBar.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.InitiateIndeterminateAnimation">
+            <summary>
+            To create animation for the Indeterminate control segments.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.OnIndeterminateIndicatorWidthChanged(System.Double)">
+            <summary>
+            Called when the indeterminate width factor changed.
+            </summary>
+            <param name="factor">Indeterminate width factor.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ApplyMultiProgressColors(Syncfusion.XForms.ProgressBar.RangeColorCollection)">
+            <summary>
+            To apply multi colors to the progress segments.
+            </summary>
+            <param name="rangeColors">Collection of range color.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.MeasureOverride(Windows.Foundation.Size)">
+            <summary>
+            Method called when measures the size based on the children.
+            </summary>
+            <param name="availableSize">Total size.</param>
+            <returns>Available size.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.OnTrackCoefficientChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for track Coefficient related properties/>
+            </summary>
+            <param name="d">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/></param>
+            <param name="e">Arguments that contains value related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.OnIndicatorCoefficientChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for track Coefficient related properties/>
+            </summary>
+            <param name="d">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/></param>
+            <param name="e">Arguments that contains value related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.OnProgressBarContentChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ProgressContent"/>
+            </summary>
+            <param name="d">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/></param>
+            <param name="e">Arguments that contains value related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.OnShowProgressValueChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback of <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ShowProgressValue"/>
+            </summary>
+            <param name="d">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/></param>
+            <param name="e">Arguments that contains value related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.OnCircularProgressValueChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when value in property is changed.
+            </summary>
+            <param name="d">Dependency object.</param>
+            <param name="e">Property changed event arguments.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.GetPoint(Windows.Foundation.Point,System.Double,System.Double)">
+            <summary>
+            To calculate the point with respect to angle.
+            </summary>
+            <param name="center">Center of the circle.</param>
+            <param name="radius">Radius of the circle.</param>
+            <param name="angle">Angle of the arc.</param>
+            <returns>Point at the given angle.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.GetMedianColor(Xamarin.Forms.Color,Xamarin.Forms.Color,System.Double)">
+            <summary>
+            To get the median color for gradient.
+            </summary>
+            <param name = "color1" > First color.</param>
+            <param name = "color2" > Second color.</param>
+            <param name = "ratio" > Fraction of color.</param>
+            <returns>Interpolated color.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.GetGradientColor(Syncfusion.XForms.ProgressBar.RangeColor,Syncfusion.XForms.ProgressBar.RangeColor,System.Double)">
+            <summary>
+            To get the gradient color.
+            </summary>
+            <param name="rangeColor">Range color of current path.</param>
+            <param name="nextRangeColor">Range color of next path.</param>
+            <param name="ratio">Ratio of start angle.</param>
+            <returns>Gradient color of current path.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.GetStartPoint(System.Double)">
+            <summary>
+            To get the start point with range.
+            </summary>
+            <param name="value">Range value.</param>
+            <returns>Start point for gradient.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.GetEndPoint(System.Double)">
+            <summary>
+            To get the end point with range.
+            </summary>
+            <param name="value">Range value.</param>
+            <returns>End point for gradient.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.GetNormalizedEasingValue(Xamarin.Forms.Easing,System.Double)">
+            <summary>
+            To get the normalized value with respect to easing effect.
+            </summary>
+            <param name="easing">Easing effect.</param>
+            <param name="offset">Value between 0 and 1.</param>
+            <returns>Normalized value respects to easing effect.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.GetCustomRangeValue(System.Double,System.Double,System.Double)">
+            <summary>
+            Gets the value with custom range.
+            </summary>
+            <param name="currentValue">Value between 0 and 1.</param>
+            <param name="scaledMin">Minimum value of range.</param>
+            <param name="scaledMax">Maximum value of range.</param>
+            <returns>Scaled value respect to the given range.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.AnglePropertyChanged_Update(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyProperty)">
+            <summary>
+            Property changed of StrokeDashOffset.
+            </summary>
+            <param name="sender">Indeterminate progress path.</param>
+            <param name="dp">Dependency property.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.InitializeElements">
+            <summary>
+            Initialize the elements for the control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.AddVisual(Windows.UI.Xaml.Shapes.Path,System.Double,System.Double,System.Double,System.Double,System.Double,System.Boolean)">
+            <summary>
+            Add the visual for circular progress bar.
+            </summary>
+            <param name="path">Path for the circle.</param>
+            <param name="value">progress value.</param>
+            <param name="startAngle">Start angle</param>
+            <param name="endAngle">End Angle</param>
+            <param name="outerCoefficient">Outer Coefficient.</param>
+            <param name="innerCoefficient">Inner Coefficient.</param>
+            <param name="isTrack">Indicate weather it is track or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.AddRangePath(Windows.UI.Xaml.Shapes.Path,System.Double,System.Double,Windows.UI.Xaml.Media.Brush,System.Double,System.Double)">
+            <summary>
+            Creates a path with given start and end angle values.
+            </summary>
+            <param name="path">Path for each color.</param>
+            <param name="start">Start value of the arc.</param>
+            <param name="end">End value of the arc.</param>
+            <param name="fillColor">Color of the arc.</param>
+            <param name="startGap">Start gap width for the segment.</param>
+            <param name="endGap">End gap width for the segment.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.UpdateRangeColors">
+            <summary>
+            To update the range colors with created segments.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ClearVisual">
+            <summary>
+            To clear the path segments from visual.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.ConvertValueToAngle(System.Double)">
+            <summary>
+            Converts value to angle.
+            </summary>
+            <param name="value">Progress value.</param>
+            <returns>Angle equivalent to progress.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.AddIndeterminateVisual(Windows.UI.Xaml.Shapes.Path,System.Double,System.Double,System.Double,System.Boolean)">
+            <summary>
+            Add the visual for indeterminate circular progress bar.
+            </summary>
+            <param name="path">Path for the circle.</param>
+            <param name="factor">Indeterminate level factor.</param>
+            <param name="outerCoefficient">Outer Coefficient.</param>
+            <param name="innerCoefficient">Inner Coefficient.</param>
+            <param name="isProgress">Indicate whether its progress or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.CalculateRadiusAndCenter">
+            <summary>
+            To calculate the Inner and Outer radius for the control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.GetRadius">
+            <summary>
+            To get the radius for the control.
+            </summary>
+            <returns>Radius of the control.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.OnCircularProgressBarPropertiesChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when <see cref="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.circularControl"/> property changed.
+            </summary>
+            <param name="sender">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar"/></param>
+            <param name="e">Argument that contains value related to property changed event.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar.UpdateProgressContent">
+            <summary>
+            To update the progress bar content to the view.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar">
+            <summary>
+            Represents the class for linear progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgressProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgress"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgressColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgressColor"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.IndicatorPaddingProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.IndicatorPadding"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.TrackHeightProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.TrackHeight"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.rootPanel">
+            <summary>
+            Root panel of the control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.progressPanel">
+            <summary>
+            Root panel of the control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.secondaryPanel">
+            <summary>
+            Root panel of the control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.trackPanel">
+            <summary>
+            Root panel of the control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.segmentWidth">
+            <summary>
+            Width of the segments.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.maximumWidth">
+            <summary>
+            Width of the segments.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.availableSize">
+            <summary>
+            Field to hold the available size of the control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.startPoint">
+            <summary>
+            Start point of the gradient color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.endPoint">
+            <summary>
+            End point of the gradient color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.offsetGap">
+            <summary>
+            To set the gap between multi color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.trackSegments">
+            <summary>
+            To hold the segments collection of track path.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.progressSegments">
+            <summary>
+            To hold the segments collection of progress path.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.secondaryProgressSegments">
+            <summary>
+            To hold the segments collection of secondary progress path.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.indeterminateSegment">
+            <summary>
+            To hold the indeterminate segment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.linearControl">
+            <summary>
+            Field to hold the forms <see cref="T:Syncfusion.XForms.ProgressBar.SfLinearProgressBar"/>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.storyboard">
+            <summary>
+            Storyboard for animating linear indeterminate segment.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.IndicatorPadding">
+            <summary>
+            Gets or sets the padding value for the progress indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgress">
+            <summary>
+            Gets or sets the value of secondary progress.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgressColor">
+            <summary>
+            Gets or sets the color of the secondary progress indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.TrackHeight">
+            <summary>
+            Gets or sets the height of the track.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.ActualProgressInfo">
+            <summary>
+            Gets or sets a value to hold the property info of <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgress"/>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgressInfo">
+            <summary>
+            Gets or sets a value to hold the property info of <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Progress"/>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.LinearControl">
+            <summary>
+            Gets or sets View from the Forms .
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.OnLinearProgressBarPropertiesChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.LinearControl"/> property changed.
+            </summary>
+            <param name="sender">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar"/></param>
+            <param name="e">Argument that contains value related to property changed event.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgressChanged">
+            <summary>
+            To update the changes of property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgress"/>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.RefreshDeterminateState(System.Boolean)">
+            <summary>
+            To refresh the control when property value changes.
+            </summary>
+            <param name="isIndeterminate">Checks whether in Indeterminate state or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.OnIndeterminateIndicatorWidthChanged(System.Double)">
+            <summary>
+            To refresh the view when indicator width factor changed.
+            </summary>
+            <param name="factor">Indeterminate indicator width factor.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.RefreshIndeterminateState">
+            <summary>
+            To refresh the control when property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.ProgressVisualChanged">
+            <summary>
+            To change the visual when progress visual property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.TrackVisualChanged">
+            <summary>
+            To change the visual when track visual property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.ProgressPropertyChanged">
+            <summary>
+            To update the changes of property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Progress"/>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.OnEasingEffectChanged(Xamarin.Forms.Easing)">
+            <summary>
+            Called when the easing effect changed.
+            </summary>
+            <param name="easingEffect">Easing effect of ProgressBar.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.InitiateIndeterminateAnimation">
+            <summary>
+            To create animation for the Indeterminate control segments.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.ApplyMultiProgressColors(Syncfusion.XForms.ProgressBar.RangeColorCollection)">
+            <summary>
+            To apply multi colors to the progress segments.
+            </summary>
+            <param name="rangeColors">Collection of range color.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.MeasureOverride(Windows.Foundation.Size)">
+            <summary>
+            Called when element is measured.
+            </summary>
+            <param name="availableSize">Available size.</param>
+            <returns>Total size of the control.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.OnPaddingPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the padding property.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.OnTrackHeightChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the track height property.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.OnSecondaryProgressChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgress"/>
+            </summary>
+            <param name="d">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar"/></param>
+            <param name="e">Arguments that contains value related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.OnSecondaryProgressVisualChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.SecondaryProgressColor"/>
+            </summary>
+            <param name="d">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar"/></param>
+            <param name="e">Arguments that contains value related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.RangeColorToGradientStop(Xamarin.Forms.Color,System.Double)">
+            <summary>
+            To convert range color to gradient stop.
+            </summary>
+            <param name="color">Range color.</param>
+            <param name="offset">Offset value of gradient stop.</param>
+            <returns>Gradient stop value.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.CalculateSegmentCount(System.Double,System.Double)">
+            <summary>
+            To calculate the segment's count based on total width.
+            </summary>
+            <param name="totalWidth">Total width of segment.</param>
+            <param name="width">Percentage width of segment.</param>
+            <returns>Segments count.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.RemoveRangeColor(Syncfusion.XForms.ProgressBar.RangeColor,System.Double,System.Double)">
+            <summary>
+            Remove the range color from the collection of colors.
+            </summary>
+            <param name="rangeColor">Range color needed to remove</param>
+            <param name="segStart">Start of the segment.</param>
+            <param name="segRange">Range of the segment.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.AddNewRangeColor(Syncfusion.XForms.ProgressBar.RangeColor,System.Double,System.Double)">
+            <summary>
+            Add the new range color to the collection of colors.
+            </summary>
+            <param name="rangeColor">Range color to be added.</param>
+            <param name="segStart">Start of the segment.</param>
+            <param name="segRange">Range of the segment.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.RangeColorPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Property changes of <see cref="T:Syncfusion.XForms.ProgressBar.RangeColor"/>
+            </summary>
+            <param name="sender">Range color.</param>
+            <param name="e">Arguments contains the property changed values.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.ChangeRange(Syncfusion.XForms.ProgressBar.RangeColor,System.Double,System.Double,System.Double)">
+            <summary>
+            Start or End of the range color is changed.
+            </summary>
+            <param name="rangeColor">Range color of the changed value.</param>
+            <param name="rangeOffset">Changed start or end.</param>
+            <param name="segStart">Start of the segment.</param>
+            <param name="segRange">Range of the segment.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.ChangeRangeColor(Syncfusion.XForms.ProgressBar.RangeColor,System.Double,System.Double)">
+            <summary>
+            Color of the range color is changed.
+            </summary>
+            <param name="rangeColor">Range color of the changed color.</param>
+            <param name="segStart">Start of the segment.</param>
+            <param name="segRange">Range of the segment.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.RangeColorToGradientBrush(Syncfusion.XForms.ProgressBar.RangeColor,System.Double,System.Double,Windows.UI.Xaml.Media.LinearGradientBrush)">
+            <summary>
+            Converts range color to gradient brush.
+            </summary>
+            <param name="rangeColor">Range color to be changed.</param>
+            <param name="segStart">Start of the segment.</param>
+            <param name="segEnd">End of the segment.</param>
+            <param name="gradientBrush">Converted gradient brush.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.InitializeElements">
+            <summary>
+            Initializing panel and its elements.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.OnSecondaryProgressColorChanged">
+            <summary>
+            To update secondary progress visual.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.CalculateSegmentWidth">
+            <summary>
+            To calculate the width of the individual segment.
+            </summary>
+            <returns>Width of the individual segment.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.CreateIndeterminateSegment">
+            <summary>
+            To create the segment and track for Indeterminate state of control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.PositionUIElement(Windows.UI.Xaml.Shapes.Rectangle,System.Double)">
+            <summary>
+            To position the indeterminate segment.
+            </summary>
+            <param name="element">The element to be positioned.</param>
+            <param name="width">The width of the element.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.VisibilityChanged(System.Boolean)">
+            <summary>
+            Change the visibility of panel based on Indeterminate state.
+            </summary>
+            <param name="isIndeterminate">Indeterminate state or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.CreateSegments(System.Int32,Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler{Windows.UI.Xaml.Shapes.Shape}@,Windows.UI.Xaml.Media.Brush,Windows.UI.Xaml.Thickness,System.Boolean)">
+            <summary>
+            To create the segment for determinate state of control.
+            </summary>
+            <param name="segCount">Count of segments.</param>
+            <param name="segments">Segments collection for path.</param>
+            <param name="fillColor">Color to fill the segment.</param>
+            <param name="padding">Padding for progress bar.</param>
+            <param name="isProgress">For checking progress segment.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.RangeColorsCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Collection value changed event of <see cref="T:Syncfusion.XForms.ProgressBar.RangeColorCollection"/>.
+            </summary>
+            <param name="sender">RangeColors collection.</param>
+            <param name="e">Args contains collection changed event.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.ExcludeGapWidth(System.Double)">
+            <summary>
+            Segment width with considering Gap.
+            </summary>
+            <param name="totalWidth">Total width of the control.</param>
+            <returns>Width for each segment.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar.PercentageToWidth(System.Double)">
+            <summary>
+            To calculate the width with the percentage.
+            </summary>
+            <param name="percentage">Percentage value of progress.</param>
+            <returns>Width of the percentage.</returns>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.StepContent">
+            <summary>
+            Represents the step content class
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.StepContent.contentType">
+            <summary>
+            Marker content type
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.StepContent.contentSize">
+            <summary>
+            Marker content size
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.StepContent.contentColor">
+            <summary>
+            Marker content color
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.StepContent.contentText">
+            <summary>
+            Marker content text (numbering)
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.StepContent.textBlock">
+            <summary>
+            Marker content text
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.StepContent.path">
+            <summary>
+            Marker content path
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.StepContent.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.StepContent"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.StepContent.ContentType">
+            <summary>
+            Gets or sets the marker content type
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.StepContent.ContentText">
+            <summary>
+            Gets or sets the marker content text
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.StepContent.ContentSize">
+            <summary>
+            Gets or sets the marker content size
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.StepContent.ContentColor">
+            <summary>
+            Gets or sets the marker content color
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.StepContent.SetTransform(System.Double)">
+            <summary>
+            Set transform
+            </summary>
+            <param name="width">width value</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.StepContent.SetPath">
+            <summary>
+            Set marker content path
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.StepContent.GetDotPath">
+            <summary>
+            Get marker dot path.
+            </summary>
+            <returns>returns path</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.StepContent.GetCrossPath">
+            <summary>
+            Get marker cross path.
+            </summary>
+            <returns>returns path</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.StepContent.GetTickPath">
+            <summary>
+            Get marker tick path
+            </summary>
+            <returns>returns path</returns>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment">
+            <summary>
+            Represents a class for progress segment in circular.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment.StartAngle">
+            <summary>
+            Gets or sets a value of start angle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment.EndAngle">
+            <summary>
+            Gets or sets a value of end angle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment.ValidatedGapWidth">
+            <summary>
+            Gets or sets a value of gap width.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment.RangeStart">
+            <summary>
+            Gets or sets a value of range start.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment.RangeEnd">
+            <summary>
+            Gets or sets a value of range end.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressSegment.SegmentPaths">
+            <summary>
+            Gets or sets a value of paths to render a segment.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.ContentLabelRenderer">
+            <summary>
+            Represents the root class for Content Label Renderer.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ContentLabelRenderer.nativeContent">
+            <summary>
+            Native marker content
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ContentLabelRenderer.OnElementChanged(Xamarin.Forms.Platform.UWP.ElementChangedEventArgs{Xamarin.Forms.Frame})">
+            <summary>
+            Raises the on element changed event.
+            </summary>
+            <param name="e">The changed event.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ContentLabelRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the element property changed event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The changed element.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ContentLabelRenderer.GetWindowsColor(Xamarin.Forms.Color)">
+            <summary>
+            Get windows color (color converter)
+            </summary>
+            <param name="contentColor">marker content color</param>
+            <returns>windows color</returns>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBarRenderer">
+            <summary>
+            Represents the circular progress bar renderer class.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBarRenderer.circularProgressBar">
+            <summary>
+            Fields holds the instance of circular progress bar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBarRenderer.ProgressBar">
+            <summary>
+            Gets the parent control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBarRenderer.OnElementChanged(Xamarin.Forms.Platform.UWP.ElementChangedEventArgs{Syncfusion.XForms.ProgressBar.SfCircularProgressBar})">
+            <summary>
+            Called when element is changed.
+            </summary>
+            <param name="e">Element changed event arguments.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBarRenderer.Dispose(System.Boolean)">
+            <summary>
+            Method to dispose - XAMARIN-33880 CircularProgressBar memory leak in UWP
+            </summary>
+            <param name="disposing">indicating whether the objects should dispose</param>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressRenderer">
+            <summary>
+            Represents a class for linear progress bar renderer.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressRenderer.linearProgressBar">
+            <summary>
+            Field to hold linear progress bar instance.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressRenderer.ProgressBar">
+            <summary>
+            Gets the parent control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressRenderer.OnElementChanged(Xamarin.Forms.Platform.UWP.ElementChangedEventArgs{Syncfusion.XForms.ProgressBar.SfLinearProgressBar})">
+            <summary>
+            Called when element is changed.
+            </summary>
+            <param name="e">Element changed event arguments.</param>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase">
+            <summary>
+            Represents the base class for progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateIndicatorWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateIndicatorWidth"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndicatorCornerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndicatorCornerRadius"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.MaximumProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Maximum"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.MinimumProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Minimum"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.ProgressProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Progress"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.ProgressColorProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.ProgressColor"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.TrackColorProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.TrackColor"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IsIndeterminateProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IsIndeterminate"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateAnimationDurationProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateAnimationDuration"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.SegmentCountProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.SegmentCount"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.GapWidthProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.GapWidth"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateEasingEffectProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateEasingEffect"/>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.RangeColorsProperty">
+            <summary>
+            Dependency property for <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.RangeColors"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateIndicatorWidth">
+            <summary>
+            Gets or sets the level of indicator in indeterminate state.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndicatorCornerRadius">
+            <summary>
+            Gets or sets the corner radius of the  <see cref="T:Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar"/>. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IsIndeterminate">
+            <summary>
+            Gets or sets a value indicating whether progress bar is in indeterminate state.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.SegmentCount">
+            <summary>
+            Gets or sets a count of the segments in progress bar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.GapWidth">
+            <summary>
+            Gets or sets the value that determines gap between the segments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.ProgressColor">
+            <summary>
+            Gets or sets the color of the progress indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Progress">
+            <summary>
+            Gets or sets the progress value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Minimum">
+            <summary>
+            Gets or sets the minimum range value of the progress bar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Maximum">
+            <summary>
+            Gets or sets the maximum range value of the progress bar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.TrackColor">
+            <summary>
+            Gets or sets the color of the track.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateAnimationDuration">
+            <summary>
+            Gets or sets the duration an animation takes to complete one cycle for the indicator.
+            </summary>
+            <value>The duration of the animation.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateEasingEffect">
+            <summary>
+            Gets or sets a value to specify a transfer function that controls how animations speed up or slow down as they're running.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.RangeColors">
+            <summary>
+            Gets or sets the colors with range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.EasingFunction">
+            <summary>
+            Gets or sets the Easing function for indeterminate ProgressBar.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnRenderPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the properties to be re-render the control.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.ProgressPropertyChanged">
+            <summary>
+            To update the progress value to control when progress value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.RefreshDeterminateState(System.Boolean)">
+            <summary>
+            To refresh the control when property value changes.
+            </summary>
+            <param name="isIndeterminate">Checks whether in Indeterminate state or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.RefreshIndeterminateState">
+            <summary>
+            To refresh the control when property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.ProgressVisualChanged">
+            <summary>
+            To change the visual when progress visual property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.TrackVisualChanged">
+            <summary>
+            To change the visual when track visual property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.InitiateIndeterminateAnimation">
+            <summary>
+            To create animation for the Indeterminate control segments.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnIndeterminateIndicatorWidthChanged(System.Double)">
+            <summary>
+            Called when the indeterminate width factor changed.
+            </summary>
+            <param name="factor">Indeterminate width factor.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnEasingEffectChanged(Xamarin.Forms.Easing)">
+            <summary>
+            Called when the easing effect changed.
+            </summary>
+            <param name="easingEffect">Easing effect of ProgressBar.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.ApplyMultiProgressColors(Syncfusion.XForms.ProgressBar.RangeColorCollection)">
+            <summary>
+            To apply multi colors to the progress segments.
+            </summary>
+            <param name="rangeColors">Collection of range color.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Refresh">
+            <summary>
+            To re-render the control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnEasingEffectChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the property <see cref="!:EasingEffect"/>.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnIndeterminateIndicatorWidthFactorChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateIndicatorWidth"/>.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnIndeterminatePropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IsIndeterminate"/>.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnIndeterminateAnimationDurationPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.IndeterminateAnimationDuration"/>.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnProgressPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.Progress"/>.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnRangeColorsChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.RangeColors"/>.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnProgressVisualPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the progress property.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.OnTrackVisualPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed callback for the property <see cref="P:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.TrackColor"/>.
+            </summary>
+            <param name="d">Object of ProgressBar.</param>
+            <param name="e">EventArgs that contains related to dependency property changed.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.GetEasingFunction(Xamarin.Forms.Easing)">
+            <summary>
+            Converts Easing effect to equivalent easing function.
+            </summary>
+            <param name="easingEffect">Easing effect of ProgressBar.</param>
+            <returns>Easing function for indeterminate animation.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.RenderPropertyChanged">
+            <summary>
+            To refresh the control when property value changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase.ProgressBarBase_SizeChanged(System.Object,Windows.UI.Xaml.SizeChangedEventArgs)">
+            <summary>
+            Called when the size of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase"/> changed.
+            </summary>
+            <param name="sender">Instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.ProgressBarBase"/></param>
+            <param name="e">Property changed event arguments.</param>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.FastReflection">
+            <summary>
+            This class used to increase the performance instead of using Reflection to get the value.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.FastReflection.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.FastReflection"/> class.
+            </summary>
+            <param name="progressPropertyInfo">PropertyInfo of the internal property "ActualProgressValue"</param>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.FastReflection.GetPropertyValue">
+            <summary>
+            Gets the value of ActualProgressValue from the given control.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.FastReflection.ProgressPropertyInfo">
+            <summary>
+            Gets or sets the PropertyInfo of the ActualProgressValue property.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.FastReflection.Dispose">
+            <summary>
+            Method to dispose
+            </summary>
+            /XAMARIN-33880SfCircularProgressBar memory leak in UWP
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.FastReflection.InitializeGet">
+            <summary>
+            To compile the GetPropertyValue expression.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.HelperClass">
+            <summary>
+            Represents the helper class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.HelperClass.CalculatePercentage(System.Double,System.Double,System.Double)">
+            <summary>
+            To calculate the percentage value of the progress value.
+            </summary>
+            <param name="progressValue">Progress value.</param>
+            <param name="minimum">Minimum value.</param>
+            <param name="maximum">Maximum value.</param>
+            <returns>Percentage value of given progress value.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.HelperClass.DegreeToRadianConverter(System.Double)">
+            <summary>
+            Converts the degree to radian converter.
+            </summary>
+            <param name="degree">Degree value.</param>
+            <returns>Radian converted value.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.HelperClass.GetActualCenter(Windows.Foundation.Point,System.Double,System.Double,System.Double)">
+            <summary>
+            Gets the actual center based on the radius and angle.
+            </summary>
+            <param name="centerPoint">Center point</param>
+            <param name="radius">Radius of the control.</param>
+            <param name="startAngle">Start angle</param>
+            <param name="endAngle">End angle</param>
+            <returns>Actual center point</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.HelperClass.GetMinMaxValue(Windows.Foundation.Point,Windows.Foundation.Point,System.Int32)">
+            <summary>
+            Calculates the minimum or maximum value between two points based on the angle.
+            </summary>
+            <param name="point1">First point.</param>
+            <param name="point2">Second point.</param>
+            <param name="degree">Angle value.</param>
+            <returns>Minimum or maximum value.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.HelperClass.GetPropertiesChanged(System.Type,System.Object)">
+            <summary>
+            Called when properties value is changed.
+            </summary>
+            <param name="type">Type of the control.</param>
+            <param name="obj">Instance value.</param>
+            <returns>Property names.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.HelperClass.GetInternalPropertyValue(System.Type,System.Object,System.String)">
+            <summary>
+            Gets the internal property value.
+            </summary>
+            <returns>The internal property value.</returns>
+            <param name="type">The type.</param>
+            <param name="obj">The object.</param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.HelperClass.GetInternalPropertyInfo(System.Type,System.Object,System.String)">
+            <summary>
+            Gets the internal property info.
+            </summary>
+            <returns>The internal property value.</returns>
+            <param name="type">The type.</param>
+            <param name="obj">The object.</param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.ProgressBarUtility">
+            <summary>
+            Utility class which is common for all platforms.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarUtility.OnLinearBarPropertyChanged(Syncfusion.XForms.UWP.ProgressBar.SfLinearProgressBar,Syncfusion.XForms.ProgressBar.SfLinearProgressBar,System.String)">
+            <summary>
+            Mapping the Forms property to native class.
+            </summary>
+            <param name="native">Native control.</param>
+            <param name="control">Forms control.</param>
+            <param name="propertyName">Property name.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarUtility.OnCircularBarPropertyChanged(Syncfusion.XForms.UWP.ProgressBar.SfCircularProgressBar,Syncfusion.XForms.ProgressBar.SfCircularProgressBar,System.String)">
+            <summary>
+            Called when Forms control properties changed and assigned that values to native control.
+            </summary>
+            <param name="native">Native control.</param>
+            <param name="control">Forms control.</param>
+            <param name="propertyName">Property name.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarUtility.ConvertColorToNative(Xamarin.Forms.Color)">
+            <summary>
+            It converts the Color to corresponding platform compatible type.
+            </summary>
+            <param name="color">Forms color.</param>
+            <returns>Native color in type of Brush.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarUtility.GetNativeThickness(Xamarin.Forms.Thickness)">
+            <summary>
+            It converts the Color to UWP platform compatible type.
+            </summary>
+            <param name="padding">Forms padding.</param>
+            <returns>Native padding in type of Windows thickness.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.ProgressBarUtility.GetEasingEffect(Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects)">
+            <summary>
+            Converts the easing effect to Easing type.
+            </summary>
+            <param name="easing">Easing effect in enum type.</param>
+            <returns>Easing effect.</returns>
+        </member>
+        <member name="T:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1">
+            <summary>
+            Contains utility methods to add and remove elements inside a panel.
+            </summary>
+            <typeparam name="T">It can be any type of Framework element.</typeparam>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.panel">
+            <summary>
+            Panel for holding elements.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.bindingsProvider">
+            <summary>
+            Dictionary of property and Binding.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.#ctor(Windows.UI.Xaml.Controls.Panel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1"/> class.
+            </summary>
+            <param name="panel">Panel to hold the generated elements.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.Panel">
+            <summary>
+            Gets the panel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.Count">
+            <summary>
+            Gets the count of the generated elements.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.BindingProvider">
+            <summary>
+            Gets the binding objects to be attached with the generated FrameworkElement.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.GeneratedElements">
+            <summary>
+            Gets or sets the generated elements by this recycler.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.Item(System.Int32)">
+            <summary>
+            Return the panel's child at the corresponding index
+            </summary>
+            <param name="index">Index of the child element.</param>
+            <returns>Element at the given index.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            To get an enumerator.
+            </summary>
+            <returns>An enumerator to iterate through the collection.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.GenerateElements(System.Int32)">
+            <summary>
+            Generates or recycles the elements
+            </summary>
+            <param name="count">Number of elements to be generated</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.Add(`0)">
+            <summary>
+            Method used to add a element in the panel.
+            </summary>
+            <param name="element">Element to be added to panel.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.IndexOf(`0)">
+            <summary>
+            To get Index of the given element.
+            </summary>
+            <param name="element">Element available in the panel.</param>
+            <returns>Index of the element.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.Remove(`0)">
+            <summary>
+            Method used to remove the element from the panel.
+            </summary>
+            <param name="element">Element available in the panel.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.RemoveBinding(Windows.UI.Xaml.DependencyProperty)">
+            <summary>
+            Removes the particular binding from the generated elements
+            </summary>
+            <param name="property">Property to remove binding.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.Clear">
+            <summary>
+            Clears the generated elements
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.XForms.UWP.ProgressBar.UIElementsRecycler`1.GenerateElementsOfType(System.Int32,System.Type)">
+            <summary>
+            Generates or recycles the elements of the specified type.
+            Please not the type must be inherited from the FrameworkElement.
+            </summary>
+            <param name="count">Number of elements to be generated</param>
+            <param name="type">Type of the elements.</param>
+        </member>
+    </members>
+</doc>

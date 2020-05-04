@@ -1,0 +1,598 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.SfBusyIndicator.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorTitlePlacement">
+            <summary>
+            Busy Indicator Title Placement.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorTitlePlacement.SFBusyIndicatorTitlePlacementTop">
+            <summary>
+            Busy Indicator Title Placement Top
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorTitlePlacement.SFBusyIndicatorTitlePlacementBottom">
+            <summary>
+            Busy Indicator Title Placement Bottom
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorTitlePlacement.SFBusyIndicatorTitlePlacementNone">
+            <summary>
+            Busy Indicator Title Placement None
+            </summary>
+        </member>
+        <member name="T:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType">
+            <summary>
+            Busy Indicator Animation Type
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeBall">
+            <summary>
+            Represents Ball AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeBattery">
+            <summary>
+            Represents Battery AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeDoubleCircle">
+            <summary>
+            Represents DoubleCircle AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeECG">
+            <summary>
+            Represents ECG AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeGlobe">
+            <summary>
+            Represents Globe AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeCupertino">
+            <summary>
+            Represents Cupertino AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeHorizontalPulsingBox">
+            <summary>
+            Represents HorizontalPulsingBox AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeMovieTimer">
+            <summary>
+            Represents HorizontalPulsingBox AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypePrint">
+            <summary>
+            Represents Print AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeRectangle">
+            <summary>
+            Represents Rectangle AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeRollingBall">
+            <summary>
+            Represents RollingBall AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeSingleCircle">
+            <summary>
+            Represents SingleCircle AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeSlicedCircle">
+            <summary>
+            Represents SlicedCircle AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeZoomingTarget">
+            <summary>
+            Represents ZoomingTarget AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeGear">
+            <summary>
+            Represents Gear AnimationType
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicatorAnimationType.SFBusyIndicatorAnimationTypeBox">
+            <summary>
+             Represents Box AnimationType
+            </summary>
+        </member>
+        <member name="T:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicator">
+            <summary>
+            SFBusyIndicator used to indicate busy status of control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.SfBusyIndicator.iOS.SFBusyIndicator"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator">
+            <summary>
+            BusyIndicator controls provide a 11 types of busyness indicator.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.tempDuration">
+            <summary>
+            Duration field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.viewBoxLayer">
+            <summary>
+            View box layer field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.viewBoxlayer1">
+            <summary>
+            View box layer field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.firstBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.secondBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.thirdBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.fourthBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.fifthBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.sixthBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.seventhBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.eigthBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.finalBoxView">
+            <summary>
+            Box views field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.leftBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.rightBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.stage">
+            <summary>
+            The Stage Field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.itemNumber">
+            <summary>
+            The Item Number.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.animationLineValue">
+            <summary>
+            The Animation Line Value..
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.stageInitialValue">
+            <summary>
+            The Stage Initial Value Field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.axisPoint">
+            <summary>
+            The Axis Point Value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.firstBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.secondBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.thirdBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.fourthBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.fifthBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.sixthBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.seventhBoxLayer">
+            <summary>
+            Box layers field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.animationType">
+            <summary>
+            Animation type field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.titlePlacement">
+            <summary>
+            Title placement field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.basicAnimation">
+            <summary>
+            The basic animation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.isBusy">
+            <summary>
+            Is busy field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.enableAnimation">
+            <summary>
+            Enable animation field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.foregroundColor">
+            <summary>
+            Foreground color field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.secondaryColor">
+            <summary>
+            Foreground color field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.viewBoxHeight">
+            <summary>
+            View box height,width and duration field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.viewBoxWidth">
+            <summary>
+            View box height,width and duration field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.duration">
+            <summary>
+            View box height,width and duration field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.title">
+            <summary>
+            Title field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.fontFace">
+            <summary>
+            Font space field.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.deviceRotatedObserver">
+            <summary>
+            Device rotated observer field.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.#ctor(System.IntPtr)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator"/> class.
+            </summary>
+            <param name="intPtr">handler or pointer.</param>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.AnimationType">
+            <summary>
+            Gets or sets the type of the animation.
+            </summary>
+            <value>The type of the animation.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.FontFace">
+            <summary>
+            Gets or sets the font face.
+            </summary>
+            <value>The font face.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.TitlePlacement">
+            <summary>
+            Gets or sets the title placement.
+            </summary>
+            <value>The title placement.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.Foreground">
+            <summary>
+            Gets or sets the foreground.
+            </summary>
+            <value>The foreground.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.SecondaryColor">
+            <summary>
+            Gets or sets the color of the secondary.
+            </summary>
+            <value>The color of the secondary.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.ViewBoxWidth">
+            <summary>
+            Gets or sets the width of the view box.
+            </summary>
+            <value>The width of the view box.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.ViewBoxHeight">
+            <summary>
+            Gets or sets the height of the view box.
+            </summary>
+            <value>The height of the view box.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.Title">
+            <summary>
+            Gets or sets the title.
+            </summary>
+            <value>The title.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.IsBusy">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator"/>
+            is busy.
+            </summary>
+            <value><c>true</c> if is busy; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.Duration">
+            <summary>
+            Gets or sets the duration.
+            </summary>
+            <value>The duration.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.EnableAnimation">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator"/>
+            enable animation.
+            </summary>
+            <value><c>true</c> if enable animation; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.timer">
+            <summary>
+            Gets or sets the timer for the Animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.AwakeFromNib">
+            <summary>
+            Awake from nib.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.Draw(CoreGraphics.CGRect)">
+            <summary>
+            Draw the specified method.
+            </summary>
+            <param name="rect">Rectangle type</param>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.LayoutSubviews">
+            <summary>
+            Layouts sub view method.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.Dispose(System.Boolean)">
+            <summary>
+            Dispose the specified disposing.
+            </summary>
+            <param name="disposing">If set to <c>true</c> disposing.</param>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DeviceRotated(Foundation.NSNotification)">
+            <summary>
+            Device Rotated
+            </summary>
+            <param name="notification">notification type</param>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.InitializeBusyIndicator">
+            <summary>
+            Initializes the busy indicator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.SubscribeAnimationStoppedEvent">
+            <summary>
+            Subscribes the animation stopped event.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawGearAnimation">
+            <summary>
+            Draws the gear animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawZoomingTargetAnimation">
+            <summary>
+            Draws the zooming target animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawRollingBallAnimation">
+            <summary>
+            Draws the rolling ball animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawMovieTimerAnimation">
+            <summary>
+            Draws the movie timer animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawPrintAnimation">
+            <summary>
+            Draws the print animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawSlicedCircleAnimation">
+            <summary>
+            Draws the sliced circle animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawBallAnimation">
+            <summary>
+            Draws the ball animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.StartAnimating">
+            <summary>
+            The StartAnimating method.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.PointOnInnerCircleWithAngle(System.Int32)">
+            <summary>
+            The Point OnInnerCircleWithAngle.
+            </summary>
+            <param name="angle">The angle.</param>
+            <returns>Returns a value.</returns>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.PointOnOuterCircleWithAngle(System.Int32)">
+            <summary>
+            The Point OnOuterCircleWithAngle.
+            </summary>
+            <param name="angle">The angle.</param>
+            <returns>Returns a value.</returns>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawCupertinoAnimation">
+            <summary>
+            Draws the cupertino animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawHorizontalPulsingBoxAnimation">
+            <summary>
+            Draws the horizontal pulsing box animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.StartAnimationBox">
+            <summary>
+            Starts the animation box.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawRectangleAnimation">
+            <summary>
+            Draws the rectangle animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.StartBoxHorizontalBoxAnimation">
+            <summary>
+            Starts the box horizontal box animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.Animation_AnimationStopped(System.Object,CoreAnimation.CAAnimationStateEventArgs)">
+            <summary>
+            Animations the animation stopped.
+            </summary>
+            <param name="sender">Sender type</param>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawSingleCircleAnimation">
+            <summary>
+            Draws the single circle animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawDoubleCircleAnimation">
+            <summary>
+            Draws the double circle animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawGlobeAnimation">
+            <summary>
+            Draws the globe animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawBatteryAnimation">
+            <summary>
+            Draws the battery animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawECGAnimation">
+            <summary>
+            Draws the ECG animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.RemoveAnimation">
+            <summary>
+            Removes the animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawBoxAnimation">
+            <summary>
+            Draws the box animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.ViewBoxLayerFrameSetting">
+            <summary>
+            Views the box layer frame setting.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.StartBoxAnimation">
+            <summary>
+            Starts the box animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.GetFrames(CoreGraphics.CGRect)">
+            <summary>
+            Gets the frames.
+            </summary>
+            <returns>The frames.</returns>
+            <param name="currentFrame">Current frame.</param>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.RemoveBoxViews">
+            <summary>
+            Removes the box views.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.DrawHeaders">
+            <summary>
+            Draws the headers.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.iOS.SfBusyIndicator.UpdateAccessibilityLabel">
+            <summary>
+            Updates the accessibility label.
+            </summary>
+        </member>
+    </members>
+</doc>

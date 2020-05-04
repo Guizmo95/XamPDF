@@ -24,7 +24,7 @@ namespace Pdf.Views
         //#region Content view / View
         private string filePath;
         private PdfViewerModel pdfViewerModel;
-      
+
         private BottomAnnotationToolbar bottomAnnotationToolbar;
         private SelectTextMarkupBar selectTextMarkupBar;
         private ShapeBar shapeBar;
@@ -50,6 +50,17 @@ namespace Pdf.Views
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public SfPdfViewer PdfViewerControl
+        {
+            get
+            {
+                return pdfViewerControl;
+            }
+            set
+            {
+                pdfViewerControl = value;
+            }
+        }
         public Color SelectedColor
         {
             get
@@ -274,33 +285,29 @@ namespace Pdf.Views
 
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+            pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
 
-            Task.Run(() =>
+            var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
+            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+
+            Device.BeginInvokeOnMainThread(() =>
             {
-                pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
-                //Retrieves the current horizontal offset of the PdfViewerControl
-                
-                var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
-                pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-
-                    pdfViewerControl.LoadDocument(pdfStream);
-                });
+                pdfViewerControl.LoadDocument(pdfStream);
             });
 
             MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
             {
                 this.SelectedColor = helper;
             });
+
+            base.OnAppearing();
         }
 
-        public PdfViewer(string filepath)
+        public PdfViewer(string filePath)
         {
             InitializeComponent();
 
+            this.filePath = filePath;
             pdfViewerControl.Toolbar.Enabled = false;
 
             //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
@@ -320,7 +327,7 @@ namespace Pdf.Views
 
             #region Add content view but set them invisible 
             bottomAnnotationToolbar.IsVisible = false;
-            mainStackLayout.Children.Insert(2, bottomAnnotationToolbar);
+            mainGrid.Children.Insert(2, bottomAnnotationToolbar);
 
             ValidButton.IsVisible = false;
             UndoButton.IsVisible = false;
@@ -441,64 +448,64 @@ namespace Pdf.Views
             //    })
             //});
 
-            stampButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    stampButton.Foreground = Color.FromHex("#b4b4b4");
-                    StampButton_Clicked();
-                    await Task.Delay(100);
-                    stampButton.Foreground = Color.FromHex("4e4e4e");
-                })
-            });
+            //stampButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            //{
+            //    Command = new Command(async () =>
+            //    {
+            //        stampButton.Foreground = Color.FromHex("#b4b4b4");
+            //        StampButton_Clicked();
+            //        await Task.Delay(100);
+            //        stampButton.Foreground = Color.FromHex("4e4e4e");
+            //    })
+            //});
 
 
-            freeTextButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    freeTextButton.Foreground = Color.FromHex("#b4b4b4");
-                    AnnotationButton_Clicked(AnnotationType.FreeText);
-                    await Task.Delay(100);
-                    freeTextButton.Foreground = Color.FromHex("4e4e4e");
-                })
-            });
+            //freeTextButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            //{
+            //    Command = new Command(async () =>
+            //    {
+            //        freeTextButton.Foreground = Color.FromHex("#b4b4b4");
+            //        AnnotationButton_Clicked(AnnotationType.FreeText);
+            //        await Task.Delay(100);
+            //        freeTextButton.Foreground = Color.FromHex("4e4e4e");
+            //    })
+            //});
 
-            inkButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    inkButton.Foreground = Color.FromHex("#b4b4b4");
-                    AnnotationButton_Clicked(AnnotationType.Ink);
-                    await Task.Delay(100);
-                    inkButton.Foreground = Color.FromHex("4e4e4e");
-                })
-            });
+            //inkButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            //{
+            //    Command = new Command(async () =>
+            //    {
+            //        inkButton.Foreground = Color.FromHex("#b4b4b4");
+            //        AnnotationButton_Clicked(AnnotationType.Ink);
+            //        await Task.Delay(100);
+            //        inkButton.Foreground = Color.FromHex("4e4e4e");
+            //    })
+            //});
 
-            shapeButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    shapeButton.Foreground = Color.FromHex("#b4b4b4");
-                    AnnotationButton_Clicked(AnnotationType.Shape);
+            //shapeButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            //{
+            //    Command = new Command(async () =>
+            //    {
+            //        shapeButton.Foreground = Color.FromHex("#b4b4b4");
+            //        AnnotationButton_Clicked(AnnotationType.Shape);
 
 
 
-                    await Task.Delay(100);
-                    shapeButton.Foreground = Color.FromHex("4e4e4e");
-                })
-            });
+            //        await Task.Delay(100);
+            //        shapeButton.Foreground = Color.FromHex("4e4e4e");
+            //    })
+            //});
 
-            textMarkupButton.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    textMarkupButton.Foreground = Color.FromHex("#b4b4b4");
-                    AnnotationButton_Clicked(AnnotationType.TextMarkup);
-                    await Task.Delay(100);
-                    textMarkupButton.Foreground = Color.FromHex("4e4e4e");
-                })
-            });
+            //textMarkupButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            //{
+            //    Command = new Command(async () =>
+            //    {
+            //        textMarkupButton.Foreground = Color.FromHex("#b4b4b4");
+            //        AnnotationButton_Clicked(AnnotationType.TextMarkup);
+            //        await Task.Delay(100);
+            //        textMarkupButton.Foreground = Color.FromHex("4e4e4e");
+            //    })
+            //});
 
             pdfViewerControl.ScrollToOffset(50, 50);
         }
@@ -546,7 +553,7 @@ namespace Pdf.Views
 
         private void AnnotationButton_Clicked(AnnotationType annotationType)
         {
-            bottomAbsoluteLayout.IsVisible = false;
+            bottomLayout.IsVisible = false;
 
             switch (annotationType)
             {
@@ -572,7 +579,7 @@ namespace Pdf.Views
                     bottomAnnotationToolbar.AnnotationImage.Source = "rectangle.png";
 
                     shapeBar.IsVisible = true;
-                    mainStackLayout.Children.Insert(2, shapeBar);
+                    mainGrid.Children.Insert(2, shapeBar);
 
                     //Not like free text and ink
                     #region Shape bottom bar events
@@ -588,7 +595,7 @@ namespace Pdf.Views
                     bottomAnnotationToolbar.AnnotationImage.Source = "marker.png";
 
                     selectTextMarkupBar.IsVisible = true;
-                    mainStackLayout.Children.Insert(2, selectTextMarkupBar);
+                    mainGrid.Children.Insert(2, selectTextMarkupBar);
 
                     #region Text markup choice bar events
                     selectTextMarkupBar.StrikethroughtButtonClicked += StriketroughtButton_Clicked;
@@ -660,7 +667,7 @@ namespace Pdf.Views
         {
             bottomAnnotationToolbar.IsVisible = false;
 
-            bottomAbsoluteLayout.IsVisible = true;
+            bottomLayout.IsVisible = true;
         }
 
         private void PdfViewerControl_CanUndoInkModified(object sender, CanUndoInkModifiedEventArgs args)
@@ -689,7 +696,7 @@ namespace Pdf.Views
         {
             bottomAnnotationToolbar.IsVisible = false;
 
-            bottomAbsoluteLayout.IsVisible = true;
+            bottomLayout.IsVisible = true;
 
             pdfViewerControl.EndInkSession(true);
         }
@@ -781,7 +788,7 @@ namespace Pdf.Views
         {
             shapeBar.IsVisible = false;
 
-            bottomAbsoluteLayout.IsVisible = true;
+            bottomLayout.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.None;
 
@@ -854,7 +861,7 @@ namespace Pdf.Views
         {
             selectTextMarkupBar.IsVisible = false;
 
-            bottomAbsoluteLayout.IsVisible = true;
+            bottomLayout.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.None;
 
