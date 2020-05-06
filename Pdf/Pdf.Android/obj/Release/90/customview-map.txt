@@ -169,6 +169,7 @@ path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\9\jl\res\drawable\btn_checkbox_indeterminate.xml
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\9\jl\res\drawable\btn_checkbox_unchecked.xml
 path;obj\Release\90\res\drawable\baseline_account_circle_24.xml
+path;obj\Release\90\res\drawable\baseline_bookmark_24.xml
 path;obj\Release\90\res\drawable\baseline_delete_24.xml
 path;obj\Release\90\res\drawable\baseline_description_24.xml
 path;obj\Release\90\res\drawable\baseline_favorite_24.xml
@@ -176,10 +177,12 @@ path;obj\Release\90\res\drawable\baseline_favorite_border_24.xml
 path;obj\Release\90\res\drawable\baseline_feedback_24.xml
 path;obj\Release\90\res\drawable\baseline_menu_24.xml
 path;obj\Release\90\res\drawable\baseline_more_horiz_24.xml
+path;obj\Release\90\res\drawable\baseline_more_vert_24.xml
 path;obj\Release\90\res\drawable\baseline_picture_as_pdf_24.xml
 path;obj\Release\90\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
 path;obj\Release\90\res\drawable\baseline_sort_24.xml
 path;obj\Release\90\res\drawable\baseline_stars_24.xml
+path;obj\Release\90\res\drawable\baseline_view_carousel_24.xml
 path;obj\Release\90\res\drawable\baseline_visibility_24.xml
 path;obj\Release\90\res\drawable\outline_arrow_back_24.xml
 path;obj\Release\90\res\drawable\outline_clear_24.xml
@@ -187,10 +190,11 @@ path;obj\Release\90\res\drawable\outline_search_24.xml
 path;obj\Release\90\res\drawable\twotone_branding_watermark_24.xml
 path;obj\Release\90\res\drawable\twotone_create_24.xml
 path;obj\Release\90\res\drawable\twotone_format_strikethrough_24.xml
+path;obj\Release\90\res\drawable\twotone_format_underlined_24.xml
 path;obj\Release\90\res\drawable\twotone_gesture_24.xml
-path;obj\Release\90\res\drawable\twotone_multiline_chart_24.xml
 path;obj\Release\90\res\drawable\twotone_strikethrough_s_24.xml
 path;obj\Release\90\res\drawable\twotone_title_24.xml
+path;obj\Release\90\res\drawable\twotone_toll_24.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\9\jl\res\interpolator\btn_checkbox_checked_animation_interpolator_0.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\9\jl\res\interpolator\btn_checkbox_checked_animation_interpolator_1.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\9\jl\res\interpolator\btn_checkbox_indeterminate_animation_interpolator_1.xml
@@ -362,6 +366,7 @@ vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\o
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\9\jl\res\drawable\btn_checkbox_indeterminate.xml
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\9\jl\res\drawable\btn_checkbox_unchecked.xml
 vector;obj\Release\90\res\drawable\baseline_account_circle_24.xml
+vector;obj\Release\90\res\drawable\baseline_bookmark_24.xml
 vector;obj\Release\90\res\drawable\baseline_delete_24.xml
 vector;obj\Release\90\res\drawable\baseline_description_24.xml
 vector;obj\Release\90\res\drawable\baseline_favorite_24.xml
@@ -369,10 +374,12 @@ vector;obj\Release\90\res\drawable\baseline_favorite_border_24.xml
 vector;obj\Release\90\res\drawable\baseline_feedback_24.xml
 vector;obj\Release\90\res\drawable\baseline_menu_24.xml
 vector;obj\Release\90\res\drawable\baseline_more_horiz_24.xml
+vector;obj\Release\90\res\drawable\baseline_more_vert_24.xml
 vector;obj\Release\90\res\drawable\baseline_picture_as_pdf_24.xml
 vector;obj\Release\90\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
 vector;obj\Release\90\res\drawable\baseline_sort_24.xml
 vector;obj\Release\90\res\drawable\baseline_stars_24.xml
+vector;obj\Release\90\res\drawable\baseline_view_carousel_24.xml
 vector;obj\Release\90\res\drawable\baseline_visibility_24.xml
 vector;obj\Release\90\res\drawable\outline_arrow_back_24.xml
 vector;obj\Release\90\res\drawable\outline_clear_24.xml
@@ -380,8 +387,9 @@ vector;obj\Release\90\res\drawable\outline_search_24.xml
 vector;obj\Release\90\res\drawable\twotone_branding_watermark_24.xml
 vector;obj\Release\90\res\drawable\twotone_create_24.xml
 vector;obj\Release\90\res\drawable\twotone_format_strikethrough_24.xml
+vector;obj\Release\90\res\drawable\twotone_format_underlined_24.xml
 vector;obj\Release\90\res\drawable\twotone_gesture_24.xml
-vector;obj\Release\90\res\drawable\twotone_multiline_chart_24.xml
 vector;obj\Release\90\res\drawable\twotone_strikethrough_s_24.xml
 vector;obj\Release\90\res\drawable\twotone_title_24.xml
+vector;obj\Release\90\res\drawable\twotone_toll_24.xml
 xamarin.forms.platform.android.appcompat.FormsViewPager;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\lp\66\jl\res\layout\rootlayout.xml

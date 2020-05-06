@@ -9,7 +9,7 @@
              x:Class="Pdf.controls.SelectTextMarkupBar">
     <pancakeview:PancakeView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HasShadow="True">
         <AbsoluteLayout BackgroundColor="#f5f5f5" HeightRequest="47" HorizontalOptions="FillAndExpand">
-            <controls:IconView x:Name="strikethroughtButton" Source="strikethrough.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <controls:IconView x:Name="strikethroughtButton" Source="twotone_strikethrough_s_24.xml" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.95, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
             <controls:IconView x:Name="underlineButton" Source="underline.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.85, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
             <controls:IconView x:Name="hightlightButton" Source="draw.png" WidthRequest="50" HeightRequest="30" Foreground="#4e4e4e" AbsoluteLayout.LayoutBounds="0.75, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
             <StackLayout x:Name="backButton" AbsoluteLayout.LayoutBounds="0.05, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Horizontal">

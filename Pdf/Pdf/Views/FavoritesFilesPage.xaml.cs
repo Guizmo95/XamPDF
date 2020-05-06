@@ -90,6 +90,26 @@ namespace Pdf.Views
             SortName_Clicked(null, null);
 
             sortButton.RotateTo(180);
+
+            MessagingCenter.Subscribe<FavoriteListViewBehavior>(this, "PushAsyncPage", (sender) =>
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    activityIndicator.IsRunning = true;
+                    filter.IsVisible = true;
+
+                    try
+                    {
+                        var file = (FileModel)FavoriteDocumentListView.SelectedItem;
+                        await Navigation.PushAsync(new PdfViewer(file.FilePath));
+                    }
+                    finally
+                    {
+                        activityIndicator.IsRunning = false;
+                        filter.IsVisible = false;
+                    }
+                });
+            });
         }
 
         private void SortDate_Clicked(object sender, EventArgs e)
@@ -126,27 +146,27 @@ namespace Pdf.Views
         }
 
 
-        private async void DocumentListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
-        {
-            Device.BeginInvokeOnMainThread(async () => {
-                UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Gradient);
-                try
-                {
-                    if (e.AddedItems == null)
-                    {
-                        return;
-                    }
+        //private async void DocumentListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
+        //{
+        //    Device.BeginInvokeOnMainThread(async () => {
+        //        UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Gradient);
+        //        try
+        //        {
+        //            if (e.AddedItems == null)
+        //            {
+        //                return;
+        //            }
 
-                    var file = (FileModel)e.AddedItems[0];
+        //            var file = (FileModel)e.AddedItems[0];
 
-                    await Navigation.PushAsync(new PdfViewer(file.FilePath));
-                }
-                finally
-                {
-                    UserDialogs.Instance.HideLoading();
-                }
-            });
-        }
+        //            await Navigation.PushAsync(new PdfViewer(file.FilePath));
+        //        }
+        //        finally
+        //        {
+        //            UserDialogs.Instance.HideLoading();
+        //        }
+        //    });
+        //}
 
         private void SortButton_Clicked(object sender, EventArgs e)
         {

@@ -1,22 +1,10 @@
-﻿using Acr.UserDialogs;
-using Pdf.controls;
-using Pdf.Helpers;
+﻿using Pdf.Helpers;
 using Pdf.Models;
-using Pdf.ViewModels;
 using Syncfusion.DataSource;
-using Syncfusion.Pdf.Parsing;
-using Syncfusion.XForms.EffectsView;
 using Syncfusion.XForms.PopupLayout;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -111,11 +99,13 @@ namespace Pdf.Views
 
             sortButton.RotateTo(180);
 
-            MessagingCenter.Subscribe<ListViewBehavior>(this, "PushAsyncPage", (sender) =>
+            MessagingCenter.Subscribe<DocumentListViewBehavior>(this, "PushAsyncPage", (sender) =>
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Clear);
+                    activityIndicator.IsRunning = true;
+                    filter.IsVisible = true;
+                    
                     try
                     {
                         var file = (FileModel)DocumentListView.SelectedItem;
@@ -123,7 +113,9 @@ namespace Pdf.Views
                     }
                     finally
                     {
-                        UserDialogs.Instance.HideLoading();
+                        DocumentListView.SelectedItem = null;
+                        activityIndicator.IsRunning = false;
+                        filter.IsVisible = false;
                     }
                 });
             });
