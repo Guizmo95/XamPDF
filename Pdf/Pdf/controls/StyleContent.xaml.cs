@@ -21,7 +21,7 @@ namespace Pdf.controls
             }
         }
 
-        public FontSizeSlider FontSizeSlider
+        public Slider FontSizeSlider
         {
             get
             {
@@ -37,7 +37,7 @@ namespace Pdf.controls
             }
         }
 
-        public OpacitySlider OpacitySlider
+        public Slider OpacitySlider
         {
             get
             {

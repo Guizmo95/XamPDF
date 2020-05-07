@@ -60,14 +60,33 @@
                         <ImageButton Clicked="BackButtonTextMarkupToolbar_Clicked" Padding="2" x:Name="backButtonTextMarkupToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32"    VerticalOptions="Center"/>
                         <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" />
                     </StackLayout>
-                    <StackLayout Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout IsVisible="False" Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center">
                         <ImageButton Clicked="StrikethroughtButton_Clicked" BackgroundColor="#fafafa" x:Name="strikethroughtButton" Source="ic_strikethrough.png" WidthRequest="33" HeightRequest="33" />
-                        <ImageButton BackgroundColor="#fafafa" x:Name="underlineButton" Source="ic_underline.png" WidthRequest="32" HeightRequest="32" />
-                        <ImageButton BackgroundColor="#fafafa" x:Name="hightlightButton" Source="ic_edit.png" WidthRequest="32" HeightRequest="32" />
+                        <ImageButton Clicked="UnderlineButton_Clicked" BackgroundColor="#fafafa" x:Name="underlineButton" Source="ic_underline.png" WidthRequest="32" HeightRequest="32" />
+                        <ImageButton Clicked="HightlightButton_Clicked" BackgroundColor="#fafafa" x:Name="hightlightButton" Source="ic_edit.png" WidthRequest="32" HeightRequest="32" />
                     </StackLayout>
                 </Grid>
             </controls1:PancakeView>
-            
+
+            <controls1:PancakeView HeightRequest="45" Grid.Row="2" IsVisible="False" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="shapeToolbar">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0">
+                        <ImageButton Clicked="BackButtonShapeToolbar_Clicked" Padding="2" x:Name="backButtonShapeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32"    VerticalOptions="Center"/>
+                        <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" />
+                    </StackLayout>
+                    <StackLayout IsVisible="False" Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center">
+                        <ImageButton  BackgroundColor="#fafafa" x:Name="circleButton" Source="ic_strikethrough.png" WidthRequest="33" HeightRequest="33" />
+                        <ImageButton  BackgroundColor="#fafafa" x:Name="lineButton" Source="ic_underline.png" WidthRequest="32" HeightRequest="32" />
+                        <ImageButton  BackgroundColor="#fafafa" x:Name="arrowButton" Source="ic_edit.png" WidthRequest="32" HeightRequest="32" />
+                        <ImageButton  BackgroundColor="#fafafa" x:Name="rectangleButton" Source="ic_edit.png" WidthRequest="32" HeightRequest="32" />
+                    </StackLayout>
+                </Grid>
+            </controls1:PancakeView>
+
             <controls1:PancakeView HeightRequest="45" Grid.Row="2" IsVisible="False" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="annotationTypeToolbar">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -75,11 +94,11 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0">
-                        <ImageButton Padding="2" x:Name="backButtonAnnotationTypeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"/>
+                        <ImageButton Clicked="BackButtonAnnotationTypeToolbar_Clicked" Padding="2" x:Name="backButtonAnnotationTypeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"/>
                         <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" HeightRequest="30"/>
                         <Image x:Name="imageAnnotationType" BackgroundColor="#fafafa" WidthRequest="36" HeightRequest="36" VerticalOptions="Center"/>
                     </StackLayout>
-                    <Button Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,15,0" x:Name="colorButton" CornerRadius="20" BorderWidth="2" HeightRequest="30" WidthRequest="30" BackgroundColor="{Binding SelectedColor}" />
+                    <Button Clicked="ColorButton_Clicked" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,15,0" x:Name="colorButton" CornerRadius="20" BorderWidth="2" HeightRequest="30" WidthRequest="30" BackgroundColor="{Binding SelectedColor}" />
                 </Grid>
             </controls1:PancakeView>
         </Grid>

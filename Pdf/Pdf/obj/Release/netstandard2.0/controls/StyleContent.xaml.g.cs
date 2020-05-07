@@ -20,21 +20,21 @@ namespace Pdf.controls {
         private global::Pdf.Views.ColorPicker colorPicker;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Pdf.Views.FontSizeSlider fontSizeSlider;
+        private global::Xamarin.Forms.Slider fontSizeSlider;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Pdf.controls.ThicknessBar thicknessBar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Pdf.controls.OpacitySlider opacitySlider;
+        private global::Xamarin.Forms.Slider opacitySlider;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(StyleContent));
             colorPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Views.ColorPicker>(this, "colorPicker");
-            fontSizeSlider = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Views.FontSizeSlider>(this, "fontSizeSlider");
+            fontSizeSlider = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Slider>(this, "fontSizeSlider");
             thicknessBar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.ThicknessBar>(this, "thicknessBar");
-            opacitySlider = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.OpacitySlider>(this, "opacitySlider");
+            opacitySlider = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Slider>(this, "opacitySlider");
         }
     }
 }

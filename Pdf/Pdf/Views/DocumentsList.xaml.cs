@@ -122,13 +122,13 @@ namespace Pdf.Views
         }
 
 
-        void HamburgerButton_Clicked(object sender, EventArgs e)
-        {
-            if (Shell.Current.FlyoutIsPresented == true)
-                Shell.Current.FlyoutIsPresented = false;
-            else
-                Shell.Current.FlyoutIsPresented = true;
-        }
+        //void HamburgerButton_Clicked(object sender, EventArgs e)
+        //{
+        //    if (Shell.Current.FlyoutIsPresented == true)
+        //        Shell.Current.FlyoutIsPresented = false;
+        //    else
+        //        Shell.Current.FlyoutIsPresented = true;
+        //}
 
         private void SortDate_Clicked(object sender, EventArgs e)
         {
@@ -199,7 +199,8 @@ namespace Pdf.Views
 
         private void SortButton_Clicked(object sender, EventArgs e)
         {
-            popupLayout.Show(sortButton.X + 25, sortButton.Y + 14);
+            // Shows SfPopupLayout at the top of the button.
+            popupLayout.ShowRelativeToView(sortButton, RelativePosition.AlignTopRight, 0, 0);
         }
 
         private void SearchButton_Clicked(object sender, EventArgs e)

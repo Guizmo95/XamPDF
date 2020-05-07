@@ -3155,6 +3155,188 @@ namespace Pdf.Droid
 			global::Com.Syncfusion.Rotator.Resource.Styleable.SfRotator_rotatorSelectedIndex = global::Pdf.Droid.Resource.Styleable.SfRotator_rotatorSelectedIndex;
 			global::Com.Syncfusion.Rotator.Resource.Styleable.SfRotator_rotatorTextVisible = global::Pdf.Droid.Resource.Styleable.SfRotator_rotatorTextVisible;
 			global::Com.Syncfusion.Rotator.Resource.Styleable.SfRotator_rotatorUnselectedDotsColor = global::Pdf.Droid.Resource.Styleable.SfRotator_rotatorUnselectedDotsColor;
+			global::Xamarin.Essentials.Resource.Attribute.alpha = global::Pdf.Droid.Resource.Attribute.alpha;
+			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::Pdf.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::Xamarin.Essentials.Resource.Attribute.font = global::Pdf.Droid.Resource.Attribute.font;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::Pdf.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderCerts = global::Pdf.Droid.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderFetchStrategy = global::Pdf.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderFetchTimeout = global::Pdf.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderPackage = global::Pdf.Droid.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderQuery = global::Pdf.Droid.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Essentials.Resource.Attribute.fontStyle = global::Pdf.Droid.Resource.Attribute.fontStyle;
+			global::Xamarin.Essentials.Resource.Attribute.fontVariationSettings = global::Pdf.Droid.Resource.Attribute.fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Attribute.fontWeight = global::Pdf.Droid.Resource.Attribute.fontWeight;
+			global::Xamarin.Essentials.Resource.Attribute.keylines = global::Pdf.Droid.Resource.Attribute.keylines;
+			global::Xamarin.Essentials.Resource.Attribute.layout_anchor = global::Pdf.Droid.Resource.Attribute.layout_anchor;
+			global::Xamarin.Essentials.Resource.Attribute.layout_anchorGravity = global::Pdf.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Xamarin.Essentials.Resource.Attribute.layout_behavior = global::Pdf.Droid.Resource.Attribute.layout_behavior;
+			global::Xamarin.Essentials.Resource.Attribute.layout_dodgeInsetEdges = global::Pdf.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Xamarin.Essentials.Resource.Attribute.layout_insetEdge = global::Pdf.Droid.Resource.Attribute.layout_insetEdge;
+			global::Xamarin.Essentials.Resource.Attribute.layout_keyline = global::Pdf.Droid.Resource.Attribute.layout_keyline;
+			global::Xamarin.Essentials.Resource.Attribute.statusBarBackground = global::Pdf.Droid.Resource.Attribute.statusBarBackground;
+			global::Xamarin.Essentials.Resource.Attribute.ttcIndex = global::Pdf.Droid.Resource.Attribute.ttcIndex;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_bg_grey = global::Pdf.Droid.Resource.Color.browser_actions_bg_grey;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_divider_color = global::Pdf.Droid.Resource.Color.browser_actions_divider_color;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_text_color = global::Pdf.Droid.Resource.Color.browser_actions_text_color;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_title_color = global::Pdf.Droid.Resource.Color.browser_actions_title_color;
+			global::Xamarin.Essentials.Resource.Color.notification_action_color_filter = global::Pdf.Droid.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Essentials.Resource.Color.notification_icon_bg_color = global::Pdf.Droid.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Essentials.Resource.Color.ripple_material_light = global::Pdf.Droid.Resource.Color.ripple_material_light;
+			global::Xamarin.Essentials.Resource.Color.secondary_text_default_material_light = global::Pdf.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_max_width = global::Pdf.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_min_padding = global::Pdf.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_horizontal_material = global::Pdf.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_vertical_material = global::Pdf.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_padding_horizontal_material = global::Pdf.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_padding_vertical_material = global::Pdf.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_control_corner_material = global::Pdf.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_notification_large_icon_max_height = global::Pdf.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Xamarin.Essentials.Resource.Dimension.compat_notification_large_icon_max_width = global::Pdf.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.Essentials.Resource.Dimension.notification_action_icon_size = global::Pdf.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_action_text_size = global::Pdf.Droid.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_big_circle_margin = global::Pdf.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Essentials.Resource.Dimension.notification_content_margin_start = global::Pdf.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Essentials.Resource.Dimension.notification_large_icon_height = global::Pdf.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Essentials.Resource.Dimension.notification_large_icon_width = global::Pdf.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Essentials.Resource.Dimension.notification_main_column_padding_top = global::Pdf.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Essentials.Resource.Dimension.notification_media_narrow_margin = global::Pdf.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Essentials.Resource.Dimension.notification_right_icon_size = global::Pdf.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_right_side_padding_top = global::Pdf.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Essentials.Resource.Dimension.notification_small_icon_background_padding = global::Pdf.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Essentials.Resource.Dimension.notification_small_icon_size_as_large = global::Pdf.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Essentials.Resource.Dimension.notification_subtext_size = global::Pdf.Droid.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_top_pad = global::Pdf.Droid.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Essentials.Resource.Dimension.notification_top_pad_large_text = global::Pdf.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Essentials.Resource.Drawable.notification_action_background = global::Pdf.Droid.Resource.Drawable.notification_action_background;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg = global::Pdf.Droid.Resource.Drawable.notification_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low = global::Pdf.Droid.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low_normal = global::Pdf.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low_pressed = global::Pdf.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_normal = global::Pdf.Droid.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_normal_pressed = global::Pdf.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Essentials.Resource.Drawable.notification_icon_background = global::Pdf.Droid.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_bg = global::Pdf.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_low_bg = global::Pdf.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_tile_bg = global::Pdf.Droid.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notify_panel_notification_icon_bg = global::Pdf.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Essentials.Resource.Id.actions = global::Pdf.Droid.Resource.Id.actions;
+			global::Xamarin.Essentials.Resource.Id.action_container = global::Pdf.Droid.Resource.Id.action_container;
+			global::Xamarin.Essentials.Resource.Id.action_divider = global::Pdf.Droid.Resource.Id.action_divider;
+			global::Xamarin.Essentials.Resource.Id.action_image = global::Pdf.Droid.Resource.Id.action_image;
+			global::Xamarin.Essentials.Resource.Id.action_text = global::Pdf.Droid.Resource.Id.action_text;
+			global::Xamarin.Essentials.Resource.Id.all = global::Pdf.Droid.Resource.Id.all;
+			global::Xamarin.Essentials.Resource.Id.async = global::Pdf.Droid.Resource.Id.async;
+			global::Xamarin.Essentials.Resource.Id.blocking = global::Pdf.Droid.Resource.Id.blocking;
+			global::Xamarin.Essentials.Resource.Id.bottom = global::Pdf.Droid.Resource.Id.bottom;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_header_text = global::Pdf.Droid.Resource.Id.browser_actions_header_text;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::Pdf.Droid.Resource.Id.browser_actions_menu_items;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_icon = global::Pdf.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_text = global::Pdf.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_view = global::Pdf.Droid.Resource.Id.browser_actions_menu_view;
+			global::Xamarin.Essentials.Resource.Id.center = global::Pdf.Droid.Resource.Id.center;
+			global::Xamarin.Essentials.Resource.Id.center_horizontal = global::Pdf.Droid.Resource.Id.center_horizontal;
+			global::Xamarin.Essentials.Resource.Id.center_vertical = global::Pdf.Droid.Resource.Id.center_vertical;
+			global::Xamarin.Essentials.Resource.Id.chronometer = global::Pdf.Droid.Resource.Id.chronometer;
+			global::Xamarin.Essentials.Resource.Id.clip_horizontal = global::Pdf.Droid.Resource.Id.clip_horizontal;
+			global::Xamarin.Essentials.Resource.Id.clip_vertical = global::Pdf.Droid.Resource.Id.clip_vertical;
+			global::Xamarin.Essentials.Resource.Id.end = global::Pdf.Droid.Resource.Id.end;
+			global::Xamarin.Essentials.Resource.Id.fill = global::Pdf.Droid.Resource.Id.fill;
+			global::Xamarin.Essentials.Resource.Id.fill_horizontal = global::Pdf.Droid.Resource.Id.fill_horizontal;
+			global::Xamarin.Essentials.Resource.Id.fill_vertical = global::Pdf.Droid.Resource.Id.fill_vertical;
+			global::Xamarin.Essentials.Resource.Id.forever = global::Pdf.Droid.Resource.Id.forever;
+			global::Xamarin.Essentials.Resource.Id.icon = global::Pdf.Droid.Resource.Id.icon;
+			global::Xamarin.Essentials.Resource.Id.icon_group = global::Pdf.Droid.Resource.Id.icon_group;
+			global::Xamarin.Essentials.Resource.Id.info = global::Pdf.Droid.Resource.Id.info;
+			global::Xamarin.Essentials.Resource.Id.italic = global::Pdf.Droid.Resource.Id.italic;
+			global::Xamarin.Essentials.Resource.Id.left = global::Pdf.Droid.Resource.Id.left;
+			global::Xamarin.Essentials.Resource.Id.line1 = global::Pdf.Droid.Resource.Id.line1;
+			global::Xamarin.Essentials.Resource.Id.line3 = global::Pdf.Droid.Resource.Id.line3;
+			global::Xamarin.Essentials.Resource.Id.none = global::Pdf.Droid.Resource.Id.none;
+			global::Xamarin.Essentials.Resource.Id.normal = global::Pdf.Droid.Resource.Id.normal;
+			global::Xamarin.Essentials.Resource.Id.notification_background = global::Pdf.Droid.Resource.Id.notification_background;
+			global::Xamarin.Essentials.Resource.Id.notification_main_column = global::Pdf.Droid.Resource.Id.notification_main_column;
+			global::Xamarin.Essentials.Resource.Id.notification_main_column_container = global::Pdf.Droid.Resource.Id.notification_main_column_container;
+			global::Xamarin.Essentials.Resource.Id.right = global::Pdf.Droid.Resource.Id.right;
+			global::Xamarin.Essentials.Resource.Id.right_icon = global::Pdf.Droid.Resource.Id.right_icon;
+			global::Xamarin.Essentials.Resource.Id.right_side = global::Pdf.Droid.Resource.Id.right_side;
+			global::Xamarin.Essentials.Resource.Id.start = global::Pdf.Droid.Resource.Id.start;
+			global::Xamarin.Essentials.Resource.Id.tag_transition_group = global::Pdf.Droid.Resource.Id.tag_transition_group;
+			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_event_manager = global::Pdf.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_listeners = global::Pdf.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.Essentials.Resource.Id.text = global::Pdf.Droid.Resource.Id.text;
+			global::Xamarin.Essentials.Resource.Id.text2 = global::Pdf.Droid.Resource.Id.text2;
+			global::Xamarin.Essentials.Resource.Id.time = global::Pdf.Droid.Resource.Id.time;
+			global::Xamarin.Essentials.Resource.Id.title = global::Pdf.Droid.Resource.Id.title;
+			global::Xamarin.Essentials.Resource.Id.top = global::Pdf.Droid.Resource.Id.top;
+			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::Pdf.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::Pdf.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::Pdf.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::Xamarin.Essentials.Resource.Layout.notification_action = global::Pdf.Droid.Resource.Layout.notification_action;
+			global::Xamarin.Essentials.Resource.Layout.notification_action_tombstone = global::Pdf.Droid.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_custom_big = global::Pdf.Droid.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_icon_group = global::Pdf.Droid.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_part_chronometer = global::Pdf.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_part_time = global::Pdf.Droid.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Essentials.Resource.String.status_bar_notification_info_overflow = global::Pdf.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification = global::Pdf.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Info = global::Pdf.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::Pdf.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Time = global::Pdf.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Title = global::Pdf.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::Pdf.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::Pdf.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Essentials.Resource.Style.Widget_Support_CoordinatorLayout = global::Pdf.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem = global::Pdf.Droid.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_alpha = global::Pdf.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_alpha = global::Pdf.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_color = global::Pdf.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_keylines = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::Pdf.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::Pdf.Droid.Resource.Styleable.FontFamily;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::Pdf.Droid.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontStyle = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontWeight = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_font = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontStyle = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontWeight = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_ttcIndex = global::Pdf.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderAuthority = global::Pdf.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderCerts = global::Pdf.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::Pdf.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::Pdf.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderPackage = global::Pdf.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderQuery = global::Pdf.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor = global::Pdf.Droid.Resource.Styleable.GradientColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::Pdf.Droid.Resource.Styleable.GradientColorItem;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::Pdf.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::Pdf.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerColor = global::Pdf.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerX = global::Pdf.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerY = global::Pdf.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endColor = global::Pdf.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endX = global::Pdf.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endY = global::Pdf.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_gradientRadius = global::Pdf.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startColor = global::Pdf.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startX = global::Pdf.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startY = global::Pdf.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_tileMode = global::Pdf.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_type = global::Pdf.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::Pdf.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::Pdf.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::Pdf.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::Pdf.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -11869,97 +12051,109 @@ namespace Pdf.Droid
 			public const int FrameRenderValue = 2131165221;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int ic_edit = 2131165356;
+			public const int ic_directional = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int ic_errorstatus = 2131165357;
+			public const int ic_edit = 2131165357;
 			
 			// aapt resource value: 0x7F0700AE
-			public const int ic_mtrl_chip_checked_black = 2131165358;
+			public const int ic_errorstatus = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int ic_mtrl_chip_checked_circle = 2131165359;
+			public const int ic_math = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int ic_mtrl_chip_close_circle = 2131165360;
+			public const int ic_mtrl_chip_checked_black = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int ic_strikethrough = 2131165361;
+			public const int ic_mtrl_chip_checked_circle = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int ic_successstatus = 2131165362;
+			public const int ic_mtrl_chip_close_circle = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int ic_underline = 2131165363;
-			
-			// aapt resource value: 0x7F0700B5
-			public const int inputlayout_togglecollapseicon = 2131165365;
-			
-			// aapt resource value: 0x7F0700B6
-			public const int inputlayout_togglevisibleicon = 2131165366;
+			public const int ic_square = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int input_layout_drop_down_icon = 2131165364;
+			public const int ic_strikethrough = 2131165364;
+			
+			// aapt resource value: 0x7F0700B5
+			public const int ic_successstatus = 2131165365;
+			
+			// aapt resource value: 0x7F0700B6
+			public const int ic_ui = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int layoutBorder = 2131165367;
+			public const int ic_underline = 2131165367;
+			
+			// aapt resource value: 0x7F0700B9
+			public const int inputlayout_togglecollapseicon = 2131165369;
+			
+			// aapt resource value: 0x7F0700BA
+			public const int inputlayout_togglevisibleicon = 2131165370;
+			
+			// aapt resource value: 0x7F0700B8
+			public const int input_layout_drop_down_icon = 2131165368;
+			
+			// aapt resource value: 0x7F0700BB
+			public const int layoutBorder = 2131165371;
 			
 			// aapt resource value: 0x7F070026
 			public const int More = 2131165222;
 			
-			// aapt resource value: 0x7F0700B8
-			public const int mtrl_snackbar_background = 2131165368;
-			
-			// aapt resource value: 0x7F0700B9
-			public const int mtrl_tabs_default_indicator = 2131165369;
-			
-			// aapt resource value: 0x7F0700BA
-			public const int navigation_empty_icon = 2131165370;
-			
-			// aapt resource value: 0x7F0700BB
-			public const int notification_action_background = 2131165371;
-			
 			// aapt resource value: 0x7F0700BC
-			public const int notification_bg = 2131165372;
+			public const int mtrl_snackbar_background = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int notification_bg_low = 2131165373;
+			public const int mtrl_tabs_default_indicator = 2131165373;
 			
 			// aapt resource value: 0x7F0700BE
-			public const int notification_bg_low_normal = 2131165374;
+			public const int navigation_empty_icon = 2131165374;
 			
 			// aapt resource value: 0x7F0700BF
-			public const int notification_bg_low_pressed = 2131165375;
+			public const int notification_action_background = 2131165375;
 			
 			// aapt resource value: 0x7F0700C0
-			public const int notification_bg_normal = 2131165376;
+			public const int notification_bg = 2131165376;
 			
 			// aapt resource value: 0x7F0700C1
-			public const int notification_bg_normal_pressed = 2131165377;
+			public const int notification_bg_low = 2131165377;
 			
 			// aapt resource value: 0x7F0700C2
-			public const int notification_icon_background = 2131165378;
+			public const int notification_bg_low_normal = 2131165378;
 			
 			// aapt resource value: 0x7F0700C3
-			public const int notification_template_icon_bg = 2131165379;
+			public const int notification_bg_low_pressed = 2131165379;
 			
 			// aapt resource value: 0x7F0700C4
-			public const int notification_template_icon_low_bg = 2131165380;
+			public const int notification_bg_normal = 2131165380;
 			
 			// aapt resource value: 0x7F0700C5
-			public const int notification_tile_bg = 2131165381;
+			public const int notification_bg_normal_pressed = 2131165381;
 			
 			// aapt resource value: 0x7F0700C6
-			public const int notify_panel_notification_icon_bg = 2131165382;
+			public const int notification_icon_background = 2131165382;
 			
 			// aapt resource value: 0x7F0700C7
-			public const int outline_arrow_back_24 = 2131165383;
+			public const int notification_template_icon_bg = 2131165383;
 			
 			// aapt resource value: 0x7F0700C8
-			public const int outline_clear_24 = 2131165384;
+			public const int notification_template_icon_low_bg = 2131165384;
 			
 			// aapt resource value: 0x7F0700C9
-			public const int outline_search_24 = 2131165385;
+			public const int notification_tile_bg = 2131165385;
+			
+			// aapt resource value: 0x7F0700CA
+			public const int notify_panel_notification_icon_bg = 2131165386;
+			
+			// aapt resource value: 0x7F0700CB
+			public const int outline_arrow_back_24 = 2131165387;
+			
+			// aapt resource value: 0x7F0700CC
+			public const int outline_clear_24 = 2131165388;
+			
+			// aapt resource value: 0x7F0700CD
+			public const int outline_search_24 = 2131165389;
 			
 			// aapt resource value: 0x7F070027
 			public const int PasswordAlertDialogBottomLine = 2131165223;
@@ -11967,29 +12161,29 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F070028
 			public const int PasswordAlertDialogCursorStyle = 2131165224;
 			
-			// aapt resource value: 0x7F0700CA
-			public const int popup_forms_android_close_icon = 2131165386;
-			
-			// aapt resource value: 0x7F0700CB
-			public const int popup_forms_android_shadow = 2131165387;
-			
-			// aapt resource value: 0x7F0700CC
-			public const int popup_forms_dark_theme_close_icon = 2131165388;
-			
-			// aapt resource value: 0x7F0700CD
-			public const int popup_forms_light_theme_close_icon = 2131165389;
-			
 			// aapt resource value: 0x7F0700CE
-			public const int roundCornerButton = 2131165390;
+			public const int popup_forms_android_close_icon = 2131165390;
 			
 			// aapt resource value: 0x7F0700CF
-			public const int roundedbg = 2131165391;
+			public const int popup_forms_android_shadow = 2131165391;
 			
 			// aapt resource value: 0x7F0700D0
-			public const int roundedbgdark = 2131165392;
+			public const int popup_forms_dark_theme_close_icon = 2131165392;
 			
 			// aapt resource value: 0x7F0700D1
-			public const int savebutton = 2131165393;
+			public const int popup_forms_light_theme_close_icon = 2131165393;
+			
+			// aapt resource value: 0x7F0700D2
+			public const int roundCornerButton = 2131165394;
+			
+			// aapt resource value: 0x7F0700D3
+			public const int roundedbg = 2131165395;
+			
+			// aapt resource value: 0x7F0700D4
+			public const int roundedbgdark = 2131165396;
+			
+			// aapt resource value: 0x7F0700D5
+			public const int savebutton = 2131165397;
 			
 			// aapt resource value: 0x7F070029
 			public const int Search = 2131165225;
@@ -11997,14 +12191,14 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F07002A
 			public const int Separator = 2131165226;
 			
-			// aapt resource value: 0x7F0700D2
-			public const int sfprogressbar_determinate_linear = 2131165394;
+			// aapt resource value: 0x7F0700D6
+			public const int sfprogressbar_determinate_linear = 2131165398;
 			
-			// aapt resource value: 0x7F0700D3
-			public const int sfprogressbar_indeterminate_circular = 2131165395;
+			// aapt resource value: 0x7F0700D7
+			public const int sfprogressbar_indeterminate_circular = 2131165399;
 			
-			// aapt resource value: 0x7F0700D4
-			public const int sfprogressbar_indeterminate_linear = 2131165396;
+			// aapt resource value: 0x7F0700D8
+			public const int sfprogressbar_indeterminate_linear = 2131165400;
 			
 			// aapt resource value: 0x7F07002B
 			public const int SignaturePadBottomCorner = 2131165227;
@@ -12015,50 +12209,50 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F07002C
 			public const int SignaturePadTopCorner = 2131165228;
 			
-			// aapt resource value: 0x7F0700D5
-			public const int text_color_button = 2131165397;
-			
-			// aapt resource value: 0x7F0700D6
-			public const int toolbaritem_background = 2131165398;
-			
-			// aapt resource value: 0x7F0700D7
-			public const int toolbaritem_pressed = 2131165399;
-			
-			// aapt resource value: 0x7F0700D8
-			public const int tooltip_frame_dark = 2131165400;
-			
 			// aapt resource value: 0x7F0700D9
-			public const int tooltip_frame_light = 2131165401;
+			public const int text_color_button = 2131165401;
 			
 			// aapt resource value: 0x7F0700DA
-			public const int twotone_branding_watermark_24 = 2131165402;
+			public const int toolbaritem_background = 2131165402;
 			
 			// aapt resource value: 0x7F0700DB
-			public const int twotone_create_24 = 2131165403;
+			public const int toolbaritem_pressed = 2131165403;
 			
 			// aapt resource value: 0x7F0700DC
-			public const int twotone_format_strikethrough_24 = 2131165404;
+			public const int tooltip_frame_dark = 2131165404;
 			
 			// aapt resource value: 0x7F0700DD
-			public const int twotone_format_underlined_24 = 2131165405;
+			public const int tooltip_frame_light = 2131165405;
 			
 			// aapt resource value: 0x7F0700DE
-			public const int twotone_gesture_24 = 2131165406;
+			public const int twotone_branding_watermark_24 = 2131165406;
 			
 			// aapt resource value: 0x7F0700DF
-			public const int twotone_strikethrough_s_24 = 2131165407;
+			public const int twotone_create_24 = 2131165407;
 			
 			// aapt resource value: 0x7F0700E0
-			public const int twotone_title_24 = 2131165408;
+			public const int twotone_format_strikethrough_24 = 2131165408;
 			
 			// aapt resource value: 0x7F0700E1
-			public const int twotone_toll_24 = 2131165409;
+			public const int twotone_format_underlined_24 = 2131165409;
 			
 			// aapt resource value: 0x7F0700E2
-			public const int undoButton = 2131165410;
+			public const int twotone_gesture_24 = 2131165410;
 			
 			// aapt resource value: 0x7F0700E3
-			public const int undo_redo_background = 2131165411;
+			public const int twotone_strikethrough_s_24 = 2131165411;
+			
+			// aapt resource value: 0x7F0700E4
+			public const int twotone_title_24 = 2131165412;
+			
+			// aapt resource value: 0x7F0700E5
+			public const int twotone_toll_24 = 2131165413;
+			
+			// aapt resource value: 0x7F0700E6
+			public const int undoButton = 2131165414;
+			
+			// aapt resource value: 0x7F0700E7
+			public const int undo_redo_background = 2131165415;
 			
 			// aapt resource value: 0x7F07002E
 			public const int Viewmode = 2131165230;
@@ -19272,6 +19466,22 @@ namespace Pdf.Droid
 			}
 			
 			private Styleable()
+			{
+			}
+		}
+		
+		public partial class Xml
+		{
+			
+			// aapt resource value: 0x7F100000
+			public const int xamarin_essentials_fileprovider_file_paths = 2131755008;
+			
+			static Xml()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Xml()
 			{
 			}
 		}

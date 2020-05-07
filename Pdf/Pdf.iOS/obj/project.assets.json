@@ -696,6 +696,19 @@
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
+      "Xamarin.Essentials/1.5.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "OpenTK-1.0",
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/4.5.0.657": {
         "type": "package",
         "compile": {
@@ -849,6 +862,7 @@
           "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
+          "Xamarin.Essentials": "1.5.3.1",
           "Xamarin.Forms": "4.5.0.657",
           "Xamarin.Forms.PancakeView": "1.3.7",
           "sqlite-net-pcl": "1.6.292"
@@ -1556,6 +1570,19 @@
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
+      "Xamarin.Essentials/1.5.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "OpenTK-1.0",
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/4.5.0.657": {
         "type": "package",
         "compile": {
@@ -1709,6 +1736,7 @@
           "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
+          "Xamarin.Essentials": "1.5.3.1",
           "Xamarin.Forms": "4.5.0.657",
           "Xamarin.Forms.PancakeView": "1.3.7",
           "sqlite-net-pcl": "1.6.292"
@@ -2416,6 +2444,19 @@
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
+      "Xamarin.Essentials/1.5.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "OpenTK-1.0",
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/4.5.0.657": {
         "type": "package",
         "compile": {
@@ -2569,6 +2610,7 @@
           "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
+          "Xamarin.Essentials": "1.5.3.1",
           "Xamarin.Forms": "4.5.0.657",
           "Xamarin.Forms.PancakeView": "1.3.7",
           "sqlite-net-pcl": "1.6.292"
@@ -3276,6 +3318,19 @@
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
+      "Xamarin.Essentials/1.5.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "OpenTK-1.0",
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/4.5.0.657": {
         "type": "package",
         "compile": {
@@ -3429,6 +3484,7 @@
           "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Syncfusion.Xamarin.SfTabView": "18.1.0.42",
           "Unity": "5.11.4",
+          "Xamarin.Essentials": "1.5.3.1",
           "Xamarin.Forms": "4.5.0.657",
           "Xamarin.Forms.PancakeView": "1.3.7",
           "sqlite-net-pcl": "1.6.292"
@@ -6180,6 +6236,54 @@
         "unity.nuspec"
       ]
     },
+    "Xamarin.Essentials/1.5.3.1": {
+      "sha512": "6sE3kGMhES7dsR8ll+ar+roEIFobjPfDskKNMsU4FF6cV27ZsdArGZHxe1QqPPJcMT6PzJsGvA3l5PNMZgw5ng==",
+      "type": "package",
+      "path": "xamarin.essentials/1.5.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/monoandroid10.0/Xamarin.Essentials.dll",
+        "lib/monoandroid10.0/Xamarin.Essentials.pdb",
+        "lib/monoandroid10.0/Xamarin.Essentials.xml",
+        "lib/monoandroid80/Xamarin.Essentials.dll",
+        "lib/monoandroid80/Xamarin.Essentials.pdb",
+        "lib/monoandroid80/Xamarin.Essentials.xml",
+        "lib/monoandroid81/Xamarin.Essentials.dll",
+        "lib/monoandroid81/Xamarin.Essentials.pdb",
+        "lib/monoandroid81/Xamarin.Essentials.xml",
+        "lib/monoandroid90/Xamarin.Essentials.dll",
+        "lib/monoandroid90/Xamarin.Essentials.pdb",
+        "lib/monoandroid90/Xamarin.Essentials.xml",
+        "lib/netstandard1.0/Xamarin.Essentials.dll",
+        "lib/netstandard1.0/Xamarin.Essentials.pdb",
+        "lib/netstandard1.0/Xamarin.Essentials.xml",
+        "lib/netstandard2.0/Xamarin.Essentials.dll",
+        "lib/netstandard2.0/Xamarin.Essentials.pdb",
+        "lib/netstandard2.0/Xamarin.Essentials.xml",
+        "lib/tizen40/Xamarin.Essentials.dll",
+        "lib/tizen40/Xamarin.Essentials.pdb",
+        "lib/tizen40/Xamarin.Essentials.xml",
+        "lib/uap10.0.16299/Xamarin.Essentials.dll",
+        "lib/uap10.0.16299/Xamarin.Essentials.pdb",
+        "lib/uap10.0.16299/Xamarin.Essentials.pri",
+        "lib/uap10.0.16299/Xamarin.Essentials.xml",
+        "lib/xamarinios10/Xamarin.Essentials.dll",
+        "lib/xamarinios10/Xamarin.Essentials.pdb",
+        "lib/xamarinios10/Xamarin.Essentials.xml",
+        "lib/xamarintvos10/Xamarin.Essentials.dll",
+        "lib/xamarintvos10/Xamarin.Essentials.pdb",
+        "lib/xamarintvos10/Xamarin.Essentials.xml",
+        "lib/xamarinwatchos10/Xamarin.Essentials.dll",
+        "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
+        "lib/xamarinwatchos10/Xamarin.Essentials.xml",
+        "readme.txt",
+        "xamarin.essentials.1.5.3.1.nupkg.sha512",
+        "xamarin.essentials.nuspec"
+      ]
+    },
     "Xamarin.Forms/4.5.0.657": {
       "sha512": "S6WmhCKBRDMG5woHEIRA8MBZv6yn2jZ8Kf9DzzcOuB5gXivH1S5mIiSt4yoaa9HwfNUcg2d7AH2GEoICmH5bJg==",
       "type": "package",
@@ -6520,6 +6624,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "Acr.UserDialogs >= 7.1.0.440",
       "Pdf >= 1.0.0",
+      "Xamarin.Essentials >= 1.5.3.1",
       "Xamarin.Forms >= 4.5.0.657"
     ]
   },
@@ -6568,6 +6673,10 @@
           "Acr.UserDialogs": {
             "target": "Package",
             "version": "[7.1.0.440, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.5.3.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

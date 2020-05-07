@@ -1,2 +1,4 @@
 values/Strings.xml;values/strings.xml
-values/attrs.xml;values/attrs.xml
+drawable/sfprogressbar_determinate_linear.xml;drawable/sfprogressbar_determinate_linear.xml
+drawable/sfprogressbar_indeterminate_circular.xml;drawable/sfprogressbar_indeterminate_circular.xml
+drawable/sfprogressbar_indeterminate_linear.xml;drawable/sfprogressbar_indeterminate_linear.xml

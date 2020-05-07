@@ -52,6 +52,8 @@ namespace Pdf.Droid
                 stBarHeight?.SetValue(this, 0);
             }
 
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
             base.OnCreate(savedInstanceState);
 
             if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.WriteExternalStorage) != (int)Permission.Granted)

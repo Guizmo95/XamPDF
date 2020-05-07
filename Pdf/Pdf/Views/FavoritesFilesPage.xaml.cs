@@ -170,7 +170,7 @@ namespace Pdf.Views
 
         private void SortButton_Clicked(object sender, EventArgs e)
         {
-            popupLayout.Show(sortButton.X + 25, sortButton.Y + 14);
+            popupLayout.ShowRelativeToView(sortButton, RelativePosition.AlignTopRight, 0, 0);
         }
 
         private void SearchButton_Clicked(object sender, EventArgs e)

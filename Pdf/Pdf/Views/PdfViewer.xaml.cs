@@ -1,4 +1,5 @@
-﻿using Pdf.controls;
+﻿using Android.Views;
+using Pdf.controls;
 using Pdf.Enumerations;
 using Pdf.Interfaces;
 using Pdf.Models;
@@ -24,6 +25,9 @@ namespace Pdf.Views
         //#region Content view / View
         private string filePath;
         private PdfViewerModel pdfViewerModel;
+        private SfPopupLayout stylePopup;
+        private StyleContent styleContent;
+        private DataTemplate styleTemplate;
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
         private InkAnnotation selectedInkAnnotation;
@@ -252,8 +256,6 @@ namespace Pdf.Views
 
         protected override void OnDisappearing()
         {
-            
-
             MessagingCenter.Unsubscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor");
 
             pdfViewerControl.FreeTextAnnotationAdded -= PdfViewerControl_FreeTextAnnotationAdded;
@@ -275,6 +277,8 @@ namespace Pdf.Views
             pdfViewerControl.TextMarkupAdded -= PdfViewerControl_TextMarkupAdded;
 
             pdfViewerControl.DocumentLoaded -= PdfViewerControl_DocumentLoaded;
+
+            pdfViewerControl.TextMarkupAdded -= PdfViewerControl_TextMarkupAdded;
 
             //pdfViewerControl.Unload();
             base.OnDisappearing();
@@ -303,6 +307,7 @@ namespace Pdf.Views
 
             this.filePath = filePath;
             pdfViewerControl.Toolbar.Enabled = false;
+
 
             //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
             //pdfViewerControl.BindingContext = pdfViewerModel = new PdfViewerModel(filepath);
@@ -334,6 +339,8 @@ namespace Pdf.Views
             pdfViewerControl.TextMarkupSelected += PdfViewerControl_TextMarkupSelected;
             pdfViewerControl.TextMarkupDeselected += PdfViewerControl_TextMarkupDeselected;
             pdfViewerControl.TextMarkupAdded += PdfViewerControl_TextMarkupAdded;
+
+            pdfViewerControl.PageChanged += PdfViewerControl_PageChanged;
             #endregion
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -418,6 +425,55 @@ namespace Pdf.Views
                     }
                 })
             });
+            colorButton.BindingContext = this;
+
+            stylePopup = new SfPopupLayout();
+            styleContent = new StyleContent();
+            stylePopup.ClosePopupOnBackButtonPressed = false;
+            stylePopup.PopupView.ShowHeader = false;
+            stylePopup.PopupView.ShowFooter = false;
+            stylePopup.PopupView.HeightRequest = 100;
+            stylePopup.PopupView.WidthRequest = 250;
+            stylePopup.PopupView.AnimationMode = AnimationMode.Fade;
+
+            styleTemplate = new DataTemplate(() =>
+            {
+                return styleContent;
+            });
+
+            this.stylePopup.PopupView.ContentTemplate = styleTemplate;
+        }
+
+        private void PdfViewerControl_PageChanged(object sender, PageChangedEventArgs args)
+        {
+            switch (annotationType)
+            {
+                case AnnotationType.Ink:
+                    break;
+                case AnnotationType.FreeText:
+                    break;
+                case AnnotationType.Rectangle:
+                    break;
+                case AnnotationType.Line:
+                    break;
+                case AnnotationType.Arrow:
+                    break;
+                case AnnotationType.Circle:
+                    break;
+                case AnnotationType.Hightlight:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Highlight;
+                    break;
+                case AnnotationType.Underline:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Underline;
+                    break;
+                case AnnotationType.Strikethrought:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Strikethrough;
+                    break;
+                case AnnotationType.None:
+                    break;
+                default:
+                    break;
+            }
         }
 
         #region Pdf viewer events methods
@@ -547,7 +603,7 @@ namespace Pdf.Views
         //TODO -- FOUND A WAY TO DESELECT OR HANDLE THE BOTTOM BAR BUG
         private void PdfViewerControl_ShapeAnnotationSelected(object sender, ShapeAnnotationSelectedEventArgs args)
         {
-            this.annotationType = AnnotationType.Shape;
+            //this.annotationType = AnnotationType.Shape;
 
             //Cast the sender object as shape annotation.
             this.selectedShapeAnnotation = sender as ShapeAnnotation;
@@ -795,34 +851,34 @@ namespace Pdf.Views
 
         #region Popop selected annotation method events
 
-        private void StyleButton_Clicked()
-        {
-            if (annotationType == AnnotationType.FreeText)
-            {
-            }
+        //private void StyleButton_Clicked()
+        //{
+        //    if (annotationType == AnnotationType.FreeText)
+        //    {
+        //    }
 
-            else
-            {
-                if (annotationType == AnnotationType.Ink)
-                {
+        //    else
+        //    {
+        //        if (annotationType == AnnotationType.Ink)
+        //        {
 
-                }
-                else
-                {
-                    if (annotationType == AnnotationType.Shape)
-                    {
-                    }
-                    else
-                    {
-                        if (annotationType == AnnotationType.TextMarkup)
-                        {
+        //        }
+        //        else
+        //        {
+        //            if (annotationType == AnnotationType.Shape)
+        //            {
+        //            }
+        //            else
+        //            {
+        //                if (annotationType == AnnotationType.TextMarkup)
+        //                {
 
-                        }
-                    }
-                }
-            }
+        //                }
+        //            }
+        //        }
+        //    }
 
-        }
+        //}
 
         private void RemvoveButton_Clicked()
         {
@@ -1031,16 +1087,27 @@ namespace Pdf.Views
 
         private async Task CollapseBottomMainToolbar(AnnotationType annotationType)
         {
+
             switch (annotationType)
             {
                 case AnnotationType.Ink:
                     break;
                 case AnnotationType.FreeText:
                     break;
-                case AnnotationType.Shape:
+                case AnnotationType.Rectangle:
+                    break;
+                case AnnotationType.Line:
+                    break;
+                case AnnotationType.Arrow:
+                    break;
+                case AnnotationType.Circle:
                     break;
                 case AnnotationType.TextMarkup:
-                    await bottomMainToolbar.LayoutTo(new Rectangle(bottomMainToolbar.Bounds.X, bottomMainToolbar.Bounds.Y, bottomMainToolbar.Bounds.Width, 0), 200, Easing.Linear);
+                    //await Task.Run(async() =>
+                    //{
+                    //    await bottomMainToolbar.LayoutTo(new Rectangle(bottomMainToolbar.Bounds.X, bottomMainToolbar.Bounds.Y, bottomMainToolbar.Bounds.Width, 0), 250, Easing.Linear);
+                    //});
+
                     bottomMainToolbar.IsVisible = false;
                     textMarkupToolbar.IsVisible = true;
                     break;
@@ -1049,25 +1116,129 @@ namespace Pdf.Views
                 default:
                     break;
             }
+
         }
         #endregion
 
         #region TextMarkup toolbar methods
         private async void BackButtonTextMarkupToolbar_Clicked(object sender, EventArgs e)
         {
-            await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 200, Easing.Linear);
+            //await Task.Run(async() =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+            
             textMarkupToolbar.IsVisible = false;
             bottomMainToolbar.IsVisible = true;
         }
 
         private async void StrikethroughtButton_Clicked(object sender, EventArgs e)
         {
-            await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 200, Easing.Linear);
+            //await Task.Run(async () =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+            
             textMarkupToolbar.IsVisible = false;
 
             imageAnnotationType.Source = "ic_strikethrough.png";
             annotationTypeToolbar.IsVisible = true;
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.Strikethrough;
+            this.annotationType = AnnotationType.Strikethrought;
+            this.SelectedColor = Color.Yellow;
         }
+
+        private async void UnderlineButton_Clicked(object sender, EventArgs e)
+        {
+            //await Task.Run(async () =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+            
+            textMarkupToolbar.IsVisible = false;
+
+            imageAnnotationType.Source = "ic_underline.png";
+            annotationTypeToolbar.IsVisible = true;
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.Underline;
+            this.annotationType = AnnotationType.Underline;
+            this.SelectedColor = Color.Red;
+        }
+
+        private async void HightlightButton_Clicked(object sender, EventArgs e)
+        {
+            //await Task.Run(async () =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+            
+            textMarkupToolbar.IsVisible = false;
+
+            imageAnnotationType.Source = "ic_edit.png";
+            annotationTypeToolbar.IsVisible = true;
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.Highlight;
+            this.annotationType = AnnotationType.Hightlight;
+            this.SelectedColor = Color.Yellow;
+        }
+        #endregion
+
+        #region AnnotationType toolbar methods
+
+        private async void BackButtonAnnotationTypeToolbar_Clicked(object sender, EventArgs e)
+        {
+            //await Task.Run(async () =>
+            //{
+            //    await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+            
+            annotationTypeToolbar.IsVisible = false;
+
+            switch (this.annotationType)
+            {
+                case AnnotationType.Ink:
+                    break;
+                case AnnotationType.FreeText:
+                    break;
+                case (AnnotationType.Arrow) :
+                    break;
+                case (AnnotationType.Circle):
+                    break;
+                case (AnnotationType.Line):
+                    break;
+                case (AnnotationType.Rectangle):
+                    break;
+                case (AnnotationType.Hightlight):
+                    textMarkupToolbar.IsVisible = true;
+                    pdfViewerControl.AnnotationMode = AnnotationMode.None;
+                    annotationType = AnnotationType.None;
+                    break;
+                case (AnnotationType.Strikethrought):
+                    textMarkupToolbar.IsVisible = true;
+                    pdfViewerControl.AnnotationMode = AnnotationMode.None;
+                    annotationType = AnnotationType.None;
+                    break;
+                case (AnnotationType.Underline):
+                    textMarkupToolbar.IsVisible = true;
+                    pdfViewerControl.AnnotationMode = AnnotationMode.None;
+                    annotationType = AnnotationType.None;
+                    break;
+                case AnnotationType.None:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void ColorButton_Clicked(object sender, EventArgs e)
+        {
+            var viewPortWidth = Application.Current.MainPage.Width;
+            var value = (viewPortWidth / 2) - 125;
+            stylePopup.PopupView.HeightRequest = 40;
+            stylePopup.ShowRelativeToView(annotationTypeToolbar, RelativePosition.AlignTop, value);
+        }
+
         #endregion
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)
