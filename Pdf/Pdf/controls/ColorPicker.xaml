@@ -7,13 +7,13 @@
              xmlns:local="clr-namespace:Pdf.Views"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.ColorPicker" HeightRequest="37">
+             x:Class="Pdf.Views.ColorPicker" HeightRequest="36">
     <ContentView.Content>
         <sfsegmentedcontrol:SfSegmentedControl x:Name="segctrl" CornerRadius="0" 
-                                               HeightRequest="37"
-                                               BackgroundColor="White"
-                                               SegmentHeight="37" 
-                                               SegmentWidth="37"  
+                                               HeightRequest="36"
+                                               BackgroundColor="#fafafa"
+                                               SegmentHeight="36" 
+                                               SegmentWidth="36"  
                                                ItemsSource="{Binding ViewCollection}"
                                                SegmentBorderThickness="0" 
                                                SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"

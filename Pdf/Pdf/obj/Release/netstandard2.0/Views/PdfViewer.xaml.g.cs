@@ -122,7 +122,13 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.Image imageAnnotationType;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button colorButton;
+        private global::Pdf.Views.ColorPicker colorPicker;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Pdf.controls.IconView paletteButton;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Pdf.controls.StyleContent drawer;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
@@ -162,7 +168,9 @@ namespace Pdf.Views {
             annotationTypeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "annotationTypeToolbar");
             backButtonAnnotationTypeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "backButtonAnnotationTypeToolbar");
             imageAnnotationType = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imageAnnotationType");
-            colorButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "colorButton");
+            colorPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Views.ColorPicker>(this, "colorPicker");
+            paletteButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "paletteButton");
+            drawer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.StyleContent>(this, "drawer");
         }
     }
 }

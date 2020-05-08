@@ -1,4 +1,5 @@
-﻿using Android.Views;
+﻿using Android.Content;
+using Android.Views;
 using Pdf.controls;
 using Pdf.Enumerations;
 using Pdf.Interfaces;
@@ -47,6 +48,7 @@ namespace Pdf.Views
         private bool canRedoInk = false;
         private int shapesNumbers = 0;
         private int textMarkupNumbers = 0;
+        private int lastThicknessBarSelected = 5;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -61,6 +63,7 @@ namespace Pdf.Views
                 pdfViewerControl = value;
             }
         }
+
         public Color SelectedColor
         {
             get
@@ -279,7 +282,9 @@ namespace Pdf.Views
             pdfViewerControl.DocumentLoaded -= PdfViewerControl_DocumentLoaded;
 
             pdfViewerControl.TextMarkupAdded -= PdfViewerControl_TextMarkupAdded;
+            pdfViewerControl.PageChanged -= PdfViewerControl_PageChanged;
 
+            styleContent.ThicknessBar.BoxViewButtonClicked -= (int numberOfThicknessBarClicked) => ThicknessBar_Clicked(numberOfThicknessBarClicked);
             //pdfViewerControl.Unload();
             base.OnDisappearing();
         }
@@ -425,15 +430,26 @@ namespace Pdf.Views
                     }
                 })
             });
-            colorButton.BindingContext = this;
+
+            paletteButton.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command( () =>
+                {
+                    PaletteButton_Clicked();
+                })
+            });
+
+            paletteButton.BindingContext = this;
 
             stylePopup = new SfPopupLayout();
             styleContent = new StyleContent();
+            styleContent.ThicknessBar.BindingContext = this;
             stylePopup.ClosePopupOnBackButtonPressed = false;
             stylePopup.PopupView.ShowHeader = false;
             stylePopup.PopupView.ShowFooter = false;
-            stylePopup.PopupView.HeightRequest = 100;
+            stylePopup.PopupView.HeightRequest = 125;
             stylePopup.PopupView.WidthRequest = 250;
+            stylePopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#fafafa");
             stylePopup.PopupView.AnimationMode = AnimationMode.Fade;
 
             styleTemplate = new DataTemplate(() =>
@@ -442,6 +458,8 @@ namespace Pdf.Views
             });
 
             this.stylePopup.PopupView.ContentTemplate = styleTemplate;
+
+            styleContent.ThicknessBar.BoxViewButtonClicked += (int numberOfThicknessBarClicked) => ThicknessBar_Clicked(numberOfThicknessBarClicked);
         }
 
         private void PdfViewerControl_PageChanged(object sender, PageChangedEventArgs args)
@@ -449,16 +467,21 @@ namespace Pdf.Views
             switch (annotationType)
             {
                 case AnnotationType.Ink:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
                     break;
                 case AnnotationType.FreeText:
                     break;
                 case AnnotationType.Rectangle:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Rectangle;
                     break;
                 case AnnotationType.Line:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Line;
                     break;
                 case AnnotationType.Arrow:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Arrow;
                     break;
                 case AnnotationType.Circle:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Circle;
                     break;
                 case AnnotationType.Hightlight:
                     pdfViewerControl.AnnotationMode = AnnotationMode.Highlight;
@@ -912,155 +935,218 @@ namespace Pdf.Views
         #endregion
 
         #region ThicknessBarEvents
-        private void FirstBoxView_Clicked()
+        private void ThicknessBar_Clicked(int numberOfThicknessBarClicked)
         {
-            if (selectedInkAnnotation != null)
-                selectedInkAnnotation.Settings.Thickness = 1;
-
-            if (selectedShapeAnnotation != null)
-                selectedShapeAnnotation.Settings.Thickness = 1;
-
-            switch (pdfViewerControl.AnnotationMode)
+            if(lastThicknessBarSelected != numberOfThicknessBarClicked)
             {
-                case AnnotationMode.Ink:
-                    pdfViewerControl.AnnotationSettings.Ink.Thickness = 1;
-                    break;
-                case AnnotationMode.Rectangle:
-                    pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 1;
-                    break;
-                case AnnotationMode.Circle:
-                    pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 1;
-                    break;
-                case AnnotationMode.Line:
-                    pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 1;
-                    break;
-                case AnnotationMode.Arrow:
-                    pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 1;
-                    break;
-                default:
-                    break;
+                switch (lastThicknessBarSelected)
+                {
+                    case 1:
+                        styleContent.ThicknessBar.FirstThicknessBar.BorderThickness = 0;
+                        break;
+                    case 2:
+                        styleContent.ThicknessBar.SecondThicknessBar.BorderThickness = 0;
+                        break;
+                    case 3:
+                        styleContent.ThicknessBar.ThirdThicknessBar.BorderThickness = 0;
+                        break;
+                    case 4:
+                        styleContent.ThicknessBar.FourthThicknessBar.BorderThickness = 0;
+                        break;
+                    case 5:
+                        styleContent.ThicknessBar.FifthThicknessBar.BorderThickness = 0;
+                        break;
+                    default:
+                        break;
+                }
+
+                switch (numberOfThicknessBarClicked)
+                {
+                    case 1:
+                        styleContent.ThicknessBar.FirstThicknessBar.BorderThickness = 1;
+                        ChangeThicknessForAnnotation(2);
+                        break;
+                    case 2:
+                        styleContent.ThicknessBar.SecondThicknessBar.BorderThickness = 2;
+                        ChangeThicknessForAnnotation(4);
+                        break;
+                    case 3:
+                        styleContent.ThicknessBar.ThirdThicknessBar.BorderThickness = 2;
+                        ChangeThicknessForAnnotation(6);
+                        break;
+                    case 4:
+                        styleContent.ThicknessBar.FourthThicknessBar.BorderThickness = 2;
+                        ChangeThicknessForAnnotation(8);
+                        break;
+                    case 5:
+                        styleContent.ThicknessBar.FifthThicknessBar.BorderThickness = 2;
+                        ChangeThicknessForAnnotation(9);
+                        break;
+                    default:
+                        break;
+                }
             }
-        }
-        private void SecondBoxView_Clicked()
-        {
-            if (selectedInkAnnotation != null)
-                selectedInkAnnotation.Settings.Thickness = 3;
-
-            if (selectedShapeAnnotation != null)
-                selectedShapeAnnotation.Settings.Thickness = 3;
-
-            switch (pdfViewerControl.AnnotationMode)
+            else
             {
-                case AnnotationMode.Ink:
-                    pdfViewerControl.AnnotationSettings.Ink.Thickness = 3;
-                    break;
-                case AnnotationMode.Rectangle:
-                    pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 3;
-                    break;
-                case AnnotationMode.Circle:
-                    pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 3;
-                    break;
-                case AnnotationMode.Line:
-                    pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 3;
-                    break;
-                case AnnotationMode.Arrow:
-                    pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 3;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void ThirdBoxView_Clicked()
-        {
-            if (selectedInkAnnotation != null)
-                selectedInkAnnotation.Settings.Thickness = 5;
-
-            if (selectedShapeAnnotation != null)
-                selectedShapeAnnotation.Settings.Thickness = 5;
-
-            switch (pdfViewerControl.AnnotationMode)
-            {
-                case AnnotationMode.Ink:
-                    pdfViewerControl.AnnotationSettings.Ink.Thickness = 5;
-                    break;
-                case AnnotationMode.Rectangle:
-                    pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 5;
-                    break;
-                case AnnotationMode.Circle:
-                    pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 5;
-                    break;
-                case AnnotationMode.Line:
-                    pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 5;
-                    break;
-                case AnnotationMode.Arrow:
-                    pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 5;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void FourthBoxView_Clicked()
-        {
-            if (selectedInkAnnotation != null)
-                selectedInkAnnotation.Settings.Thickness = 7;
-
-            if (selectedShapeAnnotation != null)
-                selectedShapeAnnotation.Settings.Thickness = 7;
-
-            switch (pdfViewerControl.AnnotationMode)
-            {
-                case AnnotationMode.Ink:
-                    pdfViewerControl.AnnotationSettings.Ink.Thickness = 7;
-                    break;
-                case AnnotationMode.Rectangle:
-                    pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 7;
-                    break;
-                case AnnotationMode.Circle:
-                    pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 7;
-                    break;
-                case AnnotationMode.Line:
-                    pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 7;
-                    break;
-                case AnnotationMode.Arrow:
-                    pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 7;
-                    break;
-                default:
-                    break;
+                return;
             }
 
+            lastThicknessBarSelected = numberOfThicknessBarClicked;
         }
 
-        private void FifthBoxView_Clicked()
+        private void ChangeThicknessForAnnotation(int thicknessValue)
         {
             if (selectedInkAnnotation != null)
-                selectedInkAnnotation.Settings.Thickness = 9;
-
-            if (selectedShapeAnnotation != null)
-                selectedShapeAnnotation.Settings.Thickness = 9;
-
-            switch (pdfViewerControl.AnnotationMode)
+                selectedInkAnnotation.Settings.Thickness = thicknessValue;
+            else
             {
-                case AnnotationMode.Ink:
-                    pdfViewerControl.AnnotationSettings.Ink.Thickness = 9;
-                    break;
-                case AnnotationMode.Rectangle:
-                    pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 9;
-                    break;
-                case AnnotationMode.Circle:
-                    pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 9;
-                    break;
-                case AnnotationMode.Line:
-                    pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 9;
-                    break;
-                case AnnotationMode.Arrow:
-                    pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 9;
-                    break;
-                default:
-                    break;
+                if (selectedShapeAnnotation != null)
+                    selectedShapeAnnotation.Settings.Thickness = thicknessValue;
+                else
+                {
+                    switch (pdfViewerControl.AnnotationMode)
+                    {
+                        case AnnotationMode.Ink:
+                            pdfViewerControl.AnnotationSettings.Ink.Thickness = thicknessValue;
+                            break;
+                        case AnnotationMode.Rectangle:
+                            pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = thicknessValue;
+                            break;
+                        case AnnotationMode.Circle:
+                            pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = thicknessValue;
+                            break;
+                        case AnnotationMode.Line:
+                            pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = thicknessValue;
+                            break;
+                        case AnnotationMode.Arrow:
+                            pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = thicknessValue;
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
         }
+        //private void SecondBoxView_Clicked()
+        //{
+        //    if (selectedInkAnnotation != null)
+        //        selectedInkAnnotation.Settings.Thickness = 3;
+
+        //    if (selectedShapeAnnotation != null)
+        //        selectedShapeAnnotation.Settings.Thickness = 3;
+
+        //    switch (pdfViewerControl.AnnotationMode)
+        //    {
+        //        case AnnotationMode.Ink:
+        //            pdfViewerControl.AnnotationSettings.Ink.Thickness = 3;
+        //            break;
+        //        case AnnotationMode.Rectangle:
+        //            pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 3;
+        //            break;
+        //        case AnnotationMode.Circle:
+        //            pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 3;
+        //            break;
+        //        case AnnotationMode.Line:
+        //            pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 3;
+        //            break;
+        //        case AnnotationMode.Arrow:
+        //            pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 3;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
+
+        //private void ThirdBoxView_Clicked()
+        //{
+        //    if (selectedInkAnnotation != null)
+        //        selectedInkAnnotation.Settings.Thickness = 5;
+
+        //    if (selectedShapeAnnotation != null)
+        //        selectedShapeAnnotation.Settings.Thickness = 5;
+
+        //    switch (pdfViewerControl.AnnotationMode)
+        //    {
+        //        case AnnotationMode.Ink:
+        //            pdfViewerControl.AnnotationSettings.Ink.Thickness = 5;
+        //            break;
+        //        case AnnotationMode.Rectangle:
+        //            pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 5;
+        //            break;
+        //        case AnnotationMode.Circle:
+        //            pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 5;
+        //            break;
+        //        case AnnotationMode.Line:
+        //            pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 5;
+        //            break;
+        //        case AnnotationMode.Arrow:
+        //            pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 5;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
+
+        //private void FourthBoxView_Clicked()
+        //{
+        //    if (selectedInkAnnotation != null)
+        //        selectedInkAnnotation.Settings.Thickness = 7;
+
+        //    if (selectedShapeAnnotation != null)
+        //        selectedShapeAnnotation.Settings.Thickness = 7;
+
+        //    switch (pdfViewerControl.AnnotationMode)
+        //    {
+        //        case AnnotationMode.Ink:
+        //            pdfViewerControl.AnnotationSettings.Ink.Thickness = 7;
+        //            break;
+        //        case AnnotationMode.Rectangle:
+        //            pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 7;
+        //            break;
+        //        case AnnotationMode.Circle:
+        //            pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 7;
+        //            break;
+        //        case AnnotationMode.Line:
+        //            pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 7;
+        //            break;
+        //        case AnnotationMode.Arrow:
+        //            pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 7;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+
+        //}
+
+        //private void FifthBoxView_Clicked()
+        //{
+        //    if (selectedInkAnnotation != null)
+        //        selectedInkAnnotation.Settings.Thickness = 9;
+
+        //    if (selectedShapeAnnotation != null)
+        //        selectedShapeAnnotation.Settings.Thickness = 9;
+
+        //    switch (pdfViewerControl.AnnotationMode)
+        //    {
+        //        case AnnotationMode.Ink:
+        //            pdfViewerControl.AnnotationSettings.Ink.Thickness = 9;
+        //            break;
+        //        case AnnotationMode.Rectangle:
+        //            pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 9;
+        //            break;
+        //        case AnnotationMode.Circle:
+        //            pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 9;
+        //            break;
+        //        case AnnotationMode.Line:
+        //            pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 9;
+        //            break;
+        //        case AnnotationMode.Arrow:
+        //            pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 9;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
 
         #endregion
 
@@ -1070,14 +1156,14 @@ namespace Pdf.Views
             await CollapseBottomMainToolbar(AnnotationType.TextMarkup);
         }
 
-        private void ShapeButton_Clicked(object sender, EventArgs e)
+        private async void ShapeButton_Clicked(object sender, EventArgs e)
         {
-
+            await CollapseBottomMainToolbar(AnnotationType.Shape);
         }
 
-        private void InkButton_Clicked(object sender, EventArgs e)
+        private async void InkButton_Clicked(object sender, EventArgs e)
         {
-
+            await CollapseBottomMainToolbar(AnnotationType.Ink);
         }
 
         private void FreeTextButton_Clicked(object sender, EventArgs e)
@@ -1091,16 +1177,35 @@ namespace Pdf.Views
             switch (annotationType)
             {
                 case AnnotationType.Ink:
+                    //await Task.Run(async () =>
+                    //{
+                    //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+                    //});
+
+                    bottomMainToolbar.IsVisible = false;
+
+                    imageAnnotationType.Source = "twotone_gesture_24.xml";
+                    paletteButton.IsVisible = true;
+                    annotationTypeToolbar.IsVisible = true;
+                    colorPicker.IsVisible = false;
+
+                    pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
+                    pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 9;
+                    this.annotationType = AnnotationType.Ink;
+                    this.SelectedColor = Color.Black;
+
                     break;
                 case AnnotationType.FreeText:
                     break;
-                case AnnotationType.Rectangle:
-                    break;
-                case AnnotationType.Line:
-                    break;
-                case AnnotationType.Arrow:
-                    break;
-                case AnnotationType.Circle:
+                case AnnotationType.Shape:
+                    //await Task.Run(async() =>
+                    //{
+                    //    await bottomMainToolbar.LayoutTo(new Rectangle(bottomMainToolbar.Bounds.X, bottomMainToolbar.Bounds.Y, bottomMainToolbar.Bounds.Width, 0), 250, Easing.Linear);
+                    //});
+
+                    bottomMainToolbar.IsVisible = false;
+                    shapeToolbar.IsVisible = true;
+                    colorPicker.IsVisible = false;
                     break;
                 case AnnotationType.TextMarkup:
                     //await Task.Run(async() =>
@@ -1109,6 +1214,7 @@ namespace Pdf.Views
                     //});
 
                     bottomMainToolbar.IsVisible = false;
+                    colorPicker.IsVisible = true;
                     textMarkupToolbar.IsVisible = true;
                     break;
                 case AnnotationType.None:
@@ -1188,26 +1294,41 @@ namespace Pdf.Views
 
         private async void BackButtonAnnotationTypeToolbar_Clicked(object sender, EventArgs e)
         {
-            //await Task.Run(async () =>
-            //{
-            //    await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 250, Easing.Linear);
-            //});
-            
+            await Task.Run(async () =>
+            {
+                await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 150, Easing.Linear);
+            });
+
             annotationTypeToolbar.IsVisible = false;
 
             switch (this.annotationType)
             {
                 case AnnotationType.Ink:
+                    pdfViewerControl.AnnotationMode = AnnotationMode.None;
+                    annotationType = AnnotationType.None;
+                    bottomMainToolbar.IsVisible = true; 
                     break;
                 case AnnotationType.FreeText:
                     break;
                 case (AnnotationType.Arrow) :
+                    shapeToolbar.IsVisible = true;
+                    pdfViewerControl.AnnotationMode = AnnotationMode.None;
+                    annotationType = AnnotationType.None;
                     break;
                 case (AnnotationType.Circle):
+                    shapeToolbar.IsVisible = true;
+                    pdfViewerControl.AnnotationMode = AnnotationMode.None;
+                    annotationType = AnnotationType.None;
                     break;
                 case (AnnotationType.Line):
+                    shapeToolbar.IsVisible = true;
+                    pdfViewerControl.AnnotationMode = AnnotationMode.None;
+                    annotationType = AnnotationType.None;
                     break;
                 case (AnnotationType.Rectangle):
+                    shapeToolbar.IsVisible = true;
+                    pdfViewerControl.AnnotationMode = AnnotationMode.None;
+                    annotationType = AnnotationType.None;
                     break;
                 case (AnnotationType.Hightlight):
                     textMarkupToolbar.IsVisible = true;
@@ -1231,12 +1352,107 @@ namespace Pdf.Views
             }
         }
 
-        private void ColorButton_Clicked(object sender, EventArgs e)
+        private async void PaletteButton_Clicked()
         {
             var viewPortWidth = Application.Current.MainPage.Width;
             var value = (viewPortWidth / 2) - 125;
-            stylePopup.PopupView.HeightRequest = 40;
-            stylePopup.ShowRelativeToView(annotationTypeToolbar, RelativePosition.AlignTop, value);
+            stylePopup.ShowRelativeToView(paletteButton, RelativePosition.AlignTopRight,0, -10);
+        }
+
+        //private void ColorButton_Clicked(object sender, EventArgs e)
+        //{
+        //    var viewPortWidth = Application.Current.MainPage.Width;
+        //    var value = (viewPortWidth / 2) - 125;
+        //    stylePopup.PopupView.HeightRequest = 40;
+        //    stylePopup.ShowRelativeToView(annotationTypeToolbar, RelativePosition.AlignTop, value);
+        //}
+        #endregion
+
+        #region Shape bar methods
+        private async void BackButtonShapeToolbar_Clicked(object sender, EventArgs e)
+        {
+            //await Task.Run(async() =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+
+            shapeToolbar.IsVisible = false;
+            paletteButton.IsVisible = false;
+            bottomMainToolbar.IsVisible = true;
+        }
+
+        private void CircleButton_Clicked(object sender, EventArgs e)
+        {
+            //await Task.Run(async () =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+
+            shapeToolbar.IsVisible = false;
+
+            imageAnnotationType.Source = "ic_ui.png";
+            paletteButton.IsVisible = true;
+            annotationTypeToolbar.IsVisible = true;
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.Circle;
+            pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 9;
+            this.annotationType = AnnotationType.Circle;
+            this.SelectedColor = Color.Black;
+
+        }
+
+        private void LineButton_Clicked(object sender, EventArgs e)
+        {
+            //await Task.Run(async () =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+
+            shapeToolbar.IsVisible = false;
+            paletteButton.IsVisible = true;
+            imageAnnotationType.Source = "ic_square.png";
+            annotationTypeToolbar.IsVisible = true;
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.Line;
+            pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 9;
+            this.annotationType = AnnotationType.Line;
+            this.SelectedColor = Color.Black;
+        }
+
+        private void ArrowButton_Clicked(object sender, EventArgs e)
+        {
+            //await Task.Run(async () =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+
+            shapeToolbar.IsVisible = false;
+            paletteButton.IsVisible = true;
+            imageAnnotationType.Source = "ic_directional.png";
+            annotationTypeToolbar.IsVisible = true;
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.Arrow;
+            pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 9;
+            this.annotationType = AnnotationType.Arrow;
+            this.SelectedColor = Color.Black;
+        }
+
+        private void RectangleButton_Clicked(object sender, EventArgs e)
+        {
+            //await Task.Run(async () =>
+            //{
+            //    await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+            //});
+
+            shapeToolbar.IsVisible = false;
+            paletteButton.IsVisible = true;
+            imageAnnotationType.Source = "ic_math.png";
+            annotationTypeToolbar.IsVisible = true;
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.Rectangle;
+            pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 9;
+            this.annotationType = AnnotationType.Rectangle;
+            this.SelectedColor = Color.Black;
         }
 
         #endregion
@@ -1245,7 +1461,5 @@ namespace Pdf.Views
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
-
-
     }
 }

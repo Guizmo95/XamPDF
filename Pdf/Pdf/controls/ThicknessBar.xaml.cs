@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PancakeView;
 using Xamarin.Forms.Xaml;
 
 namespace Pdf.controls
@@ -12,20 +13,89 @@ namespace Pdf.controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ThicknessBar : ContentView
     {
-        public delegate void firstBoxViewButtonClickedDelegate();
-        public firstBoxViewButtonClickedDelegate FirstBoxViewButtonClicked { get; set; }
+        public delegate void BoxViewButtonClickedDelegate(int numberOfTheThicknessBarSelected);
+        public BoxViewButtonClickedDelegate BoxViewButtonClicked { get; set; }
 
-        public delegate void secondBoxViewButtonClickedDelegate();
-        public firstBoxViewButtonClickedDelegate SecondBoxViewButtonClicked { get; set; }
+        public PancakeView FirstBoxView
+        {
+            get
+            {
+                return firstBoxView;
+            }
+        }
 
-        public delegate void thirdBoxViewButtonClickedDelegate();
-        public firstBoxViewButtonClickedDelegate ThirdBoxViewButtonClicked { get; set; }
+        public PancakeView SecondBoxView
+        {
+            get
+            {
+                return secondBoxView;
+            }
+        }
 
-        public delegate void fourthBoxViewButtonClickedDelegate();
-        public firstBoxViewButtonClickedDelegate FourthBoxViewButtonClicked { get; set; }
+        public PancakeView ThirdBoxView
+        {
+            get
+            {
+                return thirdBoxView;
+            }
+        }
 
-        public delegate void fifthBoxViewButtonClickedDelegate();
-        public firstBoxViewButtonClickedDelegate FifthBoxViewButtonClicked { get; set; }
+        public PancakeView FourthBoxView
+        {
+            get
+            {
+                return fourthBoxView;
+            }
+        }
+
+        public PancakeView FifthBoxView
+        {
+            get
+            {
+                return fifthBoxView;
+            }
+        }
+
+        public PancakeView FirstThicknessBar
+        {
+            get
+            {
+                return firstThicknessBar;
+            }
+        }
+
+        public PancakeView SecondThicknessBar
+        {
+            get
+            {
+                return secondThicknessBar;
+            }
+        }
+
+        public PancakeView ThirdThicknessBar
+        {
+            get
+            {
+                return thirdThicknessBar;
+            }
+        }
+
+        public PancakeView FourthThicknessBar
+        {
+            get
+            {
+                return fourthThicknessBar;
+            }
+        }
+
+        public PancakeView FifthThicknessBar
+        {
+            get
+            {
+                return fifthThicknessBar;
+            }
+        }
+
         public ThicknessBar()
         {
             InitializeComponent();
@@ -34,7 +104,7 @@ namespace Pdf.controls
             {
                 Command = new Command( () =>
                 {
-                    FirstBoxViewButton_Clicked();
+                    BoxViewButton_Clicked(1);
                 })
             });
 
@@ -42,7 +112,7 @@ namespace Pdf.controls
             {
                 Command = new Command(() =>
                 {
-                    SecondBoxViewButton_Clicked();
+                    BoxViewButton_Clicked(2);
                 })
             });
 
@@ -50,7 +120,7 @@ namespace Pdf.controls
             {
                 Command = new Command(() =>
                 {
-                    ThirdBoxViewButton_Clicked();
+                    BoxViewButton_Clicked(3);
                 })
             });
 
@@ -58,7 +128,7 @@ namespace Pdf.controls
             {
                 Command = new Command(() =>
                 {
-                    FourthBoxViewButton_Clicked();
+                    BoxViewButton_Clicked(4);
                 })
             });
 
@@ -66,34 +136,14 @@ namespace Pdf.controls
             {
                 Command = new Command(() =>
                 {
-                    FifthBoxViewButton_Clicked();
+                    BoxViewButton_Clicked(5);
                 })
             });
         }
 
-        private void FirstBoxViewButton_Clicked()
+        private void BoxViewButton_Clicked(int numberOfTheThicknessBarSelected)
         {
-            FirstBoxViewButtonClicked?.Invoke();
-        }
-
-        private void SecondBoxViewButton_Clicked()
-        {
-            SecondBoxViewButtonClicked?.Invoke();
-        }
-
-        private void ThirdBoxViewButton_Clicked()
-        {
-            ThirdBoxViewButtonClicked?.Invoke();
-        }
-
-        private void FourthBoxViewButton_Clicked()
-        {
-            FourthBoxViewButtonClicked?.Invoke();
-        }
-
-        private void FifthBoxViewButton_Clicked()
-        {
-            FifthBoxViewButtonClicked?.Invoke();
+            BoxViewButtonClicked?.Invoke(numberOfTheThicknessBarSelected);
         }
     }
 }
