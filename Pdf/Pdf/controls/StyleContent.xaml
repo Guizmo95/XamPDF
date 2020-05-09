@@ -7,12 +7,38 @@
              xmlns:controls="clr-namespace:Pdf.controls" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
              x:Class="Pdf.controls.StyleContent">
-    <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="10">
-        <views:ColorPicker x:Name="colorPicker" VerticalOptions="Center"/>
-        <BoxView IsVisible="True" BackgroundColor="#bdbdbd" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="0.5"/>
-        <Slider IsVisible="False" Maximum="12" x:Name="fontSizeSlider" VerticalOptions="Center" MinimumTrackColor="Black" MaximumTrackColor="#bdbdbd"/>
-        <BoxView IsVisible="False" BackgroundColor="#bdbdbd" HorizontalOptions="FillAndExpand" HeightRequest="0.5" />
-        <controls:ThicknessBar IsVisible="True" HeightRequest="35" x:Name="thicknessBar" HorizontalOptions="Fill"/>
-        <Slider IsVisible="False" Maximum="12" x:Name="opacitySlider"/>
+    <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="10" BackgroundColor="#fafafa">
+        <views:ColorPicker x:Name="colorPicker" VerticalOptions="Center" IsVisible="True" HeightRequest="80"/>
+        <BoxView IsVisible="True" BackgroundColor="#bdbdbd" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="0.5" />
+        <Grid VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#fafafa" x:Name="opacityControl" IsVisible="False" HeightRequest="80">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" x:Name="opacityTo25Selection">
+                <controls:IconView x:Name="opacityImageTo25" Source="baseline_invert_colors_off_24.xml" Opacity="0.25" Foreground="{Binding SelectedColor}" HeightRequest="30" WidthRequest="30"/>
+                <Label Text="25%" FontSize="13" HorizontalTextAlignment="Center" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" x:Name="opacityTo50Selection">
+                <controls:IconView x:Name="opacityImageTo50" Source="baseline_invert_colors_off_24.xml" Opacity="0.50" Foreground="{Binding SelectedColor}" HeightRequest="30" WidthRequest="30"/>
+                <Label Text="50%" FontSize="13" HorizontalTextAlignment="Center" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Grid.Column="2" Orientation="Vertical" VerticalOptions="Center" x:Name="opacityTo75Selection">
+                <controls:IconView x:Name="opacityImageTo75" Source="baseline_invert_colors_off_24.xml" Opacity="0.75" Foreground="{Binding SelectedColor}" HeightRequest="30" WidthRequest="30"/>
+                <Label Text="75%" FontSize="13" HorizontalTextAlignment="Center" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Grid.Column="3" Orientation="Vertical" VerticalOptions="Center" x:Name="opacityTo100Selection">
+                <controls:IconView x:Name="opacityImageTo100" Source="baseline_opacity_24.xml" Opacity="1" Foreground="{Binding SelectedColor}"  HeightRequest="30" WidthRequest="30"/>
+                <Label Text="100%" FontSize="13" HorizontalTextAlignment="Center" TextColor="Black"/>
+            </StackLayout>
+        </Grid>
+        <BoxView x:Name="boxView2" BackgroundColor="#bdbdbd" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="0.5" IsVisible="True"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" x:Name ="fontSizeControl" IsVisible="False" WidthRequest="250" HeightRequest="80" HorizontalOptions="Center" Margin="0,0,0,4">
+            <Label VerticalTextAlignment="Center" Margin="0,0,0,4" FontSize="18" Text="{Binding FontSize, StringFormat='{}{0} px'}"/>
+            <Slider Maximum="12" Value="{Binding FontSize}" x:Name="fontSizeSlider" VerticalOptions="Center" HorizontalOptions="FillAndExpand" MinimumTrackColor="Black" MaximumTrackColor="#bdbdbd"/>
+        </StackLayout>
+        <controls:ThicknessBar IsVisible="False" x:Name="thicknessBar" HorizontalOptions="Fill" HeightRequest="80"/>
     </StackLayout>
 </ContentView>

@@ -10,13 +10,6 @@
     <Shell.TitleView>
         <StackLayout BackgroundColor="#c62828" 
                              Orientation="Horizontal" Grid.Row="0">
-            <!--<ImageButton x:Name="hamburgerButton" 
-                            HeightRequest="25" 
-                            WidthRequest="25" 
-                            HorizontalOptions="Start" 
-                            Source="baseline_menu_24.xml"
-                            Clicked="HamburgerButton_Clicked"
-                            Margin="3,0,0,0" BackgroundColor="Transparent"/>-->
             <ImageButton IsVisible="False" x:Name="clearSearchBar" 
                             HeightRequest="25" 
                             WidthRequest="25" 

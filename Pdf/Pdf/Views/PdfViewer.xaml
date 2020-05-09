@@ -10,7 +10,6 @@
              xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:views="clr-namespace:Pdf.Views" xmlns:effectsView="clr-namespace:Syncfusion.XForms.PlatformConfiguration.UWPSpecific;assembly=Syncfusion.Core.XForms" x:Name="pdfViewer">
 
-    <AbsoluteLayout VerticalOptions="Fill">
             <Grid x:Name="mainGrid" RowSpacing="0" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="45" />
@@ -43,8 +42,8 @@
                             <ImageButton Clicked="ShapeButton_Clicked" Padding="2" x:Name="shapeButton" BackgroundColor="#fafafa" Source="twotone_toll_24.xml" WidthRequest="32" HeightRequest="32"    VerticalOptions="Center"/>
                             <ImageButton Clicked="TextMarkupButton_Clicked" Padding="2" x:Name="textMarkupButton" BackgroundColor="#fafafa" Source="twotone_format_strikethrough_24.xml" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"/>
                         </StackLayout>
-                        <StackLayout Spacing="9" HorizontalOptions="EndAndExpand" Orientation="Horizontal" Margin="0,0,10,0">
-                            <ImageButton Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="twotone_create_24.xml" WidthRequest="32" HeightRequest="32"    VerticalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="EndAndExpand" Orientation="Horizontal" Margin="0,0,12,0">
+                            <ImageButton Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="twotone_create_24.xml" WidthRequest="31" HeightRequest="31"    VerticalOptions="Center"/>
                             <ImageButton Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="twotone_branding_watermark_24.xml" WidthRequest="32" HeightRequest="32"  VerticalOptions="Center"/>
                         </StackLayout>
                     </Grid>
@@ -103,11 +102,5 @@
                     </Grid>
                 </controls1:PancakeView>
             </Grid>
-        <controls:StyleContent AbsoluteLayout.LayoutFlags="PositionProportional" IsVisible="False" BackgroundColor="Red" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds=".5,1,-1,-1" HeightRequest="0" x:Name="drawer"/>
-    </AbsoluteLayout>
-
-    
-
-   
     
 </ContentPage>

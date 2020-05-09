@@ -178,9 +178,11 @@ path;obj\Debug\90\res\drawable\baseline_description_24.xml
 path;obj\Debug\90\res\drawable\baseline_favorite_24.xml
 path;obj\Debug\90\res\drawable\baseline_favorite_border_24.xml
 path;obj\Debug\90\res\drawable\baseline_feedback_24.xml
+path;obj\Debug\90\res\drawable\baseline_invert_colors_off_24.xml
 path;obj\Debug\90\res\drawable\baseline_menu_24.xml
 path;obj\Debug\90\res\drawable\baseline_more_horiz_24.xml
 path;obj\Debug\90\res\drawable\baseline_more_vert_24.xml
+path;obj\Debug\90\res\drawable\baseline_opacity_24.xml
 path;obj\Debug\90\res\drawable\baseline_palette_24.xml
 path;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24.xml
 path;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
@@ -377,9 +379,11 @@ vector;obj\Debug\90\res\drawable\baseline_description_24.xml
 vector;obj\Debug\90\res\drawable\baseline_favorite_24.xml
 vector;obj\Debug\90\res\drawable\baseline_favorite_border_24.xml
 vector;obj\Debug\90\res\drawable\baseline_feedback_24.xml
+vector;obj\Debug\90\res\drawable\baseline_invert_colors_off_24.xml
 vector;obj\Debug\90\res\drawable\baseline_menu_24.xml
 vector;obj\Debug\90\res\drawable\baseline_more_horiz_24.xml
 vector;obj\Debug\90\res\drawable\baseline_more_vert_24.xml
+vector;obj\Debug\90\res\drawable\baseline_opacity_24.xml
 vector;obj\Debug\90\res\drawable\baseline_palette_24.xml
 vector;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24.xml
 vector;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml

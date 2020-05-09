@@ -128,9 +128,6 @@ namespace Pdf.Views {
         private global::Pdf.controls.IconView paletteButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Pdf.controls.StyleContent drawer;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PdfViewer));
             pdfViewer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "pdfViewer");
@@ -170,7 +167,6 @@ namespace Pdf.Views {
             imageAnnotationType = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imageAnnotationType");
             colorPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Views.ColorPicker>(this, "colorPicker");
             paletteButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "paletteButton");
-            drawer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.StyleContent>(this, "drawer");
         }
     }
 }

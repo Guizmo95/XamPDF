@@ -101,7 +101,11 @@ namespace Pdf.Views
                     try
                     {
                         var file = (FileModel)FavoriteDocumentListView.SelectedItem;
-                        await Navigation.PushAsync(new PdfViewer(file.FilePath));
+
+                        if(file != null)
+                        {
+                            await Navigation.PushAsync(new PdfViewer(file.FilePath));
+                        }
                     }
                     finally
                     {
@@ -144,29 +148,6 @@ namespace Pdf.Views
             });
             FavoriteDocumentListView.RefreshView();
         }
-
-
-        //private async void DocumentListView_SelectionChanging(object sender, Syncfusion.ListView.XForms.ItemSelectionChangingEventArgs e)
-        //{
-        //    Device.BeginInvokeOnMainThread(async () => {
-        //        UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Gradient);
-        //        try
-        //        {
-        //            if (e.AddedItems == null)
-        //            {
-        //                return;
-        //            }
-
-        //            var file = (FileModel)e.AddedItems[0];
-
-        //            await Navigation.PushAsync(new PdfViewer(file.FilePath));
-        //        }
-        //        finally
-        //        {
-        //            UserDialogs.Instance.HideLoading();
-        //        }
-        //    });
-        //}
 
         private void SortButton_Clicked(object sender, EventArgs e)
         {
