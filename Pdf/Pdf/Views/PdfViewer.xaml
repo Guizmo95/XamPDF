@@ -17,11 +17,9 @@
             <Grid x:Name="bottomLayout">
                 <StackLayout x:Name="searchBar" IsVisible="False" Spacing="9" HorizontalOptions="FillAndExpand" Orientation="Horizontal" VerticalOptions="Center" Margin="10,0,10,0">
                     <ImageButton Clicked="CancelSearchButton_Clicked" Padding="2" x:Name="cancelSearchButton" BackgroundColor="#fafafa" Source="outline_clear_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
-                    <Entry x:Name="textSearchEntry" HorizontalTextAlignment="Center" FontFamily="GothamMedium_1.ttf#GothamMedium_1" HorizontalOptions="FillAndExpand" FontSize="18" VerticalOptions="Center" Placeholder="Search"/>
-                    <ImageButton IsVisible="False"  x:Name="SearchPreviousButton" BackgroundColor="#fafafa" Source="baseline_navigate_before_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"
-                                       Command="{Binding SearchPreviousTextCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="{Binding Source ={x:Reference textSearchEntry}, Path=Text}"/>
-                    <ImageButton IsVisible="False"  x:Name="SearchNextButton" BackgroundColor="#fafafa" Source="baseline_navigate_next_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"
-                                 Command="{Binding SearchNextTextCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="{Binding Source ={x:Reference textSearchEntry}, Path=Text}"/>
+                    <Entry TextChanged="TextSearchEntry_TextChanged" HeightRequest="38" Completed="TextSearchEntry_Completed" x:Name="textSearchEntry" HorizontalTextAlignment="Center" FontFamily="GothamMedium_1.ttf#GothamMedium_1" HorizontalOptions="FillAndExpand" FontSize="18" VerticalOptions="Center" Placeholder="Search"/>
+                    <ImageButton Clicked="SearchPreviousButton_Clicked" IsVisible="False"  x:Name="searchPreviousButton" BackgroundColor="#fafafa" Source="baseline_navigate_before_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center" />
+                    <ImageButton Clicked="SearchNextButton_Clicked" IsVisible="False"  x:Name="searchNextButton" BackgroundColor="#fafafa" Source="baseline_navigate_next_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Spacing="9" HorizontalOptions="End" Orientation="Horizontal" VerticalOptions="Center" Margin="0,0,10,0" x:Name="topMainBar">
                     <controls:IconView IsVisible="False"  x:Name="UndoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_undo_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>

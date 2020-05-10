@@ -27,8 +27,11 @@ namespace Pdf.Views
         private string filePath;
         private PdfViewerModel pdfViewerModel;
         private SfPopupLayout stylePopup;
+        private SfPopupLayout errorSearchPopup;
         private StyleContent styleContent;
-        private DataTemplate styleTemplate;
+        private SearchErrorPopup searchErrorPopupContent;
+        private DataTemplate styleTemplateStylePopup;
+        private DataTemplate styleTemplateErrorPopup;
         private bool toolbarIsCollapsed = false;
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
@@ -50,6 +53,8 @@ namespace Pdf.Views
         private int textMarkupNumbers = 0;
         private int lastThicknessBarSelected = 5;
         private int lastOpacitySelected = 4;
+        private bool isNoMatchFound;
+        private bool isNoMoreOccurrenceFound;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -266,6 +271,8 @@ namespace Pdf.Views
             pdfViewerControl.TextMarkupAdded -= PdfViewerControl_TextMarkupAdded;
             pdfViewerControl.PageChanged -= PdfViewerControl_PageChanged;
             pdfViewerControl.SearchCompleted -= PdfViewerControl_SearchCompleted;
+            pdfViewerControl.TextMatchFound -= PdfViewerControl_TextMatchFound;
+            pdfViewerControl.Tapped -= PdfViewerControl_Tapped;
 
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
@@ -279,7 +286,7 @@ namespace Pdf.Views
             pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
 
             var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
-            //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
 
             pdfViewerControl.LoadDocument(pdfStream);
 
@@ -333,6 +340,7 @@ namespace Pdf.Views
             pdfViewerControl.PageChanged += PdfViewerControl_PageChanged;
             pdfViewerControl.Tapped += PdfViewerControl_Tapped;
             pdfViewerControl.SearchCompleted += PdfViewerControl_SearchCompleted;
+            pdfViewerControl.TextMatchFound += PdfViewerControl_TextMatchFound;
             #endregion
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -420,17 +428,17 @@ namespace Pdf.Views
 
             paletteButton.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command( () =>
-                {
-                    PaletteButton_Clicked();
-                })
+                Command = new Command(() =>
+               {
+                   PaletteButton_Clicked();
+               })
             });
 
             paletteButton.BindingContext = this;
             styleContent.BindingContext = this;
 
             stylePopup = new SfPopupLayout();
-            
+
             styleContent.ThicknessBar.BindingContext = this;
             stylePopup.ClosePopupOnBackButtonPressed = false;
             stylePopup.PopupView.ShowHeader = false;
@@ -440,12 +448,37 @@ namespace Pdf.Views
             stylePopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#fafafa");
             stylePopup.PopupView.AnimationMode = AnimationMode.Fade;
 
-            styleTemplate = new DataTemplate(() =>
+            styleTemplateStylePopup = new DataTemplate(() =>
             {
                 return styleContent;
             });
 
-            this.stylePopup.PopupView.ContentTemplate = styleTemplate;
+            this.stylePopup.PopupView.ContentTemplate = styleTemplateStylePopup;
+
+            searchErrorPopupContent = new SearchErrorPopup();
+
+            errorSearchPopup = new SfPopupLayout();
+            errorSearchPopup.PopupView.ShowHeader = false;
+            errorSearchPopup.PopupView.ShowFooter = true;
+            errorSearchPopup.PopupView.AppearanceMode = AppearanceMode.OneButton;
+            errorSearchPopup.PopupView.AcceptButtonText = "Ignore";
+            errorSearchPopup.PopupView.PopupStyle.AcceptButtonTextColor = Color.Black;
+            errorSearchPopup.PopupView.PopupStyle.AcceptButtonBackgroundColor = Color.FromHex("#fafafa");
+            errorSearchPopup.PopupView.PopupStyle.FooterBackgroundColor = Color.FromHex("#fafafa");
+            errorSearchPopup.PopupView.HeightRequest = 118;
+            errorSearchPopup.PopupView.WidthRequest = 265;
+            errorSearchPopup.BackgroundColor = Color.FromHex("#fafafa");
+            errorSearchPopup.PopupView.BackgroundColor = Color.FromHex("#fafafa");
+            errorSearchPopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#fafafa");
+            errorSearchPopup.PopupView.AnimationMode = AnimationMode.Fade;
+
+            styleTemplateErrorPopup = new DataTemplate(() =>
+            {
+                return searchErrorPopupContent;
+            });
+
+            this.errorSearchPopup.PopupView.ContentTemplate = styleTemplateErrorPopup;
+
 
             styleContent.ThicknessBar.BoxViewButtonClicked += (int numberOfThicknessBarClicked) => ThicknessBar_Clicked(numberOfThicknessBarClicked);
             styleContent.OpacityButtonClicked += (int numberOfTheOpacityClicked) => OpacityIcon_Clicked(numberOfTheOpacityClicked);
@@ -453,7 +486,7 @@ namespace Pdf.Views
             annotationType = AnnotationType.None;
         }
 
- 
+
 
         private void BookmarkButton_Clicked(object sender, EventArgs e)
         {
@@ -463,7 +496,7 @@ namespace Pdf.Views
 
         private async void PdfViewerControl_Tapped(object sender, TouchInteractionEventArgs e)
         {
-            if(this.toolbarIsCollapsed == false)
+            if (this.toolbarIsCollapsed == false)
             {
                 var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
                 var animateBottomBar = new Animation(d => bottomMainToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
@@ -977,7 +1010,7 @@ namespace Pdf.Views
         #region ThicknessBarEvents
         private void ThicknessBar_Clicked(int numberOfThicknessBarClicked)
         {
-            if(lastThicknessBarSelected != numberOfThicknessBarClicked)
+            if (lastThicknessBarSelected != numberOfThicknessBarClicked)
             {
                 switch (lastThicknessBarSelected)
                 {
@@ -1363,7 +1396,7 @@ namespace Pdf.Views
                     annotationType = AnnotationType.None;
                     bottomMainToolbar.IsVisible = true;
                     break;
-                case (AnnotationType.Arrow) :
+                case (AnnotationType.Arrow):
                     shapeToolbar.IsVisible = true;
                     pdfViewerControl.AnnotationMode = AnnotationMode.None;
                     annotationType = AnnotationType.None;
@@ -1409,7 +1442,7 @@ namespace Pdf.Views
         {
             var viewPortWidth = Application.Current.MainPage.Width;
             var value = (viewPortWidth / 2) - 125;
-            stylePopup.ShowRelativeToView(paletteButton, RelativePosition.AlignTopRight,0, -7);
+            stylePopup.ShowRelativeToView(paletteButton, RelativePosition.AlignTopRight, 0, -7);
         }
         #endregion
 
@@ -1489,7 +1522,7 @@ namespace Pdf.Views
 
         private void ViewModeButton_Clicked(object sender, EventArgs e)
         {
-            if(pdfViewerControl.PageViewMode == PageViewMode.PageByPage)
+            if (pdfViewerControl.PageViewMode == PageViewMode.PageByPage)
             {
                 pdfViewerControl.PageViewMode = PageViewMode.Continuous;
                 viewModeButton.RotateTo(90);
@@ -1509,19 +1542,63 @@ namespace Pdf.Views
 
         private void CancelSearchButton_Clicked(object sender, EventArgs e)
         {
+            PdfViewerControl.CancelSearch();
+
             topMainBar.IsVisible = true;
             searchBar.IsVisible = false;
         }
 
         private void PdfViewerControl_SearchCompleted(object sender, TextSearchCompletedEventArgs args)
         {
-            bool isNoMatchFound = args.NoMatchFound;
+            isNoMatchFound = args.NoMatchFound;
+            isNoMoreOccurrenceFound = args.NoMoreOccurrence;
 
-            if(isNoMatchFound == true)
+            if (isNoMatchFound == true)
             {
                 //Show popup
+                searchErrorPopupContent.NoOccurenceFound.IsVisible = true;
+                searchErrorPopupContent.NoMoreOccurenceFound.IsVisible = false;
+                errorSearchPopup.Show();
+                isNoMatchFound = false;
             }
+            else
+            {
+                if (isNoMoreOccurrenceFound == true)
+                {
+                    //Show popup
+                    searchErrorPopupContent.NoOccurenceFound.IsVisible = false;
+                    searchErrorPopupContent.NoMoreOccurenceFound.IsVisible = true;
+                    errorSearchPopup.Show();
+                    isNoMoreOccurrenceFound = false;
+                }
+            }
+        }
 
+        private void TextSearchEntry_Completed(object sender, EventArgs e)
+        {
+            pdfViewerControl.SearchText(textSearchEntry.Text);
+        }
+
+        private void SearchPreviousButton_Clicked(object sender, EventArgs e)
+        {
+            pdfViewerControl.SearchPrevious(textSearchEntry.Text);
+        }
+
+        private void SearchNextButton_Clicked(object sender, EventArgs e)
+        {
+            pdfViewerControl.SearchNext(textSearchEntry.Text);
+        }
+
+        private void PdfViewerControl_TextMatchFound(object sender, TextMatchFoundEventArgs args)
+        {
+            searchPreviousButton.IsVisible = true;
+            searchNextButton.IsVisible = true;
+        }
+
+        private void TextSearchEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            searchPreviousButton.IsVisible = false;
+            searchNextButton.IsVisible = false;
         }
     }
 }
