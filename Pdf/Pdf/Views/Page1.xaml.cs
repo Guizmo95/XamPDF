@@ -48,7 +48,7 @@ namespace Pdf.Views
             InitializeComponent();
 
             this.filePath = filePath;
-            pdfViewerControl.Toolbar.Enabled = false;
+            pdfViewerControl.Toolbar.Enabled = true;
 
             ////Load the PDF document
             //PdfLoadedDocument loadedDocument = new PdfLoadedDocument(stream);

@@ -13,30 +13,15 @@ namespace Pdf.ViewModels
 {
     public class PdfViewerModel : INotifyPropertyChanged
     {
-        private System.Drawing.Color selectedColor = System.Drawing.Color.Black;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         private MemoryStream pdfStream;
 
-        //The PDF stream to be loaded into PdfViewer
-        public MemoryStream PdfStream
-        {
-            get
-            {
-                return pdfStream;
-            }
-            set
-            {
-                pdfStream = value;
-                OnPropertyChanged();
-            }
-        }
-
 
         public PdfViewerModel(string filePath)
         {
-            pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
+           
         }
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)

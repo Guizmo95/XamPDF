@@ -29,6 +29,7 @@ namespace Pdf.Views
         private SfPopupLayout stylePopup;
         private StyleContent styleContent;
         private DataTemplate styleTemplate;
+        private bool toolbarIsCollapsed = false;
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
         private InkAnnotation selectedInkAnnotation;
@@ -264,9 +265,11 @@ namespace Pdf.Views
 
             pdfViewerControl.TextMarkupAdded -= PdfViewerControl_TextMarkupAdded;
             pdfViewerControl.PageChanged -= PdfViewerControl_PageChanged;
+            pdfViewerControl.SearchCompleted -= PdfViewerControl_SearchCompleted;
 
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
+
             //pdfViewerControl.Unload();
             base.OnDisappearing();
         }
@@ -328,7 +331,8 @@ namespace Pdf.Views
             pdfViewerControl.TextMarkupAdded += PdfViewerControl_TextMarkupAdded;
 
             pdfViewerControl.PageChanged += PdfViewerControl_PageChanged;
-            PdfViewerControl.Tapped += PdfViewerControl_Tapped;
+            pdfViewerControl.Tapped += PdfViewerControl_Tapped;
+            pdfViewerControl.SearchCompleted += PdfViewerControl_SearchCompleted;
             #endregion
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -337,11 +341,11 @@ namespace Pdf.Views
                 {
                     if (CanRedoInk == true)
                     {
-                        RedoButton.Foreground = Color.FromHex("#b4b4b4");
+                        //RedoButton.Foreground = Color.FromHex("#b4b4b4");
                         RedoInk();
                         await Task.Delay(100);
                         if (CanRedoInk == true)
-                            RedoButton.Foreground = Color.Black;
+                            RedoButton.Foreground = Color.FromHex("#373737");
                         else
                         {
                             RedoButton.Foreground = Color.White;
@@ -356,12 +360,12 @@ namespace Pdf.Views
                 {
                     if (CanUndoInk == true)
                     {
-                        UndoButton.Foreground = Color.FromHex("#b4b4b4");
+                        //UndoButton.Foreground = Color.FromHex("#b4b4b4");
                         UndoInk();
                         await Task.Delay(100);
 
                         if (CanUndoInk == true)
-                            UndoButton.Foreground = Color.Black;
+                            UndoButton.Foreground = Color.FromHex("#373737");
                         else
                         {
                             UndoButton.Foreground = Color.White;
@@ -449,9 +453,37 @@ namespace Pdf.Views
             annotationType = AnnotationType.None;
         }
 
+ 
+
+        private void BookmarkButton_Clicked(object sender, EventArgs e)
+        {
+            //Bookmark pane will be collapsed, if it is expanded
+            pdfViewerControl.BookmarkPaneVisible = true;
+        }
+
         private async void PdfViewerControl_Tapped(object sender, TouchInteractionEventArgs e)
         {
-            
+            if(this.toolbarIsCollapsed == false)
+            {
+                var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
+                var animateBottomBar = new Animation(d => bottomMainToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
+
+                animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
+                animateBottomBar.Commit(bottomMainToolbar, "BottomBar", 16, 250);
+
+                toolbarIsCollapsed = true;
+            }
+            else
+            {
+                var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 0, 45, Easing.Linear);
+                var animateBottomBar = new Animation(d => bottomMainToolbar.HeightRequest = d, 0, 45, Easing.SpringOut);
+
+                animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
+                animateBottomBar.Commit(bottomMainToolbar, "BottomBar", 16, 250);
+
+
+                toolbarIsCollapsed = false;
+            }
         }
 
         private void PdfViewerControl_PageChanged(object sender, PageChangedEventArgs args)
@@ -670,13 +702,29 @@ namespace Pdf.Views
                 pdfViewerControl.RedoInk();
         }
 
-        private void SaveInk()
+        private async void SaveInk()
         {
-            //bottomAnnotationToolbar.IsVisible = false;
+            await Task.Run(async () =>
+            {
+                await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 150, Easing.Linear);
+            });
 
-            //bottomLayout.IsVisible = true;
+            annotationTypeToolbar.IsVisible = false;
 
-            //pdfViewerControl.EndInkSession(true);
+            pdfViewerControl.AnnotationMode = AnnotationMode.None;
+            annotationType = AnnotationType.None;
+            bottomMainToolbar.IsVisible = true;
+
+            viewModeButton.IsVisible = true;
+            bookmarkButton.IsVisible = true;
+            searchButton.IsVisible = true;
+            moreOptionButton.IsVisible = true;
+
+            ValidButton.IsVisible = false;
+            UndoButton.IsVisible = false;
+            RedoButton.IsVisible = false;
+
+            pdfViewerControl.EndInkSession(true);
         }
 
         private void PdfViewerControl_InkSelected(object sender, InkSelectedEventArgs args)
@@ -1175,6 +1223,10 @@ namespace Pdf.Views
             bottomMainToolbar.IsVisible = false;
             this.colorPicker.IsVisible = false;
             styleContent.FontSizeControl.IsVisible = false;
+            viewModeButton.IsVisible = false;
+            bookmarkButton.IsVisible = false;
+            searchButton.IsVisible = false;
+            moreOptionButton.IsVisible = false;
 
             imageAnnotationType.Source = "twotone_gesture_24.xml";
 
@@ -1183,6 +1235,10 @@ namespace Pdf.Views
             styleContent.OpacityControl.IsVisible = true;
             styleContent.ThicknessBar.IsVisible = true;
             styleContent.BoxView2.IsVisible = true;
+
+            ValidButton.IsVisible = true;
+            UndoButton.IsVisible = true;
+            RedoButton.IsVisible = true;
 
             stylePopup.PopupView.HeightRequest = 240;
             stylePopup.PopupView.WidthRequest = 280;
@@ -1291,7 +1347,16 @@ namespace Pdf.Views
                 case AnnotationType.Ink:
                     pdfViewerControl.AnnotationMode = AnnotationMode.None;
                     annotationType = AnnotationType.None;
-                    bottomMainToolbar.IsVisible = true; 
+                    bottomMainToolbar.IsVisible = true;
+
+                    viewModeButton.IsVisible = true;
+                    bookmarkButton.IsVisible = true;
+                    searchButton.IsVisible = true;
+                    moreOptionButton.IsVisible = true;
+
+                    ValidButton.IsVisible = false;
+                    UndoButton.IsVisible = false;
+                    RedoButton.IsVisible = false;
                     break;
                 case AnnotationType.FreeText:
                     pdfViewerControl.AnnotationMode = AnnotationMode.None;
@@ -1420,6 +1485,43 @@ namespace Pdf.Views
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private void ViewModeButton_Clicked(object sender, EventArgs e)
+        {
+            if(pdfViewerControl.PageViewMode == PageViewMode.PageByPage)
+            {
+                pdfViewerControl.PageViewMode = PageViewMode.Continuous;
+                viewModeButton.RotateTo(90);
+            }
+            else
+            {
+                pdfViewerControl.PageViewMode = PageViewMode.PageByPage;
+                viewModeButton.RotateTo(180);
+            }
+        }
+
+        private void SearchButton_Clicked(object sender, EventArgs e)
+        {
+            topMainBar.IsVisible = false;
+            searchBar.IsVisible = true;
+        }
+
+        private void CancelSearchButton_Clicked(object sender, EventArgs e)
+        {
+            topMainBar.IsVisible = true;
+            searchBar.IsVisible = false;
+        }
+
+        private void PdfViewerControl_SearchCompleted(object sender, TextSearchCompletedEventArgs args)
+        {
+            bool isNoMatchFound = args.NoMatchFound;
+
+            if(isNoMatchFound == true)
+            {
+                //Show popup
+            }
+
         }
     }
 }
