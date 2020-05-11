@@ -1,5 +1,6 @@
 ﻿
 using Pdf.Data;
+using Pdf.ViewModels;
 using Pdf.Views;
 using System;
 using System.ComponentModel;
@@ -19,13 +20,16 @@ namespace Pdf
 
         public App()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjUxNzQ0QDMxMzgyZTMxMmUzMEtndVlMY3hrWXdxOTNraGZJWTJvcGdJazRjKzhjOVFTWlU5VDlmdnhhalk9");
+
             InitializeComponent();
 
             Container = new UnityContainer();
 
 
             MainPage = /*new NavigationPage(new MainMenu());*/
-                new NavigationPage(new MainPage());
+                new ShellMainMenu();
         }
 
         public static FavoriteFilesDatabase Database

@@ -13,6 +13,7 @@ public class SfPdfViewerEx
 		__md_methods = 
 			"n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler\n" +
 			"n_onDetachedFromWindow:()V:GetOnDetachedFromWindowHandler\n" +
+			"n_finalize:()V:GetJavaFinalizeHandler\n" +
 			"n_onTouch:(Landroid/view/View;Landroid/view/MotionEvent;)Z:GetOnTouch_Landroid_view_View_Landroid_view_MotionEvent_Handler:Android.Views.View/IOnTouchListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
 			"";
 		mono.android.Runtime.register ("Syncfusion.SfPdfViewer.XForms.Droid.SfPdfViewerEx, Syncfusion.SfPdfViewer.XForms.Android", SfPdfViewerEx.class, __md_methods);
@@ -65,6 +66,14 @@ public class SfPdfViewerEx
 	}
 
 	private native void n_onDetachedFromWindow ();
+
+
+	public void finalize ()
+	{
+		n_finalize ();
+	}
+
+	private native void n_finalize ();
 
 
 	public boolean onTouch (android.view.View p0, android.view.MotionEvent p1)

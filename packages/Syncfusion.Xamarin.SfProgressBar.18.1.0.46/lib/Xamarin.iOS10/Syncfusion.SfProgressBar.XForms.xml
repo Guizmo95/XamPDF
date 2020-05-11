@@ -1,0 +1,2983 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.SfProgressBar.XForms</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.XForms.ProgressBar.EasingEffects">
+            <summary>
+            Easing effects for progress animation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.BounceIn">
+            <summary>
+            Jumps towards, and then bounces as it settles at the final value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.BounceOut">
+            <summary>
+            Leaps to final values, bounces 3 times, and settles.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.CubicIn">
+            <summary>
+            Starts slowly and accelerates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.CubicInOut">
+            <summary>
+            Accelerates and decelerates. Often a natural-looking choice.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.CubicOut">
+            <summary>
+            Starts quickly and the decelerates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.Linear">
+            <summary>
+            Linear transformation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.SinIn">
+            <summary>
+            Smoothly accelerates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.SinInOut">
+            <summary>
+            Accelerates in and decelerates out.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.SinOut">
+            <summary>
+            Smoothly decelerates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.SpringIn">
+            <summary>
+            Moves away and then leaps toward the final value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.EasingEffects.SpringOut">
+            <summary>
+            Overshoots and then returns.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects">
+            <summary>
+            Contains values for the EasingEffects enumeration that about to easing effects for indeterminate indicator animation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.BounceIn">
+            <summary>
+            Jumps towards, and then bounces as it settles at the final value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.BounceOut">
+            <summary>
+            Leaps to final values, bounces 3 times, and settles.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.CubicIn">
+            <summary>
+            Starts slowly and accelerates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.CubicInOut">
+            <summary>
+            Accelerates and decelerates. Often a natural-looking choice.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.CubicOut">
+            <summary>
+            Starts quickly and the decelerates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.Linear">
+            <summary>
+            Linear transformation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.SinIn">
+            <summary>
+            Smoothly accelerates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.SinInOut">
+            <summary>
+            Accelerates in and decelerates out.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.SinOut">
+            <summary>
+            Smoothly decelerates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.SpringIn">
+            <summary>
+            Moves away and then leaps toward the final value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects.SpringOut">
+            <summary>
+            Overshoots and then returns.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.IProgressDependencyService">
+            <summary>
+            Interface for the progress dependency service.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.IProgressDependencyService.SetProgress(System.Double,System.Double,Xamarin.Forms.Easing,Syncfusion.XForms.ProgressBar.ProgressBarBase)">
+            <summary>
+            Sets the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Progress"/> with corresponding animation duration.
+            </summary>
+            <param name="progress">The progress.</param>
+            <param name="animationDuration">The animation duration.</param>
+            <param name="easing">The easing.</param>
+            <param name="progressBar">The <see cref="T:Syncfusion.XForms.ProgressBar.ProgressBarBase"/>.</param>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.ProgressBarBase">
+            <summary>
+            Serves as a base class for all the  progress bar types.
+            </summary>
+            <example>
+            <code language="C#">
+            SfProgressBar progress = new SfProgressBar();
+            progress.ProgressValue = 12;
+            progress.Minimum = 20;
+            
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.AnimationDurationProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.AnimationDuration"/> bindable property. This property can be used to change the duration of animation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.EasingEffectProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.EasingEffect"/> bindable property. This property allows to specify the transfer function that controls animation speed when they run.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.IndeterminateEasingEffectProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.EasingEffect"/> bindable property. This property allows to specify a transfer function for indeterminate state, which controls animation speed when they run.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.GapWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.GapWidth"/> bindable property. This can be used to customize the default spacing between the segments using the GapWidth property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.IsIndeterminateProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.IsIndeterminate"/> bindable property. It indicates whether the state of control is enabled or not.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.IndeterminateAnimationDurationProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.IndeterminateAnimationDuration"/> bindable property. The duration of animation takes to complete one cycle for the indicator.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.MaximumProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Maximum"/> bindable property. This property can be used to set the maximum of range to the entire span of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.MinimumProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Minimum"/> bindable property. This property can be used to set  the minimum of range to the entire span of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.ProgressProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Progress"/> bindable property. This property can be used to change the progress value of the control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.TrackColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.TrackColor"/> bindable property. This property can be used to change the track color of the ProgressBar control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.SegmentCountProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.SegmentCount"/> bindable property. This property can be used to split the progress bar into multiple segments.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.ProgressColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.ProgressColor"/> bindable property. This property can be used to change the color of progress in the ProgressBar control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.RangeColorsProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.RangeColors"/> bindable property. This property can be used to visualize the multiple ranges with different colors.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.ActualProgressValueProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.ActualProgressValue"/> bindable property. This property can be used to change the actual progress value of ProgressBar.
+            </summary>
+            <exclude> </exclude>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.IndeterminateIndicatorWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.IndeterminateIndicatorWidth"/> bindable property. This property can be used to change an indeterminate indicator width value of ProgressBar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.minWidth">
+            <summary>
+            Minimum width of the control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.canAnimate">
+            <summary>
+            Indicates whether to animate or not.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.ProgressBarBase.disposed">
+            <summary>
+            Indicates whether to dispose or not.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.ProgressBar.ProgressBarBase"/> class.
+            </summary>
+        </member>
+        <member name="E:Syncfusion.XForms.ProgressBar.ProgressBarBase.ValueChanged">
+            <summary>
+            The value change event occurs when <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Progress"/> value is changed in <see cref="N:Syncfusion.XForms.ProgressBar"/>.
+            </summary>
+        </member>
+        <member name="E:Syncfusion.XForms.ProgressBar.ProgressBarBase.ProgressCompleted">
+            <summary>
+            The progress completed event occurs when <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Progress"/> value attains <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Maximum"/> value in ProgressBar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.AnimationDuration">
+            <summary>
+            Gets or sets the duration an animation takes to complete a cycle for the progress indicator.
+            </summary>
+            <value>The duration of the animation.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.EasingEffect">
+            <summary>
+            Gets or sets a <see cref="T:Xamarin.Forms.Easing"/> value to specify a transfer function that controls how animations speed up or slow down as they're running.
+            </summary>
+            <value>The easing effects.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.IndeterminateEasingEffect">
+            <summary>
+            Gets or sets a <see cref="T:Syncfusion.XForms.ProgressBar.IndeterminateEasingEffects"/> value to specify a transfer function that controls how animations speed up or slow down as they're running.
+            </summary>
+            <value>The easing effects.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.GapWidth">
+            <summary>
+            Gets or sets the value of the GapWidth. This property can be used to change the gap between the segments in ProgressBar.
+            </summary>
+            <value>The width of the gap.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.IsIndeterminate">
+            <summary>
+            Gets or sets a value indicating whether the progress bar is in indeterminate state or not in the ProgressBar control.
+            </summary>
+            <value><c>true</c> if is indeterminate; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.IndeterminateAnimationDuration">
+            <summary>
+            Gets or sets the duration an animation takes to complete a cycle for the indicator in the ProgressBar control.
+            </summary>
+            <value>The duration of the animation.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Progress">
+            <summary>
+            Gets or sets the value of Progress. This property can be used to change the progress value of the SProgressBar Control.
+            </summary>
+            <value>The progress.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.RangeColors">
+            <summary>
+            Gets or sets a collection of colors to the progress indicator based on the range constraint in the ProgressBar control.
+            </summary>
+            <value>The color of the stroke.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.TrackColor">
+            <summary>
+            Gets or sets the value of TrackColor. This property can be used to change the track color of the ProgressBar Control.
+            </summary>
+            <value>The color of the progress bar background.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Minimum">
+            <summary>
+            Gets or sets the value of Minimum. This property can be used to change the minimum range value of ProgressBar.
+            </summary>
+            <value>The minimum.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Maximum">
+            <summary>
+            Gets or sets the value of Maximum. This property can be used to change the Maximum range value of ProgressBar.
+            </summary>
+            <value>The maximum.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.SegmentCount">
+            <summary>
+            Gets or sets the value of SegmentCount. This property can be used to change the count of the segments in ProgressBar.
+            </summary>
+            <value>The segment count.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.ProgressColor">
+            <summary>
+            Gets or sets the value of ProgressColor. This property can be used to change the color of the progress in ProgressBar.
+            </summary>
+            <value>The color of the stroke.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.IndeterminateIndicatorWidth">
+            <summary>
+            Gets or sets the value of the IndeterminateIndicatorWidth. This property can be used to change the level of indicator in indeterminate state.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.ActualProgressValue">
+            <summary>
+            Gets or sets the value of ActualProgressValue. This property can be used to change the actual progress value in ProgressBar.
+            </summary>
+            <value>The actual progress value.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.PropertiesChanged">
+            <summary>
+            Gets or sets the properties changed name into the list.
+            </summary>
+            <value>The properties changed.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.MinHeight">
+            <summary>
+            Gets or sets minimum height of the control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.SetProgress(System.Double,System.Int32,Xamarin.Forms.Easing)">
+            <summary>
+            Sets <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Progress"/> with corresponding animation duration and easing effects.
+            </summary>
+            <param name="progress"><see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Progress"/> value.</param>
+            <param name="animationDuration">Duration to animate the progress.</param>
+            <param name="easingEffect">Easing effect for the animation.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.Dispose(System.Boolean)">
+            <summary>
+            This method is used to release unmanaged resources used by the <see cref="N:Syncfusion.XForms.ProgressBar"/> control.
+            </summary>
+            <param name="disposing">Indicates whether to dispose or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.Syncfusion#XForms#Themes#IParentThemeElement#GetThemeDictionary">
+            <summary>
+            Returns the controls style color.
+            </summary>
+            <returns>Returns the style color to core.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.Syncfusion#XForms#Themes#IThemeElement#OnControlThemeChanged(System.String,System.String)">
+            <summary>
+            This method will be called when a theme dictionary that contains the value for your control key is merged in application. 
+            </summary>
+            <param name="oldTheme">Old theme.</param>
+            <param name="newTheme">New theme.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.Syncfusion#XForms#Themes#IThemeElement#OnCommonThemeChanged(System.String,System.String)">
+            <summary>
+            This method will be called when users merge a theme dictionary that contains value for SyncfusionTheme dynamic resource key.
+            </summary>
+            <param name="oldTheme">Old theme.</param>
+            <param name="newTheme">New theme.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.GetEasingEffect(Syncfusion.XForms.ProgressBar.EasingEffects)">
+            <summary>
+            Converts the easing effect to Easing type.
+            </summary>
+            <param name="easing">Easing effect in enum type.</param>
+            <returns>Easing effect.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnSfProgressBarPropertyChanged(System.String)">
+            <summary>
+            Registers property name in the collection.
+            </summary>
+            <param name="propertyName">Property name.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.AnimateProgress(System.Int32,Xamarin.Forms.Easing)">
+            <summary>
+            Animation of the progress bar.
+            </summary>
+            <param name="animationDuration"><see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.AnimationDuration"/> of the animation.</param>
+            <param name="easingEffect"><see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.EasingEffect"/> of the animation.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnValueChanged(Syncfusion.XForms.ProgressBar.ProgressValueEventArgs)">
+            <summary>
+            Called when <see cref="E:Syncfusion.XForms.ProgressBar.ProgressBarBase.ValueChanged"/> event occurs. 
+            </summary>
+            <param name="args">Contains arguments relevant to progress value changed event.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnProgressCompleted(Syncfusion.XForms.ProgressBar.ProgressValueEventArgs)">
+            <summary>
+            Called when <see cref="E:Syncfusion.XForms.ProgressBar.ProgressBarBase.ProgressCompleted"/> event occurs. 
+            </summary>
+            <param name="args">Contains arguments relevant to progress value changed event.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnMeasure(System.Double,System.Double)">
+            <summary>
+            Method used to measure the progress bar.
+            </summary>
+            <param name="widthConstraint">Width of the progress bar.</param>
+            <param name="heightConstraint">Height of the progress bar.</param>
+            <returns>Actual size of the progress bar.</returns>
+            <exclude> </exclude>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnBindingContextChanged">
+            <summary>
+            Invoked whenever the binding context of the <see cref="T:Xamarin.Forms.View" /> changes. Override this method to add class handling for this event.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnIndeterminateLevelChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>IndeterminateIndicatorWidth</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnActualProgressCallBackValueChanged(Xamarin.Forms.BindableObject,System.Object)">
+            <summary>
+            Call back whenever value of <c>ActualProgressValue</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="value">The value.</param>
+            <returns>The current progress value.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnActualProgressValueChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ActualProgressValue</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnAnimationDurationChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>AnimationDuration</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnIndeterminateEasingEffectChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>IndeterminateEasingEffect</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnEasingEffectChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>EasingEffect</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnGapWidthChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>GapWidth</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnIsIndeterminateChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>IsIndeterminate</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnIndeterminateAnimationDurationChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>IndeterminateAnimationDuration</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnMaximumChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>Maximum</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnMinimumChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>Minimum</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnRangeColorsChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>RangeColors</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnProgressBarBackgroundColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ProgressBarBackgroundColor</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnProgressValueChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ProgressValue</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnSegmentCountChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>SegmentCount</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.OnProgressColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ProgressColor</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.ScheduleProgressAnimation">
+            <summary>
+            To schedule the animation to trigger once.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.AnimateProgress">
+            <summary>
+            Animate the progress with duration and easing effects.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.CheckIsValueCompleted(System.Double,System.Double)">
+            <summary>
+            To check whether the progress value reach the Maximum value.
+            </summary>
+            <param name="progress">Progress value.</param>
+            <param name="maximum">Maximum value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ProgressBarBase.AnimationCompleted">
+            <summary>
+            Animation Completion method.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.ProgressValueEventArgs">
+            <summary>
+            Event arguments for ValueChanged and ProgressCompleted events. Provides progress value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.ProgressValueEventArgs.Progress">
+            <summary>
+            Gets a value of <see cref="P:Syncfusion.XForms.ProgressBar.ProgressBarBase.Progress"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.RangeColor.ColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.RangeColor.Color"/> bindable property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.RangeColor.StartProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.RangeColor.Start"/> bindable property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.RangeColor.EndProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.RangeColor.End"/> bindable property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.RangeColor.IsGradientProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.RangeColor.IsGradient"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.RangeColor.IsGradient">
+            <summary>
+            Gets or sets a value indicating whether the color should be applied as gradient.
+            </summary>
+            <value>The actual offset value.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.RangeColor.End">
+            <summary>
+            Gets or sets the range end value.
+            </summary>
+            <value>The actual offset value.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.RangeColor.Start">
+            <summary>
+            Gets or sets the range start value.
+            </summary>
+            <value>The actual offset value.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.RangeColor.Color">
+            <summary>
+            Gets or sets the color of the range.
+            </summary>
+            <value>The actual color value.</value>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.RangeColorCollection">
+            <summary>
+            Provides the support to set gradient color to the progress bar. 
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar">
+            <summary>
+            The circular progress bar provides a customizable visual that indicates the progress of a task. 
+            </summary>
+            <example>
+            <code language="C#">
+            SfCircularProgressBar progress = new SfCircularProgressBar();
+            progress.ProgressValue = 12;
+            progress.Minimum = 20;
+            
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.StartAngleProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.StartAngle"/> bindable property. This property can be used to change the start angle of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.EndAngleProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.EndAngle"/> bindable property. This property can be used to change the end angle of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.TrackOuterRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.TrackOuterRadius"/> bindable property. This property can be used to change the track outer radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.TrackInnerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.TrackInnerRadius"/> bindable property. This property can be used to track inner radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.IndicatorOuterRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.IndicatorOuterRadius"/> bindable property. This property can be used to change an indicator outer radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.IndicatorInnerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.IndicatorInnerRadius"/> bindable property. This property can be used to change an indicator inner radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.ContentProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.Content"/> bindable property. This property can be used to change the content of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.ShowProgressValueProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.ShowProgressValue"/> bindable property. It indicates whether the progress value is shown or not in <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.Content">
+            <summary>
+            Gets or sets the content for <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>. This property can be used to change the content of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.StartAngle">
+            <summary>
+            Gets or sets the start angle of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>. This property can be used to change the start angle of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+            <value>The start angle.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.EndAngle">
+            <summary>
+            Gets or sets the value of the EndAngle. This property can be used to change the end angle of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+            <value>The end angle.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.TrackOuterRadius">
+            <summary>
+            Gets or sets a value of the TrackOuterRadius. This property can be used to change the track outer radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+            <value>The radius.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.TrackInnerRadius">
+            <summary>
+            Gets or sets a value of TrackInnerRadius. This property can be used to change the track inner radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+            <value>The radius.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.IndicatorOuterRadius">
+            <summary>
+            Gets or sets a value of the IndicatorOuterRadius. This property can be used to change the track outer radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+            <value>The radius.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.IndicatorInnerRadius">
+            <summary>
+            Gets or sets a value of IndicatorInnerRadius. This property can be used to change the indicator inner radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/>.
+            </summary>
+            <value>The radius.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.ShowProgressValue">
+            <summary>
+            Gets or sets a value indicating whether to show progress value label or not in <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"></see>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.CircularProgressBarRenderer">
+            <summary>
+            Gets or sets the circular progress bar renderer.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.MinHeight">
+            <summary>
+            Gets or sets minimum height of the control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.Dispose(System.Boolean)">
+            <summary>
+            This method is used to release unmanaged resources used by the <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/> class.
+            </summary>
+            <param name="disposing">Indicates whether to dispose or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnBindingContextChanged">
+            <summary>
+            On progress bar binding context changed.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnStartAngleChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>StartAngle</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnContentChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Property changed callback of <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.Content"/>
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnShowProgressValueChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Property changed callback for <see cref="P:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.ShowProgressValue"/>
+            </summary>
+            <param name="bindable">Instance of <see cref="T:Syncfusion.XForms.ProgressBar.SfCircularProgressBar"/> </param>
+            <param name="value">Old value of the property.</param>
+            <param name="newValue">New value after the property changes.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnEndAngleChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>EndAngle</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnTrackOuterRadiusChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>TrackOuterRadius</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnTrackInnerRadiusChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>TrackInnerRadius</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnIndicatorOuterRadiusChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>IndicatorOuterRadius</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfCircularProgressBar.OnIndicatorInnerRadiusChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>IndicatorInnerRadius</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.SfLinearProgressBar">
+            <summary>
+            The linear progress bar provides a customizable visual that indicates the progress of a task. 
+            </summary>
+            <example>
+            <code language="C#">
+            SfLinearProgressBar progress = new SfLinearProgressBar();
+            progress.ProgressValue = 12;
+            progress.Minimum = 20;
+            progress.SecondaryProgressValue = 40;
+            
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.CornerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.CornerRadius"/> bindable property. This property can be used to change the corner radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfLinearProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryProgressProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryProgress"/> bindable property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryProgressColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryProgressColor"/> bindable property. This property can be used to change the secondary progress color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.ActualSecondaryProgressValueProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.ActualSecondaryProgressValue"/> bindable property.
+            </summary>
+            <exclude> </exclude>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryAnimationDurationProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryAnimationDuration"/> bindable property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.PaddingProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.Padding"/> bindable property.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.TrackHeightProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.TrackHeight"/> bindable property.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.ProgressBar.SfLinearProgressBar"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryProgress">
+            <summary>
+            Gets or sets the secondary progress value.
+            </summary>
+            <value>The secondary progress.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.CornerRadius">
+            <summary>
+            Gets or sets a value of CornerRadius. This property can be used to change the corner radius of <see cref="T:Syncfusion.XForms.ProgressBar.SfLinearProgressBar"/>. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryProgressColor">
+            <summary>
+            Gets or sets a value of SecondaryProgressColor. This property can be used to change the secondary progress color.
+            </summary>
+            <value>The secondary progress bar color.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.SecondaryAnimationDuration">
+            <summary>
+            Gets or sets a value of the SecondaryAnimationDuration. This property can be used to change the animation duration of <see cref="T:Syncfusion.XForms.ProgressBar.SfLinearProgressBar"/>. 
+            </summary>
+            <value>The duration of the animation.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.Padding">
+            <summary>
+            Gets or sets a value of Padding. This property can be used to change the padding value to the progress indicator.
+            </summary>
+            <value>The width of the gap.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.TrackHeight">
+            <summary>
+            Gets or sets a value of TrackHeight. This property can be used to change the height of the track value to the progress indicator.
+            </summary>
+            <value>The height of the indicator.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.ActualSecondaryProgressValue">
+            <summary>
+            Gets or sets the actual secondary progress value. This property can be used to change the actual secondary progress value of the track value to the progress indicator.
+            </summary>
+            <value>The actual secondary progress value.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.LinearProgressBarRenderer">
+            <summary>
+            Gets or sets the linear progress bar renderer.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.MinHeight">
+            <summary>
+            Gets or sets minimum height of the control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.Dispose(System.Boolean)">
+            <summary>
+            This method is used to release unmanaged resources used by the <see cref="T:Syncfusion.XForms.ProgressBar.SfLinearProgressBar"/> class.
+            </summary>
+            <param name="disposing">Indicates whether to dispose or not.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.AnimateSecondaryProgress">
+            <summary>
+            Animate the Secondary bar.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.OnSecondaryProgressColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>SecondaryProgressColor</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.OnSecondaryProgressValueChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>SecondaryProgressValue</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.OnActualSecondaryProgressValueChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ActualSecondaryProgressValue</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.OnCornerRadiusChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>SecondaryProgressColor</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.OnSecondaryAnimationDurationChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>SecondaryAnimationDuration</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.OnPaddingChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>Padding</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfLinearProgressBar.OnTrackHeightChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>TrackHeight</c> is set for the progress bar.
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.SfProgressBarStyles">
+            <summary>
+            Holds the theme style for the progress bar
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfProgressBarStyles.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.ProgressBar.SfProgressBarStyles"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar">
+            <summary>
+            Represents the <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/> class. The step progress bar provides a customizable visual that indicates the progress, step by step process.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OrientationProperty">
+            <summary>
+            Identifies the <see cref="T:Syncfusion.XForms.ProgressBar.StepOrientation"/> bindable property. This property can be used to change the orientation of <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.TitleAlignmentProperty">
+            <summary>
+            Identifies the <see cref="T:Syncfusion.XForms.ProgressBar.StepTitleAlignment"/> bindable property. This property can be used to change the tite text alignment of each <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.NotStartedStepStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.NotStartedStepStyle"/> bindable property. This property can be used to apply style for <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/> which are all in not started status.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.InProgressStepStyleProperty">
+             <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.InProgressStepStyle"/> bindable property. This property can be used to apply style for <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>  which are all in inprogress status.
+             </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CompletedStepStyleProperty">
+             <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CompletedStepStyle"/> bindable property. This property can be used to apply style for <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>  which are all in completed status.
+             </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.TitleSpaceProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.TitleSpace"/> bindable property. This property can be used to change the space between title and marker of each <see cref="T:Syncfusion.XForms.ProgressBar.StepView" />.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.ProgressAnimationDurationProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.ProgressAnimationDuration"/> bindable property. This property can be used to change animation duration for each progress in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.LayoutOptionProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.LayoutOption"/> bindable property. This property can be used to change the layout of <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.StepViewTappedCommandProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.StepViewTappedCommand"/> bindable property. Triggers when step view is tapped.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.hasInitialLayoutDone">
+            <summary>
+            To check whether initial layout has done.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.canTranslate">
+            <summary>
+            To translate the progress bar
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.progressIndex">
+            <summary>
+            Current progressing stepview index
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.animationIndex">
+            <summary>
+            Index of stepview till animation need to process.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.currentIndex">
+            <summary>
+            Current progress index and in progress index for while loading animation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.inProgressIndex">
+            <summary>
+            Current progress index and in progress index for while loading animation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.desiredSize">
+            <summary>
+            Desired size for control.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.tapGestureRecognizer">
+            <summary>
+            Tap gesture recognizer for SfBorder.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.internalLayoutOption">
+            <summary>
+            This field used for checking whether the layout size is more the parent size
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.defaultSpace">
+            <summary>
+            Space between step views.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.isInfinity">
+            <summary>
+            This field used for checking whether the layout is infinity or not.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.EffectiveFlowDirection">
+            <summary>
+            Indicate effective flow direction of the control
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.SfStepProgressBar.isInitialLoadCompleted">
+            <summary>
+            This field ensure the initial loading is done. Used initial animation
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar" /> class
+            </summary>
+        </member>
+        <member name="E:Syncfusion.XForms.ProgressBar.SfStepProgressBar.StatusChanged">
+            <summary>
+            The status change event occurs when <see cref="T:Syncfusion.XForms.ProgressBar.StepStatus"/> property changed in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="E:Syncfusion.XForms.ProgressBar.SfStepProgressBar.StepTapped">
+            <summary>
+            The step tapped event occurs when marker in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/> was tapped.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.Orientation">
+            <summary>
+            Gets or sets the type of Orientation of the <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.TitleAlignment">
+            <summary>
+            Gets or sets the TitleAlignment of <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>'s title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.NotStartedStepStyle">
+            <summary>
+            Gets or sets the not started <see cref="T:Syncfusion.XForms.ProgressBar.StepStyle`1"/> for <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.InProgressStepStyle">
+            <summary>
+            Gets or sets the inprogress <see cref="T:Syncfusion.XForms.ProgressBar.StepStyle`1"/> for <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CompletedStepStyle">
+            <summary>
+            Gets or sets the completed <see cref="T:Syncfusion.XForms.ProgressBar.StepStyle`1"/> for <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.TitleSpace">
+            <summary>
+            Gets or sets the value for distance between marker and title text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.ProgressAnimationDuration">
+            <summary>
+            Gets or sets the value for progress animation duration, while changing the status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.LayoutOption">
+            <summary>
+            Gets or sets the Justify content of <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.StepViewTappedCommand">
+            <summary>
+            Gets or set the Step view tapped command
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.InternalLayoutOption">
+            <summary>
+            Gets or sets Internal layout option
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.HasInitialLayoutDone">
+            <summary>
+            Gets or sets whether the initial layout has been done.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CanTranslate">
+            <summary>
+            Gets or sets whether the progress bar can be translate
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CurrentIndex">
+            <summary>
+            Gets or sets the index of step view, where its status is in inprogress.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.AnimationIndex">
+            <summary>
+            Gets or sets the index of step view, till which step need to animate.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.SfStepProgressBar.ProgressIndex">
+            <summary>
+            Gets or sets the index of current animating step view.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.GetTitleSpace">
+            <summary>
+            Default title space between title and marker for different platforms.
+            </summary>
+            <returns>Title Space</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnStatusChanged(Syncfusion.XForms.ProgressBar.StatusChangedEventArgs)">
+             <summary>
+            Invoked whenever <c>Status</c> is changed for step view.
+             </summary>
+             <param name="e">element parameter.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnStepTapped(Syncfusion.XForms.ProgressBar.StepTappedEventArgs)">
+            <summary>
+            Invoked whenever <c>StepView's marker</c> is tapped.
+            </summary>
+            <param name="e">element parameter.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.AnimateProgress">
+            <summary>
+            Triggers progresss animation while starting the application based on the step status
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.SetTextAlignment(Xamarin.Forms.LayoutOptions)">
+            <summary>
+            Sets the text alignment based on the stack layout option
+            </summary>
+            <param name="layoutOptions">stack layout option</param>
+            <returns>title alignment</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.FindChildWidthforHorizontal(System.Double)">
+            <summary>
+            Find child width for horizontal
+            </summary>
+            <param name="widthConstraint">width constraint</param>
+            <returns>child width</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateHorizontalOrientationContentSize(System.Double)">
+            <summary>
+            Calculate <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/> content size for horizontal orientation.
+            </summary>
+            <param name="widthConstraint">width value</param>
+            <returns>return maximum width and height</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.ArrangeChildrenHorizontally(System.Double)">
+            <summary>
+            Calculate and arrange the children of <c>SfStepProgressBar</c> for horizontal orientation.
+            </summary>
+            <param name="stepWidth">Content width</param>
+            <returns>Maximum size for SfStepProgressBar.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateMaxHeight(System.Double)">
+            <summary>
+            Calculate control maximum height.
+            </summary>
+            <param name="diffY">differnce y value</param>
+            <returns>maximum height</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateLargeChildWidth">
+            <summary>
+            Calculate width of all children.
+            </summary>
+            <returns>Large value of children's width.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateHorizontalChildSize(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Calculate the horizontal child size and return the step stack width
+            </summary>
+            <param name="stepView">step view</param>
+            <returns>measured width</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateHorizontalLastStepSize(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Double,Xamarin.Forms.Size)">
+            <summary>
+            Calculated the horizontal last step size and sets the step view's child size
+            </summary>
+            <param name="previous">previous step view</param>
+            <param name="current">current step view</param>
+            <param name="width">width</param>
+            <param name="stackSize">stack size</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.HorizontalStackLayoutOption(Syncfusion.XForms.ProgressBar.StepView,Xamarin.Forms.LayoutOptions)">
+            <summary>
+            Sets the horizontal stack layout options
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="layoutOptions">layout option</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.ArrangeChildrenFillHorizontal(System.Double)">
+            <summary>
+            Arrange the children to fill the layout 
+            </summary>
+            <param name="width">width</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.FindChildWidthforVertical(System.Double)">
+            <summary>
+            Find child width for horizontal
+            </summary>
+            <param name="heightConstraint">width constraint</param>
+            <returns>child width</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateVerticalOrientationContentSize(System.Double)">
+            <summary>
+            Calculate <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/> content size for vertical orientation.
+            </summary>
+            <param name="heightConstraint">Content height</param>
+            <returns>Maximum width and height</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.ArrangeChildrenVertically(System.Double)">
+            <summary>
+            Calculate and arrange the children of <c>SfStepProgressBar</c> for vertical orientation.
+            </summary>
+            <param name="stepHeight">Content height</param>
+            <returns>Maximum size of SfStepProgressBar.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateMaxWidth(System.Double)">
+            <summary>
+            Calculate control maximum width
+            </summary>
+            <param name="diffX">difference x value</param>
+            <returns>maximum width</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateLargestChildHeight">
+            <summary>
+            Calculate largest height of all its children.
+            </summary>
+            <returns>Largest children height.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateVerticalChildSize(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Calculate the vertical child size and return the step stack width
+            </summary>
+            <param name="stepView">step view</param>
+            <returns>measured height</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateVerticalLastStepSize(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Double,Xamarin.Forms.Size)">
+            <summary>
+            Calculated the vertical last step size and sets the step view's child size
+            </summary>
+            <param name="previous">previous step view</param>
+            <param name="current">current step view</param>
+            <param name="height">height</param>
+            <param name="stackSize">stack size</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.VerticalStackLayoutOption(Syncfusion.XForms.ProgressBar.StepView,Xamarin.Forms.LayoutOptions)">
+            <summary>
+            Sets the vertical stack layout options
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="layoutOptions">layout option</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.ArrangeChildrenFillVertical(System.Double)">
+            <summary>
+            Arrange the children to fill the layout 
+            </summary>
+            <param name="height">height</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.CalculateStepProgressBarContentSize(System.Double,System.Double)">
+            <summary>
+            Calculate <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/> content size.
+            </summary>
+            <param name="width">Content width</param>
+            <param name="height">Content height</param>
+            <returns>Maximum content size.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.UpdateNotStartedStyle">
+            <summary>
+            Update step view status when step view with Not started status is Added/Insert.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.UpdateStatusOnInsert(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Int32)">
+            <summary>
+            Update other stepview's status when step view is inserted.
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="previousStepView">previous step view</param>
+            <param name="index">step view index</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.UpdateStatusOnAdd(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Int32)">
+            <summary>
+            Update the step view style on step view add.
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="previousStepView">previous step view</param>
+            <param name="index">step view index</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.UpdateDynamicStatus(Syncfusion.XForms.ProgressBar.StepView,System.Int32)">
+            <summary>
+            Update the step view style based on the step status, when the step view is added or removed in dynamic
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="index">step view index</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnSizeAllocated(System.Double,System.Double)">
+            <summary>
+            OnSizeAllocate override method for <c>SfStepProgressBar</c>.
+            </summary>
+            <param name="width">Content width</param>
+            <param name="height">Content height</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnMeasure(System.Double,System.Double)">
+            <summary>
+            OnMeasure override method for <c>SfStepProgressBar</c>.
+            </summary>
+            <param name="widthConstraint">Width constraint</param>
+            <param name="heightConstraint">Height constraint</param>
+            <returns><c>SfStepProgressBar</c> maximum content size</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnChildAdded(Xamarin.Forms.Element)">
+            <summary>
+            OnChildAdded override method for <c>SfStepProgressBar</c>.
+            </summary>
+            <param name="child">Added child element</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnChildRemoved(Xamarin.Forms.Element)">
+            <summary>
+            OnChildRemoved override method for <c>SfStepProgressBar</c>.
+            </summary>
+            <param name="child">Removed child element</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnPropertyChanged(System.String)">
+            <summary>
+            Triggers when the property is changed
+            </summary>
+            <param name="propertyName">property name</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.LayoutChildren(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            LayoutChildren override method for <c>SfStepProgressBar</c>.
+            </summary>
+            <param name="x">Offset x.</param>
+            <param name="y">Offset y.</param>
+            <param name="width">Width</param>
+            <param name="height">Height</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.TapGestureRecognizer_Tapped(System.Object,System.EventArgs)">
+            <summary>
+            Raised whenever tapped event arised for SfBorder.
+            </summary>
+            <param name="sender">SfBorder object</param>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnOrientationChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>Orientation</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnTitleSpaceChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>TitleSpace</c> value changed.
+            </summary>
+            <param name="bindingObject">Binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnProgressAnimationDurationChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ProgressAnimationDuration</c> value changed.
+            </summary>
+            <param name="bindingObject">Binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnTitleAlignmentChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>TitleAlignment</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnNotStartedStepStyleChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>NotStartedStepStyle</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>      
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnInProgressStepStyleChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+             Invoked whenever <c>InProgressStepStyle</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>      
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnCompletedStepStyleChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>CompletedStepStyle</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>       
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.SfStepProgressBar.OnLayoutOptionsChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>Orientation</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.ContentLabel">
+            <summary>
+            Represents the label to display in SfBorder.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ContentLabel.#ctor">
+            <summary>
+            Initializes a new Instance of the <see cref="T:Syncfusion.XForms.ProgressBar.ContentLabel" /> class
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.ContentCanvas">
+            <summary>
+            Represents the label to display in SfBorder.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.ContentCanvas.#ctor">
+            <summary>
+            Initializes a new Instance of the <see cref="T:Syncfusion.XForms.ProgressBar.ContentLabel" /> class
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepOrientation">
+            <summary>
+            Enumeration specifying vertical or horizontal layout direction of <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepOrientation.Horizontal">
+            <summary>
+            Layout horizontally.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepOrientation.Vertical">
+            <summary>
+            Layout Vertically. 
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepShapeType">
+            <summary>
+            Enumeration specifying step shape type of marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepShapeType.Circle">
+            <summary>
+            Circle shape.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepShapeType.Square">
+            <summary>
+            Square shape.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepStatus">
+            <summary>
+            Enumeration specifying the various status of step view.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStatus.NotStarted">
+            <summary>
+            The step was not started. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStatus.InProgress">
+            <summary>
+            The step is in progress. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStatus.Completed">
+            <summary>
+            The step has completed. 
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepTitleAlignment">
+            <summary>
+            Enumerates values that control title text alignment
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepTitleAlignment.Start">
+            <summary>
+            Indicates that text will be aligned to the left or top of horizontally or vertically aligned text, respectively.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepTitleAlignment.Center">
+            <summary>
+            Indicates that text will be aligned in the middle of either horizontally or vertically aligned text.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepTitleAlignment.End">
+            <summary>
+            Indicates that text will be aligned to the right or bottom of horizontally or vertically aligned text, respectively.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepContentType">
+            <summary>
+            Enumeration specifying content type of marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepContentType.None">
+            <summary>
+            The marker is empty.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepContentType.Numbering">
+            <summary>
+            The marker contain numbering.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepContentType.Tick">
+            <summary>
+            The marker contain tick.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepContentType.Cross">
+            <summary>
+            The marker contain cross.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepContentType.Dot">
+            <summary>
+            The marker contain dot.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepLayoutOptions">
+            <summary>
+            Justify Content
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepLayoutOptions.Default">
+            <summary>
+            Default
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepLayoutOptions.Equal">
+            <summary>
+            Equal
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepLayoutOptions.Fill">
+            <summary>
+            Fill
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepLayoutOptions.FillAndJustify">
+            <summary>
+            Fill and Justify
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepTappedEventArgs">
+            <summary>
+             Event arguments for the <c>StepTapped</c> event.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepTappedEventArgs.item">
+            <summary>
+            Tapped StepView instance.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepTappedEventArgs.currentIndex">
+            <summary>
+            Index of tapped StepView.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepTappedEventArgs.#ctor(Syncfusion.XForms.ProgressBar.StepView,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.ProgressBar.StepTappedEventArgs" /> class
+            </summary>
+            <param name="item">Instance of step item.</param>
+            <param name="index">Index of step item.</param>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepTappedEventArgs.Item">
+            <summary>
+            The StepView that the user tapped. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepTappedEventArgs.Index">
+            <summary>
+            The StepView's index that the user tapped. 
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs">
+            <summary>
+            Event arguments for <c>StatusChanged</c> event. Provides status changed StepView instance.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs.item">
+            <summary>
+            Status changed StepView instance.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs.oldStatus">
+            <summary>
+            Old Status.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs.newStatus">
+            <summary>
+            New Status.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs.#ctor(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepStatus,Syncfusion.XForms.ProgressBar.StepStatus)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs" /> class
+            </summary>
+            <param name="item">Instance of step item.</param>
+            <param name="oldStatus">Old status for step view.</param>
+            <param name="newStatus">new status for step view.</param>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs.Item">
+            <summary>
+            The StepView that status was changed. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs.OldStatus">
+            <summary>
+            The StepView's old status. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StatusChangedEventArgs.NewStatus">
+            <summary>
+            The StepView's new status. 
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepProgressBarFontMapping">
+            <summary>
+            Helper file which hold font icon details.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepStackLayout">
+            <summary>
+            Represents the Stack Layout, which holds title text and marker. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStackLayout.step">
+            <summary>
+            Marker for StepView
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStackLayout.primaryLabel">
+             <summary>
+            Primary label for StepView
+             </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStackLayout.secondaryLabel">
+            <summary>
+            Secondary label for StepView
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStackLayout.stepView">
+            <summary>
+            Parent 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStackLayout.StepDefaultId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStackLayout.#ctor(System.Double,Xamarin.Forms.StackOrientation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.XForms.ProgressBar.StepStackLayout" /> class
+            </summary>
+            <param name="stepSize">Marker size</param>
+            <param name="orientation">Stack orientation</param>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStackLayout.StepView">
+            <summary>
+            Gets or sets the parent StepView.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStackLayout.Step">
+            <summary>
+            Gets or sets Step(Border) child.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStackLayout.PrimaryLabel">
+            <summary>
+            Gets or sets primary title label
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStackLayout.SecondaryLabel">
+            <summary>
+            Gets or sets secondary title label
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStackLayout.SetAutomationId">
+            <summary>
+            Sets the automation id for step(border)
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStackLayout.CalculateBorderCenter(System.Double,System.Double)">
+            <summary>
+            Calculate step(Border) center point position on its parent.
+            </summary>
+            <param name="width">Width to measure the label.</param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStackLayout.ArrangeChildren">
+            <summary>
+            Arrange children based on the orientation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStackLayout.SetTextAlignment">
+            <summary>
+            Set text alignment with respect the title alignment.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStackLayout.StepViewStackLayoutOptions">
+            <summary>
+            Set step layout options inside stack layout.
+            </summary>
+            <returns>layout option</returns>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.IStepState">
+            <summary>
+            Interface abstracting step state.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.NotStartedStepState">
+            <summary>
+            Represents the <see cref="T:Syncfusion.XForms.ProgressBar.NotStartedStepState"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.InProgressStepState">
+            <summary>
+            Represents the <see cref="T:Syncfusion.XForms.ProgressBar.InProgressStepState"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.CompletedStepState">
+             <summary>
+            Represents the <see cref="T:Syncfusion.XForms.ProgressBar.CompletedStepState"/> class.
+             </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.IStepStyle">
+            <summary>
+            Interface defining properties for step style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.MarkerFillColor">
+            <summary>
+            Gets or sets Marker fill color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.MarkerStrokeColor">
+            <summary>
+            Gets or sets Marker stroke color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.MarkerSize">
+            <summary>
+            Gets or sets Marker size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.MarkerStrokeWidth">
+            <summary>
+            Gets or sets Marker stroke width
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.MarkerShapeType">
+            <summary>
+            Gets or sets Marker shape type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.MarkerContentFillColor">
+            <summary>
+            Gets or sets Marker content fill color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.MarkerContentSize">
+            <summary>
+            Gets or sets Marker content size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.MarkerContentType">
+            <summary>
+            Gets or sets Marker content type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.ProgressLineColor">
+            <summary>
+            Gets or sets Progress line color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.TrackColor">
+            <summary>
+            Gets or sets Progress track color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.FontFamily">
+            <summary>
+            Gets or sets Font family.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.FontSize">
+            <summary>
+            Gets or sets Font size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.FontColor">
+            <summary>
+            Gets or sets Font color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.FontAttributes">
+            <summary>
+            Gets or sets Font attrinbutes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.SegmentCount">
+            <summary>
+            Gets or sets progress bar segment count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.IStepStyle.GapWidth">
+            <summary>
+            Gets or sets progress bar segment gap width.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepStyle`1">
+            <summary>
+            Represents the <see cref="T:Syncfusion.XForms.ProgressBar.StepStyle`1"/> class.
+            </summary>
+            <typeparam name="T">Represents the <see cref="T:Syncfusion.XForms.ProgressBar.IStepState"/> interface.</typeparam>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.StepProgressBar">
+            <summary>
+            Gets or sets <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/> instance.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.Status">
+            <summary>
+            Gets or sets <see cref="T:Syncfusion.XForms.ProgressBar.StepStatus"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.NotStartedStepState">
+            <summary>
+            Read only string not started step state
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.InProgressStepState">
+            <summary>
+            Read only string in progress step state
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.CompletedStepState">
+            <summary>
+            Read only string Completed Step State
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerFillColorProperty">
+            <summary>
+             Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerFillColor"/> bindable property. This property can be used to change the fill color of marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerStrokeColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerStrokeColor"/> bindable property. This property can be used to change the stroke color of marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerSize"/> bindable property. This property can be used to change the size of the marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerStrokeWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerStrokeWidth"/> bindable property. This property can be used to change the stroke width of the marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerShapeTypeProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerShapeType"/> bindable property. This property can be used to change the shape type of the marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentFillColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentFillColor"/> bindable property. This property can be used to change the content fill color of the marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentSize"/> bindable property. This property can be used to change the content size of the marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentTypeProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentType"/> bindable property. This property can be used to change the content type of the marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.ProgressLineColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.ProgressLineColor"/> bindable property. This property can be used to change the progressing line color of the step view.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.TrackColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.TrackColor"/> bindable property. This property can be used to change the progress track line color of the step view.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.SegmentCountProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.SegmentCount"/> bindable property. This property can be used to change the progress bar segment count.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.GapWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.GapWidth"/> bindable property. This property can be used to change the progress bar segment gap width.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.FontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.FontFamily"/> bindable property. This property can be used to change the font family of labels in step view.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.FontSizeProperty">
+             <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.FontSize"/> bindable property. This property can be used to change the font size of labels in step view.
+             </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.FontColorProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.FontColor"/> bindable property. This property can be used to change the font color of labels in step view.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepStyle`1.FontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepStyle`1.FontAttributes"/> bindable property. This property can be used to change the font attributes of labels in step view.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentFillColor">
+            <summary>
+            Gets or sets the marker's content fill color.
+            </summary>
+            <value>Color need to fill the content</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentType">
+            <summary>
+            Gets or sets the marker's content type.
+            </summary>
+            <value>Content type for the marker.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentSize">
+            <summary>
+            Gets or sets marker's content size.
+            </summary>
+            <value>Content size for the marker.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerFillColor">
+            <summary>
+            Gets or sets marker fill color.
+            </summary>
+            <value>Color to fill marker.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerStrokeColor">
+            <summary>
+            Gets or sets marker stroke color.
+            </summary>
+            <value>Color to apply in marker stroke.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerStrokeWidth">
+            <summary>
+            Gets or sets marker stroke width.
+            </summary>
+            <value>Stroke width for marker.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.ProgressLineColor">
+            <summary>
+            Gets or sets progress line color in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+            <value>Color for progress line.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.TrackColor">
+            <summary>
+            Gets or sets progress track line color in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+            <value>Color for progress track line.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.SegmentCount">
+            <summary>
+            Gets or sets progress bar segment count.
+            </summary>
+            <value>Number of segment.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.GapWidth">
+            <summary>
+            Gets or sets progress bar segment gap width.
+            </summary>
+            <value>Number of segment.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.FontFamily">
+             <summary>
+            Gets or sets font family for the primary and secondary title in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>
+             </summary>
+             <value>Font family for the title.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.FontSize">
+            <summary>
+            Gets or sets font size for the primary and secondary title in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>
+            </summary>
+            <value>Font size for the title.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.FontColor">
+            <summary>
+            Gets or sets font color for the primary and secondary title in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>
+            </summary>
+            <value>Font color for the title.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerShapeType">
+            <summary>
+            Gets or sets marker shape type in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>
+            </summary>
+            <value>Shape type for the marker.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerSize">
+            <summary>
+            Gets or sets marker size in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>
+            </summary>
+            <value>Marker size.</value>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepStyle`1.FontAttributes">
+            <summary>
+            Gets or sets font attributes for the primary and secondary title in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>
+            </summary>
+            <value>Font attributes for title.</value>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultMarkerFillColor``1">
+            <summary>
+            Get default fill color.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Color for marker.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultMarkerStrokeColor``1">
+            <summary>
+            Get default marker stroke color.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Stroke color for marker</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetMarkerSize``1">
+            <summary>
+            Get default marker size.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Marker size</returns>
+            <returns>Step Size</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultMarkerStrokeWidth``1">
+             <summary>
+            Get default marker stroke width.
+             </summary>
+             <typeparam name="StepStyle">Step Style</typeparam>
+             <returns>Stroke width for marker</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultMarkerShapeType``1">
+            <summary>
+            Get default marker shape type.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Shape type for marker</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultMarkerContentFillColor``1">
+            <summary>
+            Get default marker content fill color.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Fill color for marker's content</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultMarkerContentSize``1">
+            <summary>
+            Get default marker content size.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Content size for marker</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultMarkerContentType``1">
+            <summary>
+            Get default marker content type.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Content type for the marker</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultProgressLineColor``1">
+            <summary>
+            Get default progress line color.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Progress line color</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultTrackLineColor``1">
+            <summary>
+            Get default progress track ine color.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Progress track color.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultSegmentCount``1">
+            <summary>
+            Get default segment count.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Number of segment count</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultGapWidth``1">
+            <summary>
+            Get default progress bar segment gap width.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>segment gap width</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultFontSize``1">
+            <summary>
+            Get default title font size for step view.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Font size for title.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultFontColor``1">
+            <summary>
+            Get default title font color for step view.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Font color for title</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GetDefaultFontAttributes``1">
+            <summary>
+            Get default title font attributes for step view.
+            </summary>
+            <typeparam name="StepStyle">Step Style</typeparam>
+            <returns>Font attributes for title.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerFillColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>MarkerFillColor</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerStrokeColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+             <summary>
+            Invoked whenever <c>MarkerStrokeColor</c> value changed.
+             </summary>
+             <param name="bindingObject">binding object.</param>
+             <param name="oldValue">Older value of binding object.</param>
+             <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerSizeChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>MarkerSizeChanged</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerStrokeWidthChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>MarkerStrokeWidth</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerShapeTypeChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>MarkerShapeType</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentFillColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>MarkerContentFillColor</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentSizeChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>MarkerContentSize</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.MarkerContentTypeChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>MarkerContentType</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.ProgressLineColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ProgressLineColor</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.TrackColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>TrackColor</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.SegmentCountChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>SegementCount</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.GapWidthChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>GapWiddth</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.FontColorChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>FontColor</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.FontFamilyChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>FontFamily</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.FontSizeChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>FontSize</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepStyle`1.FontAttributesChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>FontAttributes</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="T:Syncfusion.XForms.ProgressBar.StepView">
+            <summary>
+            Represents the each step in <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.StatusProperty">
+            <summary>
+             Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepView.Status"/> bindable property. This property can be used to change the status of <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.InternalStatusProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepView.InternalStatus"/> bindable property. This property can be used to hold the staus for animation intenal purpose.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.ProgressValueProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepView.ProgressValue"/> bindable property. This property used to change the progress value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.PrimaryTextProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepView.PrimaryText"/> bindable property. This property can be used to change primary text in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.SecondaryTextProperty">
+            <summary>
+             Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepView.SecondaryText"/> bindable property. This property can be used to change secondary text in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.ImageSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepView.ImageSource"/> bindable property. This property can be used to change image content in marker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.PrimaryFormattedTextProperty">
+            <summary>
+            Identifies the <see cref="P:Syncfusion.XForms.ProgressBar.StepView.PrimaryFormattedText"/> bindable property. This property can be used to change primary formatted text in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.SecondaryFormattedTextProperty">
+            <summary>
+            Identifies the <see cref="F:Syncfusion.XForms.ProgressBar.StepView.SecondaryFormattedTextProperty"/> bindable property. This property can be used to change secondary formatted text in <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.stackRect">
+            <summary>
+            Rectangle for stack layout children in <c>StepView</c>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.progressRect">
+            <summary>
+            Rectangle for progress bar children in <c>StepView</c>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.stepViewRect">
+            <summary>
+            Rectangle for <c>StepView</c>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.progressBar">
+            <summary>
+            <c>SfLinearProgressBar</c> children in <c>StepView</c>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.stepStackLayout">
+            <summary>
+            Stack layout which contains step(Border) and title text(Label)
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.progressWidth">
+            <summary>
+            Progress bar Length
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.progressHeight">
+            <summary>
+            Progress bar Height
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.stepSize">
+            <summary>
+            Default step(Border) size.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.stepProgressBar">
+            <summary>
+            Parent
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.labelContent">
+            <summary>
+            Label inside content view.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.imageContent">
+            <summary>
+            Image inside content view.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.index">
+            <summary>
+            Step view index
+            </summary>
+        </member>
+        <member name="F:Syncfusion.XForms.ProgressBar.StepView.completedValue">
+            <summary>
+            Completed progress value
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.#ctor">
+            <summary>
+            Initializes a new Instance of the <see cref="T:Syncfusion.XForms.ProgressBar.StepView" /> class
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.Status">
+            <summary>
+            Gets or sets the <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>'s status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.InternalStatus">
+            <summary>
+            Gets or sets the <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>'s internal status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.ProgressValue">
+            <summary>
+            Gets or sets the progress value for <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.PrimaryText">
+            <summary>
+            Gets or sets primary text in the <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.SecondaryText">
+            <summary>
+            Gets or sets secondary text in the <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.ImageSource">
+            <summary>
+            Gets or sets image source for an image inside the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.PrimaryFormattedText">
+            <summary>
+            Gets or sets primary formatted text in the <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.SecondaryFormattedText">
+            <summary>
+            Gets or sets secondary formatted text in the <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.Index">
+            <summary>
+            Gets or sets the step view index
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.StepStackLayout">
+            <summary>
+            Gets or sets the <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>'s Stack Layout contains border and text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.StackRect">
+            <summary>
+            Rectangle for stack layout children in <c>StepView</c>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.ProgressRect">
+            <summary>
+            Rectangle for progress bar children in <c>StepView</c>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.StepViewRect">
+            <summary>
+            Rectangle for <c>StepView</c>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.ProgressBar">
+            <summary>
+            <c>SfLinearProgressBar</c> children in <c>StepView</c>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.StepProgressBar">
+            <summary>
+            Gets or sets parent instance <see cref="T:Syncfusion.XForms.ProgressBar.SfStepProgressBar"/>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.XForms.ProgressBar.StepView.StepSize">
+            <summary>
+            Gets or set the marker(step) size.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.RotateChildren">
+            <summary>
+            Rotate StepView's children according to SfStepProgressBar orientation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ChangeProgressbarVisibility(System.Boolean)">
+            <summary>
+            Hide Progressbar for the step view
+            </summary>
+            <param name="isVisible">visibility true or false</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.MeasureChildStackLayout(System.Double,System.Double)">
+            <summary>
+            Measrue stack layout.
+            </summary>
+            <param name="width">Measured width</param>
+            <param name="height">Measured height</param>
+            <returns>measured values</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.SetLayout(Xamarin.Forms.View,Xamarin.Forms.Rectangle)">
+            <summary>
+            Set child layout bounds
+            </summary>
+            <param name="view">view object</param>
+            <param name="rectangle">view rectangle</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CreateProgressBar(System.Double,System.Double)">
+            <summary>
+            Initialize progress bar for stepview. 
+            </summary>
+            <param name="width">progress bar width</param>
+            <param name="height">progress bar height</param>
+            <returns>return progress bar</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateStepStyle(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Update respective style for <see cref="T:Syncfusion.XForms.ProgressBar.StepView"/>.
+            </summary>
+            <param name="stepView">StepView for which the style need to be update.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ChangeStepViewStatusFromInProgressToCompleted(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Change StepView status from in progress to completed status with animation.
+            </summary>
+            <param name="stepView">StepView which need to update.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ResetAnimationIndexes(System.Int32)">
+            <summary>
+            Reset all index values for animation indexes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CalculateHorizontalStepViewLeft(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Double)">
+            <summary>
+            Calculate horizontal stepview children bounds
+            </summary>
+            <param name="currentStepView">current step view</param>
+            <param name="previousStepView">previous step view</param>
+            <param name="width">step view width</param>
+            <returns>StepView left value</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CalculateHorizontalStepViewLeft(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Calculate horizontal stepview left offset.
+            </summary>
+            <param name="stepView">step view</param>
+            <returns>StepView left value</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CalculateHorizontalProgressRect(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Double)">
+            <summary>
+            Calculate horizontal orientation progress bar bounds.
+            </summary>
+            <param name="previousStepView">previous step view</param>
+            <param name="currentStepView">current step view</param>
+            <returns>progress bar rectangle</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CalculateHorizontalStackRect(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Double)">
+            <summary>
+            Calculate horizontal orientation stack layout bounds.
+            </summary>
+            <param name="previousStepView">previous step view</param>
+            <param name="currentStepView">current step view</param>
+            <returns>stack rectangle</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CalculateHorizontalPreviousSpace(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Previous step view excess space or end of step border in horizontal option
+            </summary>
+            <param name="previousStepView">previous step view</param>
+            <returns>excess space</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CalculateVerticalStepViewTop(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Double)">
+            <summary>
+            Calculate vertical StepView's children layout Bounds.
+            </summary>
+            <param name="currentStepView">current step view</param>
+            <param name="previousStepView">previous step view</param>
+            <param name="height">step view height</param>
+            <returns>StepView top value</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CalculateVerticalStepViewTop(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Calculate vertical StepView's top offset.
+            </summary>
+            <param name="stepView">step view</param>
+            <returns>step view top value.</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.VerticalProgressRect(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Double)">
+            <summary>
+            Calculate vertical orientation progress bar bounds
+            </summary>
+            <param name="previousStepView">previous step view</param>
+            <param name="currentStepView">current step view</param>
+            <returns>progress bar rectangle</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.VerticalStackRect(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Double)">
+            <summary>
+            Calculate vertical orientation stack layout bounds
+            </summary>
+            <param name="previousStepView">previous step view</param>
+            <param name="currentStepView">current step view</param>
+            <returns>stack rectangle</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.CalculateVerticalPreviousSpace(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Previous step view excess space or end of step border in vertical option
+            </summary>
+            <param name="previousStepView">previous step view</param>
+            <returns>excess space</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateStyle(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Update step view's style
+            </summary>
+            <param name="stepView">step view</param>
+            <returns>Style</returns>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ApplyStyle(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.IStepStyle)">
+            <summary>
+            Apply step view style
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="style">step view style</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateStepStyle(Syncfusion.XForms.Border.SfBorder,Syncfusion.XForms.ProgressBar.IStepStyle)">
+            <summary>
+            Update step style
+            </summary>
+            <param name="step">step view's step or marker</param>
+            <param name="style">step view style</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateStepSize(Syncfusion.XForms.Border.SfBorder,Syncfusion.XForms.ProgressBar.IStepStyle)">
+            <summary>
+            Update step view's step size
+            </summary>
+            <param name="step">step view's step or marker</param>
+            <param name="style">step style</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateStepFillColor(Syncfusion.XForms.Border.SfBorder,Xamarin.Forms.Color)">
+            <summary>
+            Update step(border) fill color
+            </summary>
+            <param name="step">step view's step or marker</param>
+            <param name="fillColor">step fill color</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateStepBorderColor(Syncfusion.XForms.Border.SfBorder,Xamarin.Forms.Color)">
+            <summary>
+            Update step border color
+            </summary>
+            <param name="step">step view's step or marker</param>
+            <param name="strokeColor">stroke color</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateStepBorderWidth(Syncfusion.XForms.Border.SfBorder,System.Int32)">
+            <summary>
+            Update step border width
+            </summary>
+            <param name="step">step view's step or marker</param>
+            <param name="strokeWidth">stroke width</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateBorderShapeType(Syncfusion.XForms.Border.SfBorder,Syncfusion.XForms.ProgressBar.StepShapeType)">
+            <summary>
+            Update border shape type
+            </summary>
+            <param name="step">step view's step or marker</param>
+            <param name="shapeType">shape type</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateFontStyle(Xamarin.Forms.Label,Syncfusion.XForms.ProgressBar.IStepStyle)">
+            <summary>
+            Update font style
+            </summary>
+            <param name="label">step view title</param>
+            <param name="style">step view style</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateFontColor(Xamarin.Forms.Label,Xamarin.Forms.Color)">
+            <summary>
+            Update font color
+            </summary>
+            <param name="label">step view title text</param>
+            <param name="fontColor">font color</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateFontSize(Xamarin.Forms.Label,System.Double)">
+            <summary>
+            Update font size
+            </summary>
+            <param name="label">step view title text</param>
+            <param name="fontSize">font size</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateFontAttributes(Xamarin.Forms.Label,Xamarin.Forms.FontAttributes)">
+            <summary>
+            Update font attributes
+            </summary>
+            <param name="label">step view title text</param>
+            <param name="fontAttributes">font attributes</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateFontFamily(Xamarin.Forms.Label,System.String)">
+            <summary>
+            Update font family
+            </summary>
+            <param name="label">step view title text</param>
+            <param name="fontFamily">font family</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateProgressBarStyle(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.SfLinearProgressBar,Syncfusion.XForms.ProgressBar.IStepStyle)">
+            <summary>
+            Update progress bar style
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="progressBar">progress bar</param>
+            <param name="style">step view style</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateProgressColor(Syncfusion.XForms.ProgressBar.SfLinearProgressBar,Xamarin.Forms.Color)">
+            <summary>
+            Update progress bar progress color
+            </summary>
+            <param name="progressBar">progress bar</param>
+            <param name="progressColor">progress color</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateProgressTrackColor(Syncfusion.XForms.ProgressBar.SfLinearProgressBar,Xamarin.Forms.Color)">
+            <summary>
+            Update progress bar track color
+            </summary>
+            <param name="progressBar">progress bar</param>
+            <param name="progressTrackColor">progress track color</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateSegmentCount(Syncfusion.XForms.ProgressBar.SfLinearProgressBar,System.Int32)">
+            <summary>
+            Update progress bar segement
+            </summary>
+            <param name="progressBar">progress bar</param>
+            <param name="count">progress segment count</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateGapWidth(Syncfusion.XForms.ProgressBar.SfLinearProgressBar,System.Double)">
+            <summary>
+            Update progress bar segement gap width
+            </summary>
+            <param name="progressBar">progress bar</param>
+            <param name="gapWidth">progress segment gap width</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateContentSize(Syncfusion.XForms.ProgressBar.StepView,System.Int32)">
+            <summary>
+            Update step view's content size
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="value">content size</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateContentType(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepContentType)">
+            <summary>
+            Update step view's content type
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="contentType">content type</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateContentFillColor(Syncfusion.XForms.ProgressBar.StepView,Xamarin.Forms.Color)">
+            <summary>
+            Update step view's content fill color
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="color">content color</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateContentImage(Syncfusion.XForms.ProgressBar.StepView)">
+            <summary>
+            Update step view's content image source
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ProgressBar_ProgressCompleted(System.Object,Syncfusion.XForms.ProgressBar.ProgressValueEventArgs)">
+            <summary>
+            Invokes when progress bar's progress is completed.
+            </summary>
+            <param name="sender">sender object</param>
+            <param name="e">event args</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnStatusChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invokes when status change for the step view.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnInternalStatusChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>InternalStatus</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ProgressIndexGreaterthanAnimationIndex(Syncfusion.XForms.ProgressBar.StepView,Syncfusion.XForms.ProgressBar.StepView,System.Int32)">
+            <summary>
+            if progress index is greater than animation index then this method will execute
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="progressStepView">progress step view</param>
+            <param name="animationIndex">animation index</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ProgressIndexEqualsAnimationIndex(Syncfusion.XForms.ProgressBar.StepView,System.Int32,System.Int32)">
+            <summary>
+            if progress index is equals to animation index then this method will execute
+            </summary>
+            <param name="progressStepView">progress step view</param>
+            <param name="animationIndex">animation index</param>
+            <param name="progressIndex">progress index</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ProgressIndexLesserthanAnimationIndex(Syncfusion.XForms.ProgressBar.StepView,System.Int32)">
+            <summary>
+            if progress index is lesser than animation index then this method will execute
+            </summary>
+            <param name="progressStepView">progress step view</param>
+            <param name="animationIndex">animation index</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.ApplyNotStartedStyle(Syncfusion.XForms.ProgressBar.StepView,System.Int32)">
+            <summary>
+            Apply not started style
+            </summary>
+            <param name="stepView">step view</param>
+            <param name="index">step view index</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateStyleTillCurrentIndex">
+            <summary>
+            Update completed style till current index
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.UpdateNotStartedStyle">
+            <summary>
+            Update not started style
+            </summary>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnProgressValueChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ProgressValue</c> changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnPrimaryTextChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>PrimaryText</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnPrimaryFormatTextChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>PrimaryFormatttedText</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnSecondaryTextChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>SecondaryText</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnSecondaryFormatTextChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>SecondaryFormattedText</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnImageSourceChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Invoked whenever <c>ImageSource</c> value changed.
+            </summary>
+            <param name="bindingObject">binding object.</param>
+            <param name="oldValue">Older value of binding object.</param>
+            <param name="newValue">New value of binding object.</param>
+        </member>
+        <member name="M:Syncfusion.XForms.ProgressBar.StepView.OnPropertyChanged(System.String)">
+            <summary>
+            Triggers when property is changed.
+            </summary>
+            <param name="propertyName">property name</param>
+        </member>
+    </members>
+</doc>

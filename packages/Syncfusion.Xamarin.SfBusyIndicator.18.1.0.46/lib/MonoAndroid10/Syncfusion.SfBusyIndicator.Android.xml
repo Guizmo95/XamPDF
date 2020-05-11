@@ -1,0 +1,2984 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.SfBusyIndicator.Android</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes">
+            <summary>
+            Contains the values for the AnimationTypes enumeration that contains various built in animations graphics.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.Ball">
+            <summary>
+            Busy indication with jumping ball type animation
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.Battery">
+            <summary>
+            Busy indication with battery charging type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.Box">
+            <summary>
+            Busy indication with box arrangement type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.DoubleCircle">
+            <summary>
+            Busy indication with rotation of double circle type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.Ecg">
+            <summary>
+            Busy indication with live ECG type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.GearBox">
+            <summary>
+            Busy indication with GearBox type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.Globe">
+            <summary>
+            Busy indication with globe type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.HorizontalPulsingBox">
+            <summary>
+            Busy indication with box with pulsing type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.MovieTimer">
+            <summary>
+             Busy indication with movie timer type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.Print">
+            <summary>
+            Busy indication with printer type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.Rectangle">
+            <summary>
+            Busy indication with jumping rectangle type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.RollingBall">
+            <summary>
+            Busy indication with ball that roll on a circle type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.SingleCircle">
+            <summary>
+            Busy indication with circle type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.SlicedCircle">
+            <summary>
+            Busy indication with sliced circle type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.ZoomingTarget">
+            <summary>
+            Busy indication with Zooming type animation.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.AnimationTypes.Cupertino">
+            <summary>
+            Represents Cupertino AnimationType
+            </summary>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.Enums.TitlePlacement">
+            <summary>
+            Contains the values for the TitlePlacement enumeration that contains various built in title placement positions.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.TitlePlacement.Top">
+            <summary>
+            Displays the Title at top of the animation position.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.TitlePlacement.Bottom">
+            <summary>
+            Displays the Title at Bottom of the animation position.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Enums.TitlePlacement.None">
+            <summary>
+            Title will not be displayed.
+            </summary>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.BallAnimationLeft">
+            <summary>
+            Ball Animation Left class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BallAnimationLeft.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BallAnimationLeft.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BallAnimationLeft" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BallAnimationLeft.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BallAnimationLeft.RefreshAnimation">
+            <summary>
+            Refresh Animation Method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BallAnimationLeft.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type.</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator">
+            <summary>
+            Busy Indicator class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.globe">
+            <summary>
+            Globe field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.receiver">
+            <summary>
+            The receiver field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.disposedObject">
+            <summary>
+            The disposed object.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.globeAnimationLeft">
+            <summary>
+            Globe animation left field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.globeAnimationTop">
+            <summary>
+            Globe animation top field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.globeAnimationRight">
+            <summary>
+            Globe animation right field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.globeAnimationBottom">
+            <summary>
+            Globe animation bottom field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.screenWidth">
+            <summary>
+            Screen Width ,Screen Height field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.screenHeight">
+            <summary>
+            Screen Width ,Screen Height field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.print">
+            <summary>
+            Print field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.print1">
+            <summary>
+            Print1 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.battery">
+            <summary>
+            Battery field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.batteryAnimate1">
+            <summary>
+            Battery animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.batteryAnimate2">
+            <summary>
+            Battery animation2 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.isRegistered">
+            <summary>
+            Print field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.batteryAnimate3">
+            <summary>
+            Battery animation3 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.batteryAnimate4">
+            <summary>
+            Battery animation4 field
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.printAnimation">
+            <summary>
+            print animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.ballanimationleft">
+            <summary>
+            Ball animation left field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.ballanimationright">
+            <summary>
+            Ball animation right field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.isBusyClass">
+            <summary>
+            Busy class field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalBox1">
+            <summary>
+            Horizontal box field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalBox2">
+            <summary>
+            Horizontal box2 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalBox3">
+            <summary>
+            Horizontal box3 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalBox4">
+            <summary>
+            Horizontal box4 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalBox5">
+            <summary>
+            Horizontal box5 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalBox6">
+            <summary>
+            Horizontal box6 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalBox7">
+            <summary>
+            Horizontal box7 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalPulsingBox">
+            <summary>
+            Horizontal pulsing box field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalPulsingLeft">
+            <summary>
+            Horizontal pulsing left field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.horizontalPulsingRight">
+            <summary>
+            Horizontal pulsing right field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.slicedCircle">
+            <summary>
+            Sliced circle field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.gearBoxRight">
+            <summary>
+            Gear box right field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.gearBoxLeft">
+            <summary>
+            Gear box left field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.gearBox">
+            <summary>
+            Gear box field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.singleCircleAnimation">
+            <summary>
+            Single circle animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.doubleCircleAnimation">
+            <summary>
+            Double circle animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.ecgAnimation">
+            <summary>
+            animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.ecgCircle">
+            <summary>
+            circle field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.ecgLine">
+            <summary>
+            line field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.content">
+            <summary>
+            Content field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.movieTimerInnerCircle">
+            <summary>
+            Movie timer inner circle field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.movieTimerOuterCircle">
+            <summary>
+            movie timer outer circle field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.rollingBallAnimation">
+            <summary>
+            Rolling ball animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.rollingBallCircle">
+            <summary>
+            Rolling ball circle field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.zoomingTarget1">
+            <summary>
+            Zooming target field. 
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.zoomingTarget2">
+            <summary>
+            Zooming target2 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.zoomingTarget3">
+            <summary>
+            Zooming target3 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.zoomingTarget4">
+            <summary>
+            Zooming target4 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.zoomingTarget5">
+            <summary>
+            Zooming target5 field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.zoomingTargetEnd">
+            <summary>
+            Zooming target end field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.boxView">
+            <summary>
+            Box view field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.cupertinoView">
+            <summary>
+            Cupertino View.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.enableAnimation">
+            <summary>
+            Enable animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.duration">
+            <summary>
+            Duration field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.tempDuration">
+            <summary>
+            Temp duration field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.fontFace">
+            <summary>
+            Font face field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.animationType">
+            <summary>
+            Animation type field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.isBusy">
+            <summary>
+            Is busy field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.textColor">
+            <summary>
+            Text color field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.viewBoxWidth">
+            <summary>
+            View box width field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.viewBoxHeight">
+            <summary>
+            View box height field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.title">
+            <summary>
+            Title field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.textSize">
+            <summary>
+            Text size field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.secondaryColor">
+            <summary>
+            Secondary field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.titlePlacement">
+            <summary>
+            Title placement field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.filter">
+            <summary>
+            IntentFilter field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.#ctor(Android.Content.Context)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator" /> class.
+            </summary>
+            <param name="context">Context type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attribute">Attribute set</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.#ctor(Android.Content.Context,Android.Util.IAttributeSet,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator"/> class.
+            </summary>
+            <param name="context">The Context.</param>
+            <param name="attribute">Attribute set.</param>
+            <param name="style">Default style.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.#ctor(Android.Content.Context,Android.Util.IAttributeSet,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator"/> class.
+            </summary>
+            <param name="context">The Context.</param>
+            <param name="attribute">Attribute set.</param>
+            <param name="style">Default style.</param>
+            <param name="resource">Default style resource.</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.AnimationType">
+            <summary>
+            Gets or sets the value that determines the indicator animation.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.IsBusy">
+            <summary>
+            Gets or sets a value indicating whether the animation to be shown or not.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.Duration">
+            <summary>
+            Gets or sets the value that determines speed of the animation to finish a cycle.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.TextSize">
+            <summary>
+            Gets or sets the value that applies to the default text's font size.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.FontFace">
+            <summary>
+            Gets or sets  the Font for BusyIndicator text
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.Title">
+            <summary>
+            Gets or sets the text of the title of the indicator
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.TitlePlacement">
+            <summary>
+            Gets or sets a value of Title placement method.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.TextColor">
+            <summary>
+            Gets or sets the color that applies to the default text and animation graphics.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.SecondaryColor">
+            <summary>
+            Gets or sets the Secondary Color for Animation
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.ViewBoxWidth">
+            <summary>
+            Gets or sets the value that determines the display width of the graphics drawn.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.ViewBoxHeight">
+            <summary>
+            Gets or sets the value that determines the display height of the graphics drawn.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.EnableAnimation">
+            <summary>
+            Gets or sets a value indicating whether the graphical path to be animated or freeze.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.IsLTRLayoutDirection">
+            <summary>
+            Gets a value indicating whether Layout direction is Left to Right.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.RefreshValues">
+            <summary>
+            Refresh the values
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.RefreshBusy">
+            <summary>
+            Refreshes the BusyIndicator
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.Clear">
+            <summary>
+            Clears the Animation
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.OnLayout(System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            On layout method
+            </summary>
+            <param name="changed">Boolean type</param>
+            <param name="left">left value</param>
+            <param name="top">top value</param>
+            <param name="right">Right value </param>
+            <param name="bottom">Bottom value</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.OnSizeChanged(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            on Size changed method.
+            </summary>
+            <param name="w">Width value</param>
+            <param name="h">Height value</param>
+            <param name="oldw">Old width</param>
+            <param name="oldh">Old height</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.OnWindowVisibilityChanged(Android.Views.ViewStates)">
+            <summary>
+            Creates and Dispose the scree register.
+            </summary>
+            <param name="visibility"> current visibility states.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.Dispose(System.Boolean)">
+            <summary>
+            Dispose the specified disposing.
+            </summary>
+            <param name="disposing">If set to <c>true</c> disposing.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.DisposeRegister">
+            <summary>
+            Dispose the registered receiver.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.MapAttributes(Android.Content.Context,Android.Util.IAttributeSet,System.Int32,System.Int32)">
+            <summary>
+            Maps the attributes.
+            </summary>
+            <param name="context">The Context.</param>
+            <param name="attributes">Attributes value.</param>
+            <param name="styleAttributes">Style attributes.</param>
+            <param name="styleRes">Style resource.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.GetTitlePlacement(System.Int32)">
+            <summary>
+            Checks the title.
+            </summary>
+            <returns>The title.</returns>
+            <param name="titlePlace">Title place.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.GetAnimationTypes(System.Int32)">
+            <summary>
+            Gets the animation types.
+            </summary>
+            <returns>The animation types.</returns>
+            <param name="aniType">Animation type.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.Init">
+            <summary>
+            Integer method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SfBusyIndicator.UpdateAccessibilityLabel">
+            <summary>
+            Updates the accessibility label.
+            </summary>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.ScreenReceiver">
+            <summary>
+            Screen receiver Class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ScreenReceiver.busyIndicator">
+            <summary>
+            BusyIndicator field
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ScreenReceiver.#ctor(Com.Syncfusion.Sfbusyindicator.SfBusyIndicator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.ScreenReceiver" /> class.
+            </summary>
+            <param name="busyIndicator">busy indicator value </param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ScreenReceiver.OnReceive(Android.Content.Context,Android.Content.Intent)">
+            <summary>
+            On receive override method
+            </summary>
+            <param name="context">context field </param>
+            <param name="intent">intent filed</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.BallAnimationRight">
+            <summary>
+            Ball Animation Right class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BallAnimationRight.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BallAnimationRight.rightBallAnimation">
+            <summary>
+            Right Ball Animation field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BallAnimationRight.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BallAnimationRight" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BallAnimationRight.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BallAnimationRight.RefreshAnimation">
+            <summary>
+            Refresh Animation method. 
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BallAnimationRight.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw Method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.Battery">
+            <summary>
+            Battery class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Battery.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>    
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Battery.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.Battery" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set type</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.Battery.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Battery.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On Draw Method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1">
+            <summary>
+            Battery Animation1 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1.batteryanimation">
+            <summary>
+            Battery animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1.batteryAnimate2">
+            <summary>
+            Battery animation2 field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1" /> class.
+            </summary>
+            <param name="context">Context type.</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate1.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2">
+            <summary>
+            Battery Animation2 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2.batteryanimation">
+            <summary>
+            Battery animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2.batteryAnimate3">
+            <summary>
+            Battery Animation3 field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate2.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On Draw Method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3">
+            <summary>
+            Battery Animation 3 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3.batteryanimation">
+            <summary>
+            Battery Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3.batteryAnimate4">
+            <summary>
+            Battery Animation field4
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3.RefreshAnimation">
+            <summary>
+            Refresh method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate3.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4">
+            <summary>
+            Battery animation 4 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4.batteryanimation">
+            <summary>
+            Battery Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4.batteryAnimate1">
+            <summary>
+            Battery Animation field1.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4.RefreshAnimation">
+            <summary>
+            Refresh method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BatteryAnimate4.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On Draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.BoxAnimation">
+            <summary>
+            Box Animation class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.busyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.con">
+            <summary>
+            Context field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.calcWidth">
+            <summary>
+            Width,Height fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.calcHeight">
+            <summary>
+            Width,Height fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.centerCalcWidth">
+            <summary>
+            Width,Height fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.centerCalcHeight">
+            <summary>
+            Width,Height fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.width">
+            <summary>
+            Width,Height fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.height">
+            <summary>
+            Width,Height fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.isBusy">
+            <summary>
+            Is busy field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.isupdated">
+            <summary>
+            Is busy field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.subValue">
+            <summary>
+            Sub value field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.i">
+            <summary>
+            Integer values
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.z">
+            <summary>
+            Integer z value
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.tempaniMator">
+            <summary>
+            Temp field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.boxView">
+            <summary>
+            Box view field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.totalWidth">
+            <summary>
+            Total Width field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.totalHeight">
+            <summary>
+            Total Width field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.j">
+            <summary>
+            Integer j field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.k">
+            <summary>
+            Integer k field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.points">
+            <summary>
+            Points type.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.fromPt">
+            <summary>
+            From point, to point fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.toPt">
+            <summary>
+            From point, to point fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.from">
+            <summary>
+            From , To integer fields
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.to">
+            <summary>
+            From , To integer fields
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.canRefresh">
+            <summary>
+            Can Refresh fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxAnimation.isEnded">
+            <summary>
+            Can Refresh fields.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.#ctor(Android.Content.Context,Com.Syncfusion.Sfbusyindicator.SfBusyIndicator,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BoxAnimation" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="busy">Busy indicator type</param>
+            <param name="isbusy">Boolean type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BoxAnimation" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.#ctor(Android.Content.Context,Android.Util.IAttributeSet,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BoxAnimation" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+            <param name="defStyle">Integer type</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BoxAnimation.Busyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.Initialize(Android.Content.Context)">
+            <summary>
+            Initialize Method.
+            </summary>
+            <param name="con">Context type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.OnAnimationStart(Android.Animation.Animator)">
+            <summary>
+            On Animation Start method.
+            </summary>
+            <param name="animator">Animator type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.OnAnimationEnd(Android.Animation.Animator)">
+            <summary>
+            On Animation End method.
+            </summary>
+            <param name="animator">Animator type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.OnAnimationCancel(Android.Animation.Animator)">
+            <summary>
+            On animation cancel method.
+            </summary>
+            <param name="animator">Animator type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.OnAnimationRepeat(Android.Animation.Animator)">
+            <summary>
+            On animation repeat method.
+            </summary>
+            <param name="animator">Animator type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxAnimation.OnSizeChanged(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            On size changed method
+            </summary>
+            <param name="w">Width value</param>
+            <param name="h">Height value</param>
+            <param name="oldw">Old Width value</param>
+            <param name="oldh">Old Height value</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.BoxView">
+            <summary>
+            Box view class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxView.con">
+            <summary>
+            Context field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxView.index">
+            <summary>
+            Index field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxView.boxAnimation">
+            <summary>
+            Box Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxView.color">
+            <summary>
+            Color field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxView.iconPaint">
+            <summary>
+            Icon paint field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxView.rectWidth">
+            <summary>
+            Rectangle Width,Rectangle Height field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.BoxView.rectHeight">
+            <summary>
+            Rectangle Width,Rectangle Height field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxView.#ctor(Android.Content.Context,Com.Syncfusion.Sfbusyindicator.BoxAnimation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BoxView" /> class. 
+            </summary>
+            <param name="context">Context type</param>
+            <param name="boxAnimation">Box Animation type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxView.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BoxView" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxView.#ctor(Android.Content.Context,Android.Util.IAttributeSet,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.BoxView" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+            <param name="defStyleAttr">Integer type</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BoxView.Index">
+            <summary>
+            Gets or sets the value of Index property.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.BoxView.Color">
+            <summary>
+            Gets or sets the value of Color property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxView.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.BoxView.OnSizeChanged(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            On size Changed method.
+            </summary>
+            <param name="w">Width value</param>
+            <param name="h">Height value</param>
+            <param name="oldw">Old Width value</param>
+            <param name="oldh">Old Height value</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.Content">
+            <summary>
+            Content class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Content.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Content.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.Content" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.Content.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Content.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.DoubleCircleAnimation">
+            <summary>
+            Double circle Animation class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.DoubleCircleAnimation.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.DoubleCircleAnimation.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.DoubleCircleAnimation" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.DoubleCircleAnimation.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.DoubleCircleAnimation.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.DoubleCircleAnimation.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.EcgAnimation">
+            <summary>
+            ECG Animation class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.EcgAnimation.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.EcgAnimation.ecganimate">
+            <summary>
+            ECG animate field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.EcgAnimation.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.EcgAnimation" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.EcgAnimation.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.EcgAnimation.RefreshAnimation">
+            <summary>
+            Refresh method
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.EcgAnimation.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.EcgCircle">
+            <summary>
+            ECG circle class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.EcgCircle.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.EcgCircle.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.EcgCircle" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.EcgCircle.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.EcgCircle.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.EcgLine">
+            <summary>
+            ECG line class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.EcgLine.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.EcgLine.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.EcgLine" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.EcgLine.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.EcgLine.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas method</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.GearBox">
+            <summary>
+            Gear box class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBox.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBox.gearBoxRight">
+            <summary>
+            Gear box right field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBox.gearBoxLeft">
+            <summary>
+            Gear box left field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBox.textView">
+            <summary>
+            Text view field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBox.context">
+            <summary>
+            Context field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBox.width">
+            <summary>
+            Width field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBox.leftLinearLayout">
+            <summary>
+            Left,Right Linear layout fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBox.rightLinearLayout">
+            <summary>
+            Left,Right Linear layout fields.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBox.#ctor(Android.Content.Context)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GearBox" /> class.
+            </summary>
+            <param name="context">Context type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBox.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GearBox" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.GearBox.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBox.RefreshAnimation">
+            <summary>
+            Refresh Animation 
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBox.OnSizeChanged(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            On size changed method
+            </summary>
+            <param name="w">Width value</param>
+            <param name="h">Height value</param>
+            <param name="oldw">Old Width value</param>
+            <param name="oldh">Old Height value</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.GearBoxLeft">
+            <summary>
+            Gear box left class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBoxLeft.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBoxLeft.#ctor(Android.Content.Context)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GearBoxLeft" /> class.
+            </summary>
+            <param name="context">Context type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBoxLeft.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+             Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GearBoxLeft" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.GearBoxLeft.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBoxLeft.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBoxLeft.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.GearBoxRight">
+            <summary>
+            Gear box Right class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBoxRight.sfbusyindicator">
+            <summary>
+            Busy indicator field
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GearBoxRight.width">
+            <summary>
+            Width field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBoxRight.#ctor(Android.Content.Context)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GearBoxRight" /> class.
+            </summary>
+            <param name="context">Context type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBoxRight.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GearBoxRight" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.GearBoxRight.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBoxRight.RefreshAnimation">
+            <summary>
+            Refresh animation 
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GearBoxRight.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.Globe">
+            <summary>
+            Globe class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.animationSet">
+            <summary>
+            Animation sets field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.animationSet1">
+            <summary>
+            Animation sets field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.animationSet2">
+            <summary>
+            Animation sets field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.animationSet3">
+            <summary>
+            Animation sets field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.alphaAnimation1">
+            <summary>
+            Alpha Animation fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.alphaAnimation2">
+            <summary>
+            Alpha Animation fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.alphaAnimation3">
+            <summary>
+            Alpha Animation fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.alphaAnimation4">
+            <summary>
+            Alpha Animation fields.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.globeanimation1">
+            <summary>
+            Globe animations field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.globeanimation2">
+            <summary>
+            Globe animations field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.globeanimation3">
+            <summary>
+            Globe animations field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Globe.globeanimation4">
+            <summary>
+            Globe animations field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Globe.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.Globe" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.Globe.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Globe.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Globe.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.GlobeAnimationBottom">
+            <summary>
+            Globe Animation class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationBottom.sfbusyindicator">
+            <summary>
+            Busy Indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GlobeAnimationBottom.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GlobeAnimationBottom" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.GlobeAnimationBottom.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GlobeAnimationBottom.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On Draw Method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.GlobeAnimationLeft">
+            <summary>
+            Globe Animation Left class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationLeft.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationLeft.alphaAnimation">
+            <summary>
+            Alpha animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationLeft.globeanimation">
+            <summary>
+            Globe Animation field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GlobeAnimationLeft.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GlobeAnimationLeft" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.GlobeAnimationLeft.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GlobeAnimationLeft.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.GlobeAnimationRight">
+            <summary>
+            Globe Animation Right class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationRight.sfbusyindicator">
+            <summary>
+            Busy Indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationRight.alphaAnimation">
+            <summary>
+            Alpha Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationRight.globeanimation">
+            <summary>
+            Globe Animation field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GlobeAnimationRight.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GlobeAnimationRight" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.GlobeAnimationRight.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GlobeAnimationRight.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.GlobeAnimationTop">
+            <summary>
+            Globe animation top class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationTop.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationTop.alphaAnimation">
+            <summary>
+            Alpha Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.GlobeAnimationTop.globeanimation">
+            <summary>
+            Globe Animation field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GlobeAnimationTop.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.GlobeAnimationTop" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.GlobeAnimationTop.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.GlobeAnimationTop.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.Header">
+            <summary>
+            Header class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Header.indicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Header.drawTextCollection">
+            <summary>
+            The draw text collection.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Header.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.Header" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.Header.SfBusyIndicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Header.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox1">
+            <summary>
+            Horizontal Box1 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox1.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox1.rectangleanimation">
+            <summary>
+            Rectangle Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox1.hrs2">
+            <summary>
+            Hours field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox1.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox1" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalBox1.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox1.RefreshIndicator">
+            <summary>
+            Refresh indicator method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox1.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox2">
+            <summary>
+            Horizontal Box2 Class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox2.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox2.rectangleanimation">
+            <summary>
+            Rectangle animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox2.hrs3">
+            <summary>
+            Hours field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox2.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox2" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalBox2.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox2.RefreshIndicator">
+            <summary>
+            Refresh indicator method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox2.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox3">
+            <summary>
+            Horizontal Box3 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox3.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox3.rectangleanimation">
+            <summary>
+            Rectangle Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox3.hrs4">
+            <summary>
+            Hours field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox3.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox3" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalBox3.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox3.RefreshIndicator">
+            <summary>
+            Refresh indicator method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox3.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox4">
+            <summary>
+            Horizontal Box4 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox4.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox4.rectangleanimation">
+            <summary>
+            Rectangle animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox4.hrs5">
+            <summary>
+            Hours field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox4.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox4" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalBox4.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox4.RefreshIndicator">
+            <summary>
+            Refresh slider method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox4.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type.</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox5">
+            <summary>
+            Horizontal Box5 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox5.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox5.rectangleanimation">
+            <summary>
+            Rectangle Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox5.hrs6">
+            <summary>
+            Hours field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox5.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox5" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalBox5.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox5.RefreshIndicator">
+            <summary>
+            Refresh indicator method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox5.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox6">
+            <summary>
+            Horizontal Box6 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox6.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox6.rectangleanimation">
+            <summary>
+            Rectangle Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox6.hrs7">
+            <summary>
+            Hours field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox6.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox6" /> class.
+            </summary>
+            <param name="context">context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalBox6.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox6.RefreshIndicator">
+            <summary>
+            Refresh Indicator method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox6.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox7">
+            <summary>
+            Horizontal Box7 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox7.sfbusyindicator">
+            <summary>
+            Busy Indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox7.rectangleanimation">
+            <summary>
+            Rectangle animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalBox7.hrs1">
+            <summary>
+            Hours field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox7.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalBox7" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalBox7.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox7.RefreshIndicator">
+            <summary>
+            Refresh indicator method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalBox7.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas field.</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingBox">
+            <summary>
+            Horizontal Pulsing Box class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingBox.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingBox.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingBox" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingBox.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property. 
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingBox.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas method.</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft">
+            <summary>
+            Horizontal Pulsing Left class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft.pulsinganimation">
+            <summary>
+            Pulsing Animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft.hpr">
+            <summary>
+            Horizontal pulsing Right field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingLeft.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight">
+            <summary>
+            Horizontal Pulsing Right class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight.sfbusyindicator">
+            <summary>
+            Busy indicator field
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight.pulsinganimation">
+            <summary>
+            Pulsing animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight.hpl">
+            <summary>
+            Horizontal pulsing left field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight.RefreshAnimation">
+            <summary>
+            Refresh animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.HorizontalPulsingRight.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.IsBusyClass">
+            <summary>
+            Is Busy class
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.IsBusyClass.#ctor(Android.Content.Context)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.IsBusyClass" /> class.
+            </summary>
+            <param name="context">Context type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle">
+            <summary>
+            Movie Timer Inner circle class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.sfbusyindicator">
+            <summary>
+            Busy Indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.handler">
+            <summary>
+            Handler field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.paint">
+            <summary>
+            Paint field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.swap">
+            <summary>
+            Swap field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.drawing">
+            <summary>
+            Drawing field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.sweep">
+            <summary>
+            Sweep field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.runnable">
+            <summary>
+            Runnable field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.startAnimation">
+            <summary>
+            Start Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.MovieTimerInnerCircle.Run">
+            <summary>
+            Run method.
+            </summary>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle">
+            <summary>
+            Movie Timer out Circle class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.handler">
+            <summary>
+            Handler field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.paint">
+            <summary>
+            Paint field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.swap">
+            <summary>
+            Swap field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.drawing">
+            <summary>
+            Drawing field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.sweep">
+            <summary>
+            Sweep field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.runnable">
+            <summary>
+            Runnable field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle" /> class.
+            </summary>
+            <param name="context">Context field</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.run">
+            <summary>
+            Run method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.startAnimation">
+            <summary>
+            Start Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.MovieTimerOuterCircle.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.None">
+            <summary>
+            None class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.None.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.None.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.None" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.None.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property.
+            </summary>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.Printer">
+            <summary>
+            Printer class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.Printer.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Printer.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.Printer" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.Printer.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.Printer.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.PrinterAnimation">
+            <summary>
+            Printer Animation class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.PrinterAnimation.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.PrinterAnimation.printeranimation">
+            <summary>
+            Printer Animation field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.PrinterAnimation.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.PrinterAnimation" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.PrinterAnimation.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.PrinterAnimation.RefreshAnimation">
+            <summary>
+            Refresh Animation method
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.PrinterAnimation.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw Method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.PrinterPaper">
+            <summary>
+            Printer paper
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.PrinterPaper.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.PrinterPaper.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.PrinterPaper" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.PrinterPaper.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.PrinterPaper.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.RollingBallAnimation">
+            <summary>
+            Rolling animation class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.RollingBallAnimation.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.RollingBallAnimation.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.RollingBallAnimation" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.RollingBallAnimation.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.RollingBallAnimation.RefreshAnimation">
+            <summary>
+            Refresh animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.RollingBallAnimation.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.RollingBallCircle">
+            <summary>
+            Rolling circle class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.RollingBallCircle.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.RollingBallCircle.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.RollingBallCircle" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.RollingBallCircle.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.RollingBallCircle.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.SingleCircleAnimation">
+            <summary>
+            Single Circle Animation class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SingleCircleAnimation.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SingleCircleAnimation.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.SingleCircleAnimation" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SingleCircleAnimation.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SingleCircleAnimation.RefreshAnimation">
+            <summary>
+            Refresh animation
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SingleCircleAnimation.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.SlicedCircle">
+            <summary>
+            Sliced circle class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.SlicedCircle.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SlicedCircle.#ctor(Android.Content.Context)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.SlicedCircle" /> class.
+            </summary>
+            <param name="context">Context type</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SlicedCircle.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.SlicedCircle" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.SlicedCircle.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SlicedCircle.RefreshAnimation">
+            <summary>
+            Refresh Animation
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.SlicedCircle.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On Draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1">
+            <summary>
+            Zooming Target1 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1.zoomAnimation">
+            <summary>
+            Zoom animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1.zoomingTarget2">
+            <summary>
+            Zooming Target2 field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget1.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2">
+            <summary>
+            Zooming Target2 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2.zoomAnimation">
+            <summary>
+            Zoom animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2.zoomingTarget3">
+            <summary>
+            Zooming target field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget2.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3">
+            <summary>
+            Zooming Target3 Class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3.sfbusyindicator">
+            <summary>
+            Busy Indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3.zoomAnimation">
+            <summary>
+            Zoom animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3.zoomingTarget4">
+            <summary>
+            Zooming target4 field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator value.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3.RefreshAnimation">
+            <summary>
+            Refresh Animation method
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget3.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4">
+            <summary>
+            Zooming target4 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4.zoomAnimation">
+            <summary>
+            Zoom animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4.zoomingTarget5">
+            <summary>
+            Zooming target5 field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of busy indicator property
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4.RefreshAnimation">
+            <summary>
+            Refresh Animation Method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget4.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5">
+            <summary>
+            Zooming target5 class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5.zoomAnimation">
+            <summary>
+            Zooming animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5.zoomingTarget1">
+            <summary>
+            Zooming target1 field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5.RefreshAnimation">
+            <summary>
+            Refresh Animation type
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTarget5.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw Method.
+            </summary>
+            <param name="canvas">Canvas type.</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd">
+            <summary>
+            Zooming Target End class
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd.sfbusyindicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd.zoomAnimation">
+            <summary>
+            Zoom animation field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd.zoomingTarget1">
+            <summary>
+            Zooming target field.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd" /> class.
+            </summary>
+            <param name="context">Context type</param>
+            <param name="attrs">Attribute set</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd.Sfbusyindicator">
+            <summary>
+            Gets or sets the value of Busy indicator property
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd.RefreshAnimation">
+            <summary>
+            Refresh Animation method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.ZoomingTargetEnd.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            On draw Method.
+            </summary>
+            <param name="canvas">Canvas type</param>
+        </member>
+        <member name="T:Com.Syncfusion.Sfbusyindicator.CupertinoView">
+            <summary>
+            Cupertino Animation Class.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.AlphaValue">
+            <summary>
+            The Alpha value.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.ItemNumber">
+            <summary>
+            The Item Number.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.AlphaAnimationValue">
+            <summary>
+            The Alpha Animation Value.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.RotationAngle">
+            <summary>
+            The Rotation Angle.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.busyIndicator">
+            <summary>
+            Busy indicator field.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.isRotate">
+            <summary>
+            The IsRotate boolean variable.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.controller">
+            <summary>
+            The Controller.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.isViewRotated">
+            <summary>
+            The View Rotated boolean variable.
+            </summary>
+        </member>
+        <member name="F:Com.Syncfusion.Sfbusyindicator.CupertinoView.objectAnimator">
+            <summary>
+            The Object Animator.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.CupertinoView.#ctor(Android.Content.Context)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.CupertinoView" /> class.
+            </summary>
+            <param name="context">The Context.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.CupertinoView.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.CupertinoView" /> class.
+            </summary>
+            <param name="context">The Context.</param>
+            <param name="attribute">The attribute.</param>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.CupertinoView.#ctor(Android.Content.Context,Android.Util.IAttributeSet,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.Syncfusion.Sfbusyindicator.CupertinoView" /> class.
+            </summary>
+            <param name="context">The Context.</param>
+            <param name="attribute">The attribute.</param>
+            <param name="definitionStyle">The Definition Style attribute.</param>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.CupertinoView.Visibility">
+            <summary>
+            The Override view states for Visibility.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.CupertinoView.Rotate">
+            <summary>
+            Gets or sets a value indicating whether the animation is rotated.
+            </summary>
+        </member>
+        <member name="P:Com.Syncfusion.Sfbusyindicator.CupertinoView.SfBusyIndicator">
+            <summary>
+            Gets or sets the value of Busy indicator property
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.CupertinoView.StartAnimation">
+            <summary>
+            The Animation Start Method.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.CupertinoView.CancelAnimation">
+            <summary>
+            To Cancel the Animation.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.CupertinoView.OnAttachedToWindow">
+            <summary>
+            Override method for Attached Window.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.CupertinoView.OnDetachedFromWindow">
+            <summary>
+            Override method for Detached Window.
+            </summary>
+        </member>
+        <member name="M:Com.Syncfusion.Sfbusyindicator.CupertinoView.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            Drawing the View for Cupertino.
+            </summary>
+            <param name="canvas">The Canvas.</param>
+        </member>
+    </members>
+</doc>

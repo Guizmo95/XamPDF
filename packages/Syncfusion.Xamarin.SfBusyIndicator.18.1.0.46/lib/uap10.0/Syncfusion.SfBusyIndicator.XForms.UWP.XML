@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.SfBusyIndicator.XForms.UWP</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorMapping">
+            <summary>
+            Sf busy indicator mapping.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorMapping.busyIndicator">
+            <summary>
+            The busy indicator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorMapping.OnSfBusyIndicatorPropertiesChanged(System.String,Syncfusion.SfBusyIndicator.XForms.SfBusyIndicator,Syncfusion.UI.Xaml.Controls.Notification.SfBusyIndicator)">
+            <summary>
+            Raises the sf busy indicator properties changed event.
+            </summary>
+            <param name="propertyName">Property name.</param>
+            <param name="formsBusyIndicator">Forms busy indicator.</param>
+            <param name="nativeBusyIndicator">Native busy indicator.</param>
+        </member>
+        <member name="T:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorRenderer">
+            <summary>
+            Sf busy indicator renderer.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorRenderer.busyIndicator">
+            <summary>
+            The busy indicator.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorRenderer.nativeBusyIndicator">
+            <summary>
+            The native busy indicator.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorRenderer.sfbusyIndicatorMapping">
+            <summary>
+            The sfbusyindicator mapping.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorRenderer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="!:Syncfusion.SfBusyIndicator.XForms.WinPhone.SfBusyIndicatorRenderer"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorRenderer.OnElementChanged(Xamarin.Forms.Platform.UWP.ElementChangedEventArgs{Syncfusion.SfBusyIndicator.XForms.SfBusyIndicator})">
+            <summary>
+            Raises the element changed event.
+            </summary>
+            <param name="e">E.</param>
+        </member>
+        <member name="M:Syncfusion.SfBusyIndicator.XForms.UWP.SfBusyIndicatorRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the element property changed event.
+            </summary>
+            <param name="sender">Sender.</param>
+            <param name="e">E.</param>
+        </member>
+    </members>
+</doc>

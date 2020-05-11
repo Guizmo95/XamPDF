@@ -23,8 +23,8 @@
 	.section	.rodata..L.str.1,"aMS",%progbits,1
 	.type	.L.str.1, %object
 .L.str.1:
-	.asciz	"com.companyname.pdf"
-	.size	.L.str.1, 20
+	.asciz	"XamPdf.pdf"
+	.size	.L.str.1, 11
 	.section	.data.application_config,"aw",%progbits
 	.type	application_config, %object
 	.p2align	2
@@ -38,18 +38,25 @@ application_config:
 	.byte	1
 	/* is_a_bundled_app */
 	.byte	0
+	/* broken_exception_transitions */
+	.byte	0
+	/* bound_exception_type */
+	.byte	1
+	/* package_naming_policy */
+	.zero	2
+	.long	3
 	/* environment_variable_count */
 	.long	12
 	/* system_property_count */
 	.long	0
 	/* android_package_name */
 	.long	.L.str.1
-	.size	application_config, 16
+	.size	application_config, 24
 	.section	.rodata..L.str.2,"aMS",%progbits,1
 	.type	.L.str.2, %object
 .L.str.2:
-	.asciz	"0"
-	.size	.L.str.2, 2
+	.asciz	"none"
+	.size	.L.str.2, 5
 	.section	.data.mono_aot_mode_name,"aw",%progbits
 	.global	mono_aot_mode_name
 mono_aot_mode_name:
@@ -82,7 +89,7 @@ mono_aot_mode_name:
 	.section	.rodata..L.str.8,"aMS",%progbits,1
 	.type	.L.str.8, %object
 .L.str.8:
-	.asciz	"dbf747b2-baf9-43c3-bef1-046c60c3905d"
+	.asciz	"a4321446-86eb-4d85-9b09-fa12b1f48e98"
 	.size	.L.str.8, 37
 	.section	.rodata..L.str.9,"aMS",%progbits,1
 	.type	.L.str.9, %object

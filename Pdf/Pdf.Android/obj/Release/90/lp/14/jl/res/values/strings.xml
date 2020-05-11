@@ -1,1 +1,1 @@
-<resources><string name="library_name">Syncfusion.SfPopupLayout.XForms.Android</string><string name="title">Title</string><string name="popup_message">Popup message</string><string name="accept">ACCEPT</string><string name="decline">DECLINE</string></resources>
+<resources><string name="Hello">Hello World, Click Me!</string><string name="ApplicationName">$projectname$</string><string name="Load_More">Load More</string></resources>

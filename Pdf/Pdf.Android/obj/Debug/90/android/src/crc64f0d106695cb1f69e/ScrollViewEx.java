@@ -10,9 +10,11 @@ public class ScrollViewEx
 	public static final String __md_methods;
 	static {
 		__md_methods = 
+			"n_dispatchConfigurationChanged:(Landroid/content/res/Configuration;)V:GetDispatchConfigurationChanged_Landroid_content_res_Configuration_Handler\n" +
 			"n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler\n" +
 			"n_onAttachedToWindow:()V:GetOnAttachedToWindowHandler\n" +
 			"n_onDetachedFromWindow:()V:GetOnDetachedFromWindowHandler\n" +
+			"n_finalize:()V:GetJavaFinalizeHandler\n" +
 			"n_onInterceptTouchEvent:(Landroid/view/MotionEvent;)Z:GetOnInterceptTouchEvent_Landroid_view_MotionEvent_Handler\n" +
 			"n_dispatchTouchEvent:(Landroid/view/MotionEvent;)Z:GetDispatchTouchEvent_Landroid_view_MotionEvent_Handler\n" +
 			"n_fling:(I)V:GetFling_IHandler\n" +
@@ -55,6 +57,14 @@ public class ScrollViewEx
 	}
 
 
+	public void dispatchConfigurationChanged (android.content.res.Configuration p0)
+	{
+		n_dispatchConfigurationChanged (p0);
+	}
+
+	private native void n_dispatchConfigurationChanged (android.content.res.Configuration p0);
+
+
 	public void onLayout (boolean p0, int p1, int p2, int p3, int p4)
 	{
 		n_onLayout (p0, p1, p2, p3, p4);
@@ -77,6 +87,14 @@ public class ScrollViewEx
 	}
 
 	private native void n_onDetachedFromWindow ();
+
+
+	public void finalize ()
+	{
+		n_finalize ();
+	}
+
+	private native void n_finalize ();
 
 
 	public boolean onInterceptTouchEvent (android.view.MotionEvent p0)

@@ -1,10 +1,14 @@
 Acr.UserDialogs
 AndHUD
 FormsViewGroup
-Pdf
+SQLitePCLRaw.batteries_green
+SQLitePCLRaw.batteries_v2
+SQLitePCLRaw.core
+SQLitePCLRaw.lib.e_sqlite3
+SQLitePCLRaw.provider.e_sqlite3
 Syncfusion.Buttons.XForms.Android
 Syncfusion.Core.XForms.Android
-Syncfusion.Expander.XForms.Android
+Syncfusion.PdfiumBindings
 Syncfusion.SfBusyIndicator.Android
 Syncfusion.SfBusyIndicator.XForms.Android
 Syncfusion.SfImageEditor.XForms.Android
@@ -58,6 +62,8 @@ Xamarin.Android.Support.v7.RecyclerView
 Xamarin.Android.Support.Vector.Drawable
 Xamarin.Android.Support.VersionedParcelable
 Xamarin.Android.Support.ViewPager
+Xamarin.Essentials
 Xamarin.Forms.PancakeView
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
+Pdf

@@ -13,16 +13,33 @@ using Acr.UserDialogs;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Pdf.Views;
+using Android.Content.Res;
 
 namespace Pdf.Droid
 {
-    [Activity(Label = "Pdf", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "XamPdf", Icon = "@mipmap/ic_launcher", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        static AssetManager assets;
+
+        public static AssetManager MyAssets
+        {
+            get
+            {
+                return assets;
+            }
+            set
+            {
+                assets = value;
+            }
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            assets = this.Assets;
 
             this.Window.AddFlags(WindowManagerFlags.Fullscreen | WindowManagerFlags.TurnScreenOn);
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
@@ -35,12 +52,15 @@ namespace Pdf.Droid
                 stBarHeight?.SetValue(this, 0);
             }
 
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
             base.OnCreate(savedInstanceState);
 
             if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.WriteExternalStorage) != (int)Permission.Granted)
             {
                 ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.WriteExternalStorage }, 0);
             }
+
 
             if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.ReadExternalStorage) != (int)Permission.Granted)
             {
@@ -68,17 +88,13 @@ namespace Pdf.Droid
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
             LoadApplication(new App());
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             //Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-
-        
-
-
-
 
     }
 }

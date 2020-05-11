@@ -1,4 +1,5 @@
 ﻿using Pdf.controls;
+using Pdf.Enumerations;
 using Pdf.Interfaces;
 using Pdf.Models;
 using Syncfusion.ListView.XForms;
@@ -17,70 +18,64 @@ namespace Pdf.ViewModels
     public class DocumentViewModel : BaseViewModel
     {
         private readonly SfPopupLayout deleteFilePopup;
-        private readonly SfPopupLayout getInfoFilePopup;
-        private readonly PdfPropertyPopup pdfPropertyPopup;
-        private Command favoritesImageCommand;
-        private Command deleteImageCommand;
-        private Command infoDocumentCommand;
-        private ObservableCollection<FileModel> documents;
+        private Command<int> favoritesImageCommand;
+        private Command<int> deleteImageCommand;
+        private static ObservableCollection<FileModel> documents;
         internal SfListView sfListView;
 
         private string filePathToDelete;
-        private int itemIndex;
+        private FileModel itemToRemove;
 
         private readonly IPdfPickerAndroid pdfPickerAndroid;
-        
 
-        public ObservableCollection<FileModel> Documents 
+        public static ObservableCollection<FileModel> Documents
         {
             get { return documents; }
-            set { SetProperty(ref documents, value); }
-        }
-        public int ItemIndex
-        {
-            get { return itemIndex; }
-            set { SetProperty(ref itemIndex, value); }
+            set { documents = value; }
         }
 
-        public Command FavoritesImageCommand
+        public FileModel ItemToRemove
+        {
+            get { return itemToRemove; }
+            set { SetProperty(ref itemToRemove, value); }
+        }
+
+        public Command<int> FavoritesImageCommand
         {
             get { return favoritesImageCommand; }
             protected set { SetProperty(ref favoritesImageCommand, value); }
         }
 
-        public Command DeleteImageCommand
+        public Command<int> DeleteImageCommand
         {
             get { return deleteImageCommand; }
             protected set { SetProperty(ref deleteImageCommand, value); }
         }
 
-        public Command InfoDocumentCommand
-        {
-            get { return infoDocumentCommand; }
-            protected set { SetProperty(ref infoDocumentCommand, value);}
-        }
-
         public DocumentViewModel()
         {
+            App.Database.DeleteAllItemAsync();
+
             pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
 
             Documents = new ObservableCollection<FileModel>();
-            var favoriteFiles = App.Database.GetItemsAsync().Result;
+            FavoritesDocumentViewModel.FavoritesDocuments = new ObservableCollection<FileModel>(App.Database.GetItemsAsync().Result);
 
             int i = 0;
             pdfPickerAndroid.GetPdfFilesInDocuments().ForEach(delegate (FileInfo fileInfo)
             {
                 var fileModel = new FileModel()
                 {
-                    ItemIndex = i,
+                    ItemIndexInDocumentList = i,
                     FileName = fileInfo.Name,
                     CreationTime = fileInfo.CreationTime.Date,
                     FileLenght = fileInfo.Length,
                     FilePath = fileInfo.FullName,
                 };
 
-                if ((favoriteFiles.Any(x => x.FileName == fileInfo.Name) == true)){
-                    fileModel.IsFavorite = true;                
+                if ((FavoritesDocumentViewModel.FavoritesDocuments.Any(x => x.FilePath == fileInfo.FullName) == true))
+                {
+                    fileModel.IsFavorite = true;
                 }
                 else
                 {
@@ -108,7 +103,7 @@ namespace Pdf.ViewModels
                 popupContent.VerticalTextAlignment = TextAlignment.Center;
                 popupContent.Padding = new Thickness(20);
                 popupContent.LineBreakMode = LineBreakMode.MiddleTruncation;
-                popupContent.Text = string.Format("{0} will be deleted !", Documents[ItemIndex].FileName);
+                popupContent.Text = string.Format("{0} will be deleted !", itemToRemove.FileName);
                 popupContent.TextColor = Color.Black;
                 popupContent.FontSize = 13.5;
                 popupContent.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
@@ -154,68 +149,48 @@ namespace Pdf.ViewModels
             // Adding FooterTemplate of the SfPopupLayout
             deleteFilePopup.PopupView.FooterTemplate = footerTemplateViewDeletePopup;
 
-            getInfoFilePopup = new SfPopupLayout();
-            getInfoFilePopup.PopupView.IsFullScreen = true;
-            getInfoFilePopup.PopupView.AnimationDuration = 200;
-            getInfoFilePopup.PopupView.AnimationMode = AnimationMode.SlideOnBottom;
-            getInfoFilePopup.PopupView.PopupStyle.CornerRadius = 0;
-            getInfoFilePopup.PopupView.PopupStyle.BorderThickness = 2;
-            getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.White;
-            getInfoFilePopup.PopupView.ShowFooter = false;
-            getInfoFilePopup.Closing += GetInfoFilePopup_Closing;
-
-            pdfPropertyPopup = new PdfPropertyPopup();
-
-            DataTemplate templateViewGetInfoPopup = new DataTemplate(() =>
-            {
-                return pdfPropertyPopup;
-            });
-
-            DataTemplate headerTemplateViewGetInfoPopup = new DataTemplate(() =>
-            {
-                Label title = new Label();
-                title.Text = "Properties";
-                title.FontSize = 18;
-                title.FontFamily = "GothamBold.ttf#GothamBold";
-                title.VerticalTextAlignment = TextAlignment.Center;
-                title.HorizontalTextAlignment = TextAlignment.Center;
-                title.TextColor = Color.FromHex("#4e4e4e");
-
-                return title;
-            });
-
-            // Adding ContentTemplate of the SfPopupLayout
-            getInfoFilePopup.PopupView.ContentTemplate = templateViewGetInfoPopup;
-
-            // Adding HeaderTemplate of the SfPopupLayout
-            getInfoFilePopup.PopupView.HeaderTemplate = headerTemplateViewGetInfoPopup;
-
-            deleteImageCommand = new Command(Delete);
-            infoDocumentCommand = new Command<int>((int itemIndex) => GetInfoDocument(itemIndex));
-            favoritesImageCommand = new Command(SetFavorites);
+            deleteImageCommand = new Command<int>((int itemIndex) => Delete(itemIndex));
+            favoritesImageCommand = new Command<int>((int itemIndex) => SetFavorites(itemIndex));
         }
 
-        private void GetInfoFilePopup_Closing(object sender, Syncfusion.XForms.Core.CancelEventArgs e)
-        {
-            sfListView.ResetSwipe();
-        }
-
-        private void DeclinePopupButton_Clicked(object sender, EventArgs e)
+        public void DeclinePopupButton_Clicked(object sender, EventArgs e)
         {
             deleteFilePopup.IsOpen = false;
             sfListView.ResetSwipe();
         }
 
-        private void AcceptPopupButton_Clicked(object sender, System.EventArgs e)
+        public void AcceptPopupButton_Clicked(object sender, System.EventArgs e)
         {
-            if(String.IsNullOrEmpty(filePathToDelete) != true)
+            if (String.IsNullOrEmpty(filePathToDelete) != true)
             {
                 File.Delete(filePathToDelete);
 
-                if (ItemIndex >= 0)
-                    Documents.RemoveAt(ItemIndex);
+                if (itemToRemove != null)
+                {
+                    Documents.Remove(itemToRemove);
 
-                Documents.ToList().ForEach(c => c.Id = c.Id - 1);
+                    Documents.ToList().ForEach(delegate (FileModel fileModel)
+                    {
+                        if (fileModel.ItemIndexInDocumentList > itemToRemove.ItemIndexInDocumentList)
+                        {
+                            fileModel.ItemIndexInDocumentList = fileModel.ItemIndexInDocumentList - 1;
+                        }
+                    });
+
+                    if (FavoritesDocumentViewModel.FavoritesDocuments.Contains(itemToRemove) == true)
+                    {
+                        FavoritesDocumentViewModel.FavoritesDocuments.Remove(ItemToRemove);
+
+                        FavoritesDocumentViewModel.FavoritesDocuments.ToList().ForEach(delegate (FileModel fileModel)
+                        {
+                            if (fileModel.ItemIndexInFavoriteDocumentList > itemToRemove.ItemIndexInFavoriteDocumentList)
+                            {
+                                fileModel.ItemIndexInFavoriteDocumentList = fileModel.ItemIndexInFavoriteDocumentList - 1;
+                            }
+                        });
+
+                    }
+                }
 
                 deleteFilePopup.IsOpen = false;
             }
@@ -223,60 +198,44 @@ namespace Pdf.ViewModels
             sfListView.ResetSwipe();
         }
 
-        private void Delete()
+        public void Delete(int itemIndex)
         {
             deleteFilePopup.IsOpen = true;
 
-            filePathToDelete = Documents[ItemIndex].FilePath;
+            filePathToDelete = itemToRemove.FilePath;
         }
 
-        private void GetInfoDocument(int itemIndex)
+        public void SetFavorites(int itemIndex)
         {
-            using (Stream docStream = new FileStream(Documents[itemIndex].FilePath, FileMode.Open))
+            if (itemIndex >= 0)
             {
-                using (PdfLoadedDocument document = new PdfLoadedDocument(docStream))
+                var item = Documents[itemIndex];
+                if (item.IsFavorite == true)
                 {
-                    IList<DocumentInfoListViewModel> documentInfoListViewModels = new List<DocumentInfoListViewModel>();
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Filename", Documents[itemIndex].FileName));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Pages numbers", document.PageCount.ToString()));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Author", document.DocumentInformation.Author));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Creation date", document.DocumentInformation.CreationDate.ToString()));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Creator", document.DocumentInformation.Creator));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Keywords", document.DocumentInformation.Keywords));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Subject", document.DocumentInformation.Subject));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Title", document.DocumentInformation.Title));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Last modification", document.DocumentInformation.ModificationDate.ToString()));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Creation date", Documents[ItemIndex].CreationDate));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("Producer", document.DocumentInformation.Producer));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("File size", Documents[ItemIndex].Size));
-                    documentInfoListViewModels.Add(new DocumentInfoListViewModel("File path", Documents[ItemIndex].FilePath));
-
-                    pdfPropertyPopup.PdfPropertyListView.ItemsSource = documentInfoListViewModels;
-
-                    getInfoFilePopup.IsOpen = true;
-                }
-            }
-        }
-
-        private void SetFavorites()
-        {
-            if (ItemIndex >= 0)
-            {
-                var item = Documents[ItemIndex];
-                if(item.IsFavorite == true)
-                {
-                    item.IsFavorite = false;
+                    Documents[Documents.IndexOf(item)].IsFavorite = false;
                     App.Database.DeleteItemAsync(item);
-
+                    FavoritesDocumentViewModel.FavoritesDocuments.Remove(item);
+                    DependencyService.Get<IToastMessage>().ShortAlert("File removed from favorites");
                 }
                 else
                 {
-                    item.IsFavorite = true;
                     App.Database.SaveItemAsync(item);
+                    Documents[Documents.IndexOf(item)].IsFavorite = true;
+                    item.IsFavorite = true;
+                    //item.ItemIndex = FavoritesDocuments.Last().ItemIndex + 1;
+                    if (FavoritesDocumentViewModel.FavoritesDocuments.Count != 0)
+                        item.ItemIndexInFavoriteDocumentList += 1;
+                    else
+                        if (FavoritesDocumentViewModel.FavoritesDocuments.Count == 0)
+                            item.ItemIndexInFavoriteDocumentList = 0;
+
+                    FavoritesDocumentViewModel.FavoritesDocuments.Add(item);
+
+                    DependencyService.Get<IToastMessage>().ShortAlert("File added to favorites");
                 }
             }
             sfListView.ResetSwipe();
-            DependencyService.Get<IToastMessage>().ShortAlert("File added to favorites");
         }
     }
 }
+

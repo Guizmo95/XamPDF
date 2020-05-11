@@ -68,9 +68,9 @@
               "target": "Package",
               "version": "[18.1.0.43, )"
             },
-            "Syncfusion.Xamarin.Expander": {
+            "Syncfusion.Xamarin.Core": {
               "target": "Package",
-              "version": "[18.1.0.43, )"
+              "version": "[18.1.0.46, )"
             },
             "Syncfusion.Xamarin.SfImageEditor": {
               "target": "Package",
@@ -78,7 +78,7 @@
             },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
-              "version": "[18.1.0.42, )"
+              "version": "[18.1.0.46, )"
             },
             "Syncfusion.Xamarin.SfNavigationDrawer": {
               "target": "Package",
@@ -86,7 +86,7 @@
             },
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
-              "version": "[17.4.0.55, )"
+              "version": "[18.1.0.46, )"
             },
             "Syncfusion.Xamarin.SfPopupLayout": {
               "target": "Package",
@@ -98,7 +98,7 @@
             },
             "Syncfusion.Xamarin.SfRangeSlider": {
               "target": "Package",
-              "version": "[18.1.0.43, )"
+              "version": "[18.1.0.46, )"
             },
             "Syncfusion.Xamarin.SfRotator": {
               "target": "Package",
@@ -112,9 +112,13 @@
               "target": "Package",
               "version": "[5.11.4, )"
             },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.1, )"
+            },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.617, )"
+              "version": "[4.5.0.657, )"
             },
             "Xamarin.Forms.PancakeView": {
               "target": "Package",

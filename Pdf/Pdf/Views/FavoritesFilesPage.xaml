@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Helpers" xmlns:controls="clr-namespace:Pdf.controls"
+             mc:Ignorable="d"
+              xmlns:effects="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
+             x:Class="Pdf.Views.FavoritesFilesPage" Shell.NavBarIsVisible="True" x:Name="DocumentsListPage" Shell.NavBarHasShadow="True" Shell.FlyoutBehavior="Flyout">
+
+    <Shell.TitleView>
+        <StackLayout BackgroundColor="#c62828" 
+                             Orientation="Horizontal" Grid.Row="0">
+            <ImageButton IsVisible="False" x:Name="clearSearchBar" 
+                            HeightRequest="25" 
+                            WidthRequest="25" 
+                            HorizontalOptions="Start" 
+                            Source="outline_arrow_back_24.xml"
+                            BackgroundColor="Transparent" Clicked="ClearSearchBar_Clicked">
+            </ImageButton>
+            <Label x:Name="headerLabel" 
+                           HeightRequest="50" 
+                           HorizontalTextAlignment="Center" 
+                           VerticalTextAlignment="Center" 
+                           Text="Welcome" 
+                           FontSize="16" 
+                           TextColor="White"
+                           FontFamily="GothamBold.ttf#GothamBold"
+                           />
+            <controls:SearchBarCustom x:Name="filterDocument"
+                          IsVisible="false"
+                          Placeholder="Search" HorizontalOptions="FillAndExpand" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="16" WidthRequest="200"/>
+            <ImageButton x:Name="searchButton" 
+                            HeightRequest="25" 
+                            WidthRequest="25" 
+                            HorizontalOptions="EndAndExpand" 
+                            Source="outline_search_24.xml" BackgroundColor="Transparent" Margin="0,0,6,0" Clicked="SearchButton_Clicked"/>
+            <ImageButton x:Name="sortButton" 
+                            HeightRequest="25" 
+                            WidthRequest="25" 
+                            HorizontalOptions="End" 
+                            Source="baseline_sort_24.xml"
+                            Margin="0,0,10,0" BackgroundColor="Transparent" Clicked="SortButton_Clicked"/>
+        </StackLayout>
+    </Shell.TitleView>
+    
+    <ContentPage.Behaviors >
+        <local:SfBehaviorFavoritesPage x:Name="behavior"/>
+    </ContentPage.Behaviors>
+
+    <AbsoluteLayout VerticalOptions="Fill">
+        <syncfusion:SfListView  AllowSwiping="True" x:Name="FavoriteDocumentListView" BackgroundColor="White" SelectionMode="Single"
+                                                        ItemSize="67" HorizontalOptions="FillAndExpand" >
+            <syncfusion:SfListView.SelectedItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <effects:SfEffectsView x:Name="effectsView"
+                                       SelectionColor="Transparent"
+                                       RippleAnimationDuration="280" FadeOutRipple="True" IsSelected="True" RippleColor="#c62828">
+                            <effects:SfEffectsView.Behaviors>
+                                <local:DocumentListViewBehavior/>
+                            </effects:SfEffectsView.Behaviors>
+                            <Grid Margin="0,6,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.5"/>
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="35"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="55"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="baseline_picture_as_pdf_24.xml" HeightRequest="33" WidthRequest="28" Margin="10,4,5,3" VerticalOptions="Center" Aspect="AspectFill" Grid.Column="0" Grid.Row="0"/>
+                                    <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="1" Margin="0,0,0,0" Grid.Row="0">
+                                        <Label Text="{Binding FileName}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="13" TextColor="#4e4e4e" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Margin="0,0,4,0"/>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                            <Label Text="{Binding CreationTime, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="9.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="9.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="35" Grid.Column="2" Margin="0,0,13,0" Grid.Row="0">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInFavoriteDocumentList}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                                <BoxView Grid.Row="1" BackgroundColor="#828282" Margin="56,0,0,0"/>
+                            </Grid>
+                        </effects:SfEffectsView>
+                    </ViewCell>
+                </DataTemplate>
+            </syncfusion:SfListView.SelectedItemTemplate>
+
+            <syncfusion:SfListView.RightSwipeTemplate>
+                <DataTemplate x:Name="RightSwipeTemplate">
+                    <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="61"/>
+                        </Grid.RowDefinitions>
+                        <Grid BackgroundColor="#009EDA" HorizontalOptions="End" VerticalOptions="Fill" Grid.Row="0" ColumnSpacing="0" x:Name="SwipeCommands">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="60"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid BackgroundColor="#9e9e9e" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Image
+                                   WidthRequest="60" HorizontalOptions="Center" VerticalOptions="Center"
+                                   BackgroundColor="Transparent"
+                                   Source="baseline_description_24.xml">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding InfoDocumentCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInFavoriteDocumentList}" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                            </Grid>
+                            <Grid  HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="1">
+                                <Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                    <Image BackgroundColor="Transparent"
+                                   WidthRequest="60" HorizontalOptions="Center" VerticalOptions="Center"
+                                   Source="{Binding FavoriteImage}" Aspect="AspectFit">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteFromFavoritesCommand, Source={x:Reference FavoriteDocumentListView}}" CommandParameter="{Binding ItemIndexInFavoriteDocumentList}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                            </Grid>
+                            <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="2">
+                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Image 
+                                   WidthRequest="60" HorizontalOptions="Center" VerticalOptions="Center"
+                                   BackgroundColor="Transparent"
+                                   Source="baseline_delete_24.xml">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteImageCommand, Source={x:Reference FavoriteDocumentListView}}" CommandParameter="{Binding ItemIndexInFavoriteDocumentList}" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.RightSwipeTemplate>
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="0,6,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.5"/>
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="35"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="55"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="baseline_picture_as_pdf_24.xml" HeightRequest="33" WidthRequest="28" Margin="10,4,5,3" VerticalOptions="Center" Aspect="AspectFill" Grid.Column="0" Grid.Row="0"/>
+                                <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="1" Margin="0,0,0,0" Grid.Row="0">
+                                    <Label Text="{Binding FileName}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="13" TextColor="#4e4e4e" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Margin="0,0,4,0"/>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                        <Label Text="{Binding CreationTime, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="9.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                        <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="9.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="35" Grid.Column="2" Margin="0,0,13,0" Grid.Row="0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInFavoriteDocumentList}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                            <BoxView Grid.Row="1" BackgroundColor="#828282" Margin="56,0,0,0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+        <BoxView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
+    BackgroundColor="Transparent" IsVisible="False"
+    InputTransparent="false" x:Name="filter"/>
+        <ActivityIndicator x:Name="activityIndicator" Color="#c62828" IsRunning="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1" />
+    </AbsoluteLayout>
+</ContentPage>
