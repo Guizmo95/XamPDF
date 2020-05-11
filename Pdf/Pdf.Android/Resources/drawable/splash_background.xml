@@ -7,7 +7,7 @@
   </item>
   <item>
     <bitmap
-    android:src="@drawable/ic_picture_as_pdf"
+    android:src="@drawable/ic_file"
     android:tileMode="disabled"
     android:gravity="center" 
     />

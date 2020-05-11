@@ -1598,3 +1598,9 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Rele
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-xhdpi\ic_picture_as_pdf.png
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-xxhdpi\ic_picture_as_pdf.png
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-xxxhdpi\ic_picture_as_pdf.png
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-mdpi\ic_launcher.png
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-hdpi\ic_file.png
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-mdpi\ic_file.png
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-xhdpi\ic_file.png
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-xxhdpi\ic_file.png
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Release\90\res\drawable-xxxhdpi\ic_file.png

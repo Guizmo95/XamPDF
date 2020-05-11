@@ -1,2 +1,2 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">"
-  <item><color android:color="#F5F5F5" /></item><item><bitmap android:src="@drawable/ic_picture_as_pdf" android:tileMode="disabled" android:gravity="center" /></item></layer-list>
+  <item><color android:color="#F5F5F5" /></item><item><bitmap android:src="@drawable/ic_file" android:tileMode="disabled" android:gravity="center" /></item></layer-list>
