@@ -8,27 +8,27 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms"
              xmlns:controls="clr-namespace:Pdf.controls"
              xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:views="clr-namespace:Pdf.Views" xmlns:effectsView="clr-namespace:Syncfusion.XForms.PlatformConfiguration.UWPSpecific;assembly=Syncfusion.Core.XForms" x:Name="pdfViewer">
+             xmlns:views="clr-namespace:Pdf.Views" x:Name="pdfViewer">
 
     <AbsoluteLayout VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
 
         <controls1:PancakeView IsVisible="True" HeightRequest="45" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar"  AbsoluteLayout.LayoutBounds="0,0,1,AutoSize"   
            AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional"  >
             <Grid x:Name="bottomLayout">
-                <StackLayout x:Name="searchBar" IsVisible="False" Spacing="9" HorizontalOptions="FillAndExpand" Orientation="Horizontal" VerticalOptions="Center" Margin="10,0,10,0">
-                    <ImageButton Clicked="CancelSearchButton_Clicked" Padding="2" x:Name="cancelSearchButton" BackgroundColor="#fafafa" Source="outline_clear_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
+                <StackLayout x:Name="searchBar" IsVisible="False" Spacing="9" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="10,0,10,0" VerticalOptions="Center">
+                    <ImageButton Clicked="CancelSearchButton_Clicked" Padding="2" x:Name="cancelSearchButton" BackgroundColor="#fafafa" Source="outlineClearViewer.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
                     <Entry TextChanged="TextSearchEntry_TextChanged" HeightRequest="38" Completed="TextSearchEntry_Completed" x:Name="textSearchEntry" HorizontalTextAlignment="Center" FontFamily="GothamMedium_1.ttf#GothamMedium_1" HorizontalOptions="FillAndExpand" FontSize="18" VerticalOptions="Center" Placeholder="Search"/>
                     <ImageButton Clicked="SearchPreviousButton_Clicked" IsVisible="False"  x:Name="searchPreviousButton" BackgroundColor="#fafafa" Source="baseline_navigate_before_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center" />
                     <ImageButton Clicked="SearchNextButton_Clicked" IsVisible="False"  x:Name="searchNextButton" BackgroundColor="#fafafa" Source="baseline_navigate_next_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center" />
                 </StackLayout>
-                <StackLayout Spacing="9" HorizontalOptions="End" Orientation="Horizontal" VerticalOptions="Center" Margin="0,0,10,0" x:Name="topMainBar">
-                    <controls:IconView IsVisible="False"  x:Name="UndoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_undo_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
-                    <controls:IconView IsVisible="False"  x:Name="RedoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_redo_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
-                    <controls:IconView IsVisible="False"  x:Name="ValidButton" Foreground="White" BackgroundColor="#fafafa" Source="twotone_done_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
-                    <ImageButton Clicked="ViewModeButton_Clicked"  Padding="2" x:Name="viewModeButton" BackgroundColor="#fafafa" Source="baseline_view_carousel_24.xml" WidthRequest="36" HeightRequest="36"    VerticalOptions="Center"/>
-                    <ImageButton Clicked="BookmarkButton_Clicked"  Padding="2" x:Name="bookmarkButton" BackgroundColor="#fafafa" Source="baseline_bookmark_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
-                    <ImageButton Clicked="SearchButton_Clicked" Padding="2" x:Name="searchButton" BackgroundColor="#fafafa" Source="outline_search_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
-                    <ImageButton  Padding="2" x:Name="moreOptionButton" BackgroundColor="#fafafa" Source="baseline_more_vert_24.xml" WidthRequest="33" HeightRequest="33"  VerticalOptions="Center" Margin="4,0,0,0"/>
+                <StackLayout Spacing="9" HorizontalOptions="End" Orientation="Horizontal"  Margin="0,0,10,0" x:Name="topMainBar" VerticalOptions="Center">
+                    <controls:IconView IsVisible="False"  x:Name="UndoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_undo_24.xml" WidthRequest="33" HeightRequest="33" />
+                    <controls:IconView IsVisible="False"  x:Name="RedoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_redo_24.xml" WidthRequest="33" HeightRequest="33"/>
+                    <controls:IconView IsVisible="False"  x:Name="ValidButton" Foreground="White" BackgroundColor="#fafafa" Source="twotone_done_24.xml" WidthRequest="33" HeightRequest="33"/>
+                    <ImageButton Clicked="ViewModeButton_Clicked"  Padding="2" x:Name="viewModeButton" BackgroundColor="#fafafa" Source="baseline_view_carousel_24.xml" WidthRequest="37" HeightRequest="37"/>
+                    <ImageButton Clicked="BookmarkButton_Clicked"  Padding="2" x:Name="bookmarkButton" BackgroundColor="#fafafa" Source="baseline_bookmark_24.xml" WidthRequest="33" HeightRequest="33"/>
+                    <ImageButton Clicked="SearchButton_Clicked" Padding="2" x:Name="searchButton" BackgroundColor="#fafafa" Source="outline_search_24.xml" WidthRequest="33" HeightRequest="33"/>
+                    <ImageButton  Padding="2" x:Name="moreOptionButton" BackgroundColor="#fafafa" Source="baseline_more_vert_24.xml" WidthRequest="33" HeightRequest="33"  Margin="4,0,0,0"/>
                 </StackLayout>
             </Grid>
         </controls1:PancakeView>
@@ -37,25 +37,76 @@
               <syncfusion:SfPdfViewer x:Name="pdfViewerControl" PageViewMode="PageByPage" Margin="0,45,0,45"/>
         </Grid>
 
-        <controls1:PancakeView IsVisible="True" HeightRequest="45" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="bottomMainToolbar"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
+        <controls1:PancakeView IsVisible="True" HeightRequest="45" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" x:Name="bottomMainBar" HasShadow="true"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
            AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional">
-                    <Grid x:Name="bottomGrid" >
-                        <StackLayout Spacing="9" HorizontalOptions="Center" Orientation="Horizontal" VerticalOptions="Center">
-                            <ImageButton Clicked="FreeTextButton_Clicked" Padding="2" x:Name="freeTextButton" BackgroundColor="#fafafa" Source="twotone_title_24.xml" WidthRequest="33" HeightRequest="33"  VerticalOptions="Center"/>
-                            <ImageButton Clicked="InkButton_Clicked" Padding="2" x:Name="inkButton" BackgroundColor="#fafafa" Source="twotone_gesture_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
-                            <ImageButton Clicked="ShapeButton_Clicked" Padding="2" x:Name="shapeButton" BackgroundColor="#fafafa" Source="twotone_toll_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center"/>
-                            <ImageButton Clicked="TextMarkupButton_Clicked" Padding="2" x:Name="textMarkupButton" BackgroundColor="#fafafa" Source="twotone_format_strikethrough_24.xml" WidthRequest="33" HeightRequest="33" VerticalOptions="Center"/>
-                        </StackLayout>
-                        <StackLayout Spacing="7" HorizontalOptions="EndAndExpand" Orientation="Horizontal" Margin="0,0,12,0">
-                            <ImageButton Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="twotone_create_24.xml" WidthRequest="32" HeightRequest="32"    VerticalOptions="Center"/>
-                            <ImageButton Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="twotone_branding_watermark_24.xml" WidthRequest="33" HeightRequest="33"  VerticalOptions="Center"/>
-                        </StackLayout>
-                    </Grid>
-                </controls1:PancakeView>
+            <StackLayout VerticalOptions="Center">
+                <Grid x:Name="bottomMainToolbar" BackgroundColor="#fafafa">
+                    <StackLayout Spacing="9" HorizontalOptions="Center" Orientation="Horizontal" Margin="0,0,12,0" VerticalOptions="Center">
+                        <ImageButton Clicked="FreeTextButton_Clicked" Padding="2" x:Name="freeTextButton" BackgroundColor="#fafafa" Source="twotone_title_24.xml" WidthRequest="33" HeightRequest="33"  />
+                        <ImageButton Clicked="InkButton_Clicked" Padding="2" x:Name="inkButton" BackgroundColor="#fafafa" Source="twotone_gesture_24.xml" WidthRequest="33" HeightRequest="33"/>
+                        <ImageButton Clicked="ShapeButton_Clicked" Padding="2" x:Name="shapeButton" BackgroundColor="#fafafa" Source="twotone_toll_24.xml" WidthRequest="33" HeightRequest="33"/>
+                        <ImageButton Clicked="TextMarkupButton_Clicked" Padding="2" x:Name="textMarkupButton" BackgroundColor="#fafafa" Source="twotone_format_strikethrough_24.xml" WidthRequest="33" HeightRequest="33" />
+                    </StackLayout>
+                    <StackLayout Spacing="7" HorizontalOptions="EndAndExpand" Orientation="Horizontal" Margin="0,0,12,0" VerticalOptions="Center">
+                        <ImageButton Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="twotone_create_24.xml" WidthRequest="32" HeightRequest="32"/>
+                        <ImageButton Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="twotone_branding_watermark_24.xml" WidthRequest="33" HeightRequest="33"/>
+                    </StackLayout>
+                </Grid>
 
-        <controls1:PancakeView HeightRequest="45" IsVisible="False" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="textMarkupToolbar"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
+                <Grid x:Name="textMarkupToolbar" IsVisible="False" BackgroundColor="#fafafa"> 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0">
+                        <ImageButton Clicked="BackButtonTextMarkupToolbar_Clicked" Padding="2" x:Name="backButtonTextMarkupToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32"    VerticalOptions="Center"/>
+                        <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center">
+                        <ImageButton Clicked="StrikethroughtButton_Clicked" BackgroundColor="#fafafa" x:Name="strikethroughtButton" Source="ic_strikethrough.png" WidthRequest="33" HeightRequest="33" />
+                        <ImageButton Clicked="UnderlineButton_Clicked" BackgroundColor="#fafafa" x:Name="underlineButton" Source="ic_underline.png" WidthRequest="32" HeightRequest="32" />
+                        <ImageButton Clicked="HightlightButton_Clicked" BackgroundColor="#fafafa" x:Name="hightlightButton" Source="ic_edit.png" WidthRequest="32" HeightRequest="32" />
+                    </StackLayout>
+                </Grid>
+
+                <Grid x:Name="shapeToolbar" IsVisible="False" BackgroundColor="#fafafa">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0" VerticalOptions="Center">
+                        <ImageButton Clicked="BackButtonShapeToolbar_Clicked" Padding="2" x:Name="backButtonShapeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32"    VerticalOptions="Center"/>
+                        <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton Clicked="CircleButton_Clicked"  BackgroundColor="#fafafa" x:Name="circleButton" Source="ic_ui.png" WidthRequest="33" HeightRequest="33" />
+                        <ImageButton Clicked="LineButton_Clicked" BackgroundColor="#fafafa" x:Name="lineButton" Source="ic_square.png" WidthRequest="32" HeightRequest="32" />
+                        <ImageButton Clicked="ArrowButton_Clicked" BackgroundColor="#fafafa" x:Name="arrowButton" Source="ic_directional.png" WidthRequest="32" HeightRequest="32" />
+                        <ImageButton Clicked="RectangleButton_Clicked" BackgroundColor="#fafafa" x:Name="rectangleButton" Source="ic_math.png" WidthRequest="32" HeightRequest="32" />
+                    </StackLayout>
+                </Grid>
+
+
+                <Grid x:Name="annotationTypeToolbar" IsVisible="False" BackgroundColor="#fafafa">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0" VerticalOptions="Center">
+                        <ImageButton Clicked="BackButtonAnnotationTypeToolbar_Clicked" Padding="2" x:Name="backButtonAnnotationTypeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"/>
+                        <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" HeightRequest="30"/>
+                        <Image x:Name="imageAnnotationType" BackgroundColor="#fafafa" WidthRequest="36" HeightRequest="36" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <views:ColorPicker Grid.Column="1" x:Name="colorPicker" VerticalOptions="Center" Margin="0,0,6,0" HorizontalOptions="End"/>
+                    <controls:IconView IsVisible="False" Grid.Column="1" Foreground="{Binding SelectedColor}" Margin="0,0,11,0" x:Name="paletteButton"  Source="baseline_palette_24.xml" WidthRequest="32" HeightRequest="32" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+            </StackLayout>
+            
+        </controls1:PancakeView>
+
+        <!--<controls1:PancakeView HeightRequest="45" IsVisible="False" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="textMarkupToolbar"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
            AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional">
-                    <Grid>
+                    <Grid x:Name="textMarkupToolbar">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="*"/>
@@ -70,36 +121,36 @@
                             <ImageButton Clicked="HightlightButton_Clicked" BackgroundColor="#fafafa" x:Name="hightlightButton" Source="ic_edit.png" WidthRequest="32" HeightRequest="32" />
                         </StackLayout>
                     </Grid>
-                </controls1:PancakeView>
+                </controls1:PancakeView>-->
 
-        <controls1:PancakeView HeightRequest="45" IsVisible="False" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="shapeToolbar"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
+        <!--<controls1:PancakeView HeightRequest="45" IsVisible="False" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="shapeToolbar"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
            AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional">
-                    <Grid>
+                    <Grid x:Name="shapeToolbar">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0">
+                        <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0" VerticalOptions="Center">
                             <ImageButton Clicked="BackButtonShapeToolbar_Clicked" Padding="2" x:Name="backButtonShapeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32"    VerticalOptions="Center"/>
                             <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" />
                         </StackLayout>
-                        <StackLayout Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                             <ImageButton Clicked="CircleButton_Clicked"  BackgroundColor="#fafafa" x:Name="circleButton" Source="ic_ui.png" WidthRequest="33" HeightRequest="33" />
                             <ImageButton Clicked="LineButton_Clicked" BackgroundColor="#fafafa" x:Name="lineButton" Source="ic_square.png" WidthRequest="32" HeightRequest="32" />
                             <ImageButton Clicked="ArrowButton_Clicked" BackgroundColor="#fafafa" x:Name="arrowButton" Source="ic_directional.png" WidthRequest="32" HeightRequest="32" />
                             <ImageButton Clicked="RectangleButton_Clicked" BackgroundColor="#fafafa" x:Name="rectangleButton" Source="ic_math.png" WidthRequest="32" HeightRequest="32" />
                         </StackLayout>
                     </Grid>
-                </controls1:PancakeView>
+                </controls1:PancakeView>-->
 
-        <controls1:PancakeView HeightRequest="45" IsVisible="False" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="annotationTypeToolbar"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
+        <!--<controls1:PancakeView HeightRequest="45" IsVisible="False" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="annotationTypeToolbar"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
            AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional">
-                    <Grid>
+                    <Grid x:Name="annotationTypeToolbar">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0">
+                        <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0" VerticalOptions="Center">
                             <ImageButton Clicked="BackButtonAnnotationTypeToolbar_Clicked" Padding="2" x:Name="backButtonAnnotationTypeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24.xml" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"/>
                             <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" HeightRequest="30"/>
                             <Image x:Name="imageAnnotationType" BackgroundColor="#fafafa" WidthRequest="36" HeightRequest="36" VerticalOptions="Center"/>
@@ -107,7 +158,7 @@
                         <views:ColorPicker Grid.Column="1" x:Name="colorPicker" VerticalOptions="Center" Margin="0,0,6,0" HorizontalOptions="End"/>
                         <controls:IconView IsVisible="False" Grid.Column="1" Foreground="{Binding SelectedColor}" Margin="0,0,11,0" x:Name="paletteButton"  Source="baseline_palette_24.xml" WidthRequest="32" HeightRequest="32" HorizontalOptions="End" VerticalOptions="Center"/>
                     </Grid>
-                </controls1:PancakeView>
+                </controls1:PancakeView>-->
 
     </AbsoluteLayout>
 

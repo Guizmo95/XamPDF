@@ -286,7 +286,7 @@ namespace Pdf.Views
             pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
 
             var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
-            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+            //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
 
             pdfViewerControl.LoadDocument(pdfStream);
 
@@ -459,14 +459,9 @@ namespace Pdf.Views
 
             errorSearchPopup = new SfPopupLayout();
             errorSearchPopup.PopupView.ShowHeader = false;
-            errorSearchPopup.PopupView.ShowFooter = true;
-            errorSearchPopup.PopupView.AppearanceMode = AppearanceMode.OneButton;
-            errorSearchPopup.PopupView.AcceptButtonText = "Ignore";
-            errorSearchPopup.PopupView.PopupStyle.AcceptButtonTextColor = Color.Black;
-            errorSearchPopup.PopupView.PopupStyle.AcceptButtonBackgroundColor = Color.FromHex("#fafafa");
-            errorSearchPopup.PopupView.PopupStyle.FooterBackgroundColor = Color.FromHex("#fafafa");
-            errorSearchPopup.PopupView.HeightRequest = 118;
-            errorSearchPopup.PopupView.WidthRequest = 265;
+            errorSearchPopup.PopupView.ShowFooter = false;
+            errorSearchPopup.PopupView.HeightRequest = 105;
+            errorSearchPopup.PopupView.WidthRequest = 275;
             errorSearchPopup.BackgroundColor = Color.FromHex("#fafafa");
             errorSearchPopup.PopupView.BackgroundColor = Color.FromHex("#fafafa");
             errorSearchPopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#fafafa");
@@ -499,21 +494,20 @@ namespace Pdf.Views
             if (this.toolbarIsCollapsed == false)
             {
                 var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
-                var animateBottomBar = new Animation(d => bottomMainToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
+                var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 45, 0, Easing.SpringIn);
 
                 animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
-                animateBottomBar.Commit(bottomMainToolbar, "BottomBar", 16, 250);
+                animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
 
                 toolbarIsCollapsed = true;
             }
             else
             {
                 var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 0, 45, Easing.Linear);
-                var animateBottomBar = new Animation(d => bottomMainToolbar.HeightRequest = d, 0, 45, Easing.SpringOut);
+                var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 0, 45, Easing.SpringOut);
 
                 animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
-                animateBottomBar.Commit(bottomMainToolbar, "BottomBar", 16, 250);
-
+                animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
 
                 toolbarIsCollapsed = false;
             }
@@ -737,9 +731,11 @@ namespace Pdf.Views
 
         private async void SaveInk()
         {
+            pdfViewerControl.EndInkSession(true);
+
             await Task.Run(async () =>
             {
-                await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 150, Easing.Linear);
+                await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 200, Easing.Linear);
             });
 
             annotationTypeToolbar.IsVisible = false;
@@ -756,8 +752,6 @@ namespace Pdf.Views
             ValidButton.IsVisible = false;
             UndoButton.IsVisible = false;
             RedoButton.IsVisible = false;
-
-            pdfViewerControl.EndInkSession(true);
         }
 
         private void PdfViewerControl_InkSelected(object sender, InkSelectedEventArgs args)
@@ -1320,7 +1314,7 @@ namespace Pdf.Views
         {
             await Task.Run(async () =>
             {
-                await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 250, Easing.Linear);
+                await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 200, Easing.Linear);
             });
 
             textMarkupToolbar.IsVisible = false;
@@ -1370,7 +1364,7 @@ namespace Pdf.Views
         {
             await Task.Run(async () =>
             {
-                await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 150, Easing.Linear);
+                await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 200, Easing.Linear);
             });
 
             annotationTypeToolbar.IsVisible = false;
@@ -1451,7 +1445,7 @@ namespace Pdf.Views
         {
             await Task.Run(async () =>
             {
-                await shapeToolbar.LayoutTo(new Rectangle(shapeToolbar.Bounds.X, shapeToolbar.Bounds.Y, shapeToolbar.Bounds.Width, 0), 250, Easing.Linear);
+                await shapeToolbar.LayoutTo(new Rectangle(shapeToolbar.Bounds.X, shapeToolbar.Bounds.Y, shapeToolbar.Bounds.Width, 0), 200, Easing.Linear);
             });
 
             shapeToolbar.IsVisible = false;

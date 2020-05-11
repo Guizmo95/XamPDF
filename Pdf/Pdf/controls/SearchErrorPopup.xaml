@@ -6,10 +6,10 @@
              mc:Ignorable="d"
              x:Class="Pdf.controls.SearchErrorPopup">
     <ContentView.Content>
-        <StackLayout BackgroundColor="#fafafa" Spacing="9" Margin="9">
+        <StackLayout BackgroundColor="#fafafa" Spacing="9" Margin="10">
             <Label Text="Search Result" FontSize="19" FontFamily="GothamMedium_1.ttf#GothamMedium_1" TextColor="Black"/>
-            <Label IsVisible="False" Text="No more match were found" FontSize="16" FontFamily="GothamLight.ttf#GothamLight" x:Name="noMoreOccurenceFound" TextColor="Black"/>
-            <Label IsVisible="False" Text="No match were found" FontSize="16" FontFamily="GothamLight.ttf#GothamLight" x:Name="noOccurenceFound" TextColor="Black"/>
+            <Label IsVisible="False" Text="No more match were found" FontSize="17" FontFamily="GothamLight.ttf#GothamLight" x:Name="noMoreOccurenceFound" TextColor="Black"/>
+            <Label IsVisible="False" Text="No match were found" FontSize="17" FontFamily="GothamLight.ttf#GothamLight" x:Name="noOccurenceFound" TextColor="Black"/>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

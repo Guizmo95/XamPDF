@@ -195,6 +195,7 @@ path;obj\Release\90\res\drawable\baseline_view_carousel_24.xml
 path;obj\Release\90\res\drawable\outline_arrow_back_24.xml
 path;obj\Release\90\res\drawable\outline_clear_24.xml
 path;obj\Release\90\res\drawable\outline_search_24.xml
+path;obj\Release\90\res\drawable\outlineclearviewer.xml
 path;obj\Release\90\res\drawable\twotone_branding_watermark_24.xml
 path;obj\Release\90\res\drawable\twotone_create_24.xml
 path;obj\Release\90\res\drawable\twotone_done_24.xml
@@ -399,6 +400,7 @@ vector;obj\Release\90\res\drawable\baseline_view_carousel_24.xml
 vector;obj\Release\90\res\drawable\outline_arrow_back_24.xml
 vector;obj\Release\90\res\drawable\outline_clear_24.xml
 vector;obj\Release\90\res\drawable\outline_search_24.xml
+vector;obj\Release\90\res\drawable\outlineclearviewer.xml
 vector;obj\Release\90\res\drawable\twotone_branding_watermark_24.xml
 vector;obj\Release\90\res\drawable\twotone_create_24.xml
 vector;obj\Release\90\res\drawable\twotone_done_24.xml
