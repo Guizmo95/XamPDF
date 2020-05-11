@@ -71,10 +71,10 @@ namespace Pdf.Views {
         private global::Syncfusion.SfPdfViewer.XForms.SfPdfViewer pdfViewerControl;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.PancakeView.PancakeView bottomMainToolbar;
+        private global::Xamarin.Forms.PancakeView.PancakeView bottomMainBar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Grid bottomGrid;
+        private global::Xamarin.Forms.Grid bottomMainToolbar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ImageButton freeTextButton;
@@ -95,7 +95,7 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.ImageButton stampButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.PancakeView.PancakeView textMarkupToolbar;
+        private global::Xamarin.Forms.Grid textMarkupToolbar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ImageButton backButtonTextMarkupToolbar;
@@ -110,7 +110,7 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.ImageButton hightlightButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.PancakeView.PancakeView shapeToolbar;
+        private global::Xamarin.Forms.Grid shapeToolbar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ImageButton backButtonShapeToolbar;
@@ -128,7 +128,7 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.ImageButton rectangleButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.PancakeView.PancakeView annotationTypeToolbar;
+        private global::Xamarin.Forms.Grid annotationTypeToolbar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ImageButton backButtonAnnotationTypeToolbar;
@@ -163,26 +163,26 @@ namespace Pdf.Views {
             moreOptionButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "moreOptionButton");
             pdfViewGrid = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "pdfViewGrid");
             pdfViewerControl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfPdfViewer.XForms.SfPdfViewer>(this, "pdfViewerControl");
-            bottomMainToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "bottomMainToolbar");
-            bottomGrid = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "bottomGrid");
+            bottomMainBar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "bottomMainBar");
+            bottomMainToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "bottomMainToolbar");
             freeTextButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "freeTextButton");
             inkButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "inkButton");
             shapeButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "shapeButton");
             textMarkupButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "textMarkupButton");
             signatureButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "signatureButton");
             stampButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "stampButton");
-            textMarkupToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "textMarkupToolbar");
+            textMarkupToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "textMarkupToolbar");
             backButtonTextMarkupToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "backButtonTextMarkupToolbar");
             strikethroughtButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "strikethroughtButton");
             underlineButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "underlineButton");
             hightlightButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "hightlightButton");
-            shapeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "shapeToolbar");
+            shapeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "shapeToolbar");
             backButtonShapeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "backButtonShapeToolbar");
             circleButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "circleButton");
             lineButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "lineButton");
             arrowButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "arrowButton");
             rectangleButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "rectangleButton");
-            annotationTypeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "annotationTypeToolbar");
+            annotationTypeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "annotationTypeToolbar");
             backButtonAnnotationTypeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "backButtonAnnotationTypeToolbar");
             imageAnnotationType = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imageAnnotationType");
             colorPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Views.ColorPicker>(this, "colorPicker");
