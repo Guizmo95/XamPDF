@@ -9,8 +9,7 @@ using Xamarin.Forms;
 namespace Pdf.ViewModels
 {
     public class BaseItemViewModel : INotifyPropertyChanged
-    {
-        public IGetThumbnails GetThumbnails => DependencyService.Get<IGetThumbnails>();
+    { 
 
         bool isBusy = false;
         public bool IsBusy

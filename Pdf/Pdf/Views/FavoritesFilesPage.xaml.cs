@@ -109,6 +109,7 @@ namespace Pdf.Views
                     }
                     finally
                     {
+                        FavoriteDocumentListView.SelectedItem = null;
                         activityIndicator.IsRunning = false;
                         filter.IsVisible = false;
                     }

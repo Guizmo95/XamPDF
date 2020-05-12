@@ -33,6 +33,7 @@ namespace Pdf.Views
         private DataTemplate styleTemplateStylePopup;
         private DataTemplate styleTemplateErrorPopup;
         private bool toolbarIsCollapsed = false;
+        private bool search_started;
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
         private InkAnnotation selectedInkAnnotation;
@@ -286,7 +287,8 @@ namespace Pdf.Views
             pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
 
             var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
-            //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+            // PDFium renderer
+            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
 
             pdfViewerControl.LoadDocument(pdfStream);
 
@@ -305,9 +307,6 @@ namespace Pdf.Views
             this.filePath = filePath;
             this.styleContent = new StyleContent();
             pdfViewerControl.Toolbar.Enabled = false;
-
-            //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
-            //pdfViewerControl.BindingContext = pdfViewerModel = new PdfViewerModel(filepath);
         }
 
         private void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
@@ -341,6 +340,7 @@ namespace Pdf.Views
             pdfViewerControl.Tapped += PdfViewerControl_Tapped;
             pdfViewerControl.SearchCompleted += PdfViewerControl_SearchCompleted;
             pdfViewerControl.TextMatchFound += PdfViewerControl_TextMatchFound;
+            PdfViewerControl.SearchInitiated += PdfViewerControl_SearchInitiated;
             #endregion
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -480,7 +480,6 @@ namespace Pdf.Views
 
             annotationType = AnnotationType.None;
         }
-
 
 
         private void BookmarkButton_Clicked(object sender, EventArgs e)
@@ -928,17 +927,6 @@ namespace Pdf.Views
 
         #endregion
 
-        #region Commom methods for annotations
-        private void ThicknessButton_Clicked()
-        {
-
-        }
-
-        private void ColorButton_Clicked()
-        {
-        }
-        #endregion
-
         #region Popop selected annotation method events
 
         //private void StyleButton_Clicked()
@@ -1097,7 +1085,6 @@ namespace Pdf.Views
         #endregion
 
         #region Opacity Methods 
-
         private void OpacityIcon_Clicked(int numberOfTheOpacitySelected)
         {
             if (lastOpacitySelected != numberOfTheOpacitySelected)
@@ -1509,11 +1496,7 @@ namespace Pdf.Views
 
         #endregion
 
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
+        #region Change view mode feature
         private void ViewModeButton_Clicked(object sender, EventArgs e)
         {
             if (pdfViewerControl.PageViewMode == PageViewMode.PageByPage)
@@ -1527,7 +1510,9 @@ namespace Pdf.Views
                 viewModeButton.RotateTo(180);
             }
         }
+        #endregion
 
+        #region Search text feature
         private void SearchButton_Clicked(object sender, EventArgs e)
         {
             topMainBar.IsVisible = false;
@@ -1546,6 +1531,9 @@ namespace Pdf.Views
         {
             isNoMatchFound = args.NoMatchFound;
             isNoMoreOccurrenceFound = args.NoMoreOccurrence;
+
+            activityIndicator.IsVisible = false;
+            activityIndicator.IsRunning = false;
 
             if (isNoMatchFound == true)
             {
@@ -1566,33 +1554,82 @@ namespace Pdf.Views
                     isNoMoreOccurrenceFound = false;
                 }
             }
+            search_started = false;
         }
 
         private void TextSearchEntry_Completed(object sender, EventArgs e)
         {
-            pdfViewerControl.SearchText(textSearchEntry.Text);
+            if (!string.IsNullOrWhiteSpace(textSearchEntry.Text) && !string.IsNullOrEmpty(textSearchEntry.Text))
+            {
+                var searchText = textSearchEntry.Text;
+                //Initiates text search.
+                pdfViewerControl.SearchText(searchText);
+                pdfViewerControl.SearchNext();
+            }
+            if (string.IsNullOrWhiteSpace(textSearchEntry.Text) || string.IsNullOrEmpty(textSearchEntry.Text))
+            {
+                pdfViewerControl.CancelSearch();
+                search_started = false;
+            }
+            if (!search_started)
+            {
+
+                pdfViewerControl.SearchText(textSearchEntry.Text);
+                pdfViewerControl.SearchNext();
+            }
+            else
+            {
+                pdfViewerControl.SearchNext();
+            }
+            search_started = true;
         }
 
         private void SearchPreviousButton_Clicked(object sender, EventArgs e)
         {
-            pdfViewerControl.SearchPrevious(textSearchEntry.Text);
+            if (textSearchEntry.Text != string.Empty)
+            {
+                pdfViewerControl.SearchPreviousTextCommand.Execute(textSearchEntry.Text);
+            }
         }
 
         private void SearchNextButton_Clicked(object sender, EventArgs e)
         {
-            pdfViewerControl.SearchNext(textSearchEntry.Text);
+            if (textSearchEntry.Text != string.Empty)
+            {
+                pdfViewerControl.SearchNextTextCommand.Execute(textSearchEntry.Text);
+            }
         }
 
         private void PdfViewerControl_TextMatchFound(object sender, TextMatchFoundEventArgs args)
         {
             searchPreviousButton.IsVisible = true;
             searchNextButton.IsVisible = true;
+
+            activityIndicator.IsVisible = false;
+            activityIndicator.IsRunning = false;
         }
 
         private void TextSearchEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
+            pdfViewerControl.CancelSearch();
+            search_started = false;
+
             searchPreviousButton.IsVisible = false;
             searchNextButton.IsVisible = false;
         }
+
+        private void PdfViewerControl_SearchInitiated(object sender, TextSearchInitiatedEventArgs args)
+        {
+            activityIndicator.IsVisible = true;
+            activityIndicator.IsRunning = true;
+        }
+        #endregion
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+   
     }
 }

@@ -43,12 +43,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="controls\InkBottomBar.xaml.cs">
-      <DependentUpon>InkBottomBar.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="controls\FreeTextBottomBar.xaml.cs">
-      <DependentUpon>FreeTextBottomBar.xaml</DependentUpon>
-    </Compile>
     <Compile Update="controls\StyleContent.xaml.cs">
       <DependentUpon>StyleContent.xaml</DependentUpon>
     </Compile>
@@ -58,28 +52,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="controls\AnnotationToolbar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\BottomAnnotationToolbar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="controls\EditPopupMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\NavigationDrawerToolsMenu.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\InkBottomBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\FreeTextBottomBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="controls\ColorPicker.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\FontSizeSlider.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\OpacitySlider.xaml">
@@ -91,19 +67,7 @@
     <EmbeddedResource Update="controls\SearchErrorPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\SelectTextMarkupBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\ShapeBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\ShapeCustomBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="controls\StyleContent.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\TextMarkupBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\ThicknessBar.xaml">
