@@ -201,6 +201,7 @@ path;obj\Debug\90\res\drawable\baseline_visibility_24.xml
 path;obj\Debug\90\res\drawable\outline_arrow_back_24.xml
 path;obj\Debug\90\res\drawable\outline_clear_24.xml
 path;obj\Debug\90\res\drawable\outline_search_24.xml
+path;obj\Debug\90\res\drawable\outline_searchmenu.xml
 path;obj\Debug\90\res\drawable\outlineclearviewer.xml
 path;obj\Debug\90\res\drawable\twotone_branding_watermark_24.xml
 path;obj\Debug\90\res\drawable\twotone_create_24.xml
@@ -408,6 +409,7 @@ vector;obj\Debug\90\res\drawable\baseline_visibility_24.xml
 vector;obj\Debug\90\res\drawable\outline_arrow_back_24.xml
 vector;obj\Debug\90\res\drawable\outline_clear_24.xml
 vector;obj\Debug\90\res\drawable\outline_search_24.xml
+vector;obj\Debug\90\res\drawable\outline_searchmenu.xml
 vector;obj\Debug\90\res\drawable\outlineclearviewer.xml
 vector;obj\Debug\90\res\drawable\twotone_branding_watermark_24.xml
 vector;obj\Debug\90\res\drawable\twotone_create_24.xml
