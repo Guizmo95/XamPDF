@@ -70,7 +70,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="39"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="55"/>
@@ -84,7 +84,7 @@
                                             <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
                                         </StackLayout>
                                     </StackLayout>
-                                    <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="40" Grid.Column="2" Margin="0,0,14,0" Grid.Row="0">
+                                    <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="39" Grid.Column="2" Margin="0,0,14,0" Grid.Row="0">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInDocumentList}"/>
                                         </Image.GestureRecognizers>
@@ -160,7 +160,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="39"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="55"/>
@@ -173,7 +173,7 @@
                                         <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
                                     </StackLayout>
                                 </StackLayout>
-                                <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="40" Grid.Column="2" Margin="0,0,14,0" Grid.Row="0">
+                                <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="39" Grid.Column="2" Margin="0,0,14,0" Grid.Row="0">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInDocumentList}"/>
                                     </Image.GestureRecognizers>

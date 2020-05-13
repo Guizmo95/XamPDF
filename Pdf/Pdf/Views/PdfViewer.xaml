@@ -27,7 +27,7 @@
                     <controls:IconView IsVisible="False"  x:Name="UndoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_undo_24.xml" WidthRequest="33" HeightRequest="33" />
                     <controls:IconView IsVisible="False"  x:Name="RedoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_redo_24.xml" WidthRequest="33" HeightRequest="33"/>
                     <controls:IconView IsVisible="False"  x:Name="ValidButton" Foreground="White" BackgroundColor="#fafafa" Source="twotone_done_24.xml" WidthRequest="33" HeightRequest="33"/>
-                    <ImageButton Clicked="ViewModeButton_Clicked"  Padding="2" x:Name="viewModeButton" BackgroundColor="#fafafa" Source="baseline_view_carousel_24.xml" WidthRequest="37" HeightRequest="37"/>
+                    <ImageButton Clicked="ViewModeButton_Clicked"  Padding="2" x:Name="viewModeButton" BackgroundColor="#fafafa" Source="baseline_view_carousel_24.xml" WidthRequest="37.3" HeightRequest="37.3"/>
                     <ImageButton Clicked="BookmarkButton_Clicked"  Padding="2" x:Name="bookmarkButton" BackgroundColor="#fafafa" Source="baseline_bookmark_24.xml" WidthRequest="33" HeightRequest="33"/>
                     <ImageButton Clicked="SearchButton_Clicked" Padding="2" x:Name="searchButton" BackgroundColor="#fafafa" Source="outline_search_24.xml" WidthRequest="33" HeightRequest="33"/>
                     <ImageButton  Padding="2" x:Name="moreOptionButton" BackgroundColor="#fafafa" Source="baseline_more_vert_24.xml" WidthRequest="33" HeightRequest="33"  Margin="4,0,0,0"/>
@@ -50,8 +50,8 @@
                         <ImageButton Clicked="TextMarkupButton_Clicked" Padding="2" x:Name="textMarkupButton" BackgroundColor="#fafafa" Source="twotone_format_strikethrough_24.xml" WidthRequest="33" HeightRequest="33" />
                     </StackLayout>
                     <StackLayout Spacing="7" HorizontalOptions="EndAndExpand" Orientation="Horizontal" Margin="0,0,12,0" VerticalOptions="Center">
-                        <ImageButton Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="twotone_create_24.xml" WidthRequest="32" HeightRequest="32"/>
-                        <ImageButton Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="twotone_branding_watermark_24.xml" WidthRequest="33" HeightRequest="33"/>
+                        <ImageButton Clicked="SignatureButton_Clicked" Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="twotone_create_24.xml" WidthRequest="32" HeightRequest="32"/>
+                        <ImageButton Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="twotone_branding_watermark_24.xml" WidthRequest="32.5" HeightRequest="32.5"/>
                     </StackLayout>
                 </Grid>
 

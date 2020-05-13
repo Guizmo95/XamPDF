@@ -2,8 +2,8 @@
 	.section	.rodata..L.str.1,"aMS",@progbits,1
 	.type	.L.str.1, @object
 .L.str.1:
-	.asciz	"XamPdf.pdf"
-	.size	.L.str.1, 11
+	.asciz	"Xam_sPdf.pdf"
+	.size	.L.str.1, 13
 	.section	.data.application_config,"aw",@progbits
 	.type	application_config, @object
 	.p2align	3
@@ -69,7 +69,7 @@ mono_aot_mode_name:
 	.section	.rodata..L.str.8,"aMS",@progbits,1
 	.type	.L.str.8, @object
 .L.str.8:
-	.asciz	"6773e603-b69b-4a50-8eb8-88966461c61f"
+	.asciz	"c6c70cd5-18ed-42a9-9ae9-a9cec78fe948"
 	.size	.L.str.8, 37
 	.section	.rodata..L.str.9,"aMS",@progbits,1
 	.type	.L.str.9, @object

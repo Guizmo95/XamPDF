@@ -274,6 +274,7 @@ namespace Pdf.Views
             pdfViewerControl.SearchCompleted -= PdfViewerControl_SearchCompleted;
             pdfViewerControl.TextMatchFound -= PdfViewerControl_TextMatchFound;
             pdfViewerControl.Tapped -= PdfViewerControl_Tapped;
+            pdfViewerControl.SearchInitiated -= PdfViewerControl_SearchInitiated;
 
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
@@ -340,7 +341,7 @@ namespace Pdf.Views
             pdfViewerControl.Tapped += PdfViewerControl_Tapped;
             pdfViewerControl.SearchCompleted += PdfViewerControl_SearchCompleted;
             pdfViewerControl.TextMatchFound += PdfViewerControl_TextMatchFound;
-            PdfViewerControl.SearchInitiated += PdfViewerControl_SearchInitiated;
+            pdfViewerControl.SearchInitiated += PdfViewerControl_SearchInitiated;
             #endregion
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -550,39 +551,62 @@ namespace Pdf.Views
         }
 
         #region Pdf viewer events methods
-        //Set the signature pad page
-        //private async Task SignaturePadButton_Clicked()
+
+        private async void SignatureButton_Clicked(object sender, EventArgs e)
+        {
+            pdfViewerControl.AnnotationMode = AnnotationMode.HandwrittenSignature;
+
+            var page = new SignaturePage();
+            page.DidFinishPoping += (parameter) =>
+            {
+                if (String.IsNullOrWhiteSpace(parameter) || String.IsNullOrEmpty(parameter))
+                {
+                    //set image source
+                    Image image = new Image();
+                    image.Source = ImageSource.FromFile(parameter);
+                    image.WidthRequest = 200;
+                    image.HeightRequest = 100;
+
+                    int numpage = pdfViewerControl.PageNumber;
+                    //add image as custom stamp to the first page
+                    pdfViewerControl.AddStamp(image, numpage);
+                }
+            };
+            await Navigation.PushAsync(page);
+        }
+        ////set the signature pad page
+        //private async task signaturepadbutton_clicked()
         //{
-        //    topToolbar.IsVisible = false;
-        //    bottomGrid.IsVisible = false;
+        //    toptoolbar.isvisible = false;
+        //    bottomgrid.isvisible = false;
 
-        //    //pdfViewerControl.AnnotationMode = AnnotationMode.HandwrittenSignature;
+        //    //pdfviewercontrol.annotationmode = annotationmode.handwrittensignature;
 
-        //    var page = new SignaturePage();
-        //    page.DidFinishPoping += (parameter) =>
+        //    var page = new signaturepage();
+        //    page.didfinishpoping += (parameter) =>
         //    {
         //        if (parameter != null)
         //        {
-        //            //Set image source
-        //            Image image = new Image();
-        //            image.Source = ImageSource.FromFile(parameter);
-        //            image.WidthRequest = 200;
-        //            image.HeightRequest = 100;
+        //            //set image source
+        //            image image = new image();
+        //            image.source = imagesource.fromfile(parameter);
+        //            image.widthrequest = 200;
+        //            image.heightrequest = 100;
 
-        //            int numPage = pdfViewerControl.PageNumber;
-        //            //Add image as custom stamp to the first page
-        //            pdfViewerControl.AddStamp(image, numPage);
+        //            int numpage = pdfviewercontrol.pagenumber;
+        //            //add image as custom stamp to the first page
+        //            pdfviewercontrol.addstamp(image, numpage);
 
-        //            topToolbar.IsVisible = true;
-        //            bottomGrid.IsVisible = true;
+        //            toptoolbar.isvisible = true;
+        //            bottomgrid.isvisible = true;
         //        }
         //        else
         //        {
-        //            topToolbar.IsVisible = true;
-        //            bottomGrid.IsVisible = true;
+        //            toptoolbar.isvisible = true;
+        //            bottomgrid.isvisible = true;
         //        }
         //    };
-        //    await Navigation.PushAsync(page);
+        //    await navigation.pushasync(page);
         //}
 
         private void StampButton_Clicked()
@@ -1630,6 +1654,6 @@ namespace Pdf.Views
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-   
+
     }
 }
