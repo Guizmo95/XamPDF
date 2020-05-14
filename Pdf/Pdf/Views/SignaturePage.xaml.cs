@@ -106,5 +106,10 @@ namespace Pdf.Views
                 DidFinishPoping(null);
             }
         }
+
+        private async void BackButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

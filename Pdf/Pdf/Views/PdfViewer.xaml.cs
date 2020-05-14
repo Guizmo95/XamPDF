@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.OS;
 using Android.Views;
 using Pdf.controls;
 using Pdf.Enumerations;
@@ -11,7 +12,9 @@ using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
@@ -430,9 +433,9 @@ namespace Pdf.Views
             paletteButton.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() =>
-               {
-                   PaletteButton_Clicked();
-               })
+                {
+                    PaletteButton_Clicked();
+                })
             });
 
             paletteButton.BindingContext = this;
@@ -444,7 +447,7 @@ namespace Pdf.Views
             stylePopup.ClosePopupOnBackButtonPressed = false;
             stylePopup.PopupView.ShowHeader = false;
             stylePopup.PopupView.ShowFooter = false;
-            stylePopup.PopupView.HeightRequest = 190;
+            stylePopup.PopupView.HeightRequest = 192;
             stylePopup.PopupView.WidthRequest = 280;
             stylePopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#fafafa");
             stylePopup.PopupView.AnimationMode = AnimationMode.Fade;
@@ -491,26 +494,33 @@ namespace Pdf.Views
 
         private async void PdfViewerControl_Tapped(object sender, TouchInteractionEventArgs e)
         {
-            if (this.toolbarIsCollapsed == false)
-            {
-                var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
-                var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 45, 0, Easing.SpringIn);
+            //if (this.toolbarIsCollapsed == false)
+            //{
+            //    var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
+            //    var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 45, 0, Easing.SpringIn);
 
-                animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
-                animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
+            //    animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
+            //    animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
 
-                toolbarIsCollapsed = true;
-            }
-            else
-            {
-                var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 0, 45, Easing.Linear);
-                var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 0, 45, Easing.SpringOut);
+            //    toolbarIsCollapsed = true;
+            //}
+            //else
+            //{
+            //    var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 0, 45, Easing.Linear);
+            //    var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 0, 45, Easing.SpringOut);
 
-                animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
-                animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
+            //    animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
+            //    animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
 
-                toolbarIsCollapsed = false;
-            }
+            //    toolbarIsCollapsed = false;
+            //}
+
+            var viewPortWidth = Application.Current.MainPage.Width;
+            var splittedviewPortWidth = Application.Current.MainPage.Width / 2;
+
+            var touchPosition = e.Position;
+            DependencyService.Get<IToastMessage>().LongAlert(touchPosition.ToString());
+
         }
 
         private void PdfViewerControl_PageChanged(object sender, PageChangedEventArgs args)
@@ -554,12 +564,10 @@ namespace Pdf.Views
 
         private async void SignatureButton_Clicked(object sender, EventArgs e)
         {
-            pdfViewerControl.AnnotationMode = AnnotationMode.HandwrittenSignature;
-
             var page = new SignaturePage();
             page.DidFinishPoping += (parameter) =>
             {
-                if (String.IsNullOrWhiteSpace(parameter) || String.IsNullOrEmpty(parameter))
+                if (!String.IsNullOrWhiteSpace(parameter) || !String.IsNullOrEmpty(parameter))
                 {
                     //set image source
                     Image image = new Image();
@@ -574,104 +582,18 @@ namespace Pdf.Views
             };
             await Navigation.PushAsync(page);
         }
-        ////set the signature pad page
-        //private async task signaturepadbutton_clicked()
-        //{
-        //    toptoolbar.isvisible = false;
-        //    bottomgrid.isvisible = false;
 
-        //    //pdfviewercontrol.annotationmode = annotationmode.handwrittensignature;
-
-        //    var page = new signaturepage();
-        //    page.didfinishpoping += (parameter) =>
-        //    {
-        //        if (parameter != null)
-        //        {
-        //            //set image source
-        //            image image = new image();
-        //            image.source = imagesource.fromfile(parameter);
-        //            image.widthrequest = 200;
-        //            image.heightrequest = 100;
-
-        //            int numpage = pdfviewercontrol.pagenumber;
-        //            //add image as custom stamp to the first page
-        //            pdfviewercontrol.addstamp(image, numpage);
-
-        //            toptoolbar.isvisible = true;
-        //            bottomgrid.isvisible = true;
-        //        }
-        //        else
-        //        {
-        //            toptoolbar.isvisible = true;
-        //            bottomgrid.isvisible = true;
-        //        }
-        //    };
-        //    await navigation.pushasync(page);
-        //}
-
-        private void StampButton_Clicked()
+        private void StampButton_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //Set image source
+            Image image = new Image();
+            image.Source = ImageSource.FromResource("Pdf.Images.stamp.png", typeof(App).GetTypeInfo().Assembly);
+            image.WidthRequest = 200;
+            image.HeightRequest = 100;
+
+            //Add image as custom stamp to the first page
+            pdfViewerControl.AddStamp(image, pdfViewerControl.PageNumber);
         }
-
-        //private void AnnotationButton_Clicked(AnnotationType annotationType)
-        //{
-        //    bottomGrid.IsVisible = false;
-
-        //    switch (annotationType)
-        //    {
-        //        case AnnotationType.Ink:
-        //            bottomAnnotationToolbar.AnnotationImage.Source = "pencil.png";
-        //            bottomAnnotationToolbar.IsVisible = true;
-
-        //            ValidButton.IsVisible = true;
-        //            UndoButton.IsVisible = true;
-        //            RedoButton.IsVisible = true;
-
-        //            this.SelectedColor = Color.Black;
-
-        //            this.shapeBar = new ShapeBar();
-        //            break;
-        //        case AnnotationType.FreeText:
-        //            //bottomAnnotationToolbar.AnnotationImage.Source = "font.png";
-        //            //bottomAnnotationToolbar.IsVisible = true;
-
-        //            this.SelectedColor = Color.Black;
-        //            break;
-        //        case AnnotationType.Shape:
-        //            //bottomAnnotationToolbar.AnnotationImage.Source = "rectangle.png";
-
-        //            //shapeBar.IsVisible = true;
-        //            //mainGrid.Children.Insert(2, shapeBar);
-
-        //            //Not like free text and ink
-        //            #region Shape bottom bar events
-        //            shapeBar.ArrowButtonClicked += ArrowButton_Clicked;
-        //            shapeBar.LineButtonClicked += LineButton_Clicked;
-        //            shapeBar.EllipseButtonClicked += EllipseButton_Clicked;
-        //            shapeBar.RectangleButtonClicked += RectangleButton_Clicked;
-        //            shapeBar.BackButtonClicked += BackShapeButton_Clicked;
-        //            #endregion
-
-        //            break;
-        //        case AnnotationType.TextMarkup:
-        //            bottomAnnotationToolbar.AnnotationImage.Source = "marker.png";
-
-        //            textMarkupToolbar.HeightRequest = 0;
-        //            textMarkupToolbar.IsVisible = true;
-        //            textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 45), 500, Easing.CubicOut);
-
-        //            #region Text markup choice bar events
-        //            //selectTextMarkupBar.StrikethroughtButtonClicked += StriketroughtButton_Clicked;
-        //            //selectTextMarkupBar.HightlightButtonClicked += HightlightButton_Clicked;
-        //            //selectTextMarkupBar.UnderlineButtonClicked += UnderlineButton_Clicked;
-        //            //selectTextMarkupBar.BackButtonClicked += BackSelectTextMarkupButton_Clicked;
-        //            #endregion
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
 
         private void PdfViewerControl_TextMarkupAdded(object sender, TextMarkupAddedEventArgs args)
         {
@@ -947,68 +869,6 @@ namespace Pdf.Views
             //selectTextMarkupBar.UnderlineButtonClicked -= UnderlineButton_Clicked;
             //selectTextMarkupBar.BackButtonClicked -= BackSelectTextMarkupButton_Clicked;
             #endregion
-        }
-
-        #endregion
-
-        #region Popop selected annotation method events
-
-        //private void StyleButton_Clicked()
-        //{
-        //    if (annotationType == AnnotationType.FreeText)
-        //    {
-        //    }
-
-        //    else
-        //    {
-        //        if (annotationType == AnnotationType.Ink)
-        //        {
-
-        //        }
-        //        else
-        //        {
-        //            if (annotationType == AnnotationType.Shape)
-        //            {
-        //            }
-        //            else
-        //            {
-        //                if (annotationType == AnnotationType.TextMarkup)
-        //                {
-
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //}
-
-        private void RemvoveButton_Clicked()
-        {
-            if (selectedFreeTextAnnotation != null)
-            {
-                pdfViewerControl.RemoveAnnotation(selectedFreeTextAnnotation);
-            }
-            else
-            {
-                if (selectedInkAnnotation != null)
-                {
-                    pdfViewerControl.RemoveAnnotation(selectedInkAnnotation);
-                }
-                else
-                {
-                    if (selectedShapeAnnotation != null)
-                    {
-                        pdfViewerControl.RemoveAnnotation(selectedShapeAnnotation);
-                    }
-                    else
-                    {
-                        if (selectedTextMarkupAnnotation != null)
-                        {
-                            pdfViewerControl.RemoveAnnotation(selectedTextMarkupAnnotation);
-                        }
-                    }
-                }
-            }
         }
 
         #endregion
@@ -1653,7 +1513,6 @@ namespace Pdf.Views
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
-
 
     }
 }
