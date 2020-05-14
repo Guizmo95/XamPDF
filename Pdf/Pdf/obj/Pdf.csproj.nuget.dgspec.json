@@ -46,10 +46,6 @@
               "target": "Package",
               "version": "[7.1.0.440, )"
             },
-            "Microsoft.AspNet.WebApi.Client": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
             "Microsoft.Net.Http": {
               "target": "Package",
               "version": "[2.2.29, )"
@@ -68,45 +64,21 @@
               "target": "Package",
               "version": "[18.1.0.43, )"
             },
-            "Syncfusion.Xamarin.Core": {
-              "target": "Package",
-              "version": "[18.1.0.46, )"
-            },
-            "Syncfusion.Xamarin.SfImageEditor": {
-              "target": "Package",
-              "version": "[18.1.0.43, )"
-            },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
               "version": "[18.1.0.46, )"
             },
-            "Syncfusion.Xamarin.SfNavigationDrawer": {
-              "target": "Package",
-              "version": "[18.1.0.42, )"
-            },
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
-              "version": "[18.1.0.46, )"
+              "version": "[18.1.0.52, )"
             },
             "Syncfusion.Xamarin.SfPopupLayout": {
               "target": "Package",
               "version": "[18.1.0.43, )"
             },
-            "Syncfusion.Xamarin.SfRadialMenu": {
-              "target": "Package",
-              "version": "[18.1.0.43, )"
-            },
-            "Syncfusion.Xamarin.SfRangeSlider": {
-              "target": "Package",
-              "version": "[18.1.0.46, )"
-            },
             "Syncfusion.Xamarin.SfRotator": {
               "target": "Package",
               "version": "[18.1.0.43, )"
-            },
-            "Syncfusion.Xamarin.SfTabView": {
-              "target": "Package",
-              "version": "[18.1.0.42, )"
             },
             "Unity": {
               "target": "Package",

@@ -6,6 +6,7 @@ using Pdf.Enumerations;
 using Pdf.Interfaces;
 using Pdf.Models;
 using Pdf.ViewModels;
+using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.SfPdfViewer.XForms;
 using Syncfusion.XForms.PopupLayout;
@@ -26,8 +27,6 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PdfViewer : ContentPage, INotifyPropertyChanged
     {
-        //#region Content view / View
-        private string filePath;
         private PdfViewerModel pdfViewerModel;
         private SfPopupLayout stylePopup;
         private SfPopupLayout errorSearchPopup;
@@ -35,8 +34,6 @@ namespace Pdf.Views
         private SearchErrorPopup searchErrorPopupContent;
         private DataTemplate styleTemplateStylePopup;
         private DataTemplate styleTemplateErrorPopup;
-        private bool toolbarIsCollapsed = false;
-        private bool search_started;
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
         private InkAnnotation selectedInkAnnotation;
@@ -50,15 +47,19 @@ namespace Pdf.Views
         private Rectangle lastRectangleBounds;
         private AnnotationMode lastTextMarkupAnnotationMode;
 
-        private int fontSize = 6;
+        private string filePath;
         private bool canUndoInk = false;
         private bool canRedoInk = false;
+        private bool toolbarIsCollapsed = false;
+        private bool search_started;
+        private bool isNoMatchFound;
+        private bool isNoMoreOccurrenceFound;
+        private int fontSize = 6;
         private int shapesNumbers = 0;
         private int textMarkupNumbers = 0;
         private int lastThicknessBarSelected = 5;
         private int lastOpacitySelected = 4;
-        private bool isNoMatchFound;
-        private bool isNoMoreOccurrenceFound;
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -291,6 +292,7 @@ namespace Pdf.Views
             pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
 
             var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
+
             // PDFium renderer
             pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
 
@@ -478,7 +480,6 @@ namespace Pdf.Views
 
             this.errorSearchPopup.PopupView.ContentTemplate = styleTemplateErrorPopup;
 
-
             styleContent.ThicknessBar.BoxViewButtonClicked += (int numberOfThicknessBarClicked) => ThicknessBar_Clicked(numberOfThicknessBarClicked);
             styleContent.OpacityButtonClicked += (int numberOfTheOpacityClicked) => OpacityIcon_Clicked(numberOfTheOpacityClicked);
 
@@ -494,32 +495,47 @@ namespace Pdf.Views
 
         private async void PdfViewerControl_Tapped(object sender, TouchInteractionEventArgs e)
         {
-            //if (this.toolbarIsCollapsed == false)
-            //{
-            //    var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
-            //    var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 45, 0, Easing.SpringIn);
+            if (this.toolbarIsCollapsed == false)
+            {
+                //await mainContent.FadeTo(1, 100);
+                //await mainContent.FadeTo(0, 100);
+                pdfViewGrid.Margin = 0;
+                await topToolbar.FadeTo(0, 100);
+                await bottomMainBar.FadeTo(0, 100);
+                //DependencyService.Get<IHideNavBar>().RemoveNavBar();
+                //await mainContent.FadeTo(1, 100);
 
-            //    animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
-            //    animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
 
-            //    toolbarIsCollapsed = true;
-            //}
-            //else
-            //{
-            //    var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 0, 45, Easing.Linear);
-            //    var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 0, 45, Easing.SpringOut);
+                //var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
+                //var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 45, 0, Easing.SpringIn);
 
-            //    animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
-            //    animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
+                //animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
+                //animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
 
-            //    toolbarIsCollapsed = false;
-            //}
+                
+                toolbarIsCollapsed = true;
+            }
+            else
+            {
+                //var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 0, 45, Easing.Linear);
+                //var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 0, 45, Easing.SpringOut);
 
-            var viewPortWidth = Application.Current.MainPage.Width;
-            var splittedviewPortWidth = Application.Current.MainPage.Width / 2;
+                //animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
+                //animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
+                //DependencyService.Get<IHideNavBar>().SetNavBar();
+                await topToolbar.FadeTo(1, 100);
+                await bottomMainBar.FadeTo(1, 100);
 
-            var touchPosition = e.Position;
-            DependencyService.Get<IToastMessage>().LongAlert(touchPosition.ToString());
+
+
+                await Task.Delay(150);
+
+                pdfViewGrid.Margin = new Thickness(0, 45, 0, 45);
+
+                toolbarIsCollapsed = false;
+            }
+
+            
 
         }
 
@@ -712,166 +728,6 @@ namespace Pdf.Views
         }
         #endregion
 
-        #region Shape events methods
-
-        //private void ArrowButton_Clicked()
-        //{
-        //    shapeBar.IsVisible = false;
-
-        //    if (bottomAnnotationToolbar.IsVisible == false)
-        //        bottomAnnotationToolbar.IsVisible = true;
-
-        //    //Set Annotation Image
-        //    bottomAnnotationToolbar.AnnotationImage.Source = "pencil.png";
-
-        //    ValidButton.IsVisible = true;
-
-        //    pdfViewerControl.AnnotationMode = AnnotationMode.Arrow;
-
-        //    this.SelectedColor = Color.Black;
-        //}
-
-        //private void LineButton_Clicked()
-        //{
-        //    shapeBar.IsVisible = false;
-
-        //    if (bottomAnnotationToolbar.IsVisible == false)
-        //        bottomAnnotationToolbar.IsVisible = true;
-
-        //    //Set Annotation Image
-        //    bottomAnnotationToolbar.AnnotationImage.Source = "pencil.png";
-
-        //    ValidButton.IsVisible = true;
-
-        //    pdfViewerControl.AnnotationMode = AnnotationMode.Line;
-
-        //    this.SelectedColor = Color.Black;
-        //}
-
-        //private void EllipseButton_Clicked()
-        //{
-        //    shapeBar.IsVisible = false;
-
-        //    if (bottomAnnotationToolbar.IsVisible == false)
-        //        bottomAnnotationToolbar.IsVisible = true;
-
-        //    //Set Annotation Image
-        //    bottomAnnotationToolbar.AnnotationImage.Source = "pencil.png";
-
-        //    ValidButton.IsVisible = true;
-
-        //    pdfViewerControl.AnnotationMode = AnnotationMode.Circle;
-
-        //    this.SelectedColor = Color.Black;
-        //}
-
-        //private void RectangleButton_Clicked()
-        //{
-        //    shapeBar.IsVisible = false;
-
-        //    if (bottomAnnotationToolbar.IsVisible == false)
-        //        bottomAnnotationToolbar.IsVisible = true;
-
-        //    //Set Annotation Image
-        //    bottomAnnotationToolbar.AnnotationImage.Source = "pencil.png";
-
-        //    ValidButton.IsVisible = true;
-
-        //    pdfViewerControl.AnnotationMode = AnnotationMode.Rectangle;
-
-        //    this.SelectedColor = Color.Black;
-        //}
-
-        //private void BackShapeButton_Clicked()
-        //{
-        //    shapeBar.IsVisible = false;
-
-        //    bottomLayout.IsVisible = true;
-
-        //    pdfViewerControl.AnnotationMode = AnnotationMode.None;
-
-        //    //Not like free text and ink
-        //    #region Shape bottom bar events
-        //    shapeBar.ArrowButtonClicked -= ArrowButton_Clicked;
-        //    shapeBar.LineButtonClicked -= LineButton_Clicked;
-        //    shapeBar.EllipseButtonClicked -= EllipseButton_Clicked;
-        //    shapeBar.RectangleButtonClicked -= RectangleButton_Clicked;
-        //    shapeBar.BackButtonClicked -= BackShapeButton_Clicked;
-        //    #endregion
-        //}
-        #endregion
-
-        #region Select Text markup events methods
-
-        //private void StriketroughtButton_Clicked()
-        //{
-        //    if (bottomAnnotationToolbar.IsVisible == false)
-        //        bottomAnnotationToolbar.IsVisible = true;
-
-        //    //Set Annotation Image
-        //    bottomAnnotationToolbar.AnnotationImage.Source = "pencil.png";
-
-        //    pdfViewerControl.AnnotationMode = AnnotationMode.Strikethrough;
-
-        //    this.SelectedColor = Color.Black;
-
-        //    //selectTextMarkupBar.IsVisible = false;
-
-        //    ValidButton.IsVisible = true;
-        //}
-
-        //private void UnderlineButton_Clicked()
-        //{
-        //    if (bottomAnnotationToolbar.IsVisible == false)
-        //        bottomAnnotationToolbar.IsVisible = true;
-
-        //    //Set Annotation Image
-        //    bottomAnnotationToolbar.AnnotationImage.Source = "pencil.png";
-
-        //    pdfViewerControl.AnnotationMode = AnnotationMode.Underline;
-
-        //    this.SelectedColor = Color.Black;
-
-        //    //selectTextMarkupBar.IsVisible = false;
-
-        //    ValidButton.IsVisible = true;
-        //}
-
-        //private void HightlightButton_Clicked()
-        //{
-        //    if (bottomAnnotationToolbar.IsVisible == false)
-        //        bottomAnnotationToolbar.IsVisible = true;
-
-        //    //Set Annotation Image
-        //    bottomAnnotationToolbar.AnnotationImage.Source = "pencil.png";
-
-        //    pdfViewerControl.AnnotationMode = AnnotationMode.Highlight;
-
-        //    this.SelectedColor = Color.Black;
-
-        //    ValidButton.IsVisible = true;
-
-        //    //selectTextMarkupBar.IsVisible = false;
-        //}
-
-
-        private void BackSelectTextMarkupButton_Clicked()
-        {
-            //selectTextMarkupBar.IsVisible = false;
-
-            bottomLayout.IsVisible = true;
-
-            pdfViewerControl.AnnotationMode = AnnotationMode.None;
-
-            #region Text markup choice bar events
-            //selectTextMarkupBar.StrikethroughtButtonClicked -= StriketroughtButton_Clicked;
-            //selectTextMarkupBar.HightlightButtonClicked -= HightlightButton_Clicked;
-            //selectTextMarkupBar.UnderlineButtonClicked -= UnderlineButton_Clicked;
-            //selectTextMarkupBar.BackButtonClicked -= BackSelectTextMarkupButton_Clicked;
-            #endregion
-        }
-
-        #endregion
 
         #region ThicknessBarEvents
         private void ThicknessBar_Clicked(int numberOfThicknessBarClicked)

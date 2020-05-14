@@ -1,6 +1,7 @@
 Acr.UserDialogs
 AndHUD
 FormsViewGroup
+Pdf
 SignaturePad
 SignaturePad.Forms
 SQLitePCLRaw.batteries_green
@@ -13,20 +14,14 @@ Syncfusion.Core.XForms.Android
 Syncfusion.PdfiumBindings
 Syncfusion.SfBusyIndicator.Android
 Syncfusion.SfBusyIndicator.XForms.Android
-Syncfusion.SfImageEditor.XForms.Android
 Syncfusion.SfListView.XForms.Android
-Syncfusion.SfNavigationDrawer.Android
-Syncfusion.SfNavigationDrawer.XForms.Android
 Syncfusion.SfPdfViewer.XForms.Android
 Syncfusion.SfPopupLayout.XForms.Android
 Syncfusion.SfProgressBar.XForms.Android
-Syncfusion.SfRadialMenu.Android
-Syncfusion.SfRadialMenu.XForms.Android
 Syncfusion.SfRangeSlider.Android
 Syncfusion.SfRangeSlider.XForms.Android
 Syncfusion.SfRotator.Android
 Syncfusion.SfRotator.XForms.Android
-Syncfusion.SfTabView.XForms.Android
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common
@@ -68,4 +63,3 @@ Xamarin.Essentials
 Xamarin.Forms.PancakeView
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
-Pdf

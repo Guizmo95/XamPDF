@@ -12,21 +12,14 @@
 
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.440" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="SharpZipLib" Version="1.2.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.46" />
-    <PackageReference Include="Syncfusion.Xamarin.SfImageEditor" Version="18.1.0.43" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.1.0.46" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="18.1.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="18.1.0.52" />
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.1.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRadialMenu" Version="18.1.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="18.1.0.46" />
     <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="18.1.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.42" />
     <PackageReference Include="Unity" Version="5.11.4" />
     <PackageReference Include="Xamarin.Controls.SignaturePad.Forms" Version="3.0.0" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />

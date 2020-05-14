@@ -21,6 +21,7 @@ namespace Pdf.Droid
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         static AssetManager assets;
+        static Window window;
 
         public static AssetManager MyAssets
         {
@@ -34,12 +35,25 @@ namespace Pdf.Droid
             }
         }
 
+        public static Window MainActivityWindow
+        {
+            get
+            {
+                return window;
+            }
+            set
+            {
+                window = value;
+            }
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             assets = this.Assets;
+            window = this.Window;
 
             this.Window.AddFlags(WindowManagerFlags.Fullscreen | WindowManagerFlags.TurnScreenOn);
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
