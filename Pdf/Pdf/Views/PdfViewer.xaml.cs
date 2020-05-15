@@ -294,7 +294,7 @@ namespace Pdf.Views
             var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
 
             // PDFium renderer
-            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+            //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
 
             pdfViewerControl.LoadDocument(pdfStream);
 
@@ -302,6 +302,7 @@ namespace Pdf.Views
             {
                 this.SelectedColor = helper;
             });
+
 
             base.OnAppearing();
         }
@@ -497,36 +498,22 @@ namespace Pdf.Views
         {
             if (this.toolbarIsCollapsed == false)
             {
-                //await mainContent.FadeTo(1, 100);
-                //await mainContent.FadeTo(0, 100);
+
+                DependencyService.Get<IHideNavBar>().RemoveNavBar();
+
                 pdfViewGrid.Margin = 0;
-                await topToolbar.FadeTo(0, 100);
-                await bottomMainBar.FadeTo(0, 100);
-                //DependencyService.Get<IHideNavBar>().RemoveNavBar();
-                //await mainContent.FadeTo(1, 100);
 
+                await topToolbar.FadeTo(0, 150);
+                await bottomMainBar.FadeTo(0, 150);
 
-                //var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 45, 0, Easing.SpringIn);
-                //var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 45, 0, Easing.SpringIn);
-
-                //animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
-                //animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
-
-                
                 toolbarIsCollapsed = true;
             }
             else
             {
-                //var animateTopBar = new Animation(d => topToolbar.HeightRequest = d, 0, 45, Easing.Linear);
-                //var animateBottomBar = new Animation(d => bottomMainBar.HeightRequest = d, 0, 45, Easing.SpringOut);
+                DependencyService.Get<IHideNavBar>().SetNavBar();
 
-                //animateTopBar.Commit(topToolbar, "TopBar", 16, 250);
-                //animateBottomBar.Commit(bottomMainBar, "BottomBar", 16, 250);
-                //DependencyService.Get<IHideNavBar>().SetNavBar();
-                await topToolbar.FadeTo(1, 100);
-                await bottomMainBar.FadeTo(1, 100);
-
-
+                await topToolbar.FadeTo(1, 150);
+                await bottomMainBar.FadeTo(1, 150);
 
                 await Task.Delay(150);
 
@@ -534,9 +521,6 @@ namespace Pdf.Views
 
                 toolbarIsCollapsed = false;
             }
-
-            
-
         }
 
         private void PdfViewerControl_PageChanged(object sender, PageChangedEventArgs args)
@@ -589,11 +573,11 @@ namespace Pdf.Views
                     Image image = new Image();
                     image.Source = ImageSource.FromFile(parameter);
                     image.WidthRequest = 200;
-                    image.HeightRequest = 100;
+                    image.HeightRequest = 200;
 
                     int numpage = pdfViewerControl.PageNumber;
                     //add image as custom stamp to the first page
-                    pdfViewerControl.AddStamp(image, numpage);
+                    pdfViewerControl.AddStamp(image, numpage, new Point(20,20));
                 }
             };
             await Navigation.PushAsync(page);
@@ -727,7 +711,6 @@ namespace Pdf.Views
             this.annotationType = AnnotationType.None;
         }
         #endregion
-
 
         #region ThicknessBarEvents
         private void ThicknessBar_Clicked(int numberOfThicknessBarClicked)
@@ -936,7 +919,7 @@ namespace Pdf.Views
         private void SetToolbarForShapeAnnotationSelected()
         {
             bottomMainToolbar.IsVisible = false;
-            this.colorPicker.IsVisible = false;
+            colorPicker.IsVisible = false;
             styleContent.FontSizeControl.IsVisible = false;
 
             stylePopup.PopupView.HeightRequest = 240;
@@ -968,6 +951,7 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationMode = AnnotationMode.FreeText;
             pdfViewerControl.AnnotationSettings.FreeText.TextSize = 8;
             this.annotationType = AnnotationType.FreeText;
+            styleContent.ColorPicker.SelectedIndex = 0;
             this.SelectedColor = Color.Black;
             this.FontSize = 8;
         }
@@ -975,7 +959,7 @@ namespace Pdf.Views
         private void SetToolbarForInkAnnotationSelected()
         {
             bottomMainToolbar.IsVisible = false;
-            this.colorPicker.IsVisible = false;
+            colorPicker.IsVisible = false;
             styleContent.FontSizeControl.IsVisible = false;
             viewModeButton.IsVisible = false;
             bookmarkButton.IsVisible = false;
@@ -1000,12 +984,14 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
             pdfViewerControl.AnnotationSettings.Ink.Thickness = 9;
             this.annotationType = AnnotationType.Ink;
+            styleContent.ColorPicker.SelectedIndex = 0;
             this.SelectedColor = Color.Black;
         }
 
         private void SetToolbarForTextMarkupAnnotationSelected()
         {
             bottomMainToolbar.IsVisible = false;
+            paletteButton.IsVisible = false;
 
             colorPicker.IsVisible = true;
             textMarkupToolbar.IsVisible = true;
@@ -1055,13 +1041,16 @@ namespace Pdf.Views
             imageAnnotationType.Source = "ic_strikethrough.png";
             annotationTypeToolbar.IsVisible = true;
 
+
             pdfViewerControl.AnnotationMode = AnnotationMode.Strikethrough;
             this.annotationType = AnnotationType.Strikethrought;
+            colorPicker.SelectedIndex = 5;
             this.SelectedColor = Color.Yellow;
         }
 
         private async void UnderlineButton_Clicked(object sender, EventArgs e)
         {
+            paletteButton.IsVisible = false;
             textMarkupToolbar.IsVisible = false;
 
             imageAnnotationType.Source = "ic_underline.png";
@@ -1069,11 +1058,14 @@ namespace Pdf.Views
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Underline;
             this.annotationType = AnnotationType.Underline;
+            //todo -- set for red color
+            colorPicker.SelectedIndex = 4;
             this.SelectedColor = Color.Red;
         }
 
         private async void HightlightButton_Clicked(object sender, EventArgs e)
         {
+            paletteButton.IsVisible = false;
             textMarkupToolbar.IsVisible = false;
 
             imageAnnotationType.Source = "ic_edit.png";
@@ -1081,6 +1073,8 @@ namespace Pdf.Views
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Highlight;
             this.annotationType = AnnotationType.Hightlight;
+
+            colorPicker.SelectedIndex = 5;
             this.SelectedColor = Color.Yellow;
         }
         #endregion
@@ -1191,6 +1185,7 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationMode = AnnotationMode.Circle;
             pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 9;
             this.annotationType = AnnotationType.Circle;
+            styleContent.ColorPicker.SelectedIndex = 0;
             this.SelectedColor = Color.Black;
 
         }
@@ -1205,6 +1200,7 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationMode = AnnotationMode.Line;
             pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 9;
             this.annotationType = AnnotationType.Line;
+            styleContent.ColorPicker.SelectedIndex = 0;
             this.SelectedColor = Color.Black;
         }
 
@@ -1218,6 +1214,7 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationMode = AnnotationMode.Arrow;
             pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 9;
             this.annotationType = AnnotationType.Arrow;
+            styleContent.ColorPicker.SelectedIndex = 0;
             this.SelectedColor = Color.Black;
         }
 
@@ -1231,6 +1228,8 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationMode = AnnotationMode.Rectangle;
             pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 9;
             this.annotationType = AnnotationType.Rectangle;
+
+            styleContent.ColorPicker.SelectedIndex = 0;
             this.SelectedColor = Color.Black;
         }
 

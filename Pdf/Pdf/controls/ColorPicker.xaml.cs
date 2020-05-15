@@ -90,6 +90,7 @@ namespace Pdf.Views
             InitializeComponent();
 
             ViewCollection = new ObservableCollection<object>();
+            primaryColors.Add(Color.Black);
             primaryColors.Add(Color.Violet);
             primaryColors.Add(Color.Indigo);
             primaryColors.Add(Color.Blue);

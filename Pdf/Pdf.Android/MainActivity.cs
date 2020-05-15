@@ -95,7 +95,9 @@ namespace Pdf.Droid
 
             UserDialogs.Init(this);
 
-            global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
+
+
+        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
             Forms.SetFlags("IndicatorView_Experimental");
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -109,6 +111,7 @@ namespace Pdf.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
 
     }
 }
