@@ -1,8 +1,10 @@
 ﻿using Pdf.controls;
 using Pdf.Enumerations;
+using Pdf.Interfaces;
 using Pdf.Models;
 using Pdf.ViewModels;
 using Syncfusion.ListView.XForms;
+using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.XForms.PopupLayout;
 using System;
@@ -11,13 +13,14 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Unity;
 using Xamarin.Forms;
 
 namespace Pdf.Helpers
 {
-    public class SfBehavior : Behavior<ContentPage>
+    public class SfBehavior : Behavior<ContentPage>, INotifyPropertyChanged
     {
 
         #region Fields
@@ -27,15 +30,38 @@ namespace Pdf.Helpers
 
         private SfPopupLayout getInfoFilePopup;
         private PdfPropertyPopup pdfPropertyPopup;
+        private SfPopupLayout passwordPopup;
+
+        private DataTemplate templateViewSetPasswordPopup;
+
+        Label label;
+        Entry entry;
 
         private DocumentViewModel viewModel;
         private SearchBar searchBar = null;
+        private string textEntryPasswordPopup = "";
 
         private bool isSwipped;
+        private int itemIndex;
 
         private BehaviorType behaviorType;
 
+        // Declare the event
+        public event PropertyChangedEventHandler PropertyChanged;
         #endregion
+
+        public string TextEntryPasswordPopup
+        {
+            get
+            {
+                return textEntryPasswordPopup;
+            }
+            set
+            {
+                textEntryPasswordPopup = value;
+                OnPropertyChanged();
+            }
+        }
 
         public Command<int> SwipeButtonCommand
         {
@@ -112,8 +138,145 @@ namespace Pdf.Helpers
 
             // Adding HeaderTemplate of the SfPopupLayout
             getInfoFilePopup.PopupView.HeaderTemplate = headerTemplateViewGetInfoPopup;
+
+            passwordPopup = new SfPopupLayout();
+            passwordPopup.PopupView.HeightRequest = 200;
+            passwordPopup.PopupView.WidthRequest = 310;
+            passwordPopup.PopupView.ShowHeader = true;
+            passwordPopup.PopupView.ShowFooter = true;
+            passwordPopup.PopupView.ShowCloseButton = true;
+            passwordPopup.PopupView.AnimationDuration = 170;
+            passwordPopup.PopupView.HeaderHeight = 63;
+            passwordPopup.Closed += PasswordPopup_Closed;
+
+            DataTemplate templateViewHeaderSetPasswordPopop = new DataTemplate(() =>
+            {
+                Label label = new Label();
+                label.VerticalTextAlignment = TextAlignment.Center;
+                label.Padding = new Thickness(20,0,20,0);
+                label.Text = "Password";
+                label.TextColor = Color.Black;
+                label.FontSize = 17;
+                label.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+
+                return label;
+            });
+
+
+            templateViewSetPasswordPopup = new DataTemplate(() =>
+            {
+                StackLayout stackLayout = new StackLayout();
+
+                label = new Label();
+
+                label.Text = "This file is password protected. Please enter the password";
+                label.TextColor = Color.Black;
+                label.FontSize = 13.5;
+                label.Padding = new Thickness(20, 0, 20, 0);
+                label.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+
+                entry = new Entry();
+                entry.FontSize = 13.5;
+                entry.Margin = new Thickness(19, 0, 19, 0);
+                entry.IsPassword = true;
+                entry.Placeholder = "Enter the password";
+                entry.TextColor = Color.Black;
+
+                stackLayout.Children.Add(label);
+                stackLayout.Children.Add(entry);
+
+                return stackLayout;
+            });
+
+            //templateViewSetPasswordPopupFailed = new DataTemplate(() =>
+            //{
+            //    StackLayout stackLayout = new StackLayout();
+
+            //    Label label1 = new Label();
+
+            //    label1.Text = "The password is incorrect. Please try again";
+            //    label1.TextColor = Color.Black;
+            //    label1.FontSize = 13.5;
+            //    label1.Padding = new Thickness(20, 0, 20, 0);
+            //    label1.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+
+            //    Entry entry = new Entry();
+            //    entry.FontSize = 13.5;
+            //    entry.Margin = new Thickness(19, 0, 19, 0);
+            //    entry.IsPassword = true;
+            //    entry.Placeholder = "Enter the password";
+            //    entry.TextColor = Color.Black;
+
+            //    entry.BindingContext = this;
+            //    entry.SetBinding(Entry.TextProperty, new Binding() { Source = BindingContext, Path = "TextEntryPasswordPopup" });
+
+            //    stackLayout.Children.Add(label1);
+            //    stackLayout.Children.Add(entry);
+
+            //    return stackLayout;
+            //});
+
+            DataTemplate footerTemplateViewSetPasswordPopup = new DataTemplate(() =>
+            {
+                StackLayout stackLayout = new StackLayout();
+                stackLayout.Orientation = StackOrientation.Horizontal;
+                stackLayout.Spacing = 0;
+
+                Button acceptButton = new Button();
+                acceptButton.Text = "Ok";
+                acceptButton.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+                acceptButton.FontSize = 14;
+                acceptButton.TextColor = Color.Black;
+                acceptButton.HorizontalOptions = LayoutOptions.EndAndExpand;
+                acceptButton.BackgroundColor = Color.White;
+                acceptButton.VerticalOptions = LayoutOptions.Center;
+                acceptButton.WidthRequest = 86;
+                acceptButton.Clicked += AcceptButtonPasswordPopup_Clicked;
+                Button declineButton = new Button();
+                declineButton.Text = "Cancel";
+                declineButton.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+                declineButton.FontSize = 14;
+                declineButton.TextColor = Color.Black;
+                declineButton.HorizontalOptions = LayoutOptions.End;
+                declineButton.BackgroundColor = Color.White;
+                declineButton.VerticalOptions = LayoutOptions.Center;
+                declineButton.WidthRequest = 89;
+                declineButton.Clicked += DeclineButton_Clicked;
+
+                stackLayout.Children.Add(acceptButton);
+                stackLayout.Children.Add(declineButton);
+
+                return stackLayout;
+            });
+
+            // Adding ContentTemplate of the SfPopupLayout
+            passwordPopup.PopupView.ContentTemplate = templateViewSetPasswordPopup;
+
+            // Adding FooterTemplate of the SfPopupLayout
+            passwordPopup.PopupView.FooterTemplate = footerTemplateViewSetPasswordPopup;
+
+            // Adding FooterTemplate of the SfPopupLayout
+            passwordPopup.PopupView.HeaderTemplate = templateViewHeaderSetPasswordPopop;
+            
         }
 
+        //TODO -- CLOSE KEYBOARD
+
+        private void PasswordPopup_Closed(object sender, EventArgs e)
+        {
+            label.Text = "This file is password protected. Please enter the password";
+        }
+
+        private void DeclineButton_Clicked(object sender, EventArgs e)
+        {
+            passwordPopup.IsOpen = false;
+        }
+
+        private void AcceptButtonPasswordPopup_Clicked(object sender, EventArgs e)
+        {
+            OpenFileToShowInfo(itemIndex, entry.Text, false);
+            //DependencyService.Get<IToastMessage>().LongAlert(entry.Text);
+        }
 
         private void GetInfoFilePopup_Closing(object sender, Syncfusion.XForms.Core.CancelEventArgs e)
         {
@@ -136,10 +299,27 @@ namespace Pdf.Helpers
 
         private void GetInfoDocument(int itemIndex)
         {
+            OpenFileToShowInfo(itemIndex, null, true);
+            this.itemIndex = itemIndex;
+        }
+
+        private void OpenFileToShowInfo(int itemIndex, string password = null, bool isFirstTry = false)
+        {
             using (Stream docStream = new FileStream(DocumentViewModel.Documents[itemIndex].FilePath, FileMode.Open))
             {
-                using (PdfLoadedDocument document = new PdfLoadedDocument(docStream))
+                try
                 {
+                    PdfLoadedDocument document;
+
+                    if (password == null)
+                    {
+                        document = new PdfLoadedDocument(docStream);
+                    }
+                    else
+                    {
+                        document = new PdfLoadedDocument(docStream, password);
+                    }
+
                     IList<DocumentInfoListViewModel> documentInfoListViewModels = new List<DocumentInfoListViewModel>();
                     documentInfoListViewModels.Add(new DocumentInfoListViewModel("Filename", (viewModel.ItemToRemove.FileName)));
                     documentInfoListViewModels.Add(new DocumentInfoListViewModel("Pages numbers", document.PageCount.ToString()));
@@ -158,6 +338,23 @@ namespace Pdf.Helpers
                     pdfPropertyPopup.PdfPropertyListView.ItemsSource = documentInfoListViewModels;
 
                     getInfoFilePopup.IsOpen = true;
+
+                    document.Close();
+                }
+                catch (PdfDocumentException exception)
+                {
+                    if (exception.Message == "Can't open an encrypted document. The password is invalid.")
+                    {
+                        if(isFirstTry == true)
+                        {
+                            passwordPopup.Show();
+                        }
+                        else
+                        {
+                            label.Text = "The password is incorrect. Please try again";
+                            passwordPopup.Show();
+                        }
+                    }
                 }
             }
         }
@@ -202,7 +399,10 @@ namespace Pdf.Helpers
             e.Cancel = true;
         }
         #endregion
-    }
 
-    
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+    }
 }

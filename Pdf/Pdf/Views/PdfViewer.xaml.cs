@@ -1,5 +1,6 @@
 ﻿using Android.Content;
 using Android.OS;
+using Android.Text;
 using Android.Views;
 using Pdf.controls;
 using Pdf.Enumerations;
@@ -952,7 +953,6 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationSettings.FreeText.TextSize = 8;
             this.annotationType = AnnotationType.FreeText;
             styleContent.ColorPicker.SelectedIndex = 0;
-            this.SelectedColor = Color.Black;
             this.FontSize = 8;
         }
 
@@ -985,7 +985,6 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationSettings.Ink.Thickness = 9;
             this.annotationType = AnnotationType.Ink;
             styleContent.ColorPicker.SelectedIndex = 0;
-            this.SelectedColor = Color.Black;
         }
 
         private void SetToolbarForTextMarkupAnnotationSelected()
@@ -1036,46 +1035,46 @@ namespace Pdf.Views
 
         private async void StrikethroughtButton_Clicked(object sender, EventArgs e)
         {
-            textMarkupToolbar.IsVisible = false;
-
             imageAnnotationType.Source = "ic_strikethrough.png";
-            annotationTypeToolbar.IsVisible = true;
-
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Strikethrough;
             this.annotationType = AnnotationType.Strikethrought;
+
             colorPicker.SelectedIndex = 5;
-            this.SelectedColor = Color.Yellow;
+
+            InitializeComponentForTextMarkupAnnotation();
         }
 
         private async void UnderlineButton_Clicked(object sender, EventArgs e)
         {
-            paletteButton.IsVisible = false;
-            textMarkupToolbar.IsVisible = false;
-
             imageAnnotationType.Source = "ic_underline.png";
-            annotationTypeToolbar.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Underline;
             this.annotationType = AnnotationType.Underline;
             //todo -- set for red color
             colorPicker.SelectedIndex = 4;
-            this.SelectedColor = Color.Red;
+
+            InitializeComponentForTextMarkupAnnotation();
         }
 
         private async void HightlightButton_Clicked(object sender, EventArgs e)
         {
-            paletteButton.IsVisible = false;
-            textMarkupToolbar.IsVisible = false;
-
             imageAnnotationType.Source = "ic_edit.png";
-            annotationTypeToolbar.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Highlight;
             this.annotationType = AnnotationType.Hightlight;
 
             colorPicker.SelectedIndex = 5;
-            this.SelectedColor = Color.Yellow;
+
+            InitializeComponentForTextMarkupAnnotation();
+        }
+
+        private void InitializeComponentForTextMarkupAnnotation()
+        {
+            paletteButton.IsVisible = false;
+            textMarkupToolbar.IsVisible = false;
+
+            annotationTypeToolbar.IsVisible = true;
         }
         #endregion
 
@@ -1176,63 +1175,54 @@ namespace Pdf.Views
 
         private void CircleButton_Clicked(object sender, EventArgs e)
         {
-            shapeToolbar.IsVisible = false;
-
             imageAnnotationType.Source = "ic_ui.png";
-            paletteButton.IsVisible = true;
-            annotationTypeToolbar.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Circle;
-            pdfViewerControl.AnnotationSettings.Circle.Settings.Thickness = 9;
             this.annotationType = AnnotationType.Circle;
-            styleContent.ColorPicker.SelectedIndex = 0;
-            this.SelectedColor = Color.Black;
 
+            InitalizeCompenentsForShapeBar();
         }
 
         private void LineButton_Clicked(object sender, EventArgs e)
         {
-            shapeToolbar.IsVisible = false;
-            paletteButton.IsVisible = true;
             imageAnnotationType.Source = "ic_square.png";
-            annotationTypeToolbar.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Line;
-            pdfViewerControl.AnnotationSettings.Line.Settings.Thickness = 9;
             this.annotationType = AnnotationType.Line;
-            styleContent.ColorPicker.SelectedIndex = 0;
-            this.SelectedColor = Color.Black;
+
+            InitalizeCompenentsForShapeBar();
         }
 
         private void ArrowButton_Clicked(object sender, EventArgs e)
         {
-            shapeToolbar.IsVisible = false;
-            paletteButton.IsVisible = true;
             imageAnnotationType.Source = "ic_directional.png";
-            annotationTypeToolbar.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Arrow;
-            pdfViewerControl.AnnotationSettings.Arrow.Settings.Thickness = 9;
             this.annotationType = AnnotationType.Arrow;
-            styleContent.ColorPicker.SelectedIndex = 0;
-            this.SelectedColor = Color.Black;
+
+            InitalizeCompenentsForShapeBar();
         }
 
         private void RectangleButton_Clicked(object sender, EventArgs e)
         {
-            shapeToolbar.IsVisible = false;
-            paletteButton.IsVisible = true;
             imageAnnotationType.Source = "ic_math.png";
-            annotationTypeToolbar.IsVisible = true;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Rectangle;
-            pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 9;
             this.annotationType = AnnotationType.Rectangle;
 
-            styleContent.ColorPicker.SelectedIndex = 0;
-            this.SelectedColor = Color.Black;
+            InitalizeCompenentsForShapeBar();
         }
 
+        private void InitalizeCompenentsForShapeBar()
+        {
+            shapeToolbar.IsVisible = false;
+
+            annotationTypeToolbar.IsVisible = true;
+            paletteButton.IsVisible = true;
+
+            styleContent.ColorPicker.SelectedIndex = 0;
+            pdfViewerControl.AnnotationSettings.Rectangle.Settings.Thickness = 9;
+        }
         #endregion
 
         #region Change view mode feature
@@ -1348,7 +1338,7 @@ namespace Pdf.Views
             activityIndicator.IsRunning = false;
         }
 
-        private void TextSearchEntry_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextSearchEntry_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
             pdfViewerControl.CancelSearch();
             search_started = false;
