@@ -298,14 +298,17 @@ namespace Pdf.Views
 
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
-
-            passwordPopup.Closed -= PasswordPopup_Closed;
-            acceptButton.Clicked -= AcceptButtonPasswordPopup_Clicked;
-            declineButton.Clicked -= DeclineButton_Clicked;
+            
             pdfViewerControl.PasswordErrorOccurred -= PdfViewerControl_PasswordErrorOccurred;
 
-            if (passwordPopup.IsOpen == true)
+            if(passwordPopup != null)
+            {
+                passwordPopup.Closed -= PasswordPopup_Closed;
+                acceptButton.Clicked -= AcceptButtonPasswordPopup_Clicked;
+                declineButton.Clicked -= DeclineButton_Clicked;
+
                 passwordPopup.IsOpen = false;
+            }
 
             //pdfViewerControl.Unload();
             base.OnDisappearing();
@@ -349,11 +352,14 @@ namespace Pdf.Views
 
         private void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
         {
-            Shell.SetNavBarIsVisible(this, false);
-            Shell.SetTabBarIsVisible(this, false);
-            NavigationPage.SetHasNavigationBar(this, false);
+            if (isPasswordPopupInitalized != true)
+            {
+                Shell.SetNavBarIsVisible(this, false);
+                Shell.SetTabBarIsVisible(this, false);
+                NavigationPage.SetHasNavigationBar(this, false);
 
-            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+                Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+            }
 
             #region Pdf viewer events
             pdfViewerControl.FreeTextAnnotationAdded += PdfViewerControl_FreeTextAnnotationAdded;
@@ -517,7 +523,8 @@ namespace Pdf.Views
 
             annotationType = AnnotationType.None;
 
-            passwordPopup.IsOpen = false;
+            if (passwordPopup != null)
+                passwordPopup.IsOpen = false;
 
             activityIndicator.IsVisible = false;
             activityIndicator.IsRunning = false;
@@ -546,6 +553,7 @@ namespace Pdf.Views
         private async void DeclineButton_Clicked(object sender, EventArgs e)
         {
             passwordPopup.IsOpen = false;
+            DependencyService.Get<IKeyboardHelper>().HideKeyboard();
 
             await Navigation.PopAsync();
         }
@@ -647,13 +655,12 @@ namespace Pdf.Views
                 passwordPopup.PopupView.HeaderTemplate = templateViewHeaderSetPasswordPopop;
 
                 isPasswordPopupInitalized = true;
+
+                Shell.SetNavBarIsVisible(this, false);
+                Shell.SetTabBarIsVisible(this, false);
+                NavigationPage.SetHasNavigationBar(this, false);
+                Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             }
-
-            Shell.SetNavBarIsVisible(this, false);
-            Shell.SetTabBarIsVisible(this, false);
-            NavigationPage.SetHasNavigationBar(this, false);
-
-            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
 
             activityIndicator.IsRunning = false;
             activityIndicator.IsVisible = false;
