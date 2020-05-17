@@ -17,10 +17,11 @@ using Android.Content.Res;
 
 namespace Pdf.Droid
 {
-    [Activity(Label = "XamPdf", Icon = "@mipmap/ic_launcher", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Xam's Pdf", Icon = "@mipmap/ic_launcher", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         static AssetManager assets;
+        static Window window;
 
         public static AssetManager MyAssets
         {
@@ -34,12 +35,25 @@ namespace Pdf.Droid
             }
         }
 
+        public static Window MainActivityWindow
+        {
+            get
+            {
+                return window;
+            }
+            set
+            {
+                window = value;
+            }
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             assets = this.Assets;
+            window = this.Window;
 
             this.Window.AddFlags(WindowManagerFlags.Fullscreen | WindowManagerFlags.TurnScreenOn);
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
@@ -81,7 +95,9 @@ namespace Pdf.Droid
 
             UserDialogs.Init(this);
 
-            global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
+
+
+        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
             Forms.SetFlags("IndicatorView_Experimental");
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -95,6 +111,7 @@ namespace Pdf.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
 
     }
 }

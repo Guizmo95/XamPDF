@@ -12,22 +12,16 @@
 
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.440" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="SharpZipLib" Version="1.2.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.46" />
-    <PackageReference Include="Syncfusion.Xamarin.SfImageEditor" Version="18.1.0.43" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.1.0.46" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="18.1.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="18.1.0.52" />
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.1.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRadialMenu" Version="18.1.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="18.1.0.46" />
     <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="18.1.0.43" />
-    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.42" />
     <PackageReference Include="Unity" Version="5.11.4" />
+    <PackageReference Include="Xamarin.Controls.SignaturePad.Forms" Version="3.0.0" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.657" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="1.3.7" />
@@ -43,12 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="controls\InkBottomBar.xaml.cs">
-      <DependentUpon>InkBottomBar.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="controls\FreeTextBottomBar.xaml.cs">
-      <DependentUpon>FreeTextBottomBar.xaml</DependentUpon>
-    </Compile>
     <Compile Update="controls\StyleContent.xaml.cs">
       <DependentUpon>StyleContent.xaml</DependentUpon>
     </Compile>
@@ -58,28 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="controls\AnnotationToolbar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\BottomAnnotationToolbar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\EditPopupMenu.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\NavigationDrawerToolsMenu.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\InkBottomBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\FreeTextBottomBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="controls\ColorPicker.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\FontSizeSlider.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\OpacitySlider.xaml">
@@ -91,19 +58,7 @@
     <EmbeddedResource Update="controls\SearchErrorPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\SelectTextMarkupBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\ShapeBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\ShapeCustomBar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="controls\StyleContent.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="controls\TextMarkupBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\ThicknessBar.xaml">

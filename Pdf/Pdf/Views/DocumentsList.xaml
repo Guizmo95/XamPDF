@@ -22,8 +22,8 @@
                            HeightRequest="50" 
                            HorizontalTextAlignment="Center" 
                            VerticalTextAlignment="Center" 
-                           Text="Welcome" 
-                           FontSize="16" 
+                           Text="My documents" 
+                           FontSize="16.5" 
                            TextColor="White"
                            FontFamily="GothamBold.ttf#GothamBold"
                            />
@@ -31,13 +31,13 @@
                           IsVisible="false"
                           Placeholder="Search" HorizontalOptions="FillAndExpand" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="16" WidthRequest="200"/>
             <ImageButton x:Name="searchButton" 
-                            HeightRequest="25" 
-                            WidthRequest="25" 
+                            HeightRequest="26.5" 
+                            WidthRequest="26.5" 
                             HorizontalOptions="EndAndExpand" 
-                            Source="outline_search_24.xml" BackgroundColor="Transparent" Margin="0,0,6,0" Clicked="SearchButton_Clicked"/>
+                            Source="outline_searchmenu.xml" BackgroundColor="Transparent" Margin="0,0,6,0" Clicked="SearchButton_Clicked"/>
             <ImageButton x:Name="sortButton" 
-                            HeightRequest="25" 
-                            WidthRequest="25" 
+                            HeightRequest="26.5" 
+                            WidthRequest="26.5" 
                             HorizontalOptions="End" 
                             Source="baseline_sort_24.xml"
                             Margin="0,0,10,0" BackgroundColor="Transparent" Clicked="SortButton_Clicked"/>
@@ -51,7 +51,7 @@
     <AbsoluteLayout VerticalOptions="Fill">
         
         <syncfusion:SfListView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"  AllowSwiping="True" x:Name="DocumentListView" BackgroundColor="White" SelectionMode="Single"
-                           ItemSize="67" HorizontalOptions="FillAndExpand">
+                           ItemSize="69" HorizontalOptions="FillAndExpand">
             <syncfusion:SfListView.SelectedItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -70,21 +70,21 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="35"/>
+                                        <ColumnDefinition Width="39"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="55"/>
                                     </Grid.RowDefinitions>
 
-                                    <Image Source="baseline_picture_as_pdf_24.xml" HeightRequest="33" WidthRequest="28" Margin="10,4,5,3" VerticalOptions="Center" Aspect="AspectFill" Grid.Column="0" Grid.Row="0"/>
+                                    <Image Source="baseline_picture_as_pdf_24.xml" HeightRequest="34" WidthRequest="28" Margin="10,4,5,3" VerticalOptions="Center" Aspect="AspectFill" Grid.Column="0" Grid.Row="0"/>
                                     <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="1" Margin="0,0,0,0" Grid.Row="0">
-                                        <Label Text="{Binding FileName}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="13" TextColor="#4e4e4e" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Margin="0,0,4,0"/>
+                                        <Label Text="{Binding FileName}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="14" TextColor="#4e4e4e" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Margin="0,0,4,0"/>
                                         <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                                            <Label Text="{Binding CreationTime, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="9.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
-                                            <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="9.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding CreationTime, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
                                         </StackLayout>
                                     </StackLayout>
-                                    <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="35" Grid.Column="2" Margin="0,0,13,0" Grid.Row="0">
+                                    <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="39" Grid.Column="2" Margin="0,0,14,0" Grid.Row="0">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInDocumentList}"/>
                                         </Image.GestureRecognizers>
@@ -101,7 +101,7 @@
                 <DataTemplate x:Name="RightSwipeTemplate">
                     <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="67"/>
+                            <RowDefinition Height="69"/>
                         </Grid.RowDefinitions>
                         <Grid BackgroundColor="#009EDA" HorizontalOptions="End" VerticalOptions="Fill" Grid.Row="0" ColumnSpacing="0" x:Name="SwipeCommands">
                             <Grid.ColumnDefinitions>
@@ -160,20 +160,20 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="39"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="55"/>
                                 </Grid.RowDefinitions>
-                                <Image Source="baseline_picture_as_pdf_24.xml" HeightRequest="33" WidthRequest="28" Margin="10,4,5,3" VerticalOptions="Center" Aspect="AspectFill" Grid.Column="0" Grid.Row="0"/>
+                                <Image Source="baseline_picture_as_pdf_24.xml" HeightRequest="34" WidthRequest="28" Margin="10,4,5,3" VerticalOptions="Center" Aspect="AspectFill" Grid.Column="0" Grid.Row="0"/>
                                 <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="1" Margin="0,0,0,0" Grid.Row="0">
-                                    <Label Text="{Binding FileName}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="13" TextColor="#4e4e4e" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Margin="0,0,4,0"/>
+                                    <Label Text="{Binding FileName}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="14" TextColor="#4e4e4e" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Margin="0,0,4,0"/>
                                     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                                        <Label Text="{Binding CreationTime, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="9.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
-                                        <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="9.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                        <Label Text="{Binding CreationTime, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                        <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
                                     </StackLayout>
                                 </StackLayout>
-                                <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="35" Grid.Column="2" Margin="0,0,13,0" Grid.Row="0">
+                                <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="39" Grid.Column="2" Margin="0,0,14,0" Grid.Row="0">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInDocumentList}"/>
                                     </Image.GestureRecognizers>

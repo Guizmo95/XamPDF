@@ -50,21 +50,6 @@ namespace Pdf.Droid.Helpers
             {
                 Console.WriteLine(e.Message);
             }
-
-
-            
-
-            //var source = Android.Net.Uri.Parse(uri.ToString());
-            //var request = new DownloadManager.Request(source);
-
-            //request.SetMimeType("application/pdf");
-            //request.SetVisibleInDownloadsUi(true);
-            //request.SetNotificationVisibility(DownloadVisibility.VisibleNotifyCompleted);
-
-            //manager.Enqueue(request);
-    
-
         }
-        
     }
 }
