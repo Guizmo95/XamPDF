@@ -20,7 +20,7 @@ using Xamarin.Forms;
 
 namespace Pdf.Helpers
 {
-    public class SfBehavior : Behavior<ContentPage>, INotifyPropertyChanged
+    public class SfBehavior : Behavior<ContentPage>
     {
 
         #region Fields
@@ -36,32 +36,17 @@ namespace Pdf.Helpers
 
         Label label;
         Entry entry;
+        Button acceptButton;
+        Button declineButton;
 
         private DocumentViewModel viewModel;
         private SearchBar searchBar = null;
-        private string textEntryPasswordPopup = "";
 
         private bool isSwipped;
         private int itemIndex;
 
         private BehaviorType behaviorType;
-
-        // Declare the event
-        public event PropertyChangedEventHandler PropertyChanged;
         #endregion
-
-        public string TextEntryPasswordPopup
-        {
-            get
-            {
-                return textEntryPasswordPopup;
-            }
-            set
-            {
-                textEntryPasswordPopup = value;
-                OnPropertyChanged();
-            }
-        }
 
         public Command<int> SwipeButtonCommand
         {
@@ -188,41 +173,13 @@ namespace Pdf.Helpers
                 return stackLayout;
             });
 
-            //templateViewSetPasswordPopupFailed = new DataTemplate(() =>
-            //{
-            //    StackLayout stackLayout = new StackLayout();
-
-            //    Label label1 = new Label();
-
-            //    label1.Text = "The password is incorrect. Please try again";
-            //    label1.TextColor = Color.Black;
-            //    label1.FontSize = 13.5;
-            //    label1.Padding = new Thickness(20, 0, 20, 0);
-            //    label1.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
-
-            //    Entry entry = new Entry();
-            //    entry.FontSize = 13.5;
-            //    entry.Margin = new Thickness(19, 0, 19, 0);
-            //    entry.IsPassword = true;
-            //    entry.Placeholder = "Enter the password";
-            //    entry.TextColor = Color.Black;
-
-            //    entry.BindingContext = this;
-            //    entry.SetBinding(Entry.TextProperty, new Binding() { Source = BindingContext, Path = "TextEntryPasswordPopup" });
-
-            //    stackLayout.Children.Add(label1);
-            //    stackLayout.Children.Add(entry);
-
-            //    return stackLayout;
-            //});
-
             DataTemplate footerTemplateViewSetPasswordPopup = new DataTemplate(() =>
             {
                 StackLayout stackLayout = new StackLayout();
                 stackLayout.Orientation = StackOrientation.Horizontal;
                 stackLayout.Spacing = 0;
 
-                Button acceptButton = new Button();
+                acceptButton = new Button();
                 acceptButton.Text = "Ok";
                 acceptButton.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
                 acceptButton.FontSize = 14;
@@ -232,7 +189,7 @@ namespace Pdf.Helpers
                 acceptButton.VerticalOptions = LayoutOptions.Center;
                 acceptButton.WidthRequest = 86;
                 acceptButton.Clicked += AcceptButtonPasswordPopup_Clicked;
-                Button declineButton = new Button();
+                declineButton = new Button();
                 declineButton.Text = "Cancel";
                 declineButton.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
                 declineButton.FontSize = 14;
@@ -265,6 +222,8 @@ namespace Pdf.Helpers
         private void PasswordPopup_Closed(object sender, EventArgs e)
         {
             label.Text = "This file is password protected. Please enter the password";
+
+            DependencyService.Get<IKeyboardHelper>().HideKeyboard();
         }
 
         private void DeclineButton_Clicked(object sender, EventArgs e)
@@ -275,12 +234,13 @@ namespace Pdf.Helpers
         private void AcceptButtonPasswordPopup_Clicked(object sender, EventArgs e)
         {
             OpenFileToShowInfo(itemIndex, entry.Text, false);
-            //DependencyService.Get<IToastMessage>().LongAlert(entry.Text);
         }
 
         private void GetInfoFilePopup_Closing(object sender, Syncfusion.XForms.Core.CancelEventArgs e)
         {
             ListView.ResetSwipe();
+
+            DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
         }
 
         protected override void OnDetachingFrom(ContentPage bindable)
@@ -289,11 +249,16 @@ namespace Pdf.Helpers
             viewModel = null;
             getInfoFilePopup = null;
             pdfPropertyPopup = null;
+            passwordPopup = null;
+            templateViewSetPasswordPopup = null;
 
             searchBar = null;
             searchBar.TextChanged -= SearchBar_TextChanged;
             getInfoFilePopup.Closing -= GetInfoFilePopup_Closing;
             ListView.SwipeStarted -= ListView_SwipeStarted;
+            declineButton.Clicked -= DeclineButton_Clicked;
+            acceptButton.Clicked -= AcceptButtonPasswordPopup_Clicked;
+            passwordPopup.Closed -= PasswordPopup_Closed;
             base.OnDetachingFrom(bindable);
         }
 
@@ -319,6 +284,10 @@ namespace Pdf.Helpers
                     {
                         document = new PdfLoadedDocument(docStream, password);
                     }
+
+                    DependencyService.Get<IKeyboardHelper>().HideKeyboard();
+                    DependencyService.Get<INavBarHelper>().SetImmersiveMode();
+                    passwordPopup.IsOpen = false;
 
                     IList<DocumentInfoListViewModel> documentInfoListViewModels = new List<DocumentInfoListViewModel>();
                     documentInfoListViewModels.Add(new DocumentInfoListViewModel("Filename", (viewModel.ItemToRemove.FileName)));
@@ -399,10 +368,5 @@ namespace Pdf.Helpers
             e.Cancel = true;
         }
         #endregion
-
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
     }
 }

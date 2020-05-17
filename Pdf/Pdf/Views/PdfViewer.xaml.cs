@@ -28,13 +28,28 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PdfViewer : ContentPage, INotifyPropertyChanged
     {
+        private Stream pdfStream;
+
         private PdfViewerModel pdfViewerModel;
         private SfPopupLayout stylePopup;
         private SfPopupLayout errorSearchPopup;
+        private SfPopupLayout passwordPopup;
+
         private StyleContent styleContent;
         private SearchErrorPopup searchErrorPopupContent;
+
         private DataTemplate styleTemplateStylePopup;
         private DataTemplate styleTemplateErrorPopup;
+        private DataTemplate templateViewSetPasswordPopup;
+
+        Label label;
+        Entry entry;
+        Button acceptButton;
+        Button declineButton;
+
+        private bool isATryToOpenTheDocument = false;
+        private bool hasAlreadyTriedToOpenDoc = false;
+        private bool isPasswordPopupInitalized = false;
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
         private InkAnnotation selectedInkAnnotation;
@@ -284,15 +299,25 @@ namespace Pdf.Views
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
 
+            passwordPopup.Closed -= PasswordPopup_Closed;
+            acceptButton.Clicked -= AcceptButtonPasswordPopup_Clicked;
+            declineButton.Clicked -= DeclineButton_Clicked;
+            pdfViewerControl.PasswordErrorOccurred -= PdfViewerControl_PasswordErrorOccurred;
+
+            if (passwordPopup.IsOpen == true)
+                passwordPopup.IsOpen = false;
+
             //pdfViewerControl.Unload();
             base.OnDisappearing();
         }
 
         protected override void OnAppearing()
         {
+            pdfViewerControl.PasswordErrorOccurred += PdfViewerControl_PasswordErrorOccurred;
+
             pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
 
-            var pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
+            pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
 
             // PDFium renderer
             //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
@@ -314,7 +339,12 @@ namespace Pdf.Views
 
             this.filePath = filePath;
             this.styleContent = new StyleContent();
+
+            //Disable the display the default toolbar
             pdfViewerControl.Toolbar.Enabled = false;
+
+            //Disable the display of password UI view
+            pdfViewerControl.IsPasswordViewEnabled = false;
         }
 
         private void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
@@ -486,8 +516,160 @@ namespace Pdf.Views
             styleContent.OpacityButtonClicked += (int numberOfTheOpacityClicked) => OpacityIcon_Clicked(numberOfTheOpacityClicked);
 
             annotationType = AnnotationType.None;
+
+            passwordPopup.IsOpen = false;
+
+            activityIndicator.IsVisible = false;
+            activityIndicator.IsRunning = false;
         }
 
+        private void AcceptButtonPasswordPopup_Clicked(object sender, EventArgs e)
+        {
+            activityIndicator.IsRunning = true;
+            activityIndicator.IsVisible = true;
+
+            passwordPopup.IsOpen = false;
+            DependencyService.Get<IKeyboardHelper>().HideKeyboard();
+
+            isATryToOpenTheDocument = true;
+        }
+
+        private void PasswordPopup_Closed(object sender, EventArgs e)
+        {
+            if (isATryToOpenTheDocument == true)
+            {
+                pdfViewerControl.LoadDocument(pdfStream, entry.Text);
+                isATryToOpenTheDocument = false;
+            }
+        }
+
+        private async void DeclineButton_Clicked(object sender, EventArgs e)
+        {
+            passwordPopup.IsOpen = false;
+
+            await Navigation.PopAsync();
+        }
+
+        private void PdfViewerControl_PasswordErrorOccurred(object sender, PasswordErrorOccurredEventArgs e)
+        {
+            if (isPasswordPopupInitalized == false)
+            {
+                passwordPopup = new SfPopupLayout();
+                passwordPopup.PopupView.HeightRequest = 200;
+                passwordPopup.PopupView.WidthRequest = 310;
+                passwordPopup.PopupView.ShowHeader = true;
+                passwordPopup.PopupView.ShowFooter = true;
+                passwordPopup.PopupView.ShowCloseButton = false;
+                passwordPopup.PopupView.AnimationDuration = 170;
+                passwordPopup.PopupView.HeaderHeight = 63;
+                passwordPopup.Closed += PasswordPopup_Closed;
+                passwordPopup.StaysOpen = true;
+
+                DataTemplate templateViewHeaderSetPasswordPopop = new DataTemplate(() =>
+                {
+                    Label label = new Label();
+                    label.VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center;
+                    label.Padding = new Thickness(20, 0, 20, 0);
+                    label.Text = "Password";
+                    label.TextColor = Color.Black;
+                    label.FontSize = 17;
+                    label.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+
+                    return label;
+                });
+
+
+                templateViewSetPasswordPopup = new DataTemplate(() =>
+                {
+                    StackLayout stackLayout = new StackLayout();
+
+                    label = new Label();
+
+                    label.Text = "This file is password protected. Please enter the password";
+                    label.TextColor = Color.Black;
+                    label.FontSize = 13.5;
+                    label.Padding = new Thickness(20, 0, 20, 0);
+                    label.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+
+                    entry = new Entry();
+                    entry.FontSize = 13.5;
+                    entry.Margin = new Thickness(19, 0, 19, 0);
+                    entry.IsPassword = true;
+                    entry.Placeholder = "Enter the password";
+                    entry.TextColor = Color.Black;
+
+                    stackLayout.Children.Add(label);
+                    stackLayout.Children.Add(entry);
+
+                    return stackLayout;
+                });
+
+                DataTemplate footerTemplateViewSetPasswordPopup = new DataTemplate(() =>
+                {
+                    StackLayout stackLayout = new StackLayout();
+                    stackLayout.Orientation = StackOrientation.Horizontal;
+                    stackLayout.Spacing = 0;
+
+                    acceptButton = new Button();
+                    acceptButton.Text = "Ok";
+                    acceptButton.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+                    acceptButton.FontSize = 14;
+                    acceptButton.TextColor = Color.Black;
+                    acceptButton.HorizontalOptions = LayoutOptions.EndAndExpand;
+                    acceptButton.BackgroundColor = Color.White;
+                    acceptButton.VerticalOptions = LayoutOptions.Center;
+                    acceptButton.WidthRequest = 86;
+                    acceptButton.Clicked += AcceptButtonPasswordPopup_Clicked;
+                    declineButton = new Button();
+                    declineButton.Text = "Cancel";
+                    declineButton.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
+                    declineButton.FontSize = 14;
+                    declineButton.TextColor = Color.Black;
+                    declineButton.HorizontalOptions = LayoutOptions.End;
+                    declineButton.BackgroundColor = Color.White;
+                    declineButton.VerticalOptions = LayoutOptions.Center;
+                    declineButton.WidthRequest = 89;
+                    declineButton.Clicked += DeclineButton_Clicked;
+
+                    stackLayout.Children.Add(acceptButton);
+                    stackLayout.Children.Add(declineButton);
+
+                    return stackLayout;
+                });
+
+                // Adding ContentTemplate of the SfPopupLayout
+                passwordPopup.PopupView.ContentTemplate = templateViewSetPasswordPopup;
+
+                // Adding FooterTemplate of the SfPopupLayout
+                passwordPopup.PopupView.FooterTemplate = footerTemplateViewSetPasswordPopup;
+
+                // Adding FooterTemplate of the SfPopupLayout
+                passwordPopup.PopupView.HeaderTemplate = templateViewHeaderSetPasswordPopop;
+
+                isPasswordPopupInitalized = true;
+            }
+
+            Shell.SetNavBarIsVisible(this, false);
+            Shell.SetTabBarIsVisible(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+
+            activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;
+
+            if (hasAlreadyTriedToOpenDoc == true)
+            {
+                passwordPopup.Show();
+                label.Text = "The password is incorrect. Please try again";
+                entry.Focus();
+            }
+            else
+            {
+                passwordPopup.Show();
+                hasAlreadyTriedToOpenDoc = true;
+            }
+        }
 
         private void BookmarkButton_Clicked(object sender, EventArgs e)
         {
@@ -499,8 +681,7 @@ namespace Pdf.Views
         {
             if (this.toolbarIsCollapsed == false)
             {
-
-                DependencyService.Get<IHideNavBar>().RemoveNavBar();
+                DependencyService.Get<INavBarHelper>().SetImmersiveMode();
 
                 pdfViewGrid.Margin = 0;
 
@@ -511,7 +692,7 @@ namespace Pdf.Views
             }
             else
             {
-                DependencyService.Get<IHideNavBar>().SetNavBar();
+                DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
 
                 await topToolbar.FadeTo(1, 150);
                 await bottomMainBar.FadeTo(1, 150);

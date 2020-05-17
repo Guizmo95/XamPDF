@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:imageeditor="clr-namespace:Syncfusion.SfImageEditor.XForms;assembly=Syncfusion.SfImageEditor.XForms"
              xmlns:controls="clr-namespace:Pdf.controls"
              xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:controls11="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms" xmlns:controls12="clr-namespace:Pdf.Views"
              mc:Ignorable="d"
@@ -18,7 +17,7 @@
         <controls1:PancakeView IsVisible="True" HeightRequest="45" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true">
             <StackLayout Orientation="Horizontal" BackgroundColor="#FAFAFA" Margin="13,0,13,0">
                 <ImageButton Clicked="BackButton_Clicked" Source="outline_arrow_back_24_Dark.xml" BackgroundColor="#fafafa" WidthRequest="33" HeightRequest="33" VerticalOptions="Center" HorizontalOptions="Start"/>
-                <controls12:ColorPicker VerticalOptions="Center" HorizontalOptions="EndAndExpand" BackgroundColor="#fafafa"/>
+                <controls12:ColorPicker VerticalOptions="Center" HorizontalOptions="EndAndExpand" BackgroundColor="#fafafa" IsVisible="False"/>
                 <ImageButton Clicked="SaveImage_Clicked" Source="baseline_save_24.xml" HorizontalOptions="EndAndExpand" BackgroundColor="#fafafa"  WidthRequest="33" HeightRequest="33" VerticalOptions="Center"/>
             </StackLayout>
         </controls1:PancakeView>

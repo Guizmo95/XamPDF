@@ -94,7 +94,8 @@
     <Compile Include="CustomRender\MyFrameRenderer.cs" />
     <Compile Include="Helpers\AndroidFileHelper.cs" />
     <Compile Include="Helpers\AndroidDownloadManager.cs" />
-    <Compile Include="Helpers\HideNavBar.cs" />
+    <Compile Include="Helpers\DroidKeyboardHelper.cs" />
+    <Compile Include="Helpers\NavBarHelper.cs" />
     <Compile Include="Helpers\PdfPickerAndroid.cs" />
     <Compile Include="Helpers\Toast.cs" />
     <Compile Include="MainActivity.cs" />
