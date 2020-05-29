@@ -70,7 +70,7 @@
             },
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
-              "version": "[18.1.0.52, )"
+              "version": "[18.1.0.54, )"
             },
             "Syncfusion.Xamarin.SfPopupLayout": {
               "target": "Package",

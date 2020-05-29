@@ -23,11 +23,12 @@
                     <ImageButton Clicked="SearchNextButton_Clicked" IsVisible="False"  x:Name="searchNextButton" BackgroundColor="#fafafa" Source="baseline_navigate_next_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center" />
                 </StackLayout>
 
+                <ImageButton Clicked="ViewModeButton_Clicked"  Padding="2.3" x:Name="viewModeButton" HorizontalOptions="Start" Margin="10,0,10,0" BackgroundColor="#fafafa" Source="baseline_view_carousel_24.xml" WidthRequest="38" HeightRequest="39"/>
                 <StackLayout Spacing="9" HorizontalOptions="End" Orientation="Horizontal"  Margin="0,0,10,0" x:Name="topMainBar" VerticalOptions="Center">
                     <controls:IconView IsVisible="False"  x:Name="UndoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_undo_24.xml" WidthRequest="33" HeightRequest="33" />
                     <controls:IconView IsVisible="False"  x:Name="RedoButton" Foreground="White" BackgroundColor="#fafafa" Source="baseline_redo_24.xml" WidthRequest="33" HeightRequest="33"/>
                     <controls:IconView IsVisible="False"  x:Name="ValidButton" Foreground="White" BackgroundColor="#fafafa" Source="twotone_done_24.xml" WidthRequest="33" HeightRequest="33"/>
-                    <ImageButton Clicked="ViewModeButton_Clicked"  Padding="2" x:Name="viewModeButton" BackgroundColor="#fafafa" Source="baseline_view_carousel_24.xml" WidthRequest="37.3" HeightRequest="37.3"/>
+                    
                     <ImageButton Clicked="BookmarkButton_Clicked"  Padding="2" x:Name="bookmarkButton" BackgroundColor="#fafafa" Source="baseline_bookmark_24.xml" WidthRequest="33" HeightRequest="33"/>
                     <ImageButton Clicked="SearchButton_Clicked" Padding="2" x:Name="searchButton" BackgroundColor="#fafafa" Source="outline_search_24.xml" WidthRequest="33" HeightRequest="33"/>
                     <ImageButton  Padding="2" x:Name="moreOptionButton" BackgroundColor="#fafafa" Source="baseline_more_vert_24.xml" WidthRequest="33" HeightRequest="33"/>
@@ -46,10 +47,10 @@
                     <StackLayout Spacing="14" HorizontalOptions="Center" Orientation="Horizontal" VerticalOptions="Center">
                         <ImageButton Clicked="FreeTextButton_Clicked" Padding="2" x:Name="freeTextButton" BackgroundColor="#fafafa" Source="twotone_title_24.xml" WidthRequest="33" HeightRequest="33"  />
                         <ImageButton Clicked="InkButton_Clicked" Padding="2" x:Name="inkButton" BackgroundColor="#fafafa" Source="twotone_gesture_24.xml" WidthRequest="33" HeightRequest="33"/>
-                        <ImageButton Clicked="ShapeButton_Clicked" Padding="2" x:Name="shapeButton" BackgroundColor="#fafafa" Source="twotone_toll_24.xml" WidthRequest="33" HeightRequest="33"/>
+                        <ImageButton Clicked="ShapeButton_Clicked" Padding="2" x:Name="shapeButton" BackgroundColor="#fafafa" Source="baseline_panorama_fish_eye_24.xml" WidthRequest="32.3" HeightRequest="32.3"/>
                         <ImageButton Clicked="TextMarkupButton_Clicked" Padding="2" x:Name="textMarkupButton" BackgroundColor="#fafafa" Source="twotone_format_strikethrough_24.xml" WidthRequest="33" HeightRequest="33" />
-                        <ImageButton Clicked="SignatureButton_Clicked" Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="twotone_create_24.xml" WidthRequest="32" HeightRequest="32"/>
-                        <ImageButton Clicked="StampButton_Clicked" Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="twotone_branding_watermark_24.xml" WidthRequest="32.5" HeightRequest="32.5"/>
+                        <ImageButton Clicked="SignatureButton_Clicked" Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="baseline_create_24.xml" WidthRequest="31.5" HeightRequest="31.5"/>
+                        <ImageButton Clicked="StampButton_Clicked" Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="baseline_branding_watermark_24.xml" WidthRequest="32" HeightRequest="32"/>
                     </StackLayout>
                 </Grid>
 

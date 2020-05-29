@@ -323,7 +323,7 @@ namespace Pdf.Views
             pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
 
             // PDFium renderer
-            //pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
 
             pdfViewerControl.LoadDocument(pdfStream);
 

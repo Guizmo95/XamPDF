@@ -136,6 +136,8 @@ path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\17\jl\res\drawable\formfieldcheckbox_unchecked.xml
 path;obj\Debug\90\res\drawable\baseline_account_circle_24.xml
 path;obj\Debug\90\res\drawable\baseline_bookmark_24.xml
+path;obj\Debug\90\res\drawable\baseline_branding_watermark_24.xml
+path;obj\Debug\90\res\drawable\baseline_create_24.xml
 path;obj\Debug\90\res\drawable\baseline_delete_24.xml
 path;obj\Debug\90\res\drawable\baseline_description_24.xml
 path;obj\Debug\90\res\drawable\baseline_favorite_24.xml
@@ -148,6 +150,7 @@ path;obj\Debug\90\res\drawable\baseline_navigate_before_24.xml
 path;obj\Debug\90\res\drawable\baseline_navigate_next_24.xml
 path;obj\Debug\90\res\drawable\baseline_opacity_24.xml
 path;obj\Debug\90\res\drawable\baseline_palette_24.xml
+path;obj\Debug\90\res\drawable\baseline_panorama_fish_eye_24.xml
 path;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24.xml
 path;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
 path;obj\Debug\90\res\drawable\baseline_redo_24.xml
@@ -308,6 +311,8 @@ vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\o
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\90\lp\17\jl\res\drawable\formfieldcheckbox_unchecked.xml
 vector;obj\Debug\90\res\drawable\baseline_account_circle_24.xml
 vector;obj\Debug\90\res\drawable\baseline_bookmark_24.xml
+vector;obj\Debug\90\res\drawable\baseline_branding_watermark_24.xml
+vector;obj\Debug\90\res\drawable\baseline_create_24.xml
 vector;obj\Debug\90\res\drawable\baseline_delete_24.xml
 vector;obj\Debug\90\res\drawable\baseline_description_24.xml
 vector;obj\Debug\90\res\drawable\baseline_favorite_24.xml
@@ -320,6 +325,7 @@ vector;obj\Debug\90\res\drawable\baseline_navigate_before_24.xml
 vector;obj\Debug\90\res\drawable\baseline_navigate_next_24.xml
 vector;obj\Debug\90\res\drawable\baseline_opacity_24.xml
 vector;obj\Debug\90\res\drawable\baseline_palette_24.xml
+vector;obj\Debug\90\res\drawable\baseline_panorama_fish_eye_24.xml
 vector;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24.xml
 vector;obj\Debug\90\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
 vector;obj\Debug\90\res\drawable\baseline_redo_24.xml
