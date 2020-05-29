@@ -34,8 +34,10 @@ namespace Pdf.Views
         private SfPopupLayout stylePopup;
         private SfPopupLayout errorSearchPopup;
         private SfPopupLayout passwordPopup;
+        private SfPopupLayout popupMenu;
 
-        private StyleContent styleContent;
+        private readonly StyleContent styleContent;
+        private PopupMenuContent popupMenuContent;
         private SearchErrorPopup searchErrorPopupContent;
 
         private DataTemplate styleTemplateStylePopup;
@@ -58,7 +60,7 @@ namespace Pdf.Views
 
         private AnnotationType annotationType;
 
-        #region Property
+
         private Color selectedColor = Color.Black;
         private Rectangle lastRectangleBounds;
         private AnnotationMode lastTextMarkupAnnotationMode;
@@ -76,9 +78,9 @@ namespace Pdf.Views
         private int lastThicknessBarSelected = 5;
         private int lastOpacitySelected = 4;
 
-
         public event PropertyChangedEventHandler PropertyChanged;
 
+        #region Property
         public SfPdfViewer PdfViewerControl
         {
             get
@@ -301,7 +303,9 @@ namespace Pdf.Views
             
             pdfViewerControl.PasswordErrorOccurred -= PdfViewerControl_PasswordErrorOccurred;
 
-            if(passwordPopup != null)
+            PdfViewerControl.DocumentSaveInitiated -= PdfViewerControl_DocumentSaveInitiated;
+
+            if (passwordPopup != null)
             {
                 passwordPopup.Closed -= PasswordPopup_Closed;
                 acceptButton.Clicked -= AcceptButtonPasswordPopup_Clicked;
@@ -385,6 +389,7 @@ namespace Pdf.Views
             pdfViewerControl.SearchCompleted += PdfViewerControl_SearchCompleted;
             pdfViewerControl.TextMatchFound += PdfViewerControl_TextMatchFound;
             pdfViewerControl.SearchInitiated += PdfViewerControl_SearchInitiated;
+            pdfViewerControl.DocumentSaveInitiated += PdfViewerControl_DocumentSaveInitiated;
             #endregion
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -393,7 +398,6 @@ namespace Pdf.Views
                 {
                     if (CanRedoInk == true)
                     {
-                        //RedoButton.Foreground = Color.FromHex("#b4b4b4");
                         RedoInk();
                         await Task.Delay(100);
                         if (CanRedoInk == true)
@@ -412,7 +416,6 @@ namespace Pdf.Views
                 {
                     if (CanUndoInk == true)
                     {
-                        //UndoButton.Foreground = Color.FromHex("#b4b4b4");
                         UndoInk();
                         await Task.Delay(100);
 
@@ -481,6 +484,7 @@ namespace Pdf.Views
             paletteButton.BindingContext = this;
             styleContent.BindingContext = this;
 
+            #region Style popup 
             stylePopup = new SfPopupLayout();
 
             styleContent.ThicknessBar.BindingContext = this;
@@ -499,6 +503,11 @@ namespace Pdf.Views
 
             this.stylePopup.PopupView.ContentTemplate = styleTemplateStylePopup;
 
+            styleContent.ThicknessBar.BoxViewButtonClicked += (int numberOfThicknessBarClicked) => ThicknessBar_Clicked(numberOfThicknessBarClicked);
+            styleContent.OpacityButtonClicked += (int numberOfTheOpacityClicked) => OpacityIcon_Clicked(numberOfTheOpacityClicked);
+            #endregion
+
+            #region SearchErrorPopup 
             searchErrorPopupContent = new SearchErrorPopup();
 
             errorSearchPopup = new SfPopupLayout();
@@ -518,17 +527,86 @@ namespace Pdf.Views
 
             this.errorSearchPopup.PopupView.ContentTemplate = styleTemplateErrorPopup;
 
-            styleContent.ThicknessBar.BoxViewButtonClicked += (int numberOfThicknessBarClicked) => ThicknessBar_Clicked(numberOfThicknessBarClicked);
-            styleContent.OpacityButtonClicked += (int numberOfTheOpacityClicked) => OpacityIcon_Clicked(numberOfTheOpacityClicked);
-
-            annotationType = AnnotationType.None;
-
             if (passwordPopup != null)
                 passwordPopup.IsOpen = false;
+            #endregion
+
+            #region Popup Menu
+            popupMenu = new SfPopupLayout();
+            popupMenu.PopupView.ShowFooter = false;
+            popupMenu.PopupView.ShowHeader = false;
+            popupMenu.PopupView.HeightRequest = 180;
+            popupMenu.PopupView.WidthRequest = 110;
+
+            DataTemplate popupMenuContentTemplate = new DataTemplate(() =>
+            {
+                return popupMenuContent = new PopupMenuContent();
+            });
+
+            popupMenu.PopupView.ContentTemplate = popupMenuContentTemplate;
+            #endregion
+
+            annotationType = AnnotationType.None;
 
             activityIndicator.IsVisible = false;
             activityIndicator.IsRunning = false;
         }
+
+        #region PopupMenu Methods
+        private async void MenuListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
+        {
+            var itemMenu = (ItemsMenu)popupMenuContent.MenuListView.SelectedItem;
+
+            switch (itemMenu.Id)
+            {
+                case 0:
+                    await SaveDocument();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private async Task SaveDocument()
+        {
+            activityIndicator.IsRunning = true;
+            activityIndicator.IsVisible = true;
+
+            await pdfViewerControl.SaveDocumentAsync();
+        }
+
+        private void MoreOptionButton_Clicked(object sender, EventArgs e)
+        {
+            popupMenu.ShowRelativeToView(moreOptionButton, RelativePosition.AlignTopRight, 0, 0);
+
+            popupMenuContent.MenuListView.SelectionChanged += MenuListView_SelectionChanged;
+            popupMenu.Closed += PopupMenu_Closed;
+        }
+
+        private void PopupMenu_Closed(object sender, EventArgs e)
+        {
+            popupMenuContent.MenuListView.SelectionChanged -= MenuListView_SelectionChanged;
+            popupMenu.Closed -= PopupMenu_Closed;
+        }
+
+        private void PdfViewerControl_DocumentSaveInitiated(object sender, DocumentSaveInitiatedEventArgs args)
+        {
+            activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;
+
+            Dictionary<bool, string> saveStatus = DependencyService.Get<IAndroidFileHelper>().Save(args.SaveStream as MemoryStream, this.filePath);
+
+            if(saveStatus.ContainsKey(true) == true) { 
+                DependencyService.Get<IToastMessage>().LongAlert("Document saved");
+            }
+            else
+            {
+                DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
+            }
+
+            popupMenu.IsOpen = false;
+        }
+        #endregion  
 
         private void AcceptButtonPasswordPopup_Clicked(object sender, EventArgs e)
         {
@@ -753,23 +831,25 @@ namespace Pdf.Views
 
         private async void SignatureButton_Clicked(object sender, EventArgs e)
         {
-            var page = new SignaturePage();
-            page.DidFinishPoping += (parameter) =>
-            {
-                if (!String.IsNullOrWhiteSpace(parameter) || !String.IsNullOrEmpty(parameter))
-                {
-                    //set image source
-                    Image image = new Image();
-                    image.Source = ImageSource.FromFile(parameter);
-                    image.WidthRequest = 200;
-                    image.HeightRequest = 200;
+            //var page = new SignaturePage();
+            //page.DidFinishPoping += (parameter) =>
+            //{
+            //    if (!String.IsNullOrWhiteSpace(parameter) || !String.IsNullOrEmpty(parameter))
+            //    {
+            //        //set image source
+            //        Image image = new Image();
+            //        image.Source = ImageSource.FromFile(parameter);
+            //        image.WidthRequest = 200;
+            //        image.HeightRequest = 200;
 
-                    int numpage = pdfViewerControl.PageNumber;
-                    //add image as custom stamp to the first page
-                    pdfViewerControl.AddStamp(image, numpage, new Point(20,20));
-                }
-            };
-            await Navigation.PushAsync(page);
+            //        int numpage = pdfViewerControl.PageNumber;
+            //        //add image as custom stamp to the first page
+            //        pdfViewerControl.AddStamp(image, numpage, new Point(20,20));
+            //    }
+            //};
+            //await Navigation.PushAsync(page);
+
+            pdfViewerControl.AnnotationMode = AnnotationMode.HandwrittenSignature;
         }
 
         private void StampButton_Clicked(object sender, EventArgs e)
@@ -1546,6 +1626,7 @@ namespace Pdf.Views
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
 
     }
 }

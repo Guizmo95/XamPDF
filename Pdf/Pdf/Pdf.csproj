@@ -37,6 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="controls\PopupMenuContent.xaml.cs">
+      <DependentUpon>PopupMenuContent.xaml</DependentUpon>
+    </Compile>
     <Compile Update="controls\StyleContent.xaml.cs">
       <DependentUpon>StyleContent.xaml</DependentUpon>
     </Compile>
@@ -47,6 +50,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="controls\ColorPicker.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="controls\PopupMenuContent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="controls\OpacitySlider.xaml">

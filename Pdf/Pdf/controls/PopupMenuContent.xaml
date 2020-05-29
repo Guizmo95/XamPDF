@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             mc:Ignorable="d"
+             Visual="Material" 
+             x:Class="Pdf.controls.PopupMenuContent">
+    <syncfusion:SfListView x:Name="menuListView"
+                   ItemsSource="{Binding ItemsMenu}" ItemSize="45" ItemSpacing="0" SelectionMode="Single" SelectionBackgroundColor="Transparent">
+        <syncfusion:SfListView.ItemTemplate>
+            <DataTemplate>
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="{Binding TextOption}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="13.5" TextColor="Black"/>
+                    <BoxView Grid.Row="1" BackgroundColor="#eeeeee" />
+                </Grid>
+                
+            </DataTemplate>
+        </syncfusion:SfListView.ItemTemplate>
+    </syncfusion:SfListView>
+</ContentView>

@@ -23,6 +23,34 @@ namespace Pdf.Droid.Helpers
 {
     public class AndroidFileHelper : IAndroidFileHelper
     {
+        public Dictionary<bool, string> Save(MemoryStream stream, string FilePath)
+        {
+            Dictionary<bool, string> saveStatus = new Dictionary<bool, string>();
+            bool saved = false;
+
+            try
+            {
+                Java.IO.File file = new Java.IO.File(FilePath);
+                string filePath = file.Path;
+                if (file.Exists()) file.Delete();
+                Java.IO.FileOutputStream outs = new Java.IO.FileOutputStream(file);
+                outs.Write(stream.ToArray());
+                var ab = file.Path;
+                outs.Flush();
+                outs.Close();
+
+                saveStatus.Add(true, null);
+            }
+            catch (Exception ex)
+            {
+                string message = $"Error when saving the PDF : " + ex.Message;
+
+                saveStatus.Add(false, message);
+            }
+
+            return saveStatus;
+        }
+
         public void SaveFileInDownloads(string filename, byte[] file)
         {
             string directoryDownload = (string)global::Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);

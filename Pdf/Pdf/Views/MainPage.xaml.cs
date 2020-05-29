@@ -49,7 +49,7 @@ namespace Pdf.Views
 
             //        Button sortName;
             //        sortName = new Button();
-            //        sortName.HeightRequest = 30;
+            //        sortName.HeightRequest = 30g;
             //        sortName.WidthRequest = 80;
             //        sortName.Text = "Sort name";
             //        sortName.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";

@@ -31,7 +31,7 @@
                     
                     <ImageButton Clicked="BookmarkButton_Clicked"  Padding="2" x:Name="bookmarkButton" BackgroundColor="#fafafa" Source="baseline_bookmark_24.xml" WidthRequest="33" HeightRequest="33"/>
                     <ImageButton Clicked="SearchButton_Clicked" Padding="2" x:Name="searchButton" BackgroundColor="#fafafa" Source="outline_search_24.xml" WidthRequest="33" HeightRequest="33"/>
-                    <ImageButton  Padding="2" x:Name="moreOptionButton" BackgroundColor="#fafafa" Source="baseline_more_vert_24.xml" WidthRequest="33" HeightRequest="33"/>
+                    <ImageButton Clicked="MoreOptionButton_Clicked"  Padding="2" x:Name="moreOptionButton" BackgroundColor="#fafafa" Source="baseline_more_vert_24.xml" WidthRequest="33" HeightRequest="33"/>
                 </StackLayout>
             </Grid>
         </controls1:PancakeView>
@@ -46,11 +46,11 @@
                 <Grid x:Name="bottomMainToolbar" BackgroundColor="#fafafa">
                     <StackLayout Spacing="14" HorizontalOptions="Center" Orientation="Horizontal" VerticalOptions="Center">
                         <ImageButton Clicked="FreeTextButton_Clicked" Padding="2" x:Name="freeTextButton" BackgroundColor="#fafafa" Source="twotone_title_24.xml" WidthRequest="33" HeightRequest="33"  />
-                        <ImageButton Clicked="InkButton_Clicked" Padding="2" x:Name="inkButton" BackgroundColor="#fafafa" Source="twotone_gesture_24.xml" WidthRequest="33" HeightRequest="33"/>
-                        <ImageButton Clicked="ShapeButton_Clicked" Padding="2" x:Name="shapeButton" BackgroundColor="#fafafa" Source="baseline_panorama_fish_eye_24.xml" WidthRequest="32.3" HeightRequest="32.3"/>
+                        <ImageButton Clicked="InkButton_Clicked" Padding="2" x:Name="inkButton" BackgroundColor="#fafafa" Source="twotone_gesture_24.xml" WidthRequest="32" HeightRequest="32"/>
+                        <ImageButton Clicked="ShapeButton_Clicked" Padding="2" x:Name="shapeButton" BackgroundColor="#fafafa" Source="baseline_panorama_fish_eye_24.xml" WidthRequest="32.6" HeightRequest="32.6"/>
                         <ImageButton Clicked="TextMarkupButton_Clicked" Padding="2" x:Name="textMarkupButton" BackgroundColor="#fafafa" Source="twotone_format_strikethrough_24.xml" WidthRequest="33" HeightRequest="33" />
-                        <ImageButton Clicked="SignatureButton_Clicked" Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="baseline_create_24.xml" WidthRequest="31.5" HeightRequest="31.5"/>
-                        <ImageButton Clicked="StampButton_Clicked" Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="baseline_branding_watermark_24.xml" WidthRequest="32" HeightRequest="32"/>
+                        <ImageButton Clicked="SignatureButton_Clicked" Grid.Column="1" Padding="2" x:Name="signatureButton" BackgroundColor="#fafafa" Source="baseline_create_24.xml" WidthRequest="29.5" HeightRequest="29.5"/>
+                        <ImageButton Clicked="StampButton_Clicked" Grid.Column="2" Padding="2" x:Name="stampButton" BackgroundColor="#fafafa" Source="baseline_branding_watermark_24.xml" WidthRequest="31.8" HeightRequest="31.8"/>
                     </StackLayout>
                 </Grid>
 
