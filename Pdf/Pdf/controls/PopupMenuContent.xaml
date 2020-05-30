@@ -7,18 +7,24 @@
              Visual="Material" 
              x:Class="Pdf.controls.PopupMenuContent">
     <syncfusion:SfListView x:Name="menuListView"
-                   ItemsSource="{Binding ItemsMenu}" ItemSize="45" ItemSpacing="0" SelectionMode="Single" SelectionBackgroundColor="Transparent">
+                   ItemsSource="{Binding ItemsMenu}" ItemSize="57" ItemSpacing="0" SelectionMode="Single" SelectionBackgroundColor="Transparent">
         <syncfusion:SfListView.ItemTemplate>
             <DataTemplate>
-                <Grid RowSpacing="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="0.5"/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Text="{Binding TextOption}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="13.5" TextColor="Black"/>
-                    <BoxView Grid.Row="1" BackgroundColor="#eeeeee" />
+                <Grid  Margin="9,0,0,0" ColumnSpacing="8.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding Image}" Grid.Column="0" />
+                    <Grid Grid.Column="1" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0.5"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="{Binding TextOption}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="15.5" TextColor="#616161"/>
+                        <BoxView Grid.Row="1" BackgroundColor="#eeeeee" />
+                    </Grid>
                 </Grid>
-                
             </DataTemplate>
         </syncfusion:SfListView.ItemTemplate>
     </syncfusion:SfListView>

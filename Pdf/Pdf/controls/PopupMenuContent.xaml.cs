@@ -34,7 +34,15 @@ namespace Pdf.controls
             ItemsMenu.Add(new ItemsMenu
             {
                 Id = 0,
+                Image = "baseline_save_24.xml",
                 TextOption = "Save PDF",
+            });
+
+            ItemsMenu.Add(new ItemsMenu
+            {
+                Id = 1,
+                Image = "baseline_print_24.xml",
+                TextOption = "Print PDF",
             });
 
             menuListView.ItemsSource = ItemsMenu;

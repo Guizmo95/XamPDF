@@ -533,15 +533,37 @@ namespace Pdf.Views
 
             #region Popup Menu
             popupMenu = new SfPopupLayout();
+            popupMenu.PopupView.IsFullScreen = true;
+            popupMenu.PopupView.AnimationDuration = 200;
+            popupMenu.PopupView.AnimationMode = AnimationMode.SlideOnBottom;
+            popupMenu.PopupView.PopupStyle.CornerRadius = 0;
+            popupMenu.PopupView.PopupStyle.BorderThickness = 2;
+            popupMenu.PopupView.PopupStyle.BorderColor = Color.White;
+            popupMenu.PopupView.HorizontalOptions = LayoutOptions.FillAndExpand;
+            popupMenu.PopupView.VerticalOptions = LayoutOptions.FillAndExpand;
             popupMenu.PopupView.ShowFooter = false;
-            popupMenu.PopupView.ShowHeader = false;
-            popupMenu.PopupView.HeightRequest = 180;
-            popupMenu.PopupView.WidthRequest = 110;
+            popupMenu.PopupView.PopupStyle.HeaderBackgroundColor = Color.FromHex("#eeeeee");
+            popupMenu.PopupView.PopupStyle.BorderColor = Color.FromHex("#e0e0e0");
 
             DataTemplate popupMenuContentTemplate = new DataTemplate(() =>
             {
                 return popupMenuContent = new PopupMenuContent();
             });
+
+            DataTemplate headerTemplateViewPopupMenu = new DataTemplate(() =>
+            {
+                Label title = new Label();
+                title.Text = "More";
+                title.FontSize = 18;
+                title.FontFamily = "GothamBold.ttf#GothamBold";
+                title.VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center;
+                title.HorizontalTextAlignment = Xamarin.Forms.TextAlignment.Center;
+                title.TextColor = Color.FromHex("#4e4e4e");
+
+                return title;
+            });
+
+            popupMenu.PopupView.HeaderTemplate = headerTemplateViewPopupMenu;
 
             popupMenu.PopupView.ContentTemplate = popupMenuContentTemplate;
             #endregion
@@ -562,22 +584,36 @@ namespace Pdf.Views
                 case 0:
                     await SaveDocument();
                     break;
+                case 1:
+                    await PrintDocument();
+                    break;
                 default:
                     break;
             }
         }
 
-        private async Task SaveDocument()
+        private async Task PrintDocument()
+        {
+            Stream stream = await SaveDocument();
+
+            var fileName = Path.GetFileName(this.filePath);
+
+            await DependencyService.Get<IAndroidFileHelper>().Print(stream, fileName);
+        }
+
+        private async Task<Stream> SaveDocument()
         {
             activityIndicator.IsRunning = true;
             activityIndicator.IsVisible = true;
 
-            await pdfViewerControl.SaveDocumentAsync();
+            Stream stream = await pdfViewerControl.SaveDocumentAsync();
+
+            return stream;
         }
 
         private void MoreOptionButton_Clicked(object sender, EventArgs e)
         {
-            popupMenu.ShowRelativeToView(moreOptionButton, RelativePosition.AlignTopRight, 0, 0);
+            popupMenu.Show();
 
             popupMenuContent.MenuListView.SelectionChanged += MenuListView_SelectionChanged;
             popupMenu.Closed += PopupMenu_Closed;
@@ -587,22 +623,24 @@ namespace Pdf.Views
         {
             popupMenuContent.MenuListView.SelectionChanged -= MenuListView_SelectionChanged;
             popupMenu.Closed -= PopupMenu_Closed;
+
         }
 
-        private void PdfViewerControl_DocumentSaveInitiated(object sender, DocumentSaveInitiatedEventArgs args)
+        private async void PdfViewerControl_DocumentSaveInitiated(object sender, DocumentSaveInitiatedEventArgs args)
         {
-            activityIndicator.IsRunning = false;
-            activityIndicator.IsVisible = false;
+            Dictionary<bool, string> saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(args.SaveStream as MemoryStream, this.filePath);
 
-            Dictionary<bool, string> saveStatus = DependencyService.Get<IAndroidFileHelper>().Save(args.SaveStream as MemoryStream, this.filePath);
-
-            if(saveStatus.ContainsKey(true) == true) { 
+            if (saveStatus.ContainsKey(true) == true)
+            {
                 DependencyService.Get<IToastMessage>().LongAlert("Document saved");
             }
             else
             {
                 DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
             }
+
+            activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;
 
             popupMenu.IsOpen = false;
         }

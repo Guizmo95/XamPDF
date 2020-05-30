@@ -7,6 +7,7 @@ namespace Pdf.Models
     public class ItemsMenu
     {
         public int Id { get; set; }
+        public string Image { get; set; }
         public string TextOption { get; set; }
     }
 }

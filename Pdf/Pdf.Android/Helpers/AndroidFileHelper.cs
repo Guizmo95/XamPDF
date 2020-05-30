@@ -9,6 +9,7 @@ using Android.App;
 using Android.Content;
 using Android.Content.Res;
 using Android.OS;
+using Android.Print;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -17,16 +18,34 @@ using Java.IO;
 using Pdf.Droid;
 using Pdf.Droid.Helpers;
 using Pdf.Interfaces;
+using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroidFileHelper))]
 namespace Pdf.Droid.Helpers
 {
     public class AndroidFileHelper : IAndroidFileHelper
     {
-        public Dictionary<bool, string> Save(MemoryStream stream, string FilePath)
+
+        public async Task Print(Stream inputStream, string fileName)
+        {
+            if (inputStream.CanSeek)
+                //Reset the position of PDF document stream to be printed
+                inputStream.Position = 0;
+            //Create a new file in the Personal folder with the given name
+            string createdFilePath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), fileName);
+            //Save the stream to the created file
+            using (var dest = System.IO.File.OpenWrite(createdFilePath))
+                await inputStream.CopyToAsync(dest);
+            string filePath = createdFilePath;
+            PrintManager printManager = (PrintManager)Forms.Context.GetSystemService(Context.PrintService);
+            PrintDocumentAdapter pda = new CustomPrintDocumentAdapter(filePath);
+            //Print with null PrintAttributes
+            printManager.Print(fileName, pda, null);
+        }
+
+        public async Task<Dictionary<bool, string>> Save(MemoryStream stream, string FilePath)
         {
             Dictionary<bool, string> saveStatus = new Dictionary<bool, string>();
-            bool saved = false;
 
             try
             {
@@ -34,7 +53,7 @@ namespace Pdf.Droid.Helpers
                 string filePath = file.Path;
                 if (file.Exists()) file.Delete();
                 Java.IO.FileOutputStream outs = new Java.IO.FileOutputStream(file);
-                outs.Write(stream.ToArray());
+                await outs.WriteAsync(stream.ToArray());
                 var ab = file.Path;
                 outs.Flush();
                 outs.Close();

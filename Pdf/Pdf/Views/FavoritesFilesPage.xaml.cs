@@ -30,8 +30,8 @@ namespace Pdf.Views
 
             SfBehavior = new SfBehaviorFavoritesPage();
             popupLayout = new SfPopupLayout();
-            popupLayout.PopupView.HeightRequest = 92;
-            popupLayout.PopupView.WidthRequest = 83;
+            popupLayout.PopupView.HeightRequest = 104;
+            popupLayout.PopupView.WidthRequest = 93;
             popupLayout.PopupView.ShowHeader = false;
             popupLayout.PopupView.ShowFooter = false;
             popupLayout.PopupView.ShowCloseButton = false;
@@ -48,32 +48,32 @@ namespace Pdf.Views
 
                 Button sortName;
                 sortName = new Button();
-                sortName.HeightRequest = 30;
-                sortName.WidthRequest = 83;
+                sortName.HeightRequest = 34;
+                sortName.WidthRequest = 93;
                 sortName.Text = "Sort name";
                 sortName.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
                 sortName.BackgroundColor = Color.White;
-                sortName.FontSize = 7.7;
+                sortName.FontSize = 8.8;
                 sortName.Clicked += SortName_Clicked;
 
                 Button sortDate;
                 sortDate = new Button();
-                sortDate.HeightRequest = 30;
-                sortDate.WidthRequest = 83;
+                sortDate.HeightRequest = 34;
+                sortDate.WidthRequest = 93;
                 sortDate.Text = "Sort date";
                 sortDate.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
                 sortDate.BackgroundColor = Color.White;
-                sortDate.FontSize = 7.7;
+                sortDate.FontSize = 8.8;
                 sortDate.Clicked += SortDate_Clicked;
 
                 Button sortSize;
                 sortSize = new Button();
-                sortSize.HeightRequest = 30;
-                sortSize.WidthRequest = 83;
+                sortSize.HeightRequest = 34;
+                sortSize.WidthRequest = 93;
                 sortSize.Text = "Sort size";
                 sortSize.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
                 sortSize.BackgroundColor = Color.White;
-                sortSize.FontSize = 7.7;
+                sortSize.FontSize = 8.8;
                 sortSize.Clicked += SortSize_Clicked;
 
                 stackLayout.Children.Add(sortName);

@@ -6,7 +6,8 @@ namespace Pdf.Interfaces
 {
     public interface IAndroidFileHelper
     {
-            Dictionary<bool, string> Save(MemoryStream stream, string FilePath);
+            Task Print(Stream inputStream, string fileName);
+            Task<Dictionary<bool, string>> Save(MemoryStream stream, string FilePath);
             void SaveFileInDownloads(string filename, byte[] file);
             string GetDownloadPath();
             MemoryStream GetFileStream(string filePath);
