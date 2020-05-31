@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "74LXu/b6VUKpw29R5xs18u+vgp658PQVda19bEeP+ukGroDJHZPYclElIsVE/LhmxtxhE44X9t5xaM0xTPV16w==",
+  "dgSpecHash": "iqYchiBioNfhfJZBnnND83llbwZzdGz0LrH5dp/L/Rn9IkMCIHweIVnaBO2iCu2BCFe++h7gekzSEXls1dwe0A==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.iOS\\Pdf.iOS.csproj",
   "expectedPackageFiles": [
@@ -18,11 +18,11 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.buttons\\18.1.0.43\\syncfusion.xamarin.buttons.18.1.0.43.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.compression\\18.1.0.54\\syncfusion.xamarin.compression.18.1.0.54.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.core\\18.1.0.54\\syncfusion.xamarin.core.18.1.0.54.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.datasource\\18.1.0.46\\syncfusion.xamarin.datasource.18.1.0.46.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.gridcommon\\18.1.0.46\\syncfusion.xamarin.gridcommon.18.1.0.46.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.datasource\\18.1.0.54\\syncfusion.xamarin.datasource.18.1.0.54.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.gridcommon\\18.1.0.54\\syncfusion.xamarin.gridcommon.18.1.0.54.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.pdf\\18.1.0.54\\syncfusion.xamarin.pdf.18.1.0.54.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.sfbusyindicator\\18.1.0.54\\syncfusion.xamarin.sfbusyindicator.18.1.0.54.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.sflistview\\18.1.0.46\\syncfusion.xamarin.sflistview.18.1.0.46.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.sflistview\\18.1.0.54\\syncfusion.xamarin.sflistview.18.1.0.54.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.sfpdfviewer\\18.1.0.54\\syncfusion.xamarin.sfpdfviewer.18.1.0.54.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.sfpopuplayout\\18.1.0.43\\syncfusion.xamarin.sfpopuplayout.18.1.0.43.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.sfprogressbar\\18.1.0.54\\syncfusion.xamarin.sfprogressbar.18.1.0.54.nupkg.sha512",

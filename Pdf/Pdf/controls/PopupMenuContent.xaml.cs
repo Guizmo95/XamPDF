@@ -25,6 +25,7 @@ namespace Pdf.controls
                 return menuListView;
             }
         }
+
         public PopupMenuContent()
         {
             InitializeComponent();
@@ -35,13 +36,15 @@ namespace Pdf.controls
             {
                 Id = 0,
                 Image = "baseline_save_24.xml",
+                ItemColor = Color.FromHex("#e0e0e0"),
                 TextOption = "Save PDF",
-            });
+            }); 
 
             ItemsMenu.Add(new ItemsMenu
             {
                 Id = 1,
                 Image = "baseline_print_24.xml",
+                ItemColor = Color.FromHex("#616161"),
                 TextOption = "Print PDF",
             });
 

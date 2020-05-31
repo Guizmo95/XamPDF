@@ -10,6 +10,7 @@ using Pdf.ViewModels;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Parsing;
 using Syncfusion.SfPdfViewer.XForms;
+using Syncfusion.ListView.XForms;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,7 @@ namespace Pdf.Views
         private AnnotationMode lastTextMarkupAnnotationMode;
 
         private string filePath;
+        private bool canSaveDocument;
         private bool canUndoInk = false;
         private bool canRedoInk = false;
         private bool toolbarIsCollapsed = false;
@@ -81,6 +83,22 @@ namespace Pdf.Views
         public event PropertyChangedEventHandler PropertyChanged;
 
         #region Property
+
+        public bool CanSaveDocument
+        {
+            get
+            {
+                return canSaveDocument;
+            }
+            set
+            {
+                canSaveDocument = value;
+
+                var saveButton = (ItemsMenu)popupMenuContent.ItemsMenu[0];
+                saveButton.ItemColor = Color.FromHex("#616161");
+            }
+        }
+
         public SfPdfViewer PdfViewerControl
         {
             get
@@ -375,6 +393,7 @@ namespace Pdf.Views
 
             pdfViewerControl.InkSelected += PdfViewerControl_InkSelected;
             pdfViewerControl.InkDeselected += PdfViewerControl_InkDeselected;
+            pdfViewerControl.InkAdded += PdfViewerControl_InkAdded;
 
             pdfViewerControl.ShapeAnnotationAdded += PdfViewerControl_ShapeAnnotationAdded;
             pdfViewerControl.ShapeAnnotationSelected += PdfViewerControl_ShapeAnnotationSelected;
@@ -574,6 +593,8 @@ namespace Pdf.Views
             activityIndicator.IsRunning = false;
         }
 
+
+
         #region PopupMenu Methods
         private async void MenuListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
         {
@@ -582,7 +603,8 @@ namespace Pdf.Views
             switch (itemMenu.Id)
             {
                 case 0:
-                    await SaveDocument();
+                    if(canSaveDocument == true )
+                        await SaveDocument();
                     break;
                 case 1:
                     await PrintDocument();
@@ -902,8 +924,17 @@ namespace Pdf.Views
             pdfViewerControl.AddStamp(image, pdfViewerControl.PageNumber);
         }
 
+        private void PdfViewerControl_InkAdded(object sender, InkAddedEventArgs args)
+        {
+            if (CanSaveDocument == false)
+                CanSaveDocument = true;
+        }
+
         private void PdfViewerControl_TextMarkupAdded(object sender, TextMarkupAddedEventArgs args)
         {
+            if (CanSaveDocument == false)
+                CanSaveDocument = true;
+
             this.TextMarkupNumbers += 1;
         }
 
@@ -937,6 +968,9 @@ namespace Pdf.Views
 
         private void PdfViewerControl_ShapeAnnotationAdded(object sender, ShapeAnnotationAddedEventArgs args)
         {
+            if (CanSaveDocument == false)
+                CanSaveDocument = true;
+
             this.ShapesNumbers += 1;
         }
 
@@ -956,7 +990,8 @@ namespace Pdf.Views
 
         private void PdfViewerControl_FreeTextAnnotationAdded(object sender, FreeTextAnnotationAddedEventArgs args)
         {
-
+            if (CanSaveDocument == false)
+                CanSaveDocument = true;
         }
 
         private void PdfViewerControl_CanUndoInkModified(object sender, CanUndoInkModifiedEventArgs args)

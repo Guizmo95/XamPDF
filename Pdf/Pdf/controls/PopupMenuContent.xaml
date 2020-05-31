@@ -21,7 +21,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="0.5"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Text="{Binding TextOption}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="15.5" TextColor="#616161"/>
+                        <Label Grid.Row="0" Text="{Binding TextOption}" TextColor="{Binding ItemColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="15.5"/>
                         <BoxView Grid.Row="1" BackgroundColor="#eeeeee" />
                     </Grid>
                 </Grid>
