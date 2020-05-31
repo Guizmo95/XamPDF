@@ -36,7 +36,8 @@ namespace Pdf.controls
             {
                 Id = 0,
                 Image = "baseline_save_24.xml",
-                ItemColor = Color.FromHex("#e0e0e0"),
+                TextColor = Color.FromHex("#e0e0e0"),
+                ImageColor = Color.FromHex("#707070"),
                 TextOption = "Save PDF",
             }); 
 
@@ -44,7 +45,8 @@ namespace Pdf.controls
             {
                 Id = 1,
                 Image = "baseline_print_24.xml",
-                ItemColor = Color.FromHex("#616161"),
+                TextColor = Color.FromHex("#616161"),
+                ImageColor = Color.FromHex("#373737"),
                 TextOption = "Print PDF",
             });
 

@@ -23,6 +23,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Java.Lang;
 
 namespace Pdf.Views
 {
@@ -50,10 +51,6 @@ namespace Pdf.Views
         Button acceptButton;
         Button declineButton;
 
-        private bool isATryToOpenTheDocument = false;
-        private bool hasAlreadyTriedToOpenDoc = false;
-        private bool isPasswordPopupInitalized = false;
-
         private FreeTextAnnotation selectedFreeTextAnnotation;
         private InkAnnotation selectedInkAnnotation;
         private ShapeAnnotation selectedShapeAnnotation;
@@ -61,12 +58,12 @@ namespace Pdf.Views
 
         private AnnotationType annotationType;
 
-
         private Color selectedColor = Color.Black;
         private Rectangle lastRectangleBounds;
         private AnnotationMode lastTextMarkupAnnotationMode;
 
         private string filePath;
+
         private bool canSaveDocument;
         private bool canUndoInk = false;
         private bool canRedoInk = false;
@@ -74,15 +71,34 @@ namespace Pdf.Views
         private bool search_started;
         private bool isNoMatchFound;
         private bool isNoMoreOccurrenceFound;
+        private bool isATryToOpenTheDocument = false;
+        private bool hasAlreadyTriedToOpenDoc = false;
+        private bool isPasswordPopupInitalized = false;
+
         private int fontSize = 6;
         private int shapesNumbers = 0;
         private int textMarkupNumbers = 0;
         private int lastThicknessBarSelected = 5;
         private int lastOpacitySelected = 4;
+        private int numberOfAnnotation = 0;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         #region Property
+        private int NumberOfAnnotation
+        {
+            get
+            {
+                return numberOfAnnotation;
+            }
+            set
+            {
+                numberOfAnnotation = value;
+
+                if (numberOfAnnotation != 0)
+                    CanSaveDocument = true;
+            }
+        }
 
         public bool CanSaveDocument
         {
@@ -94,8 +110,9 @@ namespace Pdf.Views
             {
                 canSaveDocument = value;
 
-                var saveButton = (ItemsMenu)popupMenuContent.ItemsMenu[0];
-                saveButton.ItemColor = Color.FromHex("#616161");
+                ItemsMenu item = (ItemsMenu)popupMenuContent.ItemsMenu[0];
+                item.TextColor = Color.FromHex("#616161");
+                item.ImageColor = Color.FromHex("#373737");
             }
         }
 
@@ -564,9 +581,11 @@ namespace Pdf.Views
             popupMenu.PopupView.PopupStyle.HeaderBackgroundColor = Color.FromHex("#eeeeee");
             popupMenu.PopupView.PopupStyle.BorderColor = Color.FromHex("#e0e0e0");
 
+            popupMenuContent = new PopupMenuContent();
+
             DataTemplate popupMenuContentTemplate = new DataTemplate(() =>
             {
-                return popupMenuContent = new PopupMenuContent();
+                return popupMenuContent;
             });
 
             DataTemplate headerTemplateViewPopupMenu = new DataTemplate(() =>
@@ -926,14 +945,12 @@ namespace Pdf.Views
 
         private void PdfViewerControl_InkAdded(object sender, InkAddedEventArgs args)
         {
-            if (CanSaveDocument == false)
-                CanSaveDocument = true;
+            NumberOfAnnotation += 1;
         }
 
         private void PdfViewerControl_TextMarkupAdded(object sender, TextMarkupAddedEventArgs args)
         {
-            if (CanSaveDocument == false)
-                CanSaveDocument = true;
+            NumberOfAnnotation += 1;
 
             this.TextMarkupNumbers += 1;
         }
@@ -968,8 +985,7 @@ namespace Pdf.Views
 
         private void PdfViewerControl_ShapeAnnotationAdded(object sender, ShapeAnnotationAddedEventArgs args)
         {
-            if (CanSaveDocument == false)
-                CanSaveDocument = true;
+            NumberOfAnnotation += 1;
 
             this.ShapesNumbers += 1;
         }
@@ -990,8 +1006,7 @@ namespace Pdf.Views
 
         private void PdfViewerControl_FreeTextAnnotationAdded(object sender, FreeTextAnnotationAddedEventArgs args)
         {
-            if (CanSaveDocument == false)
-                CanSaveDocument = true;
+            NumberOfAnnotation += 1;
         }
 
         private void PdfViewerControl_CanUndoInkModified(object sender, CanUndoInkModifiedEventArgs args)

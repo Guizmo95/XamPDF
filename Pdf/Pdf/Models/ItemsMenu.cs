@@ -11,7 +11,8 @@ namespace Pdf.Models
     {
         private int id;
         private string image;
-        private Xamarin.Forms.Color itemColor;
+        private Xamarin.Forms.Color textColor;
+        private Xamarin.Forms.Color imageColor;
         private string textOption;
 
         public int Id
@@ -40,15 +41,28 @@ namespace Pdf.Models
             }
         }
 
-        public Xamarin.Forms.Color ItemColor
+        public Xamarin.Forms.Color TextColor
         {
             get
             {
-                return itemColor;
+                return textColor;
             }
             set
             {
-                itemColor = value;
+                textColor = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Xamarin.Forms.Color ImageColor
+        {
+            get
+            {
+                return imageColor;
+            }
+            set
+            {
+                imageColor = value;
                 OnPropertyChanged();
             }
         }

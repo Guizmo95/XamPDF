@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:controls="clr-namespace:Pdf.controls"
              mc:Ignorable="d"
              Visual="Material" 
              x:Class="Pdf.controls.PopupMenuContent">
@@ -15,13 +15,13 @@
                         <ColumnDefinition Width="28"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="{Binding Image}" Grid.Column="0" />
+                    <controls:IconView Source="{Binding Image}" Foreground="{Binding ImageColor}" Grid.Column="0" />
                     <Grid Grid.Column="1" RowSpacing="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="0.5"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Text="{Binding TextOption}" TextColor="{Binding ItemColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="15.5"/>
+                        <Label Grid.Row="0" Text="{Binding TextOption}" TextColor="{Binding TextColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="GothamMedium.ttf#GothamMedium"  FontSize="15.5"/>
                         <BoxView Grid.Row="1" BackgroundColor="#eeeeee" />
                     </Grid>
                 </Grid>
