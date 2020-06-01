@@ -185,6 +185,6 @@
         <BoxView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
     BackgroundColor="Transparent" IsVisible="False"
     InputTransparent="false" x:Name="filter"/>
-        <ActivityIndicator x:Name="activityIndicator" Color="#c62828" IsRunning="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1" />
+        <ActivityIndicator x:Name="activityIndicator" Color="#c62828" IsRunning="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1" Visual="Material"/>
     </AbsoluteLayout>
 </ContentPage>

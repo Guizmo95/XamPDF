@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Java.Lang;
+using Android.Content.Res;
 
 namespace Pdf.Views
 {
@@ -615,6 +616,21 @@ namespace Pdf.Views
 
 
         #region PopupMenu Methods
+
+        //TODO HANDLE SAVE FOR PRINT
+        private async Task CompressPDF()
+        {
+            using(PdfLoadedDocument loadedDocument = new PdfLoadedDocument(pdfStream)){
+                loadedDocument.Compression = PdfCompressionLevel.Best;
+
+                MemoryStream stream = new MemoryStream();
+                
+                loadedDocument.Save(stream);
+
+                await DependencyService.Get<IAndroidFileHelper>().Save(stream, filePath);
+            }
+        }
+
         private async void MenuListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
         {
             var itemMenu = (ItemsMenu)popupMenuContent.MenuListView.SelectedItem;
@@ -628,16 +644,29 @@ namespace Pdf.Views
                 case 1:
                     await PrintDocument();
                     break;
+                case 2:
+                    popupMenu.IsOpen = false;
+                    await CompressPDF();
+                    break;
                 default:
                     break;
             }
         }
 
+        //TODO CHECK IF OTHER ANNOTATION CAN BEN PRINTED FOR SAVE OR NOT THE PDF WHEN PRTINING
         private async Task PrintDocument()
         {
-            Stream stream = await SaveDocument();
-
+            Stream stream;
             var fileName = Path.GetFileName(this.filePath);
+
+            if (CanSaveDocument == true)
+            {
+                stream = await SaveDocument();
+            }
+            else
+            {
+                stream = pdfStream;
+            }
 
             await DependencyService.Get<IAndroidFileHelper>().Print(stream, fileName);
         }

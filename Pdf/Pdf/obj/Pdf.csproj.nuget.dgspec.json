@@ -62,7 +62,15 @@
             },
             "Syncfusion.Xamarin.Buttons": {
               "target": "Package",
-              "version": "[18.1.0.43, )"
+              "version": "[18.1.0.54, )"
+            },
+            "Syncfusion.Xamarin.Compression": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
+            },
+            "Syncfusion.Xamarin.Pdf": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
             },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
@@ -94,11 +102,15 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.657, )"
+              "version": "[4.6.0.800, )"
             },
             "Xamarin.Forms.PancakeView": {
               "target": "Package",
               "version": "[1.3.7, )"
+            },
+            "Xamarin.Forms.Visual.Material": {
+              "target": "Package",
+              "version": "[4.6.0.800, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

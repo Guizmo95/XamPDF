@@ -13,6 +13,7 @@ using Android.Support.Design.Widget;
 using Android.Text;
 using Android.Views;
 using Android.Widget;
+using Google.Android.Material.BottomNavigation;
 using Pdf.Droid.CustomRender;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -39,7 +40,7 @@ namespace Pdf.Droid
             
         }
 
-        public void SetAppearance(BottomNavigationView bottomView, ShellAppearance appearance)
+        public void SetAppearance(BottomNavigationView bottomView, IShellAppearanceElement appearance)
         {
             IMenu menu = bottomView.Menu;
             for (int i = 0; i < bottomView.Menu.Size(); i++)
@@ -74,5 +75,6 @@ namespace Pdf.Droid
             bottomView.ItemTextColor = myList;
             bottomView.ItemIconTintList = myList;
         }
+
     }
 }

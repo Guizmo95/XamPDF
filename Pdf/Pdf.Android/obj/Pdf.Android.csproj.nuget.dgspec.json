@@ -23,14 +23,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "monoandroid90"
+          "monoandroid10.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "monoandroid90": {
+          "monoandroid10.0": {
             "projectReferences": {
               "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj": {
                 "projectPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj"
@@ -40,7 +40,7 @@
         }
       },
       "frameworks": {
-        "monoandroid90": {
+        "monoandroid10.0": {
           "dependencies": {
             "Acr.UserDialogs": {
               "target": "Package",
@@ -52,7 +52,19 @@
               "target": "Package",
               "version": "[3.4.0, )"
             },
+            "Syncfusion.Xamarin.Compression": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
+            },
+            "Syncfusion.Xamarin.Pdf": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
+            },
             "Xamarin.Android.Support.v4": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.AppCompat": {
               "target": "Package",
               "version": "[28.0.0.3, )"
             },
@@ -62,7 +74,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.657, )"
+              "version": "[4.6.0.800, )"
+            },
+            "Xamarin.Forms.Visual.Material": {
+              "target": "Package",
+              "version": "[4.6.0.800, )"
             }
           }
         }
@@ -126,7 +142,15 @@
             },
             "Syncfusion.Xamarin.Buttons": {
               "target": "Package",
-              "version": "[18.1.0.43, )"
+              "version": "[18.1.0.54, )"
+            },
+            "Syncfusion.Xamarin.Compression": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
+            },
+            "Syncfusion.Xamarin.Pdf": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
             },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
@@ -158,11 +182,15 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.5.0.657, )"
+              "version": "[4.6.0.800, )"
             },
             "Xamarin.Forms.PancakeView": {
               "target": "Package",
               "version": "[1.3.7, )"
+            },
+            "Xamarin.Forms.Visual.Material": {
+              "target": "Package",
+              "version": "[4.6.0.800, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

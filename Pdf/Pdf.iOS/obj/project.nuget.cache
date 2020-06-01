@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iqYchiBioNfhfJZBnnND83llbwZzdGz0LrH5dp/L/Rn9IkMCIHweIVnaBO2iCu2BCFe++h7gekzSEXls1dwe0A==",
+  "dgSpecHash": "XYN8a4O80tbW0dWKv4Ep1E5KsrTeoSri16pA6upNHIEH0OaeveY3UDnj+v34mSoiplGQuuSiFjMUekRT5DjcWw==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.iOS\\Pdf.iOS.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.provider.sqlite3.ios_unified\\1.1.13\\sqlitepclraw.provider.sqlite3.ios_unified.1.1.13.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.licensing\\18.1.0.54\\syncfusion.licensing.18.1.0.54.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.buttons\\18.1.0.43\\syncfusion.xamarin.buttons.18.1.0.43.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.buttons\\18.1.0.54\\syncfusion.xamarin.buttons.18.1.0.54.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.compression\\18.1.0.54\\syncfusion.xamarin.compression.18.1.0.54.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.core\\18.1.0.54\\syncfusion.xamarin.core.18.1.0.54.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.datasource\\18.1.0.54\\syncfusion.xamarin.datasource.18.1.0.54.nupkg.sha512",
@@ -33,8 +33,10 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.controls.signaturepad\\3.0.0\\xamarin.controls.signaturepad.3.0.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.controls.signaturepad.forms\\3.0.0\\xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms\\4.5.0.657\\xamarin.forms.4.5.0.657.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms.pancakeview\\1.3.7\\xamarin.forms.pancakeview.1.3.7.nupkg.sha512"
+    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms\\4.6.0.800\\xamarin.forms.4.6.0.800.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms.pancakeview\\1.3.7\\xamarin.forms.pancakeview.1.3.7.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms.visual.material\\4.6.0.800\\xamarin.forms.visual.material.4.6.0.800.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.ios.materialcomponents\\92.0.0\\xamarin.ios.materialcomponents.92.0.0.nupkg.sha512"
   ],
   "logs": []
 }

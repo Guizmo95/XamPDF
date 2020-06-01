@@ -122,10 +122,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Buttons/18.1.0.43": {
+      "Syncfusion.Xamarin.Buttons/18.1.0.54": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Syncfusion.Xamarin.Core": "18.1.0.54",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -367,7 +367,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.657": {
+      "Xamarin.Forms/4.6.0.800": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -500,6 +500,27 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/4.6.0.800": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.iOS.MaterialComponents": "92.0.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
+        }
+      },
+      "Xamarin.iOS.MaterialComponents/92.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        }
+      },
       "Pdf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -507,7 +528,9 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
-          "Syncfusion.Xamarin.Buttons": "18.1.0.43",
+          "Syncfusion.Xamarin.Buttons": "18.1.0.54",
+          "Syncfusion.Xamarin.Compression": "18.1.0.54",
+          "Syncfusion.Xamarin.Pdf": "18.1.0.54",
           "Syncfusion.Xamarin.SfListView": "18.1.0.54",
           "Syncfusion.Xamarin.SfPdfViewer": "18.1.0.54",
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
@@ -515,8 +538,9 @@
           "Unity": "5.11.4",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.1",
-          "Xamarin.Forms": "4.5.0.657",
+          "Xamarin.Forms": "4.6.0.800",
           "Xamarin.Forms.PancakeView": "1.3.7",
+          "Xamarin.Forms.Visual.Material": "4.6.0.800",
           "sqlite-net-pcl": "1.6.292"
         },
         "compile": {
@@ -648,10 +672,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Buttons/18.1.0.43": {
+      "Syncfusion.Xamarin.Buttons/18.1.0.54": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Syncfusion.Xamarin.Core": "18.1.0.54",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -893,7 +917,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.657": {
+      "Xamarin.Forms/4.6.0.800": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1026,6 +1050,27 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/4.6.0.800": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.iOS.MaterialComponents": "92.0.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
+        }
+      },
+      "Xamarin.iOS.MaterialComponents/92.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        }
+      },
       "Pdf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1033,7 +1078,9 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
-          "Syncfusion.Xamarin.Buttons": "18.1.0.43",
+          "Syncfusion.Xamarin.Buttons": "18.1.0.54",
+          "Syncfusion.Xamarin.Compression": "18.1.0.54",
+          "Syncfusion.Xamarin.Pdf": "18.1.0.54",
           "Syncfusion.Xamarin.SfListView": "18.1.0.54",
           "Syncfusion.Xamarin.SfPdfViewer": "18.1.0.54",
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
@@ -1041,8 +1088,9 @@
           "Unity": "5.11.4",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.1",
-          "Xamarin.Forms": "4.5.0.657",
+          "Xamarin.Forms": "4.6.0.800",
           "Xamarin.Forms.PancakeView": "1.3.7",
+          "Xamarin.Forms.Visual.Material": "4.6.0.800",
           "sqlite-net-pcl": "1.6.292"
         },
         "compile": {
@@ -1174,10 +1222,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Buttons/18.1.0.43": {
+      "Syncfusion.Xamarin.Buttons/18.1.0.54": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Syncfusion.Xamarin.Core": "18.1.0.54",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -1419,7 +1467,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.657": {
+      "Xamarin.Forms/4.6.0.800": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1552,6 +1600,27 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/4.6.0.800": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.iOS.MaterialComponents": "92.0.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
+        }
+      },
+      "Xamarin.iOS.MaterialComponents/92.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        }
+      },
       "Pdf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1559,7 +1628,9 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
-          "Syncfusion.Xamarin.Buttons": "18.1.0.43",
+          "Syncfusion.Xamarin.Buttons": "18.1.0.54",
+          "Syncfusion.Xamarin.Compression": "18.1.0.54",
+          "Syncfusion.Xamarin.Pdf": "18.1.0.54",
           "Syncfusion.Xamarin.SfListView": "18.1.0.54",
           "Syncfusion.Xamarin.SfPdfViewer": "18.1.0.54",
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
@@ -1567,8 +1638,9 @@
           "Unity": "5.11.4",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.1",
-          "Xamarin.Forms": "4.5.0.657",
+          "Xamarin.Forms": "4.6.0.800",
           "Xamarin.Forms.PancakeView": "1.3.7",
+          "Xamarin.Forms.Visual.Material": "4.6.0.800",
           "sqlite-net-pcl": "1.6.292"
         },
         "compile": {
@@ -1700,10 +1772,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Buttons/18.1.0.43": {
+      "Syncfusion.Xamarin.Buttons/18.1.0.54": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Syncfusion.Xamarin.Core": "18.1.0.54",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -1945,7 +2017,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.5.0.657": {
+      "Xamarin.Forms/4.6.0.800": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2078,6 +2150,27 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/4.6.0.800": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.iOS.MaterialComponents": "92.0.0"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
+        }
+      },
+      "Xamarin.iOS.MaterialComponents/92.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/MaterialComponents.dll": {}
+        }
+      },
       "Pdf/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2085,7 +2178,9 @@
           "Acr.UserDialogs": "7.1.0.440",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
-          "Syncfusion.Xamarin.Buttons": "18.1.0.43",
+          "Syncfusion.Xamarin.Buttons": "18.1.0.54",
+          "Syncfusion.Xamarin.Compression": "18.1.0.54",
+          "Syncfusion.Xamarin.Pdf": "18.1.0.54",
           "Syncfusion.Xamarin.SfListView": "18.1.0.54",
           "Syncfusion.Xamarin.SfPdfViewer": "18.1.0.54",
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
@@ -2093,8 +2188,9 @@
           "Unity": "5.11.4",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.1",
-          "Xamarin.Forms": "4.5.0.657",
+          "Xamarin.Forms": "4.6.0.800",
           "Xamarin.Forms.PancakeView": "1.3.7",
+          "Xamarin.Forms.Visual.Material": "4.6.0.800",
           "sqlite-net-pcl": "1.6.292"
         },
         "compile": {
@@ -2491,10 +2587,10 @@
         "syncfusion.licensing.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Buttons/18.1.0.43": {
-      "sha512": "/COlI5Pp7oTxWau9AHKDcobmZPKVhNgmqDdG5vc37cvwXgLXfCLigw1Wsu/pPgWGDDN4grkShw0FyMibvNfbNg==",
+    "Syncfusion.Xamarin.Buttons/18.1.0.54": {
+      "sha512": "J5nlDbX89/o8rczKpK+chdxIjNltFnVexYZUK76/hdWyv/XPFTZG44YY4NmZYwQyM0/qHjTWceOAqNykHYM/2A==",
       "type": "package",
-      "path": "syncfusion.xamarin.buttons/18.1.0.43",
+      "path": "syncfusion.xamarin.buttons/18.1.0.54",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2518,7 +2614,7 @@
         "lib/uap10.0/Syncfusion.Buttons.XForms.UWP/Themes/Generic.xaml",
         "lib/uap10.0/Syncfusion.Buttons.XForms.dll",
         "lib/uap10.0/Syncfusion.Buttons.XForms.xml",
-        "syncfusion.xamarin.buttons.18.1.0.43.nupkg.sha512",
+        "syncfusion.xamarin.buttons.18.1.0.54.nupkg.sha512",
         "syncfusion.xamarin.buttons.nuspec"
       ]
     },
@@ -3000,10 +3096,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.5.0.657": {
-      "sha512": "S6WmhCKBRDMG5woHEIRA8MBZv6yn2jZ8Kf9DzzcOuB5gXivH1S5mIiSt4yoaa9HwfNUcg2d7AH2GEoICmH5bJg==",
+    "Xamarin.Forms/4.6.0.800": {
+      "sha512": "9BkqdiqdaigD+QlHqmHHMm32NNo7mnuIG+fOgIbSbzzqT1MKN+KPVgem8OUkKOnFP4u6piq9D99xrVafKSztIg==",
       "type": "package",
-      "path": "xamarin.forms/4.5.0.657",
+      "path": "xamarin.forms/4.6.0.800",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3266,8 +3362,8 @@
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Resources.xaml",
-        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/StepperControl.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xaml",
@@ -3298,6 +3394,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PageControlStyle.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PickerStyle.xaml",
+        "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/PromptDialog.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Resources.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/Shell/ShellStyles.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/SliderStyle.xaml",
@@ -3308,7 +3405,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.5.0.657.nupkg.sha512",
+        "xamarin.forms.4.6.0.800.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -3330,6 +3427,42 @@
         "xamarin.forms.pancakeview.nuspec"
       ]
     },
+    "Xamarin.Forms.Visual.Material/4.6.0.800": {
+      "sha512": "vs+Fvy+kn0hzVjASaKzmfPa5jBN4bESs2aRd4N24OwnqWCpKvyBFlbveusuVztwzKwXV53gWDEBR1Cb/UTrD7g==",
+      "type": "package",
+      "path": "xamarin.forms.visual.material/4.6.0.800",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
+        "buildTransitive/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Material.pdb",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoAndroid90/Xamarin.Forms.Material.dll",
+        "lib/MonoAndroid90/Xamarin.Forms.Material.pdb",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Material.pdb",
+        "lib/netstandard1.0/_._",
+        "lib/tizen40/Xamarin.Forms.Material.dll",
+        "lib/tizen40/Xamarin.Forms.Material.pdb",
+        "xamarin.forms.visual.material.4.6.0.800.nupkg.sha512",
+        "xamarin.forms.visual.material.nuspec"
+      ]
+    },
+    "Xamarin.iOS.MaterialComponents/92.0.0": {
+      "sha512": "I0mVxJBHsaR2NtFbZmafSLmIB4FUOSfSOf1SW3i2UA0TyoWr+F0AdrLtPRQtXq97LUg0fEnWhaq+4suVxbDbFw==",
+      "type": "package",
+      "path": "xamarin.ios.materialcomponents/92.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/Xamarin.iOS/MaterialComponents.dll",
+        "xamarin.ios.materialcomponents.92.0.0.nupkg.sha512",
+        "xamarin.ios.materialcomponents.nuspec"
+      ]
+    },
     "Pdf/1.0.0": {
       "type": "project",
       "path": "../Pdf/Pdf.csproj",
@@ -3340,8 +3473,11 @@
     "Xamarin.iOS,Version=v1.0": [
       "Acr.UserDialogs >= 7.1.0.440",
       "Pdf >= 1.0.0",
+      "Syncfusion.Xamarin.Compression >= 18.1.0.54",
+      "Syncfusion.Xamarin.Pdf >= 18.1.0.54",
       "Xamarin.Essentials >= 1.5.3.1",
-      "Xamarin.Forms >= 4.5.0.657"
+      "Xamarin.Forms >= 4.6.0.800",
+      "Xamarin.Forms.Visual.Material >= 4.6.0.800"
     ]
   },
   "packageFolders": {
@@ -3390,13 +3526,25 @@
             "target": "Package",
             "version": "[7.1.0.440, )"
           },
+          "Syncfusion.Xamarin.Compression": {
+            "target": "Package",
+            "version": "[18.1.0.54, )"
+          },
+          "Syncfusion.Xamarin.Pdf": {
+            "target": "Package",
+            "version": "[18.1.0.54, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.5.3.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.5.0.657, )"
+            "version": "[4.6.0.800, )"
+          },
+          "Xamarin.Forms.Visual.Material": {
+            "target": "Package",
+            "version": "[4.6.0.800, )"
           }
         }
       }

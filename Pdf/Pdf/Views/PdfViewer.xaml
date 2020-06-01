@@ -104,7 +104,7 @@
             </StackLayout>
 
         </controls1:PancakeView>
-        <ActivityIndicator x:Name="activityIndicator" Color="#c62828" IsRunning="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1" />
+        <ActivityIndicator x:Name="activityIndicator" Color="#c62828" IsRunning="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1" Visual="Material"/>
     </AbsoluteLayout>
 
 
