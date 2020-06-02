@@ -25,6 +25,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Java.Lang;
 using Android.Content.Res;
+using Acr.UserDialogs;
+using Unity.Injection;
+using Syncfusion.Pdf.Interactive;
 
 namespace Pdf.Views
 {
@@ -83,9 +86,10 @@ namespace Pdf.Views
         private int lastOpacitySelected = 4;
         private int numberOfAnnotation = 0;
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         #region Property
+
+
         private int NumberOfAnnotation
         {
             get
@@ -95,9 +99,14 @@ namespace Pdf.Views
             set
             {
                 numberOfAnnotation = value;
+                OnPropertyChanged();
 
                 if (numberOfAnnotation != 0)
                     CanSaveDocument = true;
+                else
+                {
+                    CanSaveDocument = false;
+                }
             }
         }
 
@@ -110,10 +119,20 @@ namespace Pdf.Views
             set
             {
                 canSaveDocument = value;
+                OnPropertyChanged();
 
                 ItemsMenu item = (ItemsMenu)popupMenuContent.ItemsMenu[0];
-                item.TextColor = Color.FromHex("#616161");
-                item.ImageColor = Color.FromHex("#373737");
+
+                if (canSaveDocument == true)
+                {
+                    item.TextColor = Color.FromHex("#616161");
+                    item.ImageColor = Color.FromHex("#373737");
+                }
+                else
+                {
+                    item.TextColor = Color.FromHex("#e0e0e0");
+                    item.ImageColor = Color.FromHex("#707070");
+                }
             }
         }
 
@@ -333,6 +352,7 @@ namespace Pdf.Views
             pdfViewerControl.TextMatchFound -= PdfViewerControl_TextMatchFound;
             pdfViewerControl.Tapped -= PdfViewerControl_Tapped;
             pdfViewerControl.SearchInitiated -= PdfViewerControl_SearchInitiated;
+            pdfViewerControl.StampAnnotationAdded -= PdfViewerControl_StampAnnotationAdded;
 
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
@@ -427,6 +447,8 @@ namespace Pdf.Views
             pdfViewerControl.TextMatchFound += PdfViewerControl_TextMatchFound;
             pdfViewerControl.SearchInitiated += PdfViewerControl_SearchInitiated;
             pdfViewerControl.DocumentSaveInitiated += PdfViewerControl_DocumentSaveInitiated;
+
+            pdfViewerControl.StampAnnotationAdded += PdfViewerControl_StampAnnotationAdded;
             #endregion
 
             RedoButton.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -517,6 +539,8 @@ namespace Pdf.Views
                     PaletteButton_Clicked();
                 })
             });
+
+            pdfViewerControl.PreserveSignaturePadOrientation = true;
 
             paletteButton.BindingContext = this;
             styleContent.BindingContext = this;
@@ -615,21 +639,16 @@ namespace Pdf.Views
 
 
 
+
+
         #region PopupMenu Methods
 
         //TODO HANDLE SAVE FOR PRINT
         private async Task CompressPDF()
         {
-            using(PdfLoadedDocument loadedDocument = new PdfLoadedDocument(pdfStream)){
-                loadedDocument.Compression = PdfCompressionLevel.Best;
 
-                MemoryStream stream = new MemoryStream();
-                
-                loadedDocument.Save(stream);
-
-                await DependencyService.Get<IAndroidFileHelper>().Save(stream, filePath);
-            }
         }
+
 
         private async void MenuListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
         {
@@ -638,7 +657,7 @@ namespace Pdf.Views
             switch (itemMenu.Id)
             {
                 case 0:
-                    if(canSaveDocument == true )
+                    if(CanSaveDocument == true )
                         await SaveDocument();
                     break;
                 case 1:
@@ -658,6 +677,7 @@ namespace Pdf.Views
         {
             Stream stream;
             var fileName = Path.GetFileName(this.filePath);
+            stream = new FileStream(this.filePath, FileMode.Open);
 
             if (CanSaveDocument == true)
             {
@@ -665,7 +685,7 @@ namespace Pdf.Views
             }
             else
             {
-                stream = pdfStream;
+                stream = new FileStream(this.filePath, FileMode.Open);
             }
 
             await DependencyService.Get<IAndroidFileHelper>().Print(stream, fileName);
@@ -673,6 +693,9 @@ namespace Pdf.Views
 
         private async Task<Stream> SaveDocument()
         {
+            NumberOfAnnotation = 0;
+            NumberOfAnnotationFlatenned = 0;
+
             activityIndicator.IsRunning = true;
             activityIndicator.IsVisible = true;
 
@@ -972,6 +995,10 @@ namespace Pdf.Views
             pdfViewerControl.AddStamp(image, pdfViewerControl.PageNumber);
         }
 
+        private void PdfViewerControl_StampAnnotationAdded(object sender, StampAnnotationAddedEventArgs e)
+        {
+            NumberOfAnnotation += 1;
+        }
         private void PdfViewerControl_InkAdded(object sender, InkAddedEventArgs args)
         {
             NumberOfAnnotation += 1;
@@ -1738,6 +1765,8 @@ namespace Pdf.Views
             activityIndicator.IsRunning = true;
         }
         #endregion
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {

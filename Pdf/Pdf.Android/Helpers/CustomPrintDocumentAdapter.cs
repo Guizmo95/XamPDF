@@ -31,13 +31,12 @@ namespace Pdf.Droid.Helpers
                 return;
             }
 
-
             PrintDocumentInfo pdi = new PrintDocumentInfo.Builder(FileToPrint).SetContentType(Android.Print.PrintContentType.Document).Build();
 
             callback.OnLayoutFinished(pdi, true);
         }
 
-        public override void OnWrite(PageRange[] pages, ParcelFileDescriptor destination, CancellationSignal cancellationSignal, WriteResultCallback callback)
+        public async override void OnWrite(PageRange[] pages, ParcelFileDescriptor destination, CancellationSignal cancellationSignal, WriteResultCallback callback)
         {
             InputStream input = null;
             OutputStream output = null;
@@ -55,7 +54,7 @@ namespace Pdf.Droid.Helpers
                 while ((bytesRead = input.Read(buf)) > 0)
                 {
                     //Write the contents of the given file to the print destination
-                    output.Write(buf, 0, bytesRead);
+                    await output.WriteAsync(buf, 0, bytesRead);
                 }
 
                 callback.OnWriteFinished(new PageRange[] { PageRange.AllPages });
