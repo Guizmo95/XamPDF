@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "17DLojN5+mUmbVeXdO6FCRE5Ey8iI0k2IJdlfXTcnL6M1LKbAfww2Pd/M/XxBDNCMAzZOa558ofGuf7ocPQIuw==",
+  "dgSpecHash": "kMbsJd0uU9CObv0+6Ce1UkX68/9OVevdHbb3Jlc4k7LnG/Fjuu5NcKEKS3AjLyYr3pJHmddr9YoPNWIiWg/boQ==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rayhane\\.nuget\\packages\\acr.userdialogs\\7.1.0.440\\acr.userdialogs.7.1.0.440.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.bcl\\1.1.10\\microsoft.bcl.1.1.10.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.bcl.build\\1.0.14\\microsoft.bcl.build.1.0.14.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.net.http\\2.2.29\\microsoft.net.http.2.2.29.nupkg.sha512",

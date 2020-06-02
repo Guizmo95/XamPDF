@@ -44,7 +44,7 @@
           "dependencies": {
             "Acr.UserDialogs": {
               "target": "Package",
-              "version": "[7.1.0.440, )"
+              "version": "[7.1.0.442, )"
             },
             "Syncfusion.Xamarin.Compression": {
               "target": "Package",
@@ -121,7 +121,7 @@
           "dependencies": {
             "Acr.UserDialogs": {
               "target": "Package",
-              "version": "[7.1.0.440, )"
+              "version": "[7.1.0.442, )"
             },
             "Microsoft.Net.Http": {
               "target": "Package",

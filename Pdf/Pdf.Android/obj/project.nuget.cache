@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LsddX564SLGXl7KNThv12oJyugtBFccLI+otepwn4zFEclZhG2Gtvuo02EEyK9XJy1Z1L4rsQezZe8kBtiQQrw==",
+  "dgSpecHash": "EipbUS2Fb/ZvmD+d3VBdkEyqwd5CsgOX5jC4W4OcIcRNkaAtepj2eRxhxHFmND7p0NGbfRP3TIpHmb7OiBTwPQ==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rayhane\\.nuget\\packages\\acr.userdialogs\\7.1.0.440\\acr.userdialogs.7.1.0.440.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.bcl\\1.1.10\\microsoft.bcl.1.1.10.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.bcl.build\\1.0.14\\microsoft.bcl.build.1.0.14.nupkg.sha512",

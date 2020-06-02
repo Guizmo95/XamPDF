@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "Acr.UserDialogs/7.1.0.440": {
+      "Acr.UserDialogs/7.1.0.442": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Acr.UserDialogs.dll": {}
@@ -386,20 +386,19 @@
     }
   },
   "libraries": {
-    "Acr.UserDialogs/7.1.0.440": {
-      "sha512": "A0f7B+vrtCB7IOYBPTFn1Ijc7kVVpXu8AHfVyl4+BnesMuzpd7QOOvyeFCZvJTC+VT7Cng8Q1iuSYQW5PVjiqg==",
+    "Acr.UserDialogs/7.1.0.442": {
+      "sha512": "4z+sp3nTkFZuY75gd4zo2+86S8eaWlHl7KhLs/EAG9TH7Ng9+a4jfOap8v3fq1RXrF3gVae2ycLPcndZptxHZQ==",
       "type": "package",
-      "path": "acr.userdialogs/7.1.0.440",
+      "path": "acr.userdialogs/7.1.0.442",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "acr.userdialogs.7.1.0.440.nupkg.sha512",
+        "acr.userdialogs.7.1.0.442.nupkg.sha512",
         "acr.userdialogs.nuspec",
         "lib/monoandroid10.0/Acr.UserDialogs.dll",
         "lib/monoandroid10.0/Acr.UserDialogs.pdb",
         "lib/monoandroid10.0/Acr.UserDialogs.xml",
         "lib/monoandroid90/Acr.UserDialogs.dll",
-        "lib/monoandroid90/Acr.UserDialogs.dll.mdb",
         "lib/monoandroid90/Acr.UserDialogs.pdb",
         "lib/monoandroid90/Acr.UserDialogs.xml",
         "lib/netstandard2.0/Acr.UserDialogs.dll",
@@ -1780,7 +1779,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Acr.UserDialogs >= 7.1.0.440",
+      "Acr.UserDialogs >= 7.1.0.442",
       "Microsoft.Net.Http >= 2.2.29",
       "NETStandard.Library >= 2.0.3",
       "SharpZipLib >= 1.2.0",
@@ -1844,7 +1843,7 @@
         "dependencies": {
           "Acr.UserDialogs": {
             "target": "Package",
-            "version": "[7.1.0.440, )"
+            "version": "[7.1.0.442, )"
           },
           "Microsoft.Net.Http": {
             "target": "Package",

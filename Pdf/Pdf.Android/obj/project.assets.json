@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v10.0": {
-      "Acr.UserDialogs/7.1.0.440": {
+      "Acr.UserDialogs/7.1.0.442": {
         "type": "package",
         "dependencies": {
           "AndHUD": "1.4.2",
@@ -1932,7 +1932,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.440",
+          "Acr.UserDialogs": "7.1.0.442",
           "Microsoft.Net.Http": "2.2.29",
           "SharpZipLib": "1.2.0",
           "Syncfusion.Xamarin.Buttons": "18.1.0.54",
@@ -1960,14 +1960,14 @@
     }
   },
   "libraries": {
-    "Acr.UserDialogs/7.1.0.440": {
-      "sha512": "A0f7B+vrtCB7IOYBPTFn1Ijc7kVVpXu8AHfVyl4+BnesMuzpd7QOOvyeFCZvJTC+VT7Cng8Q1iuSYQW5PVjiqg==",
+    "Acr.UserDialogs/7.1.0.442": {
+      "sha512": "4z+sp3nTkFZuY75gd4zo2+86S8eaWlHl7KhLs/EAG9TH7Ng9+a4jfOap8v3fq1RXrF3gVae2ycLPcndZptxHZQ==",
       "type": "package",
-      "path": "acr.userdialogs/7.1.0.440",
+      "path": "acr.userdialogs/7.1.0.442",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "acr.userdialogs.7.1.0.440.nupkg.sha512",
+        "acr.userdialogs.7.1.0.442.nupkg.sha512",
         "acr.userdialogs.nuspec",
         "lib/monoandroid10.0/Acr.UserDialogs.dll",
         "lib/monoandroid10.0/Acr.UserDialogs.pdb",
@@ -4740,7 +4740,7 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v10.0": [
-      "Acr.UserDialogs >= 7.1.0.440",
+      "Acr.UserDialogs >= 7.1.0.442",
       "Microsoft.Net.Compilers >= 3.4.0",
       "Pdf >= 1.0.0",
       "Syncfusion.Xamarin.Compression >= 18.1.0.54",
@@ -4796,7 +4796,7 @@
         "dependencies": {
           "Acr.UserDialogs": {
             "target": "Package",
-            "version": "[7.1.0.440, )"
+            "version": "[7.1.0.442, )"
           },
           "Microsoft.Net.Compilers": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

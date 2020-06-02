@@ -356,7 +356,7 @@ namespace Pdf.Views
 
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
-            
+
             pdfViewerControl.PasswordErrorOccurred -= PdfViewerControl_PasswordErrorOccurred;
 
             PdfViewerControl.DocumentSaveInitiated -= PdfViewerControl_DocumentSaveInitiated;
@@ -446,7 +446,6 @@ namespace Pdf.Views
             pdfViewerControl.SearchCompleted += PdfViewerControl_SearchCompleted;
             pdfViewerControl.TextMatchFound += PdfViewerControl_TextMatchFound;
             pdfViewerControl.SearchInitiated += PdfViewerControl_SearchInitiated;
-            pdfViewerControl.DocumentSaveInitiated += PdfViewerControl_DocumentSaveInitiated;
 
             pdfViewerControl.StampAnnotationAdded += PdfViewerControl_StampAnnotationAdded;
             #endregion
@@ -657,7 +656,7 @@ namespace Pdf.Views
             switch (itemMenu.Id)
             {
                 case 0:
-                    if(CanSaveDocument == true )
+                    if (CanSaveDocument == true)
                         await SaveDocument();
                     break;
                 case 1:
@@ -677,31 +676,46 @@ namespace Pdf.Views
         {
             Stream stream;
             var fileName = Path.GetFileName(this.filePath);
-            stream = new FileStream(this.filePath, FileMode.Open);
 
             if (CanSaveDocument == true)
             {
-                stream = await SaveDocument();
+                await SaveDocument();
             }
-            else
-            {
-                stream = new FileStream(this.filePath, FileMode.Open);
-            }
+
+            stream = new FileStream(this.filePath, FileMode.Open);
 
             await DependencyService.Get<IAndroidFileHelper>().Print(stream, fileName);
         }
 
-        private async Task<Stream> SaveDocument()
+        private async Task SaveDocument()
         {
-            NumberOfAnnotation = 0;
-            NumberOfAnnotationFlatenned = 0;
+            using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
+            {
 
-            activityIndicator.IsRunning = true;
-            activityIndicator.IsVisible = true;
+                NumberOfAnnotation = 0;
 
-            Stream stream = await pdfViewerControl.SaveDocumentAsync();
+                Dictionary<bool, string> saveStatus = null;
 
-            return stream;
+                await Task.Run(async () =>
+                {
+                    using (Stream stream = await pdfViewerControl.SaveDocumentAsync())
+                    {
+                        saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
+                    }
+                });
+
+                if (saveStatus.ContainsKey(true) == true)
+                {
+                    DependencyService.Get<IToastMessage>().LongAlert("Document saved");
+                }
+                else
+                {
+                    DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
+                }
+
+            }
+
+            popupMenu.IsOpen = false;
         }
 
         private void MoreOptionButton_Clicked(object sender, EventArgs e)

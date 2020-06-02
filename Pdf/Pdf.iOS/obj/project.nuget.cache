@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XYN8a4O80tbW0dWKv4Ep1E5KsrTeoSri16pA6upNHIEH0OaeveY3UDnj+v34mSoiplGQuuSiFjMUekRT5DjcWw==",
+  "dgSpecHash": "4dBWlzbfBgPvW2sPBDkW7Jku9IB7cESsdzT4EKDpYfBN53pXUiXOkzfM3mIAyvVUVkFYYaXbqz2eKFviUunSGw==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.iOS\\Pdf.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rayhane\\.nuget\\packages\\acr.userdialogs\\7.1.0.440\\acr.userdialogs.7.1.0.440.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\btprogresshud\\1.3.1\\btprogresshud.1.3.1.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.bcl\\1.1.10\\microsoft.bcl.1.1.10.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.bcl.build\\1.0.14\\microsoft.bcl.build.1.0.14.nupkg.sha512",
