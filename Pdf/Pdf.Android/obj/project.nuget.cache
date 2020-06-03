@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EipbUS2Fb/ZvmD+d3VBdkEyqwd5CsgOX5jC4W4OcIcRNkaAtepj2eRxhxHFmND7p0NGbfRP3TIpHmb7OiBTwPQ==",
+  "dgSpecHash": "EO+I4eappYFzWOJ7JqHKWhduiMGLtOI3s98Zm8k3i8bEemcjPW/WVo6Ci//v3lR1lLpJ5gzGm59cmhR4ojzRgA==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
   "expectedPackageFiles": [
@@ -105,8 +105,6 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.androidx.vectordrawable.animated\\1.1.0\\xamarin.androidx.vectordrawable.animated.1.1.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.androidx.versionedparcelable\\1.1.0\\xamarin.androidx.versionedparcelable.1.1.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0\\xamarin.androidx.viewpager.1.0.0.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.controls.signaturepad\\3.0.0\\xamarin.controls.signaturepad.3.0.0.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.controls.signaturepad.forms\\3.0.0\\xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms\\4.6.0.800\\xamarin.forms.4.6.0.800.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms.pancakeview\\1.3.7\\xamarin.forms.pancakeview.1.3.7.nupkg.sha512",

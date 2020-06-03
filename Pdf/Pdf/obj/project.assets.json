@@ -318,18 +318,6 @@
           "lib/netstandard2.0/Unity.Container.dll": {}
         }
       },
-      "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "2.5.0.280555"
-        },
-        "compile": {
-          "lib/netstandard1.0/SignaturePad.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/SignaturePad.Forms.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.5.3.1": {
         "type": "package",
         "dependencies": {
@@ -1354,26 +1342,6 @@
         "unity.nuspec"
       ]
     },
-    "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
-      "sha512": "LGw5vKuHsx/pQLD4GNEO/zrQVTFXsXnh6gzKCIMk/bMQTtfwfk6fGKgMeVwcR6/5DpOyVDzZg2B39MVYblAvdA==",
-      "type": "package",
-      "path": "xamarin.controls.signaturepad.forms/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid/SignaturePad.Forms.dll",
-        "lib/MonoAndroid/SignaturePad.Forms.xml",
-        "lib/Xamarin.iOS/SignaturePad.Forms.dll",
-        "lib/Xamarin.iOS/SignaturePad.Forms.xml",
-        "lib/netstandard1.0/SignaturePad.Forms.dll",
-        "lib/netstandard1.0/SignaturePad.Forms.xml",
-        "lib/uap10.0/SignaturePad.Forms.dll",
-        "lib/uap10.0/SignaturePad.Forms.pri",
-        "lib/uap10.0/SignaturePad.Forms.xml",
-        "xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512",
-        "xamarin.controls.signaturepad.forms.nuspec"
-      ]
-    },
     "Xamarin.Essentials/1.5.3.1": {
       "sha512": "6sE3kGMhES7dsR8ll+ar+roEIFobjPfDskKNMsU4FF6cV27ZsdArGZHxe1QqPPJcMT6PzJsGvA3l5PNMZgw5ng==",
       "type": "package",
@@ -1791,7 +1759,6 @@
       "Syncfusion.Xamarin.SfPopupLayout >= 18.1.0.43",
       "Syncfusion.Xamarin.SfRotator >= 18.1.0.43",
       "Unity >= 5.11.4",
-      "Xamarin.Controls.SignaturePad.Forms >= 3.0.0",
       "Xamarin.Essentials >= 1.5.3.1",
       "Xamarin.Forms >= 4.6.0.800",
       "Xamarin.Forms.PancakeView >= 1.3.7",
@@ -1890,10 +1857,6 @@
           "Unity": {
             "target": "Package",
             "version": "[5.11.4, )"
-          },
-          "Xamarin.Controls.SignaturePad.Forms": {
-            "target": "Package",
-            "version": "[3.0.0, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

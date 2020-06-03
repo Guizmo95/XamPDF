@@ -22,7 +22,6 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\nets
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\PdfViewer.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\RotatorPage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\ShellMainMenu.xaml.g.cs
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\SignaturePage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Views\SignaturePageList.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Pdf.AssemblyInfoInputs.cache
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Release\netstandard2.0\Pdf.AssemblyInfo.cs

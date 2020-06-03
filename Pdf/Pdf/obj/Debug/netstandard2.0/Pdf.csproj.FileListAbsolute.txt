@@ -22,7 +22,6 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netsta
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\PdfViewer.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\RotatorPage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\ShellMainMenu.xaml.g.cs
-D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\SignaturePage.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\SignaturePageList.xaml.g.cs
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.AssemblyInfoInputs.cache
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.AssemblyInfo.cs
@@ -31,3 +30,5 @@ D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netsta
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\ref\Pdf.dll
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.pdb
 D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Views\CompressDocumentPage.xaml.g.cs
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\Pdf.csproj.CoreCompileInputs.cache
+D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf\obj\Debug\netstandard2.0\XamlC.stamp

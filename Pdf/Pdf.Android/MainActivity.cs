@@ -83,17 +83,6 @@ namespace Pdf.Droid
                 ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.ReadExternalStorage }, 0);
             }
 
-            //allowing the device to change the screen orientation based on the rotation 
-            MessagingCenter.Subscribe<SignaturePage>(this, "AllowLandscape", sender =>
-            {
-                RequestedOrientation = ScreenOrientation.Landscape;
-            });
-
-            //during page close setting back to portrait
-            MessagingCenter.Subscribe<SignaturePage>(this, "PreventLandscape", sender =>
-            {
-                RequestedOrientation = ScreenOrientation.Portrait;
-            });
 
             UserDialogs.Init(this);
 

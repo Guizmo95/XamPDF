@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[18.1.0.54, )"
             },
+            "Syncfusion.Xamarin.SfPdfViewer": {
+              "target": "Package",
+              "version": "[18.1.0.54, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.3.1, )"
@@ -168,10 +172,6 @@
             "Unity": {
               "target": "Package",
               "version": "[5.11.4, )"
-            },
-            "Xamarin.Controls.SignaturePad.Forms": {
-              "target": "Package",
-              "version": "[3.0.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

@@ -9,18 +9,18 @@
     ".NETStandard,Version=v2.0/": {
       "Pdf/1.0.0": {
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.440",
+          "Acr.UserDialogs": "7.1.0.442",
           "Microsoft.Net.Http": "2.2.29",
           "NETStandard.Library": "2.0.3",
           "SharpZipLib": "1.2.0",
           "Syncfusion.Xamarin.Buttons": "18.1.0.54",
+          "Syncfusion.Xamarin.Compression": "18.1.0.54",
           "Syncfusion.Xamarin.Pdf": "18.1.0.54",
           "Syncfusion.Xamarin.SfListView": "18.1.0.54",
           "Syncfusion.Xamarin.SfPdfViewer": "18.1.0.54",
           "Syncfusion.Xamarin.SfPopupLayout": "18.1.0.43",
           "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
           "Unity": "5.11.4",
-          "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.1",
           "Xamarin.Forms": "4.6.0.800",
           "Xamarin.Forms.PancakeView": "1.3.7",
@@ -33,11 +33,11 @@
           "Pdf.dll": {}
         }
       },
-      "Acr.UserDialogs/7.1.0.440": {
+      "Acr.UserDialogs/7.1.0.442": {
         "runtime": {
           "lib/netstandard2.0/Acr.UserDialogs.dll": {
-            "assemblyVersion": "7.1.0.440",
-            "fileVersion": "7.1.0.440"
+            "assemblyVersion": "7.1.0.442",
+            "fileVersion": "7.1.0.442"
           }
         }
       },
@@ -305,17 +305,6 @@
           }
         }
       },
-      "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
-        "dependencies": {
-          "Xamarin.Forms": "4.6.0.800"
-        },
-        "runtime": {
-          "lib/netstandard1.0/SignaturePad.Forms.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        }
-      },
       "Xamarin.Essentials/1.5.3.1": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -383,12 +372,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Acr.UserDialogs/7.1.0.440": {
+    "Acr.UserDialogs/7.1.0.442": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A0f7B+vrtCB7IOYBPTFn1Ijc7kVVpXu8AHfVyl4+BnesMuzpd7QOOvyeFCZvJTC+VT7Cng8Q1iuSYQW5PVjiqg==",
-      "path": "acr.userdialogs/7.1.0.440",
-      "hashPath": "acr.userdialogs.7.1.0.440.nupkg.sha512"
+      "sha512": "sha512-4z+sp3nTkFZuY75gd4zo2+86S8eaWlHl7KhLs/EAG9TH7Ng9+a4jfOap8v3fq1RXrF3gVae2ycLPcndZptxHZQ==",
+      "path": "acr.userdialogs/7.1.0.442",
+      "hashPath": "acr.userdialogs.7.1.0.442.nupkg.sha512"
     },
     "Microsoft.Bcl/1.1.10": {
       "type": "package",
@@ -571,13 +560,6 @@
       "sha512": "sha512-92605bIUMalRwCqyGX5uno6MEyyiVIt5P5zPxJYFs9iMe8Ktn9liSGXHNeN60x1iuyNdx/RlqwCuFHL7a6M+ZA==",
       "path": "unity/5.11.4",
       "hashPath": "unity.5.11.4.nupkg.sha512"
-    },
-    "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LGw5vKuHsx/pQLD4GNEO/zrQVTFXsXnh6gzKCIMk/bMQTtfwfk6fGKgMeVwcR6/5DpOyVDzZg2B39MVYblAvdA==",
-      "path": "xamarin.controls.signaturepad.forms/3.0.0",
-      "hashPath": "xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512"
     },
     "Xamarin.Essentials/1.5.3.1": {
       "type": "package",

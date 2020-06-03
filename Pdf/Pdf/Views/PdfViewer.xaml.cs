@@ -359,8 +359,6 @@ namespace Pdf.Views
 
             pdfViewerControl.PasswordErrorOccurred -= PdfViewerControl_PasswordErrorOccurred;
 
-            PdfViewerControl.DocumentSaveInitiated -= PdfViewerControl_DocumentSaveInitiated;
-
             if (passwordPopup != null)
             {
                 passwordPopup.Closed -= PasswordPopup_Closed;
@@ -372,6 +370,12 @@ namespace Pdf.Views
 
             //pdfViewerControl.Unload();
             base.OnDisappearing();
+        }
+
+        protected async Task WaitAndExecute(int milisec, Action actionToExecute)
+        {
+            await Task.Delay(milisec);
+            actionToExecute();
         }
 
         protected override void OnAppearing()
@@ -391,7 +395,6 @@ namespace Pdf.Views
             {
                 this.SelectedColor = helper;
             });
-
 
             base.OnAppearing();
         }
@@ -637,9 +640,6 @@ namespace Pdf.Views
         }
 
 
-
-
-
         #region PopupMenu Methods
 
         //TODO HANDLE SAVE FOR PRINT
@@ -652,6 +652,7 @@ namespace Pdf.Views
         private async void MenuListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
         {
             var itemMenu = (ItemsMenu)popupMenuContent.MenuListView.SelectedItem;
+            popupMenuContent.MenuListView.SelectedItem = null;
 
             switch (itemMenu.Id)
             {
@@ -677,21 +678,30 @@ namespace Pdf.Views
             Stream stream;
             var fileName = Path.GetFileName(this.filePath);
 
-            if (CanSaveDocument == true)
+            popupMenu.IsOpen = false;
+
+            using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
             {
-                await SaveDocument();
+                await Task.Run(async () =>
+                {
+                    if (CanSaveDocument == true)
+                    {
+                        stream = await pdfViewerControl.SaveDocumentAsync();
+                    }
+                    else
+                    {
+                        stream = new FileStream(this.filePath, FileMode.Open);
+                    }
+
+                    await DependencyService.Get<IAndroidFileHelper>().Print(stream, fileName);
+                });
             }
-
-            stream = new FileStream(this.filePath, FileMode.Open);
-
-            await DependencyService.Get<IAndroidFileHelper>().Print(stream, fileName);
         }
 
         private async Task SaveDocument()
         {
             using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
             {
-
                 NumberOfAnnotation = 0;
 
                 Dictionary<bool, string> saveStatus = null;
@@ -712,7 +722,6 @@ namespace Pdf.Views
                 {
                     DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
                 }
-
             }
 
             popupMenu.IsOpen = false;
@@ -733,24 +742,6 @@ namespace Pdf.Views
 
         }
 
-        private async void PdfViewerControl_DocumentSaveInitiated(object sender, DocumentSaveInitiatedEventArgs args)
-        {
-            Dictionary<bool, string> saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(args.SaveStream as MemoryStream, this.filePath);
-
-            if (saveStatus.ContainsKey(true) == true)
-            {
-                DependencyService.Get<IToastMessage>().LongAlert("Document saved");
-            }
-            else
-            {
-                DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
-            }
-
-            activityIndicator.IsRunning = false;
-            activityIndicator.IsVisible = false;
-
-            popupMenu.IsOpen = false;
-        }
         #endregion  
 
         private void AcceptButtonPasswordPopup_Clicked(object sender, EventArgs e)

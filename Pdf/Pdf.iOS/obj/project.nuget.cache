@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4dBWlzbfBgPvW2sPBDkW7Jku9IB7cESsdzT4EKDpYfBN53pXUiXOkzfM3mIAyvVUVkFYYaXbqz2eKFviUunSGw==",
+  "dgSpecHash": "hCvLOeVfxboF+sGY96BUmWIyuut5sq++RQT0eVPFzBms5//rJt8eMbq/lxUG01GCO3wRyjGz94EYAzA9lfOBIg==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.iOS\\Pdf.iOS.csproj",
   "expectedPackageFiles": [
@@ -30,8 +30,6 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\syncfusion.xamarin.sfrotator\\18.1.0.43\\syncfusion.xamarin.sfrotator.18.1.0.43.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\unity\\5.11.4\\unity.5.11.4.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.controls.signaturepad\\3.0.0\\xamarin.controls.signaturepad.3.0.0.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.controls.signaturepad.forms\\3.0.0\\xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms\\4.6.0.800\\xamarin.forms.4.6.0.800.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\xamarin.forms.pancakeview\\1.3.7\\xamarin.forms.pancakeview.1.3.7.nupkg.sha512",
