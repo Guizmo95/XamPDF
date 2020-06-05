@@ -19,11 +19,11 @@ namespace Pdf.Helpers
 
         private void Bindable_SelectionChanged(object sender, EventArgs e)
         {
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                var effectsView = sender as SfEffectsView;
-                effectsView.ApplyEffects(SfEffects.Ripple);
-            });
+            //Device.BeginInvokeOnMainThread(() =>
+            //{
+            //    var effectsView = sender as SfEffectsView;
+            //    effectsView.ApplyEffects(SfEffects.Ripple);
+            //});
         }
 
         private void AnimationCompleted(object sender, EventArgs e)

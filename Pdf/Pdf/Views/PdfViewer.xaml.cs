@@ -253,8 +253,8 @@ namespace Pdf.Views
                 {
                     if (value == false)
                     {
-                        UndoButton.Foreground = Color.White;
-                        ValidButton.Foreground = Color.White;
+                        UndoButton.Foreground = Color.Transparent;
+                        ValidButton.Foreground = Color.Transparent;
                     }
                 }
             }
@@ -277,7 +277,7 @@ namespace Pdf.Views
                 else
                 {
                     if (value == false)
-                        RedoButton.Foreground = Color.White;
+                        RedoButton.Foreground = Color.Transparent;
                 }
             }
         }
@@ -295,7 +295,7 @@ namespace Pdf.Views
                 OnPropertyChanged();
 
                 if (ShapesNumbers == 0)
-                    ValidButton.Foreground = Color.White;
+                    ValidButton.Foreground = Color.Transparent;
                 else
                     ValidButton.Foreground = Color.Black;
             }
@@ -314,7 +314,7 @@ namespace Pdf.Views
                 OnPropertyChanged();
 
                 if (TextMarkupNumbers == 0)
-                    ValidButton.Foreground = Color.White;
+                    ValidButton.Foreground = Color.Transparent;
                 else
                     ValidButton.Foreground = Color.Black;
             }
@@ -369,13 +369,7 @@ namespace Pdf.Views
             }
 
             //pdfViewerControl.Unload();
-            base.OnDisappearing();
-        }
-
-        protected async Task WaitAndExecute(int milisec, Action actionToExecute)
-        {
-            await Task.Delay(milisec);
-            actionToExecute();
+            //base.OnDisappearing();
         }
 
         protected override void OnAppearing()
@@ -545,6 +539,7 @@ namespace Pdf.Views
             pdfViewerControl.PreserveSignaturePadOrientation = true;
 
             paletteButton.BindingContext = this;
+            trashButton.BindingContext = this;
             styleContent.BindingContext = this;
 
             #region Style popup 
@@ -557,7 +552,7 @@ namespace Pdf.Views
             stylePopup.PopupView.HeightRequest = 192;
             stylePopup.PopupView.WidthRequest = 280;
             stylePopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#fafafa");
-            stylePopup.PopupView.AnimationMode = AnimationMode.Fade;
+            stylePopup.PopupView.AnimationMode = AnimationMode.SlideOnBottom;
 
             styleTemplateStylePopup = new DataTemplate(() =>
             {
@@ -900,30 +895,30 @@ namespace Pdf.Views
 
         private async void PdfViewerControl_Tapped(object sender, TouchInteractionEventArgs e)
         {
-            if (this.toolbarIsCollapsed == false)
-            {
-                DependencyService.Get<INavBarHelper>().SetImmersiveMode();
+            //if (this.toolbarIsCollapsed == false)
+            //{
+            //    DependencyService.Get<INavBarHelper>().SetImmersiveMode();
 
-                pdfViewGrid.Margin = 0;
+            //    pdfViewGrid.Margin = 0;
 
-                await topToolbar.FadeTo(0, 150);
-                await bottomMainBar.FadeTo(0, 150);
+            //    await topToolbar.FadeTo(0, 150);
+            //    await bottomMainBar.FadeTo(0, 150);
 
-                toolbarIsCollapsed = true;
-            }
-            else
-            {
-                DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
+            //    toolbarIsCollapsed = true;
+            //}
+            //else
+            //{
+            //    DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
 
-                await topToolbar.FadeTo(1, 150);
-                await bottomMainBar.FadeTo(1, 150);
+            //    await topToolbar.FadeTo(1, 150);
+            //    await bottomMainBar.FadeTo(1, 150);
 
-                await Task.Delay(150);
+            //    await Task.Delay(150);
 
-                pdfViewGrid.Margin = new Thickness(0, 45, 0, 45);
+            //    pdfViewGrid.Margin = new Thickness(0, 45, 0, 45);
 
-                toolbarIsCollapsed = false;
-            }
+            //    toolbarIsCollapsed = false;
+            //}
         }
 
         private void PdfViewerControl_PageChanged(object sender, PageChangedEventArgs args)
@@ -1120,13 +1115,18 @@ namespace Pdf.Views
         private void PdfViewerControl_InkSelected(object sender, InkSelectedEventArgs args)
         {
             this.annotationType = AnnotationType.Ink;
-            //Casts the sender object as Ink annotation.
             selectedInkAnnotation = sender as InkAnnotation;
+
+            SelectedColor = args.Color;
+
+            SetToolbarForInkAnnotationSelected();
         }
 
         private void PdfViewerControl_InkDeselected(object sender, InkDeselectedEventArgs args)
         {
-            this.annotationType = AnnotationType.None;
+            BackButtonAnnotationTypeToolbar_Clicked(null, null);
+
+            selectedInkAnnotation = null;
         }
         #endregion
 
@@ -1337,14 +1337,15 @@ namespace Pdf.Views
         private void SetToolbarForShapeAnnotationSelected()
         {
             bottomMainToolbar.IsVisible = false;
-            colorPicker.IsVisible = false;
+
             styleContent.FontSizeControl.IsVisible = false;
 
-            stylePopup.PopupView.HeightRequest = 240;
+            stylePopup.PopupView.HeightRequest = 195;
             stylePopup.PopupView.WidthRequest = 280;
 
             shapeToolbar.IsVisible = true;
             styleContent.BoxView2.IsVisible = true;
+            styleContent.BoxView1.IsVisible = true;
             styleContent.OpacityControl.IsVisible = true;
             styleContent.ThicknessBar.IsVisible = true;
         }
@@ -1355,12 +1356,12 @@ namespace Pdf.Views
             styleContent.OpacityControl.IsVisible = false;
             styleContent.BoxView2.IsVisible = false;
             styleContent.ThicknessBar.IsVisible = false;
-            colorPicker.IsVisible = false;
 
-            stylePopup.PopupView.HeightRequest = 160;
+            stylePopup.PopupView.HeightRequest = 130;
             stylePopup.PopupView.WidthRequest = 280;
 
             styleContent.FontSizeControl.IsVisible = true;
+            styleContent.BoxView1.IsVisible = true;
             paletteButton.IsVisible = true;
             annotationTypeToolbar.IsVisible = true;
 
@@ -1376,7 +1377,6 @@ namespace Pdf.Views
         private void SetToolbarForInkAnnotationSelected()
         {
             bottomMainToolbar.IsVisible = false;
-            colorPicker.IsVisible = false;
             styleContent.FontSizeControl.IsVisible = false;
             viewModeButton.IsVisible = false;
             bookmarkButton.IsVisible = false;
@@ -1390,27 +1390,42 @@ namespace Pdf.Views
             styleContent.OpacityControl.IsVisible = true;
             styleContent.ThicknessBar.IsVisible = true;
             styleContent.BoxView2.IsVisible = true;
+            styleContent.BoxView1.IsVisible = true;
 
             ValidButton.IsVisible = true;
             UndoButton.IsVisible = true;
             RedoButton.IsVisible = true;
 
-            stylePopup.PopupView.HeightRequest = 240;
+            stylePopup.PopupView.HeightRequest = 195;
             stylePopup.PopupView.WidthRequest = 280;
 
-            pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
-            pdfViewerControl.AnnotationSettings.Ink.Thickness = 9;
-            this.annotationType = AnnotationType.Ink;
-            styleContent.ColorPicker.SelectedIndex = 0;
+            if(this.annotationType != AnnotationType.Ink)
+            {
+                this.annotationType = AnnotationType.Ink;
+                pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
+
+                pdfViewerControl.AnnotationSettings.Ink.Thickness = 9;
+                styleContent.ColorPicker.SelectedIndex = 0;
+            }
+            else
+            {
+                trashButton.IsVisible = true;
+            }
         }
 
         private void SetToolbarForTextMarkupAnnotationSelected()
         {
             bottomMainToolbar.IsVisible = false;
-            paletteButton.IsVisible = false;
 
-            colorPicker.IsVisible = true;
             textMarkupToolbar.IsVisible = true;
+
+            styleContent.OpacityControl.IsVisible = false;
+            styleContent.ThicknessBar.IsVisible = false;
+            styleContent.BoxView2.IsVisible = false;
+            styleContent.BoxView1.IsVisible = false;
+
+            stylePopup.PopupView.HeightRequest = 62;
+            stylePopup.PopupView.WidthRequest = 280;
         }
 
         private async Task CollapseBottomMainToolbar(AnnotationType annotationType)
@@ -1446,6 +1461,8 @@ namespace Pdf.Views
                 await textMarkupToolbar.LayoutTo(new Rectangle(textMarkupToolbar.Bounds.X, textMarkupToolbar.Bounds.Y, textMarkupToolbar.Bounds.Width, 0), 200, Easing.Linear);
             });
 
+            imageAnnotationType.HeightRequest = 29;
+            imageAnnotationType.WidthRequest = 29;
             textMarkupToolbar.IsVisible = false;
             bottomMainToolbar.IsVisible = true;
         }
@@ -1453,11 +1470,12 @@ namespace Pdf.Views
         private async void StrikethroughtButton_Clicked(object sender, EventArgs e)
         {
             imageAnnotationType.Source = "ic_strikethrough.png";
+            
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Strikethrough;
             this.annotationType = AnnotationType.Strikethrought;
 
-            colorPicker.SelectedIndex = 5;
+            styleContent.ColorPicker.SelectedIndex = 5;
 
             InitializeComponentForTextMarkupAnnotation();
         }
@@ -1465,11 +1483,13 @@ namespace Pdf.Views
         private async void UnderlineButton_Clicked(object sender, EventArgs e)
         {
             imageAnnotationType.Source = "ic_underline.png";
+            imageAnnotationType.HeightRequest = 25;
+            imageAnnotationType.WidthRequest = 25;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Underline;
             this.annotationType = AnnotationType.Underline;
             //todo -- set for red color
-            colorPicker.SelectedIndex = 4;
+            styleContent.ColorPicker.SelectedIndex = 4;
 
             InitializeComponentForTextMarkupAnnotation();
         }
@@ -1477,18 +1497,20 @@ namespace Pdf.Views
         private async void HightlightButton_Clicked(object sender, EventArgs e)
         {
             imageAnnotationType.Source = "ic_edit.png";
+            imageAnnotationType.HeightRequest = 25;
+            imageAnnotationType.WidthRequest = 25;
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Highlight;
             this.annotationType = AnnotationType.Hightlight;
 
-            colorPicker.SelectedIndex = 5;
+            styleContent.ColorPicker.SelectedIndex = 5;
 
             InitializeComponentForTextMarkupAnnotation();
         }
 
         private void InitializeComponentForTextMarkupAnnotation()
         {
-            paletteButton.IsVisible = false;
+            paletteButton.IsVisible = true;
             textMarkupToolbar.IsVisible = false;
 
             annotationTypeToolbar.IsVisible = true;
@@ -1503,6 +1525,8 @@ namespace Pdf.Views
             {
                 await annotationTypeToolbar.LayoutTo(new Rectangle(annotationTypeToolbar.Bounds.X, annotationTypeToolbar.Bounds.Y, annotationTypeToolbar.Bounds.Width, 0), 200, Easing.Linear);
             });
+
+            pdfViewerControl.SelectionMode = Syncfusion.SfPdfViewer.XForms.SelectionMode.None;
 
             annotationTypeToolbar.IsVisible = false;
 
@@ -1572,8 +1596,10 @@ namespace Pdf.Views
         private async void PaletteButton_Clicked()
         {
             var viewPortWidth = Application.Current.MainPage.Width;
+
             var value = (viewPortWidth / 2) - 125;
-            stylePopup.ShowRelativeToView(paletteButton, RelativePosition.AlignTopRight, 0, -7);
+
+            stylePopup.ShowRelativeToView(paletteButton, RelativePosition.AlignTopRight, 150, 39.5);
         }
         #endregion
 
@@ -1662,7 +1688,10 @@ namespace Pdf.Views
         private void SearchButton_Clicked(object sender, EventArgs e)
         {
             topMainBar.IsVisible = false;
+            viewModeButton.IsVisible = false;
+
             searchBar.IsVisible = true;
+            
         }
 
         private void CancelSearchButton_Clicked(object sender, EventArgs e)
@@ -1670,6 +1699,8 @@ namespace Pdf.Views
             PdfViewerControl.CancelSearch();
 
             topMainBar.IsVisible = true;
+            viewModeButton.IsVisible = true;
+
             searchBar.IsVisible = false;
         }
 
@@ -1681,17 +1712,17 @@ namespace Pdf.Views
             activityIndicator.IsVisible = false;
             activityIndicator.IsRunning = false;
 
-            if (isNoMatchFound == true)
+            if (!pdfViewerControl.Toolbar.Enabled)
             {
-                //Show popup
-                searchErrorPopupContent.NoOccurenceFound.IsVisible = true;
-                searchErrorPopupContent.NoMoreOccurenceFound.IsVisible = false;
-                errorSearchPopup.Show();
-                isNoMatchFound = false;
-            }
-            else
-            {
-                if (isNoMoreOccurrenceFound == true)
+                if (args.NoMatchFound)
+                {
+                    //Show popup
+                    searchErrorPopupContent.NoOccurenceFound.IsVisible = true;
+                    searchErrorPopupContent.NoMoreOccurenceFound.IsVisible = false;
+                    errorSearchPopup.Show();
+                    isNoMatchFound = false;
+                }
+                else if (args.NoMoreOccurrence)
                 {
                     //Show popup
                     searchErrorPopupContent.NoOccurenceFound.IsVisible = false;
@@ -1700,6 +1731,7 @@ namespace Pdf.Views
                     isNoMoreOccurrenceFound = false;
                 }
             }
+
             search_started = false;
         }
 

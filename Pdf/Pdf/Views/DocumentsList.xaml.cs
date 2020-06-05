@@ -1,10 +1,13 @@
-﻿using Pdf.Helpers;
+﻿using Acr.UserDialogs;
+using Pdf.Helpers;
+using Pdf.Interfaces;
 using Pdf.Models;
 using Syncfusion.DataSource;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,6 +19,9 @@ namespace Pdf.Views
         private SfPopupLayout popupLayout;
         private FileModel selectedDoc;
         public SfBehavior SfBehavior { get; set; }
+
+
+ 
 
         public FileModel SelectedDoc
         {
@@ -30,11 +36,11 @@ namespace Pdf.Views
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public DocumentsList()
         {
             InitializeComponent();
+
 
             SfBehavior = new SfBehavior();
             popupLayout = new SfPopupLayout();
@@ -99,31 +105,11 @@ namespace Pdf.Views
 
             sortButton.RotateTo(180);
 
-            MessagingCenter.Subscribe<DocumentListViewBehavior>(this, "PushAsyncPage", (sender) =>
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    activityIndicator.IsRunning = true;
-                    filter.IsVisible = true;
+        }
 
-                    try
-                    {
-                        var file = (FileModel)DocumentListView.SelectedItem;
-
-                        if(file != null)
-                        {
-                            await Navigation.PushAsync(new PdfViewer(file.FilePath));
-                        }
-                    }
-
-                    finally
-                    {
-                        DocumentListView.SelectedItem = null;
-                        activityIndicator.IsRunning = false;
-                        filter.IsVisible = false;
-                    }
-                });
-            });
+        private void ResetSwipe()
+        {
+            
         }
 
         private void SortDate_Clicked(object sender, EventArgs e)
@@ -189,10 +175,36 @@ namespace Pdf.Views
             clearSearchBar.IsVisible = false;
         }
 
+        private async void DocumentListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
+        {
+            await Task.Delay(500);
+
+            UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Black);
+
+            try
+            {
+                var file = (FileModel)DocumentListView.SelectedItem;
+
+                if (file != null)
+                {
+                    await Navigation.PushAsync(new PdfViewer(file.FilePath));
+                }
+            }
+
+            finally
+            {
+                DocumentListView.SelectedItem = null;
+
+                UserDialogs.Instance.HideLoading();
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+ 
     }
 }

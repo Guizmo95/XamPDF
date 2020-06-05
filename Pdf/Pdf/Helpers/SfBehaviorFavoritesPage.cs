@@ -273,6 +273,10 @@ namespace Pdf.Helpers
 
                     DependencyService.Get<IKeyboardHelper>().HideKeyboard();
                     DependencyService.Get<INavBarHelper>().SetImmersiveMode();
+
+                    ListView.ResetSwipe();
+                    this.isSwipped = false;
+
                     passwordPopup.IsOpen = false;
 
                     IList<DocumentInfoListViewModel> documentInfoListViewModels = new List<DocumentInfoListViewModel>();

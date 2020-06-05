@@ -140,7 +140,7 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.Image imageAnnotationType;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Pdf.Views.ColorPicker colorPicker;
+        private global::Pdf.controls.IconView trashButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Pdf.controls.IconView paletteButton;
@@ -192,7 +192,7 @@ namespace Pdf.Views {
             annotationTypeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "annotationTypeToolbar");
             backButtonAnnotationTypeToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "backButtonAnnotationTypeToolbar");
             imageAnnotationType = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imageAnnotationType");
-            colorPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Views.ColorPicker>(this, "colorPicker");
+            trashButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "trashButton");
             paletteButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "paletteButton");
             activityIndicator = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ActivityIndicator>(this, "activityIndicator");
         }

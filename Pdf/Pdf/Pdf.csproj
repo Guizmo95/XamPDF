@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.442" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.440" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="SharpZipLib" Version="1.2.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
@@ -27,7 +27,7 @@
     <PackageReference Include="Syncfusion.Xamarin.Compression" Version="18.1.0.54" />
     <PackageReference Include="Syncfusion.Xamarin.Pdf" Version="18.1.0.54" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.1.0.54" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="18.1.0.54" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="18.1.0.52" />
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.1.0.43" />
     <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="18.1.0.43" />
     <PackageReference Include="Unity" Version="5.11.4" />

@@ -44,7 +44,7 @@
           "dependencies": {
             "Acr.UserDialogs": {
               "target": "Package",
-              "version": "[7.1.0.442, )"
+              "version": "[7.1.0.440, )"
             },
             "Microsoft.Net.Http": {
               "target": "Package",
@@ -78,7 +78,7 @@
             },
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
-              "version": "[18.1.0.54, )"
+              "version": "[18.1.0.52, )"
             },
             "Syncfusion.Xamarin.SfPopupLayout": {
               "target": "Package",

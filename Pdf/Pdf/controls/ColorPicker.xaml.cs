@@ -1,4 +1,5 @@
 ﻿using Syncfusion.XForms.Border;
+using Syncfusion.XForms.Buttons;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,6 +29,14 @@ namespace Pdf.Views
         #endregion
 
         #region properties
+
+        public SfSegmentedControl SfSegmentedControl
+        {
+            get
+            {
+                return segctrl;
+            }
+        }
 
         public int SelectedIndex
         {

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Helpers" xmlns:controls="clr-namespace:Pdf.controls"
              mc:Ignorable="d"
+             Visual="Material"
              xmlns:effects="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms" xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms" xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
              x:Class="Pdf.Views.DocumentsList" Shell.NavBarIsVisible="True" x:Name="DocumentsListPage" Shell.NavBarHasShadow="True" Shell.FlyoutBehavior="Flyout">
     
@@ -49,24 +50,17 @@
     </ContentPage.Behaviors>
 
     <AbsoluteLayout VerticalOptions="Fill">
-        
-        <syncfusion:SfListView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"  AllowSwiping="True" x:Name="DocumentListView" BackgroundColor="White" SelectionMode="Single"
-                           ItemSize="69" HorizontalOptions="FillAndExpand">
+        <syncfusion:SfListView   AllowSwiping="True" x:Name="DocumentListView" BackgroundColor="White" SelectionMode="Single"
+                           ItemSize="69" HorizontalOptions="FillAndExpand" SwipeOffset="180" SelectionChanged="DocumentListView_SelectionChanged" ItemSpacing="0"> 
             <syncfusion:SfListView.SelectedItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <effects:SfEffectsView x:Name="effectsView"
-                                       SelectionColor="Transparent"
-                                       RippleAnimationDuration="280" FadeOutRipple="True" IsSelected="True" RippleColor="#c62828">
-                            <effects:SfEffectsView.Behaviors>
-                                <local:DocumentListViewBehavior/>
-                            </effects:SfEffectsView.Behaviors>
-                            <Grid Margin="0,6,0,0">
+                    <Grid  BackgroundColor="white" VerticalOptions="FillAndExpand">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
                                     <RowDefinition Height="0.5"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.7"/>
                                 </Grid.RowDefinitions>
-                                <Grid>
+                                <Grid Grid.Row="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="*" />
@@ -90,16 +84,14 @@
                                         </Image.GestureRecognizers>
                                     </Image>
                                 </Grid>
-                                <BoxView Grid.Row="1" BackgroundColor="#828282" Margin="56,0,0,0"/>
+                                <BoxView Grid.Row="2" BackgroundColor="#828282" Margin="56,0,0,0"/>
                             </Grid>
-                        </effects:SfEffectsView>
-                    </ViewCell>
                 </DataTemplate>
             </syncfusion:SfListView.SelectedItemTemplate>
 
             <syncfusion:SfListView.RightSwipeTemplate>
                 <DataTemplate x:Name="RightSwipeTemplate">
-                    <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="69"/>
                         </Grid.RowDefinitions>
@@ -151,12 +143,13 @@
             <syncfusion:SfListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Margin="0,6,0,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
+                        <Grid   BackgroundColor="white" VerticalOptions="FillAndExpand"> 
+                        <Grid.RowDefinitions>
                                 <RowDefinition Height="0.5"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.7"/>
                             </Grid.RowDefinitions>
-                            <Grid>
+                            <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="*" />
@@ -179,9 +172,9 @@
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Grid>
-                            <BoxView Grid.Row="1" BackgroundColor="#828282" Margin="56,0,0,0"/>
+                            <BoxView Grid.Row="2" BackgroundColor="#828282" Margin="56,0,0,0"/>
                         </Grid>
-                    </ViewCell>
+                        </ViewCell>
                 </DataTemplate> 
             </syncfusion:SfListView.ItemTemplate>
         </syncfusion:SfListView>

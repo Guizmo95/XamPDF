@@ -20,9 +20,8 @@ using Xamarin.Forms;
 
 namespace Pdf.Helpers
 {
-    public class SfBehavior : Behavior<ContentPage>
+    public class SfBehavior : Behavior<ContentPage>, INotifyPropertyChanged
     {
-
         #region Fields
         private Syncfusion.ListView.XForms.SfListView ListView;
         private Command<int> swipeButtonCommand;
@@ -47,6 +46,19 @@ namespace Pdf.Helpers
 
         private BehaviorType behaviorType;
         #endregion
+
+        public bool IsSwipped
+        {
+            get
+            {
+                return isSwipped;
+            }
+            set
+            {
+                isSwipped = value;
+                OnPropertyChanged();
+            }
+        }
 
         public Command<int> SwipeButtonCommand
         {
@@ -217,6 +229,8 @@ namespace Pdf.Helpers
             
         }
 
+
+
         //TODO -- CLOSE KEYBOARD
 
         private void PasswordPopup_Closed(object sender, EventArgs e)
@@ -239,6 +253,7 @@ namespace Pdf.Helpers
         private void GetInfoFilePopup_Closing(object sender, Syncfusion.XForms.Core.CancelEventArgs e)
         {
             ListView.ResetSwipe();
+            this.IsSwipped = false;
 
             DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
         }
@@ -287,6 +302,10 @@ namespace Pdf.Helpers
 
                     DependencyService.Get<IKeyboardHelper>().HideKeyboard();
                     DependencyService.Get<INavBarHelper>().SetImmersiveMode();
+
+                    ListView.ResetSwipe();
+                    this.IsSwipped = false;
+
                     passwordPopup.IsOpen = false;
 
                     IList<DocumentInfoListViewModel> documentInfoListViewModels = new List<DocumentInfoListViewModel>();
@@ -330,16 +349,16 @@ namespace Pdf.Helpers
 
         private void SwipeButton_Clicked(int itemIndex)
         {
-            if(this.isSwipped == false)
+            if(this.IsSwipped == false)
             {
                 ListView.SwipeItem(DocumentViewModel.Documents[itemIndex], -180);
                 viewModel.ItemToRemove = DocumentViewModel.Documents.ToList().First(item => item.ItemIndexInDocumentList == itemIndex);
-                this.isSwipped = true;
+                this.IsSwipped = true;
             }
             else
             {
                 ListView.ResetSwipe();
-                this.isSwipped = false;
+                this.IsSwipped = false;
             }
         }
 
@@ -367,6 +386,14 @@ namespace Pdf.Helpers
         {
             e.Cancel = true;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+
         #endregion
     }
 }

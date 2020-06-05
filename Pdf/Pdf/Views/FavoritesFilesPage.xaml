@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Helpers" xmlns:controls="clr-namespace:Pdf.controls"
              mc:Ignorable="d"
+             Visual="Material"
               xmlns:effects="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
              x:Class="Pdf.Views.FavoritesFilesPage" Shell.NavBarIsVisible="True" x:Name="DocumentsListPage" Shell.NavBarHasShadow="True" Shell.FlyoutBehavior="Flyout">
 
@@ -49,54 +50,47 @@
 
     <AbsoluteLayout VerticalOptions="Fill">
         <syncfusion:SfListView  AllowSwiping="True" x:Name="FavoriteDocumentListView" BackgroundColor="White" SelectionMode="Single"
-                                                        ItemSize="69" HorizontalOptions="FillAndExpand" >
+                                                        ItemSize="69" HorizontalOptions="FillAndExpand" SwipeOffset="180" SelectionChanged="FavoriteDocumentListView_SelectionChanged" ItemSpacing="0">
             <syncfusion:SfListView.SelectedItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <effects:SfEffectsView x:Name="effectsView"
-                                       SelectionColor="Transparent"
-                                       RippleAnimationDuration="280" FadeOutRipple="True" IsSelected="True" RippleColor="#c62828">
-                            <effects:SfEffectsView.Behaviors>
-                                <local:FavoriteListViewBehavior/>
-                            </effects:SfEffectsView.Behaviors>
-                            <Grid Margin="0,6,0,0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="0.5"/>
-                                </Grid.RowDefinitions>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="39"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="55"/>
-                                    </Grid.RowDefinitions>
-                                    <Image Source="baseline_picture_as_pdf_24.xml" HeightRequest="34" WidthRequest="28" Margin="10,4,5,3" VerticalOptions="Center" Aspect="AspectFill" Grid.Column="0" Grid.Row="0"/>
-                                    <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="1" Margin="0,0,0,0" Grid.Row="0">
-                                        <Label Text="{Binding FileName}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="14" TextColor="#4e4e4e" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Margin="0,0,4,0"/>
-                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                                            <Label Text="{Binding CreationTime, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
-                                            <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
-                                        </StackLayout>
-                                    </StackLayout>
-                                    <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="39" Grid.Column="2" Margin="0,0,14,0" Grid.Row="0">
-                                        <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInFavoriteDocumentList}"/>
-                                        </Image.GestureRecognizers>
-                                    </Image>
-                                </Grid>
-                                <BoxView Grid.Row="1" BackgroundColor="#828282" Margin="56,0,0,0"/>
-                            </Grid>
-                        </effects:SfEffectsView>
-                    </ViewCell>
+
+                    <Grid BackgroundColor="white" VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0.7"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="39"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="55"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="baseline_picture_as_pdf_24.xml" HeightRequest="34" WidthRequest="28" Margin="10,4,5,3" VerticalOptions="Center" Aspect="AspectFill" Grid.Column="0" Grid.Row="0"/>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="1" Margin="0,0,0,0" Grid.Row="0">
+                                <Label Text="{Binding FileName}" FontFamily="GothamMedium_1.ttf#GothamMedium_1" FontSize="14" TextColor="#4e4e4e" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" Margin="0,0,4,0"/>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <Label Text="{Binding CreationTime, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding Size}" FontFamily="GothamLight.ttf#GothamLight" FontSize="10.5" TextColor="#4e4e4e" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <Image x:Name="SwipeButton" Source="baseline_more_horiz_24.xml" HeightRequest="39" Grid.Column="2" Margin="0,0,14,0" Grid.Row="0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SwipeButtonCommand, Source={x:Reference behavior}}" CommandParameter="{Binding ItemIndexInFavoriteDocumentList}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                        <BoxView Grid.Row="2" BackgroundColor="#828282" Margin="56,0,0,0"/>
+                    </Grid>
                 </DataTemplate>
             </syncfusion:SfListView.SelectedItemTemplate>
 
             <syncfusion:SfListView.RightSwipeTemplate>
                 <DataTemplate x:Name="RightSwipeTemplate">
-                    <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="69"/>
                         </Grid.RowDefinitions>
@@ -148,12 +142,13 @@
             <syncfusion:SfListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Margin="0,6,0,0">
+                        <Grid BackgroundColor="white" VerticalOptions="FillAndExpand">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="0.5"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.7"/>
                             </Grid.RowDefinitions>
-                            <Grid>
+                            <Grid Grid.Row="1"> 
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="*" />
@@ -176,7 +171,7 @@
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Grid>
-                            <BoxView Grid.Row="1" BackgroundColor="#828282" Margin="56,0,0,0"/>
+                            <BoxView Grid.Row="2" BackgroundColor="#828282" Margin="56,0,0,0"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -20,6 +20,9 @@ namespace Pdf.controls {
         private global::Pdf.Views.ColorPicker colorPicker;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.BoxView boxView1;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Grid opacityControl;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -62,6 +65,7 @@ namespace Pdf.controls {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(StyleContent));
             colorPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Views.ColorPicker>(this, "colorPicker");
+            boxView1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.BoxView>(this, "boxView1");
             opacityControl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "opacityControl");
             opacityTo25Selection = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "opacityTo25Selection");
             opacityImageTo25 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "opacityImageTo25");

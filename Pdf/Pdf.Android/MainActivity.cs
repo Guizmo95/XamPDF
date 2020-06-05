@@ -17,7 +17,7 @@ using Android.Content.Res;
 
 namespace Pdf.Droid
 {
-    [Activity(Label = "Xam's Pdf", Icon = "@mipmap/ic_launcher", Theme = "@style/MyTheme.Splash", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Xam's Pdf", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme.Base", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         static AssetManager assets;

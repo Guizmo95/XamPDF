@@ -23,7 +23,6 @@ namespace Pdf.Views
         private SfPopupLayout popupLayout;
         public SfBehaviorFavoritesPage SfBehavior { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
         public FavoritesFilesPage()
         {
             InitializeComponent();
@@ -90,31 +89,6 @@ namespace Pdf.Views
             SortName_Clicked(null, null);
 
             sortButton.RotateTo(180);
-
-            MessagingCenter.Subscribe<FavoriteListViewBehavior>(this, "PushAsyncPage", (sender) =>
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    activityIndicator.IsRunning = true;
-                    filter.IsVisible = true;
-
-                    try
-                    {
-                        var file = (FileModel)FavoriteDocumentListView.SelectedItem;
-
-                        if(file != null)
-                        {
-                            await Navigation.PushAsync(new PdfViewer(file.FilePath));
-                        }
-                    }
-                    finally
-                    {
-                        FavoriteDocumentListView.SelectedItem = null;
-                        activityIndicator.IsRunning = false;
-                        filter.IsVisible = false;
-                    }
-                });
-            });
         }
 
         private void SortDate_Clicked(object sender, EventArgs e)
@@ -179,9 +153,36 @@ namespace Pdf.Views
             clearSearchBar.IsVisible = false;
         }
 
+        private async void FavoriteDocumentListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
+        {
+            await Task.Delay(500);
+
+            UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Black);
+
+            try
+            {
+                var file = (FileModel)FavoriteDocumentListView.SelectedItem;
+
+                if (file != null)
+                {
+                    await Navigation.PushAsync(new PdfViewer(file.FilePath));
+                }
+            }
+
+            finally
+            {
+                FavoriteDocumentListView.SelectedItem = null;
+
+                UserDialogs.Instance.HideLoading();
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
     }
 }

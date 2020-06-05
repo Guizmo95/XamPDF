@@ -24,6 +24,14 @@ namespace Pdf.controls
             }
         }
 
+        public BoxView BoxView1
+        {
+            get
+            {
+                return boxView1;
+            }
+        }
+
         public BoxView BoxView2
         {
             get
