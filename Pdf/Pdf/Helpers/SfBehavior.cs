@@ -33,6 +33,7 @@ namespace Pdf.Helpers
 
         private DataTemplate templateViewSetPasswordPopup;
 
+        ImageButton image;
         Label label;
         Entry entry;
         Button acceptButton;
@@ -106,6 +107,8 @@ namespace Pdf.Helpers
             getInfoFilePopup.PopupView.PopupStyle.BorderThickness = 2;
             getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.White;
             getInfoFilePopup.PopupView.ShowFooter = false;
+            getInfoFilePopup.PopupView.ShowHeader = true;
+            getInfoFilePopup.PopupView.ShowCloseButton = false;
             getInfoFilePopup.Closing += GetInfoFilePopup_Closing;
             getInfoFilePopup.PopupView.PopupStyle.HeaderBackgroundColor = Color.FromHex("#eeeeee");
             getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#e0e0e0");
@@ -115,10 +118,15 @@ namespace Pdf.Helpers
             DataTemplate templateViewGetInfoPopup = new DataTemplate(() =>
             {
                 return pdfPropertyPopup;
+            
             });
 
             DataTemplate headerTemplateViewGetInfoPopup = new DataTemplate(() =>
             {
+                StackLayout stackLayout = new StackLayout();
+                stackLayout.Orientation = StackOrientation.Horizontal;
+                stackLayout.Padding = new Thickness(0, 0, 13, 0);
+
                 Label title = new Label();
                 title.Text = "Properties";
                 title.FontSize = 18;
@@ -126,9 +134,21 @@ namespace Pdf.Helpers
                 title.VerticalTextAlignment = TextAlignment.Center;
                 title.HorizontalTextAlignment = TextAlignment.Center;
                 title.TextColor = Color.FromHex("#4e4e4e");
+                title.HorizontalOptions = LayoutOptions.FillAndExpand;
 
-                return title;
+                image = new ImageButton();
+                image.Source = "outlineClearViewer.xml";
+                image.Aspect = Aspect.AspectFit;
+                image.BackgroundColor = Color.Transparent;
+                image.HorizontalOptions = LayoutOptions.End;
+                image.Clicked += CloseButtonPropertiesPopup_Clicked;
+
+                stackLayout.Children.Add(title);
+                stackLayout.Children.Add(image);
+
+                return stackLayout;
             });
+
 
             // Adding ContentTemplate of the SfPopupLayout
             getInfoFilePopup.PopupView.ContentTemplate = templateViewGetInfoPopup;
@@ -229,7 +249,10 @@ namespace Pdf.Helpers
             
         }
 
-
+        private void CloseButtonPropertiesPopup_Clicked(object sender, EventArgs e)
+        {
+            getInfoFilePopup.IsOpen = false;
+        }
 
         //TODO -- CLOSE KEYBOARD
 
@@ -274,6 +297,7 @@ namespace Pdf.Helpers
             declineButton.Clicked -= DeclineButton_Clicked;
             acceptButton.Clicked -= AcceptButtonPasswordPopup_Clicked;
             passwordPopup.Closed -= PasswordPopup_Closed;
+            image.Clicked -= CloseButtonPropertiesPopup_Clicked;
             base.OnDetachingFrom(bindable);
         }
 

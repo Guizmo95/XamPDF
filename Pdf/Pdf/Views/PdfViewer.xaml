@@ -23,7 +23,7 @@
                     <ImageButton Clicked="SearchNextButton_Clicked" IsVisible="False"  x:Name="searchNextButton" BackgroundColor="#fafafa" Source="baseline_navigate_next_24.xml" WidthRequest="33" HeightRequest="33"    VerticalOptions="Center" />
                 </StackLayout>
 
-                <ImageButton Clicked="ViewModeButton_Clicked"  Padding="2.3" x:Name="viewModeButton" HorizontalOptions="Start" Margin="10,0,10,0" BackgroundColor="#fafafa" Source="baseline_view_carousel_24.xml" WidthRequest="38" HeightRequest="39"/>
+                <ImageButton Clicked="ViewModeButton_Clicked" IsVisible="False" Padding="2.3" x:Name="viewModeButton" HorizontalOptions="Start" Margin="10,0,10,0" BackgroundColor="#fafafa" Source="baseline_view_carousel_24.xml" WidthRequest="38" HeightRequest="39"/>
                 <StackLayout Spacing="9" HorizontalOptions="End" Orientation="Horizontal"  Margin="0,0,10,0" x:Name="topMainBar" VerticalOptions="Center">
                     <controls:IconView IsVisible="False"  x:Name="UndoButton" Foreground="Transparent" BackgroundColor="#fafafa" Source="baseline_undo_24.xml" WidthRequest="33" HeightRequest="33" />
                     <controls:IconView IsVisible="False"  x:Name="RedoButton" Foreground="Transparent" BackgroundColor="#fafafa" Source="baseline_redo_24.xml" WidthRequest="33" HeightRequest="33"/>
@@ -36,7 +36,7 @@
         </controls1:PancakeView>
 
         <Grid x:Name="pdfViewGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Margin="0,45,0,45">
-            <syncfusion:SfPdfViewer x:Name="pdfViewerControl" PageViewMode="PageByPage" VerticalOptions="FillAndExpand"/>
+            <syncfusion:SfPdfViewer x:Name="pdfViewerControl" PageViewMode="Continuous" VerticalOptions="FillAndExpand"/>
         </Grid>
 
         <controls1:PancakeView IsVisible="True" HeightRequest="45" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" x:Name="bottomMainBar" HasShadow="true"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   

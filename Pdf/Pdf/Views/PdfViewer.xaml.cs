@@ -368,7 +368,7 @@ namespace Pdf.Views
                 passwordPopup.IsOpen = false;
             }
 
-            //pdfViewerControl.Unload();
+            pdfViewerControl.Unload();
             //base.OnDisappearing();
         }
 
@@ -405,6 +405,8 @@ namespace Pdf.Views
 
             //Disable the display of password UI view
             pdfViewerControl.IsPasswordViewEnabled = false;
+
+
         }
 
         private void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
@@ -685,7 +687,7 @@ namespace Pdf.Views
                     }
                     else
                     {
-                        stream = new FileStream(this.filePath, FileMode.Open);
+                        stream = pdfViewerControl.InputFileStream;
                     }
 
                     await DependencyService.Get<IAndroidFileHelper>().Print(stream, fileName);

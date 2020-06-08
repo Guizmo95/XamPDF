@@ -54,8 +54,6 @@ namespace Pdf.ViewModels
 
         public DocumentViewModel()
         {
-            App.Database.DeleteAllItemAsync();
-
             pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
 
             Documents = new ObservableCollection<FileModel>();

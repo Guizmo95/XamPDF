@@ -171,6 +171,7 @@ path;obj\Debug\100\res\drawable\baseline_stars_24.xml
 path;obj\Debug\100\res\drawable\baseline_undo_24.xml
 path;obj\Debug\100\res\drawable\baseline_vertical_align_center_24.xml
 path;obj\Debug\100\res\drawable\baseline_view_carousel_24.xml
+path;obj\Debug\100\res\drawable\delete.xml
 path;obj\Debug\100\res\drawable\outline_arrow_back_24.xml
 path;obj\Debug\100\res\drawable\outline_arrow_back_24_dark.xml
 path;obj\Debug\100\res\drawable\outline_clear_24.xml
@@ -351,6 +352,7 @@ vector;obj\Debug\100\res\drawable\baseline_stars_24.xml
 vector;obj\Debug\100\res\drawable\baseline_undo_24.xml
 vector;obj\Debug\100\res\drawable\baseline_vertical_align_center_24.xml
 vector;obj\Debug\100\res\drawable\baseline_view_carousel_24.xml
+vector;obj\Debug\100\res\drawable\delete.xml
 vector;obj\Debug\100\res\drawable\outline_arrow_back_24.xml
 vector;obj\Debug\100\res\drawable\outline_arrow_back_24_dark.xml
 vector;obj\Debug\100\res\drawable\outline_clear_24.xml
