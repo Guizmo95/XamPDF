@@ -46,7 +46,7 @@ namespace Pdf.Views
             popupLayout = new SfPopupLayout();
             popupLayout.PopupView.HeightRequest = 124;
             popupLayout.PopupView.WidthRequest = 113;
-            popupLayout.Padding = new Thickness(15, 15, 7, 15);
+            popupLayout.Padding = new Thickness(15, 10, 7, 15);
             popupLayout.PopupView.ShowHeader = false;
             popupLayout.PopupView.ShowFooter = false;
             popupLayout.PopupView.ShowCloseButton = false;

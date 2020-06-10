@@ -79,11 +79,11 @@
                         <ImageButton Clicked="BackButtonShapeToolbar_Clicked" Padding="2" x:Name="backButtonShapeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24_Dark.xml" WidthRequest="32.5" HeightRequest="32.5"    VerticalOptions="Center"/>
                         <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" />
                     </StackLayout>
-                    <StackLayout Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                        <ImageButton Clicked="CircleButton_Clicked"  BackgroundColor="#fafafa" x:Name="circleButton" Source="ic_ui.png" WidthRequest="33" HeightRequest="33" />
-                        <ImageButton Clicked="LineButton_Clicked" BackgroundColor="#fafafa" x:Name="lineButton" Source="ic_square.png" WidthRequest="32" HeightRequest="32" />
-                        <ImageButton Clicked="ArrowButton_Clicked" BackgroundColor="#fafafa" x:Name="arrowButton" Source="ic_directional.png" WidthRequest="32" HeightRequest="32" />
-                        <ImageButton Clicked="RectangleButton_Clicked" BackgroundColor="#fafafa" x:Name="rectangleButton" Source="ic_math.png" WidthRequest="32" HeightRequest="32" />
+                    <StackLayout Grid.Column="1" Spacing="45" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton Clicked="CircleButton_Clicked"  BackgroundColor="#fafafa" x:Name="circleButton" Source="ic_ui.png" WidthRequest="30" HeightRequest="30" />
+                        <ImageButton Clicked="RectangleButton_Clicked" BackgroundColor="#fafafa" x:Name="rectangleButton" Source="ic_math.png" WidthRequest="27.5" HeightRequest="27.5" />
+                        <ImageButton Clicked="LineButton_Clicked" BackgroundColor="#fafafa" x:Name="lineButton" Source="ic_square.png" WidthRequest="28" HeightRequest="28" />
+                        <ImageButton Clicked="ArrowButton_Clicked" BackgroundColor="#fafafa" x:Name="arrowButton" Source="ic_directional.png" WidthRequest="28" HeightRequest="28" />
                     </StackLayout>
                 </Grid>
 
@@ -96,9 +96,9 @@
                     <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0" VerticalOptions="Center">
                         <ImageButton Clicked="BackButtonAnnotationTypeToolbar_Clicked" Padding="2" x:Name="backButtonAnnotationTypeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24_Dark.xml" WidthRequest="32.5" HeightRequest="32.5" VerticalOptions="Center"/>
                         <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" HeightRequest="30"/>
-                        <Image x:Name="imageAnnotationType" BackgroundColor="#fafafa" WidthRequest="29" HeightRequest="29" VerticalOptions="Center"/>
+                        <Image x:Name="imageAnnotationType" BackgroundColor="#fafafa" Margin="2" WidthRequest="29" HeightRequest="29" VerticalOptions="Center"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,0,10,0" Grid.Column="1" HorizontalOptions="EndAndExpand">
+                    <StackLayout Orientation="Horizontal" Spacing="15" Margin="0,0,15,0" Grid.Column="1" HorizontalOptions="EndAndExpand">
                         <controls:IconView IsVisible="False" Grid.Column="2" Foreground="{Binding SelectedColor}" x:Name="trashButton"  Source="delete.xml" WidthRequest="27" HeightRequest="27" HorizontalOptions="End" VerticalOptions="Center"/>
                         <controls:IconView IsVisible="False" Grid.Column="3" Foreground="{Binding SelectedColor}"  x:Name="paletteButton"  Source="baseline_palette_24.xml" WidthRequest="27" HeightRequest="27" HorizontalOptions="End" VerticalOptions="Center"/>
                     </StackLayout>
