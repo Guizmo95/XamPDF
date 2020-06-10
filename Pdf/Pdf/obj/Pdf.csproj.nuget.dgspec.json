@@ -46,10 +46,6 @@
               "target": "Package",
               "version": "[7.1.0.440, )"
             },
-            "Microsoft.Net.Http": {
-              "target": "Package",
-              "version": "[2.2.29, )"
-            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

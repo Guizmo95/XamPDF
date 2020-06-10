@@ -39,6 +39,19 @@ namespace Pdf.Helpers
         private FavoritesDocumentViewModel viewModel;
         private SearchBar searchBar = null;
         #endregion
+
+        public bool IsSwipped
+        {
+            get
+            {
+                return isSwipped;
+            }
+            set
+            {
+                isSwipped = value;
+                OnPropertyChanged();
+            }
+        }
         public Command<int> SwipeButtonCommand
         {
             get { return swipeButtonCommand; }
@@ -84,6 +97,7 @@ namespace Pdf.Helpers
             getInfoFilePopup.PopupView.PopupStyle.BorderThickness = 2;
             getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.White;
             getInfoFilePopup.PopupView.ShowFooter = false;
+            getInfoFilePopup.Padding = new Thickness(15, 15, 15, 15);
             getInfoFilePopup.PopupView.ShowCloseButton = false;
             getInfoFilePopup.Closing += GetInfoFilePopup_Closing;
             getInfoFilePopup.PopupView.PopupStyle.HeaderBackgroundColor = Color.FromHex("#eeeeee");
@@ -237,8 +251,7 @@ namespace Pdf.Helpers
         private void GetInfoFilePopup_Closing(object sender, Syncfusion.XForms.Core.CancelEventArgs e)
         {
             ListView.ResetSwipe();
-
-            DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
+            this.IsSwipped = false;
         }
 
         private void DeclineButton_Clicked(object sender, EventArgs e)
@@ -295,10 +308,9 @@ namespace Pdf.Helpers
                     }
 
                     DependencyService.Get<IKeyboardHelper>().HideKeyboard();
-                    DependencyService.Get<INavBarHelper>().SetImmersiveMode();
 
                     ListView.ResetSwipe();
-                    this.isSwipped = false;
+                    this.IsSwipped = false;
 
                     passwordPopup.IsOpen = false;
 
@@ -347,12 +359,12 @@ namespace Pdf.Helpers
             {
                 ListView.SwipeItem(FavoritesDocumentViewModel.FavoritesDocuments[itemIndex], -180);
                 viewModel.ItemToRemove = FavoritesDocumentViewModel.FavoritesDocuments.ToList().First(item => item.ItemIndexInFavoriteDocumentList == itemIndex);
-                this.isSwipped = true;
+                this.IsSwipped = true;
             }
             else
             {
                 ListView.ResetSwipe();
-                this.isSwipped = false;
+                this.IsSwipped = false;
             }
 
         }

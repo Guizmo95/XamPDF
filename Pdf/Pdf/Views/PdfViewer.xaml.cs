@@ -50,6 +50,7 @@ namespace Pdf.Views
         private DataTemplate styleTemplateErrorPopup;
         private DataTemplate templateViewSetPasswordPopup;
 
+        ImageButton image;
         Label label;
         Entry entry;
         Button acceptButton;
@@ -357,8 +358,6 @@ namespace Pdf.Views
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
 
-            pdfViewerControl.PasswordErrorOccurred -= PdfViewerControl_PasswordErrorOccurred;
-
             if (passwordPopup != null)
             {
                 passwordPopup.Closed -= PasswordPopup_Closed;
@@ -574,7 +573,7 @@ namespace Pdf.Views
             errorSearchPopup.PopupView.ShowHeader = false;
             errorSearchPopup.PopupView.ShowFooter = false;
             errorSearchPopup.PopupView.HeightRequest = 105;
-            errorSearchPopup.PopupView.WidthRequest = 275;
+            errorSearchPopup.PopupView.WidthRequest = 300;
             errorSearchPopup.BackgroundColor = Color.FromHex("#fafafa");
             errorSearchPopup.PopupView.BackgroundColor = Color.FromHex("#fafafa");
             errorSearchPopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#fafafa");
@@ -601,7 +600,9 @@ namespace Pdf.Views
             popupMenu.PopupView.PopupStyle.BorderColor = Color.White;
             popupMenu.PopupView.HorizontalOptions = LayoutOptions.FillAndExpand;
             popupMenu.PopupView.VerticalOptions = LayoutOptions.FillAndExpand;
+            popupMenu.Padding = new Thickness(15, 15, 15, 15);
             popupMenu.PopupView.ShowFooter = false;
+            popupMenu.PopupView.ShowCloseButton = false;
             popupMenu.PopupView.PopupStyle.HeaderBackgroundColor = Color.FromHex("#eeeeee");
             popupMenu.PopupView.PopupStyle.BorderColor = Color.FromHex("#e0e0e0");
 
@@ -614,6 +615,10 @@ namespace Pdf.Views
 
             DataTemplate headerTemplateViewPopupMenu = new DataTemplate(() =>
             {
+                StackLayout stackLayout = new StackLayout();
+                stackLayout.Orientation = StackOrientation.Horizontal;
+                stackLayout.Padding = new Thickness(0, 0, 13, 0);
+
                 Label title = new Label();
                 title.Text = "More";
                 title.FontSize = 18;
@@ -621,8 +626,18 @@ namespace Pdf.Views
                 title.VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center;
                 title.HorizontalTextAlignment = Xamarin.Forms.TextAlignment.Center;
                 title.TextColor = Color.FromHex("#4e4e4e");
+                title.HorizontalOptions = LayoutOptions.FillAndExpand;
 
-                return title;
+                image = new ImageButton();
+                image.Source = "outlineClearViewer.xml";
+                image.Aspect = Aspect.AspectFit;
+                image.BackgroundColor = Color.Transparent;
+                image.HorizontalOptions = LayoutOptions.End;
+
+                stackLayout.Children.Add(title);
+                stackLayout.Children.Add(image);
+
+                return stackLayout;
             });
 
             popupMenu.PopupView.HeaderTemplate = headerTemplateViewPopupMenu;
@@ -632,19 +647,18 @@ namespace Pdf.Views
 
             annotationType = AnnotationType.None;
 
-            activityIndicator.IsVisible = false;
-            activityIndicator.IsRunning = false;
+            UserDialogs.Instance.HideLoading();
         }
 
 
         #region PopupMenu Methods
 
-        //TODO HANDLE SAVE FOR PRINT
-        private async Task CompressPDF()
+        private void CloseButtonPopupMenu_Clicked(object sender, EventArgs e)
         {
-
+            popupMenu.IsOpen = false;
         }
 
+        //TODO HANDLE SAVE FOR PRINT
 
         private async void MenuListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
         {
@@ -662,7 +676,6 @@ namespace Pdf.Views
                     break;
                 case 2:
                     popupMenu.IsOpen = false;
-                    await CompressPDF();
                     break;
                 default:
                     break;
@@ -730,21 +743,21 @@ namespace Pdf.Views
 
             popupMenuContent.MenuListView.SelectionChanged += MenuListView_SelectionChanged;
             popupMenu.Closed += PopupMenu_Closed;
+            image.Clicked += CloseButtonPopupMenu_Clicked;
         }
 
         private void PopupMenu_Closed(object sender, EventArgs e)
         {
             popupMenuContent.MenuListView.SelectionChanged -= MenuListView_SelectionChanged;
             popupMenu.Closed -= PopupMenu_Closed;
-
+            image.Clicked -= CloseButtonPopupMenu_Clicked;
         }
 
         #endregion  
 
         private void AcceptButtonPasswordPopup_Clicked(object sender, EventArgs e)
         {
-            activityIndicator.IsRunning = true;
-            activityIndicator.IsVisible = true;
+            UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
 
             passwordPopup.IsOpen = false;
             DependencyService.Get<IKeyboardHelper>().HideKeyboard();
@@ -1401,7 +1414,7 @@ namespace Pdf.Views
             stylePopup.PopupView.HeightRequest = 195;
             stylePopup.PopupView.WidthRequest = 280;
 
-            if(this.annotationType != AnnotationType.Ink)
+            if (this.annotationType != AnnotationType.Ink)
             {
                 this.annotationType = AnnotationType.Ink;
                 pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
@@ -1472,7 +1485,7 @@ namespace Pdf.Views
         private async void StrikethroughtButton_Clicked(object sender, EventArgs e)
         {
             imageAnnotationType.Source = "ic_strikethrough.png";
-            
+
 
             pdfViewerControl.AnnotationMode = AnnotationMode.Strikethrough;
             this.annotationType = AnnotationType.Strikethrought;
@@ -1693,7 +1706,7 @@ namespace Pdf.Views
             viewModeButton.IsVisible = false;
 
             searchBar.IsVisible = true;
-            
+
         }
 
         private void CancelSearchButton_Clicked(object sender, EventArgs e)
@@ -1708,30 +1721,23 @@ namespace Pdf.Views
 
         private void PdfViewerControl_SearchCompleted(object sender, TextSearchCompletedEventArgs args)
         {
-            isNoMatchFound = args.NoMatchFound;
-            isNoMoreOccurrenceFound = args.NoMoreOccurrence;
+            UserDialogs.Instance.HideLoading();
 
-            activityIndicator.IsVisible = false;
-            activityIndicator.IsRunning = false;
-
-            if (!pdfViewerControl.Toolbar.Enabled)
+            if (args.NoMatchFound)
             {
-                if (args.NoMatchFound)
-                {
-                    //Show popup
-                    searchErrorPopupContent.NoOccurenceFound.IsVisible = true;
-                    searchErrorPopupContent.NoMoreOccurenceFound.IsVisible = false;
-                    errorSearchPopup.Show();
-                    isNoMatchFound = false;
-                }
-                else if (args.NoMoreOccurrence)
-                {
-                    //Show popup
-                    searchErrorPopupContent.NoOccurenceFound.IsVisible = false;
-                    searchErrorPopupContent.NoMoreOccurenceFound.IsVisible = true;
-                    errorSearchPopup.Show();
-                    isNoMoreOccurrenceFound = false;
-                }
+                //Show popup
+                searchErrorPopupContent.NoOccurenceFound.IsVisible = true;
+                searchErrorPopupContent.NoMoreOccurenceFound.IsVisible = false;
+                errorSearchPopup.Show();
+                isNoMatchFound = false;
+            }
+            else if (args.NoMoreOccurrence)
+            {
+                //Show popup
+                searchErrorPopupContent.NoOccurenceFound.IsVisible = false;
+                searchErrorPopupContent.NoMoreOccurenceFound.IsVisible = true;
+                errorSearchPopup.Show();
+                isNoMoreOccurrenceFound = false;
             }
 
             search_started = false;
@@ -1741,10 +1747,8 @@ namespace Pdf.Views
         {
             if (!string.IsNullOrWhiteSpace(textSearchEntry.Text) && !string.IsNullOrEmpty(textSearchEntry.Text))
             {
-                var searchText = textSearchEntry.Text;
                 //Initiates text search.
-                pdfViewerControl.SearchText(searchText);
-                pdfViewerControl.SearchNext();
+                pdfViewerControl.SearchText(textSearchEntry.Text);
             }
             if (string.IsNullOrWhiteSpace(textSearchEntry.Text) || string.IsNullOrEmpty(textSearchEntry.Text))
             {
@@ -1755,12 +1759,12 @@ namespace Pdf.Views
             {
 
                 pdfViewerControl.SearchText(textSearchEntry.Text);
-                pdfViewerControl.SearchNext();
             }
             else
             {
                 pdfViewerControl.SearchNext();
             }
+
             search_started = true;
         }
 
@@ -1785,8 +1789,7 @@ namespace Pdf.Views
             searchPreviousButton.IsVisible = true;
             searchNextButton.IsVisible = true;
 
-            activityIndicator.IsVisible = false;
-            activityIndicator.IsRunning = false;
+            UserDialogs.Instance.HideLoading();
         }
 
         private void TextSearchEntry_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
@@ -1800,8 +1803,7 @@ namespace Pdf.Views
 
         private void PdfViewerControl_SearchInitiated(object sender, TextSearchInitiatedEventArgs args)
         {
-            activityIndicator.IsVisible = true;
-            activityIndicator.IsRunning = true;
+            UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Clear);
         }
         #endregion
 

@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/yGU0TlRCa0eM2PgNJL81VYnQz5QfSK8PwsLWr8cveLDvehgwG7Y+P9uzWqSVymyT+gqpUbi0Xie9XGH2t0MRw==",
+  "dgSpecHash": "X3cC73qmi3ekI/RXLy2WmWOJwvl5EadrwvKDHgFPXVMKC2jNixhbENvpgOnLPzxOLxPEl8tPnnIhgK5KWuwHew==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rayhane\\.nuget\\packages\\acr.userdialogs\\7.1.0.440\\acr.userdialogs.7.1.0.440.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.bcl\\1.1.10\\microsoft.bcl.1.1.10.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.bcl.build\\1.0.14\\microsoft.bcl.build.1.0.14.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.net.compilers\\3.4.0\\microsoft.net.compilers.3.4.0.nupkg.sha512",
-    "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.net.http\\2.2.29\\microsoft.net.http.2.2.29.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",

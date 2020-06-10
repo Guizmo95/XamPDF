@@ -105,6 +105,7 @@ namespace Pdf.Helpers
             getInfoFilePopup.PopupView.AnimationMode = AnimationMode.SlideOnBottom;
             getInfoFilePopup.PopupView.PopupStyle.CornerRadius = 0;
             getInfoFilePopup.PopupView.PopupStyle.BorderThickness = 2;
+            getInfoFilePopup.Padding = new Thickness(15, 15, 15, 15);
             getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.White;
             getInfoFilePopup.PopupView.ShowFooter = false;
             getInfoFilePopup.PopupView.ShowHeader = true;
@@ -277,8 +278,6 @@ namespace Pdf.Helpers
         {
             ListView.ResetSwipe();
             this.IsSwipped = false;
-
-            DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
         }
 
         protected override void OnDetachingFrom(ContentPage bindable)
@@ -325,7 +324,6 @@ namespace Pdf.Helpers
                     }
 
                     DependencyService.Get<IKeyboardHelper>().HideKeyboard();
-                    DependencyService.Get<INavBarHelper>().SetImmersiveMode();
 
                     ListView.ResetSwipe();
                     this.IsSwipped = false;

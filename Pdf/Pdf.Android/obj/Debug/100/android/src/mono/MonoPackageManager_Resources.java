@@ -41,8 +41,6 @@ public class MonoPackageManager_Resources {
 		"Syncfusion.SfRotator.Android.dll",
 		"Syncfusion.SfRotator.XForms.Android.dll",
 		"Syncfusion.SfRotator.XForms.dll",
-		"System.Net.Http.Extensions.dll",
-		"System.Net.Http.Primitives.dll",
 		"Unity.Abstractions.dll",
 		"Unity.Container.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",

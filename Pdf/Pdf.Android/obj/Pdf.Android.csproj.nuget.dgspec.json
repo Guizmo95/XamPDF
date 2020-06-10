@@ -42,27 +42,11 @@
       "frameworks": {
         "monoandroid10.0": {
           "dependencies": {
-            "Acr.UserDialogs": {
-              "target": "Package",
-              "version": "[7.1.0.440, )"
-            },
             "Microsoft.Net.Compilers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.4.0, )"
-            },
-            "Syncfusion.Xamarin.Compression": {
-              "target": "Package",
-              "version": "[18.1.0.54, )"
-            },
-            "Syncfusion.Xamarin.Pdf": {
-              "target": "Package",
-              "version": "[18.1.0.54, )"
-            },
-            "Syncfusion.Xamarin.SfPdfViewer": {
-              "target": "Package",
-              "version": "[18.1.0.52, )"
             },
             "Xamarin.Android.Support.v4": {
               "target": "Package",
@@ -129,10 +113,6 @@
             "Acr.UserDialogs": {
               "target": "Package",
               "version": "[7.1.0.440, )"
-            },
-            "Microsoft.Net.Http": {
-              "target": "Package",
-              "version": "[2.2.29, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

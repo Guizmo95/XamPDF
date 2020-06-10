@@ -42,22 +42,6 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
-            "Acr.UserDialogs": {
-              "target": "Package",
-              "version": "[7.1.0.440, )"
-            },
-            "Syncfusion.Xamarin.Compression": {
-              "target": "Package",
-              "version": "[18.1.0.54, )"
-            },
-            "Syncfusion.Xamarin.Pdf": {
-              "target": "Package",
-              "version": "[18.1.0.54, )"
-            },
-            "Syncfusion.Xamarin.SfPdfViewer": {
-              "target": "Package",
-              "version": "[18.1.0.52, )"
-            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.3.1, )"
@@ -126,10 +110,6 @@
             "Acr.UserDialogs": {
               "target": "Package",
               "version": "[7.1.0.440, )"
-            },
-            "Microsoft.Net.Http": {
-              "target": "Package",
-              "version": "[2.2.29, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

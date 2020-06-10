@@ -53,11 +53,6 @@ corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\
 corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\15\jl\res\drawable\signaturepadtopcorner.xml
 corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\63\jl\res\drawable\materialprogressbar.xml
 corners;obj\Debug\100\res\drawable\framerendervalue.xml
-crc64720bb2db43a66fe9.FormsViewPager;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\65\jl\res\layout\rootlayout.xml
-crc647c4c06b10f3352ff.MaterialFormsEditText;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\63\jl\res\layout\textinputlayoutfilledbox.xml
-crc647c4c06b10f3352ff.MaterialFormsTextInputLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\63\jl\res\layout\textinputlayoutfilledbox.xml
-crc647c4c06b10f3352ff.MaterialPickerEditText;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\63\jl\res\layout\materialpickertextinput.xml
-crc647c4c06b10f3352ff.MaterialPickerTextInputLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\63\jl\res\layout\materialpickertextinput.xml
 declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\1\jl\res\values\attrs.xml
 declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\12\jl\res\values\attrs.xml
 declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\18\jl\res\values\attrs.xml
