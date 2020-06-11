@@ -37,7 +37,7 @@
         </controls1:PancakeView>
 
         <Grid x:Name="pdfViewGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Margin="0,50,0,50">
-            <syncfusion:SfPdfViewer x:Name="pdfViewerControl" PageViewMode="PageByPage" VerticalOptions="FillAndExpand"/>
+            <syncfusion:SfPdfViewer x:Name="pdfViewerControl" PageViewMode="Continuous" VerticalOptions="FillAndExpand" />
         </Grid>
 
         <controls1:PancakeView IsVisible="True" HeightRequest="50" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" x:Name="bottomMainBar" HasShadow="true"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   

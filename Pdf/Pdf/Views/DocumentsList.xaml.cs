@@ -41,7 +41,6 @@ namespace Pdf.Views
         {
             InitializeComponent();
 
-
             SfBehavior = new SfBehavior();
             popupLayout = new SfPopupLayout();
             popupLayout.PopupView.HeightRequest = 124;
