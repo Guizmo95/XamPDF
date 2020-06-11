@@ -15520,103 +15520,106 @@ namespace Pdf.Droid
 			public const int splash_background = 2131165556;
 			
 			// aapt resource value: 0x7F070175
-			public const int tooltip_frame_dark = 2131165557;
+			public const int stamp = 2131165557;
 			
 			// aapt resource value: 0x7F070176
-			public const int tooltip_frame_light = 2131165558;
+			public const int tooltip_frame_dark = 2131165558;
 			
 			// aapt resource value: 0x7F070177
-			public const int twotone_done_24 = 2131165559;
+			public const int tooltip_frame_light = 2131165559;
 			
 			// aapt resource value: 0x7F070178
-			public const int twotone_done_black_18 = 2131165560;
+			public const int twotone_done_24 = 2131165560;
 			
 			// aapt resource value: 0x7F070179
-			public const int twotone_done_black_24 = 2131165561;
+			public const int twotone_done_black_18 = 2131165561;
 			
 			// aapt resource value: 0x7F07017A
-			public const int twotone_done_black_36 = 2131165562;
+			public const int twotone_done_black_24 = 2131165562;
 			
 			// aapt resource value: 0x7F07017B
-			public const int twotone_done_black_48 = 2131165563;
+			public const int twotone_done_black_36 = 2131165563;
 			
 			// aapt resource value: 0x7F07017C
-			public const int twotone_format_strikethrough_24 = 2131165564;
+			public const int twotone_done_black_48 = 2131165564;
 			
 			// aapt resource value: 0x7F07017D
-			public const int twotone_format_strikethrough_black_18 = 2131165565;
+			public const int twotone_format_strikethrough_24 = 2131165565;
 			
 			// aapt resource value: 0x7F07017E
-			public const int twotone_format_strikethrough_black_24 = 2131165566;
+			public const int twotone_format_strikethrough_black_18 = 2131165566;
 			
 			// aapt resource value: 0x7F07017F
-			public const int twotone_format_strikethrough_black_36 = 2131165567;
+			public const int twotone_format_strikethrough_black_24 = 2131165567;
 			
 			// aapt resource value: 0x7F070180
-			public const int twotone_format_strikethrough_black_48 = 2131165568;
+			public const int twotone_format_strikethrough_black_36 = 2131165568;
 			
 			// aapt resource value: 0x7F070181
-			public const int twotone_format_underlined_24 = 2131165569;
+			public const int twotone_format_strikethrough_black_48 = 2131165569;
 			
 			// aapt resource value: 0x7F070182
-			public const int twotone_format_underlined_black_18 = 2131165570;
+			public const int twotone_format_underlined_24 = 2131165570;
 			
 			// aapt resource value: 0x7F070183
-			public const int twotone_format_underlined_black_24 = 2131165571;
+			public const int twotone_format_underlined_black_18 = 2131165571;
 			
 			// aapt resource value: 0x7F070184
-			public const int twotone_format_underlined_black_36 = 2131165572;
+			public const int twotone_format_underlined_black_24 = 2131165572;
 			
 			// aapt resource value: 0x7F070185
-			public const int twotone_format_underlined_black_48 = 2131165573;
+			public const int twotone_format_underlined_black_36 = 2131165573;
 			
 			// aapt resource value: 0x7F070186
-			public const int twotone_gesture_24 = 2131165574;
+			public const int twotone_format_underlined_black_48 = 2131165574;
 			
 			// aapt resource value: 0x7F070187
-			public const int twotone_gesture_black_18 = 2131165575;
+			public const int twotone_gesture_24 = 2131165575;
 			
 			// aapt resource value: 0x7F070188
-			public const int twotone_gesture_black_24 = 2131165576;
+			public const int twotone_gesture_black_18 = 2131165576;
 			
 			// aapt resource value: 0x7F070189
-			public const int twotone_gesture_black_36 = 2131165577;
+			public const int twotone_gesture_black_24 = 2131165577;
 			
 			// aapt resource value: 0x7F07018A
-			public const int twotone_gesture_black_48 = 2131165578;
+			public const int twotone_gesture_black_36 = 2131165578;
 			
 			// aapt resource value: 0x7F07018B
-			public const int twotone_strikethrough_s_24 = 2131165579;
+			public const int twotone_gesture_black_48 = 2131165579;
 			
 			// aapt resource value: 0x7F07018C
-			public const int twotone_strikethrough_s_black_18 = 2131165580;
+			public const int twotone_strikethrough_s_24 = 2131165580;
 			
 			// aapt resource value: 0x7F07018D
-			public const int twotone_strikethrough_s_black_24 = 2131165581;
+			public const int twotone_strikethrough_s_black_18 = 2131165581;
 			
 			// aapt resource value: 0x7F07018E
-			public const int twotone_strikethrough_s_black_36 = 2131165582;
+			public const int twotone_strikethrough_s_black_24 = 2131165582;
 			
 			// aapt resource value: 0x7F07018F
-			public const int twotone_strikethrough_s_black_48 = 2131165583;
+			public const int twotone_strikethrough_s_black_36 = 2131165583;
 			
 			// aapt resource value: 0x7F070190
-			public const int twotone_title_24 = 2131165584;
+			public const int twotone_strikethrough_s_black_48 = 2131165584;
 			
 			// aapt resource value: 0x7F070191
-			public const int twotone_title_black_18 = 2131165585;
+			public const int twotone_title_24 = 2131165585;
 			
 			// aapt resource value: 0x7F070192
-			public const int twotone_title_black_24 = 2131165586;
+			public const int twotone_title_black_18 = 2131165586;
 			
 			// aapt resource value: 0x7F070193
-			public const int twotone_title_black_36 = 2131165587;
+			public const int twotone_title_black_24 = 2131165587;
 			
 			// aapt resource value: 0x7F070194
-			public const int twotone_title_black_48 = 2131165588;
+			public const int twotone_title_black_36 = 2131165588;
 			
 			// aapt resource value: 0x7F070195
-			public const int Viewmode = 2131165589;
+			public const int twotone_title_black_48 = 2131165589;
+			
+			// aapt resource value: 0x7F070196
+			public const int Viewmode = 2131165590;
 			
 			static Drawable()
 			{

@@ -68,7 +68,7 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.ImageButton moreOptionButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Grid pdfViewGrid;
+        private global::Xamarin.Forms.StackLayout pdfViewGrid;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Syncfusion.SfPdfViewer.XForms.SfPdfViewer pdfViewerControl;
@@ -146,9 +146,6 @@ namespace Pdf.Views {
         private global::Pdf.controls.IconView paletteButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ActivityIndicator activityIndicator;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PdfViewer));
             pdfViewer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "pdfViewer");
@@ -168,7 +165,7 @@ namespace Pdf.Views {
             bookmarkButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "bookmarkButton");
             searchButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "searchButton");
             moreOptionButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "moreOptionButton");
-            pdfViewGrid = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "pdfViewGrid");
+            pdfViewGrid = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "pdfViewGrid");
             pdfViewerControl = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfPdfViewer.XForms.SfPdfViewer>(this, "pdfViewerControl");
             bottomMainBar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "bottomMainBar");
             bottomMainToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "bottomMainToolbar");
@@ -194,7 +191,6 @@ namespace Pdf.Views {
             imageAnnotationType = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imageAnnotationType");
             trashButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "trashButton");
             paletteButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.IconView>(this, "paletteButton");
-            activityIndicator = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ActivityIndicator>(this, "activityIndicator");
         }
     }
 }

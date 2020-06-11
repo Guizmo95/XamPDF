@@ -127,11 +127,11 @@
             },
             "Syncfusion.Xamarin.Compression": {
               "target": "Package",
-              "version": "[18.1.0.54, )"
+              "version": "[18.1.0.56, )"
             },
             "Syncfusion.Xamarin.Pdf": {
               "target": "Package",
-              "version": "[18.1.0.54, )"
+              "version": "[18.1.0.56, )"
             },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
@@ -139,7 +139,7 @@
             },
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
-              "version": "[18.1.0.52, )"
+              "version": "[18.1.0.56, )"
             },
             "Syncfusion.Xamarin.SfPopupLayout": {
               "target": "Package",
