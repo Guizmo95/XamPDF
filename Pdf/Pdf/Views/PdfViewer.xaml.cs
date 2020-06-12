@@ -16,11 +16,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Acr.UserDialogs;
+using SlideOverKit;
 
 namespace Pdf.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PdfViewer : ContentPage, INotifyPropertyChanged
+    public partial class PdfViewer : MenuContainerPage, INotifyPropertyChanged
     {
         #region Private Members
         private Stream pdfStream;
@@ -30,6 +31,7 @@ namespace Pdf.Views
         private SfPopupLayout errorSearchPopup;
         private SfPopupLayout passwordPopup;
         private SfPopupLayout popupMenu;
+        private StampSlideUpMenu stampSlideUpMenu;
 
         private readonly StyleContent styleContent;
         private PopupMenuContent popupMenuContent;
@@ -468,6 +470,8 @@ namespace Pdf.Views
             styleContent.ThicknessBar.BoxViewButtonClicked -= ThicknessBar_Clicked;
             styleContent.OpacityButtonClicked -= OpacityIcon_Clicked;
 
+            stampSlideUpMenu.StampListView.SelectionChanged -= StampListView_SelectionChanged;
+
             if (passwordPopup != null)
             {
                 passwordPopup.Closed -= PasswordPopup_Closed;
@@ -518,7 +522,13 @@ namespace Pdf.Views
 
             //Disable the display of password UI view
             pdfViewerControl.IsPasswordViewEnabled = false;
+
+            stampSlideUpMenu = new StampSlideUpMenu();
+            stampSlideUpMenu.StampListView.SelectionChanged += StampListView_SelectionChanged;
+            this.SlideMenu = stampSlideUpMenu;
         }
+
+
         #endregion
 
         #region On Document Loaded Event Handler
@@ -786,7 +796,8 @@ namespace Pdf.Views
 
         private void CloseButtonPopupMenu_Clicked(object sender, EventArgs e)
         {
-            Device.BeginInvokeOnMainThread(() => {
+            Device.BeginInvokeOnMainThread(() =>
+            {
                 popupMenu.IsOpen = false;
             });
         }
@@ -817,7 +828,8 @@ namespace Pdf.Views
         //TODO CHECK IF OTHER ANNOTATION CAN BEN PRINTED FOR SAVE OR NOT THE PDF WHEN PRTINING
         private async Task PrintDocument()
         {
-            Device.BeginInvokeOnMainThread(() => {
+            Device.BeginInvokeOnMainThread(() =>
+            {
                 popupMenu.IsOpen = false;
             });
 
@@ -833,7 +845,8 @@ namespace Pdf.Views
 
         private async Task SaveDocument()
         {
-            Device.BeginInvokeOnMainThread(() => {
+            Device.BeginInvokeOnMainThread(() =>
+            {
                 popupMenu.IsOpen = false;
             });
 
@@ -864,9 +877,8 @@ namespace Pdf.Views
 
         private void MoreOptionButton_Clicked(object sender, EventArgs e)
         {
-            Device.BeginInvokeOnMainThread(() => {
-                popupMenu.Show();
-            });
+
+            popupMenu.Show();
 
             popupMenuContent.MenuListView.SelectionChanged += MenuListView_SelectionChanged;
             popupMenu.Closed += PopupMenu_Closed;
@@ -1488,16 +1500,25 @@ namespace Pdf.Views
             pdfViewerControl.AnnotationMode = AnnotationMode.HandwrittenSignature;
         }
 
-        private void StampButton_Clicked(object sender, EventArgs e)
+        private void StampListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
         {
+            var stampItem = (StampModel)stampSlideUpMenu.StampListView.SelectedItem;
+
             //Set image source
             Image image = new Image();
-            image.Source = ImageSource.FromResource("Pdf.Images.stamp.png", typeof(App).GetTypeInfo().Assembly);
-            image.WidthRequest = 200;
-            image.HeightRequest = 100;
+            image.Source = stampItem.Image;
+            image.WidthRequest = 250;
+            image.HeightRequest = 150;
 
             //Add image as custom stamp to the first page
             pdfViewerControl.AddStamp(image, pdfViewerControl.PageNumber);
+
+            this.HideMenu();
+        }
+
+        private void StampButton_Clicked(object sender, EventArgs e)
+        {
+            this.ShowMenu();
         }
 
         private async void TextMarkupButton_Clicked(object sender, EventArgs e)
@@ -1871,7 +1892,7 @@ namespace Pdf.Views
                     }
                     else
                     {
-                        if(selectedTextMarkupAnnotation != null)
+                        if (selectedTextMarkupAnnotation != null)
                         {
                             pdfViewerControl.RemoveAnnotation(selectedTextMarkupAnnotation);
 
@@ -1879,7 +1900,7 @@ namespace Pdf.Views
                         }
                         else
                         {
-                            if(selectedStampAnnotation != null)
+                            if (selectedStampAnnotation != null)
                             {
                                 pdfViewerControl.RemoveAnnotation(selectedStampAnnotation);
 
@@ -1892,7 +1913,7 @@ namespace Pdf.Views
                 }
             }
         }
-                
+
         #endregion
 
         #region Shape bar methods

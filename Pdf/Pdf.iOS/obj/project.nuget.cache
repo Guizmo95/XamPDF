@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "jg8/Er85R/btTYtCVHeE024FxU+CsDpGWq14VEouiW9dkAylvgvvACJRx0lqivtbdodg4BRYURKZgWLyq79lIA==",
+  "dgSpecHash": "ZeeDme5uEQOxtEtBLN46pAdbd5iitlKK3ZbqA8SM69EjfSjfZQvmSGYZYJHfpXrTXKrt7xhsqyBGLn4Mi/TqEA==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.iOS\\Pdf.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rayhane\\.nuget\\packages\\acr.userdialogs\\7.1.0.440\\acr.userdialogs.7.1.0.440.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\btprogresshud\\1.3.1\\btprogresshud.1.3.1.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\slideoverkit\\2.1.6.2\\slideoverkit.2.1.6.2.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",

@@ -14,10 +14,10 @@ namespace Pdf.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PdfViewer.xaml")]
-    public partial class PdfViewer : global::Xamarin.Forms.ContentPage {
+    public partial class PdfViewer : global::SlideOverKit.MenuContainerPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ContentPage pdfViewer;
+        private global::SlideOverKit.MenuContainerPage pdfViewer;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.AbsoluteLayout mainContent;
@@ -148,7 +148,7 @@ namespace Pdf.Views {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PdfViewer));
-            pdfViewer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "pdfViewer");
+            pdfViewer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::SlideOverKit.MenuContainerPage>(this, "pdfViewer");
             mainContent = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.AbsoluteLayout>(this, "mainContent");
             topToolbar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.PancakeView.PancakeView>(this, "topToolbar");
             bottomLayout = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "bottomLayout");

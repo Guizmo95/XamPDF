@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0BA84BsGkI0WKIeFFRGkCovNMEy6GF4oL6T96iAdmW4PjSUHFXFYVszfrABNjQP8u4HA2HP7mSXU9Lu4kKDJEg==",
+  "dgSpecHash": "NpJ/BCpThW+RHHG7Jknu05kZzbS78IbctiIIpO4WyvBRPWKDWP12YMnRJ1Nj9tI8o4lge7uSikwlHNMmwmgOxw==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\slideoverkit\\2.1.6.2\\slideoverkit.2.1.6.2.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",

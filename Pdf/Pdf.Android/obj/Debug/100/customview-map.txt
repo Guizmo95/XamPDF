@@ -139,9 +139,7 @@ path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\9\jl\res\drawable\btn_checkbox_indeterminate.xml
 path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\9\jl\res\drawable\btn_checkbox_unchecked.xml
 path;obj\Debug\100\res\drawable\baseline_account_circle_24.xml
-path;obj\Debug\100\res\drawable\baseline_add_24.xml
 path;obj\Debug\100\res\drawable\baseline_bookmark_24.xml
-path;obj\Debug\100\res\drawable\baseline_branding_watermark_24.xml
 path;obj\Debug\100\res\drawable\baseline_create_24.xml
 path;obj\Debug\100\res\drawable\baseline_delete_24.xml
 path;obj\Debug\100\res\drawable\baseline_description_24.xml
@@ -155,7 +153,6 @@ path;obj\Debug\100\res\drawable\baseline_navigate_before_24.xml
 path;obj\Debug\100\res\drawable\baseline_navigate_next_24.xml
 path;obj\Debug\100\res\drawable\baseline_opacity_24.xml
 path;obj\Debug\100\res\drawable\baseline_palette_24.xml
-path;obj\Debug\100\res\drawable\baseline_panorama_fish_eye_24.xml
 path;obj\Debug\100\res\drawable\baseline_picture_as_pdf_24.xml
 path;obj\Debug\100\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
 path;obj\Debug\100\res\drawable\baseline_print_24.xml
@@ -176,7 +173,6 @@ path;obj\Debug\100\res\drawable\outlineclearviewer.xml
 path;obj\Debug\100\res\drawable\twotone_done_24.xml
 path;obj\Debug\100\res\drawable\twotone_format_strikethrough_24.xml
 path;obj\Debug\100\res\drawable\twotone_format_underlined_24.xml
-path;obj\Debug\100\res\drawable\twotone_gesture_24.xml
 path;obj\Debug\100\res\drawable\twotone_strikethrough_s_24.xml
 path;obj\Debug\100\res\drawable\twotone_title_24.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\9\jl\res\interpolator\btn_checkbox_checked_animation_interpolator_0.xml
@@ -320,9 +316,7 @@ vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\o
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\9\jl\res\drawable\btn_checkbox_indeterminate.xml
 vector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\9\jl\res\drawable\btn_checkbox_unchecked.xml
 vector;obj\Debug\100\res\drawable\baseline_account_circle_24.xml
-vector;obj\Debug\100\res\drawable\baseline_add_24.xml
 vector;obj\Debug\100\res\drawable\baseline_bookmark_24.xml
-vector;obj\Debug\100\res\drawable\baseline_branding_watermark_24.xml
 vector;obj\Debug\100\res\drawable\baseline_create_24.xml
 vector;obj\Debug\100\res\drawable\baseline_delete_24.xml
 vector;obj\Debug\100\res\drawable\baseline_description_24.xml
@@ -336,7 +330,6 @@ vector;obj\Debug\100\res\drawable\baseline_navigate_before_24.xml
 vector;obj\Debug\100\res\drawable\baseline_navigate_next_24.xml
 vector;obj\Debug\100\res\drawable\baseline_opacity_24.xml
 vector;obj\Debug\100\res\drawable\baseline_palette_24.xml
-vector;obj\Debug\100\res\drawable\baseline_panorama_fish_eye_24.xml
 vector;obj\Debug\100\res\drawable\baseline_picture_as_pdf_24.xml
 vector;obj\Debug\100\res\drawable\baseline_picture_as_pdf_24_drawermenu.xml
 vector;obj\Debug\100\res\drawable\baseline_print_24.xml
@@ -357,7 +350,6 @@ vector;obj\Debug\100\res\drawable\outlineclearviewer.xml
 vector;obj\Debug\100\res\drawable\twotone_done_24.xml
 vector;obj\Debug\100\res\drawable\twotone_format_strikethrough_24.xml
 vector;obj\Debug\100\res\drawable\twotone_format_underlined_24.xml
-vector;obj\Debug\100\res\drawable\twotone_gesture_24.xml
 vector;obj\Debug\100\res\drawable\twotone_strikethrough_s_24.xml
 vector;obj\Debug\100\res\drawable\twotone_title_24.xml
 xamarin.forms.material.android.MaterialFormsEditText;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\63\jl\res\layout\textinputlayoutfilledbox.xml

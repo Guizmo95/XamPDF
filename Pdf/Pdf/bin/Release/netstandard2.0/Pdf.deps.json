@@ -12,6 +12,7 @@
           "Acr.UserDialogs": "7.1.0.440",
           "NETStandard.Library": "2.0.3",
           "SharpZipLib": "1.2.0",
+          "SlideOverKit": "2.1.6.2",
           "Syncfusion.Xamarin.Buttons": "18.1.0.54",
           "Syncfusion.Xamarin.Compression": "18.1.0.56",
           "Syncfusion.Xamarin.Pdf": "18.1.0.56",
@@ -51,6 +52,14 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {
             "assemblyVersion": "1.2.0.246",
             "fileVersion": "1.2.0.246"
+          }
+        }
+      },
+      "SlideOverKit/2.1.6.2": {
+        "runtime": {
+          "lib/netstandard2.0/SlideOverKit.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -376,6 +385,13 @@
       "sha512": "sha512-zvWa/L02JHNatdtjya6Swpudb2YEHaOLHL1eRrqpjm71iGRNUNONO5adUF/9CHbSJbzhELW1UoH4NGy7n7+3bQ==",
       "path": "sharpziplib/1.2.0",
       "hashPath": "sharpziplib.1.2.0.nupkg.sha512"
+    },
+    "SlideOverKit/2.1.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qcD3YPAcE6r93SwlYUDRNZKw/8vF6YogG3URzv7QF2FVGPkOstIkV1eQ6kmgcQjgWn50Gad6iUftVXZ49KgOrg==",
+      "path": "slideoverkit/2.1.6.2",
+      "hashPath": "slideoverkit.2.1.6.2.nupkg.sha512"
     },
     "sqlite-net-pcl/1.6.292": {
       "type": "package",

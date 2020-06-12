@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "O0+TnUhkpHuk8rJ1o3oO56BRXEtoiHQtN/ySeA9396Hz8e4iYy8B5bDlLzOowkqiKz8eP+zYjcpMarqKFsd3fg==",
+  "dgSpecHash": "520EjLMRtNE5LoIwsDZmbbG8Fk7lpz8XFx4xkHd3C32wsDUXBsV1xQ5ZxZ4GtC6vaYgvuFyoMrN4kDRitw62Ag==",
   "success": true,
   "projectFilePath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf.Android\\Pdf.Android.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Rayhane\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\microsoft.net.compilers\\3.4.0\\microsoft.net.compilers.3.4.0.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
+    "C:\\Users\\Rayhane\\.nuget\\packages\\slideoverkit\\2.1.6.2\\slideoverkit.2.1.6.2.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
     "C:\\Users\\Rayhane\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",

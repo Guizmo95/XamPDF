@@ -35,6 +35,17 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
+      "SlideOverKit/2.1.6.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SlideOverKit.dll": {},
+          "lib/Xamarin.iOS10/SlideOverKit.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SlideOverKit.dll": {},
+          "lib/Xamarin.iOS10/SlideOverKit.iOS.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.6.292": {
         "type": "package",
         "dependencies": {
@@ -475,6 +486,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
           "SharpZipLib": "1.2.0",
+          "SlideOverKit": "2.1.6.2",
           "Syncfusion.Xamarin.Buttons": "18.1.0.54",
           "Syncfusion.Xamarin.Compression": "18.1.0.56",
           "Syncfusion.Xamarin.Pdf": "18.1.0.56",
@@ -531,6 +543,17 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
+      "SlideOverKit/2.1.6.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SlideOverKit.dll": {},
+          "lib/Xamarin.iOS10/SlideOverKit.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SlideOverKit.dll": {},
+          "lib/Xamarin.iOS10/SlideOverKit.iOS.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.6.292": {
         "type": "package",
         "dependencies": {
@@ -971,6 +994,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
           "SharpZipLib": "1.2.0",
+          "SlideOverKit": "2.1.6.2",
           "Syncfusion.Xamarin.Buttons": "18.1.0.54",
           "Syncfusion.Xamarin.Compression": "18.1.0.56",
           "Syncfusion.Xamarin.Pdf": "18.1.0.56",
@@ -1027,6 +1051,17 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
+      "SlideOverKit/2.1.6.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SlideOverKit.dll": {},
+          "lib/Xamarin.iOS10/SlideOverKit.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SlideOverKit.dll": {},
+          "lib/Xamarin.iOS10/SlideOverKit.iOS.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.6.292": {
         "type": "package",
         "dependencies": {
@@ -1467,6 +1502,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
           "SharpZipLib": "1.2.0",
+          "SlideOverKit": "2.1.6.2",
           "Syncfusion.Xamarin.Buttons": "18.1.0.54",
           "Syncfusion.Xamarin.Compression": "18.1.0.56",
           "Syncfusion.Xamarin.Pdf": "18.1.0.56",
@@ -1523,6 +1559,17 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
+      "SlideOverKit/2.1.6.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SlideOverKit.dll": {},
+          "lib/Xamarin.iOS10/SlideOverKit.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SlideOverKit.dll": {},
+          "lib/Xamarin.iOS10/SlideOverKit.iOS.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.6.292": {
         "type": "package",
         "dependencies": {
@@ -1963,6 +2010,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
           "SharpZipLib": "1.2.0",
+          "SlideOverKit": "2.1.6.2",
           "Syncfusion.Xamarin.Buttons": "18.1.0.54",
           "Syncfusion.Xamarin.Compression": "18.1.0.56",
           "Syncfusion.Xamarin.Pdf": "18.1.0.56",
@@ -2059,6 +2107,37 @@
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
         "sharpziplib.1.2.0.nupkg.sha512",
         "sharpziplib.nuspec"
+      ]
+    },
+    "SlideOverKit/2.1.6.2": {
+      "sha512": "qcD3YPAcE6r93SwlYUDRNZKw/8vF6YogG3URzv7QF2FVGPkOstIkV1eQ6kmgcQjgWn50Gad6iUftVXZ49KgOrg==",
+      "type": "package",
+      "path": "slideoverkit/2.1.6.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/SlideOverKit.Droid.dll",
+        "lib/MonoAndroid10/SlideOverKit.Droid.dll.mdb",
+        "lib/MonoAndroid10/SlideOverKit.Droid.pdb",
+        "lib/MonoAndroid10/SlideOverKit.dll",
+        "lib/MonoAndroid10/SlideOverKit.pdb",
+        "lib/Xamarin.iOS10/SlideOverKit.dll",
+        "lib/Xamarin.iOS10/SlideOverKit.iOS.dll",
+        "lib/Xamarin.iOS10/SlideOverKit.iOS.pdb",
+        "lib/Xamarin.iOS10/SlideOverKit.pdb",
+        "lib/netstandard1.0/SlideOverKit.deps.json",
+        "lib/netstandard1.0/SlideOverKit.dll",
+        "lib/netstandard1.0/SlideOverKit.pdb",
+        "lib/netstandard2.0/SlideOverKit.deps.json",
+        "lib/netstandard2.0/SlideOverKit.dll",
+        "lib/netstandard2.0/SlideOverKit.pdb",
+        "lib/uap10.0/SlideOverKit.UWP.dll",
+        "lib/uap10.0/SlideOverKit.UWP.pdb",
+        "lib/uap10.0/SlideOverKit.UWP.pri",
+        "lib/uap10.0/SlideOverKit.dll",
+        "lib/uap10.0/SlideOverKit.pdb",
+        "slideoverkit.2.1.6.2.nupkg.sha512",
+        "slideoverkit.nuspec"
       ]
     },
     "sqlite-net-pcl/1.6.292": {

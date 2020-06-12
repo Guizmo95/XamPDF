@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              Visual="Material" 
              x:Class="Pdf.controls.PopupMenuContent">
+    
     <syncfusion:SfListView x:Name="menuListView"
                    ItemsSource="{Binding ItemsMenu}" ItemSize="57" ItemSpacing="0" SelectionMode="Single" SelectionBackgroundColor="Transparent">
         <syncfusion:SfListView.ItemTemplate>

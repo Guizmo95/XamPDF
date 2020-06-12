@@ -20,9 +20,6 @@ namespace Pdf.Views
         private FileModel selectedDoc;
         public SfBehavior SfBehavior { get; set; }
 
-
- 
-
         public FileModel SelectedDoc
         {
             get

@@ -11,16 +11,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\copy.png" />
+    <None Remove="Images\do_not_copy.png" />
+    <None Remove="Images\draft.png" />
+    <None Remove="Images\paid.png" />
+    <None Remove="Images\payment.png" />
+    <None Remove="Images\received.png" />
+    <None Remove="Images\sent.png" />
     <None Remove="Images\stamp.png" />
+    <None Remove="Images\urgent.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\copy.png" />
+    <EmbeddedResource Include="Images\do_not_copy.png" />
+    <EmbeddedResource Include="Images\draft.png" />
+    <EmbeddedResource Include="Images\paid.png" />
+    <EmbeddedResource Include="Images\payment.png" />
+    <EmbeddedResource Include="Images\received.png" />
+    <EmbeddedResource Include="Images\sent.png" />
     <EmbeddedResource Include="Images\stamp.png" />
+    <EmbeddedResource Include="Images\urgent.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.440" />
     <PackageReference Include="SharpZipLib" Version="1.2.0" />
+    <PackageReference Include="SlideOverKit" Version="2.1.6.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.54" />
     <PackageReference Include="Syncfusion.Xamarin.Compression" Version="18.1.0.56" />
@@ -79,9 +96,6 @@
     <EmbeddedResource Update="controls\ThicknessBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CompressDocumentPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\DocumentsList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -101,6 +115,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SignaturePageList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\StampSlideUpMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

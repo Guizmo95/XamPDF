@@ -121,6 +121,10 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "SlideOverKit": {
+              "target": "Package",
+              "version": "[2.1.6.2, )"
+            },
             "Syncfusion.Xamarin.Buttons": {
               "target": "Package",
               "version": "[18.1.0.54, )"
