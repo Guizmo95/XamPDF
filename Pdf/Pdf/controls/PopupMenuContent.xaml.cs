@@ -56,7 +56,7 @@ namespace Pdf.controls
                 Image = "baseline_vertical_align_center_24.xml",
                 TextColor = Color.FromHex("#616161"),
                 ImageColor = Color.FromHex("#373737"),
-                TextOption = "Compress PDF",
+                TextOption = "PDF To Image",
             });
 
             menuListView.ItemsSource = ItemsMenu;

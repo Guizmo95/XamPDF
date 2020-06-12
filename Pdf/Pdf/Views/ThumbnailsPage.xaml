@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Converter"
+             mc:Ignorable="d"
+             x:Class="Pdf.Views.ThumbnailsPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ByteImageConverter x:Key="ByteImgConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid x:Name="thumbnailView" >
+        <syncfusion:SfListView x:Name="listView" ItemsSource="{Binding ThumbnailInfoCollection}" Orientation="Horizontal">
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate x:Name="ItemTemplate" >
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid x:Name="grid" RowSpacing="5">
+                                <Image Source="{Binding ., Converter={StaticResource ByteImgConverter}}"
+                                           VerticalOptions="Fill"
+                                           HorizontalOptions="Fill"
+                                           HeightRequest="90">
+                                </Image>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+    </Grid>
+</ContentPage>

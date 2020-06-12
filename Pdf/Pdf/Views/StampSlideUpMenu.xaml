@@ -8,14 +8,14 @@
     
 
     <syncfusion:SfListView x:Name="stampListView"
-                   ItemsSource="{Binding Images}" ItemSize="100" ItemSpacing="10" SelectionMode="Single" SelectionBackgroundColor="Transparent" Orientation="Horizontal" >
+                   ItemsSource="{Binding Images}" ItemSize="170" SelectionMode="Single" SelectionBackgroundColor="Transparent" Orientation="Horizontal" >
         <syncfusion:SfListView.LayoutManager>
             <syncfusion:GridLayout SpanCount="2"/>
         </syncfusion:SfListView.LayoutManager>
         <syncfusion:SfListView.ItemTemplate>
             <DataTemplate>
                 <Grid>
-                    <Image Source="{Binding Image}" Aspect="AspectFit" HeightRequest="100" WidthRequest="100" Rotation="{Binding Rotation}"/>
+                    <Image Source="{Binding Image}" Aspect="AspectFit" HeightRequest="170" Margin="15,0,15,0" WidthRequest="170"/>
                 </Grid>
             </DataTemplate>
         </syncfusion:SfListView.ItemTemplate>

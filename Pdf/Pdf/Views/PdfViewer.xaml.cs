@@ -17,6 +17,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Acr.UserDialogs;
 using SlideOverKit;
+using System.Collections.ObjectModel;
 
 namespace Pdf.Views
 {
@@ -24,6 +25,7 @@ namespace Pdf.Views
     public partial class PdfViewer : MenuContainerPage, INotifyPropertyChanged
     {
         #region Private Members
+
         private Stream pdfStream;
 
         private PdfViewerModel pdfViewerModel;
@@ -80,6 +82,9 @@ namespace Pdf.Views
         private int lastThicknessBarSelected = 5;
         private int lastOpacitySelected = 4;
         private int numberOfAnnotation = 0;
+
+        public List<byte[]> ThumbnailBytes { get; set; }
+        public ObservableCollection<byte[]> ThumbnailInfoCollection { get; set; }
         #endregion
 
         #region Property
@@ -526,13 +531,16 @@ namespace Pdf.Views
             stampSlideUpMenu = new StampSlideUpMenu();
             stampSlideUpMenu.StampListView.SelectionChanged += StampListView_SelectionChanged;
             this.SlideMenu = stampSlideUpMenu;
+
+            ThumbnailBytes = new List<byte[]>();
+            ThumbnailInfoCollection = new ObservableCollection<byte[]>();
         }
 
 
         #endregion
 
         #region On Document Loaded Event Handler
-        private void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
+        private async void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
         {
             if (isPasswordPopupInitalized != true)
             {
@@ -782,8 +790,11 @@ namespace Pdf.Views
             annotationType = AnnotationType.None;
 
             UserDialogs.Instance.HideLoading();
+
+
         }
         #endregion
+
 
         #region Top Toolbar Event Handlers 
         private void BookmarkButton_Clicked(object sender, EventArgs e)
@@ -819,10 +830,24 @@ namespace Pdf.Views
                     await PrintDocument();
                     break;
                 case 2:
+                    await ShowThumnbailsView();
                     break;
                 default:
                     break;
             }
+        }
+
+        private async Task ShowThumnbailsView()
+        {
+            await Task.Run(async() =>
+            {
+                Stream[] exportedImages = await pdfViewerControl.ExportAsImageAsync(0, pdfViewerControl.PageCount - 1, 0.1f);
+                ConvertStreamToImageSource(exportedImages);
+                UpdateImages();
+
+                ThumbnailsPage thumbnailsPage = new ThumbnailsPage();
+                thumbnailsPage.ListView.ItemsSource = ThumbnailInfoCollection;
+            });
         }
 
         //TODO CHECK IF OTHER ANNOTATION CAN BEN PRINTED FOR SAVE OR NOT THE PDF WHEN PRTINING
@@ -845,34 +870,36 @@ namespace Pdf.Views
 
         private async Task SaveDocument()
         {
-            Device.BeginInvokeOnMainThread(() =>
+            Device.BeginInvokeOnMainThread(async() =>
             {
                 popupMenu.IsOpen = false;
+
+                using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
+                {
+                    NumberOfAnnotation = 0;
+
+                    Dictionary<bool, string> saveStatus = null;
+
+                    await Task.Run(async () =>
+                    {
+                        using (Stream stream = await pdfViewerControl.SaveDocumentAsync())
+                        {
+                            saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
+                        }
+                    });
+
+                    if (saveStatus.ContainsKey(true) == true)
+                    {
+                        DependencyService.Get<IToastMessage>().LongAlert("Document saved");
+                    }
+                    else
+                    {
+                        DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
+                    }
+                }
             });
 
-            using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
-            {
-                NumberOfAnnotation = 0;
-
-                Dictionary<bool, string> saveStatus = null;
-
-                await Task.Run(async () =>
-                {
-                    using (Stream stream = await pdfViewerControl.SaveDocumentAsync())
-                    {
-                        saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
-                    }
-                });
-
-                if (saveStatus.ContainsKey(true) == true)
-                {
-                    DependencyService.Get<IToastMessage>().LongAlert("Document saved");
-                }
-                else
-                {
-                    DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
-                }
-            }
+           
         }
 
         private void MoreOptionButton_Clicked(object sender, EventArgs e)
@@ -1041,6 +1068,44 @@ namespace Pdf.Views
             }
         }
         #endregion
+
+        private void UpdateImages()
+        {
+            if (ThumbnailBytes.Count != 0)
+            {
+                int i = 0;
+                foreach (var thumbnail in ThumbnailBytes)
+                {
+                    i++;
+
+                    ThumbnailInfoCollection.Add(thumbnail);
+                }
+            }
+        }
+
+        private void ConvertStreamToImageSource(Stream[] imageStreams)
+        {
+            foreach (Stream imageStream in imageStreams)
+            {
+                imageStream.Position = 0;
+                byte[] bytes = ReadBytes(imageStream).Result;
+                ThumbnailBytes.Add(bytes);
+            }
+        }
+
+        private async Task<byte[]> ReadBytes(Stream input)
+        {
+            byte[] buffer = new byte[16 * 1024];
+            using (MemoryStream ms = new MemoryStream())
+            {
+                int read;
+                while ((read = await input.ReadAsync(buffer, 0, buffer.Length)) > 0)
+                {
+                   await ms.WriteAsync(buffer, 0, read);
+                }
+                return ms.ToArray();
+            }
+        }
 
         private async void PdfViewerControl_DoubleTapped(object sender, TouchInteractionEventArgs e)
         {
@@ -1507,8 +1572,8 @@ namespace Pdf.Views
             //Set image source
             Image image = new Image();
             image.Source = stampItem.Image;
-            image.WidthRequest = 250;
-            image.HeightRequest = 150;
+            image.WidthRequest = 350;
+            image.HeightRequest = 250;
 
             //Add image as custom stamp to the first page
             pdfViewerControl.AddStamp(image, pdfViewerControl.PageNumber);

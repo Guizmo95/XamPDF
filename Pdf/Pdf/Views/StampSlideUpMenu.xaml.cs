@@ -36,7 +36,7 @@ namespace Pdf.Views
             InitializeComponent();
 
             // You must set HeightRequest in this case
-            this.HeightRequest = 120;
+            this.HeightRequest = 200;
             // You must set IsFullScreen in this case, 
             // otherwise you need to set WidthRequest, 
             // just like the QuickInnerMenu sample
@@ -58,38 +58,52 @@ namespace Pdf.Views
 
             Images.Add(new StampModel()
             {
-                Image = ImageSource.FromResource("Pdf.Images.stamp.png"),
-                Rotation = 44.75,
+                Image = ImageSource.FromResource("Pdf.Images.approved_green.png"),
             });
 
             Images.Add(new StampModel()
             {
-                Image = ImageSource.FromResource("Pdf.Images.do_not_copy.png"),
-                Rotation = 45.3,
+                Image = ImageSource.FromResource("Pdf.Images.approved_red.png"),
             });
 
             Images.Add(new StampModel()
             {
-                Image = ImageSource.FromResource("Pdf.Images.draft.png"),
-                Rotation = 44.7,
+                Image = ImageSource.FromResource("Pdf.Images.completed_green.png"),
             });
 
             Images.Add(new StampModel()
             {
-                Image = ImageSource.FromResource("Pdf.Images.payment.png"),
-                Rotation = 45.4,
+                Image = ImageSource.FromResource("Pdf.Images.completed.png"),
             });
 
             Images.Add(new StampModel()
             {
-                Image = ImageSource.FromResource("Pdf.Images.received.png"),
-                Rotation = 45.6,
+                Image = ImageSource.FromResource("Pdf.Images.draft_green.png"),
             });
 
             Images.Add(new StampModel()
             {
-                Image = ImageSource.FromResource("Pdf.Images.sent.png"),
-                Rotation = 45.1,
+                Image = ImageSource.FromResource("Pdf.Images.draft_red.png"),
+            });
+
+            Images.Add(new StampModel()
+            {
+                Image = ImageSource.FromResource("Pdf.Images.expired_green.png"),
+            });
+
+            Images.Add(new StampModel()
+            {
+                Image = ImageSource.FromResource("Pdf.Images.expired_red.png"),
+            });
+
+            Images.Add(new StampModel()
+            {
+                Image = ImageSource.FromResource("Pdf.Images.rejected_green.png"),
+            });
+
+            Images.Add(new StampModel()
+            {
+                Image = ImageSource.FromResource("Pdf.Images.rejected_red.png"),
             });
 
             stampListView.ItemsSource = Images;

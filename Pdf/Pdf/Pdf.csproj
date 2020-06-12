@@ -11,27 +11,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\copy.png" />
-    <None Remove="Images\do_not_copy.png" />
-    <None Remove="Images\draft.png" />
+    <None Remove="Images\approved_green.png" />
+    <None Remove="Images\approved_red.png" />
+    <None Remove="Images\completed.png" />
+    <None Remove="Images\completed_green.png" />
+    <None Remove="Images\draft_green.png" />
+    <None Remove="Images\draft_red.png" />
+    <None Remove="Images\expired_green.png" />
+    <None Remove="Images\expired_red.png" />
     <None Remove="Images\paid.png" />
-    <None Remove="Images\payment.png" />
-    <None Remove="Images\received.png" />
-    <None Remove="Images\sent.png" />
-    <None Remove="Images\stamp.png" />
-    <None Remove="Images\urgent.png" />
+    <None Remove="Images\rejected_green.png" />
+    <None Remove="Images\rejected_red.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\copy.png" />
-    <EmbeddedResource Include="Images\do_not_copy.png" />
-    <EmbeddedResource Include="Images\draft.png" />
+    <EmbeddedResource Include="Images\approved_green.png" />
+    <EmbeddedResource Include="Images\approved_red.png" />
+    <EmbeddedResource Include="Images\completed.png" />
+    <EmbeddedResource Include="Images\completed_green.png" />
+    <EmbeddedResource Include="Images\draft_green.png" />
+    <EmbeddedResource Include="Images\draft_red.png" />
+    <EmbeddedResource Include="Images\expired_green.png" />
+    <EmbeddedResource Include="Images\expired_red.png" />
     <EmbeddedResource Include="Images\paid.png" />
-    <EmbeddedResource Include="Images\payment.png" />
-    <EmbeddedResource Include="Images\received.png" />
-    <EmbeddedResource Include="Images\sent.png" />
-    <EmbeddedResource Include="Images\stamp.png" />
-    <EmbeddedResource Include="Images\urgent.png" />
+    <EmbeddedResource Include="Images\rejected_green.png" />
+    <EmbeddedResource Include="Images\rejected_red.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -118,6 +122,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\StampSlideUpMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ThumbnailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
