@@ -50,15 +50,6 @@ namespace Pdf.controls
                 TextOption = "Print PDF",
             });
 
-            ItemsMenu.Add(new ItemsMenu
-            {
-                Id = 2,
-                Image = "baseline_vertical_align_center_24.xml",
-                TextColor = Color.FromHex("#616161"),
-                ImageColor = Color.FromHex("#373737"),
-                TextOption = "PDF To Image",
-            });
-
             menuListView.ItemsSource = ItemsMenu;
         }
 

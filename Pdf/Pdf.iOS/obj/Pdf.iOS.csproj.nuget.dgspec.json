@@ -139,7 +139,7 @@
             },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
-              "version": "[18.1.0.54, )"
+              "version": "[18.1.0.56, )"
             },
             "Syncfusion.Xamarin.SfPdfViewer": {
               "target": "Package",
@@ -160,6 +160,10 @@
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.3.1, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

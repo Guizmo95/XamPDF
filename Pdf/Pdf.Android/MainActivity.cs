@@ -55,7 +55,6 @@ namespace Pdf.Droid
             assets = this.Assets;
             window = this.Window;
 
-            this.Window.AddFlags(WindowManagerFlags.Fullscreen | WindowManagerFlags.TurnScreenOn);
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
             {
                 var stBarHeight = typeof(FormsAppCompatActivity).GetField("statusBarHeight", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);

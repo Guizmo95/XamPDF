@@ -34,7 +34,8 @@ namespace Pdf.Droid.Helpers
 
         public void SetDefaultNavBar()
         {
-            window.DecorView.SystemUiVisibility = (StatusBarVisibility)SystemUiFlags.Visible;
+            //window.DecorView.SystemUiVisibility = (StatusBarVisibility)SystemUiFlags.Visible;
+            window.DecorView.SystemUiVisibility = (StatusBarVisibility)SystemUiFlags.LightStatusBar;
         }
 
     }

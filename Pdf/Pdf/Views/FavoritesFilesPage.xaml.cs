@@ -156,10 +156,6 @@ namespace Pdf.Views
 
         private async void FavoriteDocumentListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
         {
-            await Task.Delay(500);
-
-            UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Black);
-
             try
             {
                 var file = (FileModel)FavoriteDocumentListView.SelectedItem;
@@ -173,8 +169,6 @@ namespace Pdf.Views
             finally
             {
                 FavoriteDocumentListView.SelectedItem = null;
-
-                UserDialogs.Instance.HideLoading();
             }
         }
 

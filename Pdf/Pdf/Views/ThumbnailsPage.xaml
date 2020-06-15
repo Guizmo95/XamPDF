@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Converter"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Converter" xmlns:syncfusion1="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms" xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
-             x:Class="Pdf.Views.ThumbnailsPage">
+             x:Class="Pdf.Views.ThumbnailsPage" Shell.NavBarIsVisible="False" Shell.TabBarIsVisible="False">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -12,23 +12,50 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid x:Name="thumbnailView" >
-        <syncfusion:SfListView x:Name="listView" ItemsSource="{Binding ThumbnailInfoCollection}" Orientation="Horizontal">
+    <StackLayout  x:Name="pdfViewGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+        <controls1:PancakeView IsVisible="True" HeightRequest="50" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar">
+            <StackLayout x:Name="topNavBar" Orientation="Horizontal" HeightRequest="50">
+                <ImageButton Source="outline_arrow_back_24_Dark" HeightRequest="50"/>
+                <Label Text="Pages Management"  HeightRequest="50" 
+                           HorizontalTextAlignment="Center" 
+                           VerticalTextAlignment="Center" 
+                           FontSize="16.5" 
+                           TextColor="White"
+                           FontFamily="GothamBold.ttf#GothamBold"/>
+            </StackLayout>
+        </controls1:PancakeView>
+        <syncfusion1:SfPdfViewer x:Name="pdfViewerControl" IsVisible="False" PageViewMode="Continuous" VerticalOptions="FillAndExpand" MinimumZoomPercentage="100"/>
+        <syncfusion:SfListView x:Name="listView" ItemsSource="{Binding ThumbnailInfoCollection}" Orientation="Vertical" ItemSize="250" ListViewCachingStrategy="RecycleTemplate">
+            <syncfusion:SfListView.LayoutManager>
+                <syncfusion:GridLayout SpanCount="2" />
+            </syncfusion:SfListView.LayoutManager>
             <syncfusion:SfListView.ItemTemplate>
                 <DataTemplate x:Name="ItemTemplate" >
                     <ViewCell>
                         <ViewCell.View>
-                            <Grid x:Name="grid" RowSpacing="5">
-                                <Image Source="{Binding ., Converter={StaticResource ByteImgConverter}}"
-                                           VerticalOptions="Fill"
-                                           HorizontalOptions="Fill"
-                                           HeightRequest="90">
-                                </Image>
+                            <Grid x:Name="grid">
+                                <!--<Image Source="{Binding ., Converter={StaticResource ByteImgConverter}}"
+                                           Aspect="AspectFit">
+                                </Image>-->
+                                <ffimageloading:CachedImage
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+                                    RetryCount="0"
+            Aspect="AspectFit"
+            CacheDuration= "50"
+            LoadingPlaceholder = "loading.png"
+	        ErrorPlaceholder = "error.png"
+            DownsampleToViewSize = "true"
+             x:Name="selectionImage"
+                             Source="{Binding ., Converter={StaticResource ByteImgConverter}}">
+                                </ffimageloading:CachedImage>
                             </Grid>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>
             </syncfusion:SfListView.ItemTemplate>
         </syncfusion:SfListView>
-    </Grid>
+    </StackLayout>
+
+
 </ContentPage>

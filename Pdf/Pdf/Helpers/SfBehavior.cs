@@ -104,7 +104,7 @@ namespace Pdf.Helpers
             getInfoFilePopup.PopupView.AnimationDuration = 200;
             getInfoFilePopup.PopupView.AnimationMode = AnimationMode.SlideOnBottom;
             getInfoFilePopup.PopupView.PopupStyle.CornerRadius = 0;
-            getInfoFilePopup.PopupView.PopupStyle.BorderThickness = 2;
+            //getInfoFilePopup.PopupView.PopupStyle.BorderThickness = 2;
             getInfoFilePopup.Padding = new Thickness(15, 15, 15, 15);
             getInfoFilePopup.PopupView.PopupStyle.BorderColor = Color.White;
             getInfoFilePopup.PopupView.ShowFooter = false;

@@ -145,7 +145,7 @@ namespace Pdf.Views
         private void SortButton_Clicked(object sender, EventArgs e)
         {
             // Shows SfPopupLayout at the top of the button.
-            popupLayout.ShowRelativeToView(sortButton, RelativePosition.AlignTopRight, 0, 0);
+            popupLayout.ShowRelativeToView(sortButton, RelativePosition.AlignBottomRight, 0, -20);
         }
 
         private void SearchButton_Clicked(object sender, EventArgs e)
@@ -174,10 +174,6 @@ namespace Pdf.Views
 
         private async void DocumentListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
         {
-            await Task.Delay(500);
-
-            UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Black);
-
             try
             {
                 var file = (FileModel)DocumentListView.SelectedItem;
@@ -191,8 +187,6 @@ namespace Pdf.Views
             finally
             {
                 DocumentListView.SelectedItem = null;
-
-                UserDialogs.Instance.HideLoading();
             }
         }
 

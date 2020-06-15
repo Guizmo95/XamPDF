@@ -1,6 +1,10 @@
 Acr.UserDialogs
 AndHUD
+FFImageLoading.Forms.Platform
+FFImageLoading.Platform
 FormsViewGroup
+Pdf
+Plugin.CurrentActivity
 SlideOverKit.Droid
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2
@@ -102,4 +106,3 @@ androidx.lifecycle.lifecycle-livedata
 androidx.media.media
 androidx.legacy.legacy-support-v4
 androidx.browser.browser
-Pdf

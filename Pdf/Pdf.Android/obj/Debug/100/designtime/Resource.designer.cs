@@ -15760,11 +15760,11 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F08004D
 			public const int always = 2131230797;
 			
-			// aapt resource value: 0x7F080001
-			public const int APPLICATION_NAME = 2131230721;
-			
 			// aapt resource value: 0x7F08004E
 			public const int application_name = 2131230798;
+			
+			// aapt resource value: 0x7F080001
+			public const int APPLICATION_NAME = 2131230721;
 			
 			// aapt resource value: 0x7F08004F
 			public const int async = 2131230799;
@@ -16186,11 +16186,11 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F0800CF
 			public const int never = 2131230927;
 			
-			// aapt resource value: 0x7F0800D0
-			public const int none = 2131230928;
-			
 			// aapt resource value: 0x7F08000D
 			public const int None = 2131230733;
+			
+			// aapt resource value: 0x7F0800D0
+			public const int none = 2131230928;
 			
 			// aapt resource value: 0x7F0800D1
 			public const int normal = 2131230929;
@@ -16216,11 +16216,11 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F0800D8
 			public const int outline = 2131230936;
 			
-			// aapt resource value: 0x7F0800D9
-			public const int outside = 2131230937;
-			
 			// aapt resource value: 0x7F08000E
 			public const int OutSide = 2131230734;
+			
+			// aapt resource value: 0x7F0800D9
+			public const int outside = 2131230937;
 			
 			// aapt resource value: 0x7F0800DA
 			public const int parallax = 2131230938;
@@ -16255,11 +16255,11 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F0800E4
 			public const int rectangle = 2131230948;
 			
-			// aapt resource value: 0x7F0800E5
-			public const int right = 2131230949;
-			
 			// aapt resource value: 0x7F08000F
 			public const int Right = 2131230735;
+			
+			// aapt resource value: 0x7F0800E5
+			public const int right = 2131230949;
 			
 			// aapt resource value: 0x7F0800E6
 			public const int right_icon = 2131230950;
@@ -16510,11 +16510,11 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F080135
 			public const int toolbar = 2131231029;
 			
-			// aapt resource value: 0x7F080136
-			public const int top = 2131231030;
-			
 			// aapt resource value: 0x7F080013
 			public const int Top = 2131230739;
+			
+			// aapt resource value: 0x7F080136
+			public const int top = 2131231030;
 			
 			// aapt resource value: 0x7F080137
 			public const int topBar = 2131231031;
@@ -16558,11 +16558,11 @@ namespace Pdf.Droid
 			// aapt resource value: 0x7F080144
 			public const int useLogo = 2131231044;
 			
-			// aapt resource value: 0x7F080145
-			public const int vertical = 2131231045;
-			
 			// aapt resource value: 0x7F080014
 			public const int Vertical = 2131230740;
+			
+			// aapt resource value: 0x7F080145
+			public const int vertical = 2131231045;
 			
 			// aapt resource value: 0x7F080146
 			public const int view_offset_helper = 2131231046;

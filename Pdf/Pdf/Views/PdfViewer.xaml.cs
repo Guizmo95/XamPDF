@@ -35,7 +35,7 @@ namespace Pdf.Views
         private SfPopupLayout popupMenu;
         private StampSlideUpMenu stampSlideUpMenu;
 
-        private readonly StyleContent styleContent;
+        private StyleContent styleContent;
         private PopupMenuContent popupMenuContent;
         private SearchErrorPopup searchErrorPopupContent;
 
@@ -88,6 +88,8 @@ namespace Pdf.Views
         #endregion
 
         #region Property
+
+
         public bool IsTextMarkupMenuEnabled
         {
             get
@@ -486,28 +488,43 @@ namespace Pdf.Views
                 passwordPopup.IsOpen = false;
             }
 
+            DependencyService.Get<IThemeManager>().SetMenuStatusBarColor();
             pdfViewerControl.Unload();
             base.OnDisappearing();
         }
         #endregion
 
+
+
         #region On Appearing 
-        protected override void OnAppearing()
+
+        protected async Task WaitAndExecute(int milisec, Action actionToExecute)
         {
-            pdfViewerControl.PasswordErrorOccurred += PdfViewerControl_PasswordErrorOccurred;
+            await Task.Delay(milisec);
+            actionToExecute();
+        }
 
-            pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
-
-            pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
-
-            // PDFium renderer
-            pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
-
-            pdfViewerControl.LoadDocument(pdfStream);
-
-            MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
+        protected async override void OnAppearing()
+        {
+            await WaitAndExecute(200, () =>
             {
-                this.SelectedColor = helper;
+                UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
+
+                DependencyService.Get<IThemeManager>().SetPdfViewerStatusBarColor();
+                Shell.SetNavBarIsVisible(this, false);
+                Shell.SetTabBarIsVisible(this, false);
+                Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+                NavigationPage.SetHasNavigationBar(this, false);
+            });
+
+            await WaitAndExecute(400, () =>
+            {
+                pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
+
+                // PDFium renderer
+                pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+
+                pdfViewerControl.LoadDocument(pdfStream);
             });
 
             base.OnAppearing();
@@ -520,7 +537,8 @@ namespace Pdf.Views
             InitializeComponent();
 
             this.filePath = filePath;
-            this.styleContent = new StyleContent();
+            ThumbnailBytes = new List<byte[]>();
+            ThumbnailInfoCollection = new ObservableCollection<byte[]>();
 
             //Disable the display the default toolbar
             pdfViewerControl.Toolbar.Enabled = false;
@@ -532,11 +550,15 @@ namespace Pdf.Views
             stampSlideUpMenu.StampListView.SelectionChanged += StampListView_SelectionChanged;
             this.SlideMenu = stampSlideUpMenu;
 
-            ThumbnailBytes = new List<byte[]>();
-            ThumbnailInfoCollection = new ObservableCollection<byte[]>();
+            pdfViewerControl.PasswordErrorOccurred += PdfViewerControl_PasswordErrorOccurred;
+
+            pdfViewerControl.DocumentLoaded += PdfViewerControl_DocumentLoaded;
+
+            MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
+            {
+                this.SelectedColor = helper;
+            });
         }
-
-
         #endregion
 
         #region On Document Loaded Event Handler
@@ -550,6 +572,8 @@ namespace Pdf.Views
 
                 Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             }
+
+            this.styleContent = new StyleContent();
 
             #region Pdf viewer events
             pdfViewerControl.FreeTextAnnotationAdded += PdfViewerControl_FreeTextAnnotationAdded;
@@ -686,6 +710,7 @@ namespace Pdf.Views
             styleContent.BindingContext = this;
 
             #region Style popup 
+
             stylePopup = new SfPopupLayout();
 
             styleContent.ThicknessBar.BindingContext = this;
@@ -829,9 +854,6 @@ namespace Pdf.Views
                 case 1:
                     await PrintDocument();
                     break;
-                case 2:
-                    await ShowThumnbailsView();
-                    break;
                 default:
                     break;
             }
@@ -839,67 +861,77 @@ namespace Pdf.Views
 
         private async Task ShowThumnbailsView()
         {
-            await Task.Run(async() =>
-            {
-                Stream[] exportedImages = await pdfViewerControl.ExportAsImageAsync(0, pdfViewerControl.PageCount - 1, 0.1f);
-                ConvertStreamToImageSource(exportedImages);
-                UpdateImages();
 
-                ThumbnailsPage thumbnailsPage = new ThumbnailsPage();
-                thumbnailsPage.ListView.ItemsSource = ThumbnailInfoCollection;
-            });
         }
 
         //TODO CHECK IF OTHER ANNOTATION CAN BEN PRINTED FOR SAVE OR NOT THE PDF WHEN PRTINING
         private async Task PrintDocument()
         {
-            Device.BeginInvokeOnMainThread(() =>
+            //Device.BeginInvokeOnMainThread(() =>
+            //{
+            //    
+            //    UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
+            //});
+
+            //var fileName = Path.GetFileName(this.filePath);
+
+            //await Task.Run(() =>
+            //{
+            //    pdfViewerControl.Print(fileName);
+            //});
+
+
+            //Device.BeginInvokeOnMainThread(() =>
+            //{
+            //    UserDialogs.Instance.HideLoading();
+            //});
+
+            UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Black);
+            await Task.Run(() =>
             {
-                popupMenu.IsOpen = false;
+                var fileName = Path.GetFileName(this.filePath);
+                pdfViewerControl.Print(fileName);
             });
 
-            using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
+            Device.BeginInvokeOnMainThread(() =>
             {
-                await Task.Run(() =>
-                {
-                    var fileName = Path.GetFileName(this.filePath);
-                    pdfViewerControl.Print(fileName);
-                });
-            }
+                UserDialogs.Instance.HideLoading();
+                popupMenu.IsVisible = false;
+            });
+
         }
 
         private async Task SaveDocument()
         {
-            Device.BeginInvokeOnMainThread(async() =>
-            {
-                popupMenu.IsOpen = false;
 
-                using (UserDialogs.Instance.Loading("Loading", null, null, true, MaskType.Black))
-                {
-                    NumberOfAnnotation = 0;
+            //popupMenu.IsOpen = false;
 
-                    Dictionary<bool, string> saveStatus = null;
+            //UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black);
 
-                    await Task.Run(async () =>
-                    {
-                        using (Stream stream = await pdfViewerControl.SaveDocumentAsync())
-                        {
-                            saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
-                        }
-                    });
+            //NumberOfAnnotation = 0;
 
-                    if (saveStatus.ContainsKey(true) == true)
-                    {
-                        DependencyService.Get<IToastMessage>().LongAlert("Document saved");
-                    }
-                    else
-                    {
-                        DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
-                    }
-                }
-            });
+            //Dictionary<bool, string> saveStatus = null;
 
-           
+            Stream stream = await pdfViewerControl.SaveDocumentAsync();
+            await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
+
+            //saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
+
+            //stream.Close();
+
+            //Device.BeginInvokeOnMainThread(() =>
+            //{
+            //    UserDialogs.Instance.HideLoading();
+
+            //    if (saveStatus.ContainsKey(true) == true)
+            //    {
+            //        DependencyService.Get<IToastMessage>().LongAlert("Document saved");
+            //    }
+            //    else
+            //    {
+            //        DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
+            //    }
+            //});
         }
 
         private void MoreOptionButton_Clicked(object sender, EventArgs e)
@@ -1101,7 +1133,7 @@ namespace Pdf.Views
                 int read;
                 while ((read = await input.ReadAsync(buffer, 0, buffer.Length)) > 0)
                 {
-                   await ms.WriteAsync(buffer, 0, read);
+                    await ms.WriteAsync(buffer, 0, read);
                 }
                 return ms.ToArray();
             }
@@ -1930,7 +1962,7 @@ namespace Pdf.Views
 
         private async void PaletteButton_Clicked()
         {
-            stylePopup.ShowRelativeToView(paletteButton, RelativePosition.AlignTopRight, 150, 39.5);
+            stylePopup.ShowRelativeToView(paletteButton, RelativePosition.AlignBottomRight, 150, 0);
         }
 
         private void TrashButton_Clicked()
