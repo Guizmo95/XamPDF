@@ -903,35 +903,35 @@ namespace Pdf.Views
 
         private async Task SaveDocument()
         {
+            UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black);
 
-            //popupMenu.IsOpen = false;
+            NumberOfAnnotation = 0;
 
-            //UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black);
+            Dictionary<bool, string> saveStatus = null;
 
-            //NumberOfAnnotation = 0;
+            await Task.Run(async() =>
+            {
+                Stream stream = await pdfViewerControl.SaveDocumentAsync();
 
-            //Dictionary<bool, string> saveStatus = null;
+                saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
 
-            Stream stream = await pdfViewerControl.SaveDocumentAsync();
-            await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
+                stream.Close();
+            });
 
-            //saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                UserDialogs.Instance.HideLoading();
 
-            //stream.Close();
-
-            //Device.BeginInvokeOnMainThread(() =>
-            //{
-            //    UserDialogs.Instance.HideLoading();
-
-            //    if (saveStatus.ContainsKey(true) == true)
-            //    {
-            //        DependencyService.Get<IToastMessage>().LongAlert("Document saved");
-            //    }
-            //    else
-            //    {
-            //        DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
-            //    }
-            //});
+                if (saveStatus.ContainsKey(true) == true)
+                {
+                    DependencyService.Get<IToastMessage>().LongAlert("Document saved");
+                    popupMenu.IsOpen = false;
+                }
+                else
+                {
+                    DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
+                }
+            });
         }
 
         private void MoreOptionButton_Clicked(object sender, EventArgs e)

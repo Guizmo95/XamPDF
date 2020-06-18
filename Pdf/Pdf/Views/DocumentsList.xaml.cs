@@ -3,6 +3,7 @@ using Pdf.Helpers;
 using Pdf.Interfaces;
 using Pdf.Models;
 using Syncfusion.DataSource;
+using Syncfusion.XForms.EffectsView;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.ComponentModel;
@@ -106,7 +107,7 @@ namespace Pdf.Views
 
         private void ResetSwipe()
         {
-            
+
         }
 
         private void SortDate_Clicked(object sender, EventArgs e)
@@ -172,22 +173,37 @@ namespace Pdf.Views
             clearSearchBar.IsVisible = false;
         }
 
-        private async void DocumentListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
+        //private async void DocumentListView_SelectionChanged(object sender, Syncfusion.ListView.XForms.ItemSelectionChangedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        var file = (FileModel)DocumentListView.SelectedItem;
+
+        //        if (file != null)
+        //        {
+        //            await Navigation.PushAsync(new PdfViewer(file.FilePath));
+        //        }
+        //    }
+
+        //    finally
+        //    {
+        //        DocumentListView.SelectedItem = null;
+        //    }
+        //}
+
+        private async void DocumentListView_ItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
         {
-            try
-            {
-                var file = (FileModel)DocumentListView.SelectedItem;
+            //await Task.Delay(350);
 
-                if (file != null)
-                {
-                    await Navigation.PushAsync(new PdfViewer(file.FilePath));
-                }
-            }
+            var file = e.ItemData; 
 
-            finally
-            {
-                DocumentListView.SelectedItem = null;
-            }
+            //if (file != null)
+            //{
+            //    await Navigation.PushAsync(new PdfViewer(file.FilePath));
+            //}
+
+            //DocumentListView.SelectedItem = null;
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -196,6 +212,18 @@ namespace Pdf.Views
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
- 
+        //private async void SfEffectsView_AnimationCompleted(object sender, EventArgs e)
+        //{
+        //    var file = (FileModel)DocumentListView.SelectedItem;
+
+        //    if (file != null)
+        //    {
+        //        await Navigation.PushAsync(new PdfViewer(file.FilePath));
+        //    }
+
+        //    DocumentListView.SelectedItem = null;
+        //}
+
+
     }
 }
