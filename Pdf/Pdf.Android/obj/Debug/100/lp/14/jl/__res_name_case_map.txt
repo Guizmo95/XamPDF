@@ -31,3 +31,4 @@ drawable/Avatar27.png;drawable/avatar27.png
 drawable/Avatar28.png;drawable/avatar28.png
 drawable/Avatar29.png;drawable/avatar29.png
 drawable/Avatar30.png;drawable/avatar30.png
+drawable/clear_button_icon.png;drawable/clear_button_icon.png

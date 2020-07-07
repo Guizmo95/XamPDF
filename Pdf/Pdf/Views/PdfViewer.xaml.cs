@@ -18,6 +18,7 @@ using Xamarin.Forms.Xaml;
 using Acr.UserDialogs;
 using SlideOverKit;
 using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace Pdf.Views
 {
@@ -488,7 +489,11 @@ namespace Pdf.Views
                 passwordPopup.IsOpen = false;
             }
 
-            DependencyService.Get<IThemeManager>().SetMenuStatusBarColor();
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                DependencyService.Get<IThemeManager>().SetMenuStatusBarColor();
+            }
+
             pdfViewerControl.Unload();
             base.OnDisappearing();
         }
@@ -498,38 +503,31 @@ namespace Pdf.Views
 
         #region On Appearing 
 
-        protected async Task WaitAndExecute(int milisec, Action actionToExecute)
-        {
-            await Task.Delay(milisec);
-            actionToExecute();
-        }
-
         protected async override void OnAppearing()
         {
-            await WaitAndExecute(200, () =>
-            {
-                UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
+            UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
 
-                DependencyService.Get<IThemeManager>().SetPdfViewerStatusBarColor();
-                Shell.SetNavBarIsVisible(this, false);
-                Shell.SetTabBarIsVisible(this, false);
-                Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
-                NavigationPage.SetHasNavigationBar(this, false);
-            });
+            Shell.SetNavBarIsVisible(this, false);
 
-            await WaitAndExecute(400, () =>
+            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            if (Device.RuntimePlatform == Device.Android)
             {
                 pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
-
                 // PDFium renderer
                 pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
+            }
 
-                pdfViewerControl.LoadDocument(pdfStream);
+            await Task.Run(async () =>
+            {
+                await pdfViewerControl.LoadDocumentAsync(pdfStream, new CancellationTokenSource());
             });
 
             base.OnAppearing();
         }
         #endregion
+
 
         #region Constructor
         public PdfViewer(string filePath)
@@ -541,7 +539,7 @@ namespace Pdf.Views
             ThumbnailInfoCollection = new ObservableCollection<byte[]>();
 
             //Disable the display the default toolbar
-            pdfViewerControl.Toolbar.Enabled = false;
+            pdfViewerControl.IsToolbarVisible = false;
 
             //Disable the display of password UI view
             pdfViewerControl.IsPasswordViewEnabled = false;
@@ -572,6 +570,13 @@ namespace Pdf.Views
 
                 Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             }
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                DependencyService.Get<IThemeManager>().SetPdfViewerStatusBarColor();
+            }
+
+            Shell.SetTabBarIsVisible(this, false);
 
             this.styleContent = new StyleContent();
 
@@ -887,6 +892,7 @@ namespace Pdf.Views
             //});
 
             UserDialogs.Instance.ShowLoading("Loading ...", MaskType.Black);
+
             await Task.Run(() =>
             {
                 var fileName = Path.GetFileName(this.filePath);
@@ -903,17 +909,23 @@ namespace Pdf.Views
 
         private async Task SaveDocument()
         {
-            UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black);
-
-            NumberOfAnnotation = 0;
-
             Dictionary<bool, string> saveStatus = null;
 
-            await Task.Run(async() =>
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                UserDialogs.Instance.ShowLoading("Loading...", MaskType.Black);
+
+                NumberOfAnnotation = 0;
+            });
+
+            await Task.Run(async () =>
             {
                 Stream stream = await pdfViewerControl.SaveDocumentAsync();
 
-                saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    saveStatus = await DependencyService.Get<IAndroidFileHelper>().Save(stream as MemoryStream, this.filePath);
+                }
 
                 stream.Close();
             });
@@ -924,19 +936,25 @@ namespace Pdf.Views
 
                 if (saveStatus.ContainsKey(true) == true)
                 {
-                    DependencyService.Get<IToastMessage>().LongAlert("Document saved");
+                    if (Device.RuntimePlatform == Device.Android)
+                    {
+                        DependencyService.Get<IToastMessage>().LongAlert("Document saved");
+                    }
+
                     popupMenu.IsOpen = false;
                 }
                 else
                 {
-                    DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
+                    if (Device.RuntimePlatform == Device.Android)
+                    {
+                        DependencyService.Get<IToastMessage>().LongAlert(saveStatus[false]);
+                    }
                 }
             });
         }
 
         private void MoreOptionButton_Clicked(object sender, EventArgs e)
         {
-
             popupMenu.Show();
 
             popupMenuContent.MenuListView.SelectionChanged += MenuListView_SelectionChanged;
@@ -1143,7 +1161,10 @@ namespace Pdf.Views
         {
             if (this.toolbarIsCollapsed == true)
             {
-                DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
+                }
 
                 await topToolbar.FadeTo(1, 150);
                 await bottomMainBar.FadeTo(1, 150);
@@ -1156,7 +1177,10 @@ namespace Pdf.Views
             }
             else
             {
-                DependencyService.Get<INavBarHelper>().SetImmersiveMode();
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    DependencyService.Get<INavBarHelper>().SetImmersiveMode();
+                }
 
                 pdfViewGrid.Margin = 0;
 
@@ -1309,12 +1333,21 @@ namespace Pdf.Views
 
         private void PdfViewerControl_InkSelected(object sender, InkSelectedEventArgs args)
         {
-            this.annotationType = AnnotationType.Ink;
-            selectedInkAnnotation = sender as InkAnnotation;
+            if (args.IsSignature)
+            {
+                //The event occurred was raised by handwritten signature
+                //The "sender" parameter is of type "HandwrittenSignature"
+            }
+            else
+            {
+                this.annotationType = AnnotationType.Ink;
+                selectedInkAnnotation = sender as InkAnnotation;
 
-            SelectedColor = args.Color;
+                SelectedColor = args.Color;
 
-            IsInkMenuEnabled = true;
+                IsInkMenuEnabled = true;
+            }
+
         }
 
         private void PdfViewerControl_InkDeselected(object sender, InkDeselectedEventArgs args)

@@ -91,7 +91,6 @@ namespace Pdf.Droid
             Forms.SetFlags("IndicatorView_Experimental");
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
 
             LoadApplication(new App());

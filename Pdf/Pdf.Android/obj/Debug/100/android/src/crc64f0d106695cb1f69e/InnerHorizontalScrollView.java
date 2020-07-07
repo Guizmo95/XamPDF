@@ -12,6 +12,7 @@ public class InnerHorizontalScrollView
 		__md_methods = 
 			"n_onTouchEvent:(Landroid/view/MotionEvent;)Z:GetOnTouchEvent_Landroid_view_MotionEvent_Handler\n" +
 			"n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler\n" +
+			"n_onScrollChanged:(IIII)V:GetOnScrollChanged_IIIIHandler\n" +
 			"";
 		mono.android.Runtime.register ("Syncfusion.SfPdfViewer.XForms.Droid.InnerHorizontalScrollView, Syncfusion.SfPdfViewer.XForms.Android", InnerHorizontalScrollView.class, __md_methods);
 	}
@@ -63,6 +64,14 @@ public class InnerHorizontalScrollView
 	}
 
 	private native void n_onLayout (boolean p0, int p1, int p2, int p3, int p4);
+
+
+	public void onScrollChanged (int p0, int p1, int p2, int p3)
+	{
+		n_onScrollChanged (p0, p1, p2, p3);
+	}
+
+	private native void n_onScrollChanged (int p0, int p1, int p2, int p3);
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

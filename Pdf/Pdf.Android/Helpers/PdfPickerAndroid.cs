@@ -20,14 +20,12 @@ using Pdf.Models;
 namespace Pdf.Droid.Helpers
 {
     
-    public class PdfPickerAndroid:IPdfPickerAndroid 
+    public class PdfPickerAndroid:IPdfPicker 
     {
         public List<FileInfo> GetPdfFilesInDocuments()
         {
             //TODO -- A REFAIRE TEST SUR REELE APPAREIL
             string path = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
-            //TODO -- A TESTER
-            string path2 = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDocuments).AbsolutePath;
 
             List<string> files = System.IO.Directory.GetFiles(path, "*.*", SearchOption.AllDirectories)
                 .Where(s => s.EndsWith(".pdf"))

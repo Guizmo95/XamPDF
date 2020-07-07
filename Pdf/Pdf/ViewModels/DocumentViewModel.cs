@@ -26,7 +26,7 @@ namespace Pdf.ViewModels
         private string filePathToDelete;
         private FileModel itemToRemove;
 
-        private readonly IPdfPickerAndroid pdfPickerAndroid;
+        private readonly IPdfPicker pdfPickerAndroid;
 
         public static ObservableCollection<FileModel> Documents
         {
@@ -54,7 +54,7 @@ namespace Pdf.ViewModels
 
         public DocumentViewModel()
         {
-            pdfPickerAndroid = DependencyService.Get<IPdfPickerAndroid>();
+            pdfPickerAndroid = DependencyService.Get<IPdfPicker>();
 
             Documents = new ObservableCollection<FileModel>();
             FavoritesDocumentViewModel.FavoritesDocuments = new ObservableCollection<FileModel>(App.Database.GetItemsAsync().Result);

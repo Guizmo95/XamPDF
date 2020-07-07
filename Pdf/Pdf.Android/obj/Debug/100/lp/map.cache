@@ -26,6 +26,7 @@ Syncfusion.SfRotator.Android
 Syncfusion.SfRotator.XForms.Android
 Xamarin.AndroidX.Activity
 Xamarin.AndroidX.Annotation
+Xamarin.AndroidX.AppCompat.AppCompatResources
 Xamarin.AndroidX.AppCompat
 Xamarin.AndroidX.AppCompat.Resources
 Xamarin.AndroidX.Arch.Core.Common
@@ -65,7 +66,6 @@ Xamarin.AndroidX.VectorDrawable
 Xamarin.AndroidX.VersionedParcelable
 Xamarin.AndroidX.ViewPager
 Xamarin.Essentials
-Xamarin.Forms.Material
 Xamarin.Forms.PancakeView
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
@@ -102,7 +102,7 @@ androidx.cardview.cardview
 androidx.appcompat.appcompat-resources
 androidx.appcompat.appcompat
 com.google.android.material.material
-androidx.lifecycle.lifecycle-livedata
 androidx.media.media
+androidx.lifecycle.lifecycle-livedata
 androidx.legacy.legacy-support-v4
 androidx.browser.browser

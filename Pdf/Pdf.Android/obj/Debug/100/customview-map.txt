@@ -26,14 +26,14 @@ attr;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj
 attr;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\16\jl\res\values\attrs.xml
 attr;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\22\jl\res\values\attrs.xml
 attr;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\24\jl\res\values\attrs.xml
-attr;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\values\styles.xml
+attr;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\69\jl\res\values\attrs.xml
 background;obj\Debug\100\res\mipmap-anydpi-v26\icon.xml
 background;obj\Debug\100\res\mipmap-anydpi-v26\icon_round.xml
 bitmap;obj\Debug\100\res\drawable\splash_background.xml
 Button;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\formfieldbuttonlayout.xml
 Button;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\passwordalertdialog.xml
 Button;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\signaturepadlayout.xml
-cache-path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\66\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+cache-path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 CheckBox;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\dialoglistviewrow.xml
 color;obj\Debug\100\res\drawable\splash_background.xml
 color;obj\Debug\100\res\values\colors.xml
@@ -51,13 +51,13 @@ corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\
 corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\signaturepadbottomcorner.xml
 corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\signaturepadroundedcorners.xml
 corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\signaturepadtopcorner.xml
-corners;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable\materialprogressbar.xml
 corners;obj\Debug\100\res\drawable\framerendervalue.xml
 declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\1\jl\res\values\attrs.xml
 declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\13\jl\res\values\attrs.xml
 declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\16\jl\res\values\attrs.xml
 declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\22\jl\res\values\attrs.xml
 declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\24\jl\res\values\attrs.xml
+declare-styleable;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\69\jl\res\values\attrs.xml
 dimen;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\22\jl\res\values\dimens.xml
 dimen;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\24\jl\res\values\dimens.xml
 domain;obj\Debug\100\res\xml\network_security_config.xml
@@ -67,8 +67,8 @@ enum;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj
 enum;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\16\jl\res\values\attrs.xml
 enum;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\22\jl\res\values\attrs.xml
 enum;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\24\jl\res\values\attrs.xml
-external-cache-path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\66\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-external-path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\66\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-cache-path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\100\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\100\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\signaturepadlayout.xml
@@ -96,9 +96,6 @@ item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj
 item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_determinate_linear.xml
 item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_circular.xml
 item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_linear.xml
-item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable\materialprogressbar.xml
-item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\values\styles.xml
-item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\values-v21\styles.xml
 item;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\69\jl\res\values\styles.xml
 item;obj\Debug\100\res\drawable\splash_background.xml
 item;obj\Debug\100\res\values\styles.xml
@@ -110,7 +107,6 @@ layer-list;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Andro
 layer-list;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_determinate_linear.xml
 layer-list;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_circular.xml
 layer-list;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_linear.xml
-layer-list;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable\materialprogressbar.xml
 layer-list;obj\Debug\100\res\drawable\splash_background.xml
 LinearLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\passwordalertdialog.xml
 LinearLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\signaturepadlayout.xml
@@ -180,7 +176,7 @@ pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\13\jl\res\interpolator\btn_checkbox_indeterminate_animation_interpolator_1.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\13\jl\res\interpolator\btn_checkbox_unchecked_animation_interpolator_0.xml
 pathInterpolator;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\13\jl\res\interpolator\btn_checkbox_unchecked_animation_interpolator_1.xml
-paths;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\66\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 ProgressBar;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\1\jl\res\layout\loading.xml
 RadioButton;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\dialoglistviewrow.xml
 RelativeLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\1\jl\res\layout\loading.xml
@@ -202,14 +198,12 @@ resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Androi
 resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\22\jl\res\values\strings.xml
 resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\24\jl\res\values\attrs.xml
 resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\24\jl\res\values\dimens.xml
-resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\values\styles.xml
-resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\values-v21\styles.xml
+resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\69\jl\res\values\attrs.xml
 resources;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\69\jl\res\values\styles.xml
 resources;obj\Debug\100\res\values\colors.xml
 resources;obj\Debug\100\res\values\styles.xml
 rotate;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_circular.xml
 scale;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_determinate_linear.xml
-scale;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable\materialprogressbar.xml
 selector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\checkablematerialcolor.xml
 selector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\formfieldcheckbox.xml
 selector;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\formfieldradiobuttonstyle.xml
@@ -249,9 +243,6 @@ shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\ob
 shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_determinate_linear.xml
 shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_circular.xml
 shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_linear.xml
-shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable\materialactivityindicatorbackground.xml
-shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable\materialprogressbar.xml
-shape;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable-v24\materialactivityindicatorbackground.xml
 shape;obj\Debug\100\res\drawable\framerendervalue.xml
 size;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\formfieldradiobuttonstyle.xml
 size;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\formfieldtextboxcursorcolor.xml
@@ -270,9 +261,6 @@ solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\ob
 solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_determinate_linear.xml
 solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_circular.xml
 solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\21\jl\res\drawable\sfprogressbar_indeterminate_linear.xml
-solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable\materialactivityindicatorbackground.xml
-solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable\materialprogressbar.xml
-solid;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\drawable-v24\materialactivityindicatorbackground.xml
 solid;obj\Debug\100\res\drawable\framerendervalue.xml
 Space;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\layout\signaturepadlayout.xml
 string;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\1\jl\res\values\strings.xml
@@ -288,8 +276,6 @@ stroke;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\o
 stroke;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\signaturepadbottomcorner.xml
 stroke;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\19\jl\res\drawable\signaturepadtopcorner.xml
 stroke;obj\Debug\100\res\drawable\framerendervalue.xml
-style;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\values\styles.xml
-style;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\values-v21\styles.xml
 style;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\69\jl\res\values\styles.xml
 style;obj\Debug\100\res\values\styles.xml
 target;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\13\jl\res\drawable\btn_checkbox_checked_to_indeterminate_animation.xml
@@ -352,8 +338,4 @@ vector;obj\Debug\100\res\drawable\twotone_format_strikethrough_24.xml
 vector;obj\Debug\100\res\drawable\twotone_format_underlined_24.xml
 vector;obj\Debug\100\res\drawable\twotone_strikethrough_s_24.xml
 vector;obj\Debug\100\res\drawable\twotone_title_24.xml
-xamarin.forms.material.android.MaterialFormsEditText;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\layout\textinputlayoutfilledbox.xml
-xamarin.forms.material.android.MaterialFormsTextInputLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\layout\textinputlayoutfilledbox.xml
-xamarin.forms.material.android.MaterialPickerEditText;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\layout\materialpickertextinput.xml
-xamarin.forms.material.android.MaterialPickerTextInputLayout;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\67\jl\res\layout\materialpickertextinput.xml
 xamarin.forms.platform.android.appcompat.FormsViewPager;D:\Yanis\Rayhane\Nouveau dossier\VisualStudio\PdfClient\Pdf\Pdf.Android\obj\Debug\100\lp\69\jl\res\layout\rootlayout.xml
