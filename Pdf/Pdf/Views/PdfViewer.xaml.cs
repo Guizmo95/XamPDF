@@ -52,6 +52,7 @@ namespace Pdf.Views
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
         private InkAnnotation selectedInkAnnotation;
+        private HandwrittenSignature selectedHandwrittenSignature;
         private ShapeAnnotation selectedShapeAnnotation;
         private TextMarkupAnnotation selectedTextMarkupAnnotation;
         private StampAnnotation selectedStampAnnotation;
@@ -76,6 +77,7 @@ namespace Pdf.Views
         private bool isFreeTextMenuEnabled = false;
         private bool isShapeMenuEnabled = false;
         private bool isTextMarkupMenuEnabled = false;
+        private bool isHandwrittenSignatureMenuEnabled = false;
 
         private int fontSize = 6;
         private int shapesNumbers = 0;
@@ -182,6 +184,28 @@ namespace Pdf.Views
                 else
                 {
                     SetToolbarForInkAnnotationSelected();
+                }
+            }
+        }
+
+        public bool IsHandwrittenSignatureMenuEnabled
+        {
+            get
+            {
+                return isHandwrittenSignatureMenuEnabled;
+            }
+            set
+            {
+                isHandwrittenSignatureMenuEnabled = value;
+                OnPropertyChanged();
+
+                if (isHandwrittenSignatureMenuEnabled == false)
+                {
+                    BackButtonAnnotationTypeToolbar_Clicked(null, null);
+                }
+                else
+                {
+                    SetToolbarForHandwrittenSignatureSelected();
                 }
             }
         }
@@ -820,8 +844,6 @@ namespace Pdf.Views
             annotationType = AnnotationType.None;
 
             UserDialogs.Instance.HideLoading();
-
-
         }
         #endregion
 
@@ -1161,6 +1183,8 @@ namespace Pdf.Views
         {
             if (this.toolbarIsCollapsed == true)
             {
+                pdfViewerControl.AnnotationSettings.IsLocked = false;
+
                 if (Device.RuntimePlatform == Device.Android)
                 {
                     DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
@@ -1177,6 +1201,8 @@ namespace Pdf.Views
             }
             else
             {
+                pdfViewerControl.AnnotationSettings.IsLocked = true;
+
                 if (Device.RuntimePlatform == Device.Android)
                 {
                     DependencyService.Get<INavBarHelper>().SetImmersiveMode();
@@ -1335,8 +1361,10 @@ namespace Pdf.Views
         {
             if (args.IsSignature)
             {
-                //The event occurred was raised by handwritten signature
-                //The "sender" parameter is of type "HandwrittenSignature"
+                this.annotationType = AnnotationType.HandwrittenSignature;
+                selectedHandwrittenSignature = sender as HandwrittenSignature;
+
+                IsHandwrittenSignatureMenuEnabled = true;
             }
             else
             {
@@ -1353,8 +1381,10 @@ namespace Pdf.Views
         private void PdfViewerControl_InkDeselected(object sender, InkDeselectedEventArgs args)
         {
             IsInkMenuEnabled = false;
+            IsHandwrittenSignatureMenuEnabled = false;
 
             selectedInkAnnotation = null;
+            selectedHandwrittenSignature = null;
         }
         #endregion
 
@@ -1793,6 +1823,20 @@ namespace Pdf.Views
 
             trashButton.IsVisible = true;
         }
+
+        private void SetToolbarForHandwrittenSignatureSelected()
+        {
+            bottomMainToolbar.IsVisible = false;
+            shapeToolbar.IsVisible = false;
+            textMarkupToolbar.IsVisible = false;
+
+            paletteButton.IsVisible = false;
+            annotationTypeToolbar.IsVisible = true;
+
+            imageAnnotationType.Source = "signature.png";
+
+            trashButton.IsVisible = true;
+        }
         #endregion
 
         private async Task CollapseBottomMainToolbar(AnnotationType annotationType)
@@ -1937,6 +1981,11 @@ namespace Pdf.Views
                     UndoButton.IsVisible = false;
                     RedoButton.IsVisible = false;
                     break;
+                case AnnotationType.HandwrittenSignature:
+                    pdfViewerControl.SelectionMode = Syncfusion.SfPdfViewer.XForms.SelectionMode.None;
+                    annotationType = AnnotationType.None;
+                    bottomMainToolbar.IsVisible = true;
+                    break;
                 case AnnotationType.FreeText:
                     pdfViewerControl.SelectionMode = Syncfusion.SfPdfViewer.XForms.SelectionMode.None;
                     annotationType = AnnotationType.None;
@@ -2037,6 +2086,17 @@ namespace Pdf.Views
                                 selectedStampAnnotation = null;
 
                                 BackButtonAnnotationTypeToolbar_Clicked(null, null);
+                            }
+                            else
+                            {
+                                if(selectedHandwrittenSignature != null)
+                                {
+                                    pdfViewerControl.RemoveAnnotation(selectedHandwrittenSignature);
+
+                                    selectedHandwrittenSignature = null;
+
+                                    BackButtonAnnotationTypeToolbar_Clicked(null, null);
+                                }
                             }
                         }
                     }
