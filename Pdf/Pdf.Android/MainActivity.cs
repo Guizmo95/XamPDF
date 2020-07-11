@@ -14,12 +14,15 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Pdf.Views;
 using Android.Content.Res;
+using Android.Content;
 
 namespace Pdf.Droid
 {
     [Activity(Label = "Xam's Pdf", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme.Base", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [IntentFilter(new[] { Intent.ActionView, Intent.ActionEdit, Intent.ActionSend }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataMimeType = "application/*", DataPathPattern = ".*\\\\topo")]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        App mainForms;
         static AssetManager assets;
         static Window window;
 
@@ -67,8 +70,6 @@ namespace Pdf.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
-
-
             base.OnCreate(savedInstanceState);
 
             if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.WriteExternalStorage) != (int)Permission.Granted)
@@ -82,27 +83,31 @@ namespace Pdf.Droid
                 ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.ReadExternalStorage }, 0);
             }
 
-
             UserDialogs.Init(this);
 
-
-
-        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
+            global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
             Forms.SetFlags("IndicatorView_Experimental");
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
 
             LoadApplication(new App());
+
+            var action = Intent.Action;
+            var type = Intent.Type;
+
+            if (Android.Content.Intent.ActionSend.Equals(action) && (type?.Equals("application/pdf") ?? false))
+            {
+                // This is just an example of the data stored in the extras 
+                var uriFromExtras = Intent.GetParcelableExtra(Intent.ExtraStream) as Android.Net.Uri;
+                var subject = Intent.GetStringExtra(Intent.ExtraSubject);
+
+                // Get the info from ClipData 
+                var pdf = Intent.ClipData.GetItemAt(0);
+
+                mainForms.LoadPDF(pdf.Uri.ToString());
+
+            }
         }
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            //Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
-
     }
 }

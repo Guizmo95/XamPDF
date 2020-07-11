@@ -17,6 +17,7 @@ namespace Pdf
     {
         public static UnityContainer Container { get; set; }
         static FavoriteFilesDatabase database;
+        ShellMainMenu mainMenu;
 
         public App()
         {
@@ -27,9 +28,9 @@ namespace Pdf
 
             Container = new UnityContainer();
 
+            mainMenu = new ShellMainMenu();
 
-            MainPage = /*new NavigationPage(new MainMenu());*/
-                new ShellMainMenu();
+            MainPage = mainMenu;
         }
 
         public static FavoriteFilesDatabase Database
@@ -54,6 +55,11 @@ namespace Pdf
 
         protected override void OnResume()
         {
+        }
+
+        public void LoadPDF(string url)
+        {
+            mainMenu.Navigation.PushAsync(new PdfViewer(url));
         }
     }
 }

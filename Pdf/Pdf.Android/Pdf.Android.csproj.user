@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <DefaultDevice>phone_m-dpi_3_2in_pie_9_0_-_api_28</DefaultDevice>
-    <SelectedDevice>Xiaomi Redmi Note 7</SelectedDevice>
+    <SelectedDevice>phone_m-dpi_3_2in_pie_9_0_-_api_28</SelectedDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
     <ProjectView>ShowAllFiles</ProjectView>

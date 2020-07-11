@@ -58,8 +58,6 @@ namespace Pdf.Views
         private StampAnnotation selectedStampAnnotation;
 
         private Color selectedColor = Color.Black;
-        private Rectangle lastRectangleBounds;
-        private AnnotationMode lastTextMarkupAnnotationMode;
         private AnnotationType annotationType;
 
         private string filePath;
