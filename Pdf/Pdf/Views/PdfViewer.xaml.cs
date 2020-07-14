@@ -28,6 +28,7 @@ namespace Pdf.Views
         #region Private Members
 
         private Stream pdfStream;
+        private LoadingMode loadingMode;
 
         private PdfViewerModel pdfViewerModel;
         private SfPopupLayout stylePopup;
@@ -530,13 +531,30 @@ namespace Pdf.Views
             Shell.SetNavBarIsVisible(this, false);
             NavigationPage.SetHasNavigationBar(this, false);
 
+            if (loadingMode == LoadingMode.ByIntent)
+            {
+                Shell.SetTabBarIsVisible(this, false);
+
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    DependencyService.Get<IThemeManager>().SetPdfViewerStatusBarColor();
+                }
+            }
+            else
+            {
+                UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
+            }
+
             new Task(LoadPDF).Start();
         }
         #endregion
 
         async void LoadPDF()
         {
-            UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
+            if (loadingMode == LoadingMode.ByIntent)
+            {
+                UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
+            }
 
             if (Device.RuntimePlatform == Device.Android)
             {
@@ -552,10 +570,11 @@ namespace Pdf.Views
         }
 
         #region Constructor
-        public PdfViewer(string filePath)
+        public PdfViewer(string filePath, LoadingMode loadingMode)
         {
             InitializeComponent();
 
+            this.loadingMode = loadingMode;
             this.filePath = filePath;
             ThumbnailBytes = new List<byte[]>();
             ThumbnailInfoCollection = new ObservableCollection<byte[]>();

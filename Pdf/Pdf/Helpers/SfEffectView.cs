@@ -27,7 +27,7 @@ namespace Pdf.Helpers
         private async void EffectsView_AnimationCompleted(object sender, EventArgs e)
         {
             var args = ((sender as SfEffectsView).BindingContext as FileModel);
-            await App.Current.MainPage.Navigation.PushAsync(new PdfViewer(args.FilePath));
+            await App.Current.MainPage.Navigation.PushAsync(new PdfViewer(args.FilePath, Enumerations.LoadingMode.ByDefault));
         }
 
         private void EffectsView_SelectionChanged(object sender, EventArgs e)

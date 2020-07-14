@@ -59,7 +59,7 @@ namespace Pdf
 
         public static void LoadPDF(string url)
         {
-            mainMenu.Navigation.PushAsync(new PdfViewer(url));
+            mainMenu.Navigation.PushAsync(new PdfViewer(url, Enumerations.LoadingMode.ByIntent));
         }
     }
 }

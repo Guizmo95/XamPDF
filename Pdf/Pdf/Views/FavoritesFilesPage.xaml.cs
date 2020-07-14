@@ -162,7 +162,7 @@ namespace Pdf.Views
 
                 if (file != null)
                 {
-                    await Navigation.PushAsync(new PdfViewer(file.FilePath));
+                    await Navigation.PushAsync(new PdfViewer(file.FilePath, Enumerations.LoadingMode.ByDefault));
                 }
             }
 
