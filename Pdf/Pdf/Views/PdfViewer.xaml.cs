@@ -521,18 +521,22 @@ namespace Pdf.Views
         }
         #endregion
 
-
-
         #region On Appearing 
 
         protected async override void OnAppearing()
         {
-            UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
+            base.OnAppearing();
 
             Shell.SetNavBarIsVisible(this, false);
-
-            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             NavigationPage.SetHasNavigationBar(this, false);
+
+            new Task(LoadPDF).Start();
+        }
+        #endregion
+
+        async void LoadPDF()
+        {
+            UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
 
             if (Device.RuntimePlatform == Device.Android)
             {
@@ -545,11 +549,7 @@ namespace Pdf.Views
             {
                 await pdfViewerControl.LoadDocumentAsync(pdfStream, new CancellationTokenSource());
             });
-
-            base.OnAppearing();
         }
-        #endregion
-
 
         #region Constructor
         public PdfViewer(string filePath)
@@ -591,6 +591,11 @@ namespace Pdf.Views
                 NavigationPage.SetHasNavigationBar(this, false);
 
                 Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    DependencyService.Get<IThemeManager>().SetPdfViewerStatusBarColor();
+                }
             }
 
             if (Device.RuntimePlatform == Device.Android)
@@ -599,6 +604,7 @@ namespace Pdf.Views
             }
 
             Shell.SetTabBarIsVisible(this, false);
+            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
 
             this.styleContent = new StyleContent();
 
@@ -2087,7 +2093,7 @@ namespace Pdf.Views
                             }
                             else
                             {
-                                if(selectedHandwrittenSignature != null)
+                                if (selectedHandwrittenSignature != null)
                                 {
                                     pdfViewerControl.RemoveAnnotation(selectedHandwrittenSignature);
 

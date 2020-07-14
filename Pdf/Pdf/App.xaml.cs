@@ -17,7 +17,7 @@ namespace Pdf
     {
         public static UnityContainer Container { get; set; }
         static FavoriteFilesDatabase database;
-        ShellMainMenu mainMenu;
+        static ShellMainMenu mainMenu;
 
         public App()
         {
@@ -57,7 +57,7 @@ namespace Pdf
         {
         }
 
-        public void LoadPDF(string url)
+        public static void LoadPDF(string url)
         {
             mainMenu.Navigation.PushAsync(new PdfViewer(url));
         }
