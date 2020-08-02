@@ -45,11 +45,11 @@ namespace Pdf.Views
         private DataTemplate styleTemplateErrorPopup;
         private DataTemplate templateViewSetPasswordPopup;
 
-        private ImageButton image;
-        private Label label;
-        private Entry entry;
-        private Button acceptButton;
-        private Button declineButton;
+        ImageButton image;
+        Label label;
+        Entry entry;
+        Button acceptButton;
+        Button declineButton;
 
         private FreeTextAnnotation selectedFreeTextAnnotation;
         private InkAnnotation selectedInkAnnotation;
@@ -70,7 +70,7 @@ namespace Pdf.Views
         private bool searchStarted = false;
         private bool isATryToOpenTheDocument = false;
         private bool hasAlreadyTriedToOpenDoc = false;
-        private bool isPasswordPopupInitiInitalized = false;
+        private bool isPasswordPopupInitalized = false;
         private bool isInkMenuEnabled = false;
         private bool isFreeTextMenuEnabled = false;
         private bool isShapeMenuEnabled = false;
@@ -78,8 +78,8 @@ namespace Pdf.Views
         private bool isHandwrittenSignatureMenuEnabled = false;
 
         private int fontSize = 6;
-        private int shapesNumbers;
-        private int textMarkupNumbers;
+        private int shapesNumbers = 0;
+        private int textMarkupNumbers = 0;
         private int lastThicknessBarSelected = 5;
         private int lastOpacitySelected = 4;
         private int numberOfAnnotation = 0;
@@ -90,10 +90,13 @@ namespace Pdf.Views
 
         #region Property
 
+
         public bool IsTextMarkupMenuEnabled
         {
-            get => isTextMarkupMenuEnabled;
-
+            get
+            {
+                return isTextMarkupMenuEnabled;
+            }
             set
             {
                 isTextMarkupMenuEnabled = value;
@@ -163,8 +166,10 @@ namespace Pdf.Views
 
         public bool IsInkMenuEnabled
         {
-            get => isInkMenuEnabled;
-
+            get
+            {
+                return isInkMenuEnabled;
+            }
             set
             {
                 isInkMenuEnabled = value;
@@ -183,8 +188,10 @@ namespace Pdf.Views
 
         public bool IsHandwrittenSignatureMenuEnabled
         {
-            get => isHandwrittenSignatureMenuEnabled;
-
+            get
+            {
+                return isHandwrittenSignatureMenuEnabled;
+            }
             set
             {
                 isHandwrittenSignatureMenuEnabled = value;
@@ -203,8 +210,10 @@ namespace Pdf.Views
 
         public bool IsFreeTextMenuEnabled
         {
-            get => isFreeTextMenuEnabled;
-
+            get
+            {
+                return isFreeTextMenuEnabled;
+            }
             set
             {
                 isFreeTextMenuEnabled = value;
@@ -223,8 +232,10 @@ namespace Pdf.Views
 
         public int NumberOfAnnotation
         {
-            get => numberOfAnnotation;
-
+            get
+            {
+                return numberOfAnnotation;
+            }
             set
             {
                 numberOfAnnotation = value;
@@ -241,8 +252,10 @@ namespace Pdf.Views
 
         public bool CanSaveDocument
         {
-            get => canSaveDocument;
-
+            get
+            {
+                return canSaveDocument;
+            }
             set
             {
                 canSaveDocument = value;
@@ -265,14 +278,22 @@ namespace Pdf.Views
 
         public SfPdfViewer PdfViewerControl
         {
-            get => pdfViewerControl;
-
-            set => pdfViewerControl = value;
+            get
+            {
+                return pdfViewerControl;
+            }
+            set
+            {
+                pdfViewerControl = value;
+            }
         }
 
         public Color SelectedColor
         {
-            get => selectedColor;
+            get
+            {
+                return selectedColor;
+            }
 
             set
             {
@@ -333,7 +354,10 @@ namespace Pdf.Views
 
         public int FontSize
         {
-            get => fontSize;
+            get
+            {
+                return fontSize;
+            }
 
             set
             {
@@ -350,7 +374,10 @@ namespace Pdf.Views
 
         public bool CanUndoInk
         {
-            get => canUndoInk;
+            get
+            {
+                return canUndoInk;
+            }
 
             set
             {
@@ -372,29 +399,34 @@ namespace Pdf.Views
 
         public bool CanRedoInk
         {
-            get => canRedoInk;
+            get
+            {
+                return canRedoInk;
+            }
 
             set
             {
                 canRedoInk = value;
                 OnPropertyChanged();
 
-                RedoButton.Foreground = value 
-                    ? Color.FromHex("#373737") 
-                    : Color.Transparent;
+                if (value == true)
+                    RedoButton.Foreground = Color.FromHex("#373737");
+                else
+                    RedoButton.Foreground = Color.Transparent;
             }
         }
 
         public int ShapesNumbers
         {
-            get => shapesNumbers;
+            get
+            {
+                return shapesNumbers;
+            }
 
             set
             {
                 shapesNumbers = value;
                 OnPropertyChanged();
-
-                //TODO -- Check later If we need to keep this two lines
 
                 if (ShapesNumbers == 0)
                     ValidButton.Foreground = Color.FromHex("#373737");
@@ -405,14 +437,15 @@ namespace Pdf.Views
 
         public int TextMarkupNumbers
         {
-            get => textMarkupNumbers;
+            get
+            {
+                return textMarkupNumbers;
+            }
 
             set
             {
                 textMarkupNumbers = value;
                 OnPropertyChanged();
-
-                //TODO -- Check later If we need to keep this two lines
 
                 if (TextMarkupNumbers == 0)
                     ValidButton.Foreground = Color.FromHex("#373737");
@@ -425,6 +458,8 @@ namespace Pdf.Views
         #region On Disappearing
         protected override void OnDisappearing()
         {
+            MessagingCenter.Unsubscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor");
+
             UnsubscribeFromEvents();
 
             if (Device.RuntimePlatform == Device.Android)
@@ -437,8 +472,6 @@ namespace Pdf.Views
 
         private void UnsubscribeFromEvents()
         {
-            MessagingCenter.Unsubscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor");
-
             pdfViewerControl.FreeTextAnnotationAdded -= PdfViewerControl_FreeTextAnnotationAdded;
             pdfViewerControl.FreeTextAnnotationSelected -= PdfViewerControl_FreeTextAnnotationSelected;
             pdfViewerControl.FreeTextAnnotationDeselected -= PdfViewerControl_FreeTextAnnotationDeselected;
@@ -491,15 +524,13 @@ namespace Pdf.Views
 
         protected override void OnAppearing()
         {
-            // I disabled the nav bar here because the nav bar will be removed
-            // before the document start loading -> Bad for UI
+            base.OnAppearing();
+
             Shell.SetNavBarIsVisible(this, false);
             NavigationPage.SetHasNavigationBar(this, false);
 
             if (loadingMode == LoadingMode.ByIntent)
             {
-                // I disabled the tab bar here because the nav bar will be removed
-                // before the document start loading -> Bad for UI
                 Shell.SetTabBarIsVisible(this, false);
 
                 if (Device.RuntimePlatform == Device.Android)
@@ -511,12 +542,10 @@ namespace Pdf.Views
             }
 
             new Task(LoadPdf).Start();
-
-            base.OnAppearing();
         }
         #endregion
 
-        private async void LoadPdf()
+        async void LoadPdf()
         {
             if (loadingMode == LoadingMode.ByIntent)
                 UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
@@ -524,7 +553,6 @@ namespace Pdf.Views
             if (Device.RuntimePlatform == Device.Android)
             {
                 pdfStream = DependencyService.Get<IAndroidFileHelper>().GetFileStream(filePath);
-               
                 // PDFium renderer
                 pdfViewerControl.CustomPdfRenderer = DependencyService.Get<ICustomPdfRendererService>().AlternatePdfRenderer;
             }
@@ -569,7 +597,7 @@ namespace Pdf.Views
         #region On Document Loaded Event Handler
         private void PdfViewerControl_DocumentLoaded(object sender, EventArgs args)
         {
-            if (isPasswordPopupInitiInitalized != true)
+            if (isPasswordPopupInitalized != true)
             {
                 Shell.SetNavBarIsVisible(this, false);
                 NavigationPage.SetHasNavigationBar(this, false);
@@ -581,33 +609,18 @@ namespace Pdf.Views
             Shell.SetTabBarIsVisible(this, false);
             Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
 
-            SubscribeToPdfViewerEvents();
+            this.styleContent = new StyleContent();
+
+            SuscribeToPdfViewerEvents();
 
             pdfViewerControl.PreserveSignaturePadOrientation = true;
 
-            InitializeStylePopup();
-
-            InitializeSearchErrorPopup();
-
-            InitializePopupMenu();
-
-            SetBindingContext();
-
-            annotationType = AnnotationType.None;
-
-            UserDialogs.Instance.HideLoading();
-        }
-
-        private void SetBindingContext()
-        {
             paletteButton.BindingContext = this;
             trashButton.BindingContext = this;
             styleContent.BindingContext = this;
-        }
 
-        private void InitializeStylePopup()
-        {
-            this.styleContent = new StyleContent();
+            #region Style popup 
+
             stylePopup = new SfPopupLayout();
 
             styleContent.ThicknessBar.BindingContext = this;
@@ -623,46 +636,45 @@ namespace Pdf.Views
 
             this.stylePopup.PopupView.ContentTemplate = styleTemplateStylePopup;
 
-            styleContent.ThicknessBar.BoxViewButtonClicked += ThicknessBar_Clicked;
-            styleContent.OpacityButtonClicked += OpacityIcon_Clicked;
-        }
+            styleContent.ThicknessBar.BoxViewButtonClicked += (int numberOfThicknessBarClicked) => ThicknessBar_Clicked(numberOfThicknessBarClicked);
+            styleContent.OpacityButtonClicked += (int numberOfTheOpacityClicked) => OpacityIcon_Clicked(numberOfTheOpacityClicked);
+            #endregion
 
-        private void InitializeSearchErrorPopup()
-        {
+            #region SearchErrorPopup 
             searchErrorPopupContent = new SearchErrorPopup();
 
-            errorSearchPopup = new SfPopupLayout
-            {
-                PopupView = {ShowHeader = false, ShowFooter = false, HeightRequest = 105, WidthRequest = 300},
-                BackgroundColor = Color.FromHex("#fafafa")
-            };
+            errorSearchPopup = new SfPopupLayout();
+            errorSearchPopup.PopupView.ShowHeader = false;
+            errorSearchPopup.PopupView.ShowFooter = false;
+            errorSearchPopup.PopupView.HeightRequest = 105;
+            errorSearchPopup.PopupView.WidthRequest = 300;
+            errorSearchPopup.BackgroundColor = Color.FromHex("#fafafa");
             errorSearchPopup.PopupView.BackgroundColor = Color.FromHex("#fafafa");
             errorSearchPopup.PopupView.PopupStyle.BorderColor = Color.FromHex("#fafafa");
             errorSearchPopup.PopupView.AnimationMode = AnimationMode.Fade;
 
-            styleTemplateErrorPopup = new DataTemplate(() => searchErrorPopupContent);
+            styleTemplateErrorPopup = new DataTemplate(() =>
+            {
+                return searchErrorPopupContent;
+            });
 
             this.errorSearchPopup.PopupView.ContentTemplate = styleTemplateErrorPopup;
 
             if (passwordPopup != null)
                 passwordPopup.IsOpen = false;
-        }
+            #endregion
 
-        private void InitializePopupMenu()
-        {
-            popupMenu = new SfPopupLayout
-            {
-                PopupView =
-                {
-                    IsFullScreen = true,
-                    AnimationDuration = 200,
-                    AnimationMode = AnimationMode.SlideOnBottom,
-                    PopupStyle = {CornerRadius = 0, BorderThickness = 2, BorderColor = Color.White},
-                    HorizontalOptions = LayoutOptions.FillAndExpand,
-                    VerticalOptions = LayoutOptions.FillAndExpand
-                },
-                Padding = new Thickness(15, 15, 15, 15)
-            };
+            #region Popup Menu
+            popupMenu = new SfPopupLayout();
+            popupMenu.PopupView.IsFullScreen = true;
+            popupMenu.PopupView.AnimationDuration = 200;
+            popupMenu.PopupView.AnimationMode = AnimationMode.SlideOnBottom;
+            popupMenu.PopupView.PopupStyle.CornerRadius = 0;
+            popupMenu.PopupView.PopupStyle.BorderThickness = 2;
+            popupMenu.PopupView.PopupStyle.BorderColor = Color.White;
+            popupMenu.PopupView.HorizontalOptions = LayoutOptions.FillAndExpand;
+            popupMenu.PopupView.VerticalOptions = LayoutOptions.FillAndExpand;
+            popupMenu.Padding = new Thickness(15, 15, 15, 15);
             popupMenu.PopupView.ShowFooter = false;
             popupMenu.PopupView.ShowCloseButton = false;
             popupMenu.PopupView.PopupStyle.HeaderBackgroundColor = Color.FromHex("#eeeeee");
@@ -670,34 +682,31 @@ namespace Pdf.Views
 
             popupMenuContent = new PopupMenuContent();
 
-            var popupMenuContentTemplate = new DataTemplate(() => popupMenuContent);
-
-            var headerTemplateViewPopupMenu = new DataTemplate(() =>
+            DataTemplate popupMenuContentTemplate = new DataTemplate(() =>
             {
-                var stackLayout = new StackLayout
-                {
-                    Orientation = StackOrientation.Horizontal, 
-                    Padding = new Thickness(0, 0, 13, 0)
-                };
+                return popupMenuContent;
+            });
 
-                var title = new Label
-                {
-                    Text = "More",
-                    FontSize = 18,
-                    FontFamily = "GothamBold.ttf#GothamBold",
-                    VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center,
-                    HorizontalTextAlignment = Xamarin.Forms.TextAlignment.Center,
-                    TextColor = Color.FromHex("#4e4e4e"),
-                    HorizontalOptions = LayoutOptions.FillAndExpand
-                };
+            DataTemplate headerTemplateViewPopupMenu = new DataTemplate(() =>
+            {
+                StackLayout stackLayout = new StackLayout();
+                stackLayout.Orientation = StackOrientation.Horizontal;
+                stackLayout.Padding = new Thickness(0, 0, 13, 0);
 
-                image = new ImageButton
-                {
-                    Source = "outlineClearViewer.xml",
-                    Aspect = Aspect.AspectFit,
-                    BackgroundColor = Color.Transparent,
-                    HorizontalOptions = LayoutOptions.End
-                };
+                Label title = new Label();
+                title.Text = "More";
+                title.FontSize = 18;
+                title.FontFamily = "GothamBold.ttf#GothamBold";
+                title.VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center;
+                title.HorizontalTextAlignment = Xamarin.Forms.TextAlignment.Center;
+                title.TextColor = Color.FromHex("#4e4e4e");
+                title.HorizontalOptions = LayoutOptions.FillAndExpand;
+
+                image = new ImageButton();
+                image.Source = "outlineClearViewer.xml";
+                image.Aspect = Aspect.AspectFit;
+                image.BackgroundColor = Color.Transparent;
+                image.HorizontalOptions = LayoutOptions.End;
 
                 stackLayout.Children.Add(title);
                 stackLayout.Children.Add(image);
@@ -708,9 +717,14 @@ namespace Pdf.Views
             popupMenu.PopupView.HeaderTemplate = headerTemplateViewPopupMenu;
 
             popupMenu.PopupView.ContentTemplate = popupMenuContentTemplate;
+            #endregion
+
+            annotationType = AnnotationType.None;
+
+            UserDialogs.Instance.HideLoading();
         }
 
-        private void SubscribeToPdfViewerEvents()
+        private void SuscribeToPdfViewerEvents()
         {
             pdfViewerControl.FreeTextAnnotationAdded += PdfViewerControl_FreeTextAnnotationAdded;
             pdfViewerControl.FreeTextAnnotationSelected += PdfViewerControl_FreeTextAnnotationSelected;
@@ -849,6 +863,7 @@ namespace Pdf.Views
         #region Top Toolbar Event Handlers 
         private void BookmarkButton_Clicked(object sender, EventArgs e)
         {
+            //Bookmark pane will be collapsed, if it is expanded
             pdfViewerControl.BookmarkPaneVisible = true;
         }
 
@@ -992,7 +1007,7 @@ namespace Pdf.Views
 
         private void PdfViewerControl_PasswordErrorOccurred(object sender, PasswordErrorOccurredEventArgs e)
         {
-            if (isPasswordPopupInitiInitalized == false)
+            if (isPasswordPopupInitalized == false)
             {
                 passwordPopup = new SfPopupLayout
                 {
@@ -1012,15 +1027,13 @@ namespace Pdf.Views
 
                 DataTemplate templateViewHeaderSetPasswordPoop = new DataTemplate(() =>
                 {
-                    Label label = new Label
-                    {
-                        VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center,
-                        Padding = new Thickness(20, 0, 20, 0),
-                        Text = "Password",
-                        TextColor = Color.Black,
-                        FontSize = 17,
-                        FontFamily = "GothamMedium_1.ttf#GothamMedium_1"
-                    };
+                    Label label = new Label();
+                    label.VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center;
+                    label.Padding = new Thickness(20, 0, 20, 0);
+                    label.Text = "Password";
+                    label.TextColor = Color.Black;
+                    label.FontSize = 17;
+                    label.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
 
                     return label;
                 });
@@ -1030,24 +1043,20 @@ namespace Pdf.Views
                 {
                     StackLayout stackLayout = new StackLayout();
 
-                    label = new Label
-                    {
-                        Text = "This file is password protected. Please enter the password",
-                        TextColor = Color.Black,
-                        FontSize = 13.5,
-                        Padding = new Thickness(20, 0, 20, 0),
-                        FontFamily = "GothamMedium_1.ttf#GothamMedium_1"
-                    };
+                    label = new Label();
 
+                    label.Text = "This file is password protected. Please enter the password";
+                    label.TextColor = Color.Black;
+                    label.FontSize = 13.5;
+                    label.Padding = new Thickness(20, 0, 20, 0);
+                    label.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
 
-                    entry = new Entry
-                    {
-                        FontSize = 13.5,
-                        Margin = new Thickness(19, 0, 19, 0),
-                        IsPassword = true,
-                        Placeholder = "Enter the password",
-                        TextColor = Color.Black
-                    };
+                    entry = new Entry();
+                    entry.FontSize = 13.5;
+                    entry.Margin = new Thickness(19, 0, 19, 0);
+                    entry.IsPassword = true;
+                    entry.Placeholder = "Enter the password";
+                    entry.TextColor = Color.Black;
 
                     stackLayout.Children.Add(label);
                     stackLayout.Children.Add(entry);
@@ -1099,12 +1108,12 @@ namespace Pdf.Views
                 // Adding FooterTemplate of the SfPopupLayout
                 passwordPopup.PopupView.HeaderTemplate = templateViewHeaderSetPasswordPoop;
 
-                isPasswordPopupInitiInitalized = true;
+                isPasswordPopupInitalized = true;
 
                 Shell.SetNavBarIsVisible(this, false);
                 Shell.SetTabBarIsVisible(this, false);
-                Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
                 NavigationPage.SetHasNavigationBar(this, false);
+                Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             }
 
             if (hasAlreadyTriedToOpenDoc == true)
@@ -1168,7 +1177,14 @@ namespace Pdf.Views
                 if (Device.RuntimePlatform == Device.Android)
                     DependencyService.Get<INavBarHelper>().SetDefaultNavBar();
 
-                await RevealToolbar();
+                await topToolbar.FadeTo(1, 150);
+                await bottomMainBar.FadeTo(1, 150);
+
+                await Task.Delay(150);
+
+                pdfViewGrid.Margin = new Thickness(0, 45, 0, 45);
+
+                toolbarIsCollapsed = false;
             }
             else
             {
@@ -1177,30 +1193,13 @@ namespace Pdf.Views
                 if (Device.RuntimePlatform == Device.Android)
                     DependencyService.Get<INavBarHelper>().SetImmersiveMode();
 
-                await CollapseToolbar();
+                pdfViewGrid.Margin = 0;
+
+                await topToolbar.FadeTo(0, 150);
+                await bottomMainBar.FadeTo(0, 150);
+
+                toolbarIsCollapsed = true;
             }
-        }
-
-        private async Task CollapseToolbar()
-        {
-            pdfViewGrid.Margin = 0;
-
-            await topToolbar.FadeTo(0, 150);
-            await bottomMainBar.FadeTo(0, 150);
-
-            toolbarIsCollapsed = true;
-        }
-
-        private async Task RevealToolbar()
-        {
-            await topToolbar.FadeTo(1, 150);
-            await bottomMainBar.FadeTo(1, 150);
-
-            await Task.Delay(150);
-
-            pdfViewGrid.Margin = new Thickness(0, 45, 0, 45);
-
-            toolbarIsCollapsed = false;
         }
 
         private void PdfViewerControl_PageChanged(object sender, PageChangedEventArgs args)
@@ -1209,6 +1208,8 @@ namespace Pdf.Views
             {
                 case AnnotationType.Ink:
                     pdfViewerControl.AnnotationMode = AnnotationMode.Ink;
+                    break;
+                case AnnotationType.FreeText:
                     break;
                 case AnnotationType.Rectangle:
                     pdfViewerControl.AnnotationMode = AnnotationMode.Rectangle;
@@ -1266,7 +1267,7 @@ namespace Pdf.Views
             //Cast the sender object to FreeTextAnnotation
             selectedTextMarkupAnnotation = sender as TextMarkupAnnotation;
 
-            SelectedColor = selectedTextMarkupAnnotation.Settings.Color;
+            SelectedColor = this.selectedTextMarkupAnnotation.Settings.Color;
 
             switch (args.TextMarkupAnnotationType)
             {
@@ -1332,6 +1333,7 @@ namespace Pdf.Views
         {
             this.annotationType = AnnotationType.FreeText;
 
+            //Cast the sender object to FreeTextAnnotation
             this.selectedFreeTextAnnotation = sender as FreeTextAnnotation;
 
             SelectedColor = args.TextColor;
@@ -1855,7 +1857,7 @@ namespace Pdf.Views
             bottomMainToolbar.IsVisible = true;
         }
 
-        private void StrikethroughtButton_Clicked(object sender, EventArgs e)
+        private async void StrikethroughtButton_Clicked(object sender, EventArgs e)
         {
             bottomMainToolbar.IsVisible = false;
 
@@ -1879,7 +1881,7 @@ namespace Pdf.Views
             InitializeComponentForTextMarkupAnnotation();
         }
 
-        private void UnderlineButton_Clicked(object sender, EventArgs e)
+        private async void UnderlineButton_Clicked(object sender, EventArgs e)
         {
             bottomMainToolbar.IsVisible = false;
 
@@ -1902,7 +1904,7 @@ namespace Pdf.Views
             InitializeComponentForTextMarkupAnnotation();
         }
 
-        private void HightlightButton_Clicked(object sender, EventArgs e)
+        private async void HightlightButton_Clicked(object sender, EventArgs e)
         {
             bottomMainToolbar.IsVisible = false;
 
@@ -2020,7 +2022,7 @@ namespace Pdf.Views
             }
         }
 
-        private void PaletteButton_Clicked()
+        private async void PaletteButton_Clicked()
         {
             stylePopup.ShowRelativeToView(paletteButton, RelativePosition.AlignBottomRight, 150, 0);
         }
@@ -2114,7 +2116,7 @@ namespace Pdf.Views
                 trashButton.IsVisible = true;
             }
 
-            InitializeComponentsForShapeBar();
+            InitalizeCompenentsForShapeBar();
         }
 
         private void LineButton_Clicked(object sender, EventArgs e)
@@ -2135,7 +2137,7 @@ namespace Pdf.Views
                 trashButton.IsVisible = true;
             }
 
-            InitializeComponentsForShapeBar();
+            InitalizeCompenentsForShapeBar();
         }
 
         private void ArrowButton_Clicked(object sender, EventArgs e)
@@ -2156,7 +2158,7 @@ namespace Pdf.Views
                 trashButton.IsVisible = true;
             }
 
-            InitializeComponentsForShapeBar();
+            InitalizeCompenentsForShapeBar();
         }
 
         private void RectangleButton_Clicked(object sender, EventArgs e)
@@ -2177,10 +2179,10 @@ namespace Pdf.Views
                 trashButton.IsVisible = true;
             }
 
-            InitializeComponentsForShapeBar();
+            InitalizeCompenentsForShapeBar();
         }
 
-        private void InitializeComponentsForShapeBar()
+        private void InitalizeCompenentsForShapeBar()
         {
             shapeToolbar.IsVisible = false;
 

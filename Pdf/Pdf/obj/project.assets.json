@@ -93,7 +93,7 @@
           "lib/netstandard1.1/SQLitePCLRaw.core.dll": {}
         }
       },
-      "Syncfusion.Licensing/18.2.0.44": {
+      "Syncfusion.Licensing/18.2.0.47": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Syncfusion.Licensing.dll": {}
@@ -115,7 +115,7 @@
           "lib/netstandard2.0/Syncfusion.Buttons.XForms.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Compression/18.2.0.44": {
+      "Syncfusion.Xamarin.Compression/18.2.0.47": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
@@ -124,10 +124,10 @@
           "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/18.2.0.44": {
+      "Syncfusion.Xamarin.Core/18.2.0.47": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.2.0.44",
+          "Syncfusion.Licensing": "18.2.0.47",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -137,7 +137,7 @@
           "lib/netstandard2.0/Syncfusion.Core.XForms.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/18.1.0.56": {
+      "Syncfusion.Xamarin.DataSource/18.2.0.47": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Syncfusion.DataSource.Portable.dll": {}
@@ -146,7 +146,7 @@
           "lib/netstandard2.0/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/18.1.0.56": {
+      "Syncfusion.Xamarin.GridCommon/18.2.0.47": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Syncfusion.GridCommon.Portable.dll": {}
@@ -155,11 +155,11 @@
           "lib/netstandard2.0/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Pdf/18.2.0.44": {
+      "Syncfusion.Xamarin.Pdf/18.2.0.47": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.2.0.44",
-          "Syncfusion.Xamarin.Compression": "18.2.0.44"
+          "Syncfusion.Licensing": "18.2.0.47",
+          "Syncfusion.Xamarin.Compression": "18.2.0.47"
         },
         "compile": {
           "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {}
@@ -168,10 +168,10 @@
           "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfBusyIndicator/18.2.0.44": {
+      "Syncfusion.Xamarin.SfBusyIndicator/18.2.0.47": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.2.0.44",
+          "Syncfusion.Xamarin.Core": "18.2.0.47",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -181,12 +181,12 @@
           "lib/netstandard2.0/Syncfusion.SfBusyIndicator.XForms.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/18.1.0.56": {
+      "Syncfusion.Xamarin.SfListView/18.2.0.47": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.1.0.56",
-          "Syncfusion.Xamarin.DataSource": "18.1.0.56",
-          "Syncfusion.Xamarin.GridCommon": "18.1.0.56",
+          "Syncfusion.Xamarin.Core": "18.2.0.47",
+          "Syncfusion.Xamarin.DataSource": "18.2.0.47",
+          "Syncfusion.Xamarin.GridCommon": "18.2.0.47",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -196,14 +196,14 @@
           "lib/netstandard2.0/Syncfusion.SfListView.XForms.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfPdfViewer/18.2.0.44": {
+      "Syncfusion.Xamarin.SfPdfViewer/18.2.0.47": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.2.0.44",
-          "Syncfusion.Xamarin.Pdf": "18.2.0.44",
-          "Syncfusion.Xamarin.SfBusyIndicator": "18.2.0.44",
-          "Syncfusion.Xamarin.SfProgressBar": "18.2.0.44",
-          "Syncfusion.Xamarin.SfRangeSlider": "18.2.0.44",
+          "Syncfusion.Xamarin.Core": "18.2.0.47",
+          "Syncfusion.Xamarin.Pdf": "18.2.0.47",
+          "Syncfusion.Xamarin.SfBusyIndicator": "18.2.0.47",
+          "Syncfusion.Xamarin.SfProgressBar": "18.2.0.47",
+          "Syncfusion.Xamarin.SfRangeSlider": "18.2.0.47",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -213,10 +213,10 @@
           "lib/netstandard2.0/Syncfusion.SfPdfViewer.XForms.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfPopupLayout/18.1.0.43": {
+      "Syncfusion.Xamarin.SfPopupLayout/18.2.0.47": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.1.0.43",
+          "Syncfusion.Xamarin.Core": "18.2.0.47",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -226,10 +226,10 @@
           "lib/netstandard2.0/Syncfusion.SfPopupLayout.XForms.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfProgressBar/18.2.0.44": {
+      "Syncfusion.Xamarin.SfProgressBar/18.2.0.47": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.2.0.44",
+          "Syncfusion.Xamarin.Core": "18.2.0.47",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -239,10 +239,10 @@
           "lib/netstandard2.0/Syncfusion.SfProgressBar.XForms.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfRangeSlider/18.2.0.44": {
+      "Syncfusion.Xamarin.SfRangeSlider/18.2.0.47": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.2.0.44",
+          "Syncfusion.Xamarin.Core": "18.2.0.47",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -687,10 +687,10 @@
         "sqlitepclraw.core.nuspec"
       ]
     },
-    "Syncfusion.Licensing/18.2.0.44": {
-      "sha512": "cbP6Dq/syAKpB0+fS4DAqVG7xsoFJ2DAHW5U/lDFBuHV/i/C+zLXzG8jVBgnPpJVZ/Q1sfcqscVKflLH/lGoRw==",
+    "Syncfusion.Licensing/18.2.0.47": {
+      "sha512": "boPxbte2+5zk+NZlhptHK2n8xui1W0P1C4LxFkK+8+YpI4LoFV9QNI6VVEPouTwu041+41WePE3QyQwzA1O3SQ==",
       "type": "package",
-      "path": "syncfusion.licensing/18.2.0.44",
+      "path": "syncfusion.licensing/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -711,7 +711,7 @@
         "lib/netstandard2.0/Syncfusion.Licensing.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
         "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.18.2.0.44.nupkg.sha512",
+        "syncfusion.licensing.18.2.0.47.nupkg.sha512",
         "syncfusion.licensing.nuspec"
       ]
     },
@@ -746,10 +746,10 @@
         "syncfusion.xamarin.buttons.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Compression/18.2.0.44": {
-      "sha512": "+kUtrTtQbXxUZZyyRqB6lKBTEVJ7dnXLCEGtkEm5AmKlM8xQ676DGF+PJSguTDF2+JK4m1lW5Xjs/tq0Re2mzA==",
+    "Syncfusion.Xamarin.Compression/18.2.0.47": {
+      "sha512": "T6cLKS5PzQU/KxuUmporhgfujcRbz3iTS43dPKYSqz4wYrU249c1qbuYqpnrT4QqwSv1gw1152r1lWKm0dQfxw==",
       "type": "package",
-      "path": "syncfusion.xamarin.compression/18.2.0.44",
+      "path": "syncfusion.xamarin.compression/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -759,14 +759,14 @@
         "lib/netstandard2.0/Syncfusion.Compression.Portable.xml",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Compression.Portable.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Compression.Portable.xml",
-        "syncfusion.xamarin.compression.18.2.0.44.nupkg.sha512",
+        "syncfusion.xamarin.compression.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.compression.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Core/18.2.0.44": {
-      "sha512": "wN9UnaXmemHWyY7oJ6PhR3rI7LOM2ZXy2EtdboqRL56WHJOVQ/7NDzvRMhDP1v3WgP2BhtsEwD0d+Kl6Z1ewoQ==",
+    "Syncfusion.Xamarin.Core/18.2.0.47": {
+      "sha512": "AkdC7hC1eHas1MsGJv+gr0Nk778rHwecYWf3zu8htz5YysFgi8A2xS5igBKlKJRSMDxKFY2jr6TPu4nop0CSCw==",
       "type": "package",
-      "path": "syncfusion.xamarin.core/18.2.0.44",
+      "path": "syncfusion.xamarin.core/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -791,14 +791,14 @@
         "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ToggleVisibleIcon.xaml",
         "lib/uap10.0/Syncfusion.Core.XForms.dll",
         "lib/uap10.0/Syncfusion.Core.XForms.xml",
-        "syncfusion.xamarin.core.18.2.0.44.nupkg.sha512",
+        "syncfusion.xamarin.core.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.core.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.DataSource/18.1.0.56": {
-      "sha512": "PIzNwssvy7kzBolYRG1Uy8BOEqt6DSmyX/YbttAIFfjO4IUXV1xcCgcN+FQ4IBp2Xgw5YXbnJ8AgzO97xi/Sgw==",
+    "Syncfusion.Xamarin.DataSource/18.2.0.47": {
+      "sha512": "21R861oZ3608k74Zqxs7ZBs+xV+a68aOnBimQ3MczWe1P3sKwM3WLH77664Uj5gom9bcrpYfAyp3Z9xCiP2zgQ==",
       "type": "package",
-      "path": "syncfusion.xamarin.datasource/18.1.0.56",
+      "path": "syncfusion.xamarin.datasource/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -812,14 +812,14 @@
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.dll",
         "lib/uap10.0/Syncfusion.DataSource.Portable.XML",
         "lib/uap10.0/Syncfusion.DataSource.Portable.dll",
-        "syncfusion.xamarin.datasource.18.1.0.56.nupkg.sha512",
+        "syncfusion.xamarin.datasource.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.datasource.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.GridCommon/18.1.0.56": {
-      "sha512": "M0MpDP6K2U27hZsoVDs8iwf+GJMvGZWqU5WNK2B8O9MlHEgcC3GyBcOD8StSTY2gVnjb6uddKfs7fspNY0y5yQ==",
+    "Syncfusion.Xamarin.GridCommon/18.2.0.47": {
+      "sha512": "/Hnuiyyxm2EqezdsGFsB1jlQrg5QCQAMBLDYr5og4c+LfHg23nXyHMz/4pN6jwr6lXAmPGbfhWrL6dheyODjRA==",
       "type": "package",
-      "path": "syncfusion.xamarin.gridcommon/18.1.0.56",
+      "path": "syncfusion.xamarin.gridcommon/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -835,14 +835,14 @@
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
         "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
         "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
-        "syncfusion.xamarin.gridcommon.18.1.0.56.nupkg.sha512",
+        "syncfusion.xamarin.gridcommon.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.gridcommon.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Pdf/18.2.0.44": {
-      "sha512": "InoQ2L57tR5nCHP0rbD599xqRFePZqGVMRYCdtjL6SQgS3wuIHEIkNNALZkf5YuvCthHQ5lOdnrn/Xwa/WWfVg==",
+    "Syncfusion.Xamarin.Pdf/18.2.0.47": {
+      "sha512": "ggAMOKEqHFbQ4MfDxaXq+6sciMhL/0ZA+r7cS2lvxneqQCvqUFMIl5WCFbQVYhjrhcTFUNHE9EscYqI0uzDIUQ==",
       "type": "package",
-      "path": "syncfusion.xamarin.pdf/18.2.0.44",
+      "path": "syncfusion.xamarin.pdf/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -852,14 +852,14 @@
         "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Pdf.Portable.XML",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Pdf.Portable.dll",
-        "syncfusion.xamarin.pdf.18.2.0.44.nupkg.sha512",
+        "syncfusion.xamarin.pdf.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.pdf.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfBusyIndicator/18.2.0.44": {
-      "sha512": "N8oQFLUJJ2Iwx7reaau3G4r++/FbAD46TJXU9tYEstUwBP5QnBsRmRIB0I2oLeMVHfqgMdYogQ7XcIJBvGQalg==",
+    "Syncfusion.Xamarin.SfBusyIndicator/18.2.0.47": {
+      "sha512": "2SKxlXhg689NmUtqqHDCWqn8eXFOqMpwzmupuSh4/PnzFTUELBIQnA7GtwvaImaC1CK//NkyBR/KUcLwvh4KNg==",
       "type": "package",
-      "path": "syncfusion.xamarin.sfbusyindicator/18.2.0.44",
+      "path": "syncfusion.xamarin.sfbusyindicator/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -881,14 +881,14 @@
         "lib/uap10.0/Syncfusion.SfBusyIndicator.XForms.UWP.dll",
         "lib/uap10.0/Syncfusion.SfBusyIndicator.XForms.dll",
         "lib/uap10.0/Syncfusion.SfBusyIndicator.XForms.xml",
-        "syncfusion.xamarin.sfbusyindicator.18.2.0.44.nupkg.sha512",
+        "syncfusion.xamarin.sfbusyindicator.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.sfbusyindicator.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfListView/18.1.0.56": {
-      "sha512": "X+ohvkXs53aNtmhJKcFqD+mTFoCgLTjEei1wXc+5KXpNSaPQqVp7iOtSU8SCRrj7/7OfaWKajwQbWXpUStbMpg==",
+    "Syncfusion.Xamarin.SfListView/18.2.0.47": {
+      "sha512": "qnC++42j6wPiKdRa69J81jzOM5uAmr8tNVWC/7NqBSUOlejztg4fJIrSCYmaN79U+55wHhFp+NU9t+p9YVvhLA==",
       "type": "package",
-      "path": "syncfusion.xamarin.sflistview/18.1.0.56",
+      "path": "syncfusion.xamarin.sflistview/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -908,14 +908,14 @@
         "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll",
         "lib/uap10.0/Syncfusion.SfListView.XForms.dll",
         "lib/uap10.0/Syncfusion.SfListView.XForms.xml",
-        "syncfusion.xamarin.sflistview.18.1.0.56.nupkg.sha512",
+        "syncfusion.xamarin.sflistview.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.sflistview.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfPdfViewer/18.2.0.44": {
-      "sha512": "RukiCpWmzk/WBXWfjK4uPlL3bCOuHRYowR2doY0iDkJxIDNByTc/+EA6mBsWXa5IuoVHOQBTsKVL/uPKRc5jSA==",
+    "Syncfusion.Xamarin.SfPdfViewer/18.2.0.47": {
+      "sha512": "R+ihbJiKenO/M2GocUakYkRLeAZyob9rLXX1EZFhWPQPKIAKN/kk0KxDW87vRxl/921ygrBtKpHRKrSfIsm6zA==",
       "type": "package",
-      "path": "syncfusion.xamarin.sfpdfviewer/18.2.0.44",
+      "path": "syncfusion.xamarin.sfpdfviewer/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -947,14 +947,14 @@
         "lib/uap10.0/Syncfusion.SfPdfViewer.XForms.UWP/Themes/Generic.xbf",
         "lib/uap10.0/Syncfusion.SfPdfViewer.XForms.dll",
         "lib/uap10.0/Syncfusion.SfPdfViewer.XForms.xml",
-        "syncfusion.xamarin.sfpdfviewer.18.2.0.44.nupkg.sha512",
+        "syncfusion.xamarin.sfpdfviewer.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.sfpdfviewer.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfPopupLayout/18.1.0.43": {
-      "sha512": "xuDf04G6frDLVoDUL2RgL8sqnDyWhriKEzqzCdhhgCi/ta93XvunnS4IhUJkvWH6ElsBqXFMxF+maGJ4rEA0ng==",
+    "Syncfusion.Xamarin.SfPopupLayout/18.2.0.47": {
+      "sha512": "E0y26OeYBIvvFMNvK7oBvVom6SHIgGPlRyDwmfQPJka2bBcmbPbyFY9C8CxqqBAnXys+DsGoYjhB3vsycG+iLA==",
       "type": "package",
-      "path": "syncfusion.xamarin.sfpopuplayout/18.1.0.43",
+      "path": "syncfusion.xamarin.sfpopuplayout/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -980,14 +980,14 @@
         "lib/uap10.0/Syncfusion.SfPopupLayout.XForms.UWP/Syncfusion.SfPopupLayout.XForms.UWP/Resources/popup_forms_uwp_close_icon.png",
         "lib/uap10.0/Syncfusion.SfPopupLayout.XForms.dll",
         "lib/uap10.0/Syncfusion.SfPopupLayout.XForms.xml",
-        "syncfusion.xamarin.sfpopuplayout.18.1.0.43.nupkg.sha512",
+        "syncfusion.xamarin.sfpopuplayout.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.sfpopuplayout.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfProgressBar/18.2.0.44": {
-      "sha512": "2I5uAPWz8EK6wtSCopPzrr65c1JVs1m8Fgx94/xLgEUNHDAGVJr9CAuI/tvkp6Rt6cg9Q6fO5DmlV8LR8kDyLA==",
+    "Syncfusion.Xamarin.SfProgressBar/18.2.0.47": {
+      "sha512": "9RqRcH4hzyM+zyVY6SZ7Uz775H8A2bGU3LVU7DjZ2BUb25m/ylqr+/GVsjDvj4DzsTy3GdS7FWbxCdcnuHt9hQ==",
       "type": "package",
-      "path": "syncfusion.xamarin.sfprogressbar/18.2.0.44",
+      "path": "syncfusion.xamarin.sfprogressbar/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1007,14 +1007,14 @@
         "lib/uap10.0/Syncfusion.SfProgressBar.XForms.UWP/Font Stepprogress icon.ttf",
         "lib/uap10.0/Syncfusion.SfProgressBar.XForms.dll",
         "lib/uap10.0/Syncfusion.SfProgressBar.XForms.xml",
-        "syncfusion.xamarin.sfprogressbar.18.2.0.44.nupkg.sha512",
+        "syncfusion.xamarin.sfprogressbar.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.sfprogressbar.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfRangeSlider/18.2.0.44": {
-      "sha512": "WpalecLKzGtcJX4Ht3ROVkWS8ujSFq7zgnV915G1J/b4vyrUEBOulLxs4sq6rzi+TyFpkdJqwkxE/ER9U2J63A==",
+    "Syncfusion.Xamarin.SfRangeSlider/18.2.0.47": {
+      "sha512": "Cen3O/6sbNNiX6GR5auxZM8OVVtBv+VQZ2AVC9im2rhQeYcul8S26cl+0nVDSioaiv02v6K9RYxwrmHgATaIFA==",
       "type": "package",
-      "path": "syncfusion.xamarin.sfrangeslider/18.2.0.44",
+      "path": "syncfusion.xamarin.sfrangeslider/18.2.0.47",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1036,7 +1036,7 @@
         "lib/uap10.0/Syncfusion.SfRangeSlider.XForms.UWP.dll",
         "lib/uap10.0/Syncfusion.SfRangeSlider.XForms.dll",
         "lib/uap10.0/Syncfusion.SfRangeSlider.XForms.xml",
-        "syncfusion.xamarin.sfrangeslider.18.2.0.44.nupkg.sha512",
+        "syncfusion.xamarin.sfrangeslider.18.2.0.47.nupkg.sha512",
         "syncfusion.xamarin.sfrangeslider.nuspec"
       ]
     },
@@ -1682,10 +1682,10 @@
       "SharpZipLib >= 1.2.0",
       "SlideOverKit >= 2.1.6.2",
       "Syncfusion.Xamarin.Buttons >= 18.1.0.54",
-      "Syncfusion.Xamarin.Pdf >= 18.2.0.44",
-      "Syncfusion.Xamarin.SfListView >= 18.1.0.56",
-      "Syncfusion.Xamarin.SfPdfViewer >= 18.2.0.44",
-      "Syncfusion.Xamarin.SfPopupLayout >= 18.1.0.43",
+      "Syncfusion.Xamarin.Pdf >= 18.2.0.47",
+      "Syncfusion.Xamarin.SfListView >= 18.2.0.47",
+      "Syncfusion.Xamarin.SfPdfViewer >= 18.2.0.47",
+      "Syncfusion.Xamarin.SfPopupLayout >= 18.2.0.47",
       "Syncfusion.Xamarin.SfRotator >= 18.1.0.43",
       "Unity >= 5.11.4",
       "Xamarin.Essentials >= 1.5.3.1",
@@ -1761,19 +1761,19 @@
           },
           "Syncfusion.Xamarin.Pdf": {
             "target": "Package",
-            "version": "[18.2.0.44, )"
+            "version": "[18.2.0.47, )"
           },
           "Syncfusion.Xamarin.SfListView": {
             "target": "Package",
-            "version": "[18.1.0.56, )"
+            "version": "[18.2.0.47, )"
           },
           "Syncfusion.Xamarin.SfPdfViewer": {
             "target": "Package",
-            "version": "[18.2.0.44, )"
+            "version": "[18.2.0.47, )"
           },
           "Syncfusion.Xamarin.SfPopupLayout": {
             "target": "Package",
-            "version": "[18.1.0.43, )"
+            "version": "[18.2.0.47, )"
           },
           "Syncfusion.Xamarin.SfRotator": {
             "target": "Package",
