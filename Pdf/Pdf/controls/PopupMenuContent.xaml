@@ -6,10 +6,12 @@
              mc:Ignorable="d"
              x:Class="Pdf.controls.PopupMenuContent">
     
-    <syncfusion:SfListView x:Name="menuListView"
+    <syncfusion:SfListView x:Name="MListView"
                    ItemsSource="{Binding ItemsMenu}" ItemSize="57" ItemSpacing="0" SelectionMode="Single" SelectionBackgroundColor="Transparent">
+        
         <syncfusion:SfListView.ItemTemplate>
             <DataTemplate>
+                
                 <Grid  Margin="9,0,0,0" ColumnSpacing="8.5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="28"/>
@@ -25,7 +27,9 @@
                         <BoxView Grid.Row="1" BackgroundColor="#eeeeee" />
                     </Grid>
                 </Grid>
+
             </DataTemplate>
         </syncfusion:SfListView.ItemTemplate>
+
     </syncfusion:SfListView>
 </ContentView>

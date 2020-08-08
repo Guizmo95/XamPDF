@@ -20,60 +20,63 @@ namespace Pdf.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FavoritesFilesPage : ContentPage, INotifyPropertyChanged
     {
-        private SfPopupLayout popupLayout;
-        public SfBehaviorFavoritesPage SfBehavior { get; set; }
+        private readonly SfPopupLayout popupLayout;
+        public SfBehaviorDocumentsPage SfBehaviorDocumentsPage { get; set; }
 
         public FavoritesFilesPage()
         {
             InitializeComponent();
 
-            SfBehavior = new SfBehaviorFavoritesPage();
-            popupLayout = new SfPopupLayout();
-            popupLayout.PopupView.HeightRequest = 124;
-            popupLayout.PopupView.WidthRequest = 113;
-            popupLayout.PopupView.ShowHeader = false;
-            popupLayout.Padding = new Thickness(15, 10, 7, 15);
+            SfBehaviorDocumentsPage = new SfBehaviorDocumentsPage();
+            popupLayout = new SfPopupLayout
+            {
+                PopupView = {HeightRequest = 124, WidthRequest = 113, ShowHeader = false},
+                Padding = new Thickness(15, 10, 7, 15)
+            };
             popupLayout.PopupView.ShowFooter = false;
             popupLayout.PopupView.ShowCloseButton = false;
             popupLayout.PopupView.AnimationMode = AnimationMode.Fade;
             popupLayout.PopupView.AnimationEasing = AnimationEasing.SinOut;
             popupLayout.PopupView.AnimationDuration = 150;
 
-            DataTemplate templateView = new DataTemplate(() =>
+            var templateView = new DataTemplate(() =>
             {
-                StackLayout stackLayout = new StackLayout();
-                stackLayout.Orientation = StackOrientation.Vertical;
-                stackLayout.VerticalOptions = LayoutOptions.Center;
-                stackLayout.Spacing = 0;
+                var stackLayout = new StackLayout
+                {
+                    Orientation = StackOrientation.Vertical, VerticalOptions = LayoutOptions.Center, Spacing = 0
+                };
 
-                Button sortName;
-                sortName = new Button();
-                sortName.HeightRequest = 41;
-                sortName.WidthRequest = 113;
-                sortName.Text = "Sort name";
-                sortName.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
-                sortName.BackgroundColor = Color.White;
-                sortName.FontSize = 11;
+                var sortName = new Button
+                {
+                    HeightRequest = 41,
+                    WidthRequest = 113,
+                    Text = "Sort name",
+                    FontFamily = "GothamMedium_1.ttf#GothamMedium_1",
+                    BackgroundColor = Color.White,
+                    FontSize = 11
+                };
                 sortName.Clicked += SortName_Clicked;
 
-                Button sortDate;
-                sortDate = new Button();
-                sortDate.HeightRequest = 41;
-                sortDate.WidthRequest = 113;
-                sortDate.Text = "Sort date";
-                sortDate.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
-                sortDate.BackgroundColor = Color.White;
-                sortDate.FontSize = 11;
+                var sortDate = new Button
+                {
+                    HeightRequest = 41,
+                    WidthRequest = 113,
+                    Text = "Sort date",
+                    FontFamily = "GothamMedium_1.ttf#GothamMedium_1",
+                    BackgroundColor = Color.White,
+                    FontSize = 11
+                };
                 sortDate.Clicked += SortDate_Clicked;
 
-                Button sortSize;
-                sortSize = new Button();
-                sortSize.HeightRequest = 41;
-                sortSize.WidthRequest = 113;
-                sortSize.Text = "Sort size";
-                sortSize.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
-                sortSize.BackgroundColor = Color.White;
-                sortSize.FontSize = 11;
+                var sortSize = new Button
+                {
+                    HeightRequest = 41,
+                    WidthRequest = 113,
+                    Text = "Sort size",
+                    FontFamily = "GothamMedium_1.ttf#GothamMedium_1",
+                    BackgroundColor = Color.White,
+                    FontSize = 11
+                };
                 sortSize.Clicked += SortSize_Clicked;
 
                 stackLayout.Children.Add(sortName);
@@ -85,7 +88,7 @@ namespace Pdf.Views
 
             popupLayout.PopupView.ContentTemplate = templateView;
 
-            behavior.BindingContext = SfBehavior;
+            behavior.BindingContext = SfBehaviorDocumentsPage;
 
             SortName_Clicked(null, null);
 

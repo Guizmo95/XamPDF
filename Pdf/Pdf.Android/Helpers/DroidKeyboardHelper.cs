@@ -21,11 +21,8 @@ namespace Pdf.Droid.Helpers
     {
         public void HideKeyboard()
         {
-            var context = Forms.Context;
-            var inputMethodManager = context.GetSystemService(Context.InputMethodService) as InputMethodManager;
-            if (inputMethodManager != null && context is Activity)
+            if (Android.App.Application.Context.GetSystemService(Context.InputMethodService) is InputMethodManager inputMethodManager && Android.App.Application.Context is Activity activity)
             {
-                var activity = context as Activity;
                 var token = activity.CurrentFocus?.WindowToken;
                 inputMethodManager.HideSoftInputFromWindow(token, HideSoftInputFlags.None);
 

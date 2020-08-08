@@ -40,7 +40,7 @@
 
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.440" />
-    <PackageReference Include="SharpZipLib" Version="1.2.0" />
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
     <PackageReference Include="SlideOverKit" Version="2.1.6.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.54" />
@@ -49,8 +49,7 @@
     <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="18.2.0.47" />
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.2.0.47" />
     <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="18.1.0.43" />
-    <PackageReference Include="Unity" Version="5.11.4" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="1.3.7" />
@@ -84,9 +83,6 @@
     <EmbeddedResource Update="controls\PopupMenuContent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\OpacitySlider.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="controls\PdfPropertyPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -111,13 +107,13 @@
     <EmbeddedResource Update="Views\PdfViewer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RotatorPage.xaml">
+    <EmbeddedResource Update="controls\RotatorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ShellMainMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\StampSlideUpMenu.xaml">
+    <EmbeddedResource Update="controls\StampSlideUpMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ThumbnailsPage.xaml">

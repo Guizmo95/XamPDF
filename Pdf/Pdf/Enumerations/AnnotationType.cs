@@ -6,6 +6,7 @@ namespace Pdf.Enumerations
 {
     public enum AnnotationType
     {
-        Ink, FreeText, Rectangle, Line, Arrow, Circle ,Hightlight, Underline, Strikethrought, None, TextMarkup, Shape, Stamp, HandwrittenSignature
+        Ink, FreeText, Rectangle, Line, Arrow, Circle ,Highlight, Underline, 
+        Strikethrough, None, TextMarkup, Shape, Stamp, HandwrittenSignature
     }
 }

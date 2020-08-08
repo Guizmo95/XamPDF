@@ -8,37 +8,47 @@
              mc:Ignorable="d"
              x:Class="Pdf.controls.StyleContent">
     <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="5" BackgroundColor="#fafafa">
-        <views:ColorPicker x:Name="colorPicker" VerticalOptions="Center" IsVisible="True" HeightRequest="65"/>
-        <BoxView IsVisible="True" BackgroundColor="#bdbdbd" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="0.5" x:Name="boxView1"/>
+        <views:ColorPicker x:Name="CPicker" VerticalOptions="Center" IsVisible="True" HeightRequest="65"/>
+        <BoxView IsVisible="True" BackgroundColor="#bdbdbd" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="0.5" x:Name="SeparatorLine1"/>
+        
         <Grid VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#fafafa" x:Name="opacityControl" IsVisible="False" HeightRequest="65">
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="60"/>
             </Grid.ColumnDefinitions>
-            <StackLayout Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" x:Name="opacityTo25Selection" Spacing="0.5">
-                <controls:IconView x:Name="opacityImageTo25" Source="baseline_invert_colors_off_24.xml" Opacity="0.25" Foreground="{Binding SelectedColor}" HeightRequest="28" WidthRequest="28"/>
+            
+            <StackLayout Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" x:Name="Opacity25" Spacing="0.5">
+                <controls:IconView x:Name="Opacity1" Source="baseline_invert_colors_off_24.xml" Opacity="0.25" Foreground="{Binding SelectedColor}" HeightRequest="28" WidthRequest="28"/>
                 <Label Text="25%" Margin="2,0,0,0" FontSize="13" HorizontalTextAlignment="Center" TextColor="Black"/>
             </StackLayout>
-            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" x:Name="opacityTo50Selection" Spacing="0.5">
-                <controls:IconView x:Name="opacityImageTo50" Source="baseline_invert_colors_off_24.xml" Opacity="0.50" Foreground="{Binding SelectedColor}" HeightRequest="28" WidthRequest="28"/>
+
+            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" x:Name="Opacity50" Spacing="0.5">
+                <controls:IconView x:Name="Opacity2" Source="baseline_invert_colors_off_24.xml" Opacity="0.50" Foreground="{Binding SelectedColor}" HeightRequest="28" WidthRequest="28"/>
                 <Label Text="50%" Margin="2,0,0,0" FontSize="13" HorizontalTextAlignment="Center" TextColor="Black"/>
             </StackLayout>
-            <StackLayout Grid.Column="2" Orientation="Vertical" VerticalOptions="Center" x:Name="opacityTo75Selection" Spacing="0.5">
-                <controls:IconView x:Name="opacityImageTo75" Source="baseline_invert_colors_off_24.xml" Opacity="0.75" Foreground="{Binding SelectedColor}" HeightRequest="28" WidthRequest="28"/>
+
+            <StackLayout Grid.Column="2" Orientation="Vertical" VerticalOptions="Center" x:Name="Opacity75" Spacing="0.5">
+                <controls:IconView x:Name="Opacity3" Source="baseline_invert_colors_off_24.xml" Opacity="0.75" Foreground="{Binding SelectedColor}" HeightRequest="28" WidthRequest="28"/>
                 <Label Text="75%" Margin="2,0,0,0" FontSize="13" HorizontalTextAlignment="Center" TextColor="Black"/>
             </StackLayout>
-            <StackLayout Grid.Column="3" Orientation="Vertical" VerticalOptions="Center" x:Name="opacityTo100Selection" Spacing="0.5">
-                <controls:IconView x:Name="opacityImageTo100" Source="baseline_opacity_24.xml" Opacity="1" Foreground="{Binding SelectedColor}"  HeightRequest="28" WidthRequest="28"/>
+
+            <StackLayout Grid.Column="3" Orientation="Vertical" VerticalOptions="Center" x:Name="Opacity100" Spacing="0.5">
+                <controls:IconView x:Name="Opacity4" Source="baseline_opacity_24.xml" Opacity="1" Foreground="{Binding SelectedColor}"  HeightRequest="28" WidthRequest="28"/>
                 <Label Text="100%" Margin="2,0,0,0" FontSize="13" HorizontalTextAlignment="Center" TextColor="Black"/>
             </StackLayout>
+
         </Grid>
-        <BoxView x:Name="boxView2" BackgroundColor="#bdbdbd" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="0.5" IsVisible="True"/>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" x:Name ="fontSizeControl" IsVisible="False" WidthRequest="250" HeightRequest="65" HorizontalOptions="Center" Margin="0,0,0,4">
+
+        <BoxView x:Name="SeparatorLine2" BackgroundColor="#bdbdbd" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="0.5" IsVisible="True"/>
+        
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" x:Name ="FontControl" IsVisible="False" WidthRequest="250" HeightRequest="65" HorizontalOptions="Center" Margin="0,0,0,4">
             <Label VerticalTextAlignment="Center" Margin="0,0,0,4" FontSize="18" Text="{Binding FontSize, StringFormat='{}{0} px'}"/>
-            <Slider Maximum="12" Value="{Binding FontSize}" x:Name="fontSizeSlider" VerticalOptions="Center" HorizontalOptions="FillAndExpand" MinimumTrackColor="Black" MaximumTrackColor="#bdbdbd"/>
+            <Slider Maximum="12" Value="{Binding FontSize}" x:Name="FSlider" VerticalOptions="Center" HorizontalOptions="FillAndExpand" MinimumTrackColor="Black" MaximumTrackColor="#bdbdbd"/>
         </StackLayout>
-        <controls:ThicknessBar IsVisible="False" x:Name="thicknessBar" HorizontalOptions="Fill" HeightRequest="65"/>
+
+        <controls:ThicknessBar IsVisible="False" x:Name="Thickness" HorizontalOptions="Fill" HeightRequest="65"/>
     </StackLayout>
 </ContentView>

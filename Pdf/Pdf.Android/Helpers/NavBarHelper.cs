@@ -17,13 +17,13 @@ namespace Pdf.Droid.Helpers
 {
     public class NavBarHelper : INavBarHelper
     {
-        Window window = MainActivity.MainActivityWindow;
+        private readonly Window window = MainActivity.MainActivityWindow;
 
         public void SetImmersiveMode()
         {
             //window.DecorView.SystemUiVisibility = (StatusBarVisibility)SystemUiFlags.HideNavigation;
 
-            int uiOptions = (int)window.DecorView.SystemUiVisibility;
+            var uiOptions = (int)window.DecorView.SystemUiVisibility;
 
             uiOptions |= (int)SystemUiFlags.HideNavigation;
             uiOptions |= (int)SystemUiFlags.Fullscreen;
@@ -34,7 +34,6 @@ namespace Pdf.Droid.Helpers
 
         public void SetDefaultNavBar()
         {
-            //window.DecorView.SystemUiVisibility = (StatusBarVisibility)SystemUiFlags.Visible;
             window.DecorView.SystemUiVisibility = (StatusBarVisibility)SystemUiFlags.LightStatusBar;
         }
 

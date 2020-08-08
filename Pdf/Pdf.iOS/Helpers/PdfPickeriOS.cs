@@ -14,7 +14,7 @@ namespace Pdf.Droid.Helpers
     
     public class PdfPickeriOS: IPdfPicker
     {
-        public List<FileInfo> GetPdfFilesInDocuments()
+        public List<FileInfo> GetPdfFiles()
         {
             //TODO -- A REFAIRE TEST SUR REELE APPAREIL
             var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

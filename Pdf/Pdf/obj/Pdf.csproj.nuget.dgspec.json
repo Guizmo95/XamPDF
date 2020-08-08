@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj": {}
+    "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\XamPDF\\Pdf\\Pdf\\Pdf.csproj": {}
   },
   "projects": {
-    "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj": {
+    "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\XamPDF\\Pdf\\Pdf\\Pdf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
+        "projectUniqueName": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\XamPDF\\Pdf\\Pdf\\Pdf.csproj",
         "projectName": "Pdf",
-        "projectPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\Pdf.csproj",
+        "projectPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\XamPDF\\Pdf\\Pdf\\Pdf.csproj",
         "packagesPath": "C:\\Users\\Rayhane\\.nuget\\packages\\",
-        "outputPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\PdfClient\\Pdf\\Pdf\\obj\\",
+        "outputPath": "D:\\Yanis\\Rayhane\\Nouveau dossier\\VisualStudio\\XamPDF\\Pdf\\Pdf\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -52,9 +52,9 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
-            "SharpZipLib": {
+            "Plugin.Permissions": {
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[6.0.1, )"
             },
             "SlideOverKit": {
               "target": "Package",
@@ -84,13 +84,9 @@
               "target": "Package",
               "version": "[18.1.0.43, )"
             },
-            "Unity": {
-              "target": "Package",
-              "version": "[5.11.4, )"
-            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.1, )"
+              "version": "[1.5.3.2, )"
             },
             "Xamarin.FFImageLoading.Forms": {
               "target": "Package",

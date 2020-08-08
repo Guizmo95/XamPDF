@@ -23,13 +23,13 @@ namespace Pdf.Views
         private readonly DocumentViewModel documentViewModel;
         private SfPopupLayout popupLayout;
 
-        public SfBehavior SfBehavior { get; set; }
+        public SfBehaviorDocumentsPage SfBehaviorDocumentsPage { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
 
-            //    SfBehavior = new SfBehavior();
+            //    SfBehaviorDocumentsPage = new SfBehaviorDocumentsPage();
             //    popupLayout = new SfPopupLayout();
             //    popupLayout.PopupView.HeightRequest = 92;
             //    popupLayout.PopupView.WidthRequest = 80;
@@ -86,7 +86,7 @@ namespace Pdf.Views
 
             //    popupLayout.PopupView.ContentTemplate = templateView;
 
-            //    behavior.BindingContext = SfBehavior;
+            //    behavior.BindingContext = SfBehaviorDocumentsPage;
 
             //    IList<ToolsCustomItem> list = new List<ToolsCustomItem>();
             //    list.Add(new ToolsCustomItem(0, "baseline_picture_as_pdf_24_drawerMenu.xml", "My documents"));

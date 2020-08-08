@@ -18,39 +18,33 @@ namespace Pdf.controls
     {
         public IList ItemsMenu { get; set; }
 
-        public SfListView MenuListView
-        {
-            get
-            {
-                return menuListView;
-            }
-        }
+        public SfListView MenuListView => MListView;
 
         public PopupMenuContent()
         {
             InitializeComponent();
 
-            ItemsMenu = new List<ItemsMenu>();
-
-            ItemsMenu.Add(new ItemsMenu
+            ItemsMenu = new List<ItemsMenu>
             {
-                Id = 0,
-                Image = "baseline_save_24.xml",
-                TextColor = Color.FromHex("#e0e0e0"),
-                ImageColor = Color.FromHex("#707070"),
-                TextOption = "Save PDF",
-            }); 
+                new ItemsMenu
+                {
+                    Id = 0,
+                    Image = "baseline_save_24.xml",
+                    TextColor = Color.FromHex("#e0e0e0"),
+                    ImageColor = Color.FromHex("#707070"),
+                    TextOption = "Save PDF",
+                },
+                new ItemsMenu
+                {
+                    Id = 1,
+                    Image = "baseline_print_24.xml",
+                    TextColor = Color.FromHex("#616161"),
+                    ImageColor = Color.FromHex("#373737"),
+                    TextOption = "Print PDF",
+                }
+            };
 
-            ItemsMenu.Add(new ItemsMenu
-            {
-                Id = 1,
-                Image = "baseline_print_24.xml",
-                TextColor = Color.FromHex("#616161"),
-                ImageColor = Color.FromHex("#373737"),
-                TextOption = "Print PDF",
-            });
-
-            menuListView.ItemsSource = ItemsMenu;
+            MListView.ItemsSource = ItemsMenu;
         }
 
     }

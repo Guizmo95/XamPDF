@@ -59,11 +59,11 @@ namespace Pdf.Views
             ////Set the compression level
             //loadedDocument.Compression = PdfCompressionLevel.Best;
 
-            ////Save and close the document
+            ////SaveAndReturnStatus and close the document
 
             //var download = DependencyService.Get<IAndroidFileHelper>().GetDownloadPath();
 
-            //loadedDocument.Save(File.Create(Path.Combine(download, "test2.pdf")));
+            //loadedDocument.SaveAndReturnStatus(File.Create(Path.Combine(download, "test2.pdf")));
 
             //loadedDocument.Close(true);
 

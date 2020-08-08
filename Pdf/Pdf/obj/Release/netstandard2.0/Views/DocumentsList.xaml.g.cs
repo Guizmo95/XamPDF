@@ -35,7 +35,7 @@ namespace Pdf.Views {
         private global::Xamarin.Forms.ImageButton sortButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Pdf.Helpers.SfBehavior behavior;
+        private global::Pdf.Helpers.SfBehaviorDocumentsPage behavior;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Syncfusion.ListView.XForms.SfListView DocumentListView;
@@ -58,7 +58,7 @@ namespace Pdf.Views {
             filterDocument = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.controls.SearchBarCustom>(this, "filterDocument");
             searchButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "searchButton");
             sortButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "sortButton");
-            behavior = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Helpers.SfBehavior>(this, "behavior");
+            behavior = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Pdf.Helpers.SfBehaviorDocumentsPage>(this, "behavior");
             DocumentListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.ListView.XForms.SfListView>(this, "DocumentListView");
             RightSwipeTemplate = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DataTemplate>(this, "RightSwipeTemplate");
             filter = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.BoxView>(this, "filter");

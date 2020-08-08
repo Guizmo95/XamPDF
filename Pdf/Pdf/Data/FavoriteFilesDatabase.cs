@@ -10,20 +10,19 @@ namespace Pdf.Data
 {
     public class FavoriteFilesDatabase
     {
-        static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
-        {
-            return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
-        });
+        private static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = 
+            new Lazy<SQLiteAsyncConnection>(() 
+                => new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags));
 
-        static SQLiteAsyncConnection Database => lazyInitializer.Value;
-        static bool initialized = false;
+        private static SQLiteAsyncConnection Database => lazyInitializer.Value;
+        private static bool initialized;
 
         public FavoriteFilesDatabase()
         {
             InitializeAsync().SafeFireAndForget(false);
         }
 
-        async Task InitializeAsync()
+        private async Task InitializeAsync()
         {
             if (!initialized)
             {
@@ -52,14 +51,9 @@ namespace Pdf.Data
 
         public Task<int> SaveItemAsync(FileModel item)
         {
-            if (item.Id != 0)
-            {
-                return Database.UpdateAsync(item);
-            }
-            else
-            {
-                return Database.InsertAsync(item);
-            }
+            return item.Id != 0 
+                ? Database.UpdateAsync(item) 
+                    : Database.InsertAsync(item);
         }
 
         public Task<int> DeleteItemAsync(FileModel item)

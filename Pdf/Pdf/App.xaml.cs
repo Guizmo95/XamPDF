@@ -1,49 +1,27 @@
 ﻿
 using Pdf.Data;
-using Pdf.ViewModels;
 using Pdf.Views;
-using System;
-using System.ComponentModel;
-using Unity;
-using Unity.Injection;
-using Unity.Lifetime;
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
-using Xamarin.Forms.Xaml;
 
 namespace Pdf
 {
     public partial class App : Application
     {
-        public static UnityContainer Container { get; set; }
-        static FavoriteFilesDatabase database;
-        static ShellMainMenu mainMenu;
+        private static FavoriteFilesDatabase database;
+        private static ShellMainMenu mainMenu;
 
         public App()
         {
-            //Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjUxNzQ0QDMxMzgyZTMxMmUzMEtndVlMY3hrWXdxOTNraGZJWTJvcGdJazRjKzhjOVFTWlU5VDlmdnhhalk9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjk4MzY2QDMxMzgyZTMyMmUzMGY2UjRiblJ6SENGTERFSFRYOG5ZU2ptbmp5WUtWQmZScklQVHVZQ2pnRW89");
 
             InitializeComponent();
-
-            Container = new UnityContainer();
 
             mainMenu = new ShellMainMenu();
 
             MainPage = mainMenu;
         }
 
-        public static FavoriteFilesDatabase Database
-        {
-            get
-            {
-                if (database == null)
-                {
-                    database = new FavoriteFilesDatabase();
-                }
-                return database;
-            }
-        }
+        public static FavoriteFilesDatabase Database => database ?? (database = new FavoriteFilesDatabase());
 
         protected override void OnStart()
         {
@@ -57,7 +35,7 @@ namespace Pdf
         {
         }
 
-        public static void LoadPDF(string url)
+        public static void LoadPdf(string url)
         {
             mainMenu.Navigation.PushAsync(new PdfViewer(url, Enumerations.LoadingMode.ByIntent));
         }

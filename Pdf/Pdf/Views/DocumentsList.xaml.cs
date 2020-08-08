@@ -1,14 +1,10 @@
-﻿using Acr.UserDialogs;
-using Pdf.Helpers;
-using Pdf.Interfaces;
+﻿using Pdf.Helpers;
 using Pdf.Models;
 using Syncfusion.DataSource;
-using Syncfusion.XForms.EffectsView;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,32 +14,20 @@ namespace Pdf.Views
     public partial class DocumentsList : ContentPage, INotifyPropertyChanged
     {
         private SfPopupLayout popupLayout;
-        private FileModel selectedDoc;
-        public SfBehavior SfBehavior { get; set; }
+        public SfBehaviorDocumentsPage SfBehaviorDocumentsPage { get; set; }
 
-        public FileModel SelectedDoc
-        {
-            get
-            {
-                return selectedDoc;
-            }
-
-            set
-            {
-                selectedDoc = value;
-            }
-        }
+        public FileModel SelectedDoc { get; set; }
 
 
         public DocumentsList()
         {
             InitializeComponent();
 
-            SfBehavior = new SfBehavior();
-            popupLayout = new SfPopupLayout();
-            popupLayout.PopupView.HeightRequest = 124;
-            popupLayout.PopupView.WidthRequest = 113;
-            popupLayout.Padding = new Thickness(15, 10, 7, 15);
+            SfBehaviorDocumentsPage = new SfBehaviorDocumentsPage();
+            popupLayout = new SfPopupLayout
+            {
+                PopupView = {HeightRequest = 124, WidthRequest = 113}, Padding = new Thickness(15, 10, 7, 15)
+            };
             popupLayout.PopupView.ShowHeader = false;
             popupLayout.PopupView.ShowFooter = false;
             popupLayout.PopupView.ShowCloseButton = false;
@@ -51,41 +35,44 @@ namespace Pdf.Views
             popupLayout.PopupView.AnimationEasing = AnimationEasing.SinOut;
             popupLayout.PopupView.AnimationDuration = 150;
 
-            DataTemplate templateView = new DataTemplate(() =>
+            var templateView = new DataTemplate(() =>
             {
-                StackLayout stackLayout = new StackLayout();
-                stackLayout.Orientation = StackOrientation.Vertical;
-                stackLayout.VerticalOptions = LayoutOptions.Center;
-                stackLayout.Spacing = 0;
+                var stackLayout = new StackLayout
+                {
+                    Orientation = StackOrientation.Vertical, VerticalOptions = LayoutOptions.Center, Spacing = 0
+                };
 
-                Button sortName;
-                sortName = new Button();
-                sortName.HeightRequest = 41;
-                sortName.WidthRequest = 113;
-                sortName.Text = "Sort name";
-                sortName.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
-                sortName.BackgroundColor = Color.White;
-                sortName.FontSize = 11;
+                var sortName = new Button
+                {
+                    HeightRequest = 41,
+                    WidthRequest = 113,
+                    Text = "Sort name",
+                    FontFamily = "GothamMedium_1.ttf#GothamMedium_1",
+                    BackgroundColor = Color.White,
+                    FontSize = 11
+                };
                 sortName.Clicked += SortName_Clicked;
 
-                Button sortDate;
-                sortDate = new Button();
-                sortDate.HeightRequest = 41;
-                sortDate.WidthRequest = 113;
-                sortDate.Text = "Sort date";
-                sortDate.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
-                sortDate.BackgroundColor = Color.White;
-                sortDate.FontSize = 11;
+                var sortDate = new Button
+                {
+                    HeightRequest = 41,
+                    WidthRequest = 113,
+                    Text = "Sort date",
+                    FontFamily = "GothamMedium_1.ttf#GothamMedium_1",
+                    BackgroundColor = Color.White,
+                    FontSize = 11
+                };
                 sortDate.Clicked += SortDate_Clicked;
 
-                Button sortSize;
-                sortSize = new Button();
-                sortSize.HeightRequest = 41;
-                sortSize.WidthRequest = 113;
-                sortSize.Text = "Sort size";
-                sortSize.FontFamily = "GothamMedium_1.ttf#GothamMedium_1";
-                sortSize.BackgroundColor = Color.White;
-                sortSize.FontSize = 11;
+                var sortSize = new Button
+                {
+                    HeightRequest = 41,
+                    WidthRequest = 113,
+                    Text = "Sort size",
+                    FontFamily = "GothamMedium_1.ttf#GothamMedium_1",
+                    BackgroundColor = Color.White,
+                    FontSize = 11
+                };
                 sortSize.Clicked += SortSize_Clicked;
 
                 stackLayout.Children.Add(sortName);
@@ -97,16 +84,11 @@ namespace Pdf.Views
 
             popupLayout.PopupView.ContentTemplate = templateView;
 
-            behavior.BindingContext = SfBehavior;
+            behavior.BindingContext = SfBehaviorDocumentsPage;
 
             SortName_Clicked(null, null);
 
             sortButton.RotateTo(180);
-
-        }
-
-        private void ResetSwipe()
-        {
 
         }
 

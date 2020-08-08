@@ -5,8 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:local="clr-namespace:Pdf.Helpers" xmlns:controls="clr-namespace:Pdf.controls"
              mc:Ignorable="d"
              Visual="Material"
-              xmlns:effects="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
-             x:Class="Pdf.Views.FavoritesFilesPage" Shell.NavBarIsVisible="True" x:Name="DocumentsListPage" Shell.NavBarHasShadow="True" Shell.FlyoutBehavior="Flyout">
+             xmlns:effects="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
+             x:Class="Pdf.Views.FavoritesFilesPage" Shell.NavBarIsVisible="True" 
+             x:Name="DocumentsListPage" Shell.NavBarHasShadow="True" 
+             Shell.FlyoutBehavior="Flyout">
 
     <Shell.TitleView>
         <StackLayout BackgroundColor="#c62828" 

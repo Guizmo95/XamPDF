@@ -12,9 +12,9 @@ namespace Pdf.Converter
         public object Convert(object value, Type targetType,
             object parameter, CultureInfo culture)
         {
-            var image = value as byte[];
-            if (image == null)
+            if (!(value is byte[] image))
                 return null;
+
             return ImageSource.FromStream(() => new MemoryStream(image));
         }
 

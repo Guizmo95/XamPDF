@@ -5,10 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              mc:Ignorable="d"
              x:Class="Pdf.controls.PdfPropertyPopup">
-    <syncfusion:SfListView x:Name="pdfPropertyListView" 
-                   ItemsSource="{Binding DocumentInfoListViewModels}" ItemSize="55" ItemSpacing="0" SelectionMode="None">
+
+    <syncfusion:SfListView x:Name="PListView" 
+                           ItemsSource="{Binding DocumentInfoListViewModels}" ItemSize="55" ItemSpacing="0" SelectionMode="None">
+        
         <syncfusion:SfListView.ItemTemplate>
             <DataTemplate>
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -27,6 +30,7 @@
                     </Grid>
                     <BoxView Grid.Row="1" BackgroundColor="#eeeeee" />
                 </Grid>
+
             </DataTemplate>
         </syncfusion:SfListView.ItemTemplate>
     </syncfusion:SfListView>

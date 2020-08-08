@@ -8,15 +8,15 @@ namespace Pdf.Helpers
     #region ItemGeneratorExt
     public class ItemGeneratorExt : ItemGenerator
     {
-        public ItemGeneratorExt(SfListView listview) : base(listview)
+        public ItemGeneratorExt(SfListView listView) : base(listView)
         {
 
         }
         protected override ListViewItem OnCreateListViewItem(int itemIndex, ItemType type, object data = null)
         {
-            if (type == ItemType.Record)
-                return new ListViewItemExt(type);
-            return base.OnCreateListViewItem(itemIndex, type, data);
+            return type == ItemType.Record 
+                ? new ListViewItemExt(type) 
+                    : base.OnCreateListViewItem(itemIndex, type, data);
         }
     }
     #endregion

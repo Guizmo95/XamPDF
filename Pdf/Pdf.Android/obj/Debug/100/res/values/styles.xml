@@ -1,3 +1,46 @@
-<resources><style name="MainTheme" parent="MainTheme.Base"></style><!-- Base theme applied no matter what API --><style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar"><!--If you are using revision 22.1 please use just windowNoTitle. Without android:--><item name="windowNoTitle">true</item><!--We will be using the toolbar so no need to show ActionBar--><item name="windowActionBar">false</item><!-- Set theme colors from https://aka.ms/material-colors --><!-- colorPrimary is used for the default action bar background --><item name="colorPrimary">#c62828</item><!-- colorPrimaryDark is used for the status bar --><item name="colorPrimaryDark">#c62828</item><item name="android:windowLightStatusBar">true</item><!-- colorAccent is used as the default value for colorControlActivated
-         which is used to tint widgets --><item name="colorAccent">#e4e4e4</item><item name="android:navigationBarColor ">@color/white</item><!-- You can also set colorControlNormal, colorControlActivated
-         colorControlHighlight and colorSwitchThumbNormal. --><!--<item name="windowActionModeOverlay">true</item>--><item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item><item name="android:windowLightNavigationBar">true</item><item name="colorControlHighlight">#c62828</item><item name="colorControlActivated">#c62828</item><item name="android:windowBackground">@drawable/splash_background</item><!--<item name="android:fontFamily">MyCustomFont</item>--></style><style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert"><item name="colorAccent">#c62828</item><item name="android:textColorPrimary">#c62828</item><item name="android:background">#c62828</item></style><style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog"><item name="colorAccent">#e4e4e4</item></style><style name="MyTheme.Splash" parent="Theme.AppCompat.Light.NoActionBar"><item name="android:windowBackground">@drawable/splash_background</item></style></resources>
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="MainTheme" parent="MainTheme.Base">
+  </style>
+  <!-- Base theme applied no matter what API -->
+  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+    <item name="windowNoTitle">true</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+    <!-- Set theme colors from https://aka.ms/material-colors -->
+    <!-- colorPrimary is used for the default action bar background -->
+    <item name="colorPrimary">#c62828</item>
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="colorPrimaryDark">#c62828</item>
+    <item name="android:windowLightStatusBar">true</item>
+    <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+    <item name="colorAccent">#e4e4e4</item>
+    <item name="android:navigationBarColor ">@color/white</item>
+    <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. -->
+    <!--<item name="windowActionModeOverlay">true</item>-->
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+    <item name="android:windowLightNavigationBar">true</item>
+    <item name="colorControlHighlight">#c62828</item>
+    <item name="colorControlActivated">#c62828</item>
+    <item name="android:windowBackground">@drawable/splash_background</item>
+
+    <!--<item name="android:fontFamily">MyCustomFont</item>-->
+  </style>
+  <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <item name="colorAccent">#c62828</item>
+    <item name="android:textColorPrimary">#c62828</item>
+    <item name="android:background">#c62828</item>
+  </style>
+  <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#e4e4e4</item>
+  </style>
+  <style name="MyTheme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_background</item>
+  </style>
+
+  
+</resources>

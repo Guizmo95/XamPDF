@@ -9,13 +9,11 @@ namespace Pdf.Helpers
     #region ListViewItemExt
     public class ListViewItemExt : ListViewItem
     {
-        public ListViewItemExt()
-        {
-        }
         public ListViewItemExt(ItemType type) : base(type)
         {
 
         }
+
         protected override void OnItemAppearing()
         {
             this.Opacity = 0;

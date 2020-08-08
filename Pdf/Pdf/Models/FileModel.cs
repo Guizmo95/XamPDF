@@ -1,11 +1,7 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
 using System.Runtime.CompilerServices;
-using System.Text;
-
 namespace Pdf.Models
 {
     public class FileModel: INotifyPropertyChanged
@@ -13,22 +9,21 @@ namespace Pdf.Models
         private int id;
         private int itemIndexInDocumentList;
         private int itemIndexInFavoriteDocumentList;
+        private long fileLength;
+
         private string fileName;
-        private DateTime creationTime;
         private string size;
         private string filePath;
-        private long fileLenght;
-        private bool isFavorite;
         private string favoriteImage;
+        
+        private bool isFavorite;
 
+        private DateTime creationTime;
 
         [PrimaryKey, AutoIncrement]
         public int Id
         {
-            get
-            {
-                return id;
-            }
+            get => id;
 
             set
             {
@@ -39,10 +34,7 @@ namespace Pdf.Models
 
         public int ItemIndexInDocumentList
         {
-            get
-            {
-                return itemIndexInDocumentList;
-            }
+            get => itemIndexInDocumentList;
 
             set
             {
@@ -53,10 +45,7 @@ namespace Pdf.Models
 
         public int ItemIndexInFavoriteDocumentList
         {
-            get
-            {
-                return itemIndexInFavoriteDocumentList;
-            }
+            get => itemIndexInFavoriteDocumentList;
 
             set
             {
@@ -67,10 +56,7 @@ namespace Pdf.Models
 
         public string FileName
         {
-            get
-            {
-                return fileName;
-            }
+            get => fileName;
 
             set
             {
@@ -81,10 +67,7 @@ namespace Pdf.Models
 
         public DateTime CreationTime
         {
-            get
-            {
-                return creationTime;
-            }
+            get => creationTime;
 
             set
             {
@@ -95,10 +78,7 @@ namespace Pdf.Models
 
         public string Size
         {
-            get
-            {
-                return size;
-            }
+            get => size;
 
             set
             {
@@ -109,10 +89,7 @@ namespace Pdf.Models
 
         public string FilePath
         {
-            get
-            {
-                return filePath;
-            }
+            get => filePath;
 
             set
             {
@@ -123,48 +100,34 @@ namespace Pdf.Models
 
         public long FileLenght
         {
-            get
-            {
-                return fileLenght;
-            }
+            get => fileLength;
 
             set
             {
-                fileLenght = value;
+                fileLength = value;
                 OnPropertyChanged();
             }
         }
 
         public bool IsFavorite
         {
-            get
-            {
-                return isFavorite;
-            }
+            get => isFavorite;
 
             set
             {
                 isFavorite = value;
                 OnPropertyChanged();
 
-                if(value == true)
-                {
-                    FavoriteImage = "baseline_favorite_24.xml";
-                }
-                else
-                {
-                    FavoriteImage = "baseline_favorite_border_24.xml";
-                }
+                FavoriteImage = value 
+                    ? "baseline_favorite_24.xml" 
+                        : "baseline_favorite_border_24.xml";
 
             }
         }
 
         public string FavoriteImage
         {
-            get
-            {
-                return favoriteImage;
-            }
+            get => favoriteImage;
 
             set
             {
@@ -182,7 +145,8 @@ namespace Pdf.Models
             {
                 string[] sizes = { "B", "KB", "MB", "GB", "TB" };
                 double len = FileLenght;
-                int order = 0;
+                var order = 0;
+
                 while (len >= 1024 && order < sizes.Length - 1)
                 {
                     order++;
@@ -191,7 +155,7 @@ namespace Pdf.Models
 
                 // Adjust the format string to your preferences. For example "{0:0.#}{1}" would
                 // show a single decimal place, and no space.
-                this.Size = String.Format("{0:0.##} {1}", len, sizes[order]);
+                this.Size = $"{len:0.##} {sizes[order]}";
             }
         }
 

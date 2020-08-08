@@ -1,10 +1,4 @@
 ﻿using Syncfusion.ListView.XForms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,16 +9,9 @@ namespace Pdf.controls
     {
         public SfListView PdfPropertyListView
         {
-            get
-            {
-                return pdfPropertyListView;
-            }
-            protected set
-            {
-                pdfPropertyListView = value;
-            }
+            get => PListView;
+            protected set => PListView = value;
         }
-
 
         public PdfPropertyPopup()
         {

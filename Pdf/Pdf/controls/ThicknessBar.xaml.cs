@@ -13,137 +13,57 @@ namespace Pdf.controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ThicknessBar : ContentView
     {
-        public delegate void BoxViewButtonClickedDelegate(int numberOfTheThicknessBarSelected);
-        public BoxViewButtonClickedDelegate BoxViewButtonClicked { get; set; }
+        public delegate void BoxViewButtonClickedDelegate(int thicknessBarSelected);
+        public BoxViewButtonClickedDelegate ThicknessBarClicked { get; set; }
 
-        public PancakeView FirstBoxView
-        {
-            get
-            {
-                return firstBoxView;
-            }
-        }
+        public PancakeView ThicknessBarOne => ThicknessBar1;
 
-        public PancakeView SecondBoxView
-        {
-            get
-            {
-                return secondBoxView;
-            }
-        }
+        public PancakeView ThicknessBarTwo => ThicknessBar2;
 
-        public PancakeView ThirdBoxView
-        {
-            get
-            {
-                return thirdBoxView;
-            }
-        }
+        public PancakeView ThicknessBarThird => ThicknessBar3;
 
-        public PancakeView FourthBoxView
-        {
-            get
-            {
-                return fourthBoxView;
-            }
-        }
+        public PancakeView ThicknessBarFourth => ThicknessBar4;
 
-        public PancakeView FifthBoxView
-        {
-            get
-            {
-                return fifthBoxView;
-            }
-        }
-
-        public PancakeView FirstThicknessBar
-        {
-            get
-            {
-                return firstThicknessBar;
-            }
-        }
-
-        public PancakeView SecondThicknessBar
-        {
-            get
-            {
-                return secondThicknessBar;
-            }
-        }
-
-        public PancakeView ThirdThicknessBar
-        {
-            get
-            {
-                return thirdThicknessBar;
-            }
-        }
-
-        public PancakeView FourthThicknessBar
-        {
-            get
-            {
-                return fourthThicknessBar;
-            }
-        }
-
-        public PancakeView FifthThicknessBar
-        {
-            get
-            {
-                return fifthThicknessBar;
-            }
-        }
+        public PancakeView ThicknessBarFifth => ThicknessBar5;
 
         public ThicknessBar()
         {
             InitializeComponent();
 
-            firstBoxView.GestureRecognizers.Add(new TapGestureRecognizer()
+            AddGestureRecognizers();
+        }
+
+        private void AddGestureRecognizers()
+        {
+            BoxView1.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command( () =>
-                {
-                    BoxViewButton_Clicked(1);
-                })
+                Command = new Command(() => { BoxViewButton_Clicked(1); })
             });
 
-            secondBoxView.GestureRecognizers.Add(new TapGestureRecognizer()
+            BoxView2.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
-                {
-                    BoxViewButton_Clicked(2);
-                })
+                Command = new Command(() => { BoxViewButton_Clicked(2); })
             });
 
-            thirdBoxView.GestureRecognizers.Add(new TapGestureRecognizer()
+            BoxView3.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
-                {
-                    BoxViewButton_Clicked(3);
-                })
+                Command = new Command(() => { BoxViewButton_Clicked(3); })
             });
 
-            fourthBoxView.GestureRecognizers.Add(new TapGestureRecognizer()
+            BoxView4.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
-                {
-                    BoxViewButton_Clicked(4);
-                })
+                Command = new Command(() => { BoxViewButton_Clicked(4); })
             });
 
-            fifthBoxView.GestureRecognizers.Add(new TapGestureRecognizer()
+            BoxView4.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
-                {
-                    BoxViewButton_Clicked(5);
-                })
+                Command = new Command(() => { BoxViewButton_Clicked(5); })
             });
         }
 
-        private void BoxViewButton_Clicked(int numberOfTheThicknessBarSelected)
+        private void BoxViewButton_Clicked(int selectedThicknessBar)
         {
-            BoxViewButtonClicked?.Invoke(numberOfTheThicknessBarSelected);
+            ThicknessBarClicked?.Invoke(selectedThicknessBar);
         }
     }
 }

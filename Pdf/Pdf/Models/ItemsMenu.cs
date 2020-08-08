@@ -17,10 +17,7 @@ namespace Pdf.Models
 
         public int Id
         {
-            get
-            {
-                return id;
-            }
+            get => id;
             set
             {
                 id = value;
@@ -30,10 +27,7 @@ namespace Pdf.Models
 
         public string Image
         {
-            get
-            {
-                return image;
-            }
+            get => image;
             set
             {
                 image = value;
@@ -43,10 +37,7 @@ namespace Pdf.Models
 
         public Xamarin.Forms.Color TextColor
         {
-            get
-            {
-                return textColor;
-            }
+            get => textColor;
             set
             {
                 textColor = value;
@@ -56,10 +47,7 @@ namespace Pdf.Models
 
         public Xamarin.Forms.Color ImageColor
         {
-            get
-            {
-                return imageColor;
-            }
+            get => imageColor;
             set
             {
                 imageColor = value;
@@ -69,10 +57,7 @@ namespace Pdf.Models
 
         public string TextOption
         {
-            get
-            {
-                return textOption;
-            }
+            get => textOption;
             set
             {
                 textOption = value;

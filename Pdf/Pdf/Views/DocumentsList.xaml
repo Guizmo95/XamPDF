@@ -46,7 +46,7 @@
     </Shell.TitleView>
 
     <ContentPage.Behaviors >
-        <local:SfBehavior x:Name="behavior"/>
+        <local:SfBehaviorDocumentsPage x:Name="behavior"/>
     </ContentPage.Behaviors>
 
     <AbsoluteLayout VerticalOptions="Fill">

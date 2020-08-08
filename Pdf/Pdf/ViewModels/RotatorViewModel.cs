@@ -13,19 +13,14 @@ namespace Pdf.ViewModels
         public RotatorViewModel()
         {
             //Page 1
-            ColorPicker colorPicker1 = new ColorPicker();
+            var colorPicker1 = new ColorPicker();
             //Page 2
-            ColorPicker colorPicker2 = new ColorPicker();
+            //var colorPicker2 = new ColorPicker();
 
-            TestCollection.Add(new RotatorModel(colorPicker1));
-            //TestCollection.Add(new RotatorModel(colorPicker2));
+            TestCollection.Add(new Rotator(colorPicker1));
+            //TestCollection.Add(new Rotator(colorPicker2));
         }
-        private List<RotatorModel> testCollection = new List<RotatorModel>();
 
-        public List<RotatorModel> TestCollection
-        {
-            get { return testCollection; }
-            set { testCollection = value; }
-        }
+        public List<Rotator> TestCollection { get; set; } = new List<Rotator>();
     }
 }

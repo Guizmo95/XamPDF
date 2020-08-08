@@ -20,30 +20,21 @@ namespace Pdf.Views
     {
         #region Members
 
+        readonly List<Color> primaryColors = new List<Color>();
         private int selectedIndex = 0;
         private Color selectedColor;
-        private ObservableCollection<object> viewCollection;
-        List<Color> primaryColors = new List<Color>();
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
         #region properties
 
-        public SfSegmentedControl SfSegmentedControl
-        {
-            get
-            {
-                return segctrl;
-            }
-        }
+        public SfSegmentedControl SfSegmentedControl => segctrl;
 
         public int SelectedIndex
         {
-            get
-            {
-                return selectedIndex;
-            }
+            get => selectedIndex;
             set
             {
                 selectedIndex = value;
@@ -55,10 +46,7 @@ namespace Pdf.Views
 
         public Color SelectedColor
         {
-            get
-            {
-                return primaryColors[selectedIndex];
-            }
+            get => primaryColors[selectedIndex];
             set
             {
                 selectedColor = value;
@@ -66,17 +54,7 @@ namespace Pdf.Views
             }
         }
 
-        public ObservableCollection<object> ViewCollection
-        {
-            get
-            {
-                return viewCollection;
-            }
-            set
-            {
-                viewCollection = value;
-            }
-        }
+        public ObservableCollection<object> ViewCollection { get; set; }
 
         #endregion
 
@@ -106,10 +84,10 @@ namespace Pdf.Views
             primaryColors.Add(Color.Green);
             primaryColors.Add(Color.Yellow);
 
-            foreach (Color color in primaryColors)
+            foreach (var color in primaryColors)
             {
-                Grid grid = new Grid();
-                SfBorder border = new SfBorder
+                var grid = new Grid();
+                var border = new SfBorder
                 {
                     Margin = new Thickness(2),
                     HorizontalOptions = LayoutOptions.Center,

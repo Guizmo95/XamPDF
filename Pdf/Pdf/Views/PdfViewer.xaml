@@ -7,10 +7,9 @@
              x:Class="Pdf.Views.PdfViewer"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms"
              xmlns:controls="clr-namespace:Pdf.controls"
-             xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:views="clr-namespace:Pdf.Views" x:Name="pdfViewer">
+             xmlns:controls1="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
-    <AbsoluteLayout VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" x:Name="mainContent">
+    <AbsoluteLayout VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
 
         <controls1:PancakeView IsVisible="True" HeightRequest="50" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" HasShadow="true" x:Name="topToolbar"  AbsoluteLayout.LayoutBounds="0,0,1,AutoSize"   
            AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional">
@@ -36,8 +35,33 @@
             </Grid>
         </controls1:PancakeView>
 
-        <StackLayout Orientation="Vertical" x:Name="pdfViewGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Margin="0,50,0,50">
-            <syncfusion:SfPdfViewer x:Name="pdfViewerControl" PageViewMode="Continuous" VerticalOptions="FillAndExpand" MinimumZoomPercentage="100"/>
+        <StackLayout Orientation="Vertical" x:Name="PdfViewGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Margin="0,50,0,50">
+            <syncfusion:SfPdfViewer  x:Name="pdfViewerControl" 
+                                     FreeTextAnnotationAdded="PdfViewerControl_FreeTextAnnotationAdded" 
+                                     FreeTextAnnotationSelected="PdfViewerControl_FreeTextAnnotationSelected" 
+                                     FreeTextAnnotationDeselected="PdfViewerControl_FreeTextAnnotationDeselected"
+                                     CanRedoInkModified="PdfViewerControl_CanRedoInkModified"
+                                     CanUndoInkModified="PdfViewerControl_CanUndoInkModified"
+                                     InkSelected="PdfViewerControl_InkSelected"
+                                     InkDeselected="PdfViewerControl_InkDeselected"
+                                     InkAdded="PdfViewerControl_InkAdded"
+                                     ShapeAnnotationAdded="PdfViewerControl_ShapeAnnotationAdded"
+                                     ShapeAnnotationSelected="PdfViewerControl_ShapeAnnotationSelected"
+                                     ShapeAnnotationDeselected="PdfViewerControl_ShapeAnnotationDeselected"
+                                     TextMarkupSelected="PdfViewerControl_TextMarkupSelected"
+                                     TextMarkupDeselected="PdfViewerControl_TextMarkupDeselected"
+                                     TextMarkupAdded="PdfViewerControl_TextMarkupAdded"
+                                     PageChanged="PdfViewerControl_PageChanged"
+                                     SearchCompleted="PdfViewerControl_SearchCompleted"
+                                     TextMatchFound="PdfViewerControl_TextMatchFound"
+                                     SearchInitiated="PdfViewerControl_SearchInitiated"
+                                     DoubleTapped="PdfViewerControl_DoubleTapped"
+                                     StampAnnotationSelected="PdfViewerControl_StampAnnotationSelected"
+                                     StampAnnotationDeselected="PdfViewerControl_StampAnnotationDeselected"
+                                     StampAnnotationAdded="PdfViewerControl_StampAnnotationAdded"
+                                     DocumentLoaded="PdfViewerControl_DocumentLoaded"
+                                     PasswordErrorOccurred="PdfViewerControl_PasswordErrorOccurred"
+                                     PageViewMode="PageByPage" VerticalOptions="FillAndExpand" MinimumZoomPercentage="100"/>
         </StackLayout>
 
         <controls1:PancakeView IsVisible="True" HeightRequest="50" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" x:Name="bottomMainBar" HasShadow="true"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   
@@ -73,10 +97,10 @@
                 <Grid x:Name="shapeToolbar" IsVisible="False" BackgroundColor="#fafafa">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>   
                     </Grid.ColumnDefinitions>
                     <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="15" Margin="15,0,0,0" VerticalOptions="Center">
-                        <ImageButton Clicked="BackButtonShapeToolbar_Clicked" Padding="2" x:Name="backButtonShapeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24_Dark.xml" WidthRequest="32.5" HeightRequest="32.5"    VerticalOptions="Center"/>
+                        <ImageButton Clicked="BackButtonInShapeMenu_Clicked" Padding="2" x:Name="backButtonShapeToolbar" BackgroundColor="#fafafa" Source="outline_arrow_back_24_Dark.xml" WidthRequest="32.5" HeightRequest="32.5"    VerticalOptions="Center"/>
                         <BoxView BackgroundColor="#bdbdbd" WidthRequest="1" />
                     </StackLayout>
                     <StackLayout Grid.Column="1" Spacing="45" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
@@ -107,9 +131,5 @@
 
         </controls1:PancakeView>
     </AbsoluteLayout>
-
-
-
-
 
 </slideoverkit:MenuContainerPage>

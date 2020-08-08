@@ -13,138 +13,64 @@ namespace Pdf.controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StyleContent : ContentView
     {
-        public delegate void OpacityButtonClickedDelegate(int numberOfOThepacitySelected);
+        public delegate void OpacityButtonClickedDelegate(int opacitySelected);
         public OpacityButtonClickedDelegate OpacityButtonClicked { get; set; }
 
-        public Grid OpacityControl
-        {
-            get
-            {
-                return opacityControl;
-            }
-        }
+        public Grid OpacityControl => opacityControl;
 
-        public BoxView BoxView1
-        {
-            get
-            {
-                return boxView1;
-            }
-        }
+        public BoxView Separator1 => SeparatorLine1;
 
-        public BoxView BoxView2
-        {
-            get
-            {
-                return boxView2;
-            }
-        }
+        public BoxView SeparatorTwo => SeparatorLine2;
 
-        public StackLayout FontSizeControl
-        {
-            get
-            {
-                return fontSizeControl;
-            }
-        }
+        public StackLayout FontSizeControl => FontControl;
 
-        public ColorPicker ColorPicker
-        {
-            get
-            {
-                return colorPicker;
-            }
-        }
+        public ColorPicker ColorPicker => CPicker;
 
-        public Slider FontSizeSlider
-        {
-            get
-            {
-                return fontSizeSlider;
-            }
-        }
+        public Slider FontSizeSlider => FSlider;
 
-        public ThicknessBar ThicknessBar
-        {
-            get
-            {
-                return thicknessBar;
-            }
-        }
+        public ThicknessBar ThicknessBar => Thickness;
 
-        public IconView OpacityImageTo25
-        {
-            get
-            {
-                return opacityImageTo25;
-            }
-        }
+        public IconView OpacityOne => Opacity1;
 
-        public IconView OpacityImageTo50
-        {
-            get
-            {
-                return opacityImageTo50;
-            }
-        }
+        public IconView OpacityTwo => Opacity2;
 
-        public IconView OpacityImageTo75
-        {
-            get
-            {
-                return opacityImageTo75;
-            }
-        }
+        public IconView OpacityThird => Opacity3;
 
-        public IconView OpacityImageTo100
-        {
-            get
-            {
-                return opacityImageTo100;
-            }
-        }
-
+        public IconView OpacityFourth => Opacity4;
 
         public StyleContent()
         {
             InitializeComponent();
 
-            opacityTo25Selection.GestureRecognizers.Add(new TapGestureRecognizer()
+            AddGestureRecognizers();
+        }
+
+        private void AddGestureRecognizers()
+        {
+            Opacity25.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
-                {
-                    OpacityButton_Clicked(1);
-                })
+                Command = new Command(() => { OpacityButton_Clicked(1); })
             });
 
-            opacityTo50Selection.GestureRecognizers.Add(new TapGestureRecognizer()
+            Opacity50.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
-                {
-                    OpacityButton_Clicked(2);
-                })
+                Command = new Command(() => { OpacityButton_Clicked(2); })
             });
 
-            opacityTo75Selection.GestureRecognizers.Add(new TapGestureRecognizer()
+            Opacity75.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
-                {
-                    OpacityButton_Clicked(3);
-                })
+                Command = new Command(() => { OpacityButton_Clicked(3); })
             });
 
-            opacityTo100Selection.GestureRecognizers.Add(new TapGestureRecognizer()
+            Opacity100.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command(() =>
-                {
-                    OpacityButton_Clicked(4);
-                })
+                Command = new Command(() => { OpacityButton_Clicked(4); })
             });
         }
 
-        private void OpacityButton_Clicked(int numberOfOThepacitySelected)
+        private void OpacityButton_Clicked(int opacitySelected)
         {
-            OpacityButtonClicked?.Invoke(numberOfOThepacitySelected);
+            OpacityButtonClicked?.Invoke(opacitySelected);
         }
     }
 }

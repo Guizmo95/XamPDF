@@ -13,15 +13,9 @@ namespace Pdf.controls
 
 		public Color Foreground
 		{
-			get
-			{
-				return (Color)GetValue(ForegroundProperty);
-			}
-			set
-			{
-				SetValue(ForegroundProperty, value);
-			}
-		}
+			get => (Color)GetValue(ForegroundProperty);
+            set => SetValue(ForegroundProperty, value);
+        }
 
 		#endregion
 
@@ -31,15 +25,10 @@ namespace Pdf.controls
 
 		public string Source
 		{
-			get
-			{
-				return (string)GetValue(SourceProperty);
-			}
-			set
-			{
-				SetValue(SourceProperty, value);
-			}
-		}
+			get => (string)GetValue(SourceProperty);
+
+            set => SetValue(SourceProperty, value);
+        }
 
 		#endregion
 	}

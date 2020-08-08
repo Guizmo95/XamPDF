@@ -11,7 +11,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
           "NETStandard.Library": "2.0.3",
-          "SharpZipLib": "1.2.0",
+          "Plugin.Permissions": "6.0.1",
           "SlideOverKit": "2.1.6.2",
           "Syncfusion.Xamarin.Buttons": "18.1.0.54",
           "Syncfusion.Xamarin.Pdf": "18.2.0.47",
@@ -19,8 +19,7 @@
           "Syncfusion.Xamarin.SfPdfViewer": "18.2.0.47",
           "Syncfusion.Xamarin.SfPopupLayout": "18.2.0.47",
           "Syncfusion.Xamarin.SfRotator": "18.1.0.43",
-          "Unity": "5.11.4",
-          "Xamarin.Essentials": "1.5.3.1",
+          "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.7.0.1080",
           "Xamarin.Forms.PancakeView": "1.3.7",
@@ -46,11 +45,14 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
-      "SharpZipLib/1.2.0": {
+      "Plugin.Permissions/6.0.1": {
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.3.2"
+        },
         "runtime": {
-          "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {
-            "assemblyVersion": "1.2.0.246",
-            "fileVersion": "1.2.0.246"
+          "lib/netstandard2.0/Plugin.Permissions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -176,8 +178,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfBusyIndicator.XForms.dll": {
-            "assemblyVersion": "18.2451.0.44",
-            "fileVersion": "18.2451.0.44"
+            "assemblyVersion": "18.2451.0.47",
+            "fileVersion": "18.2451.0.47"
           }
         }
       },
@@ -206,8 +208,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfPdfViewer.XForms.dll": {
-            "assemblyVersion": "18.2451.0.44",
-            "fileVersion": "18.2451.0.44"
+            "assemblyVersion": "18.2451.0.47",
+            "fileVersion": "18.2451.0.47"
           }
         }
       },
@@ -230,8 +232,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfProgressBar.XForms.dll": {
-            "assemblyVersion": "18.2451.0.44",
-            "fileVersion": "18.2451.0.44"
+            "assemblyVersion": "18.2451.0.47",
+            "fileVersion": "18.2451.0.47"
           }
         }
       },
@@ -242,8 +244,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfRangeSlider.XForms.dll": {
-            "assemblyVersion": "18.2451.0.44",
-            "fileVersion": "18.2451.0.44"
+            "assemblyVersion": "18.2451.0.47",
+            "fileVersion": "18.2451.0.47"
           }
         }
       },
@@ -267,30 +269,7 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "4.0.4.1",
-            "fileVersion": "4.6.26919.2"
-          }
-        }
-      },
-      "Unity/5.11.4": {
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Unity.Abstractions.dll": {
-            "assemblyVersion": "5.11.4.0",
-            "fileVersion": "5.11.4.0"
-          },
-          "lib/netstandard2.0/Unity.Container.dll": {
-            "assemblyVersion": "5.11.5.0",
-            "fileVersion": "5.11.5.0"
-          }
-        }
-      },
-      "Xamarin.Essentials/1.5.3.1": {
+      "Xamarin.Essentials/1.5.3.2": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -397,12 +376,12 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
-    "SharpZipLib/1.2.0": {
+    "Plugin.Permissions/6.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zvWa/L02JHNatdtjya6Swpudb2YEHaOLHL1eRrqpjm71iGRNUNONO5adUF/9CHbSJbzhELW1UoH4NGy7n7+3bQ==",
-      "path": "sharpziplib/1.2.0",
-      "hashPath": "sharpziplib.1.2.0.nupkg.sha512"
+      "sha512": "sha512-na/0FNhyKmSicANWZMLSM0y/FW2AvLoawX3lsvBpELwP15sdJRyuBhRKk1OQjRoNrmTIewcON1tJFyydjMGWcA==",
+      "path": "plugin.permissions/6.0.1",
+      "hashPath": "plugin.permissions.6.0.1.nupkg.sha512"
     },
     "SlideOverKit/2.1.6.2": {
       "type": "package",
@@ -537,26 +516,12 @@
       "path": "system.numerics.vectors/4.5.0",
       "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+    "Xamarin.Essentials/1.5.3.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
-      "path": "system.runtime.compilerservices.unsafe/4.5.2",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
-    },
-    "Unity/5.11.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-92605bIUMalRwCqyGX5uno6MEyyiVIt5P5zPxJYFs9iMe8Ktn9liSGXHNeN60x1iuyNdx/RlqwCuFHL7a6M+ZA==",
-      "path": "unity/5.11.4",
-      "hashPath": "unity.5.11.4.nupkg.sha512"
-    },
-    "Xamarin.Essentials/1.5.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6sE3kGMhES7dsR8ll+ar+roEIFobjPfDskKNMsU4FF6cV27ZsdArGZHxe1QqPPJcMT6PzJsGvA3l5PNMZgw5ng==",
-      "path": "xamarin.essentials/1.5.3.1",
-      "hashPath": "xamarin.essentials.1.5.3.1.nupkg.sha512"
+      "sha512": "sha512-BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
+      "path": "xamarin.essentials/1.5.3.2",
+      "hashPath": "xamarin.essentials.1.5.3.2.nupkg.sha512"
     },
     "Xamarin.FFImageLoading/2.4.11.982": {
       "type": "package",
