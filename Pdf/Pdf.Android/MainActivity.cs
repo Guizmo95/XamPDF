@@ -25,16 +25,14 @@ namespace Pdf.Droid
     [IntentFilter(new[] { Intent.ActionView, Intent.ActionOpenDocument }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataMimeType = "application/pdf", DataPathPattern = ".*\\\\topo")]
     public class MainActivity : FormsAppCompatActivity
     {
+        public static AssetManager MyAssets { get; set; }
+        public static Window MainActivityWindow { get; set; }
+        public IntentHelper IntentHelper { get; }
+
         public MainActivity()
         {
             IntentHelper = new IntentHelper(this);
         }
-
-        public static AssetManager MyAssets { get; set; }
-
-        public static Window MainActivityWindow { get; set; }
-
-        public IntentHelper IntentHelper { get; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -63,8 +61,6 @@ namespace Pdf.Droid
             //Open file from other apps
             IntentHelper.GetFilePathFromIntent();
         }
-
-
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
