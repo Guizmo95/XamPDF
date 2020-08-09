@@ -109,8 +109,6 @@ namespace Pdf.Views
                         case AnnotationType.Strikethrough:
                             StrikethroughtButton_Clicked(null, null);
                             break;
-                        default:
-                            break;
                     }
                 }
             }
@@ -144,8 +142,6 @@ namespace Pdf.Views
                             break;
                         case AnnotationType.Circle:
                             CircleButton_Clicked(null, null);
-                            break;
-                        default:
                             break;
                     }
                 }
@@ -462,16 +458,16 @@ namespace Pdf.Views
 
             this.loadingMode = loadingMode;
             this.filePath = filePath;
+
+            stampSlideUpMenu = new StampSlideUpMenu();
+            stampSlideUpMenu.StampListView.SelectionChanged += StampListView_SelectionChanged;
             this.SlideMenu = stampSlideUpMenu;
+
             annotationType = AnnotationType.None;
 
             pdfViewerControl.IsToolbarVisible = false;
             pdfViewerControl.IsPasswordViewEnabled = false;
             pdfViewerControl.PreserveSignaturePadOrientation = true;
-
-            stampSlideUpMenu = new StampSlideUpMenu();
-            
-            stampSlideUpMenu.StampListView.SelectionChanged += StampListView_SelectionChanged;
 
             MessagingCenter.Subscribe<ColorPicker, Xamarin.Forms.Color>(this, "selectedColor", (sender, helper) =>
             {
@@ -670,11 +666,7 @@ namespace Pdf.Views
             }
         }
 
-        private void PdfViewerControl_StampAnnotationDeselected(object sender, StampAnnotationDeselectedEventArgs e)
-        {
-            BackButtonAnnotationTypeToolbar_Clicked(null, null);
-        }
-
+        #region Annotations Selected Event Handlers 
         private void PdfViewerControl_StampAnnotationSelected(object sender, StampAnnotationSelectedEventArgs e)
         {
             SetToolbarForStampAnnotationSelected();
@@ -682,13 +674,6 @@ namespace Pdf.Views
             selectedStampAnnotation = sender as StampAnnotation;
 
             annotationType = AnnotationType.Stamp;
-        }
-
-        private void PdfViewerControl_TextMarkupDeselected(object sender, TextMarkupDeselectedEventArgs args)
-        {
-            IsTextMarkupMenuEnabled = false;
-
-            selectedShapeAnnotation = null;
         }
 
         private void PdfViewerControl_TextMarkupSelected(object sender, TextMarkupSelectedEventArgs args)
@@ -712,13 +697,6 @@ namespace Pdf.Views
             }
 
             IsTextMarkupMenuEnabled = true;
-        }
-
-        private void PdfViewerControl_ShapeAnnotationDeselected(object sender, ShapeAnnotationDeselectedEventArgs args)
-        {
-            IsShapeMenuEnabled = false;
-
-            selectedShapeAnnotation = null;
         }
 
         private void PdfViewerControl_ShapeAnnotationSelected(object sender, ShapeAnnotationSelectedEventArgs args)
@@ -747,23 +725,6 @@ namespace Pdf.Views
             IsShapeMenuEnabled = true;
         }
 
-        private void PdfViewerControl_FreeTextAnnotationDeselected(object sender, FreeTextAnnotationDeselectedEventArgs args)
-        {
-            IsFreeTextMenuEnabled = false;
-
-            selectedFreeTextAnnotation = null;
-        }
-
-        private void PdfViewerControl_FreeTextAnnotationSelected(object sender, FreeTextAnnotationSelectedEventArgs args)
-        {
-            annotationType = AnnotationType.FreeText;
-            selectedFreeTextAnnotation = sender as FreeTextAnnotation;
-
-            SelectedColor = args.TextColor;
-
-            IsFreeTextMenuEnabled = true;
-        }
-
         private void PdfViewerControl_InkSelected(object sender, InkSelectedEventArgs args)
         {
             if (args.IsSignature)
@@ -784,6 +745,44 @@ namespace Pdf.Views
             }
         }
 
+        private void PdfViewerControl_FreeTextAnnotationSelected(object sender, FreeTextAnnotationSelectedEventArgs args)
+        {
+            annotationType = AnnotationType.FreeText;
+            selectedFreeTextAnnotation = sender as FreeTextAnnotation;
+
+            SelectedColor = args.TextColor;
+
+            IsFreeTextMenuEnabled = true;
+        }
+        #endregion
+
+        #region Annotation Deselected Event Handlers
+        private void PdfViewerControl_StampAnnotationDeselected(object sender, StampAnnotationDeselectedEventArgs e)
+        {
+            BackButtonAnnotationTypeToolbar_Clicked(null, null);
+        }
+
+        private void PdfViewerControl_TextMarkupDeselected(object sender, TextMarkupDeselectedEventArgs args)
+        {
+            IsTextMarkupMenuEnabled = false;
+
+            selectedShapeAnnotation = null;
+        }
+
+        private void PdfViewerControl_ShapeAnnotationDeselected(object sender, ShapeAnnotationDeselectedEventArgs args)
+        {
+            IsShapeMenuEnabled = false;
+
+            selectedShapeAnnotation = null;
+        }
+
+        private void PdfViewerControl_FreeTextAnnotationDeselected(object sender, FreeTextAnnotationDeselectedEventArgs args)
+        {
+            IsFreeTextMenuEnabled = false;
+
+            selectedFreeTextAnnotation = null;
+        }
+
         private void PdfViewerControl_InkDeselected(object sender, InkDeselectedEventArgs args)
         {
             IsInkMenuEnabled = false;
@@ -792,6 +791,7 @@ namespace Pdf.Views
             selectedInkAnnotation = null;
             selectedHandwrittenSignature = null;
         }
+        #endregion
 
         #region Annotation Added Events Handler 
         private void PdfViewerControl_FreeTextAnnotationAdded(object sender, FreeTextAnnotationAddedEventArgs args)

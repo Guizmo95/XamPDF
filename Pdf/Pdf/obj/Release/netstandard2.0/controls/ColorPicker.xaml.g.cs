@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.ColorPicker.xaml", "controls/ColorPicker.xaml", typeof(global::Pdf.Views.ColorPicker))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Controls.ColorPicker.xaml", "Controls/ColorPicker.xaml", typeof(global::Pdf.Views.ColorPicker))]
 
 namespace Pdf.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\ColorPicker.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Controls\\ColorPicker.xaml")]
     public partial class ColorPicker : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

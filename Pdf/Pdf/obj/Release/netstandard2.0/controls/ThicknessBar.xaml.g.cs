@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.ThicknessBar.xaml", "controls/ThicknessBar.xaml", typeof(global::Pdf.controls.ThicknessBar))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Controls.ThicknessBar.xaml", "Controls/ThicknessBar.xaml", typeof(global::Pdf.controls.ThicknessBar))]
 
 namespace Pdf.controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\ThicknessBar.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Controls\\ThicknessBar.xaml")]
     public partial class ThicknessBar : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

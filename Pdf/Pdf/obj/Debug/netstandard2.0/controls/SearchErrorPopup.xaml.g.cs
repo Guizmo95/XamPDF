@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.SearchErrorPopup.xaml", "controls/SearchErrorPopup.xaml", typeof(global::Pdf.controls.SearchErrorPopup))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Controls.SearchErrorPopup.xaml", "Controls/SearchErrorPopup.xaml", typeof(global::Pdf.controls.SearchErrorPopup))]
 
 namespace Pdf.controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\SearchErrorPopup.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Controls\\SearchErrorPopup.xaml")]
     public partial class SearchErrorPopup : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

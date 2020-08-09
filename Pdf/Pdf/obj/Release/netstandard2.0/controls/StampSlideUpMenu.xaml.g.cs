@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.StampSlideUpMenu.xaml", "controls/StampSlideUpMenu.xaml", typeof(global::Pdf.controls.StampSlideUpMenu))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Controls.StampSlideUpMenu.xaml", "Controls/StampSlideUpMenu.xaml", typeof(global::Pdf.controls.StampSlideUpMenu))]
 
 namespace Pdf.controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\StampSlideUpMenu.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Controls\\StampSlideUpMenu.xaml")]
     public partial class StampSlideUpMenu : global::SlideOverKit.SlideMenuView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.PopupMenuContent.xaml", "controls/PopupMenuContent.xaml", typeof(global::Pdf.controls.PopupMenuContent))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Controls.PopupMenuContent.xaml", "Controls/PopupMenuContent.xaml", typeof(global::Pdf.controls.PopupMenuContent))]
 
 namespace Pdf.controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\PopupMenuContent.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Controls\\PopupMenuContent.xaml")]
     public partial class PopupMenuContent : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

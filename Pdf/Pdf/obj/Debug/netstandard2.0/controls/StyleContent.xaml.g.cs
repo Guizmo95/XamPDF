@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.StyleContent.xaml", "controls/StyleContent.xaml", typeof(global::Pdf.controls.StyleContent))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Controls.StyleContent.xaml", "Controls/StyleContent.xaml", typeof(global::Pdf.controls.StyleContent))]
 
 namespace Pdf.controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\StyleContent.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Controls\\StyleContent.xaml")]
     public partial class StyleContent : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

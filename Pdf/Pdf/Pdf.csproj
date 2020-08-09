@@ -65,10 +65,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="controls\PopupMenuContent.xaml.cs">
+    <Compile Update="Controls\PopupMenuContent.xaml.cs">
       <DependentUpon>PopupMenuContent.xaml</DependentUpon>
     </Compile>
-    <Compile Update="controls\StyleContent.xaml.cs">
+    <Compile Update="Controls\StyleContent.xaml.cs">
       <DependentUpon>StyleContent.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\MenuPage.xaml">
@@ -77,22 +77,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="controls\ColorPicker.xaml">
+    <EmbeddedResource Update="Controls\ColorPicker.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\PopupMenuContent.xaml">
+    <EmbeddedResource Update="Controls\PopupMenuContent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\PdfPropertyPopup.xaml">
+    <EmbeddedResource Update="Controls\PdfPropertyPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\SearchErrorPopup.xaml">
+    <EmbeddedResource Update="Controls\SearchErrorPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\StyleContent.xaml">
+    <EmbeddedResource Update="Controls\StyleContent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\ThicknessBar.xaml">
+    <EmbeddedResource Update="Controls\ThicknessBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DocumentsList.xaml">
@@ -107,13 +107,13 @@
     <EmbeddedResource Update="Views\PdfViewer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\RotatorPage.xaml">
+    <EmbeddedResource Update="Controls\RotatorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ShellMainMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="controls\StampSlideUpMenu.xaml">
+    <EmbeddedResource Update="Controls\StampSlideUpMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ThumbnailsPage.xaml">

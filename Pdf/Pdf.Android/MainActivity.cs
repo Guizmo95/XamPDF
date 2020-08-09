@@ -22,7 +22,7 @@ using Plugin.Permissions;
 namespace Pdf.Droid
 {
     [Activity(Label = "Xam's Pdf", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme.Base", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    [IntentFilter(new[] { Intent.ActionView, Intent.ActionOpenDocument }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataMimeType = "application/pdf", DataPathPattern = ".*\\\\topo")]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, DataMimeType = "application/pdf", DataHost = "*")]
     public class MainActivity : FormsAppCompatActivity
     {
         public static AssetManager MyAssets { get; set; }

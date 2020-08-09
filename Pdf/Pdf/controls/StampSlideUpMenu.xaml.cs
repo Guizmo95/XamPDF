@@ -16,7 +16,7 @@ namespace Pdf.controls
         public SfListView StampListView
         {
             get => StampSfListView;
-            private set => StampSfListView = value;
+            set => StampSfListView = value;
         }
 
         public StampSlideUpMenu()

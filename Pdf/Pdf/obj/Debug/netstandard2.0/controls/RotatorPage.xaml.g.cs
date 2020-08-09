@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.controls.RotatorPage.xaml", "controls/RotatorPage.xaml", typeof(global::Pdf.controls.RotatorPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pdf.Controls.RotatorPage.xaml", "Controls/RotatorPage.xaml", typeof(global::Pdf.controls.RotatorPage))]
 
 namespace Pdf.controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("controls\\RotatorPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Controls\\RotatorPage.xaml")]
     public partial class RotatorPage : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.CompilerServices;
 using Android.Content;
 using Android.Graphics.Pdf;
@@ -25,6 +26,13 @@ namespace Pdf.Droid.Helpers
             if (Intent.ActionView.Equals(mainActivity.Intent.Action) && (mainActivity.Intent.Type?.Equals("application/pdf") ?? false))
             {
                 var path = GetRealPathFromUri(Android.App.Application.Context, mainActivity.Intent.Data);
+
+                string directory = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath,
+                    Android.OS.Environment.DirectoryDownloads);
+
+                var fileName = Path.Combine(directory, path);
+
+                fileName.ToString();
 
                 //TODO -- Implement try catch
                 App.LoadPdf(path);
@@ -132,11 +140,17 @@ namespace Pdf.Droid.Helpers
 
             try
             {
-                cursor = context.ContentResolver.Query(uri, projection, selection, selectionArgs,
-                    null);
+                //cursor = context.ContentResolver.Query(uri, projection, selection, selectionArgs,
+                //    null);
+
+                cursor = context.ContentResolver.Query(uri, new String[] {
+                    MediaStore.MediaColumns.DisplayName,
+                }, null, null, null);
+
                 if (cursor != null && cursor.MoveToFirst())
                 {
-                    var column_index = cursor.GetColumnIndexOrThrow(column);
+                    //var column_index = cursor.GetColumnIndexOrThrow(column);
+                    int column_index = cursor.GetColumnIndex(MediaStore.MediaColumns.DisplayName);
                     return cursor.GetString(column_index);
                 }
             }
