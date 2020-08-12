@@ -61,7 +61,7 @@
                                      StampAnnotationAdded="PdfViewerControl_StampAnnotationAdded"
                                      DocumentLoaded="PdfViewerControl_DocumentLoaded"
                                      PasswordErrorOccurred="PdfViewerControl_PasswordErrorOccurred"
-                                     PageViewMode="PageByPage" VerticalOptions="FillAndExpand" MinimumZoomPercentage="100"/>
+                                     PageViewMode="Continuous" VerticalOptions="FillAndExpand" MinimumZoomPercentage="100"/>
         </StackLayout>
 
         <controls1:PancakeView IsVisible="True" HeightRequest="50" BackgroundColor="#fafafa" HorizontalOptions="FillAndExpand" x:Name="bottomMainBar" HasShadow="true"  AbsoluteLayout.LayoutBounds="0,1,1,AutoSize"   

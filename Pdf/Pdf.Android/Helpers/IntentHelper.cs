@@ -1,13 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using Android.Content;
-using Android.Graphics.Pdf;
 using Android.OS;
 using Android.Provider;
-using Java.IO;
-using Javax.Xml.Parsers;
-using Xamarin.Forms;
 using Uri = Android.Net.Uri;
 
 namespace Pdf.Droid.Helpers
@@ -25,17 +20,19 @@ namespace Pdf.Droid.Helpers
         {
             if (Intent.ActionView.Equals(mainActivity.Intent.Action) && (mainActivity.Intent.Type?.Equals("application/pdf") ?? false))
             {
-                var path = GetRealPathFromUri(Android.App.Application.Context, mainActivity.Intent.Data);
+                var filePath = GetRealPathFromUri(Android.App.Application.Context, mainActivity.Intent.Data);
 
-                string directory = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath,
-                    Android.OS.Environment.DirectoryDownloads);
+                //TODO -- Handle when file is not downloaded
 
-                var fileName = Path.Combine(directory, path);
+                var stream = mainActivity.ContentResolver.OpenInputStream(mainActivity.Intent.Data);
 
-                fileName.ToString();
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    
+                }
 
                 //TODO -- Implement try catch
-                App.LoadPdf(path);
+                App.LoadPdf(filePath);
             }
         }
 
@@ -129,7 +126,7 @@ namespace Pdf.Droid.Helpers
             return GetDataColumn(context, contentUri, selection, selectionArgs);
         }
 
-        public static string GetDataColumn(Context context, Android.Net.Uri uri, String selection,
+        public static string GetDataColumn(Context context, Android.Net.Uri uri, string selection,
             string[] selectionArgs)
         {
             Android.Database.ICursor cursor = null;
@@ -140,18 +137,39 @@ namespace Pdf.Droid.Helpers
 
             try
             {
-                //cursor = context.ContentResolver.Query(uri, projection, selection, selectionArgs,
-                //    null);
+                cursor = context.ContentResolver.Query(uri, projection, selection, selectionArgs,
+                    null);
 
-                cursor = context.ContentResolver.Query(uri, new String[] {
-                    MediaStore.MediaColumns.DisplayName,
-                }, null, null, null);
+                //cursor = context.ContentResolver.Query(uri, new[] {
+                //    MediaStore.MediaColumns.DisplayName,
+                //}, null, null, null);
 
                 if (cursor != null && cursor.MoveToFirst())
                 {
-                    //var column_index = cursor.GetColumnIndexOrThrow(column);
-                    int column_index = cursor.GetColumnIndex(MediaStore.MediaColumns.DisplayName);
-                    return cursor.GetString(column_index);
+                    var columnIndex = cursor.GetColumnIndexOrThrow(column);
+                    var filePath = cursor.GetString(columnIndex);
+
+                    if (string.IsNullOrEmpty(filePath))
+                    {
+                        cursor = context.ContentResolver.Query(uri, new[] {
+                            MediaStore.MediaColumns.DisplayName,
+                        }, null, null, null);
+
+                        if (cursor != null && cursor.MoveToFirst())
+                        {
+                            columnIndex = cursor.GetColumnIndex(MediaStore.MediaColumns.DisplayName);
+
+                            var fileName = cursor.GetString(columnIndex);
+
+                            string downloaDirectory = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath,
+                                Android.OS.Environment.DirectoryDownloads);
+                            
+                            filePath = Path.Combine(downloaDirectory, fileName);
+                        }
+
+                    }
+
+                    return filePath;
                 }
             }
             finally
